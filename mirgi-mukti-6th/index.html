@@ -1,0 +1,4162 @@
+
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;700&display=swap" rel="stylesheet">
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>mirgi-mukti</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+
+:root {
+  --light-green:#bbb26d;
+  --yellow: #c09c24;
+  --white: #fff;
+  --green: #566433;
+  --number-bg:#f1f1f1;
+   --glass: rgba(255, 255, 255, 0.9);
+            
+ 
+}
+
+/* ===== GLOBAL ===== */
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: 'Halant', sans-serif;
+  background-color: rgba(184, 182, 182, 0.76);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+   padding-top: 80px;
+}
+
+/* HEADER */
+header {
+  max-width: 450px;
+  width: 100%;
+  padding: 14px;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  background: var(--green);
+  
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  z-index: 999;
+}
+nav {
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+  border-bottom: 2px solid rgba(255,255,255,0.4);
+  padding-bottom: 6px;
+}
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+}
+.buttonn {
+  background-color: var(--yellow); 
+  color: var(--white);
+  border-radius: 15px;
+  padding: 14px 22px;
+  border: 2px solid var(--yellow);
+  font-size: 19px;
+  text-decoration: none;
+  cursor: pointer;
+  position:relative;
+  overflow:hidden;
+}
+
+
+
+.buttonn::before{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.7),transparent);
+transition:0.5s;
+}
+
+.buttonn:hover::before{
+left:100%;
+}
+
+@media (max-width:480px){
+
+  header{
+    max-width:100%;
+    padding:12px 16px;
+  }
+
+  nav{
+    max-width:100%;
+  }
+
+  .logo{
+    font-size:22px;
+  }
+
+  .buttonn{
+    padding:10px 14px;
+    font-size:14px;
+    border-radius:10px;
+  }
+
+}
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  background: var(--yellow);
+  cursor: pointer;
+  margin: 10px 100px;
+  width: 55%;
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  top: 0;
+  left: -40%;
+  transform: skewX(-20deg);
+}
+.btn:hover::before {
+  left: 120%;
+  transition: 1.5s;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 430px) {
+  .btn {
+    width: 50% !important;
+    font-size: 15px !important;
+    margin: 10px 80px !important;
+  }
+}
+
+/* ===== SECTIONS ===== */
+.sec {
+  max-width: 450px;
+  width: 100%;
+  background: var(--green);
+  border-bottom: 2px solid var(--white);
+}
+.sect {
+  max-width: 450px;
+  width: 100%;
+  background-color: var(--yellow);
+}
+.images {
+  max-width: 450px;
+  width: 100%;
+  margin-top: 10px;
+   align-items: center;
+  padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-1 */
+.fluid-split-container{
+width:100%;
+max-width:450px;
+margin:auto;
+background:var(--white);
+overflow:hidden;
+box-shadow:0 30px 60px rgba(0,0,0,0.12);
+position:relative;
+}
+
+.leaf-bg{
+position:absolute;
+font-size:32px;
+opacity:.1;
+z-index:0;
+animation:floatLeaf 8s infinite ease-in-out;
+}
+
+@keyframes floatLeaf{
+0%,100%{transform:translateY(0) rotate(0deg);}
+50%{transform:translateY(-20px) rotate(20deg);}
+}
+
+.header-section{
+padding:30px 30px;
+text-align:center;
+background:linear-gradient(180deg,#f6f6f6 0%,#ffffff 100%);
+position:relative;
+z-index:1;
+}
+
+.header-section h2{
+font-size:32px;
+font-weight:800;
+color:var(--green);
+margin:0;
+line-height:1.1;
+}
+
+.split-row{
+display:flex;
+height:190px;
+position:relative;
+background:#fff;
+border-bottom:1px solid #f0f0f0;
+opacity:0;
+transform:translateY(30px);
+animation:slideUp .8s forwards ease-out;
+transition:.4s;
+cursor:pointer;
+}
+
+@keyframes slideUp{
+to{opacity:1;transform:translateY(0);}
+}
+
+.split-row:hover{
+background:#fafafa;
+transform:translateY(-5px);
+z-index:10;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.row-1{animation-delay:.2s;}
+.row-2{animation-delay:.4s;}
+.row-3{animation-delay:.6s;}
+.row-4{animation-delay:.8s;}
+
+.split-image{
+width:45%;
+height:100%;
+overflow:hidden;
+position:relative;
+}
+
+.split-image::after{
+content:'';
+position:absolute;
+top:0;
+left:-150%;
+width:100%;
+height:100%;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
+transform:skewX(-20deg);
+animation:shimmer 4s infinite;
+}
+
+@keyframes shimmer{
+0%{left:-150%;}
+30%,100%{left:150%;}
+}
+
+.split-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform .6s ease;
+}
+
+.split-row:hover .split-image img{
+transform:scale(1.1);
+}
+
+.split-content{
+width:55%;
+padding:25px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+position:relative;
+transition:.4s;
+}
+
+.split-row:hover .split-content{
+padding-left:35px;
+}
+
+.split-row:nth-child(even){flex-direction:row-reverse;}
+.split-row:nth-child(even):hover .split-content{
+padding-right:35px;
+}
+
+.split-row:nth-child(odd) .split-image{
+clip-path:polygon(0% 0%,100% 0%,82% 50%,100% 100%,0% 100%);
+}
+
+.split-row:nth-child(even) .split-image{
+clip-path:polygon(18% 50%,0% 0%,100% 0%,100% 100%,0% 100%);
+}
+
+.phase-num{
+font-size:45px;
+font-weight:800;
+color:rgba(0,0,0,0.05);
+position:absolute;
+right:20px;
+top:10px;
+}
+
+.split-row:nth-child(even) .phase-num{
+left:20px;
+right:auto;
+}
+
+.split-content h3{
+font-size:20px;
+color:var(--yellow);
+letter-spacing:2px;
+font-weight:800;
+margin:0;
+}
+
+.split-content p{
+font-size:18px;
+font-weight:600;
+color:#1a1a1a;
+margin-top:5px;
+line-height:1.3;
+}
+
+.pulse-dot{
+width:8px;
+height:8px;
+background:var(--yellow);
+border-radius:50%;
+display:inline-block;
+margin-right:8px;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(192,156,36,.7);}
+70%{box-shadow:0 0 0 10px rgba(192,156,36,0);}
+100%{box-shadow:0 0 0 0 rgba(192,156,36,0);}
+}
+
+.footer-tag{
+padding:20px 30px;
+background:var(--green);
+color:white;
+font-size: 18PX;
+text-align:center;
+}
+.fluid-split-container{
+width:100%;
+max-width:450px;
+margin:auto;
+background:var(--white);
+overflow:hidden;
+box-shadow:0 30px 60px rgba(0,0,0,0.12);
+position:relative;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width:480px){
+
+.fluid-split-container{
+max-width:100%;
+border-radius:0;
+}
+
+.header-section{
+padding:22px 18px;
+}
+
+.header-section h2{
+font-size:24px;
+}
+
+.split-row{
+height:140px;
+}
+
+.split-image{
+width:45%;
+}
+
+.split-content{
+width:55%;
+padding:15px;
+}
+
+.split-content h3{
+font-size:16px;
+letter-spacing:1px;
+}
+
+.split-content p{
+font-size:14px;
+}
+
+.phase-num{
+font-size:32px;
+top:6px;
+}
+
+.split-row:hover{
+transform:none;
+box-shadow:none;
+}
+
+.split-row:hover .split-content{
+padding-left:15px;
+}
+
+.split-row:nth-child(even):hover .split-content{
+padding-right:15px;
+}
+
+.split-row:hover .split-image img{
+transform:none;
+}
+
+.footer-tag{
+font-size:14px;
+padding:15px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-2 */
+.gaath-container{
+max-width:450px;
+width: 100%;
+background:var(--green);
+position:relative;
+padding:30px;
+box-sizing:border-box;
+color:var(--white);
+overflow:hidden;
+box-shadow:0 30px 60px rgba(0,0,0,0.3);
+}
+
+.circle-bg{
+position:absolute;
+width:300px;
+height:300px;
+background:var(--light-green);
+border-radius:50%;
+top:-100px;
+right:-100px;
+z-index:0;
+}
+
+.product-visual{
+position:relative;
+z-index:2;
+width:100%;
+display:flex;
+justify-content:flex-end;
+margin-bottom:-40px;
+}
+
+.img-holder{
+width:240px;
+height:240px;
+background:var(--white);
+border-radius:30px;
+transform:rotate(10deg);
+box-shadow:-15px 15px 40px rgba(0,0,0,0.2);
+overflow:hidden;
+border:8px solid var(--yellow);
+transition:0.5s ease;
+margin-bottom: 25px;
+}
+
+.img-holder:hover{
+transform:rotate(0deg) scale(1.05);
+}
+
+.img-holder img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.content-box{
+position:relative;
+z-index:3;
+margin-top:20px;
+}
+
+.brand-name{
+font-size:20px;
+text-transform:uppercase;
+color:var(--yellow);
+margin-bottom:25px;
+font-weight: 600;
+display:block;
+}
+
+.main-title{
+font-size:38px;
+line-height:1;
+margin:10px 0;
+font-weight:800;
+}
+
+.main-title span{
+color:var(--yellow);
+}
+
+.info-strip{
+background:var(--glass);
+backdrop-filter:blur(5px);
+padding:15px;
+border-radius:20px;
+margin:20px 0;
+border-left:5px solid var(--yellow);
+}
+
+.info-strip p{
+margin:0;
+font-size:18px;
+line-height:1.2;
+color:black;
+}
+
+.flex-footer{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-top:30px;
+}
+
+.order-btn{
+background:var(--yellow);
+color:#fff;
+padding:15px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:800;
+font-size:14px;
+transition:0.3s;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.order-btn:hover{
+background:var(--light-green);
+transform:translateY(-3px);
+}
+
+.nature-tag{
+font-size:18px;
+font-weight:600;
+color:var(--yellow);
+display:flex;
+align-items:center;
+}
+
+.nature-tag::before{
+content:'';
+width:8px;
+height:8px;
+background:var(--yellow);
+border-radius:50%;
+margin-right:8px;
+}.gaath-container{
+max-width:450px;
+width:100%;
+margin:auto;
+background:var(--green);
+position:relative;
+padding:30px;
+box-sizing:border-box;
+color:var(--white);
+overflow:hidden;
+box-shadow:0 30px 60px rgba(0,0,0,0.3);
+}
+
+/* MOBILE FIX */
+@media (max-width:480px){
+
+.gaath-container{
+padding:18px;
+}
+
+.product-visual{
+justify-content:center;
+margin-bottom:-25px;
+}
+
+.img-holder{
+width:170px;
+height:170px;
+border:6px solid var(--yellow);
+}
+
+.main-title{
+font-size:24px;
+}
+
+.brand-name{
+font-size:15px;
+}
+
+.info-strip p{
+font-size:14px;
+}
+
+.flex-footer{
+flex-direction:column;
+align-items:flex-start;
+gap:12px;
+}
+
+.order-btn{
+padding:12px 22px;
+font-size:13px;
+}
+
+.nature-tag{
+font-size:14px;
+}
+
+.circle-bg{
+width:180px;
+height:180px;
+top:-60px;
+right:-60px;
+}
+
+}
+
+
+
+
+
+
+
+
+/* section-3 */
+.app-container{
+width:100%;
+max-width:450px;
+margin:auto;
+overflow:hidden;
+position:relative;
+}
+
+.hero-header{
+padding:30px 30px 20px;
+}
+
+.hero-header h1{
+font-size:32px;
+text-align: center;
+font-weight:900;
+line-height:1;
+margin:0;
+letter-spacing:-1px;
+color: var(--yellow);
+}
+
+
+.section-wrapper{
+padding:0 20px;
+}
+
+/* Cards */
+
+.morph-card{
+margin-bottom:50px;
+position:relative;
+cursor:pointer;
+opacity:0;
+transform:translateY(60px);
+animation:fluidEnter 1s cubic-bezier(0.19,1,0.22,1) forwards;
+}
+
+@keyframes fluidEnter{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.card-1{animation-delay:0.1s;}
+.card-2{animation-delay:0.3s;}
+.card-3{animation-delay:0.5s;}
+
+.image-reveal{
+width:100%;
+height:280px;
+border-radius:20px 80px 20px 20px;
+overflow:hidden;
+transition:all .8s cubic-bezier(.4,0,.2,1);
+position:relative;
+}
+
+.image-reveal img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:all .8s ease;
+transform:scale(1.1);
+}
+
+.morph-card:hover .image-reveal{
+border-radius:80px 20px 80px 80px;
+box-shadow:0 30px 60px rgba(0,0,0,.15);
+}
+
+.morph-card:hover img{
+filter:grayscale(0) brightness(1);
+transform:scale(1);
+}
+
+.info-overlay{
+position:absolute;
+bottom:-20px;
+right:0;
+background:var(--white);
+padding:22px;
+width:75%;
+box-shadow:10px 10px 40px rgba(0,0,0,.05);
+border-radius:15px;
+transition:.5s all;
+}
+
+.morph-card:hover .info-overlay{
+transform:translate(-10px,-10px);
+background:var(--yellow);
+color:#fff;
+}
+.morph-card:hover .info-overlay  h3 span{
+    color: black;
+}
+
+
+.info-overlay h3{
+margin:0;
+font-size:18px;
+font-weight:900;
+line-height:1.2;
+color: var(--black);
+}
+.info-overlay h3 span{
+    color: var(--yellow);
+    font-size: 19px;
+}
+/* MOBILE OPTIMIZATION */
+@media (max-width:480px){
+
+.app-container{
+max-width:100%;
+}
+
+.hero-header{
+padding:20px 15px 10px;
+}
+
+.hero-header h1{
+font-size:24px;
+letter-spacing:0;
+}
+
+.section-wrapper{
+padding:0 15px;
+}
+
+.morph-card{
+margin-bottom:35px;
+}
+
+.image-reveal{
+height:200px;
+border-radius:18px 50px 18px 18px;
+}
+
+.image-reveal img{
+transform:scale(1.05);
+}
+
+.info-overlay{
+width:85%;
+padding:15px;
+bottom:-15px;
+}
+
+.info-overlay h3{
+font-size:15px;
+}
+
+.info-overlay h3 span{
+font-size:16px;
+}
+
+.morph-card:hover .info-overlay{
+transform:none;
+}
+
+.morph-card:hover .image-reveal{
+border-radius:18px 50px 18px 18px;
+box-shadow:none;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-4 */
+ .doctor-section {
+            max-width: 450px;
+            width: 100%;
+            background: white;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .doctor-section:hover {
+            box-shadow: 0 30px 80px rgba(30,58,138,0.25);
+            transform: translateY(-5px);
+        }
+
+        /* Doctor Header */
+        .doctor-header {
+            background: var(--green);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .doctor-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            animation: shine 4s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .doctor-profile {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.1));
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            backdrop-filter: blur(15px);
+            border: 4px solid rgba(255,255,255,0.4);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+              overflow: hidden;
+        }
+        .doctor-profile img{
+          width: 100%;
+          height: 90%;
+          object-fit: cover; 
+        }
+
+        .doctor-section:hover .doctor-profile {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 20px 50px rgba(59,130,246,0.4);
+            border-color: rgba(255,255,255,0.7);
+        }
+
+        .doctor-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .doctor-qual {
+            font-size: 15px;
+            opacity: 0.95;
+            font-weight: 600;
+            position: relative;
+            margin-top: -10px;
+            margin-bottom: -15px;
+        }
+
+        /* Medical Badge */
+        .medical-badge {
+            display: inline-flex;
+            align-items: center;
+            background:var(--yellow);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 25px 0 0px 0;
+            box-shadow: 0 5px 20px rgba(229, 253, 9, 0.3);
+            transition: all 0.3s ease;
+            transform: translateY(10px);
+            opacity: 0;
+            animation: slideUp 0.8s ease forwards 0.3s;
+        }
+
+        .doctor-section:hover .medical-badge {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(168, 185, 16, 0.4);
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Diagnosis Items */
+        .diagnosis-item{
+    background: #f8fafc;
+    border: 2px solid var(--green);
+    border-radius: 20px;
+    padding:25px;
+    margin-bottom: 20px;
+
+    display: flex;          /* icon और text आमने-सामने */
+    align-items: center;    /* vertically center */
+
+    gap: 15px;              /* icon और text के बीच space */
+
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+        .diagnosis-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(206, 246, 59, 0.205);
+            background: linear-gradient(145deg, #ffffff, #f0f9ff);
+        }
+
+      
+        .diag-icon {
+            width: 50px;
+            height: 50px;
+            background:var(--green);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            margin-right: 18px;
+            flex-shrink: 0;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(196, 246, 59, 0.3);
+            margin-top: -10px;
+        }
+
+        .diagnosis-item:hover .diag-icon {
+            transform: scale(1.2) rotate(360deg);
+            box-shadow: 0 15px 40px rgba(196, 246, 59, 0.3);
+        }
+
+        .diag-content h5 {
+            color: var(--green);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: -6px;
+            margin-top: -10px;
+            transition: all 0.3s ease;
+        }
+
+        .diagnosis-item:hover .diag-content h5 {
+            color: var(--yellow);
+            text-shadow: 0 2px 10px rgba(196, 246, 59, 0.3);
+        }
+
+        .diag-content p {
+            color: black;
+            font-size: 18px;
+            margin-top: 5px;
+            margin-bottom:-15px;
+            transition: all 0.3s ease;
+            line-height: 1.1;
+        }
+
+ 
+
+        /* Prescription Box */
+        .prescription-box {
+            background: var(--green);
+            border: 3px solid var(--yellow);
+            border-radius: 22px;
+            padding: 35px;
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        .prescription-box::before {
+            content: "📋 डॉक्टर की प्रिस्क्रिप्शन";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--yellow);
+            padding: 8px 10px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 5px 15px rgba(245, 202, 11, 0.4);
+        }
+
+        .prescription-box:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 25px 60px rgba(245,202,11,0.4);
+            border-color: var(--yellow);
+        }
+
+        .rx-icon {
+            font-size: 55px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+            transition: all 0.4s ease;
+            color:var(--white);
+        }
+
+        .prescription-box:hover .rx-icon {
+            transform: scale(1.2) rotateY(360deg);
+        }
+
+        /* Doctor Note */
+        .doctor-note {
+            background: var(--light-green);
+            border: 3px solid var(--light-green);
+            border-radius: 20px;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .doctor-note::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(231, 238, 138, 0.2), transparent);
+            transition: left 0.7s;
+        }
+
+        .doctor-note:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(210, 211, 136, 0.473);
+        }
+
+        .doctor-note:hover::before {
+            left: 100%;
+        }
+
+        .doctor-stamp {
+            font-size: 32px;
+            color: var(--green);
+            margin-bottom: 18px;
+            transition: all 0.4s ease;
+        }
+          
+        .doctor-note:hover .doctor-stamp {
+            transform: scale(1.3) rotate(15deg);
+        }
+
+        /* CTA Button */
+        .consult-btn {
+            width: 100%;
+            background: var(--yellow);
+            border: none;
+            padding: 22px 30px;
+            border-radius: 20px;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(196, 246, 59, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .consult-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .consult-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 25px 60px rgba(246, 227, 59, 0.5);
+            color: white;
+        }
+
+        .consult-btn:hover::before {
+            left: 100%;
+        }
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .doctor-section {
+        max-width: 100%;
+    }
+
+    .doctor-header {
+        padding: 30px 20px;
+    }
+
+    .doctor-profile {
+        width: 90px;
+        height: 90px;
+        font-size: 40px;
+        border-width: 3px;
+        margin-bottom: 20px;
+    }
+
+    .doctor-title {
+        font-size: 22px;
+    }
+
+    .doctor-qual {
+        font-size: 14px;
+        margin-top: -8px;
+        margin-bottom: -12px;
+    }
+
+    .medical-badge {
+        padding: 8px 20px;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .diagnosis-item {
+        flex-direction: row;
+        padding: 20px;
+        gap: 12px;
+    }
+
+    .diag-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+        margin-top: -8px;
+    }
+
+    .diag-content h5 {
+        font-size: 18px;
+    }
+
+    .diag-content p {
+        font-size: 16px;
+        line-height: 1.2;
+    }
+
+    .prescription-box {
+        padding: 25px;
+    }
+
+    .rx-icon {
+        font-size: 50px;
+        margin-top: 40px;
+    }
+
+    .doctor-note {
+        padding: 10px 8px;
+    }
+
+    .doctor-stamp {
+        font-size: 28px;
+    }
+
+    .consult-btn {
+        padding: 18px 20px;
+        font-size: 16px;
+        border-radius: 18px;
+    }
+}      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-5 */
+
+.bento-wrapper{
+max-width:450px;
+width: 100%;
+background:var(--green);
+padding:35px 25px;
+box-sizing:border-box;
+overflow:hidden;
+position:relative;
+box-shadow:0 50px 100px rgba(0,0,0,0.3);
+}
+
+.title-tag{
+color:var(--yellow);
+text-transform:uppercase;
+font-size:11px;
+font-weight:900;
+letter-spacing:3px;
+display:block;
+margin-bottom:10px;
+text-align:center;
+}
+
+.main-tit{
+color:#fff;
+font-size:32px;
+font-weight:900;
+text-align:center;
+line-height:1;
+margin-bottom:40px;
+}
+
+.main-tit span{
+color:var(--yellow);
+}
+
+.grid-stack{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.comparison-card{
+background:#1f2a16;
+border-radius:30px;
+padding:25px;
+position:relative;
+border:1px solid rgba(255,255,255,0.05);
+transition:0.4s;
+}
+
+.comparison-card:hover{
+transform:scale(1.02);
+border-color:var(--yellow);
+}
+
+.card-label{
+display:flex;
+justify-content:space-between;
+margin-bottom:15px;
+}
+
+.badge{
+font-size:18px;
+font-weight:900;
+padding:4px 10px;
+border-radius:10px;
+}
+
+.badge-red{
+background:rgba(255,77,77,0.1);
+color:red;
+
+}
+
+.badge-gold{
+background:rgba(192,156,36,0.1);
+color:var(--yellow);
+}
+
+.card-split{
+display:flex;
+align-items:flex-start;
+gap:15px;
+}
+
+.left-part,.right-part{
+flex:1;
+}
+
+.text-sm{
+font-size:12px;
+color:#aaa;
+display:block;
+margin-bottom:5px;
+}
+
+.text-main{
+font-size:19px;
+font-weight:700;
+line-height:1.4;
+margin: 10px;
+}
+
+.left-part .text-main{
+color:#cbd5e1;
+}
+
+.right-part .text-main{
+color:#ffffff;
+}
+
+.icon-vs{
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+width:35px;
+height:35px;
+background:var(--yellow);
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:13px;
+font-weight:900;
+color:#000;
+border:5px solid var(--green);
+}
+
+.footer-btn{
+margin-top:40px;
+background:linear-gradient(90deg,#c09c24,#e0ae0a);
+color:#000;
+text-align:center;
+padding:20px;
+border-radius:25px;
+font-weight:900;
+text-decoration:none;
+display:block;
+transition:0.3s;
+}
+/* Mobile Optimization - same design, responsive */
+@media (max-width: 480px) {
+  .bento-wrapper {
+    max-width: 100%; 
+    padding: 25px 15px; /* thoda kam padding */
+  }
+
+  .main-tit {
+    font-size: 28px; /* slightly smaller but same look */
+    line-height: 1.1;
+    margin-bottom: 30px;
+  }
+
+  .grid-stack {
+    gap: 15px;
+  }
+
+  .comparison-card {
+    padding: 20px;
+  }
+
+  .card-split {
+    flex-direction: row; /* important: horizontal layout same as PC */
+    gap: 10px;
+  }
+
+  .left-part, .right-part {
+    flex: 1; /* equal width for left and right */
+  }
+
+  .text-main {
+    font-size: 16px; /* adjust text size for small screens */
+  }
+
+  .icon-vs {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    border-width: 4px;
+  }
+
+  .footer-btn {
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 20px;
+  }
+
+  .badge {
+    font-size: 16px;
+    padding: 3px 8px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-6 */
+  .testimonials-hero {
+            max-width: 450px;
+            width: 100%;
+            background: var(--green);
+            box-shadow: 
+                0 25px 50px -12px rgba(86, 100, 51, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+        }
+
+        .hero-head {
+            background: #1f2a16;
+            padding: 35px 30px;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero-stats {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.2);
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stats-icon {
+            font-size: 20px;
+        }
+
+        .stats-number {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .hero-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .testimonials-grid {
+            padding: 35px 30px 30px;
+        }
+
+        .testimonial-slide {
+            position: relative;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px 25px;
+            margin-bottom: 25px;
+            border: 2px solid #f1f5f9;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .testimonial-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--yellow), var(--light-green), var(--yellow));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .testimonial-slide:hover {
+            border-color: var(--yellow);
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px -12px rgba(192, 156, 36, 0.3);
+        }
+
+        .testimonial-slide:hover::before {
+            transform: scaleX(1);
+        }
+
+        .customer-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .customer-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--green), var(--light-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 24px;
+            font-weight: 600;
+            margin-right: 16px;
+            box-shadow: 0 8px 24px rgba(86,100,51,0.3);
+            flex-shrink: 0;
+        }
+
+        .customer-info h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #111827;
+            margin: 0 0 -3px 0;
+        }
+
+        .customer-location {
+            font-size: 18px;
+            color: black;
+            font-weight: 500;
+        }
+
+        .stars-rating {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 40px;
+        }
+
+        .star {
+            color: var(--yellow);
+            font-size: 16px;
+        }
+
+        .testimonial-quote {
+            position: relative;
+            color: black;
+            font-size: 17px;
+            line-height: 1.2;
+            font-weight: 400;
+            margin-top: -20px;
+            margin-bottom: -10px;
+            padding-left: 20px;
+        }
+
+        .testimonial-quote::before {
+            content: '“';
+            position: absolute;
+            left: -5px;
+            top: -4px;
+            font-size: 48px;
+            color: var(--green);
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .result-badge {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, var(--green), var(--light-green));
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(86,100,51,0.4);
+        }
+
+        .action-bar {
+            padding: 25px 30px;
+            margin-top: -50px;
+            border-top: 1px solid rgba(86,100,51,0.1);
+            text-align: center;
+        }
+
+        .action-btn {
+            width: 100%;
+            background: var(--yellow);
+            color: var(--white);
+            border: none;
+            padding: 18px 28px;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 10px 25px rgba(86,100,51,0.3);
+        }
+
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(86,100,51,0.4);
+        }
+@media (max-width: 480px) {
+  .testimonials-hero {
+    max-width: 100%; /* Full width on mobile */
+   
+    box-shadow: 0 20px 40px rgba(86,100,51,0.3), 0 0 0 1px rgba(255,255,255,0.2);
+  }
+
+  .hero-head {
+    padding: 25px 20px;
+  }
+
+  .hero-stats {
+    flex-wrap: wrap; /* Ensure stats don't overflow */
+    gap: 8px;
+    padding: 8px 16px;
+  }
+
+  .stats-icon {
+    font-size: 16px;
+  }
+
+  .stats-number {
+    font-size: 20px;
+  }
+
+  .hero-title {
+    font-size: 20px;
+  }
+
+  .testimonials-grid {
+    padding: 25px 20px 20px;
+  }
+
+  .testimonial-slide {
+    padding: 20px 15px;
+    margin-bottom: 20px;
+    border-radius: 16px;
+  }
+
+  .customer-avatar {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    margin-right: 12px;
+  }
+
+  .customer-info h4 {
+    font-size: 18px;
+  }
+
+  .customer-location {
+    font-size: 16px;
+  }
+
+  .stars-rating .star {
+    font-size: 14px;
+  }
+
+  .testimonial-quote {
+    font-size: 16px;
+    padding-left: 16px;
+    margin-top: -15px;
+    margin-bottom: -8px;
+  }
+
+  .testimonial-quote::before {
+    font-size: 36px;
+    left: -4px;
+    top: -3px;
+  }
+
+  .result-badge {
+    padding: 6px 12px;
+    font-size: 14px;
+    top: 15px;
+    right: 15px;
+  }
+
+  .action-bar {
+    padding: 20px 15px;
+    margin-top: -40px;
+  }
+
+  .action-btn {
+    padding: 14px 20px;
+    font-size: 14px;
+    border-radius: 14px;
+  }
+
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-7 */
+.portal-container{
+width:100%;
+max-width:450px;
+margin:auto;
+background:var(--white);
+padding-bottom:40px;
+overflow:hidden;
+box-shadow:0 40px 100px rgba(0,0,0,0.1);
+position:relative;
+}
+
+.header{
+padding:40px 30px 10px;
+text-align:center;
+}
+
+.header p{
+font-size:30px;
+color:var(--yellow);
+margin:0;
+font-weight:800;
+line-height:1.2;
+}
+
+.process-wrapper{
+position:relative;
+padding:20px;
+}
+
+
+
+.portal-item{
+display:flex;
+align-items:center;
+margin-bottom:20px;
+position:relative;
+z-index:2;
+opacity:0;
+transform:translateY(30px);
+animation:portalIn .8s forwards ease-out;
+}
+
+@keyframes portalIn{
+to{opacity:1;transform:translateY(0);}
+}
+
+.portal-item:nth-child(1){animation-delay:.2s;}
+.portal-item:nth-child(2){animation-delay:.4s;}
+.portal-item:nth-child(3){animation-delay:.6s;}
+.portal-item:nth-child(4){animation-delay:.8s;}
+.portal-item:nth-child(5){animation-delay:1s;}
+
+.portal-item:nth-child(odd){flex-direction:row;}
+.portal-item:nth-child(even){flex-direction:row-reverse;}
+
+.portal-img-wrapper{
+width:120px;
+height:120px;
+position:relative;
+flex-shrink:0;
+}
+
+.portal-img{
+width:100%;
+height:100%;
+border-radius:50%;
+border:4px solid #fff;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+overflow:hidden;
+position:relative;
+z-index:3;
+transition:.5s;
+}
+
+.portal-img img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.5s;
+}
+
+.ripple{
+position:absolute;
+top:50%;
+left:50%;
+width:100%;
+height:100%;
+background:var(--yellow);
+border-radius:50%;
+transform:translate(-50%,-50%) scale(.8);
+opacity:0;
+z-index:2;
+transition:.5s;
+}
+
+.portal-item:hover .ripple{
+transform:translate(-50%,-50%) scale(1.3);
+opacity:.2;
+}
+
+.portal-item:hover .portal-img{
+transform:scale(1.1);
+border-color:var(--yellow);
+}
+
+.portal-item:hover .portal-img img{
+filter:grayscale(0%);
+}
+
+.portal-content{
+padding:0 20px;
+width:100%;
+}
+
+.portal-item:nth-child(odd) .portal-content{text-align:left;}
+.portal-item:nth-child(even) .portal-content{text-align:right;}
+
+.portal-content h4{
+margin-bottom:-5px;
+color:var(--yellow);
+font-size:20px;
+letter-spacing:2px;
+font-weight:800;
+}
+
+.portal-content p{
+margin:5px 0 0;
+font-size:18px;
+font-weight:600;
+color:var(--green);
+line-height:1.2;
+}
+
+.footer-cta{
+background:var(--green);
+margin:-10px 20px;
+padding:30px;
+border-radius:30px;
+color:white;
+text-align:center;
+font-size:15px;
+font-size: 16px;
+}
+
+.step-count{
+position:absolute;
+font-size:60px;
+font-weight:900;
+color:rgba(241, 229, 229, 0.836);
+top:-20px;
+z-index:1;
+}
+
+.portal-item:nth-child(odd) .step-count{right:20px;}
+.portal-item:nth-child(even) .step-count{left:20px;}
+/* Mobile Optimization for Portal Section - layout same as PC */
+@media (max-width: 480px) {
+  .portal-container {
+    max-width: 100%; /* scale down container for mobile */
+    padding-bottom: 30px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.1);
+  }
+
+  .header {
+    padding: 30px 20px 10px;
+  }
+
+  .header p {
+    font-size: 24px; /* scale down heading */
+  }
+
+  .process-wrapper {
+    padding: 15px;
+  }
+
+  .portal-item {
+    margin-bottom: 15px;
+    transform: translateY(20px);
+  }
+
+  .portal-img-wrapper {
+    width: 90px;  /* smaller image */
+    height: 90px;
+  }
+
+  .portal-img {
+    border-width: 3px;
+  }
+
+  .portal-content {
+    padding: 0 10px;
+  }
+
+  .portal-content h4 {
+    font-size: 18px;
+  }
+
+  .portal-content p {
+    font-size: 16px;
+  }
+
+  .step-count {
+    font-size: 40px; /* scale down step number */
+    top: -15px;
+  }
+
+  .portal-item:nth-child(odd) .step-count {
+    right: 20px; /* maintain same position */
+  }
+  .portal-item:nth-child(even) .step-count {
+    left: 20px; /* maintain same position */
+  }
+
+  .footer-cta {
+    margin: -5px 15px;
+    padding: 25px;
+    font-size: 15px;
+    border-radius: 25px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-8 */
+ .usage-container {
+            max-width: 450px;
+            width: 100%;
+            background: var(--green);
+            padding: 45px 35px;
+            box-shadow: 0 30px 70px rgba(86,100,51,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .usage-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--yellow), var(--light-green), var(--yellow));
+        }
+
+        .title-section {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 3px solid var(--yellow);
+        }
+
+        .main-title {
+            font-size: 32px;
+            font-weight: 700;
+            color:var(--yellow);
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Dosage Box */
+        .dosage-box {
+            background: linear-gradient(135deg, var(--yellow), var(--light-green));
+            color: var(--green);
+            padding: 30px 25px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 800;
+            margin-top: -10px;
+            margin-bottom: 30px;
+            border: 3px solid var(--green);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dosage-box::before {
+            content: '💊';
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .dosage-box:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(192,156,36,0.4);
+            border-color: var(--yellow);
+        }
+
+        .dosage-box:hover::before {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        /* Water Box */
+        .water-box {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.9);
+            padding: 18px 30px;
+            border-radius: 20px;
+            border-left: 6px solid var(--light-green);
+            margin-bottom: 20px;
+            cursor: pointer;
+            margin-top: -15px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .water-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--green), var(--light-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 26px;
+            margin-right: 25px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .water-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--green);
+            margin: 0;
+            flex: 1;
+        }
+
+        .water-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(187,178,109,0.3);
+            border-left-color: var(--yellow);
+        }
+
+        .water-box:hover .water-icon {
+            transform: scale(1.15) rotate(360deg);
+            box-shadow: 0 15px 35px rgba(86,100,51,0.5);
+        }
+
+        /* Regular Use Box */
+        .regular-box {
+            background: var(--yellow);
+            color: var(--white);
+            padding: 18px 30px;
+            border-radius: 20px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 20px;
+            border: 3px solid var(--green);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .regular-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s;
+            opacity: 0;
+        }
+
+        .regular-box:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 25px 60px rgba(192,156,36,0.4);
+            border-color: var(--light-green);
+        }
+
+        .regular-box:hover::before {
+            opacity: 1;
+            animation: shine 0.6s ease-in-out;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        /* Doctor Box */
+        .doctor-box {
+            background: rgba(255,255,255,0.95);
+            border: 3px dashed var(--light-green);
+            padding: 15px 25px;
+            border-radius: 20px;
+            text-align: center;
+            color: var(--green);
+            font-weight: 700;
+            font-size: 17px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .doctor-icon {
+            font-size: 32px;
+            color: var(--yellow);
+            display: block;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .doctor-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 50px rgba(187,178,109,0.3);
+            border-style: solid;
+            border-color: var(--yellow);
+        }
+
+        .doctor-box:hover .doctor-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+       /* Mobile Optimization: Usage Section */
+@media (max-width: 480px) {
+  .usage-container {
+    max-width: 95%;
+    padding: 35px 20px;
+    box-shadow: 0 20px 50px rgba(86,100,51,0.3);
+  }
+
+  .title-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom-width: 2px;
+  }
+
+  .main-title {
+    font-size: 26px;
+  }
+
+  /* Dosage Box */
+  .dosage-box {
+    padding: 25px 20px;
+    font-size: 20px;
+    border-width: 2px;
+  }
+
+  .dosage-box::before {
+    font-size: 24px;
+    top: 12px;
+    right: 15px;
+  }
+
+  /* Water Box */
+  .water-box {
+    padding: 15px 20px;
+  }
+
+  .water-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+    margin-right: 15px;
+  }
+
+  .water-text {
+    font-size: 18px;
+  }
+
+  /* Regular Use Box */
+  .regular-box {
+    padding: 15px 20px;
+    font-size: 16px;
+    border-width: 2px;
+  }
+
+  /* Doctor Box */
+  .doctor-box {
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+
+  .doctor-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-9 */
+.ultimate-container{
+width:100%;
+max-width:450px;
+margin:auto;
+padding:30px 15px;
+position:relative;
+overflow:hidden;
+}
+
+.main-visual{
+position:relative;
+height:550px;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top: -70px;
+}
+
+/* Center Node */
+
+.center-node{
+width:120px;
+height:120px;
+background:var(--yellow);
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+text-align:center;
+font-size:18px;
+font-weight:bold;
+box-shadow:0 0 30px rgba(0,0,0,0.2);
+z-index:10;
+border:5px solid white;
+padding:10px;
+}
+
+/* Benefit Nodes */
+
+.benefit-node{
+position:absolute;
+width:160px;
+background:var(--white);
+padding:15px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+border-left:4px solid var(--yellow);
+transition:0.3s;
+z-index:5;
+}
+
+.benefit-node:hover{
+transform:scale(1.05);
+box-shadow:0 15px 35px rgba(0,0,0,0.12);
+}
+
+.node-icon{
+width:45px;
+height:45px;
+margin-bottom:8px;
+display:block;
+}
+
+.benefit-node p{
+margin:0;
+font-size:16px;
+color:black;
+font-weight:600;
+line-height:1.3;
+}
+
+/* Position Nodes */
+
+.top-left{top:80px;left:10px;}
+.top-right{top:80px;right:10px;}
+.bottom-left{bottom:80px;left:10px;}
+.bottom-right{bottom:70px;right:10px;}
+
+/* Connection Lines */
+
+.connection-svg{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:1;
+pointer-events:none;
+}
+
+.info-footer{
+background:var(--number-bg);
+padding:15px;
+border-radius:20px;
+font-size:17px;
+color:var(--green);
+text-align:center;
+margin-top:-40px;
+position:relative;
+z-index:11;
+font-weight:500;
+}
+
+/* Floating Animation */
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
+}
+
+.benefit-node{animation:float 4s ease-in-out infinite;}
+.top-right{animation-delay:1s;}
+.bottom-left{animation-delay:2s;}
+.bottom-right{animation-delay:3s;}
+
+/* Mobile Optimization for Ultimate Section - maintain PC layout */
+@media (max-width: 480px) {
+  .ultimate-container {
+    max-width: 100%;
+    padding: 20px 10px;
+  }
+
+  .main-visual {
+    height:450px; /* slightly smaller for mobile */
+    margin-top: -50px;
+  }
+
+  /* Center Node Scaling */
+  .center-node {
+    width:100px;
+    height:100px;
+    font-size:16px;
+    padding:8px;
+    border-width:4px;
+  }
+
+  /* Benefit Nodes Scaling */
+  .benefit-node {
+    width:120px;
+    padding:10px;
+    font-size:14px;
+  }
+  .benefit-node p {
+  
+    font-size:14px;
+  }
+
+  .node-icon {
+    width:35px;
+    height:35px;
+    margin-bottom:5px;
+  }
+
+  /* Maintain positions but slightly inward for mobile */
+  .top-left { top:60px; left:5px; }
+  .top-right { top:60px; right:5px; }
+  .bottom-left { bottom:60px; left:5px; }
+  .bottom-right { bottom:50px; right:5px; }
+
+  /* Connection Lines scale automatically with container */
+  .connection-svg {
+    width:100%;
+    height:100%;
+  }
+
+  .info-footer {
+    font-size:15px;
+    padding:12px;
+    margin-top:-30px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-10 */
+
+.offer-card {
+    max-width: 450px;
+    width: 100%;
+    padding: 35px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    color: var(--white);
+    transition: transform 0.3s ease;
+}
+
+/* Header Badge Animation */
+.badg {
+    display: inline-block;
+    background: var(--yellow);
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 6px 15px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.badg:hover {
+    transform: scale(1.1) rotate(-3deg);
+    box-shadow: 0 5px 15px rgba(192, 156, 36, 0.4);
+}
+
+/* Image Portal with Enhanced Hover */
+.image-portal-wrapper {
+    width: 100%;
+    height: 280px;
+    position: relative;
+    border-radius: 40px;
+    padding: 2px;
+    background: rgba(192, 156, 36, 0.2);
+    margin: 25px 0 30px;
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+.product-portal {
+    width: 100%;
+    height: 100%;
+    background: #070b14;
+    border-radius: 38px;
+    position: relative;
+    overflow: hidden;
+}
+.product-portal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+.image-portal-wrapper:hover {
+    background: var(--yellow);
+    box-shadow: 0 0 30px rgba(192, 156, 36, 0.3);
+}
+.image-portal-wrapper:hover img {
+    transform: scale(1.1);
+}
+
+/* Offer Grid Items with Hover */
+.offer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+.offer-item {
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 18px 12px;
+    border-radius: 25px;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+}
+.offer-item:hover {
+   
+    border-color: var(--yellow);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.offer-item h4 {
+    margin-bottom:-7px;
+    margin-top: -8px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--yellow);
+    transition: 0.3s;
+}
+/* Pulsing Stock Ticker */
+.stock-ticker {
+    background: rgba(255, 77, 77, 0.1);
+    border: 1px dashed rgb(255, 136, 136);
+    padding: 12px;
+    border-radius: 20px;
+    color: rgb(255, 136, 136);
+    font-size: 12px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 25px;
+    animation: pulse 2s infinite;
+    cursor: pointer;
+}
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; transform: scale(0.98); }
+    100% { opacity: 1; }
+}
+.stock-ticker:hover {
+    background: rgb(255, 136, 136);
+    color: #fff;
+    border-style: solid;
+}
+
+/* Powerful Button Interaction */
+.cta-button {
+    background:var(--yellow);
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    border-radius: 25px;
+    font-size: 17px;
+    font-weight: 900;
+    box-shadow: 0 15px 35px rgba(192, 156, 35, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-transform: uppercase;
+}
+.cta-button:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(192, 156, 35, 0.5);
+    background: var(--light-green); /* Hover पर सफ़ेद होकर और प्रीमियम लगेगा */
+}
+/* Mobile Optimization: Offer Section - preserve PC layout */
+@media (max-width: 480px) {
+  .offer-card {
+    max-width: 95%;
+    padding: 25px;
+  }
+
+  .badg {
+    font-size: 24px;
+    padding: 5px 12px;
+  }
+
+  /* Image Portal Scaling */
+  .image-portal-wrapper {
+    height: 220px;
+    border-radius: 30px;
+    margin: 20px 0 25px;
+  }
+
+  .product-portal {
+    border-radius: 28px;
+  }
+
+  .product-portal img {
+    transition: transform 0.5s ease;
+  }
+
+  /* Offer Grid Items */
+  .offer-grid {
+    gap: 8px;
+  }
+
+  .offer-item {
+    padding: 14px 10px;
+    border-radius: 20px;
+  }
+
+  .offer-item h4 {
+    font-size: 18px;
+  }
+
+  /* Stock Ticker */
+  .stock-ticker {
+    font-size: 10px;
+    padding: 10px;
+    border-radius: 18px;
+  }
+
+  /* CTA Button */
+  .cta-button {
+    padding: 15px;
+    font-size: 15px;
+    border-radius: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-11 */
+/* Form Container */
+.form-box{
+    max-width:450px;
+    width:100%;
+    background: var(--green);
+    padding:25px 30px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.4);
+    color:var(--black);
+}
+
+/* Heading */
+.form-box h2{
+    font-size:27px;
+    font-weight:700;
+    margin-bottom:20px;
+    color:var(--yellow);
+    line-height: 1.2;
+    margin-top: 2px;
+}
+
+/* Input container */
+.input-group{
+    margin-bottom:18px;
+}
+
+/* Label */
+label{
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:6px;
+    display:block;
+    color:var(--white);
+}
+
+/* Input fields */
+input{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid rgba(0,0,0,0.1);
+    outline:none;
+    font-size:16px;
+    background:var(--white);
+    color:var(--black);
+}
+
+
+/* CTA Button */
+.btn-cta{
+    width:100%;
+    padding:13px;
+    font-size:18px;
+    font-weight:600;
+    background:var(--yellow);
+    color:var(--white);
+    border:none;
+    border-radius:12px;
+    margin-top:8px;
+    cursor:pointer;
+    animation: blink 1.2s infinite;
+    position:relative;
+    overflow:hidden;
+}
+
+
+.btn-cta::after{
+content:"";
+position:absolute;
+width:0;
+height:0;
+background:rgba(255,255,255,0.4);
+border-radius:50%;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+transition:0.6s;
+}
+
+.btn-cta:hover::after{
+width:400px;
+height:300px;
+}
+
+
+
+/* MOBILE OPTIMIZATION */
+@media (max-width:480px){
+
+.form-box{
+max-width:100%;
+padding:20px 18px;
+border-radius:18px;
+}
+
+.form-box h2{
+font-size:22px;
+margin-bottom:15px;
+}
+
+.input-group{
+margin-bottom:14px;
+}
+
+label{
+font-size:14px;
+}
+
+input{
+padding:10px;
+font-size:14px;
+border-radius:8px;
+}
+
+.btn-cta{
+padding:12px;
+font-size:16px;
+border-radius:10px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-12 */
+.split-container{
+max-width:450px;
+width: 100%;
+background:var(--white);
+padding:0;
+margin:auto;
+overflow:hidden;
+display:flex;
+flex-direction:column;
+}
+
+/* HEADER */
+
+.scan-header{
+padding:40px 30px;
+background:var(--green);
+border-bottom:1px solid var(--yellow);
+}
+
+.scan-header h2{
+font-size:32px;
+color:var(--yellow);
+margin:-15px;
+text-align: center;
+}
+
+
+
+/* ROW */
+
+.mechanism-row{
+display:flex;
+border-bottom:1px solid var(--yellow);
+height:120px;
+transition:all 0.4s ease;
+position:relative;
+}
+
+.row-left{
+width:80px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+font-weight:200;
+color:var(--green);
+border-right:1px solid var(--yellow);
+}
+
+.row-right{
+flex:1;
+padding:20px 30px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.row-right h4{
+margin:0;
+font-size:20px;
+font-weight:600;
+color:var(--green);
+}
+
+.row-right p{
+margin:5px 0 0 0;
+font-size:18px;
+color:black;
+line-height:1.2;
+}
+
+/* HOVER */
+
+
+.mechanism-row:hover .row-left{
+color:var(--yellow);
+background:rgba(192,156,36,0.1);
+}
+
+.mechanism-row:hover .row-right h4{
+color:var(--yellow);
+}
+
+/* ICON */
+
+.img-overlay{
+width:60px;
+height:60px;
+opacity:0.2;
+filter:grayscale(1);
+position:absolute;
+right:20px;
+}
+
+.mechanism-row:hover .img-overlay{
+opacity:1;
+filter:grayscale(0);
+}
+
+/* Mobile Optimization: Split/Scan Section - preserve PC layout */
+@media (max-width: 480px) {
+  .split-container {
+    max-width: 100%;
+  }
+
+  /* Header */
+  .scan-header {
+    padding: 30px 20px;
+  }
+
+  .scan-header h2 {
+    font-size: 26px;
+    margin: -10px;
+  }
+
+  /* Mechanism Rows */
+  .mechanism-row {
+    height: 100px; /* slightly smaller */
+  }
+
+  .row-left {
+    width: 60px;
+    font-size: 24px;
+    border-right-width: 1px;
+  }
+
+  .row-right {
+    padding: 15px 20px;
+  }
+
+  .row-right h4 {
+    font-size: 18px;
+  }
+
+  .row-right p {
+    font-size: 16px;
+  }
+
+  /* Icon Overlay */
+  .img-overlay {
+    width: 50px;
+    height: 50px;
+    right: 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== section-13 ===== */
+.faq-section{
+max-width:450px;
+width: 100%;
+background-color: var(--green);
+margin:auto;
+}
+
+.faq-title{
+text-align:center;
+font-size:32px;
+font-weight:800;
+margin-bottom:20px;
+color:var(--yellow);
+}
+
+/* FAQ Card */
+
+.faq-item{
+background:#fff;
+border-radius:14px;
+padding:5px 25px;
+margin-bottom:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+cursor:pointer;
+transition:0.3s;
+margin: 10px 20px;
+}
+
+.faq-item:hover{
+transform:translateY(-2px);
+}
+
+/* Question */
+
+.faq-question{
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:18px;
+font-weight:600;
+color:var(--green);
+}
+
+/* Plus Icon */
+
+.faq-icon{
+font-size:22px;
+font-weight:700;
+color:var(--green);
+}
+
+/* Answer */
+
+.faq-answer{
+max-height:0;
+overflow:hidden;
+transition:0.4s;
+font-size:16px;
+color:#555;
+line-height:1.6;
+margin-top:10px;
+}
+
+/* Active */
+
+.faq-item.active .faq-answer{
+max-height:120px;
+}
+
+.faq-item.active .faq-icon{
+transform:rotate(45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== DISCLAIMER ===== */
+.disclaim {
+  max-width: 450px;
+  width: 100%;
+  background-color: var(--green);
+  margin-top: 20px;
+  padding: 5px;
+  font-size: 10px;
+}
+.disclaim * {
+  margin: 0;
+  padding: 5px;
+  color: var(--white);
+}
+
+/* MEDIA */
+@media(max-width:480px){
+   .btn {
+    margin-left: 100px !important;
+    width: 40%;
+    font-size: 18px;
+   }
+}
+    </style>
+</head>
+<body>
+
+
+     <header>
+  <nav>
+    <div class="logo">Mirgi Mukti</div>
+    <a class="buttonn" href="#orderForm">Buy Now 🛒</a>
+  </nav>
+</header>
+
+
+<section class="sec">
+  <img src="image/banner1.avif" class="images" alt="">
+</section>
+
+
+
+
+
+
+
+
+<!-- section-1 -->
+<section class="sec">
+    <div class="fluid-split-container">
+
+<div class="leaf-bg" style="top:10%;right:5%;">🌿</div>
+<div class="leaf-bg" style="top:40%;left:2%;animation-delay:2s;">🍃</div>
+
+<div class="header-section">
+
+<h2>Pain Detailing</h2>
+</div>
+
+<div class="split-row row-1">
+<div class="split-image">
+<img src="image/sect-1-1stimg.avif">
+</div>
+<div class="split-content">
+<div class="phase-num">01</div>
+<h3><span class="pulse-dot"></span>अचानक बेहोशी</h3>
+<p>कई मरीज अचानक बेहोश होकर गिर जाते हैं और उन्हें चोट लगने का खतरा रहता है।</p>
+</div>
+</div>
+
+<div class="split-row row-2">
+<div class="split-image">
+<img src="image/sect-1-2ndimg.avif">
+</div>
+<div class="split-content">
+<div class="phase-num">02</div>
+<h3><span class="pulse-dot"></span>बार-बार दौरे</h3>
+<p>मिर्गी के मरीजों को बार-बार दौरे पड़ सकते हैं जिससे शरीर का नियंत्रण खो जाता है।</p>
+</div>
+</div>
+
+<div class="split-row row-3">
+<div class="split-image">
+<img src="image/sect-1-3rdimg.avif">
+</div>
+<div class="split-content">
+<div class="phase-num">03</div>
+<h3><span class="pulse-dot"></span>हर समय डर</h3>
+<p>अगला दौरा कब आएगा इसका डर मरीज को मानसिक तनाव में रखता है।</p>
+</div>
+</div>
+
+<div class="split-row row-4">
+<div class="split-image">
+<img src="image/sect-1-4thimg.avif">
+</div>
+<div class="split-content">
+<div class="phase-num">04</div>
+<h3><span class="pulse-dot"></span>लंबे समय की समस्या</h3>
+<p>अगर समय पर ध्यान न दिया जाए तो यह समस्या गंभीर चोट, याददाश्त की कमजोरी और आत्मविश्वास की कमी का कारण बन सकती है।</p>
+</div>
+</div>
+
+<div class="footer-tag">
+<p style="margin:0;font-weight:300;">इसलिए मिर्गी को हल्के में लेना बिल्कुल सही नहीं है।</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-2 -->
+<section class="sec">
+    
+<div class="gaath-container">
+
+<div class="circle-bg"></div>
+
+<span class="brand-name">Ayurvedic Support</span>
+
+<div class="product-visual">
+<div class="img-holder">
+<img src="image/product.avif" alt="Mirgi Mukti Capsules">
+</div>
+</div>
+
+<div class="content-box">
+
+<h1 class="main-title">Mirgi <span>Mukti</span><br>Capsules</h1>
+
+<div class="info-strip">
+<p>
+इसी समस्या को ध्यान में रखते हुए आयुर्वेद विशेषज्ञों ने तैयार किया है —  
+<b style="color: var(--yellow);">Mirgi Mukti Capsules</b>।  
+यह एक शक्तिशाली <b style="color: var(--yellow)">100% Ayurvedic फॉर्मूला</b> है जो दिमाग की नसों को मजबूत बनाकर मिर्गी के दौरे को धीरे-धीरे नियंत्रित करने में मदद करता है।  
+हजारों लोगों ने इस फॉर्मूले का उपयोग करके अपने जीवन में राहत महसूस की है।
+</p>
+</div>
+
+<div class="flex-footer">
+<a href="#orderForm" class="order-btn">BUY NOW</a>
+<div class="nature-tag">100% AYURVEDIC</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-3 -->
+<section class="sec">
+    <div class="app-container">
+
+<div class="hero-header">
+<h1>How It Works</h1>
+</div>
+
+<div class="section-wrapper">
+
+<div class="morph-card card-1">
+<div class="image-reveal">
+<img src="image/sect-3-1stimg.avif">
+</div>
+<div class="info-overlay">
+<h3><span>Brain Nerve Strengthening —</span> दिमाग की कमजोर नसों को मजबूत बनाने में मदद</h3>
+</div>
+</div>
+
+<div class="morph-card card-2">
+<div class="image-reveal">
+<img src="image/sect-3-2ndimg.avif">
+</div>
+<div class="info-overlay">
+<h3><span>Nervous System Balance —</span> Nervous system को संतुलित कर अचानक आने वाले दौरे कम करने में मदद</h3>
+</div>
+</div>
+
+<div class="morph-card card-3">
+<div class="image-reveal">
+<img src="image/sect-3-3rdimg.avif">
+</div>
+<div class="info-overlay">
+<h3><span>Long Term Support — </span>नियमित उपयोग से मिर्गी के बार-बार आने वाले झटकों को नियंत्रित करने में मदद</h3>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-4 -->
+<section class="sec">
+   <div class="doctor-section">
+        <!-- Doctor Header -->
+        <div class="doctor-header">
+            <div class="doctor-profile">
+              <img src="image/doctor.avif" alt="">
+               
+            </div>
+            <h2 class="doctor-title">डॉ. आयुर्वेदाचार्य</h2>
+            <p class="doctor-qual">BAMS, MD (Ayurveda) | 20+ वर्ष अनुभव</p>
+        </div>
+
+        <div class="doctor-body" style="padding: 0 30px 30px;">
+            <!-- Medical Badge -->
+            <div class="medical-badge">
+                <i class="fas fa-stethoscope me-2"></i>
+                मिर्गी विशेषज्ञ की सलाह
+            </div>
+
+            <!-- Diagnosis -->
+            <div style="margin-bottom: 30px;">
+                <h4 style="color: var(--yellow); font-size: 22px; font-weight: 700; margin-bottom: 25px; display: flex; align-items: center;">
+                    <i class="fas fa-clipboard-list me-3" style="color: var(--yellow);"></i>
+                    आयुर्वेद के अनुसार मुख्य कारण
+                </h4>
+                
+                <div class="diagnosis-item">
+                    <div class="diag-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="diag-content">
+                        <h5>दिमाग की नसों की कमजोरी</h5>
+                        <p>मस्तिष्क की नसों में कमजोरी के कारण मिर्गी</p>
+                    </div>
+                </div>
+                
+                <div class="diagnosis-item">
+                    <div class="diag-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="diag-content">
+                        <h5>Nervous Imbalance</h5>
+                        <p>तंत्रिका तंत्र में असंतुलन की स्थिति</p>
+                    </div>
+                </div>
+                
+                <div class="diagnosis-item">
+                    <div class="diag-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="diag-content">
+                        <h5>दोषों का असंतुलन</h5>
+                        <p>वात, पित्त, कफ तीनों दोष असंतुलित</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prescription -->
+            <div class="prescription-box">
+                <div class="rx-icon">
+                    <i class="fas fa-capsules"></i>
+                </div>
+                <h3 style="color:var(--yellow); font-size: 24px; font-weight: 800; margin-bottom: 15px;">
+                    मिर्गी मुक्ति कैप्सूल
+                </h3>
+                <p style="color: var(--white); font-size: 17px; font-weight: 700; margin-top: -10px;margin-bottom: -20px;">
+                    <strong>ये आयुर्वेदिक जड़ी-बूटियाँ सभी कारणों को संतुलित करती हैं</strong>
+                </p>
+            </div>
+
+            <!-- Doctor Note -->
+            <div class="doctor-note">
+                <div class="doctor-stamp">
+                    <i class="fas fa-stamp"></i>
+                </div>
+                <p class="doctor-message" style="color: var(--green); font-size: 18px; font-weight: 700; line-height: 1.6; margin: 0;">
+                    कई आयुर्वेद विशेषज्ञ इसे <strong>Supportive Herbal Formula</strong> के रूप में सुझाते हैं
+                </p>
+            </div>
+
+            <!-- CTA -->
+            <button class="consult-btn"  onclick="location.href='#orderForm'">
+                <i class="fas fa-phone me-2"></i>
+                डॉक्टर से परामर्श लें
+            </button>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-5 -->
+<section class="sec">
+    <div class="bento-wrapper">
+<h1 class="main-tit">सामान्य दवाइयाँ vs<br><span>Mirgi Mukti Capsules</span></h1>
+
+<div class="grid-stack">
+
+<div class="comparison-card">
+<div class="card-label">
+<span class="badge badge-red">सामान्य दवा</span>
+<span class="badge badge-gold">Mirgi Mukti</span>
+</div>
+
+<div class="card-split">
+<div class="left-part">
+<span class="text-main">केवल लक्षणों को कंट्रोल करती हैं</span>
+</div>
+
+<div class="right-part" style="text-align:right;">
+<span class="text-main">जड़ कारण पर काम करने में मदद</span>
+</div>
+</div>
+
+<div class="icon-vs">VS</div>
+</div>
+
+
+<div class="comparison-card">
+<div class="card-label">
+<span class="badge badge-red">निर्भरता</span>
+<span class="badge badge-gold">Herbal Support</span>
+</div>
+
+<div class="card-split">
+<div class="left-part">
+<span class="text-main">लंबे समय तक निर्भरता</span>
+</div>
+
+<div class="right-part" style="text-align:right;">
+<span class="text-main">Natural Herbal Support</span>
+</div>
+</div>
+
+<div class="icon-vs">VS</div>
+</div>
+
+
+<div class="comparison-card">
+<div class="card-label">
+<span class="badge badge-red">रिस्क</span>
+<span class="badge badge-gold">Ayurvedic</span>
+</div>
+
+<div class="card-split">
+<div class="left-part">
+<span class="text-main">साइड इफेक्ट का डर</span>
+</div>
+
+<div class="right-part" style="text-align:right;">
+<span class="text-main">आयुर्वेदिक फॉर्मूला</span>
+</div>
+</div>
+
+<div class="icon-vs">VS</div>
+</div>
+
+
+<div class="comparison-card" style="border-bottom:4px solid var(--yellow);">
+<div class="card-label">
+<span class="badge badge-red">राहत</span>
+<span class="badge badge-gold">परिणाम</span>
+</div>
+
+<div class="card-split">
+<div class="left-part">
+<span class="text-main">अस्थायी राहत</span>
+</div>
+
+<div class="right-part" style="text-align:right;">
+<span class="text-main">लंबे समय तक सपोर्ट</span>
+</div>
+</div>
+
+<div class="icon-vs">VS</div>
+</div>
+
+</div>
+
+<a href="#orderForm" class="footer-btn">CHOOSE MIRGI MUKTI</a>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-6 -->
+<section class="sec">
+   <div class="testimonials-hero">
+        <!-- Hero Header -->
+        <div class="hero-head">
+            <div class="hero-stats">
+                <i class="fas fa-users stats-icon"></i>
+                <span class="stats-number">1,00,000+</span>
+                <span>संतुष्ट ग्राहक</span>
+            </div>
+            <h2 class="hero-title">
+                वास्तविक सफलता की कहानियाँ
+            </h2>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="testimonials-grid">
+            <!-- Ramesh -->
+            <div class="testimonial-slide">
+                <div class="result-badge">सफलता</div>
+                <div class="customer-profile">
+                    <div class="customer-avatar">र</div>
+                    <div class="customer-info">
+                        <h4>रमेश</h4>
+                        <div class="customer-location">34 वर्ष, जयपुर
+                        </div>
+                    </div>
+                </div>
+                <div class="stars-rating">
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                </div>
+                <p class="testimonial-quote">
+                    कई सालों से मिर्गी के दौरे आते थे। Mirgi Mukti Capsules लेने के बाद दौरे काफी कम हो गए 
+                    और अब पहले से बेहतर महसूस करता हूँ।
+                </p>
+            </div>
+
+            <!-- Sanjay -->
+            <div class="testimonial-slide">
+                <div class="result-badge">सफलता</div>
+                <div class="customer-profile">
+                    <div class="customer-avatar">स</div>
+                    <div class="customer-info">
+                        <h4>संजय</h4>
+                        <div class="customer-location">29 वर्ष, दिल्ली
+                        </div>
+                    </div>
+                </div>
+                <div class="stars-rating">
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                </div>
+                <p class="testimonial-quote">
+                    अचानक दौरा पड़ने से डर लगता था। Mirgi Mukti Capsules लेने के बाद स्वास्थ्य में 
+                    जबरदस्त सुधार महसूस हुआ।
+                </p>
+            </div>
+
+            <!-- Puja -->
+            <div class="testimonial-slide">
+                <div class="result-badge">सफलता</div>
+                <div class="customer-profile">
+                    <div class="customer-avatar">प</div>
+                    <div class="customer-info">
+                        <h4>पूजा</h4>
+                        <div class="customer-location">26 वर्ष, लखनऊ
+                        </div>
+                    </div>
+                </div>
+                <div class="stars-rating">
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                </div>
+                <p class="testimonial-quote">
+                    हमेशा डर लगा रहता था। Mirgi Mukti Capsules लेने के बाद दिनचर्या सामान्य हो गई 
+                    और आत्मविश्वास बढ़ गया।
+                </p>
+            </div>
+        </div>
+
+        <!-- Action Bar -->
+        <div class="action-bar">
+            <a href="#orderForm" class="action-btn">
+                <i class="fas fa-shopping-cart"></i>
+                अभी ऑर्डर करें
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-7 -->
+<section class="sec">
+    <div class="portal-container">
+
+<div class="header">
+<p>Key Ingredients</p>
+</div>
+
+<div class="process-wrapper">
+
+<div class="portal-item">
+<div class="portal-img-wrapper">
+<div class="ripple"></div>
+<div class="portal-img">
+<img src="image/brahmi.avif">
+</div>
+</div>
+<div class="portal-content">
+<span class="step-count">01</span>
+<h4>ब्राह्मी</h4>
+<p>दिमाग को मजबूत बनाती है</p>
+</div>
+</div>
+
+<div class="portal-item">
+<div class="portal-img-wrapper">
+<div class="ripple"></div>
+<div class="portal-img">
+<img src="image/शंखपुष्पी.avif">
+</div>
+</div>
+<div class="portal-content">
+<span class="step-count">02</span>
+<h4>शंखपुष्पी</h4>
+<p>Nervous system को शांत करने में मदद करती है</p>
+</div>
+</div>
+
+<div class="portal-item">
+<div class="portal-img-wrapper">
+<div class="ripple"></div>
+<div class="portal-img">
+<img src="image/जटामांसी.avif">
+</div>
+</div>
+<div class="portal-content">
+<span class="step-count">03</span>
+<h4>जटामांसी</h4>
+<p>मानसिक तनाव को कम करने में सहायक</p>
+</div>
+</div>
+
+<div class="portal-item">
+<div class="portal-img-wrapper">
+<div class="ripple"></div>
+<div class="portal-img">
+<img src="image/अश्वगंधा.avif">
+</div>
+</div>
+<div class="portal-content">
+<span class="step-count">04</span>
+<h4>अश्वगंधा</h4>
+<p>शरीर की ताकत और ऊर्जा बढ़ाने में मदद</p>
+</div>
+</div>
+
+<div class="portal-item">
+<div class="portal-img-wrapper">
+<div class="ripple"></div>
+<div class="portal-img">
+<img src="image/वचा.avif">
+</div>
+</div>
+<div class="portal-content">
+<span class="step-count">05</span>
+<h4>वचा</h4>
+<p>दिमाग की कार्यक्षमता को सपोर्ट करती है</p>
+</div>
+</div>
+
+</div>
+
+<div class="footer-cta">
+प्राकृतिक आयुर्वेदिक जड़ी-बूटियों का शक्तिशाली संयोजन
+</div>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-8 -->
+<section class="sec">
+   <div class="usage-container">
+        <div class="title-section">
+            <h1 class="main-title">How to Use</h1>
+        </div>
+
+        <!-- Dosage -->
+        <div class="dosage-box">
+            दिन में 2 बार 1-1 कैप्सूल
+        </div>
+
+        <!-- Water -->
+        <div class="water-box">
+            <div class="water-icon">
+                <i class="fas fa-tint"></i>
+            </div>
+            <div class="water-text">
+                गुनगुने पानी के साथ लें
+            </div>
+        </div>
+
+        <!-- Regular Use -->
+        <div class="regular-box">
+            नियमित सेवन करने से बेहतर परिणाम मिलते हैं
+        </div>
+
+        <!-- Doctor -->
+        <div class="doctor-box">
+            <i class="fas fa-user-md doctor-icon"></i>
+            (डॉक्टर की सलाह अनुसार उपयोग करें)
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-9 -->
+<section class="sec">
+    
+<div class="ultimate-container">
+
+<div class="main-visual">
+
+<svg class="connection-svg" viewBox="0 0 400 600">
+<line x1="200" y1="300" x2="90" y2="100" stroke="#c09c24" stroke-width="1" stroke-dasharray="5,5"/>
+<line x1="200" y1="300" x2="310" y2="100" stroke="#c09c24" stroke-width="1" stroke-dasharray="5,5"/>
+<line x1="200" y1="300" x2="90" y2="500" stroke="#c09c24" stroke-width="1" stroke-dasharray="5,5"/>
+<line x1="200" y1="300" x2="310" y2="500" stroke="#c09c24" stroke-width="1" stroke-dasharray="5,5"/>
+</svg>
+
+<div class="center-node">
+Certified & Trusted
+</div>
+
+<div class="benefit-node top-left">
+<img src="image/ayurvedic.avif" class="node-icon">
+<p>100% Ayurvedic Formula</p>
+</div>
+
+<div class="benefit-node top-right">
+<img src="image/gmp.avif" class="node-icon">
+<p>GMP Certified Manufacturing</p>
+</div>
+
+<div class="benefit-node bottom-left">
+<img src="image/qual-test.avif" class="node-icon">
+<p>Quality Tested Product</p>
+</div>
+
+<div class="benefit-node bottom-right">
+<img src="image/happy-cust.avif" class="node-icon">
+<p>Thousands of Happy Customers</p>
+</div>
+
+</div>
+
+<div class="info-footer">
+विश्वसनीय आयुर्वेदिक फॉर्मूला जो गुणवत्ता और भरोसे के साथ तैयार किया गया है।
+</div>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-10 -->
+<section class="sec">
+    <div class="offer-card">
+    <div class="offer-header" style="text-align:center;">
+        <span class="badg">Limited Offer</span>
+      </div> 
+
+    <div class="image-portal-wrapper">
+        <div class="product-portal">
+            <img src="image/product.avif" alt="Mirgi Mukti">
+        </div>
+    </div>
+
+    <div class="offer-grid">
+        <div class="offer-item">
+            <h4>विशेष डिस्काउंट</h4>
+            <p style="font-size:18px; color:black; margin-bottom:-5px; margin-top: 5px;">सिर्फ आज की बचत</p>
+        </div>
+        <div class="offer-item">
+            <h4>डॉक्टर गाइडेंस</h4>
+            <p style="font-size:18px; color:black; margin-bottom:-5px; margin-top: 5px;">फ्री कंसल्टेशन</p>
+        </div>
+        <div class="offer-item" style="grid-column: span 2;">
+            <h4>सहित समय के लिए ऑफर</h4>
+            <p style="font-size:18px; color:black; margin-bottom:-5px; margin-top: 5px;">यह अवसर दोबारा नहीं मिलेगा</p>
+        </div>
+    </div>
+
+    <div class="stock-ticker">
+        🔥 STOCK LIMITED - अभी आर्डर करें!
+    </div>
+
+    <a href="#orderForm" class="cta-button">Grab This Offer</a>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-11 -->
+
+<section class="sec">
+<div class="form-box">
+    <h2>मिर्गी के बार-बार आने वाले दौरों से राहत पाने के लिए
+ अभी नीचे दिए गए बटन पर क्लिक करें
+
+</h2>
+
+    <form id="orderForm">
+        <div class="input-group">
+            <label>नाम:</label>
+            <input type="text" name="name" placeholder="अपना नाम दर्ज करें" required>
+        </div>
+
+        <div class="input-group">
+            <label>मोबाइल नंबर (10 अंक):</label>
+            <input type="tel" name="mobile" maxlength="10" pattern="[0-9]{10}" placeholder="अपना मोबाइल नंबर दर्ज करें" required>
+        </div>
+        <button class="btn-cta"  type="submit">Special Offer – 15% OFF (Today Only)
+</button>
+    </form>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-12 -->
+<section class="sec">
+    
+<div class="split-container">
+
+<div class="scan-header">
+<h2>Guarantee Section</h2>
+</div>
+
+<div class="mechanism-row">
+
+<div class="row-left">01</div>
+
+<div class="row-right">
+<h4>उत्पाद गुणवत्ता</h4>
+<p>हम अपने उत्पाद की गुणवत्ता पर पूरा भरोसा रखते हैं।</p>
+</div>
+
+<img src="image/quality.avif" class="img-overlay">
+
+</div>
+
+<div class="mechanism-row">
+
+<div class="row-left">02</div>
+
+<div class="row-right">
+<h4>सुरक्षित पैकिंग</h4>
+<p>हर ऑर्डर को सुरक्षित और साफ पैकिंग में भेजा जाता है।</p>
+</div>
+
+<img src="image/safe.avif" class="img-overlay">
+
+</div>
+
+<div class="mechanism-row">
+
+<div class="row-left">03</div>
+
+<div class="row-right">
+<h4>ग्राहक सहायता</h4>
+<p>जरूरत पड़ने पर हमारी टीम आपकी पूरी मदद करती है।</p>
+</div>
+
+<img src="image/customer support.avif" class="img-overlay">
+
+</div>
+
+<div class="mechanism-row">
+
+<div class="row-left">04</div>
+
+<div class="row-right">
+<h4>विश्वसनीय सेवा</h4>
+<p>हजारों ग्राहकों द्वारा भरोसे के साथ उपयोग किया गया।</p>
+</div>
+
+<img src="image/reliable.avif" class="img-overlay">
+
+</div>
+
+
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- section-13 -->
+  <section class="faq-section">
+
+<h2 class="faq-title">FAQs</h2>
+
+<div class="faq-item">
+<div class="faq-question">
+क्या यह पूरी तरह आयुर्वेदिक है?
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+हाँ, यह 100% आयुर्वेदिक फॉर्मूला है।
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">
+इसका असर कब दिखता है?
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+इसका असर 7–15 दिनों में दिखना शुरू हो सकता है।
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">
+क्या इसे लंबे समय तक लिया जा सकता है?
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+आयुर्वेदिक होने के कारण इसे डॉक्टर की सलाह अनुसार लिया जा सकता है।
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">
+क्या यह सुरक्षित है?
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+यह आयुर्वेदिक जड़ी-बूटियों से बनाया गया है।
+</div>
+</div>
+ <button class="btn" onclick="location.href='#orderForm'">Order Now</button>   
+ </section>
+
+ <section class="disclaim">
+<footer class="disc">⚠️ Disclaimer:-यह उत्पाद किसी भी बीमारी का चिकित्सीय इलाज (Medical Cure) होने का दावा नहीं करता।
+ परिणाम व्यक्ति की शारीरिक स्थिति पर निर्भर कर सकते हैं।
+ किसी भी प्रकार की गंभीर स्थिति में डॉक्टर से सलाह अवश्य लें।
+
+</footer>
+</section>
+</body>
+<script>
+  document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  fetch("https://script.google.com/macros/s/AKfycbz5sFiY8d4m-gK5USk7puMY2GCEMrvZEPGMDZJJzKU0hPmAUwzmnZT29dZmH2psrB-mfA/exec", {
+    method: "POST",
+    body: JSON.stringify({
+  name: e.target.name.value,
+  mobile: e.target.mobile.value,
+  problem: e.target.problem.value
+}),
+  })
+  .then(() => {
+    alert("✅ सबमिट हो गया!");
+    e.target.reset();
+  })
+  .catch(() => alert("❌ Error"));
+});
+
+document.querySelectorAll(".faq-item").forEach(item=>{
+item.addEventListener("click",()=>{
+item.classList.toggle("active");
+});
+});
+
+</script>
+</html>

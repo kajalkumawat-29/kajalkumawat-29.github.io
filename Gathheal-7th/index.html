@@ -323,7 +323,85 @@ left:100%;
     color: #333;
     line-height: 1.3;
 }
+/* 📱 MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
 
+    .parallax-wrapper {
+        max-width: 100%;
+        padding-bottom: 30px;
+    }
+
+    .header-title {
+        padding: 40px 20px;
+    }
+
+    .header-title h2 {
+        font-size: 26px;
+        letter-spacing: -1px;
+    }
+
+    .reveal-section {
+        gap: 80px;
+        padding: 0 20px;
+    }
+
+    .reveal-img {
+        width: 220px;
+        height: 220px;
+        border-radius: 25px;
+    }
+
+    .reveal-text {
+        width: 90%;
+        padding: 20px;
+        bottom: -30px;
+        left: 0;
+    }
+
+    .reveal-item:nth-child(even) .reveal-text {
+        right: 0;
+    }
+
+    .reveal-text h3 {
+        font-size: 16px;
+    }
+
+    .reveal-text p {
+        font-size: 16px;
+    }
+}
+
+
+/* 📱 EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .header-title h2 {
+        font-size: 22px;
+    }
+
+    .reveal-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .reveal-text {
+        width: 95%;
+        padding: 18px;
+        bottom: -25px;
+    }
+
+    .reveal-section {
+        gap: 70px;
+    }
+
+    .reveal-text h3 {
+        font-size: 15px;
+    }
+
+    .reveal-text p {
+        font-size: 15px;
+    }
+}
 
 
 

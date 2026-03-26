@@ -1,0 +1,2664 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&family=Source+Sans+3:wght@400;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+      
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Outfit:wght@400;900&display=swap');
+
+
+:root {
+  --red:#a73221;
+  --white: #fff;
+  --black: #000;
+  --green:#406048;
+  --yellow:#edcf23;   
+  --glow-green: rgba(86, 100, 51, 0.6);     
+}
+
+/* ===== GLOBAL ===== */
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+ font-family: 'Source Sans 3','Noto Serif Devanagari', sans-serif;
+  background-color:rgba(169, 160, 160, 0.276);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+ 
+}
+
+/* HEADER */
+header {
+  max-width: 450px;
+  width: 100%;
+  padding: 14px;
+  display: flex;
+  justify-content: center;
+ background: var(--green);
+}
+nav {
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+  border-bottom: 2px solid rgba(255,255,255,0.4);
+  padding-bottom: 6px;
+}
+
+/* Logo - Tumhare bataye huye font size aur weight ke saath */
+.logo {
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 2px; /* Thoda gap branding ke liye */
+  color: var(--white);
+  text-transform: uppercase;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Logo Underline - Wahi Neon Style */
+.logo::after {
+  content: '';
+  position: absolute;
+  width: 40%; /* Choti classy line */
+  height: 3px;
+  background: var(--yellow);
+  left: 0;
+  bottom: 2px;
+  transition: 0.4s ease;
+  box-shadow: 0 0 10px var(--yellow); /* Glow effect */
+}
+
+/* Hover effect on logo */
+.logo:hover::after {
+  width: 100%; /* Hover par puri line glow karegi */
+}
+
+.logo:hover {
+  text-shadow: 0 0 15px rgba(255, 247, 0, 0.5);
+}
+
+/* Span styling agar naam do colors mein chahiye */
+.logo span {
+  color: var(--yellow);
+}
+.buttonn {
+  background-color: var(--yellow); 
+  color: var(--black);
+  border-radius: 15px;
+  padding: 14px 22px;
+  border: 2px solid var(--yellow);
+  font-size: 19px;
+  text-decoration: none;
+  cursor: pointer;
+ 
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgb(218, 180, 13) }
+  70% { box-shadow: 0 0 0 20px rgba(236,72,153,0) }
+  100% { box-shadow: 0 0 0 0 rgba(236,72,153,0) }
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  background: var(--yellow);
+  cursor: pointer;
+  margin: 10px 100px;
+  width: 55%;
+  position: relative;
+  overflow: hidden;
+  color: var(--black);
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  top: 0;
+  left: -40%;
+  transform: skewX(-20deg);
+}
+.btn:hover::before {
+  left: 120%;
+  transition: 1.5s;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 430px) {
+  .btn {
+    width: 50% !important;
+    font-size: 15px !important;
+    margin: 10px 80px !important;
+  }
+}
+
+/* ===== SECTIONS ===== */
+.sec {
+  max-width: 450px;
+  width: 100%;
+  background: var(--green);
+  border-bottom: 2px solid var(--white);
+}
+.sect {
+  max-width: 450px;
+  width: 100%;
+  background-color: var(--yellow);
+}
+.images {
+  max-width: 450px;
+  width: 100%;
+  align-items: center;
+  padding: 0;
+}
+
+@media (max-width: 480px) {
+
+  header {
+    max-width: 100%;
+    padding: 12px 10px;
+  }
+
+  nav {
+    max-width: 100%;
+    padding-bottom: 6px;
+  }
+
+  .logo {
+    font-size: 30px;
+  }
+
+  .buttonn {
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-1 */
+.title-main {
+    padding: 20px;
+    text-align: center;
+}
+
+.title-main h1 {
+    font-size: 32px;
+    color: var(--yellow);
+    line-height: 1;
+    margin-top: -30px;
+    margin-bottom: -10px;
+}
+
+/* CARD */
+.capsule-card {
+    position: relative;
+    width: 90%;
+    min-height: 160px;
+    background: var(--white);
+    border-radius: 60px 20px 60px 20px; 
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    margin-top: 20px ;
+    border: 1px solid var(--red);
+    cursor: pointer;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+
+/* IMAGE FRAME */
+.notch-frame {
+    width: 120px;
+    height: 120px;
+    background: var(--red);
+    clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 2px solid var(--red);
+    transition: 0.5s ease;
+    z-index: 2;
+}
+
+.notch-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0) brightness(0.5);
+    transition: 0.5s;
+}
+
+/* TEXT */
+.capsule-info {
+    padding-left: 20px;
+    z-index: 10;
+}
+
+.capsule-info b {
+    font-size: 22px;
+    color: var(--red);
+    display: block;
+    margin-bottom: -12px;
+}
+
+.capsule-info p {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.2;
+}
+
+/* GLOW */
+.glow-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(167,50,33,0.3), transparent);
+    transform: translateX(-150%);
+    transition: 0.6s ease;
+    z-index: 1;
+}
+
+/* HOVER */
+.capsule-card:hover {
+    transform: scale(1.03);
+    border-color: var(--red);
+    box-shadow: 0 10px 30px rgba(167,50,33,0.2);
+}
+
+.capsule-card:hover .notch-frame {
+    background: var(--red);
+    transform: rotate(90deg);
+}
+
+.capsule-card:hover .notch-frame img {
+    filter: grayscale(0) brightness(0.8);
+    transform: rotate(-90deg) scale(1.2);
+}
+
+.capsule-card:hover .glow-overlay {
+    transform: translateX(150%);
+}
+
+
+/* ALERT */
+.alert-pill {
+    background: var(--red);
+    color: var(--white);
+    padding: 15px;
+    border-radius: 50px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-2 */
+.capsule-wrapper {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* --- PORTAL --- */
+.portal-frame {
+    position: relative;
+    width: 320px;
+    height: 380px;
+    border-radius: 160px 160px 20px 20px;
+    border: 1px solid var(--yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,1), inset 0 0 30px rgba(255, 0, 0, 0.1);
+}
+
+/* Scan Line */
+.scan-bar {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--yellow);
+    box-shadow: 0 0 15px var(--yellow);
+    z-index: 15;
+    animation: scanning 4s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes scanning {
+    0% { top: 0%; }
+    50% { top: 100%; }
+    100% { top: 0%; }
+}
+
+/* Corners */
+.tech-mark {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--yellow);
+    opacity: 0.6;
+}
+.tm-1 { top: 20px; left: 60px; border-right: 0; border-bottom: 0; border-radius: 20px 0 0 0; }
+.tm-2 { top: 20px; right: 60px; border-left: 0; border-bottom: 0; border-radius: 0 20px 0 0; }
+
+.product-visual {
+    width: 390px;
+    z-index: 10;
+    filter: drop-shadow(0 0 25px rgba(255, 0, 0, 0.3));
+    transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.portal-frame:hover .product-visual {
+    transform: scale(1.1) translateY(-10px);
+    filter: drop-shadow(0 0 40px rgba(255, 0, 0, 0.6));
+}
+
+/* --- CONTENT --- */
+.content-area { width: 90%; }
+
+.info-pill {
+    background: var(--white);
+    border: 1px solid var(--red);
+    padding: 25px;
+    border-radius: 15px 40px;
+    margin-bottom: 15px;
+    transition: 0.4s;
+}
+
+.info-pill:hover {
+    border-color: var(--red);
+    transform: translateY(-5px);
+}
+
+.info-pill b {
+    font-size: 22px;
+    color: var(--red);
+    display: block;
+    font-weight: 1000;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+
+.info-pill p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--black);
+    margin-bottom: -10px;
+}
+
+.info-pill p span {
+    color: var(--red);
+    font-weight: 900;
+    border-bottom: 2px dashed var(--red);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-3 */
+.skew-wrapper {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    
+    margin-bottom: 40px;
+}
+
+.header-box {
+    padding: 20px;
+}
+
+.header-box h1 {
+    font-size: 32px;
+    color: var(--yellow);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom:-10px;
+}
+
+/* Card */
+.skew-card {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background: #111;
+    transform: skewY(-5deg);
+    transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    border: 1px solid #222;
+    cursor: pointer;
+}
+
+.skew-card img {
+    width: 110%;
+    height: 110%;
+    object-fit: cover;
+    transform: skewY(5deg) scale(1.1);
+    filter: grayscale(0) brightness(0.4);
+    transition: 0.6s;
+}
+
+/* Gradient */
+.red-gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, var(--red), transparent);
+    transform: translateY(100%);
+    transition: 0.5s ease;
+    z-index: 5;
+}
+
+.skew-content {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    z-index: 10;
+    transform: skewY(5deg);
+}
+
+.skew-content h3 {
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: var(--yellow);
+    margin-bottom: 5px;
+}
+
+.skew-content p {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.2;
+}
+
+/* Hover */
+.skew-card:hover {
+    transform: skewY(0deg) scale(1.00);
+    z-index: 10;
+    border-color: var(--red);
+}
+
+.skew-card:hover img {
+    filter: grayscale(0) brightness(0.7);
+    transform: skewY(0deg) scale(1);
+}
+
+.skew-card:hover .red-gradient-overlay {
+    transform: translateY(0%);
+}
+
+.skew-card:hover .skew-content h3 {
+    color: var(--black);
+}
+
+/* Number */
+.step-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 60px;
+    color: rgba(255, 255, 255, 0.1);
+    z-index: 2;
+    transform: skewY(5deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-4 */
+.premium-ayur-card {
+    width: 100%;
+    max-width: 450px;
+    padding: 25px;
+   border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+     position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+/* Hover */
+.premium-ayur-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(64,96,72,0.2);
+}
+
+/* Watermark */
+.premium-ayur-card::before {
+    content: '🌿';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-size: 150px;
+    opacity: 0.05;
+    color: var(--yellow);
+    transition: all 0.6s ease;
+}
+
+.premium-ayur-card:hover::before {
+    transform: rotate(-15deg) scale(1.1);
+    opacity: 0.08;
+}
+
+/* HEADER */
+.premium-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 2px solid var(--red);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.doctor-icon {
+    background-color: var(--red);
+    color: var(--white);
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.premium-ayur-card:hover .doctor-icon {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.premium-tit {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--yellow);
+    margin: 0;
+}
+
+/* VATA SECTION */
+.vata-section {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--red);
+    transition: all 0.3s ease;
+}
+
+.premium-ayur-card:hover .vata-section {
+    background-color: #fafff9;
+    border-color: var(--yellow);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.vata-accent {
+    color: var(--red);
+    font-weight: bold;
+}
+
+/* POINTS */
+.point-item {
+    display: flex;
+    align-items: start;
+    gap: 12px;
+    margin-bottom: 12px;
+    background-color: var(--white);
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid var(--yellow);
+    transition: all 0.3s ease;
+}
+
+.premium-ayur-card:hover .point-item {
+    transform: translateX(8px);
+    border-left: 4px solid var(--red);
+}
+
+.point-icon {
+    background-color: var(--red);
+    color: var(--yellow);
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: all 0.4s ease;
+}
+
+.point-item:hover .point-icon {
+    background-color: var(--yellow);
+    color: var(--red);
+    transform: rotate(360deg);
+}
+
+.point-text {
+    font-size: 18px;
+    color: var(--black);
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-5 */
+.premium-stack {
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+}
+
+.main-head {
+    margin-bottom: 40px;
+    padding-left: 10px;
+}
+
+.main-head h2 {
+    font-size: 32px;
+    color: var(--yellow);
+    margin-top: 30px;
+    text-align: center;
+    line-height: 1;
+}
+
+
+
+/* Glass Effect Item */
+.glass-item {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--red);
+    border-radius: 35px;
+    padding: 25px;
+    margin-bottom: 45px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 40px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-item:hover {
+    transform: scale(1.03) translateY(-10px);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: var(--red);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+/* Profile Floating Icon */
+.user-icon {
+    position: absolute;
+    top: -20px;
+    left: 25px;
+    width: 55px;
+    height: 55px;
+    border-radius: 20px;
+    background: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: var(--white);
+    font-size: 22px;
+    box-shadow: 0 10px 20px rgba(167,50,33,0.3);
+    border: 2px solid var(--red);
+}
+
+.item-2 .user-icon { background:  var(--red); }
+.item-3 .user-icon { background:  var(--red); }
+
+.content-body {
+    margin-top: 15px;
+}
+
+.review-txt {
+    color: #e2e8f0;
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.footer-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.user-label h4 {
+    margin: 0;
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.user-label span {
+    color:var(--white);
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.trust-pill {
+    background: rgba(167, 147, 33, 0.15);
+    color: var(--yellow);
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* Background Glows */
+.glow-sphere {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, var(--red) 0%, transparent 70%);
+    opacity: 0.15;
+    z-index: -1;
+    top: 20%;
+    right: -50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-6 */
+
+        .timeline-wrapper {
+            max-width: 450px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* The Vertical Line */
+        .timeline-wrapper::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 100px;
+            bottom: 50px;
+            width: 2px;
+            background:var(--yellow);
+            z-index: 1;
+            margin-left:20px
+        }
+
+        .header {
+            margin-bottom: 40px;
+            padding-left: 50px;
+        }
+
+        .header h1 {
+           font-size: 32px;
+            color: var(--yellow);
+            text-align: center;
+        }
+
+        /* The Step Card */
+        .step-entry {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+            cursor: pointer;
+            transition: 0.4s;
+            margin-left: 20px;
+        }
+
+        /* Glowing Dot */
+        .dot {
+            width: 42px;
+            height: 42px;
+            background: var(--yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 14px;
+            color: var(--black);
+            flex-shrink: 0;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+            transition: 0.4s;
+        }
+
+        /* IMAGE FRAME */
+        .screen-frame {
+            width: 110px;
+            height: 90px;
+            background: #111;
+            margin-left: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #333;
+            flex-shrink: 0;
+            transition: 0.5s;
+        }
+
+        .screen-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(0) brightness(0.8);
+            transition: 0.5s;
+        }
+
+        /* Text Content */
+        .info-panel {
+            padding-left: 15px;
+            flex: 1;
+        }
+
+        .info-panel b {
+            font-size: 20px;
+            color: var(--yellow);
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: -14px;
+            margin-top: 20px;
+        }
+
+        .info-panel p {
+            font-size: 18px;
+            font-weight: 900;
+            color: #ccc;
+            line-height: 1.2;
+            
+        }
+
+        /* HOVER EFFECTS */
+        .step-entry:hover .dot {
+            
+            color: #000;
+            box-shadow: 0 0 25px var(--yellow);
+            transform: scale(1.1);
+        }
+
+        .step-entry:hover .screen-frame {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 187, 0, 0.2);
+        }
+
+        .step-entry:hover .screen-frame img {
+            filter: grayscale(0) brightness(0.9);
+        }
+
+        .step-entry:hover .info-panel p {
+            color: #fff;
+        }
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-7 */
+.wrapper {
+    max-width: 450px;
+    width:100%;
+    perspective: 1000px; /* 3D effect */
+}
+
+.title-area {
+    text-align: left;
+    margin-bottom: 30px;
+    padding-left: 10px;
+}
+
+.title-area h2 {
+    font-size: 32px;
+    margin: 0;
+    color: var(--yellow);
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 40px;
+}
+
+
+/* Unique 3D Card Style */
+.step-layer {
+    position: relative;
+    background: var(--white);
+    border-radius: 30px;
+    padding: 25px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    gap: 20px;
+    box-shadow: 15px 15px 30px rgba(0,0,0,0.05);
+    border-left: 10px solid var(--black);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+/* Bina hover ke bhi 3D feel देने के लिए offset */
+.step-layer:nth-child(2) { transform: translateX(10px); border-color: var(--red); }
+.step-layer:nth-child(3) { transform: translateX(20px); border-color: var(--yellow); }
+.step-layer:nth-child(4) { transform: translateX(30px); border-color: var(--red); }
+
+/* Hover Effect: Card jumps out */
+.step-layer:hover {
+    transform: translateX(0) scale(1.05) rotateX(5deg);
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    margin-left: 20px;
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background: var(--green);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+    transition: 0.3s;
+}
+
+.step-layer:hover .icon-circle {
+    background: rgba(255,255,255,0.2);
+    transform: rotate(-15deg);
+}
+
+.text-box b {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: var(--green);
+}
+
+.text-box p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.4;
+    opacity: 0.8;
+}
+
+.step-layer:hover .text-box p {
+    opacity: 1;
+}
+
+/* Bottom Floating Note */
+.floating-tip {
+    margin-top: 30px;
+    background: var(--red);
+    color: var(--white);
+    padding: 15px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(167,50,33,0.3);
+    margin-bottom: 30px;
+    margin-left: 20px;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-8 */
+ .orbit-container {
+            max-width: 450px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            background: var(--white);
+           
+        }
+
+        .main-header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .main-header h1 {
+            font-size: 32px;
+            color: var(--red);
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 40px;
+            font-weight: 600;
+        }
+
+        /* The Orbit Row */
+        .orbit-row {
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+            padding: 10px;
+            transition: 0.4s;
+            margin-top: -50px;
+            margin-bottom: 20px;
+        }
+
+        /* Alternating Direction */
+        .orbit-row:nth-child(even) { flex-direction: row-reverse; }
+
+        /* CIRCLE IMAGE WITH NEON RING */
+        .circle-frame {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 2px solid var(--yellow);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 5;
+            background: var(--yellow);
+        }
+
+        .circle-frame img {
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: grayscale(0) brightness(0.6);
+            transition: 0.5s;
+        }
+
+        /* Progress Ring (Hidden initially) */
+        .ring-glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: var(--red);
+            border-right-color: var(--red);
+            opacity: 0;
+            transition: 0.5s;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Text Content */
+        .orbit-text {
+            flex: 1;
+            padding: 0 20px;
+            z-index: 10;
+        }
+
+        .orbit-row:nth-child(even) .orbit-text { text-align: right; }
+
+        .orbit-text b {
+            font-size: 20px;
+            color: var(--yellow);
+            display: block;
+            margin-bottom: -15px;
+        }
+
+        .orbit-text p {
+            font-size: 18px;
+            font-weight: 600;
+            color: black;
+            line-height: 1.2;
+            transition: 0.4s;
+        }
+
+        /* HOVER INTERACTIONS */
+        .orbit-row:hover .circle-frame {
+            transform: scale(1.1);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+        }
+
+        .orbit-row:hover .ring-glow {
+            opacity: 1;
+        }
+
+        .orbit-row:hover .circle-frame img {
+            filter: grayscale(0) brightness(0.9);
+            transform: scale(1.05);
+        }
+
+        .orbit-row:hover .orbit-text p {
+          
+            transform: translateX(10px);
+        }
+
+        .orbit-row:nth-child(even):hover .orbit-text p {
+            transform: translateX(-10px);
+        }
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-9 */
+
+        .hologram-container {
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+
+        /* Rotating Scanner Ring */
+        .scanner-ring {
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            border: 8px solid var(--yellow);
+            border-radius: 50%;
+            border-style: double;
+            box-shadow: 0 0 20px rgba(255, 208, 0, 0.4), inset 0 0 20px rgba(255, 230, 0, 0.4);
+            animation: rotate 18s linear infinite;
+        }
+
+        /* Bottom Support Glow */
+        .base-light {
+            position: absolute;
+            bottom: 40px;
+            width: 180px;
+            height: 10px;
+            background: var(--yellow);
+            filter: blur(25px);
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: breathe 3s ease-in-out infinite;
+        }
+/* Keep the stage the same */
+.img-stage {
+    position: relative;
+    width: 280px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Wrap the image for scaling */
+.product-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.product-hero {
+    max-width: 100%;   /* scales to wrapper width */
+    max-height: 100%;  /* scales to wrapper height */
+    width: auto;       /* keep aspect ratio */
+    height: auto;      /* keep aspect ratio */
+    z-index: 10;
+    filter: drop-shadow(0 0 15px var(--yellow));
+    transition: 0.5s;
+    border-radius: 50%;
+}
+
+.product-hero:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.product-hero:hover {
+    transform: scale(1.05); /* hover zoom effect */
+}
+        .product-hero:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes breathe {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.2); }
+        }
+
+        /* Header Text */
+        .premium-title {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 30px;
+            margin-top: 30px;
+            color: var(--yellow);
+            line-height: 1;
+            font-weight: 600;
+        }
+
+       
+        /* --- OFFER SECTION --- */
+        .offer-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 25px;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            position: relative;
+            text-align: center;
+            transition: 0.4s;
+        }
+
+        .offer-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 5px; height: 100%;
+            background: var(--yellow);
+            box-shadow: 0 0 15px var(--yellow);
+        }
+
+        .offer-card:hover {
+            background: rgba(255, 0, 0, 0.05);
+            border-color: var(--yellow);
+            transform: scale(1.02);
+        }
+
+        .offer-card h3 {
+            font-size: 20px;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .offer-card p {
+            font-size: 18px;
+            color: var(--white);
+            line-height: 1.5;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-10 */
+.form-box{
+    max-width:450px;
+    width: 100%;
+    background: var(--green);
+    padding:25px 30px;
+    color:white;
+}
+
+/* Heading */
+.form-box h2{
+ 
+    font-size:32px;
+    line-height: 1.2;
+    font-weight:600;
+    margin-bottom:20px;
+    color:var(--yellow);
+}
+
+/* Input container */
+.input-group{
+    margin-bottom:18px;
+}
+
+/* Label */
+label{
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:6px;
+    display:block;
+}
+
+/* Input fields */
+input{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    outline:none;
+    font-size:16px;
+}
+.btn-cta{
+    width:100%;
+    padding:13px;
+    font-size:18px;
+    font-weight:600;
+    background:var(--yellow);
+    color:black;
+    border:none;
+    border-radius:12px;
+    margin-top:8px;
+    cursor:pointer;
+    animation:pulse 2s infinite;
+    }
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(175, 152, 75, 0.6)}
+      70%{box-shadow:0 0 0 20px rgba(236,72,153,0)}
+      100%{box-shadow:0 0 0 0 rgba(236,72,153,0)}
+    }
+
+@media (max-width: 480px){
+
+  .form-box{
+    padding: 20px 16px;
+  }
+
+  .form-box h2{
+    font-size: 22px;
+    text-align:left;
+  }
+
+  label{
+    font-size: 14px;
+  }
+
+  input{
+    font-size: 15px;
+    padding: 11px;
+    border-radius: 8px;
+  }
+
+  .btn-cta{
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-11 */
+.trust-split-card {
+    width: 100%;
+    max-width: 450px;
+    overflow: hidden;
+     display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+.trust-split-card:hover {
+    transform: scale(1.02);
+}
+
+/* TOP SECTION */
+.card-top {
+    background:var(--red);
+    padding: 30px 20px;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+}
+
+.badge-icon {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255,255,255,0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+}
+
+.top-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+/* BOTTOM SECTION */
+.card-bottom {
+    padding: 25px;
+    background: var(--white);
+    border-radius: 30px 30px 0 0;
+    margin-top: -20px;
+    position: relative;
+    text-align: center;
+}
+
+.trust-message {
+    color: var(--black);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* USER PROOF */
+.user-proof {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #f1f5f9;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.avatars {
+    display: flex;
+}
+
+.avatar-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--green);
+    border: 2px solid var(--white);
+    margin-left: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--white);
+    font-weight: bold;
+}
+
+/* Different avatar colors using root */
+.avatar-circle:first-child { margin-left: 0; background: var(--red); }
+.avatar-circle:nth-child(2) { background: var(--green); }
+.avatar-circle:nth-child(3) { background: var(--yellow); }
+
+.proof-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-12 */
+  .faq-wrapper {
+            width: 100%;
+            max-width: 450px;
+            margin-top: 50px;
+        }
+
+        .faq-title {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--red);
+            margin-bottom: 25px;
+            text-align: center;
+            letter-spacing: -0.5px;
+        }
+
+        /* The Animated Card */
+        details {
+            background: #ffffff;
+            margin-bottom: 12px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            border: 1.5px solid #edf2f7;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        details[open] {
+            border-color: var(--red);
+            box-shadow: 0 10px 20px -5px rgba(76, 81, 191, 0.15);
+            transform: translateY(-2px);
+        }
+
+        summary {
+            list-style: none;
+            padding: 18px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 700;
+            color: #2d3748;
+            outline: none;
+        }
+
+        summary::-webkit-details-marker { display: none; }
+
+        /* Icon Circle */
+        .q-badge {
+            width: 32px;
+            height: 32px;
+            background: #f7fafc;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+        .q-bad-p{
+            font-size: 20px;
+            margin-top: -10px;
+            margin-bottom: -10px;
+        }
+        details[open] .q-badge {
+            background: var(--red);
+            color: white;
+        }
+
+        /* Toggle Arrow */
+        .arrow {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--red);
+            transition: 0.3s;
+        }
+
+        details[open] .arrow {
+            transform: rotate(180deg);
+            color: var(--red);
+        }
+
+        /* Content Area */
+        .faq-content {
+            padding: 0 20px 20px 67px; /* Align with text after icon */
+            font-size: 18px;
+            color: black;
+            line-height: 1.6;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+       
+/* ===== DISCLAIMER ===== */
+.disclaim {
+  max-width: 450px;
+  width: 100%;
+  background: var(--green);
+  margin-top: 20px;
+  padding: 5px;
+  font-size: 10px;
+}
+.disclaim * {
+  margin: 0;
+  padding: 5px;
+  color: var(--white);
+}
+
+/* MEDIA */
+@media(max-width:480px){
+   .btn {
+    margin-left: 100px !important;
+    width: 40%;
+    font-size: 18px;
+   }
+}
+</style>
+</head>
+
+<body>
+
+
+
+     <header>
+  <nav>
+    <div class="logo">Earcare</div>
+    <a class="buttonn" href="#orderForm">Buy Now 🛒</a>
+  </nav>
+</header>
+
+
+
+<section class="sec">
+    <img src="images/banner.avif" class="images" alt="">
+</section>
+
+
+
+
+
+
+
+
+<!-- section-1 -->
+<section class="sec">
+    <div class="capsule-wrapper">
+    <div class="title-main">
+        <h1>Pain Detaling</h1>
+    </div>
+
+    <div class="capsule-card">
+        <div class="glow-overlay"></div>
+        <div class="notch-frame">
+            <img src="images/sect-1-1stimg.avif">
+        </div>
+        <div class="capsule-info">
+            <b>PROBLEM</b>
+            <p>लोगों की आवाज़ बार-बार रिपीट करवानी पड़ती है और फोन पर सुनने में दिक्कत होती है।</p>
+        </div>
+    </div>
+
+    <div class="capsule-card">
+        <div class="glow-overlay"></div>
+        <div class="notch-frame">
+            <img src="images/sect-1-2ndimg.avif">
+        </div>
+        <div class="capsule-info">
+            <b>WARNING</b>
+            <p>कान में सीटी या भनभनाहट और धीरे-धीरे सुनने की क्षमता कम होना शुरू हो जाती है।</p>
+        </div>
+    </div>
+
+    <div class="capsule-card">
+        <div class="glow-overlay"></div>
+        <div class="notch-frame">
+            <img src="images/sect1-3rdimg.avif">
+        </div>
+        <div class="capsule-info">
+            <b>CAUSE</b>
+            <p>यह Stapes Bone के असामान्य बढ़ने या खराब होने का संकेत हो सकता है।</p>
+        </div>
+    </div>
+
+    <div class="alert-pill">
+        IGNORE MAT KARO ❌ <br>
+        👉 समय रहते ध्यान न देने पर यह समस्या <b>स्थायी सुनने की कमी</b> बन सकती है।
+    </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- section-2 -->
+     <section class="sec">
+        <div class="capsule-wrapper">
+    
+    <div class="portal-frame">
+        <div class="scan-bar"></div>
+        <div class="tech-mark tm-1"></div>
+        <div class="tech-mark tm-2"></div>
+        
+        <img src="images/product.avif" class="product-visual">
+    </div>
+
+    <div class="content-area">
+        
+        <div class="info-pill">
+            <b>Ear Health Support 👂</b>
+            <p>अब पेश है — <span>Ear Health Support Formula</span> एक प्राकृतिक समाधान जो आपके कानों की सेहत को अंदर से सपोर्ट करता है।</p>
+        </div>
+
+        <div class="info-pill">
+            <b>Better Hearing 🔊</b>
+            <p>यह खास फॉर्मूला सुनने की क्षमता को <span>बेहतर बनाने</span> और कानों को स्वस्थ रखने में मदद करता है।</p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-3 -->
+<section class="sec">
+    <div class="skew-wrapper">
+    <div class="header-box">
+        <h1>HOW IT WORKS</h1>
+    </div>
+
+    <div class="skew-card">
+        <div class="step-tag">01</div>
+        <img src="images/sect-3-1stimg.avif">
+        <div class="red-gradient-overlay"></div>
+
+        <div class="skew-content">
+            <h3>LEVEL 1</h3>
+            <p>कान की <b>हड्डियों के असामान्य विकास</b> को संतुलित करने में मदद करता है।</p>
+        </div>
+    </div>
+
+    <div class="skew-card">
+        <div class="step-tag">02</div>
+        <img src="images/sect-3-2img.avif">
+        <div class="red-gradient-overlay"></div>
+
+        <div class="skew-content">
+            <h3>LEVEL 2</h3>
+            <p><b>ब्लड सर्कुलेशन सुधारकर</b> सुनने की क्षमता को बेहतर सपोर्ट करता है।</p>
+        </div>
+    </div>
+
+    <div class="skew-card">
+        <div class="step-tag">03</div>
+        <img src="images/sect-3-3rdimg.avif">
+        <div class="red-gradient-overlay"></div>
+
+        <div class="skew-content">
+            <h3>LEVEL 3</h3>
+            <p><b>नर्व सिग्नल्स को मजबूत</b> बनाकर आवाज़ की क्लैरिटी बढ़ाने में मदद करता है।</p>
+        </div>
+    </div>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-4 -->
+<section class="sec">
+    <div class="premium-ayur-card">
+    <div class="premium-header">
+        <div class="doctor-icon">🌿</div>
+        <h2 class="premium-tit">Ayurveda Recommendation</h2>
+    </div>
+
+    <div class="vata-section">
+        <span style="font-size: 20px;">📜</span>
+        <p style="margin:0; font-size: 0.95rem; color: var(--black);">
+            आयुर्वेद के अनुसार, यह समस्या <span class="vata-accent">“वात दोष”</span> के असंतुलन से जुड़ी होती है।
+        </p>
+    </div>
+
+    <div class="expert-points">
+        <h4 style="color: var(--yellow); font-size: 20px; margin-bottom: 12px; letter-spacing: 1px;">विशेषज्ञों का मानना है:</h4>
+        
+        <div class="point-item">
+            <span class="point-icon">✦</span>
+            <p class="point-text">प्राकृतिक जड़ी-बूटियाँ कान की नसों को पोषण देती हैं।</p>
+        </div>
+        
+        <div class="point-item">
+            <span class="point-icon">✦</span>
+            <p class="point-text">नियमित उपयोग से धीरे-धीरे सुधार दिख सकता है।</p>
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-5 -->
+<section class="sec">
+    <div class="premium-stack">
+    <div class="glow-sphere"></div>
+    
+    <div class="main-head">
+        <h2>Real Customer Results</h2>
+    </div>
+
+    <div class="glass-item item-1">
+        <div class="user-icon">R</div>
+        <div class="content-body">
+            <p class="review-txt">“टीवी की आवाज़ अब सामान्य रखती हूँ। 2 महीने में साफ़ सुनाई देने लगा है, घरवाले भी अब खुश हैं और मैं भी!”</p>
+        </div>
+        <div class="footer-line">
+            <div class="user-label">
+                <h4>रमेश कुमार, 52</h4>
+                <span>📍 नई दिल्ली</span>
+            </div>
+            <div class="trust-pill">VERIFIED ✓</div>
+        </div>
+    </div>
+
+    <div class="glass-item item-2">
+        <div class="user-icon">S</div>
+        <div class="content-body">
+            <p class="review-txt">“कानों की भनभनाहट से बहुत परेशान थी। इस्तेमाल के बाद काफी आराम मिला और अब पहले से ज्यादा शांति महसूस होती है।”</p>
+        </div>
+        <div class="footer-line">
+            <div class="user-label">
+                <h4>सीमा शर्मा, 47</h4>
+                <span>📍 जयपुर</span>
+            </div>
+            <div class="trust-pill">VERIFIED ✓</div>
+        </div>
+    </div>
+
+    <div class="glass-item item-3">
+        <div class="user-icon">M</div>
+        <div class="content-body">
+            <p class="review-txt">“फोन पर आवाज़ एकदम क्लियर है। बार-बार रिपीट नहीं करवाना पड़ता। इस प्रोडक्ट ने मेरा भरोसा जीत लिया है।”</p>
+        </div>
+        <div class="footer-line">
+            <div class="user-label">
+                <h4>महेश सिंह, 58</h4>
+                <span>📍 लखनऊ</span>
+            </div>
+            <div class="trust-pill">VERIFIED ✓</div>
+        </div>
+    </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-6 -->
+<section class="sec">
+    <div class="timeline-wrapper">
+    <div class="header">
+        <h1>Key Ingredients</h1>
+    </div>
+
+    <div class="step-entry">
+        <div class="dot">01</div>
+        <div class="screen-frame">
+            <img src="images/अश्वगंधा.avif">
+        </div>
+        <div class="info-panel">
+            <b>अश्वगंधा</b>
+            <p>नर्व सपोर्ट</p>
+        </div>
+    </div>
+
+    <div class="step-entry">
+        <div class="dot">02</div>
+        <div class="screen-frame">
+            <img src="images/brahmi.avif">
+        </div>
+        <div class="info-panel">
+            <b>ब्राह्मी</b>
+            <p>ब्रेन और सिग्नल क्लैरिटी</p>
+        </div>
+    </div>
+
+    <div class="step-entry">
+        <div class="dot">03</div>
+        <div class="screen-frame">
+            <img src="images/शंखपुष्पी.avif">
+        </div>
+        <div class="info-panel">
+            <b>शंखपुष्पी</b>
+            <p>मानसिक और श्रवण संतुलन</p>
+        </div>
+    </div>
+
+    <div class="step-entry">
+        <div class="dot">04</div>
+        <div class="screen-frame">
+            <img src="images/giloy.avif">
+        </div>
+        <div class="info-panel">
+            <b>गिलोय</b>
+            <p>इम्यून सपोर्ट</p>
+        </div>
+    </div>
+
+    
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-7 -->
+<section class="sec">
+    
+<div class="wrapper">
+    <div class="title-area">
+       <h2>How to Use</h2>
+    </div>
+
+    <div class="step-layer">
+        <div class="icon-circle">💊</div>
+        <div class="text-box">
+            <b>Dosage</b>
+            <p>दिन में 1–2 बार, या डॉक्टर/निर्देश अनुसार लें।</p>
+        </div>
+    </div>
+
+    <div class="step-layer">
+        <div class="icon-circle">🗓️</div>
+        <div class="text-box">
+            <b>Duration</b>
+            <p>बेहतर परिणाम के लिए नियमित 2–3 महीने उपयोग करें।</p>
+        </div>
+    </div>
+
+    <div class="step-layer">
+        <div class="icon-circle">🎯</div>
+        <div class="text-box">
+            <b>Goal</b>
+            <p>नियमितता ही अच्छे परिणाम की कुंजी है।</p>
+        </div>
+    </div>
+
+    <div class="floating-tip">
+        ✨ Best Results: स्वस्थ जीवनशैली अपनाएं
+    </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-8 -->
+    <div class="orbit-container">
+    <div class="main-header">
+        <h1>CERTIFIED & TRUSTED</h1>
+    </div>
+
+    <div class="orbit-row">
+        <div class="circle-frame">
+            <div class="ring-glow"></div>
+            <img src="images/gmp.avif">
+        </div>
+        <div class="orbit-text">
+            <b>✔ GMP Certified</b>
+            <p>सुरक्षित और गुणवत्ता सुनिश्चित</p>
+        </div>
+    </div>
+
+    <div class="orbit-row">
+        <div class="circle-frame">
+            <div class="ring-glow"></div>
+            <img src="images/natural.avif">
+        </div>
+        <div class="orbit-text">
+            <b>✔ 100% Natural Ingredients</b>
+            <p>सभी घटक प्राकृतिक और शुद्ध</p>
+        </div>
+    </div>
+
+    <div class="orbit-row">
+        <div class="circle-frame">
+            <div class="ring-glow"></div>
+            <img src="images/chemical.avif">
+        </div>
+        <div class="orbit-text">
+            <b>✔ No Harmful Chemicals</b>
+            <p>रसायन मुक्त और सुरक्षित</p>
+        </div>
+    </div>
+
+   
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-9 -->
+<section class="sec">
+    <div class="hologram-container">
+    <div class="premium-title">Product Introduction</div>
+
+    <div class="img-stage">
+        <div class="scanner-ring"></div>
+        <div class="base-light"></div>
+        <img src="images/product.avif" alt="Product" class="product-hero">
+    </div>
+
+    <!-- --- OFFER SECTION --- -->
+    <div class="offer-card">
+        <h3>🎉 Limited Time Offer</h3>
+        <p>आज ऑर्डर करने पर Special Discount Free Delivery<br> पूरे भारत में</p>
+    </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-10 -->
+<section class="sec">
+<div class="form-box">
+    <h2> देरी न करें — आज ही ऑर्डर करें और अपने कानों की सेहत सुधारना शुरू करें
+</h2>
+
+    <form id="orderForm">
+        <div class="input-group">
+            <label>नाम:</label>
+            <input type="text" name="name" placeholder="अपना नाम दर्ज करें" required>
+        </div>
+
+        <div class="input-group">
+            <label>मोबाइल नंबर (10 अंक):</label>
+            <input type="tel" name="mobile" maxlength="10" pattern="[0-9]{10}" placeholder="अपना मोबाइल नंबर दर्ज करें" required>
+        </div>
+
+        <button class="btn-cta"  type="submit">Order Now
+</button>
+    </form>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-11 -->
+<section class="sec">
+    
+<div class="trust-split-card">
+    <div class="card-top">
+        <div class="badge-icon">💯</div>
+        <h2 class="top-title">Trusted by Thousands</h2>
+    </div>
+
+    <div class="card-bottom">
+        <p class="trust-message">
+            हजारों लोग पहले ही इसका फायदा उठा चुके हैं और अब आपकी बारी है अपने अनुभव को बेहतर बनाने की।
+        </p>
+
+        <div class="user-proof">
+            <div class="avatars">
+                <div class="avatar-circle">A</div>
+                <div class="avatar-circle">S</div>
+                <div class="avatar-circle">V</div>
+                <div class="avatar-circle" style="background: var(--red);">+</div>
+            </div>
+            <span class="proof-text">Happy Customers Globally</span>
+        </div>
+    </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-12 -->
+<div class="faq-wrapper">
+    <div class="faq-title">FAQS</div>
+
+    <details>
+        <summary>
+            <div class="q-badge">🛡️</div>
+            <p class="q-bad-p">क्या यह पूरी तरह सुरक्षित है?</p>
+            <div class="arrow">▼</div>
+        </summary>
+        <div class="faq-content">हाँ, यह शुद्ध प्राकृतिक जड़ी-बूटियों से बना है और स्वास्थ्य के लिए पूरी तरह सुरक्षित है।</div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="q-badge">⚡</div>
+            <p class="q-bad-p">कितने समय में असर दिखेगा?</p>
+            <div class="arrow">▼</div>
+        </summary>
+        <div class="faq-content">आमतौर पर 5-7 दिनों के नियमित इस्तेमाल से आपको सकारात्मक सुधार महसूस होने लगता है।</div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="q-badge">👥</div>
+           <p class="q-bad-p">क्या यह हर उम्र के लिए है?</p>
+            <div class="arrow">▼</div>
+        </summary>
+        <div class="faq-content">हाँ, यह पूरी तरह प्राकृतिक है, इसलिए इसे हर उम्र के लोग सुरक्षित रूप से ले सकते हैं।</div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="q-badge">♻️</div>
+           <p class="q-bad-p"> क्या इसे लंबे समय तक ले सकते हैं?</p>
+            <div class="arrow">▼</div>
+        </summary>
+        <div class="faq-content">हाँ, आयुर्वेदिक गुणों के कारण इसे बिना किसी चिंता के नियमित रूप से उपयोग किया जा सकता है।</div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="q-badge">🚫</div>
+            <p class="q-bad-p">क्या इसके कोई साइड इफेक्ट्स हैं?</p>
+            <div class="arrow">▼</div>
+        </summary>
+        <div class="faq-content">नहीं, पूरी तरह हर्बल होने की वजह से इसका कोई भी साइड इफेक्ट नहीं होता है।</div>
+    </details>
+
+   
+</div>
+
+
+</body>
+
+
+
+
+ <section class="disclaim">
+<footer class="disc">⚠️ Disclaimer:यह उत्पाद किसी भी बीमारी को पूरी तरह ठीक करने का दावा नहीं करता।
+ यह केवल स्वास्थ्य सपोर्ट के लिए है।
+ गंभीर समस्या होने पर ENT विशेषज्ञ से सलाह लें।
+
+
+
+</footer>
+</section>
+</body>
+<script>
+const faqs = document.querySelectorAll(".faq-box");
+faqs.forEach(faq => {
+    faq.addEventListener("click", () => {
+        // पहले सबको close कर दो
+        faqs.forEach(item => {
+            if(item !== faq){
+                item.classList.remove("active");
+            }
+        });
+
+        // clicked वाले को toggle करो
+        faq.classList.toggle("active");
+    });
+});
+
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  fetch("https://script.google.com/macros/s/AKfycbz5sFiY8d4m-gK5USk7puMY2GCEMrvZEPGMDZJJzKU0hPmAUwzmnZT29dZmH2psrB-mfA/exec", {
+    method: "POST",
+    body: JSON.stringify({
+      name: e.target.name.value,
+      mobile: e.target.mobile.value
+    }),
+  })
+  .then(() => {
+    alert("✅ सबमिट हो गया!");
+    e.target.reset();
+  })
+  .catch(() => alert("❌ Error"));
+});
+</script>
+</html>

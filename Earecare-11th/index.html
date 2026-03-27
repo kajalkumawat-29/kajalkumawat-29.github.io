@@ -328,7 +328,68 @@ nav {
     font-size: 18px;
 }
 
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
 
+    .title-main h1 {
+        font-size: 26px;
+        margin-top: -20px;
+        margin-bottom: -5px;
+    }
+
+    .capsule-card {
+        width: 95%;
+        min-height: auto;
+        padding: 12px 15px;
+        border-radius: 40px 15px 40px 15px;
+    }
+
+    .notch-frame {
+        width: 90px;
+        height: 90px;
+    }
+
+    .capsule-info {
+        padding-left: 15px;
+    }
+
+    .capsule-info b {
+        font-size: 18px;
+        margin-bottom: -8px;
+    }
+
+    .capsule-info p {
+        font-size: 15px;
+    }
+
+    .alert-pill {
+        font-size: 16px;
+        padding: 12px;
+        margin: 15px;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .capsule-card {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .notch-frame {
+        width: 75px;
+        height: 75px;
+    }
+
+    .capsule-info b {
+        font-size: 16px;
+    }
+
+    .capsule-info p {
+        font-size: 14px;
+    }
+}
 
 
 
@@ -466,7 +527,83 @@ nav {
     font-weight: 900;
     border-bottom: 2px dashed var(--red);
 }
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
 
+    .capsule-wrapper {
+        max-width: 100%;
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+    .portal-frame {
+        width: 260px;
+        height: 300px;
+        border-radius: 130px 130px 15px 15px;
+        margin-bottom: 30px;
+    }
+
+    .product-visual {
+        width: 300px;
+    }
+
+    .tech-mark {
+        width: 30px;
+        height: 30px;
+    }
+
+    .tm-1 { top: 15px; left: 40px; }
+    .tm-2 { top: 15px; right: 40px; }
+
+    .content-area {
+        width: 95%;
+    }
+
+    .info-pill {
+        padding: 18px;
+        border-radius: 12px 30px;
+    }
+
+    .info-pill b {
+        font-size: 18px;
+        margin-top: -5px;
+        margin-bottom: -5px;
+    }
+
+    .info-pill p {
+        font-size: 15px;
+        margin-bottom: -5px;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .portal-frame {
+        width: 220px;
+        height: 260px;
+    }
+
+    .product-visual {
+        width: 260px;
+    }
+
+    .info-pill b {
+        font-size: 16px;
+    }
+
+    .info-pill p {
+        font-size: 14px;
+    }
+
+    .tech-mark {
+        width: 25px;
+        height: 25px;
+    }
+
+    .tm-1 { left: 30px; }
+    .tm-2 { right: 30px; }
+}
 
 
 
@@ -600,7 +737,76 @@ nav {
     z-index: 2;
     transform: skewY(5deg);
 }
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
 
+    .skew-wrapper {
+        max-width: 100%;
+        gap: 25px;
+        padding: 0 10px;
+        margin-bottom: 30px;
+    }
+
+    .header-box h1 {
+        font-size: 26px;
+        margin-bottom: -5px;
+    }
+
+    .skew-card {
+        height: 200px;
+        transform: skewY(-4deg);
+    }
+
+    .skew-card img {
+        transform: skewY(4deg) scale(1.05);
+    }
+
+    .skew-content {
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+    }
+
+    .skew-content h3 {
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+
+    .skew-content p {
+        font-size: 16px;
+    }
+
+    .step-tag {
+        font-size: 45px;
+        top: 15px;
+        right: 15px;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .skew-card {
+        height: 170px;
+        transform: skewY(-3deg);
+    }
+
+    .skew-card img {
+        transform: skewY(3deg) scale(1.03);
+    }
+
+    .skew-content h3 {
+        font-size: 14px;
+    }
+
+    .skew-content p {
+        font-size: 14px;
+    }
+
+    .step-tag {
+        font-size: 35px;
+    }
+}
 
 
 
@@ -762,7 +968,86 @@ nav {
     margin: 0;
 }
 
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
 
+    .premium-ayur-card {
+        max-width: 100%;
+        padding: 18px;
+        border-radius: 15px;
+    }
+
+    .premium-header {
+        gap: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+    .doctor-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+    }
+
+    .premium-tit {
+        font-size: 22px;
+    }
+
+    .vata-section {
+        padding: 12px;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .point-item {
+        padding: 10px 12px;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .point-icon {
+        width: 22px;
+        height: 22px;
+        font-size: 12px;
+    }
+
+    .point-text {
+        font-size: 15px;
+        line-height: 1.4;
+    }
+
+    .premium-ayur-card::before {
+        font-size: 100px;
+        bottom: -10px;
+        right: -10px;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .premium-ayur-card {
+        padding: 15px;
+    }
+
+    .premium-tit {
+        font-size: 20px;
+    }
+
+    .point-text {
+        font-size: 14px;
+    }
+
+    .doctor-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
+    }
+
+    .premium-ayur-card::before {
+        font-size: 80px;
+    }
+}
 
 
 
@@ -906,7 +1191,104 @@ nav {
     top: 20%;
     right: -50px;
 }
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
 
+    .premium-stack {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .main-head h2 {
+        font-size: 26px;
+        margin-top: 20px;
+    }
+
+    .glass-item {
+        padding: 18px;
+        margin: 25px 10px;
+        border-radius: 25px;
+    }
+
+    .user-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+        top: -15px;
+        left: 20px;
+        border-radius: 15px;
+    }
+
+    .content-body {
+        margin-top: 10px;
+    }
+
+    .review-txt {
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+
+    .footer-line {
+        padding-top: 10px;
+    }
+
+    .user-label h4 {
+        font-size: 16px;
+    }
+
+    .user-label span {
+        font-size: 14px;
+    }
+
+    .trust-pill {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+
+    .glow-sphere {
+        width: 140px;
+        height: 140px;
+        right: -30px;
+        opacity: 0.12;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .glass-item {
+        padding: 15px;
+        margin: 20px 5px;
+    }
+
+    .main-head h2 {
+        font-size: 22px;
+    }
+
+    .review-txt {
+        font-size: 14px;
+    }
+
+    .user-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .user-label h4 {
+        font-size: 15px;
+    }
+
+    .user-label span {
+        font-size: 13px;
+    }
+
+    .glow-sphere {
+        width: 110px;
+        height: 110px;
+    }
+}
 
 
 
@@ -1067,7 +1449,97 @@ nav {
         .step-entry:hover .info-panel p {
             color: #fff;
         }
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
 
+    .timeline-wrapper {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .timeline-wrapper::before {
+        left: 15px;
+        top: 80px;
+        bottom: 40px;
+        margin-left: 10px;
+    }
+
+    .header {
+        padding-left: 20px;
+        margin-bottom: 25px;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+
+    .step-entry {
+        margin-left: 10px;
+        margin-bottom: 30px;
+    }
+
+    .dot {
+        width: 34px;
+        height: 34px;
+        font-size: 12px;
+    }
+
+    .screen-frame {
+        width: 90px;
+        height: 75px;
+        margin-left: 15px;
+    }
+
+    .info-panel {
+        padding-left: 10px;
+    }
+
+    .info-panel b {
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: -8px;
+    }
+
+    .info-panel p {
+        font-size: 15px;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .timeline-wrapper::before {
+        left: 10px;
+        margin-left: 25px;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .step-entry {
+        gap: 8px;
+    }
+
+    .dot {
+        width: 30px;
+        height: 30px;
+        font-size: 11px;
+    }
+
+    .screen-frame {
+        width: 75px;
+        height: 65px;
+    }
+
+    .info-panel b {
+        font-size: 14px;
+    }
+
+    .info-panel p {
+        font-size: 14px;
+    }
+}
        
 
 
@@ -1192,7 +1664,90 @@ nav {
     font-size: 18px;
     margin-right: 20px;
 }
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
 
+    .wrapper {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .title-area h2 {
+        font-size: 26px;
+        margin-top: 25px;
+    }
+
+    .step-layer {
+        padding: 18px;
+        gap: 12px;
+        margin-right: 10px;
+        border-radius: 20px;
+    }
+
+    /* reduce 3D offset for mobile */
+    .step-layer:nth-child(2) { transform: translateX(5px); }
+    .step-layer:nth-child(3) { transform: translateX(10px); }
+    .step-layer:nth-child(4) { transform: translateX(15px); }
+
+    .step-layer:hover {
+        transform: translateX(0) scale(1.02);
+        margin-left: 10px;
+    }
+
+    .icon-circle {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+        border-radius: 15px;
+    }
+
+    .text-box b {
+        font-size: 16px;
+    }
+
+    .text-box p {
+        font-size: 15px;
+    }
+
+    .floating-tip {
+        font-size: 15px;
+        padding: 12px;
+        margin: 20px 10px;
+        border-radius: 15px;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .title-area h2 {
+        font-size: 22px;
+    }
+
+    .step-layer {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .icon-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .text-box b {
+        font-size: 14px;
+    }
+
+    .text-box p {
+        font-size: 14px;
+    }
+
+    .floating-tip {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
 
 
 
@@ -1351,7 +1906,77 @@ nav {
         .orbit-row:nth-child(even):hover .orbit-text p {
             transform: translateX(-10px);
         }
+/* Maintain zigzag layout on mobile */
+@media (max-width: 768px) {
+    .orbit-container {
+        max-width: 100%;
+        gap: 30px;
+        padding: 0 10px;
+    }
+    .main-header h1{
+        font-size: 22px;
+        margin-bottom: -10px;
+        margin-top: 15px;
+    }
 
+    .orbit-row {
+        flex-direction: row; /* keep zigzag layout */
+        justify-content: space-between;
+        padding: 5px 0;
+        margin-top: -20px;
+        margin-bottom: 15px;
+    }
+
+    .orbit-row:nth-child(even) {
+        flex-direction: row-reverse; /* maintain alternate zigzag */
+    }
+
+    .circle-frame {
+        width: 90px;
+        height: 90px;
+    }
+
+    .circle-frame img {
+        width: 80%;
+        height: 80%;
+    }
+
+    .orbit-text {
+        padding: 0 10px;
+    }
+
+    .orbit-text b {
+        font-size: 18px;
+        margin-bottom: -10px;
+    }
+
+    .orbit-text p {
+        font-size: 15px;
+        line-height: 1.3;
+    }
+}
+
+/* Extra small devices (very small phones) */
+@media (max-width: 480px) {
+    .circle-frame {
+        width: 70px;
+        height: 70px;
+    }
+
+    .circle-frame img {
+        width: 90%;
+        height: 90%;
+    }
+
+    .orbit-text b {
+        font-size: 16px;
+    }
+
+    .orbit-text p {
+        font-size: 14px;
+        line-height: 1.2;
+    }
+}
        
 
 
@@ -1520,7 +2145,89 @@ nav {
             color: var(--white);
             line-height: 1.5;
         }
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
 
+    .hologram-container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .premium-title {
+        font-size: 26px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .img-stage {
+        width: 220px;
+        height: 260px;
+        margin-bottom: 15px;
+    }
+
+    .scanner-ring {
+        width: 180px;
+        height: 180px;
+        border-width: 6px;
+    }
+
+    .base-light {
+        width: 140px;
+        bottom: 25px;
+    }
+
+    .product-hero {
+        filter: drop-shadow(0 0 10px var(--yellow));
+    }
+
+    .offer-card {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .offer-card h3 {
+        font-size: 17px;
+    }
+
+    .offer-card p {
+        font-size: 15px;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .premium-title {
+        font-size: 22px;
+    }
+
+    .img-stage {
+        width: 180px;
+        height: 220px;
+    }
+
+    .scanner-ring {
+        width: 150px;
+        height: 150px;
+    }
+
+    .base-light {
+        width: 110px;
+        bottom: 20px;
+    }
+
+    .offer-card {
+        padding: 15px;
+    }
+
+    .offer-card h3 {
+        font-size: 15px;
+    }
+
+    .offer-card p {
+        font-size: 14px;
+    }
+}
 
 
 
@@ -1751,7 +2458,92 @@ input{
     color: var(--text-dark);
 }
 
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
+    .trust-split-card {
+        max-width: 100%;
+        margin: 0 auto;
+    }
 
+    .card-top {
+        padding: 25px 15px;
+    }
+
+    .badge-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .top-title {
+        font-size: 26px;
+    }
+
+    .card-bottom {
+        padding: 20px;
+        margin-top: -15px;
+    }
+
+    .trust-message {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .user-proof {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .avatars {
+        justify-content: center;
+    }
+
+    .avatar-circle {
+        width: 25px;
+        height: 25px;
+        font-size: 10px;
+        margin-left: -8px;
+    }
+
+    .avatar-circle:first-child { margin-left: 0; }
+    
+    .proof-text {
+        font-size: 0.75rem;
+        text-align: center;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+    .top-title {
+        font-size: 22px;
+    }
+
+    .badge-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .trust-message {
+        font-size: 14px;
+    }
+
+    .card-bottom {
+        padding: 15px;
+    }
+
+    .avatar-circle {
+        width: 22px;
+        height: 22px;
+        font-size: 9px;
+        margin-left: -6px;
+    }
+
+    .proof-text {
+        font-size: 0.7rem;
+    }
+}
 
 
 

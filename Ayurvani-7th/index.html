@@ -767,14 +767,91 @@ nav {
         .error-footer b { display: block; font-size: 20px; margin-bottom: 5px; }
         .error-footer p { margin: 0; font-size: 18px; line-height: 1; font-weight: 500; }
 
-        /* Responsive */
-        @media (max-width: 480px) {
-            .headline h1 { font-size: 26px; }
-            .slide-item { height: 90px; border-radius: 18px; }
-            .slide-content { width: 60%; padding: 10px; }
-            .slide-content span { font-size: 13px; }
-            .slide-number { font-size: 24px; }
-        }
+        /* Mobile Optimization */
+@media (max-width: 480px) {
+
+    .mobile-layout {
+        padding: 20px;
+    }
+
+    /* Header */
+    .headline {
+        margin-bottom: 25px;
+    }
+
+    .headline h1 {
+        font-size: 22px; /* main heading */
+    }
+
+    /* Slide Item */
+    .slide-item {
+        height: 100px;
+        border-radius: 18px;
+        margin-bottom: 15px;
+    }
+
+    /* Disable hover issues */
+    .slide-item:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .slide-item:hover .slide-content span {
+        color: inherit;
+    }
+
+    .slide-item:hover .slide-number {
+        color: rgba(255,255,255,0.1);
+    }
+
+    /* Image */
+    .slide-img {
+        width: 55%;
+        opacity: 0.5;
+    }
+
+    /* Content */
+    .slide-content {
+        padding: 15px;
+        width: 75%;
+    }
+
+    .slide-content span {
+        font-size: 16px; /* normal text */
+        line-height: 1.3;
+    }
+
+    .slide-content b {
+        font-size: 15px; /* small title */
+    }
+
+    /* Number */
+    .slide-number {
+        font-size: 28px;
+        left: 8px;
+        top: 0;
+    }
+
+    /* Footer */
+    .error-footer {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .error-footer:hover {
+        transform: none;
+    }
+
+    .error-footer b {
+        font-size: 16px;
+    }
+
+    .error-footer p {
+        font-size: 16px;
+        line-height: 1.2;
+    }
+}
 
 
 
@@ -909,7 +986,67 @@ nav {
         margin-top: 3px;
     }
 
+/* Mobile Optimization */
+@media (max-width: 480px) {
 
+    .ayu-section {
+        padding: 20px;
+        box-shadow: 6px 6px 0px #e6dfcc;
+    }
+
+    /* Header */
+    .ayu-header h2 {
+        font-size: 22px; /* main heading */
+    }
+
+    /* Quote */
+    .expert-quote {
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 12px;
+    }
+
+    /* Herb List */
+    .herb-item {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    /* Disable hover effect */
+    .herb-item:hover {
+        transform: none;
+        background: var(--white);
+        color: inherit;
+        border-color: #eee;
+    }
+
+    .herb-item:hover .herb-icon {
+        background: #f5ede6;
+    }
+
+    /* Icon */
+    .herb-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+        margin-right: 10px;
+    }
+
+    /* Grid */
+    .support-box {
+        gap: 8px;
+    }
+
+    .target-card {
+        font-size: 16px;
+        padding: 10px;
+        box-shadow: 0 3px 0 #8a4a14;
+    }
+
+    .target-card b {
+        font-size: 15px; /* small text */
+    }
+}
 
 
 
@@ -1040,7 +1177,56 @@ nav {
 
         .green { color: var(--red); }
         .grey { color:black; }
+/* Mobile Optimization with Tap Effect */
+@media (max-width: 480px) {
 
+    .fluid-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 10px;
+    }
+
+    .header-section h2 {
+        font-size: 22px;
+    }
+
+    .item-row {
+        height: 60px;
+    }
+
+    .ayur-blob {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+
+    .other-blob {
+        width: 110px;
+        font-size: 15px;
+    }
+
+    .labels-footer {
+        font-size: 16px;
+        padding: 15px 10px 0;
+        margin-top: -20px;
+    }
+
+    /* 👇 IMPORTANT: Tap = Hover */
+    .item-row:active .ayur-blob {
+        flex: 3;
+        border-radius: 30px;
+        background: var(--orange);
+        box-shadow: 0 15px 30px rgba(195,103,26,0.4);
+    }
+
+    .item-row:active .other-blob {
+        width: 0;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        border: none;
+        overflow: hidden;
+    }
+}
 
 
 
@@ -1221,7 +1407,96 @@ nav {
         align-items: center;
         gap: 4px;
     }
+/* Mobile Optimization */
+@media (max-width: 480px) {
 
+    .wrapper {
+        width: 92%;
+    }
+
+    /* Header */
+    .header-group {
+        margin-bottom: 20px;
+    }
+
+    .header-group span {
+        font-size: 10px;
+        padding: 4px 12px;
+    }
+
+    .header-group h2 {
+        font-size: 22px; /* main heading */
+        margin-top: 15px;
+    }
+
+    /* Card */
+    .testimonial-card {
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    /* Tap = Hover */
+    .testimonial-card:active {
+        transform: translateY(-6px);
+        border-color: var(--red);
+        box-shadow: 0 20px 40px -10px rgba(73, 22, 15, 0.2);
+    }
+
+    .testimonial-card:active .quote-icon {
+        color: rgba(195, 103, 26, 0.15);
+        transform: rotate(-10deg);
+    }
+
+    .testimonial-card:active .initial-box {
+        background: var(--red);
+        border-radius: 50%;
+        transform: rotate(360deg);
+    }
+
+    /* Quote icon */
+    .quote-icon {
+        font-size: 30px;
+        top: 15px;
+        right: 15px;
+    }
+
+    /* Stars */
+    .star-strip i {
+        font-size: 14px;
+    }
+
+    /* Text */
+    .feedback {
+        font-size: 16px; /* normal text */
+        line-height: 1.4;
+    }
+
+    /* Footer */
+    .card-footer {
+        padding-top: 10px;
+    }
+
+    /* Author */
+    .initial-box {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .author-info h4 {
+        font-size: 16px;
+    }
+
+    .author-info p {
+        font-size: 15px; /* small text */
+    }
+
+    /* Badge */
+    .verified-badge {
+        font-size: 14px;
+        padding: 3px 6px;
+    }
+}
 
 
 
@@ -1345,14 +1620,77 @@ nav {
         }
 
         .orbit-step:hover .step-tag { color: var(--orange); }
+/* Mobile Optimization */
+@media (max-width: 480px) {
 
-        @media screen and (max-width: 480px) {
-            .title { font-size: 18px; }
-            .orbit-image { width: 70px; height: 70px; }
-            .orbit-content { font-size: 14px; padding: 10px 12px; }
-            .step-tag { font-size: 10px; }
-        }
+    .orbital-wrapper {
+        padding: 10px;
+    }
 
+    /* Title */
+    .title {
+        font-size: 22px; /* main heading */
+        margin-bottom: 20px;
+    }
+
+    /* Line adjust */
+    .path-line {
+        left: 35px;
+        top: 80px;
+        bottom: 40px;
+    }
+
+    /* Step */
+    .orbit-step {
+        margin-bottom: 20px;
+    }
+
+    /* Image */
+    .orbit-image {
+        width: 70px;
+        height: 70px;
+        border-width: 3px;
+    }
+
+    /* Content */
+    .orbit-content {
+        margin-left: 15px;
+        padding: 12px 15px;
+    }
+
+    /* Arrow fix */
+    .orbit-content::before {
+        left: -8px;
+        width: 8px;
+        height: 8px;
+    }
+
+    /* Fonts */
+    .step-tag {
+        font-size: 16px; /* normal */
+    }
+
+    .des {
+        font-size: 15px; /* small */
+    }
+
+    /* 👇 Tap = Hover */
+    .orbit-step:active .orbit-image {
+        transform: rotate(0deg) scale(1.08);
+        border-radius: 50%;
+    }
+
+    .orbit-step:active .orbit-content {
+        background: var(--red);
+        color: var(--white);
+        transform: translateX(8px);
+    }
+
+    .orbit-step:active .step-tag {
+        color: var(--orange);
+    }
+}
+     
 
 
 

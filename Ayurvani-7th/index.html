@@ -1,0 +1,3143 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&family=Source+Sans+3:wght@400;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+      
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Outfit:wght@400;900&display=swap');
+
+
+:root {
+  --white: #fff;
+  --orange:#c3671a;
+  --red:#49160f;   
+}
+
+/* ===== GLOBAL ===== */
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans 3','Noto Serif Devanagari', sans-serif;
+  background-color:rgba(169, 160, 160, 0.276);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+ 
+}
+
+/* HEADER */
+header {
+  max-width: 450px;
+  width: 100%;
+  padding: 14px;
+  display: flex;
+  justify-content: center;
+ background: var(--orange);
+}
+nav {
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+  border-bottom: 2px solid rgba(255,255,255,0.4);
+  padding-bottom: 6px;
+}
+
+/* Logo - Tumhare bataye huye font size aur weight ke saath */
+.logo {
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 2px; /* Thoda gap branding ke liye */
+  color: var(--white);
+  text-transform: uppercase;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Logo Underline - Wahi Neon Style */
+.logo::after {
+  content: '';
+  position: absolute;
+  width: 40%; /* Choti classy line */
+  height: 3px;
+  background: var(--red);
+  left: 0;
+  bottom: 2px;
+  transition: 0.4s ease;
+  box-shadow: 0 0 10px var(--red); /* Glow effect */
+}
+
+/* Hover effect on logo */
+.logo:hover::after {
+  width: 100%; /* Hover par puri line glow karegi */
+}
+
+.logo:hover {
+  text-shadow: 0 0 15px rgba(255, 247, 0, 0.5);
+}
+
+/* Span styling agar naam do colors mein chahiye */
+.logo span {
+  color: var(--red);
+}
+.buttonn {
+  background-color: var(--red); 
+  color: var(--white);
+  border-radius: 15px;
+  padding: 14px 22px;
+  border: 2px solid var(--red);
+  font-size: 19px;
+  text-decoration: none;
+  cursor: pointer;
+ 
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgb(218, 180, 13) }
+  70% { box-shadow: 0 0 0 20px rgba(236,72,153,0) }
+  100% { box-shadow: 0 0 0 0 rgba(236,72,153,0) }
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  background: var(--red);
+  cursor: pointer;
+  margin: 10px 100px;
+  width: 55%;
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  top: 0;
+  left: -40%;
+  transform: skewX(-20deg);
+}
+.btn:hover::before {
+  left: 120%;
+  transition: 1.5s;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 430px) {
+  .btn {
+    width: 50% !important;
+    font-size: 15px !important;
+    margin: 10px 80px !important;
+  }
+}
+
+/* ===== SECTIONS ===== */
+.sec {
+  max-width: 450px;
+  width: 100%;
+  background: var(--orange);
+  border-bottom: 2px solid var(--white);
+}
+.sect {
+  max-width: 450px;
+  width: 100%;
+  background-color: var(--red);
+}
+.images {
+  max-width: 450px;
+  width: 100%;
+  align-items: center;
+  padding: 0;
+}
+
+@media (max-width: 480px) {
+
+  header {
+    max-width: 100%;
+    padding: 12px 10px;
+  }
+
+  nav {
+    max-width: 100%;
+    padding-bottom: 6px;
+  }
+
+  .logo {
+    font-size: 30px;
+  }
+
+  .buttonn {
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-1 */
+   .showcase-wrapper {
+            width: 90%;
+            max-width: 450px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding-bottom: 40px;
+        }
+
+        .main-head {
+            font-size: 32px;
+            text-align: center;
+            color: var(--red);
+            font-weight: 800;
+            margin-top: 5px;
+            margin-bottom: -10px;
+        }
+
+       
+        .premium-card {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            background: #fff;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 12px 12px 30px rgba(0,0,0,0.05);
+            transition: 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        .card-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #eee;
+            clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+            transition: 0.6s ease-in-out;
+            z-index: 1;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.6s ease-in-out;
+        }
+
+        .card-content {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            z-index: 2;
+            transition: 0.5s ease-in-out;
+            transform: translateY(15px);
+            opacity: 0.95;
+        }
+
+        .step-title {
+            font-size: 22px;
+            color:var(--orange);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: -10px;
+        }
+
+        .step-title .number {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .step-desc {
+            font-size: 18px;
+            color:black;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-top: -5px;
+        }
+
+        .card-img::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%);
+            z-index: 1;
+        }
+
+        .premium-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 16px 16px 50px rgba(0,0,0,0.1);
+        }
+
+        .premium-card:hover .card-img {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .premium-card:hover .card-img img {
+            transform: scale(1.08);
+        }
+
+        .premium-card:hover .card-content {
+            transform: translateY(0);
+            opacity: 1;
+            background: #fff;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-2 */
+   .container-frame {
+            max-width: 450px;
+            width: 100%;
+        }
+
+        .premium-crd {
+            background: var(--white);
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .premium-crd::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: var(--red);
+            border-radius: 50%;
+            opacity: 0.3;
+            transition: 0.6s;
+        }
+
+        .premium-crd:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 40px 80px rgba(73, 22, 15, 0.2);
+            border-color: var(--red);
+        }
+
+        .premium-crd:hover::before {
+            transform: scale(2);
+            opacity: 0.1;
+        }
+
+        .product-box {
+            position: relative;
+            height: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .img-bg-blur {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, var(--orange), var(--red));
+            filter: blur(40px);
+            opacity: 0.25;
+            border-radius: 50%;
+            transition: 0.5s;
+        }
+
+        .product-img {
+            width: 180px;
+            border: 2px solid var(--red);
+            z-index: 2;
+            border-radius: 20px;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .premium-crd:hover .product-img {
+            transform: scale(1.1) rotate(5deg) translateX(-20px);
+            filter: drop-shadow(0 30px 20px rgba(0,0,0,0.2));
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(195, 103, 26, 0.1);
+            color: var(--orange);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 28px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+        }
+
+         .text-content h2 {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--orange);
+        }
+
+        .desc {
+            font-size: 15px;
+            color: black;
+            line-height: 1.3;
+            margin-top: -15px;
+            margin-bottom: 15px;
+        }
+
+        .desc strong { color: var(--orange); }
+
+        .info-glass-box {
+            background: var(--red);
+            border: 1px solid rgba(73, 22, 15, 0.08);
+            padding: 20px;
+            border-radius: 25px;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            transition: 0.4s;
+        }
+
+        .premium-crd:hover .info-glass-box {
+            background: var(--orange);
+            transform: scale(1.02);
+        }
+
+        .icon-circle {
+            background: var(--orange);
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: 0.4s;
+        }
+
+        .premium-crd:hover .icon-circle {
+            background: var(--red);
+        }
+
+        .info-glass-box p {
+            font-size: 18px;
+            color: white;
+            line-height: 1.5;
+            transition: 0.4s;
+            margin-top: -2px;
+            margin-bottom: -2px;
+        }
+
+        .premium-crd:hover .info-glass-box p {
+            color: #fff;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-3 */
+   .mobile-layout {
+            width: 100%;
+            max-width: 450px;
+            background: var(--red);
+            color: var(--white);
+            padding: 30px;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .headline { margin-bottom: 40px;  text-align: center; }
+        .headline h1 { font-size: 32px; line-height: 1; margin: 0; font-weight: 800; color: var(--orange); }
+       
+        /* Content Block */
+        .slide-item {
+            position: relative;
+            margin-bottom: 25px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--orange);
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        /* NEW HOVER EFFECT */
+        .slide-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(195,103,26,0.3);
+        }
+
+        .slide-item:hover .slide-content span {
+            color: var(--white);
+        }
+
+        .slide-item:hover .slide-number {
+            color: rgba(255,255,255,0.3);
+        }
+
+        .slide-img {
+            position: absolute;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+            mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+            -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+            opacity: 0.6;
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            width: 70%;
+        }
+
+        .slide-content span {
+            display: block;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+         .slide-content b{
+            color: var(--red);
+            font-size: 19px;
+         }
+
+        .slide-number {
+            font-size: 40px;
+            font-weight: 800;
+            color: rgba(255,255,255,0.1);
+            position: absolute;
+            left: 10px;
+            top: -5px;
+        }
+
+        /* Footer */
+        .error-footer {
+            margin-top: 30px;
+            background:var(--orange);
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .error-footer:hover {
+            transform: scale(1.05);
+        }
+
+        .error-footer b { display: block; font-size: 20px; margin-bottom: 5px; }
+        .error-footer p { margin: 0; font-size: 18px; line-height: 1; font-weight: 500; }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .headline h1 { font-size: 26px; }
+            .slide-item { height: 90px; border-radius: 18px; }
+            .slide-content { width: 60%; padding: 10px; }
+            .slide-content span { font-size: 13px; }
+            .slide-number { font-size: 24px; }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-4 */
+  .ayu-section {
+        max-width: 450px;
+        width: 100%;
+        background: #fdfaf0;
+        border: 2px solid var(--orange);
+       padding: 30px;
+        box-sizing: border-box;
+        position: relative;
+        box-shadow: 10px 10px 0px #e6dfcc;
+        background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
+    }
+
+   
+
+    .ayu-header {
+        text-align: center;
+        border-bottom: 1px dashed var(--orange);
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+
+    .ayu-header h2 {
+        color: var(--orange);
+        font-size: 32px;
+        margin: 0;
+        font-weight: 700;
+    }
+
+    
+
+    .expert-quote {
+        background: rgba(195, 103, 26, 0.08);
+        border-radius: 15px;
+        padding: 15px;
+        font-style: italic;
+        color: black;
+        line-height: 1.6;
+        font-size: 18px;
+        margin-bottom: 20px;
+        border-right: 5px solid var(--red);
+    }
+
+    .herb-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .herb-item {
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        background: var(--white);
+        border-radius: 12px;
+        border: 1px solid #eee;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    .herb-item:hover {
+        transform: scale(1.02) translateX(10px);
+        background: var(--red);
+        color: var(--white);
+        border-color: var(--red);
+    }
+
+    .herb-icon {
+        background: #f5ede6;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-right: 15px;
+        font-size: 18px;
+    }
+
+    .herb-item:hover .herb-icon {
+        background: rgba(255,255,255,0.2);
+    }
+
+    .support-box {
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .target-card {
+        background: var(--orange);
+        color: var(--white);
+        padding: 12px;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 18px;
+        box-shadow: 0 4px 0 #8a4a14;
+        transition: 0.2s;
+    }
+
+    .target-card:active {
+        box-shadow: 0 0 0 #8a4a14;
+        transform: translateY(4px);
+    }
+
+    .target-card b {
+        display: block;
+        font-size: 15px;
+        margin-top: 3px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-5 */
+        .fluid-container {
+            width: 100%;
+            width: 450px;
+            background: var(--white);
+            padding: 30px 10px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header-section h2 {
+            font-weight: 800;
+            font-size: 32px;
+            color: var(--orange);
+            margin: 0;
+        }
+
+        .comparison-area {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 0 15px;
+        }
+
+        .item-row {
+            display: flex;
+            height: 65px;
+            gap: 8px;
+            position: relative;
+        }
+
+        /* Ayurvani Side */
+        .ayur-blob {
+            flex: 1;
+            background: var(--red);
+            border-radius: 30px 10px 10px 30px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            position: relative;
+            box-shadow: 0 4px 15px rgba(73,22,15,0.3);
+            cursor: pointer;
+        }
+
+        .ayur-blob::after {
+            content: '🌿';
+            position: absolute;
+            right: 15px;
+            opacity: 0.4;
+            font-size: 18px;
+        }
+
+        /* Others */
+        .other-blob {
+            width: 130px;
+            background: #f1f1f1;
+            border-radius: 10px 30px 30px 10px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            color: var(--grey);
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            border: 1px solid #eee;
+        }
+
+        /* Hover Animation */
+        .item-row:hover .ayur-blob {
+            flex: 3;
+            border-radius: 30px;
+            background: var(--orange);
+            box-shadow: 0 15px 30px rgba(195,103,26,0.4);
+        }
+
+        .item-row:hover .other-blob {
+            width: 0px;
+            padding: 0;
+            margin: 0;
+            opacity: 0;
+            border: none;
+            overflow: hidden;
+        }
+
+        .labels-footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 30px 0;
+            font-size: 20px;
+            margin-top: -40px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .green { color: var(--red); }
+        .grey { color:black; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-6 */
+.wrapper {
+        max-width: 450px;
+        width: 90%;
+        margin: 0 auto;
+       
+    }
+
+    .header-group {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .header-group span {
+        color: var(--red);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        background: rgba(195, 103, 26, 0.1);
+        padding: 5px 15px;
+        border-radius: 50px;
+    }
+
+    .header-group h2 {
+        margin-top: 20px;
+        font-size: 32px;
+        color: var(--red);
+        font-weight: 800;
+    }
+
+    .testimonial-card {
+        background: var(--white);
+        border-radius: 30px;
+        padding: 25px;
+        margin-bottom: 20px;
+        border: 2px solid transparent;
+        box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
+        transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+        position: relative;
+        cursor: pointer;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--red);
+        box-shadow: 0 30px 60px -15px rgba(73, 22, 15, 0.2);
+    }
+
+    .quote-icon {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        font-size: 40px;
+        color: #f1f5f9;
+        font-family: serif;
+        line-height: 1;
+        transition: 0.3s;
+    }
+
+    .testimonial-card:hover .quote-icon {
+        color: rgba(195, 103, 26, 0.15);
+        transform: rotate(-15deg);
+    }
+
+    .star-strip {
+        display: flex;
+        gap: 4px;
+        margin-top: -15px;
+        margin-bottom: -10px;
+    }
+
+    .star-strip i {
+        color: var(--orange);
+        font-size: 16px;
+    }
+
+    .feedback {
+        font-size: 18px;
+        line-height: 1.3;
+        color: black;
+        font-weight: 500;
+         margin-bottom: -5px;
+        position: relative;
+    }
+
+    .feedback b {
+        color: var(--orange);
+        background: linear-gradient(120deg, rgba(195, 103, 26, 0.15) 0%, rgba(195, 103, 26, 0.15) 100%);
+        background-repeat: no-repeat;
+        background-size: 100% 0.3em;
+        background-position: 0 88%;
+        padding: 0 2px;
+    }
+
+    .card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 15px;
+        border-top: 1px solid #f1f5f9;
+    }
+
+    .author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .initial-box {
+        width: 45px;
+        height: 45px;
+        background: var(--orange);
+        color: var(--white);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 20px;
+        transition: 0.4s;
+    }
+    .initial-box img{
+        width: 100%;
+        height: 100%;
+        border: 2px solid var(--orange);
+        border-radius: 10px;
+    }
+
+    .testimonial-card:hover .initial-box {
+        background: var(--red);
+        border-radius: 50%;
+        transform: rotate(360deg);
+    }
+
+    .author-info h4 {
+        margin: 0;
+        font-size: 18px;
+        color:var(--red);
+        font-weight: 700;
+        margin-bottom: -5px;
+    }
+
+    .author-info p {
+        margin: 0;
+        font-size: 16px;
+        color: black;
+    }
+
+    .verified-badge {
+        font-size: 16px;
+        background: rgba(195, 103, 26, 0.1);
+        color: var(--red);
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-7 */
+        .orbital-wrapper {
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+            padding: 10px 10px;        }
+
+        .title {
+            text-align: center;
+            font-size: 32px;
+            color: var(--red);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        .path-line {
+            position: absolute;
+            left: 50px;
+            top: 100px;
+            bottom: 50px;
+            width: 2px;
+            border-left: 3px dashed var(--red);
+            z-index: 1;
+        }
+
+        .orbit-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .orbit-image {
+            width: 90px;
+            height: 90px;
+            background: var(--white);
+            border: 4px solid var(--red);
+            border-radius: 50% 50% 50% 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(-45deg);
+            transition: 0.5s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+
+        .orbit-image img {
+            width: 120%;
+            height: 120%;
+            object-fit: cover;
+            transform: rotate(45deg);
+        }
+
+        .orbit-content {
+            margin-left: 20px;
+            background: var(--white);
+            padding: 15px 20px;
+            border-radius: 15px;
+            border: 1px solid var(--red);
+            transition: 0.4s;
+            position: relative;
+        }
+
+        .orbit-content::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            width: 10px;
+            height: 10px;
+            background: var(--red);
+            border-left: 1px solid var(--red);
+            border-bottom: 1px solid var(--red);
+        }
+
+        .orbit-step:hover .orbit-image {
+            transform: rotate(0deg) scale(1.1);
+            border-radius: 50%;
+            border-color: var(--red);
+        }
+
+        .orbit-step:hover .orbit-content {
+            background: var(--red);
+            color: var(--white);
+            transform: translateX(10px);
+        }
+
+        .step-tag {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--orange);
+            display: block;
+            margin-bottom: -5px;
+        }
+        .des{
+            font-size: 20px;
+        }
+
+        .orbit-step:hover .step-tag { color: var(--orange); }
+
+        @media screen and (max-width: 480px) {
+            .title { font-size: 18px; }
+            .orbit-image { width: 70px; height: 70px; }
+            .orbit-content { font-size: 14px; padding: 10px 12px; }
+            .step-tag { font-size: 10px; }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-8 */
+    .wrappr {
+        width: 100%;
+        max-width: 450px;
+        padding: 40px;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #1a1a1a;
+        box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+    }
+
+    /* Background Animation Glow */
+    .wrappr::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(from 180deg at 50% 50%, var(--red) 0deg, var(--red) 120deg, transparent 360deg);
+        animation: rotate 10s linear infinite;
+        opacity: 0.12;
+        z-index: 0;
+    }
+
+    @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .header-text {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .header-text h2 {
+        font-size: 32px;
+        color: var(--red);
+        font-weight: 700;
+        letter-spacing: -1px;
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    
+    .card-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .usage-item {
+        background: rgba(255, 255, 255, 0.253);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 25px;
+        padding:15px 25px;
+        display: flex;
+        align-items: center;
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+        position: relative;
+    }
+
+    .usage-item:hover {
+        background: rgba(255, 255, 255, 0.267);
+        border-color: var(--orange);
+        transform: scale(1.05) translateX(10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .icon-holder {
+        width: 50px;
+        height: 50px;
+        background:  var(--red) ;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        margin-right: 20px;
+        box-shadow: 0 10px 20px rgba(195, 103, 26, 0.4);
+        transition: 0.3s;
+    }
+
+    .usage-item:hover .icon-holder {
+        transform: rotateY(180deg);
+        box-shadow: 0 0 30px rgba(195, 65, 26, 0.466);
+    }
+
+    .text-box b {
+        display: block;
+        color: var(--red);
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: -10px;
+
+    }
+
+    .text-box span {
+        font-size: 18px;
+        color: black;
+        transition: 0.3s;
+    }
+
+  
+
+    /* Expert Badge */
+    .expert-badge {
+        margin-top: 35px;
+        background: var(--red);
+        padding: 15px;
+        border-radius: 20px;
+        border: 1px solid #222;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .expert-badge .dot {
+        width: 10px;
+        height: 10px;
+        background: var(--orange);
+        border-radius: 50%;
+        box-shadow: 0 0 10px var(--orange);
+        animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+        0% { opacity: 0.4; }
+        50% { opacity: 1; }
+        100% { opacity: 0.4; }
+    }
+
+    .expert-badge span {
+        font-size: 16px;
+        color: #ccc;
+    }
+
+    .expert-badge strong {
+        color: var(--white);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* section-9 */
+  .scanner-container {
+            width: 100%;
+            max-width: 450px;
+            background: var(--red);
+            padding: 40px 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+     
+
+        .scan-header h1 {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 0.9;
+            text-align: center;
+            color: var(--white);
+            margin-bottom: 30px;
+            margin-top: -10px;
+            color: var(--orange);
+        }
+
+
+        /* Content */
+        .flow-item {
+            display: flex;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+
+        .img-wrap {
+            width: 110px;
+            height: 110px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .img-wrap img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 5px;
+        }
+
+        .pulse-ring {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border: 1px solid var(--orange);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.3); opacity: 0; }
+        }
+
+        .text-wrap {
+            padding-left: 25px;
+            padding-top: 15px;
+        }
+
+        .text-wrap h3 {
+            font-size: 20px;
+            color: var(--orange);
+            margin-top: -5px;
+        }
+
+        .text-wrap p {
+            font-size: 18px;
+            color: #ccc;
+            margin-top: -20px;
+        }
+
+        .text-wrap b { color: var(--white); }
+
+        /* Footer */
+        .warning-footer {
+            margin-top: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 0 40px 0 40px;
+            text-align: center;
+        }
+
+        .warning-footer i {
+            display: block;
+            font-style: normal;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .warning-footer strong {
+            display: block;
+            color: var(--orange);
+            font-size: 22px;
+            margin-bottom: -15px;
+            margin-top: -15px;
+        }
+
+        .warning-footer p {
+            font-size: 18px;
+            color: black;
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-10 */
+ .main-card {
+        width: 100%;
+        max-width: 450px;
+        background: #ffffff;
+        position: relative;
+        box-shadow: 0 40px 80px rgba(0,0,0,0.08);
+        border: 1px solid #f1f5f9;
+        overflow: visible;
+    }
+
+    /* TOP BANNER */
+    .top-banner {
+        background: var(--orange);
+        height: 180px;
+        border-radius: 5px 5px 100px 15px;
+        padding: 35px;
+        position: relative;
+        text-transform: uppercase;
+    }
+
+   
+    .top-banner h2 {
+        color: var(--red);
+        font-size: 32px;
+        font-weight: 800;
+        line-height: 1.1;
+        margin: 0;
+
+    }
+
+    /* LIVE TIMER RIBBON */
+    .timer-ribbon {
+        position: absolute;
+        left: 35px;
+        bottom: 25px;
+        background:var(--red);
+        color: #fff;
+        padding: 8px 18px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 18px;
+        font-weight: 700;
+        border-radius: 12px;
+        box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        z-index: 6;
+    }
+
+    /* FLOATING PRODUCT IMAGE */
+    .img-box {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: #fff;
+        right: 15px;
+        bottom: -60px;
+        border-radius: 40px;
+        box-shadow: 20px 20px 50px rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--red);
+        z-index: 5;
+        transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .img-box:hover {
+        transform: rotate(-5deg) translateY(-10px);
+    }
+
+    .img-box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 40px; /* frame जैसा ही */
+    object-fit: cover;
+}
+
+    /* IMPROVED CONTENT SECTION */
+    .content-body {
+        padding: 65px 30px 40px;
+    }
+
+    .section-label {
+        font-size: 22px;
+        color: var(--orange);
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .features-stack {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 35px;
+    }
+
+    .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 18px;
+        background: #723f156c;
+        border-radius: 24px;
+        border: 1px solid transparent;
+        transition: 0.4s;
+    }
+
+    .feature-item:hover {
+        border-color: var(--red);
+        box-shadow: 0 15px 30px rgba(56, 189, 248, 0.08);
+        transform: scale(1.02);
+    }
+
+    .bullet {
+        width: 44px;
+        height: 44px;
+        background: #ffffff;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        flex-shrink: 0;
+    }
+
+    .f-info b {
+        display: block;
+        font-size: 18px;
+        color: var(--red);
+        margin-bottom: 2px;
+    }
+
+    .f-info span {
+        font-size: 16px;
+        color: black;
+        font-weight: 500;
+    }
+
+    /* PREMIUM CTA BUTTON */
+    .buy-now-btn {
+        background: var(--orange);
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        padding: 22px;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-weight: 800;
+        font-size: 18px;
+        transition: 0.4s;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
+    }
+
+    .buy-now-btn:hover {
+        background:var(--red);
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(56, 189, 248, 0.3);
+    }
+
+    .buy-now-btn::after {
+        content: '→';
+        font-size: 22px;
+        transition: 0.3s;
+    }
+
+    .buy-now-btn:hover::after {
+        transform: translateX(5px);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-11 */
+.form-box{
+    max-width:450px;
+    width: 100%;
+    background: var(--orange);
+    padding:25px 30px;
+    color:white;
+}
+
+/* Heading */
+.form-box h2{
+    margin-top: -2px;
+    font-size:32px;
+    line-height: 1.1;
+    font-weight:600;
+    margin-bottom:20px;
+    color:var(--red);
+}
+
+/* Input container */
+.input-group{
+    margin-bottom:18px;
+}
+
+/* Label */
+label{
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:6px;
+    display:block;
+}
+
+/* Input fields */
+input{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    outline:none;
+    font-size:16px;
+}
+.btn-cta{
+    width:100%;
+    padding:13px;
+    font-size:18px;
+    font-weight:600;
+    background:var(--red);
+    color:white;
+    border:none;
+    border-radius:12px;
+    margin-top:8px;
+    cursor:pointer;
+    animation:pulse 2s infinite;
+    }
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(175, 152, 75, 0.6)}
+      70%{box-shadow:0 0 0 20px rgba(236,72,153,0)}
+      100%{box-shadow:0 0 0 0 rgba(236,72,153,0)}
+    }
+
+@media (max-width: 480px){
+
+  .form-box{
+    padding: 20px 16px;
+  }
+
+  .form-box h2{
+    font-size: 22px;
+    text-align:left;
+  }
+
+  label{
+    font-size: 14px;
+  }
+
+  input{
+    font-size: 15px;
+    padding: 11px;
+    border-radius: 8px;
+  }
+
+  .btn-cta{
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-12 */
+
+    .split-wrapper {
+        width: 100%;
+        max-width: 450px;
+      
+        gap: 20px;
+      
+    }
+
+    /* 🛡️ VERTICAL LEFT BAR */
+    .side-title {
+        background: var(--red);
+        color: var(--white);
+        padding: 30px 12px;
+        border-radius: 10px;
+        font-weight: 800;
+        font-size: 32px;
+        text-align: center;
+        text-transform: uppercase;
+        box-shadow: 10px 0 30px rgba(73, 22, 15, 0.2);
+       
+    }
+
+    .cards-flow {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        flex: 1;
+        margin-top: 20px;
+    }
+
+    .info-box {
+        background: var(--white);
+        border: 1px solid #f1f5f9;
+        padding:10px 22px;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+        transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+    }
+
+    /* Accent Borders */
+    .info-box:nth-child(1) { margin-right: 20px; margin-left: 40px; border-right: 4px solid var(--red); }
+    .info-box:nth-child(2) { margin-left: 20px; margin-right: 40px; border-left: 4px solid var(--red); }
+    .info-box:nth-child(3) { margin-right: 20px; margin-left: 40px; border-right: 4px solid var(--red); }
+
+    .info-box:hover {
+        transform: scale(1.04) translateY(-5px);
+        box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+        z-index: 10;
+    }
+
+    /* 🌿 IMAGE/ILLUSTRATION CONTAINER */
+    .icon-image-wrap {
+        width: 65px;
+        height: 65px;
+        background: #fdf2e9;
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        box-sizing: border-box;
+        transition: 0.3s;
+    }
+
+    .icon-image-wrap img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        display: block;
+        object-fit: contain;
+    }
+
+    .info-box:hover .icon-image-wrap {
+        transform: rotate(-10deg);
+        background-color: var(--orange);
+    }
+    
+    
+
+    .text-area b {
+        display: block;
+        font-size: 19px;
+        color:var(--orange);
+        font-weight: 800;
+        margin-bottom: 5px;
+    }
+
+    .text-area span {
+        font-size: 18px;
+        color: black;
+        line-height: 1.2;
+        font-weight: 500;
+        display: block;
+    }
+
+    /* ✨ THE FINAL STAMP */
+    .badge-footer {
+        margin-top: 15px;
+        background: var(--red);
+        color: var(--white);
+        padding: 8px 25px;
+        border-radius: 100px;
+        font-size: 16px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 5px 15px rgba(195, 103, 26, 0.4);
+        align-self: center;
+        margin-bottom: 20px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-13 */
+  .faq-wrapper {
+            width: 100%;
+            max-width: 450px;
+            margin-top: 50px;
+        }
+
+        .faq-title {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--red);
+            margin-bottom: 25px;
+            text-align: center;
+            letter-spacing: -0.5px;
+        }
+
+        /* The Animated Card */
+        details {
+            background: #ffffff;
+            margin-bottom: 12px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            border: 1.5px solid #edf2f7;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        details[open] {
+            border-color: var(--red);
+            box-shadow: 0 10px 20px -5px rgba(76, 81, 191, 0.15);
+            transform: translateY(-2px);
+        }
+
+        summary {
+            list-style: none;
+            padding: 18px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 700;
+            color: #2d3748;
+            outline: none;
+        }
+
+        summary::-webkit-details-marker { display: none; }
+
+        /* Icon Circle */
+        .q-badge {
+            width: 32px;
+            height: 32px;
+            background: #f7fafc;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+        .q-bad-p{
+            font-size: 20px;
+            margin-top: -10px;
+            margin-bottom: -10px;
+        }
+        details[open] .q-badge {
+            background: var(--red);
+            color: white;
+        }
+
+        /* Toggle Arrow */
+        .arrow {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--red);
+            transition: 0.3s;
+        }
+
+        details[open] .arrow {
+            transform: rotate(180deg);
+            color: var(--red);
+        }
+
+        /* Content Area */
+        .faq-content {
+            padding: 0 20px 20px 67px; /* Align with text after icon */
+            font-size: 18px;
+            color: black;
+            line-height: 1.6;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    .faq-wrapper {
+        padding: 0 15px; /* thodi side spacing */
+        margin-top: 30px;
+    }
+
+    .faq-title {
+        font-size: 22px; /* same as desktop */
+        line-height: 1.2;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    details {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    summary {
+        padding: 18px 15px;
+        gap: 12px;
+        font-size: 15px; /* maintain font size similar to desktop */
+    }
+
+    .q-badge {
+        width: 32px;
+        height: 32px;
+        font-size: 15px; /* same as desktop */
+    }
+     .q-bad-p{
+        font-size: 16px;
+     }
+    .faq-content {
+        padding: 0 15px 20px 55px; /* slightly adjusted for mobile */
+        font-size: 15px; /* same as desktop */
+        line-height: 1.6;
+    }
+
+    .arrow {
+        font-size: 12px; /* same as desktop */
+    }
+}
+       
+/* ===== DISCLAIMER ===== */
+.disclaim {
+  max-width: 450px;
+  width: 100%;
+  background: var(--orange);
+  margin-top: 20px;
+  padding: 5px;
+  font-size: 10px;
+}
+.disclaim * {
+  margin: 0;
+  padding: 5px;
+  color: var(--white);
+}
+
+/* MEDIA */
+@media(max-width:480px){
+   .btn {
+    margin-left: 100px !important;
+    width: 40%;
+    font-size: 18px;
+   }
+}
+</style>
+</head>
+
+<body>
+
+
+
+     <header>
+  <nav>
+    <div class="logo">Ayurvani</div>
+    <a class="buttonn" href="#orderForm">Buy Now 🛒</a>
+  </nav>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="sec">
+    <img src="images/banner-ayurvani.avif" class="images" alt="">
+</section>
+
+
+
+
+<!-- section-1 -->
+<section class="sec">
+    <div class="showcase-wrapper">
+    <h1 class="main-head">Pain Detailing</h1>
+
+    <div class="premium-card card-1">
+        <div class="card-img">
+            <img src="images/sect-1-1stimg.avif" alt="">
+        </div>
+        <div class="card-content">
+            <div class="step-title">
+                <span class="number">01</span>
+                बड़ी गलती
+            </div>
+            <div class="step-desc">“बड़ा होगा तो ठीक हो जाएगा” — यही सोच parents को delay करवा देती है</div>
+        </div>
+    </div>
+
+    <div class="premium-card card-2">
+        <div class="card-img">
+            <img src="images/sect-1-2ndimg.avif" alt="">
+        </div>
+        <div class="card-content">
+            <div class="step-title">
+                <span class="number">02</span>
+                असली नुकसान
+            </div>
+            <div class="step-desc">Confidence टूटता है, बच्चे का मज़ाक बनता है और वो लोगों से दूर होने लगता है</div>
+        </div>
+    </div>
+
+    <div class="premium-card card-3">
+        <div class="card-img">
+            <img src="images/sect-1-3rdimg.avif" alt="">
+        </div>
+        <div class="card-content">
+            <div class="step-title">
+                <span class="number">03</span>
+                असली कारण
+            </div>
+            <div class="step-desc">Weak nerve connection, poor coordination और nervous system imbalance इसकी जड़ है</div>
+        </div>
+    </div>
+</div>
+<button class="btn" onclick="location.href='#orderForm'">Order Now</button>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-2 -->
+<section class="sec">
+    
+<div class="container-frame">
+    <div class="premium-crd">
+        <span class="badge">Ayurvedic Formulation</span>
+
+        <div class="product-box">
+            <div class="img-bg-blur"></div>
+
+            <!-- ⚠️ apni image yahan same folder me rakho -->
+            <img src="images/product.avif" alt="Ayurvani" class="product-img">
+        </div>
+
+        <div class="text-content">
+            <h2>Ayurvani</h2>
+
+            <p class="desc">
+                इसी समस्या को समझकर बनाया गया है — <strong>Ayurvani</strong>. 
+                यह एक प्राकृतिक formulation है, जो बोलने की समस्याओं में support देने के लिए है।
+            </p>
+
+            <div class="info-glass-box">
+                <div class="icon-circle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                </div>
+
+                <p>
+                    यह instant दावा नहीं करता, बल्कि शरीर को अंदर से support करता है 
+                    ताकि speech धीरे-धीरे बेहतर हो सके।
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-3-->
+<section class="sec">
+    
+
+<div class="mobile-layout">
+    <div class="headline">
+        <h1>How It Works</h1>
+       </div>
+
+    <div class="slide-item">
+        <div class="slide-number">01</div>
+        <img src="images/sect-3-1stimg.avif" class="slide-img">
+        <div class="slide-content">
+            <span><b>Speech Nerve Support</b><br>कमजोर nerve signals को संतुलित करने में मदद</span>
+        </div>
+    </div>
+
+    <div class="slide-item">
+        <div class="slide-number">02</div>
+        <img src="images/sect-3-2ndimg.avif" class="slide-img">
+        <div class="slide-content">
+            <span><b>Brain–Tongue Coordination</b><br>सोच और बोलने के बीच बेहतर तालमेल</span>
+        </div>
+    </div>
+
+    <div class="slide-item">
+        <div class="slide-number">03</div>
+        <img src="images/sect-3-3rdimg.avif" class="slide-img">
+        <div class="slide-content">
+            <span><b>Confidence & Calm Support</b><br>डर, घबराहट और hesitation को कम करने में सहयोग</span>
+        </div>
+    </div>
+
+    <div class="error-footer">
+        <b>✔ Natural Support System</b>
+        <p>Ayurvedic तरीके से speech improvement को support करता है</p>
+    </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-4 -->
+    <div class="ayu-section">
+    <div class="ayu-header">
+        
+        <h2>Expert Recommendation</h2>
+    </div>
+
+    <div class="expert-quote">
+        "आयुर्वेद के अनुसार, बोलने की समस्या का सीधा संबंध <b>Nervous System</b> और मानसिक संतुलन से होता है।"
+    </div>
+
+    <div class="herb-list">
+        <div class="herb-item">
+            <div class="herb-icon">🍃</div>
+            <span>दिमाग और Nerves को Support</span>
+        </div>
+        <div class="herb-item">
+            <div class="herb-icon">🧘</div>
+            <span>Mental Calmness बढ़ाने में मदद</span>
+        </div>
+    </div>
+
+    <div class="support-box">
+        <div class="target-card">
+            बच्चों के लिए
+            <b>Speech Dev.</b>
+        </div>
+        <div class="target-card" style="background: var(--red); box-shadow: 0 4px 0 #2a0c09;">
+            बड़ों के लिए
+            <b>Hesitation Control</b>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-5 -->
+    <section class="sec">
+    <div class="fluid-container">
+        <div class="header-section">
+            <h2>Ayurvani Choice</h2>
+        </div>
+  <div class="labels-footer">
+            <span class="green">Ayurvani</span>
+            <span class="grey">अन्य विकल्प</span>
+        </div>
+        <div class="comparison-area">
+            <div class="item-row">
+                <div class="ayur-blob">Ayurvedic Formulation</div>
+                <div class="other-blob">Chemical आधारित</div>
+            </div>
+
+            <div class="item-row">
+                <div class="ayur-blob">अंदर से Deep Support</div>
+                <div class="other-blob">Temporary असर</div>
+            </div>
+
+            <div class="item-row">
+                <div class="ayur-blob">धीरे-धीरे स्थायी सुधार</div>
+                <div class="other-blob">Short-term result</div>
+            </div>
+
+            <div class="item-row">
+                <div class="ayur-blob">Non-habit Forming</div>
+                <div class="other-blob">Dependency खतरा</div>
+            </div>
+
+            <div class="item-row">
+                <div class="ayur-blob">Safe for Long Use</div>
+                <div class="other-blob">Side effects संभव</div>
+            </div>
+        </div>
+
+      
+    </div>
+<button class="btn" onclick="location.href='#orderForm'">Order Now</button>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-6 -->
+<section class="sec">
+    
+<div class="wrapper">
+    <div class="header-group">
+        <h2>Real Customer Results</h2>
+    </div>
+
+    <div class="testimonial-card">
+        <span class="quote-icon">“</span>
+        <div class="star-strip">
+            <i>★</i><i>★</i><i>★</i><i>★</i><i>★</i>
+        </div>
+        <p class="feedback">
+            “मेरे बच्चे के शब्द बहुत अटकते थे। 2 महीने बाद <b>बोलने में confidence</b> साफ़ दिख रहा है।”
+        </p>
+        <div class="card-footer">
+            <div class="author">
+                <div class="initial-box">
+                    <img src="images/radhika.avif" alt="">
+                </div>
+                <div class="author-info">
+                    <h4>राधिका शर्मा</h4>
+                    <p>मां, 32 वर्ष – दिल्ली</p>
+                </div>
+            </div>
+            <div class="verified-badge">✓ Verified User</div>
+        </div>
+    </div>
+
+    <div class="testimonial-card">
+        <span class="quote-icon">“</span>
+        <div class="star-strip">
+            <i>★</i><i>★</i><i>★</i><i>★</i><i>★</i>
+        </div>
+        <p class="feedback">
+            “बोलते समय डर लगता था। अब <b>hesitation काफी कम</b> हो गया है।”
+        </p>
+        <div class="card-footer">
+            <div class="author">
+                <div class="initial-box">
+                    <img src="images/amit.avif" alt="">
+                </div>
+                <div class="author-info">
+                    <h4>अमित वर्मा</h4>
+                    <p>28 वर्ष – जयपुर</p>
+                </div>
+            </div>
+            <div class="verified-badge">✓ Verified User</div>
+        </div>
+    </div>
+
+    <div class="testimonial-card">
+        <span class="quote-icon">“</span>
+        <div class="star-strip">
+            <i>★</i><i>★</i><i>★</i><i>★</i><i>★</i>
+        </div>
+        <p class="feedback">
+            “2–3 महीने से इस्तेमाल कर रहा हूँ, <b>speech flow</b> पहले से बेहतर महसूस हो रहा है।”
+        </p>
+        <div class="card-footer">
+            <div class="author">
+                <div class="initial-box">
+                    <img src="images/sunil.avif" alt="">
+                </div>
+                <div class="author-info">
+                    <h4>सुनील यादव</h4>
+                    <p>35 वर्ष – लखनऊ</p>
+                </div>
+            </div>
+            <div class="verified-badge">✓ Verified User</div>
+        </div>
+    </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-7 -->
+<section class="sec">
+    <div class="orbital-wrapper">
+    <div class="path-line"></div>
+    <h2 class="title">Key Ingredients</h2>
+
+    <div class="orbit-step">
+        <div class="orbit-image">
+            <img src="images/ब्राह्मी.avif" alt="Brahmi">
+        </div>
+        <div class="orbit-content">
+            <span class="step-tag">ब्राह्मी</span>
+            <div class="des">दिमाग़ और speech control support</div>
+        </div>
+    </div>
+
+    <div class="orbit-step">
+        <div class="orbit-image">
+            <img src="images/शंखपुष्पी.avif">
+        </div>
+        <div class="orbit-content">
+            <span class="step-tag">शंखपुष्पी</span>
+            <div class="des">nervousness कम करने में सहायक</div>
+        </div>
+    </div>
+
+    <div class="orbit-step">
+        <div class="orbit-image">
+            <img src="images/वच.avif" alt="Bach">
+        </div>
+        <div class="orbit-content">
+            <span class="step-tag">वच</span>
+            <div class="des">आवाज़ और clarity में मदद करता हैं।</div>
+        </div>
+    </div>
+
+    <div class="orbit-step">
+        <div class="orbit-image">
+            <img src="images/जटामांसी.avif" alt="Jatamansi">
+        </div>
+        <div class="orbit-content">
+            <span class="step-tag">जटामांसी</span>
+            <div class="des">brain–nerve balance support</div>
+        </div>
+    </div>
+
+   
+
+</div>
+<button class="btn" onclick="location.href='#orderForm'">Order Now</button>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-8 -->
+<section class="sec">
+    <div class="wrappr">
+    <div class="header-text">
+        <h2>How to Use</h2>
+    </div>
+
+    <div class="card-stack">
+        <div class="usage-item">
+            <div class="icon-holder">🕒</div>
+            <div class="text-box">
+                <b>दिन में 2 बार</b>
+                <span>सुबह और शाम नियमित लें</span>
+            </div>
+        </div>
+
+        <div class="usage-item">
+            <div class="icon-holder">🥛</div>
+            <div class="text-box">
+                <b>पानी या दूध</b>
+                <span>गुनगुने तरल के साथ इस्तेमाल करें</span>
+            </div>
+        </div>
+
+        <div class="usage-item">
+            <div class="icon-holder">📅</div>
+            <div class="text-box">
+                <b>नियमित उपयोग</b>
+                <span>बेहतर परिणाम के लिए अनिवार्य</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="expert-badge">
+        <div class="dot"></div>
+        <span>बेहतर guidance के लिए हमेशा <strong>expert की सलाह</strong> लें।</span>
+    </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-9 -->
+<section class="sec">
+    
+<div class="scanner-container">
+    <div class="scan-header">
+        <h1>Certified & Trusted</h1>
+    </div>
+
+    <div class="content-flow">
+        <div class="flow-item">
+            <div class="img-wrap">
+                <div class="pulse-ring"></div>
+                <img src="images/gmp.avif">
+            </div>
+            <div class="text-wrap">
+                <h3>GMP Certified Product</h3>
+                <p> जो safety और quality standards को follow करता है</p>
+            </div>
+        </div>
+
+        <div class="flow-item">
+            <div class="img-wrap">
+                <div class="pulse-ring"></div>
+                <img src="images/100%-ayurvedic.avif">
+            </div>
+            <div class="text-wrap">
+                <h3>100% Ayurvedic Formula</h3>
+                <p>बिना किसी harmful chemicals के, पूरी तरह safe और natural </p>
+            </div>
+        </div>
+
+        <div class="flow-item">
+            <div class="img-wrap">
+                <div class="pulse-ring"></div>
+                <img src="images/3rdlogo.avif">
+            </div>
+            <div class="text-wrap">
+                <h3>हजारों parents का भरोसा</h3>
+                <p>जिन्होंने अपने बच्चों में real improvement महसूस किया।</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="warning-footer">
+        <i>👨‍⚕️</i>
+        <strong>Certified & Trusted</strong>
+        <p>Safe, natural और trusted solution जिस पर आप भरोसा कर सकते हैं</p>
+    </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-10 -->
+<section class="sec">
+    <div class="main-card">
+    <div class="top-banner">
+        <h2>Limited Time<br>offer</h2>
+        
+        <div class="timer-ribbon">
+            <span>⏳</span> <span id="live-timer">12:45:00</span>
+        </div>
+
+        <div class="img-box">
+            <img src="images/product.avif" alt="Product">
+        </div>
+    </div>
+
+    <div class="content-body">
+        <span class="section-label">Exclusive Benefits</span>
+        
+        <div class="features-stack">
+            <div class="feature-item">
+                <div class="bullet">💰</div>
+                <div class="f-info">
+                    <b>Special Discounted Price</b>
+                    <span>Best market price for today only</span>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="bullet">👨‍⚕️</div>
+                <div class="f-info">
+                    <b>Expert Support Guidance</b>
+                    <span>24/7 dedicated support team</span>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="bullet">🛡️</div>
+                <div class="f-info">
+                    <b>Safe & Secure Packaging</b>
+                    <span>Multi-layer safety protection</span>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="bullet">⚡</div>
+                <div class="f-info">
+                    <b>Fast Delivery Service</b>
+                    <span>Direct shipping to your doorstep</span>
+                </div>
+            </div>
+        </div>
+
+        <a href="#orderForm" class="buy-now-btn">CLAIM THIS OFFER</a>
+    </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-11 -->
+<section class="sec">
+<div class="form-box">
+    <h2>अब और इंतज़ार न करें…
+बोलने की समस्या को नजरअंदाज़ करना
+ आगे चलकर भारी पड़ सकता है।
+ आज ही Ayurvani से सही support शुरू करें
+
+</h2>
+
+    <form id="orderForm">
+        <div class="input-group">
+            <label>नाम:</label>
+            <input type="text" name="name" placeholder="अपना नाम दर्ज करें" required>
+        </div>
+
+        <div class="input-group">
+            <label>मोबाइल नंबर (10 अंक):</label>
+            <input type="tel" name="mobile" maxlength="10" pattern="[0-9]{10}" placeholder="अपना मोबाइल नंबर दर्ज करें" required>
+        </div>
+
+        <button class="btn-cta"  type="submit">Order Now
+</button>
+    </form>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-12 -->
+<section class="sec">
+
+<div class="split-wrapper">
+    <div class="side-title">
+        GUARANTEE 🛡️
+    </div>
+
+    <div class="cards-flow">
+        
+        <div class="info-box">
+            <div class="icon-image-wrap">
+                <img src="https://cdn-icons-png.flaticon.com/512/8662/8662319.png">
+            </div>
+            <div class="text-area">
+                <b>100% Ayurvedic</b>
+                <span>शुद्ध जड़ी-बूटियों से निर्मित प्राकृतिक फॉर्मूला। Ancient wisdom, pure wellness.</span>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="icon-image-wrap">
+                <img src="https://cdn-icons-png.flaticon.com/512/4311/4311145.png">
+            </div>
+            <div class="text-area">
+                <b>No Harmful Chemicals</b>
+                <span>बिना किसी हानिकारक केमिकल या मिलावट के। Zero toxins.</span>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="icon-image-wrap">
+                <img src="https://cdn-icons-png.flaticon.com/512/3233/3233827.png">
+            </div>
+            <div class="text-area">
+                <b>Non-habit Forming</b>
+                <span>पूरी तरह सुरक्षित, इसकी आदत नहीं पड़ती। Designed for safe daily use.</span>
+            </div>
+        </div>
+
+        <div class="badge-footer">✦ Lab Tested & Verified ✦</div>
+    </div>
+</div>    
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-13 -->
+<div class="faq-wrapper">
+    <div class="faq-title">FAQS</div>
+
+    <details>
+        <summary>
+            <div class="q-badge">🛡️</div>
+            <p class="q-bad-p">क्या यह बच्चों के लिए safe है?</p>
+            <div class="arrow">▼</div>
+        </summary>
+        <div class="faq-content">हाँ, आयुर्वेदिक guidance के साथ।</div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="q-badge">⚡</div>
+            <p class="q-bad-p">Result कब दिखेगा?</p>
+            <div class="arrow">▼</div>
+        </summary>
+        <div class="faq-content">कम से कम 5-7 दिनों में</div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="q-badge">👥</div>
+           <p class="q-bad-p">क्या therapy के साथ ले सकते हैं?</p>
+            <div class="arrow">▼</div>
+        </summary>
+        <div class="faq-content">हाँ, supportive रूप में।</div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="q-badge">🚫</div>
+            <p class="q-bad-p">कोई side effect?</p>
+            <div class="arrow">▼</div>
+        </summary>
+        <div class="faq-content">नहीं, यह आयुर्वेदिक formulation है।</div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="q-badge">♻️</div>
+           <p class="q-bad-p">कितने समय तक लेना चाहिए?</p>
+            <div class="arrow">▼</div>
+        </summary>
+        <div class="faq-content">कम से कम 2–3 महीने recommended।</div>
+    </details>
+
+</div>
+
+</body>
+
+
+
+
+ <section class="disclaim">
+<footer class="disc">⚠️ Disclaimer:यह एक आयुर्वेदिक support product है।
+ यह किसी भी disease के diagnosis, treatment या cure का दावा नहीं करता।
+ परिणाम व्यक्ति की condition, उम्र और उपयोग पर निर्भर करते हैं।
+
+
+
+
+</footer>
+</section>
+</body>
+<script>
+const faqs = document.querySelectorAll(".faq-box");
+faqs.forEach(faq => {
+    faq.addEventListener("click", () => {
+        // पहले सबको close कर दो
+        faqs.forEach(item => {
+            if(item !== faq){
+                item.classList.remove("active");
+            }
+        });
+
+        // clicked वाले को toggle करो
+        faq.classList.toggle("active");
+    });
+});
+
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  fetch("https://script.google.com/macros/s/AKfycbz5sFiY8d4m-gK5USk7puMY2GCEMrvZEPGMDZJJzKU0hPmAUwzmnZT29dZmH2psrB-mfA/exec", {
+    method: "POST",
+    body: JSON.stringify({
+      name: e.target.name.value,
+      mobile: e.target.mobile.value
+    }),
+  })
+  .then(() => {
+    alert("✅ सबमिट हो गया!");
+    e.target.reset();
+  })
+  .catch(() => alert("❌ Error"));
+});
+
+
+
+
+// section-10
+  function startTimer(duration, display) {
+        let timer = duration, hours, minutes, seconds;
+        setInterval(function () {
+            hours = parseInt(timer / 3600, 10);
+            minutes = parseInt((timer % 3600) / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            hours = hours < 10 ? "0" + hours : hours;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = hours + ":" + minutes + ":" + seconds;
+
+            if (--timer < 0) {
+                timer = duration; // Re-start for demo
+            }
+        }, 1000);
+    }
+
+    window.onload = function () {
+        let twelveHours = 12 * 60 * 60 + 45 * 60; // 12:45:00
+        let display = document.querySelector('#live-timer');
+        startTimer(twelveHours, display);
+    }; 
+</script>
+</html>

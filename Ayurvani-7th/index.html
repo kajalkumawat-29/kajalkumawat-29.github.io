@@ -558,7 +558,87 @@ nav {
         .premium-crd:hover .info-glass-box p {
             color: #fff;
         }
+/* Mobile Optimization */
+@media (max-width: 480px) {
 
+    /* Card spacing */
+    .premium-crd {
+        padding: 20px;
+    }
+
+    /* Product box height adjust */
+    .product-box {
+        height: 240px;
+        margin-bottom: 15px;
+    }
+
+    /* Image size */
+    .product-img {
+        width: 150px;
+    }
+
+    .img-bg-blur {
+        width: 150px;
+        height: 150px;
+        filter: blur(30px);
+    }
+
+    /* Disable hover effects (force final state) */
+    .premium-crd:hover {
+        transform: none;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        border-color: rgba(0,0,0,0.03);
+    }
+
+    .premium-crd:hover::before {
+        transform: none;
+        opacity: 0.3;
+    }
+
+    .premium-crd:hover .product-img {
+        transform: none;
+        filter: none;
+    }
+
+    .premium-crd:hover .info-glass-box {
+        background: var(--red);
+        transform: none;
+    }
+
+    .premium-crd:hover .icon-circle {
+        background: var(--orange);
+    }
+
+    /* FONT SIZES (as you asked) */
+    
+    /* Main Heading */
+    .text-content h2 {
+        font-size: 22px;
+    }
+
+    /* Normal text */
+    .desc {
+        font-size: 16px;
+        line-height: 1.4;
+        margin-top: -5px;
+    }
+
+    .info-glass-box p {
+        font-size: 16px;
+    }
+
+    /* Small titles / badge */
+    .badge {
+        font-size: 15px;
+        padding: 5px 12px;
+    }
+
+    /* Icon size adjust */
+    .icon-circle {
+        width: 35px;
+        height: 35px;
+    }
+}
 
 
 

@@ -329,8 +329,72 @@ nav {
             background: #fff;
             box-shadow: 0 12px 35px rgba(0,0,0,0.15);
         }
+/* Mobile Optimization - No change in original design */
+@media (max-width: 480px) {
 
+    .showcase-wrapper {
+        width: 92%;
+        gap: 20px;
+        padding-bottom: 30px;
+    }
 
+    .main-head {
+        font-size: 26px;
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+    .premium-card {
+        height: 210px;
+        border-radius: 20px;
+        box-shadow: 8px 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .card-content {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        padding: 12px;
+        border-radius: 12px;
+        transform: translateY(0); /* always visible */
+        opacity: 1;
+    }
+
+    .step-title {
+        font-size: 18px;
+        gap: 6px;
+        margin-top: 0;
+    }
+
+    .step-title .number {
+        font-size: 16px;
+    }
+
+    .step-desc {
+        font-size: 15px;
+        line-height: 1.3;
+        margin-top: 3px;
+    }
+
+    /* Disable hover issues on mobile */
+    .premium-card:hover {
+        transform: none;
+        box-shadow: 8px 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .premium-card:hover .card-img {
+        clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+    }
+
+    .premium-card:hover .card-img img {
+        transform: none;
+    }
+
+    .premium-card:hover .card-content {
+        transform: translateY(0);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+}
 
 
 

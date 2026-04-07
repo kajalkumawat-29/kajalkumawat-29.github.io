@@ -1857,7 +1857,86 @@ nav {
     .expert-badge strong {
         color: var(--white);
     }
+/* Mobile Optimization for .wrappr section */
+@media (max-width: 480px) {
 
+    .wrappr {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    /* Header */
+    .header-text h2 {
+        font-size: 22px; /* Main heading */
+        letter-spacing: -0.5px;
+    }
+
+    /* Card Stack */
+    .card-stack {
+        gap: 12px;
+    }
+
+    .usage-item {
+        padding: 12px 15px;
+    }
+
+    /* Icon Holder */
+    .icon-holder {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        margin-right: 15px;
+    }
+
+    /* Text Box */
+    .text-box b {
+        font-size: 15px; /* Title inside usage-item */
+    }
+
+    .text-box span {
+        font-size: 16px; /* Description inside usage-item */
+    }
+
+    /* Expert Badge */
+    .expert-badge {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px;
+        gap: 8px;
+        border-radius: 15px;
+    }
+
+    .expert-badge span {
+        font-size: 15px; /* Normal text */
+    }
+
+    .expert-badge strong {
+        font-size: 16px; /* Highlight text */
+    }
+
+    /* Background glow scaling */
+    .wrappr::after {
+        top: -70%;
+        left: -70%;
+        width: 240%;
+        height: 240%;
+        opacity: 0.08;
+    }
+
+    /* Hover on mobile = tap */
+    .usage-item:active {
+        transform: scale(1.05) translateX(8px);
+    }
+
+    .usage-item:active .icon-holder {
+        transform: rotateY(180deg);
+    }
+
+    .expert-badge .dot {
+        width: 8px;
+        height: 8px;
+    }
+}
 
 
 
@@ -1994,7 +2073,42 @@ nav {
             margin-bottom: 5px;
             line-height: 1;
         }
+/* Mobile Optimization */
+@media screen and (max-width: 480px) {
+    .scan-header h1 {
+        font-size: 22px; /* Main heading smaller */
+    }
 
+    .text-wrap h3 {
+        font-size: 15px; /* Sub-headings smaller */
+    }
+
+    .text-wrap p {
+        font-size: 16px; /* Paragraph text smaller */
+    }
+
+    .warning-footer strong {
+        font-size: 15px; /* Footer title smaller */
+    }
+
+    .warning-footer p {
+        font-size: 16px; /* Footer paragraph smaller */
+    }
+
+    .img-wrap {
+        width: 80px;
+        height: 80px; /* Reduce image size for mobile */
+    }
+
+    .text-wrap {
+        padding-left: 15px;
+        padding-top: 10px; /* Adjust spacing for mobile */
+    }
+
+    .scanner-container {
+        padding: 25px 15px; /* Reduce container padding */
+    }
+}
 
 
 
@@ -2195,7 +2309,61 @@ nav {
         transform: translateX(5px);
     }
 
+/* Mobile Optimization */
+@media screen and (max-width: 480px) {
+    .top-banner h2 {
+        font-size: 22px; /* Main heading smaller */
+    }
+     .top-banner{
+        height: 150px;
+     }
 
+    .section-label {
+        font-size: 15px; /* Section titles smaller */
+    }
+
+    .f-info b {
+        font-size: 16px; /* Feature bold text smaller */
+    }
+
+    .f-info span {
+        font-size: 14px; /* Feature description smaller */
+    }
+
+    .buy-now-btn {
+        font-size: 16px; /* Button text smaller */
+        padding: 16px; /* Adjust button padding */
+    }
+
+    .img-box {
+        width: 160px;
+        height: 160px; /* Reduce floating product image size */
+        bottom: -40px; /* Adjust position */
+        right: 10px;
+    }
+
+    .content-body {
+        padding: 45px 20px 30px; /* Adjust content padding for mobile */
+    }
+
+    .timer-ribbon {
+        font-size: 14px; /* Ribbon text smaller */
+        padding: 6px 14px;
+        bottom: 15px;
+        left: 20px;
+    }
+
+    .feature-item {
+        padding: 12px; /* Smaller feature boxes */
+        gap: 12px;
+    }
+
+    .bullet {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+}
 
 
 
@@ -2442,7 +2610,155 @@ input{
         align-self: center;
         margin-bottom: 20px;
     }
+/* Full Mobile Optimization for screens ≤480px */
+@media screen and (max-width: 480px) {
+    /* ---------------- SCANNER CONTAINER ---------------- */
+    .scanner-container {
+        width: 100%;
+        padding: 25px 15px;
+        overflow: visible;
+    }
 
+    .scan-header h1 {
+        font-size: 22px;
+    }
+
+    .text-wrap h3 {
+        font-size: 15px;
+    }
+
+    .text-wrap p {
+        font-size: 16px;
+    }
+
+    .img-wrap {
+        width: 80px;
+        height: 80px;
+    }
+
+    .text-wrap {
+        padding-left: 15px;
+        padding-top: 10px;
+    }
+
+    .warning-footer strong {
+        font-size: 15px;
+    }
+
+    .warning-footer p {
+        font-size: 16px;
+    }
+
+    /* ---------------- MAIN CARD ---------------- */
+    .main-card {
+        width: 100%;
+        padding: 20px 15px;
+        max-width: 100%;
+        box-shadow: none;
+    }
+
+    .top-banner {
+        height: 140px;
+        padding: 25px;
+        border-radius: 5px 5px 60px 15px;
+    }
+
+    .top-banner h2 {
+        font-size: 22px;
+    }
+
+    .timer-ribbon {
+        font-size: 14px;
+        padding: 6px 12px;
+        left: 15px;
+        bottom: 15px;
+    }
+
+    .img-box {
+        width: 140px;
+        height: 140px;
+        bottom: -40px;
+        right: 10px;
+    }
+
+    .content-body {
+        padding: 45px 20px 30px;
+    }
+
+    .section-label {
+        font-size: 15px;
+    }
+
+    .f-info b {
+        font-size: 16px;
+    }
+
+    .f-info span {
+        font-size: 14px;
+    }
+
+    .buy-now-btn {
+        font-size: 16px;
+        padding: 16px;
+    }
+
+    .bullet {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .feature-item {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    /* ---------------- SPLIT WRAPPER ---------------- */
+    .split-wrapper {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .side-title {
+        font-size: 22px;
+        padding: 20px 10px;
+        box-shadow: 5px 0 15px rgba(73, 22, 15, 0.15);
+    }
+
+    .cards-flow {
+        gap: 12px;
+        margin-top: 15px;
+    }
+
+    .info-box {
+        padding: 10px 15px;
+        gap: 10px;
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+        
+    }
+
+    .icon-image-wrap {
+        width: 50px;
+        height: 50px;
+        padding: 6px;
+        border-radius: 14px;
+    }
+
+    .text-area b {
+        font-size: 15px;
+    }
+
+    .text-area span {
+        font-size: 16px;
+    }
+
+    .badge-footer {
+        font-size: 14px;
+        padding: 6px 18px;
+    }
+    
+}
 
 
 

@@ -1186,8 +1186,148 @@ body {
 
 
 
-
 /* section-8 */
+.premium-usage-section {
+    width: 100%;
+    max-width: 450px;
+    padding: 40px 20px;
+   color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow BG */
+.premium-usage-section::after {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(30,58,138,0.25) 0%, transparent 70%);
+    z-index: 0;
+}
+
+/* TITLE */
+.main-titlle {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 50px;
+    color: var(--Gold);
+}
+
+/* LINE */
+.timeline-container {
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--blue), var(--Gold));
+    border-radius: 10px;
+}
+
+/* STEP */
+.step-node {
+    position: relative;
+    margin-bottom: 45px;
+    padding-left: 60px;
+    transition: 0.4s;
+}
+
+.step-node:last-child { margin-bottom: 0; }
+
+/* DOT */
+.node-dot {
+    position: absolute;
+    left: 21px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--Gold);
+    border: 4px solid var(--blue);
+    border-radius: 50%;
+    z-index: 2;
+    transition: 0.4s;
+}
+
+/* TEXT */
+.step-label {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #94a3b8;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.step-heading {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.step-desc {
+    font-size: 18px;
+    color: #cbd5e1;
+    line-height: 1.6;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.4s;
+}
+
+/* HIGHLIGHT */
+.highlight-text {
+    color: var(--Gold);
+    font-weight: 600;
+}
+
+/* ===== HOVER EFFECTS ===== */
+
+/* card lift */
+.step-node:hover {
+    transform: translateX(8px);
+}
+
+/* box glow */
+.step-node:hover .step-desc {
+    border-color: var(--blue);
+    box-shadow: 0 0 20px rgba(30,58,138,0.3);
+}
+
+/* dot animation */
+.step-node:hover .node-dot {
+    border-color: var(--Gold);
+    box-shadow: 0 0 15px var(--Gold);
+    transform: scale(1.2);
+    background: var(--dark-blue);
+}
+
+/* title glow on hover */
+.step-node:hover .step-heading {
+    color: var(--Gold);
+}
+
+
+
+
+
+
+
+
+
+
+/* section-9 */
 .wrapper-box {
   width: 100%;
   max-width: 450px;
@@ -1337,7 +1477,7 @@ body {
 
 
 
-/* section-9 */
+/* section-10 */
 
 .testimonial-root {
   width: 450px;
@@ -1505,7 +1645,7 @@ body {
 
 
 
-/* section-10 */
+/* section-11 */
 
         .offer-container {
             width: 100%;
@@ -1702,7 +1842,7 @@ body {
 
 
 
-/* section-11 */
+/* section-12 */
 .faq-wrapper {
     width: 100%;
     max-width: 450px;
@@ -1854,7 +1994,7 @@ details[open] summary::before {
 
 
 
-/* section-12 */
+/* section-13 */
 .form-box{
     max-width:450px;
     width: 100%;
@@ -2453,7 +2593,50 @@ input{
 
 
 
+
 <!-- section-8 -->
+<section class="sec">
+<div class="premium-usage-section">
+    <h2 class="main-titlle">How To Use</h2>
+
+    <div class="timeline-container">
+        <div class="step-node">
+            <div class="node-dot"></div>
+            <span class="step-label">Dosage</span>
+            <div class="step-heading">खुराक</div>
+            <div class="step-desc">
+                दिन में <span class="highlight-text">2 बार</span> सेवन करें।
+            </div>
+        </div>
+
+        <div class="step-node">
+            <div class="node-dot"></div>
+            <span class="step-label">Preparation</span>
+            <div class="step-heading">विधि</div>
+            <div class="step-desc">
+                भोजन के बाद <span class="highlight-text">गुनगुने पानी या दूध</span> के साथ लें।
+            </div>
+        </div>
+
+        <div class="step-node">
+            <div class="node-dot"></div>
+            <span class="step-label">Duration</span>
+            <div class="step-heading">नियमितता</div>
+            <div class="step-desc">
+                बेहतर परिणाम के लिए <span class="highlight-text">1-2 महीने</span> लगातार सेवन करें।
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+
+
+
+
+
+
+<!-- section-9 -->
 <section class="sec">
   
 <div class="wrapper-box">
@@ -2541,7 +2724,7 @@ input{
 
 
 
-<!-- section-9 -->
+<!-- section-10 -->
 <section class="sec">
     <div class="testimonial-root">
 
@@ -2630,7 +2813,7 @@ input{
 
 
 
-<!-- section-10 -->
+<!-- section-11 -->
 <section class="sec">
       <div class="offer-container">
         <div class="main-card">
@@ -2691,7 +2874,7 @@ input{
 
 
 
-<!-- section-11 -->
+<!-- section-12 -->
 <div class="faq-wrapper">
     <div class="header-title">FAQ</div>
 
@@ -2859,7 +3042,7 @@ input{
     <body>
 
 
-<!-- section-12 -->
+<!-- section-13 -->
 <section class="sec">
 <div class="form-box">
     <h2> अगर आप चाहते हैं कि आपका बच्चा

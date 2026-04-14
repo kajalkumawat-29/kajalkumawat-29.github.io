@@ -1,0 +1,2720 @@
+   
+    <!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&family=Source+Sans+3:wght@400;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">  
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    <title>Gathheal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+
+:root {
+  --purple:#7b2ff7;
+  --yellow:#f7d34a;
+  --pink:#f107a3;
+  --red:#ff512f;
+  --white: #fff;
+  --black: #000;
+  --gray: #666;
+  --glass: rgba(255, 255, 255, 0.257);
+  --active-color: var(--purple);
+  --card-glass: rgba(255, 255, 255, 0.186);
+  --card-glass-hover: rgba(255, 255, 255, 0.1);
+
+            
+ 
+}
+
+/* ===== GLOBAL ===== */
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: 'Kohinoor Devanagari','Noto Serif Devanagari', serif;   
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+ 
+}
+
+/* HEADER */
+header {
+  max-width: 450px;
+  width: 100%;
+  padding: 14px;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(90deg,var(--purple),var(--pink) );
+}
+nav {
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+  border-bottom: 2px solid rgba(250, 255, 255, 0.628);
+  padding-bottom: 6px;
+}
+.logo {
+  font-size: 40px;
+  font-weight: 700;
+}
+.buttonn {
+  background-color: var(--yellow); 
+  color: var(--black);
+  border-radius: 15px;
+  padding: 14px 22px;
+  border: 2px solid var(--yellow);
+  font-size: 19px;
+  text-decoration: none;
+  cursor: pointer;
+ 
+}
+@media (max-width: 480px) {
+
+  header {
+    max-width: 100%;
+    padding: 12px 10px;
+  }
+
+  nav {
+    max-width: 100%;
+    padding-bottom: 6px;
+  }
+
+  .logo {
+    font-size: 30px;
+  }
+
+  .buttonn {
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgb(218, 180, 13) }
+  70% { box-shadow: 0 0 0 20px rgba(236,72,153,0) }
+  100% { box-shadow: 0 0 0 0 rgba(236,72,153,0) }
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  background: var(--yellow);
+  cursor: pointer;
+  margin: 10px auto;
+  display: block;
+  width: 55%;
+  position: relative;
+  overflow: hidden;
+  color: var(--black);
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  top: 0;
+  left: -40%;
+  transform: skewX(-20deg);
+}
+.btn:hover::before {
+  left: 120%;
+  transition: 1.5s;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 430px) {
+  .btn {
+    width: 50% !important;
+    font-size: 15px !important;
+    margin: 10px 80px !important;
+  }
+}
+
+/* ===== SECTIONS ===== */
+.sec {
+  max-width: 450px;
+  width: 100%;
+  background: linear-gradient(90deg,var(--purple),var(--pink));
+  border-bottom: 2px solid var(--white);
+}
+
+.images {
+  max-width: 450px;
+  width: 100%;
+  align-items: center;
+  padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-1 */
+
+        .containr {
+            width: 100%;
+            max-width: 450px;
+        }
+        .sect-1{
+            color: var(--yellow);
+            font-size: 35px;
+            margin-top: 5px;
+            margin-bottom: -5px;
+            text-align: center;
+        }
+
+        .header-section {
+            text-align: left;
+            margin-bottom: 60px;
+            padding-left: 20px;
+            border-left: 3px solid var(--yellow);
+        }
+
+        .header-section h1 {
+            font-size: 30px;
+            line-height: 1.1;
+            color: var(--yellow);
+        }
+
+        .header-section p {
+            font-size: 20px;
+            margin-top: -30px;
+            opacity: 0.8;
+            letter-spacing: 0.5px;
+            color: var(--white);
+            margin-bottom: -40px;
+        }
+
+        /* --- UNIQUE OVERLAP CARD DESIGN --- */
+        .ingredient-showcase {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        .ing-box {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            margin-left: 20px;
+           
+        }
+
+        .ing-image {
+            width: 75%;
+            height: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            transition: transform 0.4s ease;
+        }
+
+        .ing-box:nth-child(even) .ing-image {
+            margin-left: 70px;
+        }
+
+        .ing-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.6);
+            transition: 0.5s;
+        }
+
+        .ing-content {
+            position: absolute;
+            width: 70%;
+            padding: 1px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            bottom: -40px;
+            left: 15%;
+            z-index: 10;
+            transition: 0.4s;
+        }
+
+        .ing-box:nth-child(even) .ing-content {
+            left: 5%;
+        }
+
+        .ing-content h3 {
+             color: var(--yellow);
+            font-size: 26px;
+            margin-bottom: -20px;
+        }
+
+        .ing-content p {
+            font-size: 18px;
+            line-height: 1.2;
+            color: #eee;
+        }
+
+        .ing-box:hover .ing-image {
+            transform: scale(1.05);
+        }
+        
+        .ing-box:hover .ing-image img {
+            filter: brightness(0.9);
+        }
+
+        .ing-box:hover .ing-content {
+            background: var(--yellow);
+            transform: translateY(-10px);
+        }
+
+    .ing-box:hover .ing-content h3{
+        color: var(--purple);
+    } 
+        .ing-box:hover .ing-content p {
+            color: var(--black);
+        }
+
+        .num {
+            position: absolute;
+            top: -20px;
+            right: 0;
+            font-size: 60px;
+            color: rgba(212, 175, 55, 0.1);
+            z-index: -1;
+        }
+
+        .foot-p {
+            margin-top: 50px;
+            text-align: center;
+            color: var(--yellow);
+            border-top: 1px solid rgba(212,175,55,0.2);
+            padding-top: 20px;
+            font-size: 20px;
+        }
+@media (max-width: 768px) {
+
+    .containr {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .ingredient-showcase {
+        gap: 60px;
+    }
+
+    .ing-box {
+        height: 220px;
+        margin-left: 0;
+    }
+
+    .ing-image {
+        width: 85%;
+        height: 200px;
+    }
+
+    .ing-box:nth-child(even) .ing-image {
+        margin-left: 40px;
+    }
+
+    .ing-content {
+        width: 80%;
+        left: 10%;
+        bottom: -30px;
+        padding: 10px 15px;
+    }
+
+    .ing-box:nth-child(even) .ing-content {
+        left: 5%;
+    }
+
+    .ing-content h3 {
+        font-size: 22px;
+    }
+
+    .ing-content p {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+
+    .num {
+        font-size: 45px;
+        top: -15px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* section-2 */
+   .final-wrapper {
+        max-width: 450px;
+        width: 100%;
+         position: relative;
+        overflow: hidden;
+       color: #fff;
+    }
+
+    .final-wrapper::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        left: -100px;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(197, 160, 89, 0.25) 0%, transparent 70%);
+        z-index: 1;
+    }
+
+    .final-main {
+        position: relative;
+        z-index: 2;
+        padding: 40px 25px;
+    }
+
+  
+
+    .final-title {
+        font-size: 45px;
+        line-height: 1;
+        margin-top:-5px ;
+        margin-bottom: 10px;
+       color: var(--yellow);
+    }
+
+    .hero-container {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+        gap: 15px;
+    }
+
+    .final-img-box {
+        flex: 1;
+        position: relative;
+    }
+
+    .final-img-box img {
+        width: 100%;
+        filter: drop-shadow(0 0 30px rgba(197, 160, 89, 0.3));
+        animation: smoothFloat 5s infinite ease-in-out;
+    }
+
+    @keyframes smoothFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+    }
+
+    .benefit-pills {
+        flex: 0.8;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .pill {
+        background: var(--glass);
+        border: 1px solid var(--yellow);
+        padding: 10px;
+        border-radius: 15px;
+        font-size: 14px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+    }
+
+    .content-card {
+        background: rgba(255, 255, 255, 0.173);
+        border: 1px solid var(--yellow);
+        padding: 25px;
+        border-radius: 30px;
+        margin-top: 10px;
+    }
+
+    .content-card p {
+        font-size: 19px;
+        line-height: 1.6;
+        color: var(--white);
+        margin: 0;
+    }
+
+    .content-card b {
+        color: var(--yellow);
+        font-size: 20px;
+    }
+
+    .highlight-span {
+        color: #fff;
+        background: var(--red);
+        padding: 0 5px;
+        border-radius: 4px;
+    }
+
+    .final-btn {
+        display: block;
+        width: 100%;
+        margin-top: 30px;
+        background: var(--yellow);
+        color: #000;
+        text-align: center;
+        padding: 22px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        box-shadow: 0 15px 40px rgba(197, 160, 89, 0.3);
+        transition: 0.3s;
+    }
+
+    .final-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 50px rgba(197, 160, 89, 0.5);
+    }
+
+    @media (max-width: 480px) {
+        .final-title { font-size: 45px; }
+        .content-card p { font-size: 15px; }
+    }
+@media (max-width: 480px) {
+
+    .final-wrapper {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .final-main {
+        padding: 30px 18px;
+    }
+
+    .final-title {
+        font-size: 36px;
+        line-height: 1.05;
+    }
+
+    .hero-container {
+        gap: 12px;
+    }
+
+    .final-img-box img {
+        max-width: 100%;
+        animation: smoothFloat 4s infinite ease-in-out;
+    }
+
+    .benefit-pills {
+        flex: 1;
+        gap: 8px;
+    }
+
+    .pill {
+        font-size: 13px;
+        padding: 8px;
+        border-radius: 12px;
+    }
+
+    .content-card {
+        padding: 20px;
+        border-radius: 24px;
+    }
+
+    .content-card p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .content-card b {
+        font-size: 17px;
+    }
+
+    .final-btn {
+        padding: 18px;
+        font-size: 17px;
+        letter-spacing: 1.5px;
+        border-radius: 16px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* section-3 */
+.magazine-layout {
+  max-width: 450px;
+  width: 100%;
+  padding: 30px 15px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Main Title */
+.main-tit {
+  font-size: 32px;
+  color: var(--yellow);
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-weight: 800;
+  position: relative;
+  letter-spacing: -1px;
+}
+
+.main-tit::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 5px;
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+
+.ingredient-card {
+  display: flex;
+  margin-bottom: 40px;
+  min-height: 140px;
+  position: relative;
+  align-items: center;
+  z-index: 1;
+  transition: 0.4s ease;
+}
+
+.ingredient-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Image Mask */
+.mask-container {
+  width: 130px;
+  height: 130px;
+  background: var(--yellow);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  flex-shrink: 0;
+  overflow: hidden;
+  transition: 0.5s ease;
+  border: 5px solid var(--white);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.ingredient-card:hover .mask-container {
+  transform: scale(1.1) rotate(10deg);
+  clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+}
+
+.mask-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text */
+.text-side {
+  padding: 0 15px;
+  flex-grow: 1;
+}
+
+.text-side h3 {
+  font-size: 22px;
+  color: var(--yellow);
+  margin-bottom:-10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.text-side p {
+  margin: 8px 0 0;
+  font-size: 18px;
+  color: white;
+  line-height: 1.2;
+}
+
+.reverse .text-side {
+  text-align: right;
+}
+
+/* Background Number */
+.bg-num {
+  position: absolute;
+  font-size: 70px;
+  font-weight: 800;
+  color: rgba(0,0,0,0.04);
+  top: -20px;
+  right: 0;
+  z-index: -1;
+}
+
+.reverse .bg-num {
+  right: auto;
+  left: 0;
+}
+
+.ingredient-card:hover .bg-num {
+  color: rgba(15,118,110,0.15);
+  transform: translateY(-10px);
+}
+
+
+
+/* Mobile */
+@media (max-width: 480px) {
+  .magazine-layout { padding: 25px 10px; }
+  .main-tit { font-size: 26px; }
+  .mask-container { width: 100px; height: 100px; }
+  .text-side h3 { font-size: 17px; }
+  .text-side p { font-size: 14px; }
+}
+
+@media (max-width: 480px) {
+
+  .magazine-layout {
+    max-width: 100%;
+    padding: 20px 8px;
+  }
+
+  .main-tit {
+    font-size: 24px;
+    letter-spacing: -0.5px;
+  }
+
+  .main-tit::after {
+    width: 30px;
+    height: 4px;
+    bottom: -8px;
+  }
+
+  .ingredient-card {
+    margin-bottom: 30px;
+    min-height: 120px;
+  }
+
+  .mask-container {
+    width: 95px;
+    height: 95px;
+    border-width: 4px;
+  }
+
+  .ingredient-card:hover .mask-container {
+    transform: scale(1.05) rotate(6deg);
+  }
+
+  .text-side {
+    padding: 0 10px;
+  }
+
+  .text-side h3 {
+    font-size: 16px;
+    margin-bottom: -6px;
+  }
+
+  .text-side p {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .bg-num {
+    font-size: 50px;
+    top: -10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-4 */
+.doctor-product-card {
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.doctor-product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+}
+
+.image-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    overflow: hidden;
+   
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.doctor-product-card:hover .image-container img {
+    transform: scale(1.1);
+}
+
+.content-area {
+    width: 45%;
+    padding: 35px 25px 35px 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.main-heading {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.15;
+    color:var(--yellow);
+    margin-bottom: 20px;
+    margin-top: -10px;
+}
+
+/* Highlight box */
+.highlight-box {
+    background: white;
+    padding: 15px 10px;
+    border-radius: 15px;
+    border-left: 4px solid var(--yellow);
+    margin-bottom: 20px;
+    transition: 0.3s;
+    margin-right: 20px;
+}
+
+.doctor-product-card:hover .highlight-box {
+    background: #d1fae5;
+}
+
+.highlight-box h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: black;
+}
+
+/* Ayurvedic content text */
+.ayurvedic-text {
+    font-size: 18px;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 20px;    
+}
+
+/* List */
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #f0fdf4;
+    padding: 12px 18px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #d1fae5;
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateX(10px);
+    background: #ffffff;
+    border-color: var(--yellow);
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.05);
+}
+
+.benefit-icon {
+    color: var(--yellow);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Zero chemical */
+.zero-chemicals {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 20px;
+    gap: 15px;
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 18px;
+}
+
+.chemical-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--yellow);
+    flex-shrink: 0;
+    transition: 0.4s;
+}
+
+.doctor-product-card:hover .chemical-icon {
+    background: var(--yellow);
+    color: white;
+    transform: rotate(360deg);
+}
+
+.chemical-text {
+    font-size: 18px;
+    color: white;
+    line-height: 1.5;
+    font-style: italic;
+}
+@media (max-width: 480px) {
+
+  .doctor-product-card {
+    max-width: 100%;
+    transform: none;
+  }
+
+  .image-container {
+    width: 52%;
+  }
+
+  .content-area {
+    width: 48%;
+    padding: 25px 15px 25px 12px;
+  }
+
+  .main-heading {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+
+  .highlight-box {
+    padding: 12px 10px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+  }
+
+  .highlight-box h4 {
+    font-size: 15px;
+  }
+
+  .ayurvedic-text {
+    font-size: 14px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+  }
+
+  .benefit-item {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .benefit-icon {
+    font-size: 16px;
+  }
+
+  .benefit-item span,
+  .benefit-item p {
+    font-size: 14px;
+  }
+
+  .zero-chemicals {
+    gap: 10px;
+    padding-top: 14px;
+    margin-top: 15px;
+  }
+
+  .chemical-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .chemical-text {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+
+
+
+
+
+
+/* section-6 */
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+           color: var(--yellow);
+        }
+
+        /* --- THE UNIQUE PETAL LAYOUT --- */
+        .ingredients-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .ing-card {
+            background: var(--card-glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 10px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        /* --- UNIQUE PETAL SHAPE FOR IMAGES --- */
+        .petal-frame {
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+            background: #fff;
+            padding: 4px;
+            /* Inverted Petal Shape */
+            border-radius: 50% 0 50% 50%; 
+            transform: rotate(-10deg);
+            overflow: hidden;
+            border: 2px solid var(--yellow);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            transition: 0.5s ease;
+        }
+
+        .ing-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: var(--yellow);
+            background: rgba(255, 255, 255, 0.206);
+        }
+
+        .ing-card:hover .petal-frame {
+            transform: rotate(10deg) scale(1.1);
+            border-radius: 50% 50% 50% 0; /* Shape Morphs on Hover */
+        }
+
+        .petal-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: inherit;
+        }
+
+        .inform {
+            text-align: left;
+        }
+
+        .inform h3 {
+            font-size: 24px;
+            color: var(--yellow);
+            margin-bottom: -19px;
+        }
+
+        .inform p {
+            font-size: 20px;
+            color: var(--white);
+            line-height: 1.4;
+        }
+
+        /* Floating Badge Animation */
+        .ing-card::after {
+            content: '🌿';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            opacity: 0.2;
+            transition: 0.4s;
+        }
+
+        .ing-card:hover::after {
+            opacity: 1;
+            transform: translateY(-50%) scale(1.2) rotate(20deg);
+        }
+@media (max-width: 480px) {
+
+  .container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .header h1 {
+    font-size: 26px;
+  }
+
+  .ingredients-list {
+    gap: 18px;
+  }
+
+  .ing-card {
+    margin: 0 8px;
+    padding: 10px;
+    gap: 14px;
+    border-radius: 22px;
+  }
+
+  .petal-frame {
+    width: 80px;
+    height: 80px;
+    padding: 3px;
+  }
+
+  .inform h3 {
+    font-size: 18px;
+    margin-bottom: -10px;
+  }
+
+  .inform p {
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  .ing-card::after {
+    right: 12px;
+    font-size: 16px;
+  }
+
+  .ing-card:hover {
+    transform: translateY(-3px) scale(1.01);
+  }
+
+  .ing-card:hover .petal-frame {
+    transform: rotate(6deg) scale(1.05);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-7 */
+.orbital-wrapper {
+    width: 100%;
+    max-width: 450px;
+}
+
+/* ================= HEADER ================= */
+.orbital-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.orbital-header h2 {
+    color: var(--yellow);
+    font-size: 32px;
+    margin-top: 10px;
+    margin-bottom: -27px;
+    position: relative;
+}
+
+.orbital-header h2::after {
+    content: '';
+    width: 70px;
+    height: 2px;
+    background: var(--yellow);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ================= CARDS ================= */
+.orbital-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 0 10px;
+}
+
+.orbital-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 30px;
+    padding-bottom: -10px;
+    padding-top: 10px;
+    padding-left: 30px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    background: color-mix(in srgb, var(--white) 4%, transparent);
+    border: 1px solid color-mix(in srgb, var(--yellow) 20%, transparent);
+    box-shadow: 0 5px 15px
+        color-mix(in srgb, var(--black) 20%, transparent);
+
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 3rd card full width */
+.orbital-card:nth-child(3) {
+    grid-column: 1 / -1;
+}
+
+/* Big background icon */
+.bg-icon {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    font-size: 60px;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    color: color-mix(in srgb, var(--yellow) 7%, transparent);
+    transition: transform 0.6s ease;
+}
+
+.orbital-card:hover .bg-icon {
+    transform: translate(-50%, -50%) scale(1.1) rotate(5deg);
+}
+
+/* ================= CONTENT ================= */
+.card-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.card-content h3 {
+    color: var(--yellow);
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 0 0 8px;
+}
+
+.card-content p {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--white);
+    margin-top: -20px;
+}
+
+/* ================= HOVER ================= */
+.orbital-card:hover {
+    background: color-mix(in srgb, var(--yellow) 10%, transparent);
+    border-color: var(--yellow);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px
+        color-mix(in srgb, var(--black) 40%, transparent);
+}
+
+/* ================= EXPERT BOX ================= */
+.expert-advice-box {
+    margin-top: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.5;
+    border-radius: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    background: color-mix(in srgb, var(--yellow) 5%, transparent);
+    border: 1px dashed var(--yellow);
+    color: var(--white);
+}
+@media (max-width: 480px) {
+
+  .orbital-wrapper {
+    max-width: 100%;
+    padding: 0 8px;
+  }
+
+  .orbital-header {
+    margin-bottom: 40px;
+  }
+
+  .orbital-header h2 {
+    font-size: 24px;
+    margin-bottom: -20px;
+  }
+
+  .orbital-header h2::after {
+    width: 50px;
+  }
+
+  .orbital-cards {
+    gap: 18px;
+    margin: 0 5px;
+  }
+
+  .orbital-card {
+    gap: 12px;
+    padding: 12px 15px;
+    border-radius: 16px;
+  }
+
+  .bg-icon {
+    font-size: 42px;
+    left: 75%;
+  }
+
+  .card-content h3 {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  .card-content p {
+    font-size: 14px;
+    margin-top: -10px;
+    line-height: 1.3;
+  }
+
+  .orbital-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .expert-advice-box {
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 12px;
+    margin: 15px 5px;
+    border-radius: 12px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-8 */
+.main-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header-area {
+            margin-bottom: 10px;
+        }
+
+        .header-area h2 {
+            font-size: 32px;
+            color: var(--yellow);
+            text-transform: uppercase;
+            margin-top: 10px;
+            
+        }
+
+        /* Unique Floating Cards Layout */
+        .cards-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            perspective: 1000px;
+        }
+
+        .neo-card {
+            background: var(--card-glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--card-border);
+            padding: 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-align: left;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Diagonal Slide Effect */
+        .neo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: 0.5s;
+        }
+
+        .neo-card:hover::before {
+            left: 100%;
+        }
+
+        /* Hover Styles */
+        .neo-card:hover {
+            transform: rotateX(10deg) rotateY(-5deg) translateZ(20px);
+            background: var(--card-glass-hover);
+            border-color: var(--yellow);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .icon-box {
+            width: 95px;
+            height: 65px;
+            background: linear-gradient(135deg, var(--yellow) 0%, var(--red) 100%);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 8px 20px rgba(255, 204, 0, 0.3);
+            transition: 0.5s;
+             overflow: hidden; 
+        }
+        
+         .icon-box img{
+            width: 110%;
+             object-fit: contain;
+            
+         }
+        .neo-card:hover .icon-box {
+            transform: scale(1.1) rotate(360deg);
+            border-radius: 50%;
+        }
+
+        .info h3 {
+            font-size: 20px;
+            margin-bottom: -20px;
+            color: var(--yellow);
+        }
+
+        .info p {
+            font-size: 18px;
+            color: var(--white);
+            line-height: 1.2;
+        }
+
+        /* Side Indicator Line */
+        .neo-card::after {
+            content: '';
+            position: absolute;
+            right: 20px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--yellow);
+            opacity: 0.3;
+            box-shadow: 0 0 10px var(--yellow);
+        }
+
+        .neo-card:hover::after {
+            opacity: 1;
+            transform: scale(1.5);
+        }
+@media (max-width: 480px) {
+
+  .main-wrapper {
+    max-width: 100%;
+    padding: 15px 10px;
+  }
+
+  .header-area h2 {
+    font-size: 24px;
+    margin-top: 5px;
+  }
+
+  .cards-stack {
+    gap: 18px;
+  }
+
+  .neo-card {
+    padding: 14px;
+    gap: 14px;
+    border-radius: 16px;
+  }
+
+  .neo-card:hover {
+    transform: rotateX(6deg) rotateY(-3deg) translateZ(10px);
+  }
+
+  .icon-box {
+    width: 70px;
+    height: 50px;
+    font-size: 22px;
+    border-radius: 12px;
+  }
+
+  .neo-card:hover .icon-box {
+    transform: scale(1.05) rotate(180deg);
+  }
+
+  .info h3 {
+    font-size: 16px;
+    margin-bottom: -10px;
+  }
+
+  .info p {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .neo-card::after {
+    right: 12px;
+    width: 8px;
+    height: 8px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-9 */
+.offer-card {
+    width: 420px;
+    background: linear-gradient(90deg, var(--purple), var(--pink));
+    padding: 30px;
+    position: relative;
+}
+
+/* --- THE LEAF DESIGN FRAME --- */
+.leaf-frame-container {
+    width: 100%;
+    height: 320px;
+    border-radius: 0px 120px 0px 120px;
+    overflow: hidden;
+    position: relative;
+    background: var(--white);
+    border: 3px solid var(--yellow);
+    margin-bottom: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+}
+
+/* Image inside the leaf frame */
+.leaf-frame-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.offer-card:hover .leaf-frame-container img {
+    transform: scale(1.1);
+}
+
+/* Top Badge */
+.special-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: var(--black);
+    color: var(--white);
+    padding: 8px 15px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 800;
+    z-index: 10;
+}
+
+/* --- CONTENT SECTION --- */
+.content-header {
+    margin-bottom: 25px;
+}
+
+.content-header h2 {
+    font-size: 32px;
+    color: var(--yellow);
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+
+/* Offer Items Stack */
+.offer-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.offer-item {
+    background: var(--white);
+    padding: 16px 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-left: 5px solid var(--yellow);
+    transition: 0.3s;
+}
+
+.offer-item:hover {
+    transform: translateX(10px);
+   
+}
+
+.offer-item span {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--black);
+}
+/* CTA Button */
+.cta-btn {
+    display: block;
+    width: 100%;
+    padding: 22px;
+    background: var(--yellow);
+    color: var(--black);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 1px;
+    box-shadow: 0 15px 30px rgba(16, 185, 129, 0.2);
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    transform: translateY(-5px);
+}
+@media (max-width: 480px) {
+
+  .offer-card {
+    width: 100%;
+    padding: 20px 15px;
+  }
+
+  .leaf-frame-container {
+    height: 240px;
+    border-radius: 0px 90px 0px 90px;
+    margin-bottom: 20px;
+  }
+
+  .special-badge {
+    top: 15px;
+    left: 15px;
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+
+  .content-header {
+    margin-bottom: 18px;
+  }
+
+  .content-header h2 {
+    font-size: 24px;
+    line-height: 1.15;
+  }
+
+  .offer-stack {
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+
+  .offer-item {
+    padding: 12px 14px;
+    border-radius: 16px;
+    gap: 10px;
+  }
+
+  .offer-item:hover {
+    transform: translateX(5px);
+  }
+
+  .offer-item span {
+    font-size: 15px;
+  }
+
+  .cta-btn {
+    padding: 18px;
+    font-size: 17px;
+    border-radius: 16px;
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-3px);
+  }
+}
+
+
+
+
+
+
+
+
+/* section-10 */
+.form-box{
+  max-width:450px;
+  width:100%;
+  background:var(--green);
+  padding:25px 30px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.4);
+  color:var(--white);
+}
+
+/* Heading */
+.form-box h2{
+  font-size:27px;
+  font-weight:700;
+  margin-bottom:20px;
+  color:var(--yellow);
+  line-height:1.3;
+}
+
+/* Input container */
+.input-group{
+  margin-bottom:18px;
+}
+
+/* Label */
+.input-group label{
+  font-size:16px;
+  font-weight:600;
+  margin-bottom:6px;
+  display:block;
+  color:var(--white);
+}
+
+/* Input fields */
+.input-group input{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+  font-size:16px;
+}
+
+/* Button */
+.btn-ripple{
+  width:100%;
+  padding:13px;
+  font-size:18px;
+  font-weight:600;
+  background:var(--yellow);
+  color:var(--black);
+  border:none;
+  border-radius:12px;
+  margin-top:8px;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Ripple Effect */
+.btn-ripple::after{
+  content:"";
+  position:absolute;
+  width:0;
+  height:0;
+  background:rgba(255,255,255,0.5);
+  border-radius:50%;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  transition:0.6s;
+}
+
+.btn-ripple:hover::after{
+  width:400px;
+  height:300px;
+}
+
+/* Mobile */
+@media (max-width:480px){
+  .form-box h2{
+    font-size:24px;
+    text-align:left;
+    margin-left:10px;
+  }
+}
+
+
+
+
+
+
+
+
+/* section-11 */
+  .faq-wrapper {
+        max-width: 450px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .faq-header {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .faq-header h2 {
+        color: var(--purple);
+        font-size: 32px;
+        font-weight: 800;
+        margin-bottom: -10px;
+    }
+
+  
+
+    /* FAQ Item Style */
+    .faq-item {
+        background: linear-gradient(90deg,var(--purple),var(--pink));
+        border: 1px solid var(--purple);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    /* Details/Summary Logic */
+    details {
+        width: 100%;
+    }
+
+    summary {
+        padding: 20px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        font-weight: 600;
+        color: white;
+        font-size: 20px;
+        transition: background 0.3s;
+    }
+
+
+    /* Plus icon to Minus icon animation */
+    summary::after {
+        content: '+';
+        font-size: 22px;
+        color: var(--white);
+        transition: transform 0.3s ease;
+    }
+
+    details[open] summary::after {
+        content: '−';
+        transform: rotate(180deg);
+    }
+
+   
+
+    .faq-content {
+        padding: 0 20px 20px 20px;
+        color: white;
+        font-size: 20px;
+        line-height: 1.6;
+        animation: slideDown 0.4s ease-out;
+    }
+
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .brand-pill {
+        display: inline-block;
+        background: var(--red);
+        color: var(--yellow);
+        padding: 2px 8px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 22px;
+    }
+@media (max-width: 480px) {
+
+  .faq-wrapper {
+    max-width: 100%;
+    gap: 12px;
+  }
+
+  .faq-header h2 {
+    font-size: 24px;
+    margin-bottom: -6px;
+  }
+
+  summary {
+    padding: 14px 16px;
+    font-size: 16px;
+  }
+
+  summary::after {
+    font-size: 18px;
+  }
+
+  .faq-content {
+    padding: 0 16px 16px 16px;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .brand-pill {
+    font-size: 16px;
+    padding: 2px 6px;
+  }
+}
+
+
+
+
+
+
+/* ===== DISCLAIMER ===== */
+.disclaim {
+  max-width: 450px;
+  width: 100%;
+  background: linear-gradient(90deg,var(--purple),var(--pink));
+  margin-top: 20px;
+  padding: 5px;
+  font-size: 10px;
+}
+.disclaim * {
+  margin: 0;
+  padding: 5px;
+  color: var(--white);
+}
+
+/* MEDIA */
+@media(max-width:480px){
+   .btn {
+    margin-left: 100px !important;
+    width: 40%;
+    font-size: 18px;
+   }
+}
+
+ </style>
+</head>
+<body>
+
+
+     <header>
+  <nav>
+    <div class="logo">Gathheal</div>
+    <a class="buttonn" href="#orderForm">Buy Now 🛒</a>
+  </nav>
+</header>
+
+
+<section class="sec">
+    <img src="images/banner.avif" class="images" alt="">
+</section>
+
+
+
+
+
+
+<!-- section-1 -->
+<section class="sec">
+    <h2 class="sect-1">Pain Detailing</h2>
+    <div class="containr">
+        <div class="header-section">
+            <h1>अक्सर लोग सोचते हैं —</h1>
+            <p>“छोटी गांठ है, अपने-आप ठीक हो जाएगी।”</p>
+        </div>
+
+        <div class="ingredient-showcase">
+            
+            <div class="ing-box">
+                <div class="num">01</div>
+                <div class="ing-image">
+                    <img src="images/sect-1-1stimg.avif" alt="Blockage">
+                </div>
+                <div class="ing-content">
+                    <h3>कड़वी सच्चाई</h3>
+                    <p>शरीर में सूजन और ब्लॉकेज अचानक नहीं बनते। शुरुआत में ये दर्द नहीं देती, इसलिए लोग इसे ignore कर देते हैं।</p>
+                </div>
+            </div>
+
+            <div class="ing-box">
+                <div class="num">02</div>
+                <div class="ing-image">
+                    <img src="images/sect-1-2ndimg.avif" alt="Abnormal Cell Growth">
+                </div>
+                <div class="ing-content">
+                    <h3>बढ़ता हुआ खतरा</h3>
+                    <p>धीरे-धीरे अंदर सूजन और abnormal cell growth बढ़ सकती है। समय पर ध्यान न देने पर यही गाँठ Tumor का रूप ले सकती है।</p>
+                </div>
+            </div>
+
+            <div class="ing-box">
+                <div class="num">03</div>
+                <div class="ing-image">
+                    <img src="images/sect-1-3rdimg.avif" alt="Negligence">
+                </div>
+                <div class="ing-content">
+                    <h3>सबसे बड़ा रिस्क</h3>
+                    <p>लापरवाही सबसे बड़ा रिस्क है। 👉 समस्या गाँठ नहीं है, समस्या है उसे हल्के में लेना।</p>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <p class="foot-p">✨ स्वास्थ्य ही सबसे बड़ा धन है ✨</p>
+        </footer>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- section-2 -->
+<section class="sec">
+    <div class="final-wrapper">
+    <div class="final-main">
+         <h2 class="final-title">Gathheal</h2>
+
+        <div class="hero-container">
+            <div class="final-img-box">
+                <img src="images/product-gath.avif" alt="Arurvani">
+            </div>
+            <div class="benefit-pills">
+                <div class="pill">Root Cause Healing</div>
+                <div class="pill">Inflammation Control</div>
+                <div class="pill">Pure Ayurveda</div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <p>
+                इसलिए हम लाए हैं <b>Ayurveda-based, research-inspired समाधान</b>,  
+                जो शरीर में बनने वाली गाँठ को <span class="highlight-span">जड़ से समझकर</span> काम करता है —  
+                ना सिर्फ़ ऊपर से दबाता है, बल्कि <b>अंदर के कारण</b> पर सीधा असर करता है।
+            </p>
+        </div>
+
+        <a href="#orderForm" class="final-btn">Order Now →</a>
+    </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- section-3 -->
+<section class="sec">
+    <div class="magazine-layout">
+
+    <div class="main-tit">यह कैसे काम करता है</div>
+
+    <div class="ingredient-card">
+      <span class="bg-num">01</span>
+      <div class="mask-container">
+        <img src="images/sect-3-1stimg.avif">
+      </div>
+      <div class="text-side">
+        <h3>Toxin Removal</h3>
+        <p>शरीर में जमा हुए toxins को धीरे-धीरे बाहर निकालने में मदद करता है, जिससे गाँठ बनने का मूल कारण कमजोर होता है।</p>
+      </div>
+    </div>
+
+    <div class="ingredient-card reverse">
+      <span class="bg-num">02</span>
+      <div class="mask-container">
+        <img src="images/sect-3-2ndimg.avif">
+      </div>
+      <div class="text-side">
+        <h3>Swelling Balance</h3>
+        <p>सूजन और abnormal tissue growth को balance करने में मदद करता है, ताकि समस्या आगे न बढ़े।</p>
+      </div>
+    </div>
+
+    <div class="ingredient-card">
+      <span class="bg-num">03</span>
+      <div class="mask-container">
+        <img src="images/sect-3-3rdimg.avif">
+      </div>
+      <div class="text-side">
+        <h3>Better Circulation</h3>
+        <p>blood circulation सुधारकर प्रभावित हिस्से तक पोषण और ऑक्सीजन की सप्लाई बेहतर बनाता है।</p>
+      </div>
+    </div>
+
+    <div class="ingredient-card reverse">
+      <span class="bg-num">04</span>
+      <div class="mask-container">
+        <img src="images/sect-3-4thimg.avif">
+      </div>
+      <div class="text-side">
+        <h3>Immunity Support</h3>
+        <p>immunity को strong बनाकर शरीर को खुद heal करने में support देता है।</p>
+      </div>
+    </div>
+
+    <div class="ingredient-card">
+      <span class="bg-num">05</span>
+      <div class="mask-container">
+        <img src="images/sect-3-5thimg.avif">
+      </div>
+      <div class="text-side">
+        <h3>System Normalization</h3>
+        <p>अंदर से पूरे सिस्टम को normalize करने पर focus करता है, जिससे जड़ से संतुलन बनता है।</p>
+      </div>
+    </div>
+
+    <button class="btn" onclick="location.href='#orderForm'">
+      अभी ऑर्डर करें
+    </button>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-4 -->
+<section class="sec">
+     
+<div class="doctor-product-card">
+    <div class="image-container">
+        <img src="images/doctor.avif" alt="Ayurvedic Doctor">
+    </div>
+
+    <div class="content-area">
+        <h2 class="main-heading">आयुर्वेदिक दृष्टिकोण</h2>
+
+        <div class="highlight-box">
+            <h4>आयुर्वेद में गाँठ = <br>“ग्रंथि (Granthi)”</h4>
+        </div>
+
+        <p class="ayurvedic-text">
+            आयुर्वेदिक विशेषज्ञ मानते हैं कि सही जड़ी-बूटियाँ शरीर की जड़ से
+            असंतुलन को पहचान कर एक साथ कई कारणों पर काम करती हैं।
+        </p>
+
+        <ul class="benefits-list">
+            <li class="benefit-item">
+                <span class="benefit-icon">✓</span>
+                <span>Inflammation</span>
+            </li>
+            <li class="benefit-item">
+                <span class="benefit-icon">✓</span>
+                <span>Blockage</span>
+            </li>
+            <li class="benefit-item">
+                <span class="benefit-icon">✓</span>
+                <span>Abnormal Growth</span>
+            </li>
+        </ul>
+
+        <div class="zero-chemicals">
+            <div class="chemical-icon">0%</div>
+            <p class="chemical-text">
+                बिना harsh chemicals के —  
+                शरीर के अनुकूल, प्राकृतिक और संतुलित उपचार पद्धति।
+            </p>
+        </div>
+    </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-5 -->
+<section class="sec">
+    <img src="images/testimonial.avif" class="images" alt="">
+<button class="btn" onclick="location.href='#orderForm'">Order Now</button>   
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-6 -->
+<section class="sec">
+        <div class="container">
+        <header class="header">
+            <h1>🌱 Key Ingredients</h1>
+        </header>
+
+        <div class="ingredients-list">
+            <div class="ing-card">
+                <div class="petal-frame">
+                    <img src="images/कांचनार.avif" alt="कांचनार">
+                </div>
+                <div class="inform">
+                    <h3>कांचनार</h3>
+                    <p>शुद्धता और डिटॉक्स का प्राकृतिक संगम।</p>
+                </div>
+            </div>
+
+            <div class="ing-card">
+                <div class="petal-frame">
+                    <img src="images/guggul.avif" alt="गूग्गुल">
+                </div>
+                <div class="inform">
+                    <h3>गूग्गुल</h3>
+                    <p>प्राचीन जड़ी-बूटियों का शक्तिशाली सत्व।</p>
+                </div>
+            </div>
+
+            <div class="ing-card">
+                <div class="petal-frame">
+                    <img src="images/haldi.avif" alt="हल्दी">
+                </div>
+                <div class="inform">
+                    <h3>हल्दी</h3>
+                    <p>एंटी-ऑक्सीडेंट गुणों से भरपूर स्वर्ण मसाला।</p>
+                </div>
+            </div>
+
+            <div class="ing-card">
+                <div class="petal-frame">
+                    <img src="images/अश्वगंधा.avif" alt="अश्वगंधा">
+                </div>
+                <div class="inform">
+                    <h3>अश्वगंधा</h3>
+                    <p>तनाव मुक्ति और नई ऊर्जा का संचार।</p>
+                </div>
+            </div>
+
+            <div class="ing-card">
+                <div class="petal-frame">
+                    <img src="images/त्रिफला.avif" alt="त्रिफला">
+                </div>
+                <div class="inform">
+                    <h3>त्रिफला</h3>
+                    <p>पाचन और संपूर्ण स्वास्थ्य का रक्षक।</p>
+                </div>
+            </div>
+        </div>
+
+        <p style="margin-top: 40px; color: var(--yellow); font-weight: 600;">✨ 100% शुद्ध आयुर्वेदिक मिश्रण ✨</p>
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-7 -->
+<section class="sec">
+    <div class="orbital-wrapper">
+    <header class="orbital-header">
+        <h2>How to Use</h2>
+    </header>
+
+    <div class="orbital-cards">
+
+        <div class="orbital-card">
+            <span class="bg-icon">⏰</span>
+            <div class="card-content">
+                <h3>समय</h3>
+                <p>दिन में 2 बार</p>
+            </div>
+        </div>
+
+        <div class="orbital-card">
+            <span class="bg-icon">🥛</span>
+            <div class="card-content">
+                <h3>माध्यम</h3>
+                <p>गुनगुने पानी के साथ</p>
+            </div>
+        </div>
+
+        <div class="orbital-card">
+            <span class="bg-icon">🗓️</span>
+            <div class="card-content">
+                <h3>अवधि</h3>
+                <p>नियमित रूप से 60–90 दिन</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="expert-advice-box">
+        💡 (या अपने एक्सपर्ट की सलाह अनुसार उपयोग करें।)
+    </div>
+</div>
+<button class="btn" onclick="location.href='#orderForm'">Order Now</button>   
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- section-8 -->
+<section class="sec">
+      <div class="main-wrapper">
+        <div class="header-area">
+            <h2>Certified & Trusted</h2>
+        </div>
+
+        <div class="cards-stack">
+            <div class="neo-card">
+                <div class="icon-box">
+                    <img src="images/gmp.avif" alt="">
+                </div>
+                <div class="info">
+                    <h3>GMP Certified</h3>
+                    <p>Highest standards of manufacturing for pure quality.</p>
+                </div>
+            </div>
+
+            <div class="neo-card">
+                <div class="icon-box">
+                    <img src="images/Aayurvedic.avif" alt="">
+                </div>
+                <div class="info">
+                    <h3>100% Ayurvedic</h3>
+                    <p>Ancient wisdom meets modern science. No side effects.</p>
+                </div>
+            </div>
+
+            <div class="neo-card">
+                <div class="icon-box">
+                    <img src="images/chemical.avif" alt="">
+                </div>
+                <div class="info">
+                    <h3>No Chemicals</h3>
+                    <p>Zero harmful toxins, steroids, or artificial fillers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+<!-- section-9 -->
+<section class="sec">
+       <div class="offer-card">
+        <div class="leaf-frame-container">
+            <div class="special-badge">SPECIAL OFFER</div>
+            <img src="images/product.avif" alt="Product Image">
+        </div>
+
+        <div class="content-header">
+            <h2>🔥 Limited Time Offer!</h2>
+          </div>
+
+        <div class="offer-stack">
+            <div class="offer-item">
+                <span>💰 Discounted Price</span>
+            </div>
+            <div class="offer-item" >
+                <span>📞 Free Consultation</span>
+            </div>
+            <div class="offer-item">
+                <span>🚚 Secure Delivery</span>
+            </div>
+        </div>
+
+        <a href="#orderForm" class="cta-btn">ORDER NOW & SAVE</a>
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+    <head>
+        <style>
+            #loading {
+        display: none;
+        color: #fff;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+
+      #poweredBy {
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        margin-top: 20px;
+      }
+/* FULL SCREEN LOADER */
+#loaderOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* SPINNER */
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #fff;
+  border-top: 5px solid gold;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+   
+        </style>
+
+        <script>
+  function submitForm(event) {
+  event.preventDefault();
+
+  const form = event.target;
+
+  const submitBtn = form.querySelector("button[type='submit'], input[type='submit']");
+  if (submitBtn) {
+    submitBtn.style.display = "none";
+    submitBtn.disabled = true;
+  }
+
+  // 🔥 SHOW LOADER
+  document.getElementById("loaderOverlay").style.display = "flex";
+
+  const formData = new FormData(form);
+  let redirected = false;
+
+  fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.text())
+  .then(data => {
+
+    if (!redirected) {
+      redirected = true;
+
+      // 🔥 REDIRECT
+      window.location.href = './Thankyou.html';
+
+      // 🔥 REFRESH BACK PAGE
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+    }
+
+  })
+  .catch(error => {
+    console.error('Fetch error:', error);
+
+    if (!redirected) {
+      redirected = true;
+      window.location.href = './Thankyou.html';
+    }
+  });
+
+  return false;
+}
+
+  // Animated dots for loading state
+  let dotCount = 1;
+  setInterval(() => {
+    const d = document.getElementById('dotAnim');
+    if (d) { 
+      dotCount = (dotCount % 3) + 1; 
+      d.textContent = '.'.repeat(dotCount); 
+    }
+  }, 500);
+</script>
+    </head>
+    <body>
+<!-- section-10 -->
+    
+<section class="sec">
+  <div class="form-box">
+    <h2>
+    गांठ को नज़रअंदाज़ न करें — सही समय पर सही कदम उठाएँ।
+नीचे फॉर्म भरें और अपनी सेहत की जिम्मेदारी लें।
+
+    </h2>
+
+    <form id="orderForm"  onsubmit="submitForm(event)">
+      <div class="input-group">
+        <label>नाम:</label>
+        <input type="text" name="name" placeholder="अपना नाम दर्ज करें" required>
+      </div>
+
+      <div class="input-group">
+        <label>मोबाइल नंबर (10 अंक):</label>
+        <input type="tel" name="mobile" maxlength="10" pattern="[6-9][0-9]{9}" placeholder="अपना मोबाइल नंबर दर्ज करें" required>
+      </div>
+
+      <button class="btn-ripple" type="submit">
+        Buy Now | Limited Stock Available
+
+      </button>
+      <div id="loaderOverlay">
+  <div style="text-align:center;">
+    <div class="loader"></div>
+    <p style="color:white;margin-top:10px;">
+      Processing<span id="dotAnim"></span>
+    </p>
+  </div>
+</div>
+<div id="loading">
+            Processing Your Order. Please wait...
+          </div>
+    </form>
+  </div>
+
+</section>
+</body>
+</html>
+
+
+
+
+
+<!-- section-11 -->
+<div class="faq-wrapper">
+    <div class="faq-header">
+        <h2>सामान्य प्रश्न</h2>
+    </div>
+
+    <div class="faq-item">
+        <details>
+            <summary>क्या हर गाँठ Cancer होती है?</summary>
+            <div class="faq-content">
+                नहीं, हर गाँठ Cancer नहीं होती, लेकिन किसी भी गाँठ की समय पर जाँच बेहद ज़रूरी होती है।
+            </div>
+        </details>
+    </div>
+
+    <div class="faq-item">
+        <details>
+            <summary>क्या ये medicine safe है?</summary>
+            <div class="faq-content">
+                हाँ, यह पूरी तरह <span class="brand-pill">आयुर्वेदिक जड़ी-बूटियों</span> से बनी है और सुरक्षित मानी जाती है।
+            </div>
+        </details>
+    </div>
+
+    <div class="faq-item">
+        <details>
+            <summary>कितने समय में असर दिखता है?</summary>
+            <div class="faq-content">
+                आमतौर पर <span class="brand-pill">7–15 दिनों</span> में शरीर में फर्क महसूस होने लगता है।
+            </div>
+        </details>
+    </div>
+
+    <div class="faq-item">
+        <details>
+            <summary>क्या इसे सभी उम्र के लोग ले सकते हैं?</summary>
+            <div class="faq-content">
+                हाँ, यह सभी उम्र के लोग ले सकते हैं।
+            </div>
+        </details>
+    </div>
+
+    <div class="faq-item">
+        <details>
+            <summary>कितने समय तक इसका कोर्स लेना चाहिए?</summary>
+            <div class="faq-content">
+                बेहतर और स्थायी सपोर्ट के लिए कम से कम <span class="brand-pill">2–3 महीने</span> का नियमित कोर्स लेने की सलाह दी जाती है।
+            </div>
+        </details>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+ <section class="disclaim">
+<footer class="disc">⚠️ Disclaimer:यह product किसी disease का दावा नहीं करता।
+ यह medical treatment का विकल्प नहीं है।
+ Serious condition में doctor से सलाह ज़रूरी है।
+
+</footer>
+</section>
+</body>
+<script>
+  document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  fetch("https://script.google.com/macros/s/AKfycbz5sFiY8d4m-gK5USk7puMY2GCEMrvZEPGMDZJJzKU0hPmAUwzmnZT29dZmH2psrB-mfA/exec", {
+    method: "POST",
+    body: JSON.stringify({
+      name: e.target.name.value,
+      mobile: e.target.mobile.value
+    }),
+  })
+  .then(() => {
+    e.target.reset();
+  })
+  .catch(() => alert("❌ Error"));
+});
+</script>
+</html>

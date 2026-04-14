@@ -124,7 +124,8 @@ nav {
   border: none;
   background: var(--green);
   cursor: pointer;
-  margin: 10px 100px;
+  margin: 10px auto;
+  display: block;
   width: 55%;
   position: relative;
   overflow: hidden;
@@ -3184,72 +3185,86 @@ details[open] summary::before {
         font-size: 14px;
         margin-top: 20px;
       }
+/* FULL SCREEN LOADER */
+#loaderOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
 
+/* SPINNER */
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #fff;
+  border-top: 5px solid gold;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
    
         </style>
 
         <script>
   function submitForm(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    const form = event.target;
+  const form = event.target;
 
-    // 👉 Submit button ko hide + disable karo
-    const submitBtn = form.querySelector("button[type='submit'], input[type='submit']");
-    if (submitBtn) {
-      submitBtn.style.display = "none";
-      submitBtn.disabled = true;
+  const submitBtn = form.querySelector("button[type='submit'], input[type='submit']");
+  if (submitBtn) {
+    submitBtn.style.display = "none";
+    submitBtn.disabled = true;
+  }
+
+  // 🔥 SHOW LOADER
+  document.getElementById("loaderOverlay").style.display = "flex";
+
+  const formData = new FormData(form);
+  let redirected = false;
+
+  fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.text())
+  .then(data => {
+
+    if (!redirected) {
+      redirected = true;
+
+      // 🔥 REDIRECT
+      window.location.href = './Thankyou.html';
+
+      // 🔥 REFRESH BACK PAGE
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
     }
 
-    // 👉 Loading show karo
-    document.getElementById("loading").style.display = "block";
+  })
+  .catch(error => {
+    console.error('Fetch error:', error);
 
-    const formData = new FormData(form);
-    let redirected = false;
+    if (!redirected) {
+      redirected = true;
+      window.location.href = './Thankyou.html';
+    }
+  });
 
-    const timeout = setTimeout(() => {
-      if (!redirected) {
-        redirected = true;
-        window.location.href = './ThankYou.html';
-      }
-    }, 2000);
-
-    fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-      if (!redirected) {
-        clearTimeout(timeout);
-        redirected = true;
-        window.location.href = './ThankYou.html';
-      }
-
-      document.getElementById("loading").style.display = "none";
-
-      Swal.fire({
-        icon: 'success',
-        title: 'Success',
-        text: 'Processing Your Order. Please wait....',
-        confirmButtonColor: '#3085d6',
-        confirmButtonText: 'OK',
-      });
-    })
-    .catch(error => {
-      console.error('Fetch error:', error);
-
-      if (!redirected) {
-        clearTimeout(timeout);
-        redirected = true;
-        window.location.href = './ThankYou.html';
-      }
-
-      document.getElementById("loading").style.display = "none";
-    });
-
-    return false;
-  }
+  return false;
+}
 
   // Animated dots for loading state
   let dotCount = 1;
@@ -3264,7 +3279,6 @@ details[open] summary::before {
     </head>
     <body>
 
-
 <!-- section-11 -->
 <section class="sec">
 <div class="form-box">
@@ -3278,14 +3292,19 @@ details[open] summary::before {
 
         <div class="input-group">
             <label>मोबाइल नंबर (10 अंक):</label>
-            <input type="tel" name="phone"  maxlength="10" pattern="[0-9]{10}" placeholder="अपना मोबाइल नंबर दर्ज करें" required>
+            <input type="tel" name="phone"  maxlength="10" pattern="[6-9][0-9]{9}" placeholder="अपना मोबाइल नंबर दर्ज करें" required>
         </div>
 
         <button class="btn-cta"  type="submit">Order Now
 </button>
-<div id="loading">
-            Processing Your Order. Please wait...
-          </div>
+<div id="loaderOverlay">
+  <div style="text-align:center;">
+    <div class="loader"></div>
+    <p style="color:white;margin-top:10px;">
+      Processing<span id="dotAnim"></span>
+    </p>
+  </div>
+</div>
     </form>
 </div>
 </section>

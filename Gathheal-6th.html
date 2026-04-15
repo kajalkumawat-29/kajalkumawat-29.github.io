@@ -1,0 +1,2528 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&family=Source+Sans+3:wght@400;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    <title>gathheal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+
+:root {
+  --green:#045b3c;
+  --yellow:#ff9406;
+  --white: #fff;
+  --black: #000;
+  --gray: #666; 
+  --red:#871713;
+  --number-fade: rgba(255,255,255,0.04);
+  --number-bg: #eeeeee;
+   --active-color: var(--yellow); 
+   --yellow-light: rgba(245, 189, 5, 0.16);
+    
+             
+            
+ 
+}
+
+/* ===== GLOBAL ===== */
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans 3','Noto Serif Devanagari', sans-serif;
+  background-color:rgba(169, 160, 160, 0.276);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+ 
+}
+    header {
+            max-width: 450px;
+            width: 100%;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: center;
+            background-color: var(--yellow);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px); /* Glass effect */
+        }
+
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--white);
+            /* Border-bottom ko capsule ke liye hata diya hai taaki clean lage */
+        }
+
+        /* --- Logo with Neon Orbit Effect --- */
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--green);
+            text-transform: uppercase;
+            position: relative;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+   
+
+        /* Yellow Orbit Dot Animation */
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -15px;
+            width: 8px;
+            height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--yellow);
+            opacity: 0;
+            transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo:hover::before {
+            opacity: 1;
+            left: calc(100% + 5px); /* Dot moves across */
+        }
+
+        .logo:hover {
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(247, 230, 0, 0.4);
+        }
+
+        /* --- Button Styling --- */
+        .buttonn {
+            background-color: var(--green);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 0 10px rgba(247, 230, 0, 0.3);
+            transition: 0.3s;
+        }
+
+        .buttonn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px var(--yellow);
+        }
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgb(218, 180, 13) }
+  70% { box-shadow: 0 0 0 20px rgba(236,72,153,0) }
+  100% { box-shadow: 0 0 0 0 rgba(236,72,153,0) }
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  background: var(--yellow);
+  cursor: pointer;
+  margin: 10px 100px;
+  width: 55%;
+  position: relative;
+  overflow: hidden;
+  color: var(--black);
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  top: 0;
+  left: -40%;
+  transform: skewX(-20deg);
+}
+.btn:hover::before {
+  left: 120%;
+  transition: 1.5s;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 430px) {
+  .btn {
+    width: 50% !important;
+    font-size: 15px !important;
+    margin: 10px 80px !important;
+  }
+}
+
+/* ===== SECTIONS ===== */
+.sec {
+  max-width: 450px;
+  width: 100%;
+  background-color: var(--green);
+  border-bottom: 2px solid var(--white);
+}
+.sect {
+  max-width: 450px;
+  width: 100%;
+  background-color: var(--yellow);
+}
+.images {
+  max-width: 450px;
+  width: 100%;
+  align-items: center;
+  padding: 0;
+}
+
+@media (max-width: 480px) {
+
+  header {
+    max-width: 100%;
+    padding: 12px 10px;
+  }
+
+  nav {
+    max-width: 100%;
+    padding-bottom: 6px;
+  }
+
+  .logo {
+    font-size: 30px;
+  }
+
+  .buttonn {
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-2 */
+.master-card {
+    max-width: 450px;
+    width: 100%;
+    min-height: 700px; /* fixed height remove */
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 255, 135, 0.15);
+    transition: all 0.5s ease;
+    margin: auto;
+}
+
+/* ---------- HEADER ---------- */
+.product-intro {
+    text-align: center;
+    padding: 40px 20px 20px;
+    position: relative;
+}
+
+.main-h {
+    color: var(--yellow);
+    font-size: 32px;
+    margin-top: -10px;
+    margin-bottom: -40px;
+    font-weight: 600;
+}
+
+/* ---------- IMAGE SECTION ---------- */
+.image-zone {
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.glow-aura {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, var(--green) 0%, transparent 70%);
+    opacity: 0.2;
+    filter: blur(30px);
+    animation: pulseGlow 3s infinite ease-in-out;
+}
+
+.bottle-img {
+    width: 240px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50px;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+}
+
+@keyframes pulseGlow {
+    0%, 100% { transform: scale(1); opacity: 0.2; }
+    50% { transform: scale(1.5); opacity: 0.4; }
+}
+
+/* ---------- CONTENT ---------- */
+.content-panel {
+    padding: 0 40px;
+    text-align: center;
+    color: #fff;
+}
+
+.sub-heading {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: -10px;
+}
+
+.main-desc {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.balance-tag {
+    background: rgba(0, 255, 135, 0.1);
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 18px;
+    color: var(--yellow);
+    display: inline-block;
+    border: 1px solid rgba(0, 255, 135, 0.2);
+}
+
+/* ---------- HOVER ---------- */
+.master-card:hover {
+    transform: translateY(-10px);
+}
+
+.master-card:hover .bottle-img {
+    transform: scale(1.15) rotate(5deg) translateY(-20px);
+    filter: drop-shadow(0 30px 60px rgba(0, 255, 135, 0.3));
+}
+
+/* ---------- BUTTON ---------- */
+.buy-strip {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    right: 40px;
+    background: var(--yellow);
+    color: white;
+    text-decoration: none;
+    padding: 18px;
+    border-radius: 20px;
+    font-weight: 900;
+    text-align: center;
+    font-size: 18px;
+    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(0,255,135,0.2);
+}
+
+.buy-strip:hover {
+    transform: scale(1.05);
+}
+
+/* ========================= */
+/* 📱 MOBILE OPTIMIZATION */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .master-card {
+        min-height: auto;
+        padding-bottom: 100px;
+    }
+
+    .main-h {
+        font-size: 24px;
+        margin-bottom: -20px;
+    }
+
+    .image-zone {
+        height: 260px;
+    }
+
+    .bottle-img {
+        width: 180px;
+    }
+
+    .content-panel {
+        padding: 0 20px;
+    }
+
+    .sub-heading {
+        font-size: 18px;
+    }
+
+    .main-desc {
+        font-size: 16px;
+    }
+
+    .balance-tag {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .buy-strip {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        font-size: 16px;
+        padding: 15px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* section-3 */
+ .guarantee-wrapper {
+        width: 100%;
+        max-width: 450px;
+        text-align: center;
+        position: relative;
+    }
+
+    .section-title {
+        color: var(--yellow);
+        font-size: 32px;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
+    }
+
+    .section-title::after {
+        content: '';
+        width: 80px;
+        height: 3px;
+        background: var(--yellow);
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+    }
+
+    /* Grid Layout for the items */
+    .guarantee-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column for mobile */
+        gap: 60px; /* More space between items */
+    }
+
+    .guarantee-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    /* The Unique Image Frame */
+    .image-frame {
+        width: 150px;
+        height: 150px;
+        background: var(--white);
+        border: 2px solid var(--yellow);
+        border-radius: 50%; /* Circular base */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 20px;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        box-shadow: 0 0 20px rgba(0, 255, 200, 0.3); /* Initial glow */
+    }
+
+    /* The "Sliced" effect using a pseudo-element */
+   .image-frame::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    transform: skewY(10deg);
+    transform-origin: top left;
+    transition: transform 0.5s ease;
+    z-index: 2;   /* 👈 ADD THIS */
+}
+
+    .guarantee-item:hover .image-frame::before {
+        transform: skewY(0deg) translateY(-100%); /* Slice disappears on hover */
+    }
+
+  .image-frame img {
+    width: 260px;
+    height: 260px;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;   /* 👈 Make sure this is lower than ::before */
+}
+    /* Text Content */
+    .text-content {
+        max-width: 300px;
+    }
+
+    .text-content h3 {
+        color: var(--yellow);
+        font-size: 22px;
+        margin-bottom:5px;
+        margin-top: -5px;
+        letter-spacing: 0.5px;
+    }
+
+    .text-content p {
+        color: white;
+        font-size: 18px;
+        line-height: 1.3;
+        margin: 0;
+    }
+
+    /* Animated Border Glow on Hover */
+    .guarantee-item:hover .image-frame {
+        border-color: var(--yellow);
+        box-shadow: 0 0 35px var(--yellow); /* Stronger glow on hover */
+    }
+/* ========================= */
+/* 📱 GUARANTEE MOBILE FIX */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .guarantee-grid {
+        gap: 40px;
+    }
+
+    .image-frame {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px;
+    }
+
+    .image-frame img {
+        width: 170px;
+        height: 170px;
+    }
+
+    .text-content h3 {
+        font-size: 18px;
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+
+    .text-content p {
+        font-size: 15px;
+        line-height: 1.4;
+    }
+
+    /* Hover effect disable for touch devices */
+    .image-frame::before {
+        transform: none !important;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-4 */
+     .abstract-container {
+            max-width: 450px;
+            width: 100%;
+            background: var(--white);
+            height: 460px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+
+        /* तिरछा बैकग्राउंड */
+        .gold-banner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: var(--green);
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            padding: 40px 30px;
+            color: var(--white);
+        }
+
+        .header-content h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            margin-top: -10px;
+            font-weight: 600;
+            line-height: 1.1;
+            color: var(--yellow);
+        }
+
+       
+        .info-layer {
+            position: relative;
+            z-index: 2;
+            padding: 0 30px;
+            margin-top: -30px;
+        }
+
+        /* Hover Effect के साथ फ्लोटिंग टेक्स्ट */
+        .floating-text {
+            background: rgb(225, 221, 221);
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.05);
+            border-right: 8px solid var(--yellow);
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--black);
+            cursor: pointer;
+        }
+
+        /* HOVER EFFECT 1: कार्ड थोड़ा ऊपर उठेगा और दाईं तरफ शिफ्ट होगा */
+        .floating-text:hover {
+            transform: translateY(-5px) translateX(5px);
+            box-shadow: 20px 20px 40px rgba(0,0,0,0.1);
+            border-right-width: 15px; /* बॉर्डर थोड़ा और मोटा होगा */
+        }
+
+        .floating-text b {
+            color: var(--yellow);
+            font-size: 20px;
+        }
+
+        .special-quote {
+            margin-top: 30px;
+            padding-left: 20px;
+            border-left: 2px solid var(--green);
+            font-style: italic;
+            color: var(--black);
+            font-size: 18px;
+        }
+
+        /* HOVER EFFECT 2: कोट्स पर डार्क ग्रीन कलर बढ़ेगा */
+        .special-quote:hover {
+            padding-left: 30px;
+        }
+
+
+        .footer-cta {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: var(--yellow);
+            color: var(--white);
+            padding: 20px 40px;
+            font-weight: 900;
+            font-size: 18px;
+            clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        /* HOVER EFFECT 4: बटन का कलर और शेप में हल्का बदलाव */
+        .footer-cta:hover {
+            padding-right: 60px;
+            background: var(--green);
+        }
+/* ========================= */
+/* 📱 PERFECT MOBILE MATCH FIX */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .abstract-container {
+        height: auto !important;
+        min-height: 460px;   /* PC proportion maintain */
+        padding-bottom: 90px; /* button ke liye space */
+    }
+
+    .header-content {
+        padding: 30px 20px;
+    }
+
+    .header-content h2 {
+        font-size: 26px;
+    }
+
+    .info-layer {
+        padding: 0 20px;
+    }
+
+    .footer-cta {
+        bottom: 20px;  /* thoda upar lao */
+        right: 0;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-5 */
+
+        .comparison-wrapper {
+            width: 100%;
+            max-width: 450px;
+            padding: 30px 20px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .headr {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .headr h2 {
+            color: var(--yellow);
+            font-size: 32px;
+            margin: 0;
+            font-weight: 800;
+        }
+
+        /* कम्पेरिजन रो स्टाइल */
+        .comp-row {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .comp-card {
+            padding: 20px;
+            border-radius: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+
+        /* रिस्क कार्ड स्टाइल */
+        .risk-card {
+            background: linear-gradient(135deg, rgba(255, 62, 62, 0.1) 0%, rgb(42, 41, 15) 100%);
+            border-left: 4px solid var(--yellow);
+        }
+
+        /* सॉल्यूशन कार्ड स्टाइल */
+        .safe-card {
+            background: linear-gradient(135deg, rgba(0, 210, 133, 0.1) 0%, rgb(15, 42, 24) 100%);
+            border-left: 4px solid var(--white);
+        }
+
+        .comp-card h3 {
+            margin: 0;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .risk-card h3 { color: var(--yellow); }
+        .safe-card h3 { color: var(--white); }
+
+        .comp-card p {
+            margin: -5px 0 0;
+            font-size: 18px;
+            color: var(--white);
+            line-height: 1.5;
+        }
+
+        /* VS बैज जो बीच में तैरता है */
+        .vs-badge {
+            width: 35px;
+            height: 35px;
+            background: var(--yellow);
+            color: #fff;
+            border: 1px solid var(--yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 900;
+            margin: -25px auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Hover Effect */
+        .comp-card:hover {
+            transform: scale(1.02);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .brand-footer {
+            margin-top: 20px;
+            background: var(--yellow);
+            padding: 10px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .brand-footer h4 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        .brand-footer p {
+            margin: -5px 0 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+/* ========================= */
+/* 📱 COMPARISON MOBILE FIX */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .comparison-wrapper {
+        padding: 25px 15px;
+    }
+
+    .headr h2 {
+        font-size: 24px;
+    }
+
+    .comp-row {
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .comp-card {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .comp-card h3 {
+        font-size: 17px;
+    }
+
+    .comp-card p {
+        font-size: 15px;
+        line-height: 1.4;
+    }
+
+    .vs-badge {
+        width: 30px;
+        height: 30px;
+        font-size: 9px;
+        margin: -18px auto;
+    }
+
+    .brand-footer {
+        border-radius: 15px;
+        padding: 12px;
+    }
+
+    .brand-footer h4 {
+        font-size: 17px;
+    }
+
+    .brand-footer p {
+        font-size: 15px;
+    }
+
+}
+
+
+
+
+/* section-6 */
+    .wrapper {
+            max-width: 450px;
+            width: 100%;
+            margin-bottom: -20px;
+        }
+
+        .title-area {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .title-area h2 {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--yellow);
+            margin-top: 20px;
+            
+            text-transform: uppercase;
+        }
+
+        .title-underline {
+            width: 50px; 
+            height: 4px; 
+            background: var(--yellow); 
+            margin-top: -20px; 
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+        }
+
+        .testimonial-block {
+            position: relative;
+            background: var(--white);
+            padding: 35px 20px 20px;
+            border-radius: 25px;
+            margin-bottom: 60px;
+            margin-left: 20px;
+            margin-right: 20px;
+            border: 1px solid #f0f0f0;
+            transition: all var(--transition-speed) cubic-bezier(0.165, 0.84, 0.44, 1);
+            cursor: default;
+        }
+
+        /* --- HOVER EFFECT --- */
+        .testimonial-block:hover {
+            transform: translateY(-10px); /* हल्का सा ऊपर उठना */
+            box-shadow: 0 25px 50px rgba(0,0,0,0.12); /* गहरी छाया */
+            border-color: #e0e0e0;
+        }
+
+        .profile-badge {
+            position: absolute;
+            top: -25px;
+            left: 20px;
+            background:  var(--yellow);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 10px 20px rgba(245, 87, 108, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Hover पर बैज थोड़ा ज़ूम होगा */
+        .testimonial-block:hover .profile-badge {
+            transform: scale(1.05);
+        }
+
+        .quote-mark {
+            font-size: 50px;
+            color: var(--yellow);
+            opacity: 0.1;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            font-family: serif;
+            transition: opacity var(--transition-speed);
+        }
+
+        .testimonial-block:hover .quote-mark {
+            opacity: 0.3; /* Hover पर कोट्स डार्क हो जाएंगे */
+        }
+
+        .feedback-txt {
+            color: var(--black);
+            font-size: 18px;
+            line-height: 1.4;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-info {
+            margin-top: 15px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .loc-tag {
+            font-size: 16px;
+            color: var(--white);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            background:var(--yellow);
+            padding: 4px 10px;
+            border-radius: 5px;
+            transition: background var(--transition-speed);
+        }
+
+       
+
+        /* अलग-अलग कलर्स - कार्ड 2 */
+        .card-2 .profile-badge { 
+            background: var(--yellow); 
+            box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3); 
+        }
+        .card-2 .quote-mark { color: var(--yellow); }
+
+        /* अलग-अलग कलर्स - कार्ड 3 */
+        .card-3 .profile-badge { 
+            background: var(--yellow) ; 
+            box-shadow: 0 10px 20px rgba(67, 233, 123, 0.3); 
+        }
+        .card-3 .quote-mark { color: var(--yellow); }
+
+/* ========================= */
+/* 📱 TESTIMONIAL MOBILE FIX */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .wrapper {
+        margin-bottom: 0;
+    }
+
+    .title-area {
+        margin-bottom: 30px;
+    }
+
+    .title-area h2 {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    .title-underline {
+        width: 40px;
+        height: 3px;
+        margin-top: -10px;
+    }
+
+    .testimonial-block {
+        padding: 30px 18px 18px;
+        margin-bottom: 40px;
+        border-radius: 20px;
+    }
+
+    .profile-badge {
+        font-size: 14px;
+        padding: 6px 14px;
+        top: -20px;
+    }
+
+    .quote-mark {
+        font-size: 40px;
+        right: 15px;
+        top: 5px;
+    }
+
+    .feedback-txt {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .loc-tag {
+        font-size: 13px;
+        padding: 3px 8px;
+    }
+
+    /* Hover effects disable for mobile */
+    .testimonial-block:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/* section-7 */
+  .magazine-layout {
+    max-width: 450px;
+    width: 100%;
+    padding: 40px 20px;
+   position: relative;
+    overflow: hidden;
+  }
+
+
+  .main-tit {
+    font-size: 32px;
+    color: var(--yellow);
+    text-align: center;
+    margin-bottom: 60px;
+    line-height: 1;
+    font-weight: 600;
+  }
+
+
+  .ingredient-card {
+    display: flex;
+    margin-bottom: 50px;
+    position: relative;
+    align-items: center;
+    z-index: 1;
+  }
+
+  .ingredient-card.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .mask-container {
+    width: 140px;
+    height: 140px;
+    position: relative;
+    flex-shrink: 0;
+    transition: 0.5s ease;
+  }
+
+  .mask-container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid var(--yellow);
+    z-index: -1;
+    transition: 0.5s ease;
+  }
+
+  .ingredient-card:hover .mask-container::before {
+    top: 10px;
+    left: 10px;
+    right: -10px;
+    bottom: -10px;
+  }
+
+  .mask-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 5px solid var(--white);
+  }
+
+  .text-side {
+    padding: 0 20px;
+    flex-grow: 1;
+  }
+
+  .text-side h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--yellow);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+  }
+
+  .text-side p {
+    margin: 0px;
+    font-size: 18px;
+    color: var(--white);
+    line-height: 1.2;
+    font-weight: 300;
+  }
+
+  .reverse .text-side {
+    text-align: right;
+  }
+
+  .bg-num {
+    position: absolute;
+   font-size: 100px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.079);
+    top: -30px;
+    right: -10px;
+    z-index: -1;
+  }
+
+  .reverse .bg-num {
+    right: auto;
+    left: -10px;
+  }
+
+  .btn-key {
+    width: 100%;
+    background: var(--yellow);
+    color: var(--white);
+    padding: 22px;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.4s;
+    margin-top: -5px;
+    box-shadow: 0 10px 30px var(--yellow);
+  }
+
+  .btn-key:hover {
+    letter-spacing: 4px;
+  }
+@media (max-width: 480px) {
+    .mask-container { width: 110px; height: 110px; }
+    .text-side h3 { font-size: 20px; }
+    .text-side p { font-size: 15px; }
+    .bg-num { font-size: 70px; }
+  }
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-8 */
+     .container {
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .header h2 {
+            color: var(--yellow);
+            font-size: 32px;
+            margin-top: 20px;
+            margin-bottom: -50px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px var(--yellow);
+        }
+
+        /* --- THE UNIQUE WAVE LAYOUT --- */
+        .wave-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+        }
+
+        .modern-pill {
+            position: relative;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.049);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 25px;
+            border-radius: 100px; /* Capsule Shape */
+            display: flex;
+            align-items: center;
+            backdrop-filter: blur(15px);
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Zig-Zag Alignment */
+        .p-1 { align-self: flex-start; margin-left: 20px; }
+        .p-2 { align-self: flex-end; margin-right: 20px; flex-direction: row-reverse; text-align: right;}
+        .p-3 { align-self: flex-start; margin-left: 20px; }
+
+        /* Floating Icon Sphere */
+        .icon-sphere {
+            width: 65px;
+            height: 65px;
+            background:  var(--yellow);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            flex-shrink: 0;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .p-1 .icon-sphere, .p-3 .icon-sphere { margin-right: 20px; }
+        .p-2 .icon-sphere { margin-left: 20px; }
+
+        .content-box h3 {
+           color: var(--yellow);
+            font-size: 14px;
+            margin: 0 0 4px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .content-box p {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        /* Hover Effect */
+        .modern-pill:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--yellow);
+            transform: scale(1.05);
+        }
+
+        .modern-pill:hover .icon-sphere {
+            transform: rotate(360deg);
+            transition: 0.8s;
+        }
+
+        /* Connecting Curved Line (Decorative) */
+        .bg-curve {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 200px;
+            height: 100%;
+            border-left: 1px dashed rgba(212, 175, 55, 0.2);
+            z-index: -1;
+            transform: translateX(-50%);
+        }
+
+        .footer-advice {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            font-style: italic;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            padding-top: 20px;
+        }
+
+/* ========================= */
+/* 📱 WAVE SECTION MOBILE FIX */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .header {
+    margin-bottom: 50px;
+  }
+
+  .header h2 {
+    font-size: 24px;
+    margin-bottom: -20px;
+  }
+
+  .modern-pill {
+    width: 100%;
+    padding: 18px;
+  }
+
+  /* Zig-zag spacing adjust */
+  .p-1,
+  .p-3 {
+    margin-left: 0;
+  }
+
+  .p-2 {
+    margin-right: 0;
+  }
+
+  .icon-sphere {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+
+  .p-1 .icon-sphere,
+  .p-3 .icon-sphere {
+    margin-right: 15px;
+  }
+
+  .p-2 .icon-sphere {
+    margin-left: 15px;
+  }
+
+  .content-box h3 {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .content-box p {
+    font-size: 16px;
+  }
+
+  .footer-advice {
+    font-size: 15px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-10 */
+
+        .stage {
+            max-width: 450px;
+            width: 100%;
+            height: 650px;
+            background:var(--yellow);
+            position: relative;
+            overflow: hidden;
+        }
+
+     
+
+        .product-spotlight {
+            position: absolute;
+            top: 5%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 5;
+        }
+
+        .product-spotlight img {
+            width: 320px;
+            border-radius: 60px;
+            filter: drop-shadow(0 0 50px rgba(74, 124, 68, 0.4));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .content-overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 40px;
+            background: linear-gradient(to top, var(--green) 70%, transparent);
+            z-index: 10;
+        }
+
+   
+
+        .brand-h {
+           font-size: 32px;
+            margin-bottom: 20px;
+            line-height: 1;
+            color: var(--yellow);
+        }
+
+        .info-txt {
+            font-size: 20px;
+            line-height: 1.2;
+            color: white;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .feature-pillars {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .pillar {
+            flex: 1;
+            background: var(--yellow);
+            padding: 3px 10px;
+            text-align: center;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .pillar:hover {
+            border-color: var(--yellow);
+            transform: rotate(10deg);
+          
+        }
+
+        .pillar span { display: block; font-size: 25px; margin-bottom: -5px; }
+        .pillar p { font-size: 12px; text-transform: uppercase; color: #fff; }
+
+        .btn-wrap { position: relative; }
+        
+        .cta-dark {
+            display: block;
+            background: var(--yellow);
+            color: #000;
+            text-align: center;
+            padding: 20px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 19px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.4s;
+        }
+
+        .cta-dark:hover {
+            background: var(--yellow);
+            color: #fff;
+        }
+
+  
+
+
+
+
+
+
+
+
+
+/* section-11 */
+.form-box{
+  max-width:450px;
+  width:100%;
+  background:var(--yellow);
+  padding:25px 30px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.4);
+  color:var(--white);
+}
+
+/* Heading */
+.form-box h2{
+  font-size:27px;
+  font-weight:700;
+  margin-bottom:20px;
+  color:var(--green);
+  line-height:1.3;
+}
+
+/* Input container */
+.input-group{
+  margin-bottom:18px;
+}
+
+/* Label */
+.input-group label{
+  font-size:16px;
+  font-weight:600;
+  margin-bottom:6px;
+  display:block;
+  color:var(--white);
+}
+
+/* Input fields */
+.input-group input{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+  font-size:16px;
+}
+
+/* Button */
+.btn-ripple{
+  width:100%;
+  padding:13px;
+  font-size:18px;
+  font-weight:600;
+  background:var(--green);
+  color:var(--white);
+  border:none;
+  border-radius:12px;
+  margin-top:8px;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Ripple Effect */
+.btn-ripple::after{
+  content:"";
+  position:absolute;
+  width:0;
+  height:0;
+  background:rgba(255,255,255,0.5);
+  border-radius:50%;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  transition:0.6s;
+}
+
+.btn-ripple:hover::after{
+  width:400px;
+  height:300px;
+}
+
+/* Mobile */
+@media (max-width:480px){
+  .form-box h2{
+    font-size:24px;
+    text-align:left;
+    margin-left:10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-13 */
+  .faq-wrapper {
+        max-width: 450px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .faq-header {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .faq-header h2 {
+        color: var(--green);
+        font-size: 32px;
+        font-weight: 800;
+        margin-bottom: -10px;
+    }
+
+  
+
+    /* FAQ Item Style */
+    .faq-item {
+        background:var(--yellow);
+        border: 1px solid var(--white);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    /* Details/Summary Logic */
+    details {
+        width: 100%;
+    }
+
+    summary {
+        padding: 20px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        font-weight: 600;
+        color: white;
+        font-size: 20px;
+        transition: background 0.3s;
+    }
+
+
+    /* Plus icon to Minus icon animation */
+    summary::after {
+        content: '+';
+        font-size: 22px;
+        color: var(-- );
+        transition: transform 0.3s ease;
+    }
+
+    details[open] summary::after {
+        content: '−';
+        transform: rotate(180deg);
+    }
+
+   
+
+    .faq-content {
+        padding: 0 20px 20px 20px;
+        color: white;
+        font-size: 20px;
+        line-height: 1.6;
+        animation: slideDown 0.4s ease-out;
+    }
+
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .brand-pill {
+        display: inline-block;
+        background: var(--green);
+        color: var(--yellow);
+        padding: 2px 8px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 22px;
+    }
+@media (max-width: 480px) {
+
+  .faq-wrapper {
+    max-width: 100%;
+    gap: 12px;
+  }
+
+  .faq-header h2 {
+    font-size: 24px;
+    margin-bottom: -6px;
+  }
+
+  summary {
+    padding: 14px 16px;
+    font-size: 16px;
+  }
+
+  summary::after {
+    font-size: 18px;
+  }
+
+  .faq-content {
+    padding: 0 16px 16px 16px;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .brand-pill {
+    font-size: 16px;
+    padding: 2px 6px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== DISCLAIMER ===== */
+.disclaim {
+  max-width: 450px;
+  width: 100%;
+  background-color: var(--green);
+  margin-top: 20px;
+  padding: 5px;
+  font-size: 10px;
+}
+.disclaim * {
+  margin: 0;
+  padding: 5px;
+  color: var(--white);
+}
+
+/* MEDIA */
+@media(max-width:480px){
+   .btn {
+    margin-left: 100px !important;
+    width: 40%;
+    font-size: 18px;  
+   }
+}
+
+ </style>
+</head>
+<body>
+
+<header>
+        <nav>
+            <a href="#" class="logo">Gathheal</a>
+            <a class="buttonn" href="#orderForm">Buy Now 🛒</a>
+        </nav>
+    </header>
+
+
+
+<section class="sec">
+        <img src="images/banner-1.avif" class="images" alt="">
+        <img src="images/banner-2.avif" class="images" alt="">
+ </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-2 -->
+<section class="sec">
+  <div class="master-card">
+    <div class="product-intro">
+        <h1 class="main-h">PRODUCT INTRODUCTION</h1>
+    </div>
+
+    <div class="image-zone">
+        <div class="glow-aura"></div>
+        <img src="images/product.avif" alt="Gaath Heal" class="bottle-img">
+    </div>
+
+    <div class="content-panel">
+        <div class="sub-heading">एक सपोर्टिव आयुर्वेदिक समाधान</div>
+        
+        <p class="main-desc">
+            यह विशेष जड़ी-बूटियों से तैयार किया गया है, जो शरीर में बनने वाली <b>गांठ और सूजन</b> की स्थिति में अंदर से सहायता देने के उद्देश्य से बनाया गया है।
+        </p>
+
+        <div class="balance-tag">
+            ✨ शरीर के प्राकृतिक संतुलन में सहायक
+        </div>
+    </div>
+
+    <a href="#orderForm" class="buy-strip" >अभी ऑर्डर करें →</a>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-3 -->
+<section class="sec">
+  <div class="guarantee-wrapper">
+    <h2 class="section-title">How It Works</h2>
+
+    <div class="guarantee-grid">
+        
+        <div class="guarantee-item">
+            <div class="image-frame">
+                <img src="images/sect-3-1stimg.avif" alt="Inflammation Support">
+            </div>
+            <div class="text-content">
+                <h3>Inflammation Support</h3>
+                <p>गांठ Heal Capsules का उद्देश्य शरीर में सूजन की प्रवृत्ति को संतुलित करने में सहायता करना है।</p>
+            </div>
+        </div>
+
+        <div class="guarantee-item">
+            <div class="image-frame">
+                <img src="images/sect-3-2ndimg.avif" alt="Blood Purification Support">
+            </div>
+            <div class="text-content">
+                <h3>Blood Purification Support</h3>
+                <p>यह शरीर की प्राकृतिक रक्त शुद्धिकरण प्रक्रिया को समर्थन देने में सहयोग करता है।</p>
+            </div>
+        </div>
+
+        <div class="guarantee-item">
+            <div class="image-frame">
+                <img src="images/sect-3-3rdimg.avif" alt="Immunity & Balance Support">
+            </div>
+            <div class="text-content">
+                <h3>Immunity Balance</h3>
+                <p>प्राकृतिक रोग प्रतिरोधक क्षमता को मजबूत करने और अंदरूनी संतुलन बनाए रखने में सहायता करता है।</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="margin-top:20px; margin-bottom: 20px; padding-left: 20px; padding-right: 20px;text-align: left; font-size:18px; color: var(--yellow);">
+        आयुर्वेदिक जड़ी-बूटियों का संयोजन शरीर को भीतर से सपोर्ट करने पर केंद्रित है।
+    </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-4 -->
+<section class="sec">
+  <div class="abstract-container">
+    <div class="gold-banner"></div>
+    
+    <div class="header-content">
+        <h2>Recommendation Reason</h2>
+     
+    </div>
+
+    <div class="info-layer">
+        <div class="floating-text">
+            आयुर्वेद में सूजन और असामान्य वृद्धि को शरीर के <b>दोष असंतुलन</b> से जोड़ा जाता है।
+        </div>
+
+        <div class="floating-text" style="border-right-color: var(--green);">
+            विशेषज्ञ मानते हैं कि समय रहते <b>प्राकृतिक सपोर्ट</b> लेना शरीर के लिए बेहतर हो सकता है।
+        </div>
+
+        <div class="special-quote">
+            “परंपरा और विज्ञान का अनोखा संगम ही पूर्ण स्वास्थ्य की कुंजी है।”
+        </div>
+    </div>
+
+
+    <div class="footer-cta"  onclick="location.href='#orderForm'">
+        Supportive Formula
+    </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-5 -->
+<section class="sec">
+  <div class="comparison-wrapper">
+    <div class="headr">
+        <h2>Comparison</h2>
+    </div>
+
+    <div class="comp-row">
+        <div class="comp-card risk-card">
+            <h3>इंतज़ार करना ⏳</h3>
+            <p>समस्या को अनदेखा करना भविष्य में मुश्किल बढ़ा सकता है।</p>
+        </div>
+        <div class="vs-badge">VS</div>
+        <div class="comp-card safe-card">
+            <h3>समय रहते कदम उठाना 🚀</h3>
+            <p>शुरुआती सावधानी ही बेहतर स्वास्थ्य का एकमात्र रास्ता है।</p>
+        </div>
+    </div>
+
+    <div class="comp-row">
+        <div class="comp-card risk-card">
+            <h3>सर्जरी की संभावना 📈</h3>
+            <p>देरी करने से शारीरिक कष्ट और सर्जरी का खतरा बढ़ जाता है।</p>
+        </div>
+        <div class="vs-badge">VS</div>
+        <div class="comp-card safe-card">
+            <h3>प्राकृतिक सहायक समाधान 🛡️</h3>
+            <p>शुरुआती स्तर पर ही सुरक्षित और प्राकृतिक सपोर्ट चुनें।</p>
+        </div>
+    </div>
+
+    <div class="brand-footer">
+        <h4>गांठ Heal Capsules</h4>
+        <p>जागरूक निर्णय लें, सुरक्षित मार्ग चुनें।</p>
+    </div>
+</div>
+
+</section>
+
+
+
+
+
+
+<!-- section-6 -->
+<section class="sec">
+  <div class="wrapper">
+    <div class="title-area">
+        <h2>Real Customer Results</h2>
+        <div class="title-underline"></div>
+    </div>
+
+    <div class="testimonial-block card-1">
+        <div class="profile-badge"><span>👤</span> राजेश शर्मा, 42</div>
+        <div class="quote-mark">”</div>
+        <div class="feedback-txt">
+            “शुरुआती सूजन को लेकर काफी चिंता थी, लेकिन नियमित उपयोग के बाद धीरे-धीरे राहत महसूस हुई। समय पर कदम उठाना सही फैसला लगा।”
+        </div>
+        <div class="footer-info">
+            <span class="loc-tag">Jaipur</span>
+        </div>
+    </div>
+
+    <div class="testimonial-block card-2">
+        <div class="profile-badge"><span>👤</span> सीमा वर्मा, 38</div>
+        <div class="quote-mark">”</div>
+        <div class="feedback-txt">
+            “लगातार सेवन से शरीर में हल्कापन और आराम महसूस हुआ। अब पहले जैसा डर नहीं रहता।”
+        </div>
+        <div class="footer-info">
+            <span class="loc-tag">Lucknow</span>
+        </div>
+    </div>
+
+    <div class="testimonial-block card-3">
+        <div class="profile-badge"><span>👤</span> अनिल मिश्रा, 50</div>
+        <div class="quote-mark">”</div>
+        <div class="feedback-txt">
+            “समय रहते सपोर्ट लेना मेरे लिए फायदेमंद रहा। अब मन में संतोष है कि मैंने लापरवाही नहीं की।”
+        </div>
+        <div class="footer-info">
+            <span class="loc-tag">Bhopal</span>
+        </div>
+    </div>
+</div>
+</section>
+
+
+
+
+
+
+<!-- section-7 -->
+<section class="sec">
+  <div class="magazine-layout">
+    <div class="main-tit">
+      Key Ingredients
+    </div>
+
+    <div class="ingredient-card">
+      <span class="bg-num">01</span>
+      <div class="mask-container">
+        <img src="images/कंचनार.avif">
+      </div>
+      <div class="text-side">
+        <h3>कंचनार</h3>
+        <p>परंपरागत रूप से गांठ संबंधी स्थितियों में उपयोगी माना जाता है।</p>
+      </div>
+    </div>
+
+    <div class="ingredient-card reverse">
+      <span class="bg-num">02</span>
+      <div class="mask-container">
+        <img src="images/haldi.avif">
+      </div>
+      <div class="text-side">
+        <h3>हल्दी</h3>
+        <p>सूजन में सहायक और प्राकृतिक सपोर्ट प्रदान करती है।</p>
+      </div>
+    </div>
+
+    <div class="ingredient-card">
+      <span class="bg-num">03</span>
+      <div class="mask-container">
+        <img src="images/गिलोय.avif">
+      </div>
+      <div class="text-side">
+        <h3>गिलोय</h3>
+        <p>इम्यून सिस्टम को सपोर्ट कर शरीर की रक्षा शक्ति बढ़ाने में सहायक।</p>
+      </div>
+    </div>
+
+    <div class="ingredient-card reverse">
+      <span class="bg-num">04</span>
+      <div class="mask-container">
+        <img src="images/त्रिफला.avif">
+      </div>
+      <div class="text-side">
+        <h3>त्रिफला</h3>
+        <p>डिटॉक्स सपोर्ट देकर शरीर को अंदर से संतुलित रखने में मददगार।</p>
+      </div>
+    </div>
+
+    <button class="btn-key" onclick="location.href='#orderForm'">Order Now</button>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+        <!-- section-8 -->
+<section class="sec">
+  <div class="container">
+    <div class="header">
+        <h2>How to Use</h2>
+    </div>
+
+    <div class="bg-curve"></div>
+
+    <div class="wave-cards">
+        
+        <div class="modern-pill p-1">
+            <div class="icon-sphere">☀️</div>
+            <div class="content-box">
+                <h3>Dosage</h3>
+                <p>प्रतिदिन 1–2 कैप्सूल (निर्देशानुसार)</p>
+            </div>
+        </div>
+
+        <div class="modern-pill p-2">
+            <div class="icon-sphere">💧</div>
+            <div class="content-box">
+                <h3>Method</h3>
+                <p>गुनगुने पानी के साथ</p>
+            </div>
+        </div>
+
+        <div class="modern-pill p-3">
+            <div class="icon-sphere">⏳</div>
+            <div class="content-box">
+                <h3>Usage Advice</h3>
+                <p>नियमित उपयोग बेहतर परिणाम के लिए</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-advice">
+        * सटीक खुराक के लिए लेबल निर्देश या स्वास्थ्य विशेषज्ञ से सलाह लें
+    </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-10 -->
+<section class="sec">
+       <div class="stage">
+       
+        <div class="product-spotlight">
+            <img src="images/gathheal.avif" alt="Mirgi Mukti Bottle">
+        </div>
+
+        <div class="content-overlay">
+             <h1 class="brand-h">LIMITED TIME OFFER</h1>
+            
+            <p class="info-txt">
+                 सीमित समय के लिए विशेष ऑफर उपलब्ध। <br>
+                अभी ऑर्डर करें और विशेष छूट का लाभ उठाएँ।
+            </p>
+
+            <div class="feature-pillars">
+                <div class="pillar"><span>🌿</span><p>Pure</p></div>
+                <div class="pillar"><span>🧪</span><p>No Toxins</p></div>
+                <div class="pillar"><span>⚡</span><p>Active</p></div>
+                <div class="pillar"><span>✔</span><p>Easy</p></div>
+            </div>
+
+            <div class="btn-wrap">
+                <a href="#orderForm" class="cta-dark">Order Now</a>
+            </div>
+
+                </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+    <head>
+        <style>
+            #loading {
+        display: none;
+        color: #fff;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+
+      #poweredBy {
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        margin-top: 20px;
+      }
+/* FULL SCREEN LOADER */
+#loaderOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* SPINNER */
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #fff;
+  border-top: 5px solid gold;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+   
+        </style>
+
+        <script>
+  function submitForm(event) {
+  event.preventDefault();
+
+  const form = event.target;
+
+  const submitBtn = form.querySelector("button[type='submit'], input[type='submit']");
+  if (submitBtn) {
+    submitBtn.style.display = "none";
+    submitBtn.disabled = true;
+  }
+
+  // 🔥 SHOW LOADER
+  document.getElementById("loaderOverlay").style.display = "flex";
+
+  const formData = new FormData(form);
+  let redirected = false;
+
+  fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.text())
+  .then(data => {
+
+    if (!redirected) {
+      redirected = true;
+
+      // 🔥 REDIRECT
+      window.location.href = './Thankyou.html';
+
+      // 🔥 REFRESH BACK PAGE
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+    }
+
+  })
+  .catch(error => {
+    console.error('Fetch error:', error);
+
+    if (!redirected) {
+      redirected = true;
+      window.location.href = './Thankyou.html';
+    }
+  });
+
+  return false;
+}
+
+  // Animated dots for loading state
+  let dotCount = 1;
+  setInterval(() => {
+    const d = document.getElementById('dotAnim');
+    if (d) { 
+      dotCount = (dotCount % 3) + 1; 
+      d.textContent = '.'.repeat(dotCount); 
+    }
+  }, 500);
+</script>
+    </head>
+    <body>
+<!-- section-11 -->
+    
+<section class="sec">
+  <div class="form-box">
+    <h2> देर न करें।
+ अभी GathHeal Capsules ऑर्डर करें और समय रहते संभल जाएँ।</h2>
+
+    <form id="orderForm"  onsubmit="submitForm(event)">
+      <div class="input-group">
+        <label>नाम:</label>
+        <input type="text" name="name" placeholder="अपना नाम दर्ज करें" required>
+      </div>
+
+      <div class="input-group">
+        <label>मोबाइल नंबर (10 अंक):</label>
+        <input type="tel" name="mobile" maxlength="10" pattern="[6-9][0-9]{9}" placeholder="अपना मोबाइल नंबर दर्ज करें" required>
+      </div>
+
+      <button class="btn-ripple" type="submit">
+        Buy Now | Limited Stock Available
+
+      </button>
+      <div id="loaderOverlay">
+  <div style="text-align:center;">
+    <div class="loader"></div>
+    <p style="color:white;margin-top:10px;">
+      Processing<span id="dotAnim"></span>
+    </p>
+  </div>
+</div>
+<div id="loading">
+            Processing Your Order. Please wait...
+          </div>
+    </form>
+  </div>
+
+</section>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+<!-- section-12-/section-9 -->
+
+    <img src="images/sect-9th.avif" class="images" alt="">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-13 -->
+<div class="faq-wrapper">
+    <div class="faq-header">
+        <h2>सामान्य प्रश्न</h2>
+    </div>
+
+    <div class="faq-item">
+        <details>
+            <summary>क्या यह कैंसर होने से रोकता है?</summary>
+            <div class="faq-content">
+                हाँ,यह कैंसर होने से रोकता हैै।
+            </div>
+        </details>
+    </div>
+
+    <div class="faq-item">
+        <details>
+            <summary>कितने समय तक लेना चाहिए?</summary>
+            <div class="faq-content">
+                आमतौर पर <span class="brand-pill">2–3 महीने</span> नियमित उपयोग की सलाह दी जाती है।
+            </div>
+        </details>
+    </div>
+
+    <div class="faq-item">
+        <details>
+            <summary>क्या इसके कोई साइड इफेक्ट हैं?</summary>
+            <div class="faq-content">
+                नहीं, इसके कोई साइड इफेक्ट नहीं हैं।
+            </div>
+        </details>
+    </div>
+
+
+    <div class="faq-item">
+        <details>
+            <summary>क्या यह हर प्रकार की गांठ में उपयोगी है?</summary>
+            <div class="faq-content">
+                हाँ, यह हर प्रकार की गांठ में उपयोगी है।
+            </div>
+        </details>
+    </div>
+
+    <div class="faq-item">
+        <details>
+            <summary>परिणाम कब से दिखने लगते हैं?</summary>
+            <div class="faq-content">
+                आमतौर पर <span class="brand-pill">7–15 दिनों</span> में परिणाम दिखने लगते हैं।
+            </div>
+        </details>
+    </div>
+</div>
+
+
+
+
+
+
+
+    
+<section class="disclaim">
+<footer class="disc">⚠️ Disclaimer:यह उत्पाद किसी भी प्रकार के कैंसर या गंभीर बीमारी का इलाज, निदान या रोकथाम करने का दावा नहीं करता।
+ यदि शरीर में किसी प्रकार की गांठ, असामान्य सूजन या दर्द हो तो तुरंत योग्य चिकित्सक से जांच करवाएँ।
+ यह एक सपोर्टिव आयुर्वेदिक स्वास्थ्य उत्पाद है। परिणाम व्यक्ति-विशेष पर निर्भर करते हैं।
+
+
+
+</footer>
+</section>
+</body>
+<script>
+const faqs = document.querySelectorAll(".faq-box");
+faqs.forEach(faq => {
+    faq.addEventListener("click", () => {
+        // पहले सबको close कर दो
+        faqs.forEach(item => {
+            if(item !== faq){
+                item.classList.remove("active");
+            }
+        });
+
+        // clicked वाले को toggle करो
+        faq.classList.toggle("active");
+    });
+});
+
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  fetch("https://script.google.com/macros/s/AKfycbz5sFiY8d4m-gK5USk7puMY2GCEMrvZEPGMDZJJzKU0hPmAUwzmnZT29dZmH2psrB-mfA/exec", {
+    method: "POST",
+    body: JSON.stringify({
+      name: e.target.name.value,
+      mobile: e.target.mobile.value
+    }),
+  })
+  .then(() => {
+    e.target.reset();
+  })
+  .catch(() => alert("❌ Error"));
+});
+</script>
+</html>

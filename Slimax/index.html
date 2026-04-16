@@ -238,7 +238,7 @@ body {
 
 
 
-/* section-1 */
+/* section-2 */
 .story-container{
   width: 90%;
   max-width:450px;
@@ -344,7 +344,70 @@ body {
   color:black;
   margin-bottom: 30px;
 }
+/* ================= MOBILE OPTIMIZATION ================= */
+@media (max-width: 768px){
 
+  .story-container{
+    width: 92%;
+    max-width:100%;
+  }
+
+  .story-header h1{
+    font-size:26px;
+    margin-top:25px;
+  }
+
+  .visual-stack{
+    gap:15px;
+  }
+
+  .story-card{
+    height:180px;
+    border-radius:22px;
+  }
+
+  .card-overlay{
+    padding:15px;
+  }
+
+  .card-text .title{
+    font-size:15px;
+  }
+
+  .btn-plus{
+    width:30px;
+    height:30px;
+    font-size:18px;
+  }
+
+  .footer-secure{
+    font-size:16px;
+    margin-top:25px;
+  }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px){
+
+  .story-header h1{
+    font-size:22px;
+  }
+
+  .story-card{
+    height:160px;
+  }
+
+  .card-text .title{
+    font-size:14px;
+    
+  }
+
+  .btn-plus{
+    width:28px;
+    height:28px;
+    font-size:16px;
+  }
+}
 
 
 
@@ -480,7 +543,87 @@ body {
     font-weight:600;
     background-color: rgba(227, 243, 247, 0.514);
 }
+/* ================= MOBILE OPTIMIZATION ================= */
+@media (max-width: 768px){
 
+  .solution-section{
+    padding:40px 15px;
+  }
+
+  .design-wrap{
+    height:300px;
+    margin-bottom:30px;
+  }
+
+  .shape-main{
+    width:260px;
+    height:260px;
+  }
+
+  .shape-accent{
+    width:260px;
+    height:260px;
+  }
+
+  .design-wrap img{
+    height:80%;
+    border-radius:60px;
+  }
+
+  .badge-tag{
+    font-size:18px;
+    padding:5px 12px;
+  }
+
+  .main-heading{
+    font-size:24px;
+  }
+
+  .desc-text{
+    font-size:16px;
+  }
+
+  .benefit-list span{
+    font-size:16px;
+    padding:8px;
+  }
+}
+
+/* ================= EXTRA SMALL DEVICES ================= */
+@media (max-width: 480px){
+
+  .design-wrap{
+    height:260px;
+  }
+
+  .shape-main,
+  .shape-accent{
+    width:220px;
+    height:220px;
+  }
+
+  .design-wrap img{
+    height:75%;
+    border-radius:45px;
+  }
+
+  .badge-tag{
+    font-size:16px;
+  }
+
+  .main-heading{
+    font-size:20px;
+  }
+
+  .desc-text{
+    font-size:15px;
+  }
+
+  .benefit-list span{
+    font-size:14px;
+    gap:6px;
+  }
+}
 
 
 
@@ -602,7 +745,88 @@ body {
     color: rgba(185, 87, 164, 0.1);
     transform: translateX(-10px);
 }
+/* ================= MOBILE OPTIMIZATION ================= */
+@media (max-width: 768px){
 
+  .use-wrap{
+    width: 92%;
+  }
+
+  .use-head{
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding-left: 10px;
+  }
+
+  .use-head h2{
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .use-card{
+    height: 140px;
+    margin-left: 10px;
+    border-radius: 20px;
+  }
+
+  .use-img{
+    width: 42%;
+  }
+
+  .use-content{
+    width: 58%;
+    padding: 15px;
+    margin-left: -10px;
+  }
+
+  .use-content h4{
+    font-size: 18px;
+  }
+
+  .use-content p{
+    font-size: 15px;
+  }
+
+  .use-num{
+    font-size: 28px;
+    top: 10px;
+    right: 15px;
+  }
+}
+
+/* ================= EXTRA SMALL DEVICES ================= */
+@media (max-width: 480px){
+
+  .use-head h2{
+    font-size: 22px;
+  }
+
+  .use-card{
+    height: 120px;
+    margin-left: 25px;
+  }
+
+  .use-img{
+    width: 40%;
+  }
+
+  .use-content{
+    width: 60%;
+    padding: 12px;
+  }
+
+  .use-content h4{
+    font-size: 16px;
+  }
+
+  .use-content p{
+    font-size: 14px;
+  }
+
+  .use-num{
+    font-size: 24px;
+  }
+}
 
 
 
@@ -729,7 +953,79 @@ body {
     background: var(--white);
     color: var(--primary);
 }
+/* ================= MOBILE OPTIMIZATION (SAME DESIGN) ================= */
+@media (max-width: 768px){
 
+  .ayur-header{
+    padding: 20px;
+  }
+
+  .ayur-header h1{
+    font-size: 26px;
+  }
+
+  .ayur-grid{
+    grid-template-columns: 1fr 1fr; /* SAME DESIGN */
+    gap: 4px;
+    padding: 4px;
+  }
+
+  .ayur-card{
+    height: 200px;
+    border-radius: 16px;
+  }
+
+  .ayur-info{
+    padding: 12px;
+  }
+
+  .ayur-info h3{
+    font-size: 16px;
+  }
+
+  .ayur-info p{
+    font-size: 14px;
+  }
+
+  .ayur-footer{
+    padding: 18px;
+  }
+
+  .ayur-btn{
+    padding: 14px;
+    font-size: 14px;
+    border-radius: 16px;
+  }
+}
+
+/* ================= EXTRA SMALL DEVICES ================= */
+@media (max-width: 480px){
+
+  .ayur-header h1{
+    font-size: 22px;
+  }
+
+  .ayur-grid{
+    grid-template-columns: 1fr 1fr; /* STILL SAME */
+  }
+
+  .ayur-card{
+    height: 170px;
+  }
+
+  .ayur-info h3{
+    font-size: 15px;
+  }
+
+  .ayur-info p{
+    font-size: 13px;
+  }
+
+  .ayur-btn{
+    font-size: 13px;
+    padding: 13px;
+  }
+}
 
 
 
@@ -872,7 +1168,92 @@ body {
   font-size: 18px;
     font-weight: 700;
 }
+/* ================= MOBILE OPTIMIZATION (SAME DESIGN) ================= */
+@media (max-width: 768px){
 
+  .trust-canvas{
+    padding: 40px 15px;
+  }
+
+  .bg-decor{
+    font-size: 70px;
+    right: -10px;
+  }
+
+  .main-header{
+    margin-bottom: 35px;
+  }
+
+  .main-header h2{
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .trust-layout{
+    gap: 12px;
+  }
+
+  .trust-layer{
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .layer-content{
+    font-size: 15px;
+  }
+
+  .layer-icon{
+    width: 30px;
+    height: 30px;
+  }
+
+  .stats-layer{
+    margin-top: 25px;
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .stats-layer h3{
+    font-size: 26px;
+  }
+
+  .stats-layer p{
+    font-size: 15px;
+  }
+}
+
+/* ================= EXTRA SMALL DEVICES ================= */
+@media (max-width: 480px){
+
+  .bg-decor{
+    font-size: 55px;
+  }
+
+  .main-header h2{
+    font-size: 22px;
+  }
+
+  .trust-layer{
+    padding: 15px;
+  }
+
+  .layer-content{
+    font-size: 14px;
+  }
+
+  .layer-icon{
+    width: 26px;
+    height: 26px;
+  }
+
+  .stats-layer h3{
+    font-size: 22px;
+  }
+
+  .stats-layer p{
+    font-size: 14px;
+  }
+}
 
 
 
@@ -983,7 +1364,73 @@ body {
     font-size: 18px;
     font-weight: 600;
 }
+/* ================= MOBILE OPTIMIZATION (SAME DESIGN) ================= */
+@media (max-width: 768px){
 
+  .doc-visual{
+    height: 240px;
+  }
+
+  .doc-body{
+    padding: 20px 15px;
+  }
+
+  .doc-body h2{
+    font-size: 26px;
+  }
+
+  .doc-quote{
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 15px;
+  }
+
+  .doc-feature{
+    padding: 10px 12px;
+    border-radius: 14px;
+    gap: 10px;
+  }
+
+  .doc-icon{
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+  }
+
+  .doc-feature span{
+    font-size: 15px;
+  }
+}
+
+/* ================= EXTRA SMALL DEVICES ================= */
+@media (max-width: 480px){
+
+  .doc-visual{
+    height: 200px;
+  }
+
+  .doc-body h2{
+    font-size: 22px;
+  }
+
+  .doc-quote{
+    font-size: 14px;
+  }
+
+  .doc-feature{
+    padding: 8px 10px;
+  }
+
+  .doc-feature span{
+    font-size: 14px;
+  }
+
+  .doc-icon{
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+}
 
 
 
@@ -1106,7 +1553,71 @@ body {
     color: var(--black);
     transform: rotate(360deg);
 }
+/* ================= MOBILE OPTIMIZATION (SAME DESIGN) ================= */
+@media (max-width: 768px){
 
+  .ps-header{
+    height: 260px;
+  }
+
+  .ps-label{
+    font-size: 11px;
+    padding: 4px 12px;
+  }
+
+  .ps-list{
+    padding: 20px 12px;
+  }
+
+  .ps-row{
+    grid-template-columns: 1fr 35px 1fr; /* SAME STRUCTURE */
+    margin-bottom: 15px;
+  }
+
+  .ps-point{
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 12px;
+  }
+
+  .ps-vs{
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+
+  .ps-line{
+    height: 4px;
+    margin: 8px auto 15px;
+  }
+}
+
+/* ================= EXTRA SMALL DEVICES ================= */
+@media (max-width: 480px){
+
+  .ps-header{
+    height: 220px;
+  }
+
+  .ps-row{
+    grid-template-columns: 1fr 30px 1fr; /* STILL SAME */
+  }
+
+  .ps-point{
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .ps-vs{
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+
+  .ps-line{
+    height: 3px;
+  }
+}
 
 
 
@@ -1236,7 +1747,91 @@ body {
     font-weight: 700;
     font-size: 14px;
 }
+/* ================= MOBILE OPTIMIZATION (SAME DESIGN) ================= */
+@media (max-width: 768px){
 
+  .design-canvas{
+    width: 100%;
+    max-width: 450px;
+    padding: 30px 15px;
+  }
+
+  .main-head{
+    font-size: 26px;
+    margin-bottom: 40px;
+  }
+
+  .step-wrapper{
+    gap: 30px;
+  }
+
+  .circle-num{
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+    border-width: 4px;
+  }
+
+  .info-bubble{
+    width: 130px;
+    padding: 12px;
+    border-radius: 15px;
+  }
+
+  .info-bubble h4{
+    font-size: 14px;
+  }
+
+  .info-bubble p{
+    font-size: 14px;
+  }
+
+  .icon-tag{
+    width: 130px;
+    font-size: 28px;
+  }
+}
+
+/* ================= EXTRA SMALL DEVICES ================= */
+@media (max-width: 480px){
+
+  .main-head{
+    font-size: 22px;
+  }
+
+  .step-wrapper::before{
+    left: 50%; /* SAME CENTER LINE */
+  }
+
+  .info-bubble{
+    width: 110px;
+    padding: 10px;
+  }
+
+  .info-bubble h4{
+    font-size: 12px;
+  }
+
+  .info-bubble p{
+    font-size: 13px;
+  }
+
+  .icon-tag{
+    width: 110px;
+    font-size: 24px;
+  }
+
+  .circle-num{
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .footer-banner{
+    font-size: 13px;
+    padding: 12px;
+  }
+}
 
 
 
@@ -1377,7 +1972,80 @@ body {
 .tc-container:hover .tc-footer-line {
     width: 100%;
 }
+/* ================= MOBILE OPTIMIZATION (SAME DESIGN) ================= */
+@media (max-width: 768px){
 
+  .tc-header{
+    padding: 20px 15px;
+  }
+
+  .tc-header h2{
+    font-size: 26px;
+  }
+
+  .tc-labels{
+    font-size: 18px;
+    padding: 0 10px 8px;
+  }
+
+  .tc-table{
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .tc-row{
+    grid-template-columns: 1fr 35px 1fr; /* SAME STRUCTURE */
+    gap: 8px;
+  }
+
+  .tc-card{
+    padding: 10px;
+    border-radius: 14px;
+  }
+
+  .tc-card img{
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+  }
+
+  .tc-card p{
+    font-size: 15px;
+  }
+
+  .tc-arrow{
+    font-size: 16px;
+  }
+}
+
+/* ================= EXTRA SMALL DEVICES ================= */
+@media (max-width: 480px){
+
+  .tc-header h2{
+    font-size: 22px;
+  }
+
+  .tc-labels{
+    font-size: 16px;
+  }
+
+  .tc-row{
+    grid-template-columns: 1fr 30px 1fr; /* STILL SAME */
+  }
+
+  .tc-card img{
+    width: 65px;
+    height: 65px;
+  }
+
+  .tc-card p{
+    font-size: 13px;
+  }
+
+  .tc-arrow{
+    font-size: 14px;
+  }
+}
 
 
 
@@ -1509,7 +2177,95 @@ body {
 
         .card-3 .initial-circle { box-shadow: 0 0 20px rgba(214, 8, 204, 0.514); }
         .card-3 .status-line { background:var(--primary); }
+/* ================= MOBILE OPTIMIZATION (SAME DESIGN) ================= */
+@media (max-width: 768px){
 
+  .container{
+    width: 92%;
+    margin-left: 10px;
+  }
+
+  .title{
+    font-size: 26px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .card-stack{
+    gap: 15px;
+  }
+
+  .glass-card{
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .glass-card::before{
+    font-size: 90px;
+    top: -15px;
+  }
+
+  .user-header{
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .initial-circle{
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .user-meta h4{
+    font-size: 18px;
+  }
+
+  .user-meta span{
+    font-size: 14px;
+  }
+
+  .story-content{
+    font-size: 15px;
+  }
+
+  .status-line{
+    height: 3px;
+    margin-top: 10px;
+  }
+}
+
+/* ================= EXTRA SMALL DEVICES ================= */
+@media (max-width: 480px){
+
+  .title{
+    font-size: 22px;
+  }
+
+  .glass-card{
+    padding: 15px;
+  }
+
+  .initial-circle{
+    width: 36px;
+    height: 36px;
+  }
+
+  .user-meta h4{
+    font-size: 16px;
+  }
+
+  .user-meta span{
+    font-size: 13px;
+  }
+
+  .story-content{
+    font-size: 14px;
+  }
+
+  .glass-card::before{
+    font-size: 70px;
+  }
+}
 
 
 
@@ -1629,7 +2385,66 @@ body {
     background: var(--white);
     color: var(--primary);
 }
+/* ================= MOBILE OPTIMIZATION (SAME DESIGN) ================= */
+@media (max-width: 768px){
 
+  .offer-card{
+    height: 480px;
+    padding: 25px;
+  }
+
+  .offer-lens{
+    width: 220px;
+    height: 220px;
+    top: -40px;
+    right: -40px;
+    border-width: 6px;
+  }
+
+  .offer-title{
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+
+  .offer-desc{
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  .offer-btn{
+    padding: 14px 30px;
+    font-size: 14px;
+  }
+}
+
+/* ================= EXTRA SMALL DEVICES ================= */
+@media (max-width: 480px){
+
+  .offer-card{
+    height: 420px;
+    padding: 20px;
+  }
+
+  .offer-lens{
+    width: 220px;
+    height:220px;
+    top: -30px;
+    right: -30px;
+  }
+
+  .offer-title{
+    font-size: 22px;
+  }
+
+  .offer-desc{
+    font-size: 14px;
+  }
+
+  .offer-btn{
+    padding: 12px 25px;
+    font-size: 13px;
+  }
+}
 
 
 
@@ -1916,7 +2731,74 @@ details[open] summary::before {
 }
 
 .satisfied-text b { color:yellow; }
+/* ================= MOBILE OPTIMIZATION (SAME DESIGN) ================= */
+@media (max-width: 768px){
 
+  .trust-clean-section{
+    padding: 40px 15px;
+  }
+
+  .main-title{
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+
+  .trust-item{
+    padding: 18px 0;
+  }
+
+  .item-name{
+    font-size: 15px;
+  }
+
+  .item-icon{
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .satisfied-footer{
+    margin-top: 35px;
+    gap: 10px;
+  }
+
+  .satisfied-text{
+    font-size: 15px;
+    margin-top: -10px;
+    margin-bottom: -20px;
+  }
+}
+
+/* ================= EXTRA SMALL DEVICES ================= */
+@media (max-width: 480px){
+
+  .main-title{
+    font-size: 22px;
+  }
+
+  .trust-item{
+    padding: 15px 0;
+  }
+
+  .item-name{
+    font-size: 14px;
+  }
+
+  .item-icon{
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+
+  .satisfied-text{
+    font-size: 14px;
+  }
+
+  .pulse-dot{
+    width: 6px;
+    height: 6px;
+  }
+}
 
 
 
@@ -2079,7 +2961,7 @@ details[open] summary::before {
 
 
 
-<!-- section-1 -->
+<!-- section-2 -->
 <section class="sect">
   <div class="story-container">
 
@@ -2322,7 +3204,7 @@ details[open] summary::before {
     </div>
 
     <div class="ayur-footer">
-        <a href="#ordeerForm" class="ayur-btn">अभी शुरू करें</a>
+        <a href="#orderForm" class="ayur-btn">अभी शुरू करें</a>
     </div>
 
 </div>

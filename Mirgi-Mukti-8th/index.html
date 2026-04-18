@@ -1399,8 +1399,8 @@ nav {
 
 /* ✅ CLS FIX (IMPORTANT) */
 .content-card img {
-    width: 95px;
-    height:85px;
+    width: 145px;
+    height:115px;
     aspect-ratio: 1/1;
     border-radius: 10px;
     margin-bottom: 8px;
@@ -1433,7 +1433,7 @@ nav {
 .footer-border {
     width: 0%;
     height: 4px;
-    background: linear-gradient(90deg, var(--danger), var(--primary), var(--success));
+    background: linear-gradient(90deg, var(--white), var(--secondary), var(--secondary));
     position: absolute;
     bottom: 0;
     left: 0;
@@ -1458,70 +1458,6 @@ nav {
 
 
 
-/* ===== section-11. TESTIMONIALS ===== */
-#testimonials{
-  padding:30px 18px;
-  width: 100%;
-  max-width: 450px;
-}
-.rating-bar{
-  display:flex;align-items:center;gap:8px;
-  margin-top:8px;margin-bottom:18px;
-}
-.testi-list{display:flex;flex-direction:column;gap:14px; 
-  margin-bottom: 40px;}
-
-.testi-card{
-  background:var(--white);
-  border-radius:14px;
-  padding:18px;
-  margin:0 20px;
-  box-shadow:0 2px 16px rgba(200,152,59,.1);
-  border-left:4px solid var(--secondary);
-  position:relative;
-}
-.testi-card::before{
-  content:'"';
-  position:absolute;top:8px;right:14px;
-  font-size:3.5rem;color:rgba(200,152,59,.15);
-  font-family:serif;line-height:1;
-}
-.section-title{
-  color:var(--secondary);
-  font-size:2rem;
-  line-height:1.35;
-  font-weight:700;
-  margin-bottom:8px;
-}
-.testi-text{
-    font-size:1.1rem;
-    line-height:1.65;
-    color:var(--black);
-    margin-bottom:10px;
-    font-style:italic;
-}
-
-.testi-user{display:flex;align-items:center;gap:9px}
-
-.testi-avatar{
-  width:36px;
-  height:36px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--white);
-  font-weight:800;
-  font-size:.88rem;
-  flex-shrink:0;
-}
-.testi-avatar img{
-    height: 100%;
-    width: 100%;
-}
-.testi-user div strong{display:block;font-size:.8rem;font-weight:800}
-.testi-user div small{font-size:1rem;color:var(--black)}
-.testi-stars{color:#f9a825;font-size:1rem;margin-top:1px}
 
 
 
@@ -1532,10 +1468,7 @@ nav {
 
 
 
-
-
-
-/* ===== section-12.  OFFER ===== */
+/* ===== section-11.  OFFER ===== */
 #offer{
   background:linear-gradient(160deg,#1a0a00,#3d1f00);
   color:var(--white);
@@ -1626,7 +1559,7 @@ nav {
 
 
 
-/* ===== section-13. CTA ===== */
+/* ===== section-12. CTA ===== */
 #cta{
   background:var(--primary);
   padding:30px 18px 32px;
@@ -1682,6 +1615,79 @@ nav {
   font-size:.93rem;opacity:.85;font-weight:700;
 }
 
+
+
+
+
+
+
+
+
+
+/* ===== section-13. TESTIMONIALS ===== */
+#testimonials{
+  padding:30px 18px;
+  width: 100%;
+  max-width: 450px;
+}
+.rating-bar{
+  display:flex;align-items:center;gap:8px;
+  margin-top:8px;margin-bottom:18px;
+}
+.testi-list{display:flex;flex-direction:column;gap:14px; 
+  margin-bottom: 40px;}
+
+.testi-card{
+  background:var(--white);
+  border-radius:14px;
+  padding:18px;
+  margin:0 20px;
+  box-shadow:0 2px 16px rgba(200,152,59,.1);
+  border-left:4px solid var(--secondary);
+  position:relative;
+}
+.testi-card::before{
+  content:'"';
+  position:absolute;top:8px;right:14px;
+  font-size:3.5rem;color:rgba(200,152,59,.15);
+  font-family:serif;line-height:1;
+}
+.section-title{
+  color:var(--secondary);
+  font-size:2rem;
+  line-height:1.35;
+  font-weight:700;
+  margin-bottom:8px;
+}
+.testi-text{
+    font-size:1.1rem;
+    line-height:1.65;
+    color:var(--black);
+    margin-bottom:10px;
+    font-style:italic;
+}
+
+.testi-user{display:flex;align-items:center;gap:9px}
+
+.testi-avatar{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--white);
+  font-weight:800;
+  font-size:.88rem;
+  flex-shrink:0;
+}
+.testi-avatar img{
+    height: 100%;
+    width: 100%;
+}
+.testi-user div strong{display:block;font-size:.8rem;font-weight:800}
+.testi-user div small{font-size:1rem;color:var(--black)}
+.testi-stars{color:#f9a825;font-size:1rem;margin-top:1px}
 
 
 
@@ -2362,75 +2368,7 @@ nav {
 
 
 
-
-
-
-
-
-<!-- ===== section-11: TESTIMONIALS ===== -->
-<section class="sec">
-<div id="testimonials" class="fade-up">
-  <h2 class="section-title">हज़ारों लोगों ने महसूस किया फर्क</h2>
-  
-  </div>
-  <div class="testi-list">
-    <div class="testi-card">
-      <p class="testi-text">पहले हर हफ्ते मिर्गी के दौरे आते थे… लेकिन अब काफी control में हैं। अब जिंदगी थोड़ी normal लगने लगी है।</p>
-      <div class="testi-user">
-        <div class="testi-avatar">
-          <img src="images/ramesh.avif"  width="65" height="55"
-                     loading="lazy" alt="">
-        </div>
-        <div>
-          <strong>Ravi Kumar</strong>
-          <div class="testi-stars">★★★★★</div>
-          <small>Jaipur, Rajasthan</small>
-        </div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <p class="testi-text">मैं पहले अकेले बाहर जाने से डरता था… लेकिन अब मेरा confidence वापस आ गया है। बिना डर के बाहर जा सकता हूँ।</p>
-      <div class="testi-user">
-        <div class="testi-avatar">
-          <img src="images/sunil.avif"  width="65" height="55"
-                     loading="lazy" alt="">
-        </div>
-        <div>
-          <strong>Sandeep Verma</strong>
-          <div class="testi-stars">★★★★★</div>
-          <small>Delhi</small>
-        </div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <p class="testi-text">सिर्फ 2 महीने में noticeable फर्क दिखा। दौरे कम हुए और दिमाग भी शांत रहने लगा। अब काफी better feel कर रहा हूँ।</p>
-      <div class="testi-user">
-        <div class="testi-avatar">
-          <img src="images/sangeeta.avif"  width="65" height="55"
-                     loading="lazy" alt="">
-        </div>
-        <div>
-          <strong>Pooja Sharma</strong>
-          <div class="testi-stars">★★★★★</div>
-          <small>Mumbai</small>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ===== section-12: URGENCY / OFFER ===== -->
+<!-- ===== section-11: URGENCY / OFFER ===== -->
 <section class="sec">
 <div id="offer" class="fade-up">
   <span class="offer-badge">🚨 LIMITED TIME OFFER</span>
@@ -2599,7 +2537,7 @@ nav {
 </script>
     </head>
     <body>
-<!-- ===== section-13: CTA FORM ===== -->
+<!-- ===== section-12: CTA FORM ===== -->
 <section class="sec">
 <div id="cta">
   <h2 class="cta-title">अभी ऑर्डर करें और
@@ -2640,6 +2578,63 @@ nav {
 </section>
 
 
+
+
+
+
+
+
+<!-- ===== section-13: TESTIMONIALS ===== -->
+<section class="sec">
+<div id="testimonials" class="fade-up">
+  <h2 class="section-title">हज़ारों लोगों ने महसूस किया फर्क</h2>
+  
+  </div>
+  <div class="testi-list">
+    <div class="testi-card">
+      <p class="testi-text">पहले हर हफ्ते मिर्गी के दौरे आते थे… लेकिन अब काफी control में हैं। अब जिंदगी थोड़ी normal लगने लगी है।</p>
+      <div class="testi-user">
+        <div class="testi-avatar">
+          <img src="images/ramesh.avif"  width="65" height="55"
+                     loading="lazy" alt="">
+        </div>
+        <div>
+          <strong>Ravi Kumar</strong>
+          <div class="testi-stars">★★★★★</div>
+          <small>Jaipur, Rajasthan</small>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <p class="testi-text">मैं पहले अकेले बाहर जाने से डरता था… लेकिन अब मेरा confidence वापस आ गया है। बिना डर के बाहर जा सकता हूँ।</p>
+      <div class="testi-user">
+        <div class="testi-avatar">
+          <img src="images/sunil.avif"  width="65" height="55"
+                     loading="lazy" alt="">
+        </div>
+        <div>
+          <strong>Sandeep Verma</strong>
+          <div class="testi-stars">★★★★★</div>
+          <small>Delhi</small>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <p class="testi-text">सिर्फ 2 महीने में noticeable फर्क दिखा। दौरे कम हुए और दिमाग भी शांत रहने लगा। अब काफी better feel कर रहा हूँ।</p>
+      <div class="testi-user">
+        <div class="testi-avatar">
+          <img src="images/sangeeta.avif"  width="65" height="55"
+                     loading="lazy" alt="">
+        </div>
+        <div>
+          <strong>Pooja Sharma</strong>
+          <div class="testi-stars">★★★★★</div>
+          <small>Mumbai</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 

@@ -1,0 +1,2579 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gathheal</title>
+
+<!-- ✅ Optimized Fonts -->
+ <link rel="preload" href="https://fonts.googleapis.com/css2?family=Halant:wght@400;600&display=swap" as="style" onload="this.rel='stylesheet'">
+<noscript>
+<link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;600&display=swap" rel="stylesheet">
+</noscript>
+
+<style>
+
+/* ✅ ROOT THEME */
+:root {
+  --primary: #0f3f2e;
+  --secondary: #e1ae40;
+  --white: #fff;
+  --black: #000;
+}
+
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+ font-family: 'Halant', 'Source Sans 3', serif;
+  background-color:rgba(169, 160, 160, 0.276);
+}
+body {
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* HEADER */
+header {
+  width: 100%;
+  max-width: 450px;
+  padding: 14px;
+  background: var(--primary);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+  border-bottom: 2px solid rgba(255,255,255,0.3);
+  padding-bottom: 6px;
+}
+
+/* LOGO */
+.logo {
+    font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--white);
+  position: relative;
+  cursor: pointer;
+}
+
+/* Underline */
+.logo::after {
+  content: '';
+  position: absolute;
+  width: 40%;
+  height: 3px;
+  background: var(--secondary);
+  left: 0;
+  bottom: -2px;
+  transition: 0.3s;
+  box-shadow: 0 0 10px var(--secondary);
+}
+
+.logo:hover::after {
+  width: 100%;
+}
+
+/* Button */
+.cta-btn {
+  background: var(--secondary);
+  color: var(--white);
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+}
+
+.buttonn {
+  background-color: var(--secondary); 
+  color: var(--white);
+  border-radius: 15px;
+  padding: 14px 22px;
+  border: 2px solid var(--secondary);
+  font-size: 19px;
+  text-decoration: none;
+  cursor: pointer;
+ 
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgb(218, 180, 13) }
+  70% { box-shadow: 0 0 0 20px rgba(236,72,153,0) }
+  100% { box-shadow: 0 0 0 0 rgba(236,72,153,0) }
+}
+.images {
+  max-width: 450px;
+  width: 100%;
+  align-items: center;
+  padding: 0;
+}
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  background: var(--secondary);
+  cursor: pointer;
+  margin: 10px 100px;
+  width: 55%;
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  top: 0;
+  left: -40%;
+  transform: skewX(-20deg);
+}
+.btn:hover::before {
+  left: 120%;
+  transition: 1.5s;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 430px) {
+  .btn {
+    width: 50% !important;
+    font-size: 15px !important;
+    margin: 10px 80px !important;
+  }
+}
+
+/* SECTION BASE */
+.sec {
+  width: 100%;
+  max-width: 450px;
+  background: var(--primary);
+  color: var(--white);
+  border-bottom: 2px solid white;
+}
+
+.sect {
+  width: 100%;
+  max-width: 450px;
+  background: var(--secondary);
+  color: var(--white);
+  padding: 20px;
+}
+
+/* Responsive */
+@media (max-width: 430px) {
+  .logo {
+    font-size: 26px;
+  }
+
+  .cta-btn {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
+
+/* ===== STICKY CTA ===== */
+.sticky-cta{
+  position:fixed;
+  bottom:0;left:50%;
+  transform:translateX(-50%);
+  width:100%;max-width:450px;
+  z-index:999;
+  padding:10px 16px 14px;
+  background:linear-gradient(to top,rgba(255,255,255,.98) 80%,transparent);
+}
+.sticky-cta a{
+  display:block;
+  background:linear-gradient(135deg,var(--secondary) 0%,#e0a93f 100%);
+  color:var(--white);
+  text-align:center;
+  padding:15px 20px;
+  border-radius:50px;
+  font-size:1.05rem;
+  font-weight:800;
+  letter-spacing:.3px;
+  box-shadow:0 4px 18px rgba(200,152,59,.45);
+  transition:transform .18s,box-shadow .18s;
+}
+.sticky-cta a:active{transform:scale(.97)}
+.sticky-cta small{display:block;text-align:center;font-size:.68rem;color:var(--text-muted);margin-top:4px}
+
+.btn-secondary{
+  background: linear-gradient(135deg, var(--secondary), #e0a93f);
+  color: var(--white);
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.btn-secondary:hover{
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.35);
+}
+
+
+
+
+
+
+/* section-1 */
+.ps{max-width:450px;width: 100%; overflow:hidden;}
+
+.ps-header{background:var(--secondary);padding:18px 16px 14px;position:relative;overflow:hidden;}
+
+.ps-header::before{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:rgba(255,255,255,0.06);border-radius:50%;}
+
+.ps-header-tag{background:rgba(255,255,255,0.18);color:var(--primary);font-size:20px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:8px;}
+
+.ps-header-title{font-size:26px;font-weight:800;color:#fff;line-height:1.25;margin-bottom:4px;}
+
+.ps-img-banner{width:100%;height:180px;object-fit:cover;display:block;background:linear-gradient(135deg,#fde8e8,#fcc5c5);}
+
+.prob-section{padding:18px 16px 0;}
+
+.prob-label{font-size:24px;font-weight:700;color:var(--secondary);margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+
+.prob-label::before{content:'';display:block;width:4px;height:18px;background:var(--secondary);border-radius:2px;flex-shrink:0;}
+
+.prob-cards{display:flex;flex-direction:column;gap:9px;}
+
+.prob-card{background:#fff;border-radius:12px;border:0.5px solid #f0c8c4;padding:11px 13px;display:flex;align-items:stretch;gap:0;overflow:hidden;box-shadow:0 2px 8px rgba(185,48,37,0.08);}
+
+.prob-card-left{width:72px;flex-shrink:0;border-radius:8px;overflow:hidden;margin-right:12px;position:relative;}
+
+.prob-card-img-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:24px;background:linear-gradient(135deg,#fee9e7,#fccac4);border-radius:8px;}
+
+.prob-card-img-ph img{
+  width: 113px;
+  height: 102px;
+}
+
+.prob-card-body{flex:1;display:flex;flex-direction:column;justify-content:center;}
+
+.prob-card-title{font-size:20px;font-weight:700;color:var(--primary);margin-bottom:3px;line-height:1.3;}
+
+.prob-card-desc{font-size:18px;color:black;line-height:1;}
+
+.op-warning{background:#A32D2D;margin:14px 16px 0;border-radius:14px;padding:14px;position:relative;overflow:hidden;}
+
+.op-warning::before{content:'⚠️';position:absolute;right:12px;top:10px;font-size:32px;opacity:0.2;}
+
+.op-warning-tag{background:var(--secondary);color:#fff;font-size:16px;font-weight:700;letter-spacing:1.5px;padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:8px;text-transform:uppercase;}
+
+.op-warning-text{font-size:18px;font-weight:800;color:#fff;margin-bottom:4px;line-height:1.3;}
+
+.op-warning-sub{font-size:18px;color:rgba(255,255,255,0.65);line-height:1.5;}
+
+.consq-section{padding:14px 16px 0;}
+
+.consq-label{font-size:24px;font-weight:700;color:var(--secondary);margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+
+
+.consq-label::before{content:'';display:block;width:4px;height:18px;background:#c8922a;border-radius:2px;flex-shrink:0;}
+
+.consq-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+
+.consq-card{background:#fff;border-radius:12px;border:0.5px solid #e8d5b0;overflow:hidden;box-shadow:0 2px 8px rgba(200,146,42,0.1);}
+
+.consq-card-img-ph{width:100%;height:80px;display:flex;align-items:center;justify-content:center;font-size:28px;}
+
+.consq-card-body{padding:9px 10px;}
+
+.consq-card-title{font-size:18px;font-weight:700;color:var(--primary);line-height:1.35;}
+
+.final-strip{background:#A32D2D;margin:14px 16px 18px;border-radius:14px;padding:14px 16px;text-align:center;}
+
+.final-strip p{font-size:18px;font-weight:800;color:#fff;line-height:1.35;}
+
+.final-strip p span{color:var(--secondary);}
+
+
+
+
+
+
+
+/* section-2 */
+    .monolith-card {
+        width: 100%;  
+        max-width: 450px;
+        padding: 50px 20px;
+        box-shadow: 0 40px 100px rgba(0,0,0,0.05);
+        text-align: center;
+        position: relative;
+        transition: 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+        border: 1px solid #eee;
+    }
+
+    .pedestal-frame {
+        width: 100%;
+        height: 350px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin-bottom: 40px;
+    }
+
+    .solid-base {
+        position: absolute;
+        width: 280px;
+        height: 40px;
+        background: var(--secondary);
+        bottom: 20px;
+        border-radius: 10px;
+        transform: perspective(500px) rotateX(45deg);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        transition: 0.6s ease;
+    }
+
+    .glass-wall {
+        position: absolute;
+        width: 260px;
+        height: 300px;
+        background: rgba(46, 125, 50, 0.03);
+        border: 1px solid rgba(46, 125, 50, 0.1);
+        backdrop-filter: blur(5px);
+        bottom: 40px;
+        border-radius: 20px;
+        z-index: 1;
+        transition: 0.6s ease;
+    }
+
+    .pedestal-frame img {
+        height: 85%;
+        z-index: 2;
+        filter: drop-shadow(0 30px 50px rgba(0,0,0,0.2));
+        transition: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        transform: translateY(-20px);
+    }
+
+    .monolith-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 60px 120px rgba(0,0,0,0.1);
+    }
+
+    .monolith-card:hover .solid-base {
+        background: var(--secondary);
+        transform: perspective(500px) rotateX(45deg) scale(1.1);
+        box-shadow: 0 30px 60px rgba(197, 160, 89, 0.4);
+    }
+
+    .monolith-card:hover .glass-wall {
+        transform: translateY(-10px) scale(1.05);
+        background: rgba(46, 125, 50, 0.05);
+    }
+
+    .monolith-card:hover img {
+        transform: translateY(-40px) scale(1.1);
+    }
+
+    .label-gold {
+        font-size: 32px;
+        color: var(--secondary);
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .h-bold {
+        font-size: 32px;
+        color: white;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 15px;
+    }
+
+    .h-bold span {
+        color: var(--secondary);
+    }
+
+    .p-light {
+        font-size: 18px;
+        color: white;
+        line-height: 1.4;
+        margin: 0 auto;
+        max-width: 350px;
+    }
+
+
+
+
+
+
+
+/* section-3 */
+
+.wrap{background:#f7faf8;max-width:450px; width: 100%; border-bottom: 2px solid var(--secondary);}
+
+/* HEADER */
+.hdr{padding:28px 20px 24px;text-align:center;background:#fff;border-bottom:1px solid #e4efe8;}
+.hdr-h{font-size:32px;font-weight:800;color:var(--primary);line-height:1.25;margin-bottom:6px;}
+.hdr-h em{font-style:normal;color:var(--primary);}
+
+/* HOW IT WORKS CARDS */
+.section{padding:24px 16px 0;}
+
+.hw-card{background:#fdf1dd;border-radius:18px;overflow:hidden;margin-bottom:14px;border:1px solid #e4efe8;}
+.hw-card-img{width:100%;height:190px;object-fit:cover;display:flex;align-items:center;justify-content:center;position:relative;}
+.hw-card-img.ci1{background:linear-gradient(135deg,#e0f2e9 0%,#b2dfc4 100%);}
+.hw-card-img.ci2{background:linear-gradient(135deg,#e8f5e9 0%,#a5d6a7 100%);}
+.hw-card-img.ci3{background:linear-gradient(135deg,#f1f8e9 0%,#c5e1a5 100%);}
+.hw-card-img-icon{height:100%; width: 100%; filter:drop-shadow(0 4px 12px rgba(0,0,0,0.08));}
+.hw-card-img-icon img{
+  height: 100%;
+  width:100%
+}
+.hw-card-badge{position:absolute;top:14px;left:14px;background:#fff;color:var(--primary);font-size:16px;font-weight:700;padding:4px 12px;border-radius:20px;border:1px solid #c2dfc8;letter-spacing:0.5px;}
+.hw-card-body{padding:18px 18px 20px;}
+.hw-card-step{font-size:16px;font-weight:600;color:var(--secondary);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;}
+.hw-card-title{font-size:20px;font-weight:800;color:var(--primary);line-height:1.25;margin-bottom:8px;}
+.hw-card-desc{font-size:18px;color:var(--black);line-height:1.3;}
+.hw-card-check{display:inline-flex;align-items:center;gap:6px;background:#eaf5ee;color:var(--primary);font-size:16px;font-weight:600;padding:6px 12px;border-radius:8px;margin-top:12px;}
+.hw-card-check::before{content:'✓';font-size:13px;font-weight:700;}
+
+/* DIVIDER */
+.divider-strip{margin:8px 16px 24px;background:#fff;border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:10px;border:1px solid #e4efe8;}
+.divider-strip p{font-size:18px;color:var(--black);line-height:1.6;}
+.divider-strip p strong{color:var(--primary);font-weight:700;}
+.ds-icon{font-size:24px;flex-shrink:0;}
+
+/* BENEFITS */
+.ben-section{padding:0 16px 0;}
+
+.ben-card{background:#fdf1dd;border-radius:18px;overflow:hidden;margin-bottom:14px;border:1px solid #e4efe8;display:flex;flex-direction:column;}
+.ben-card-img{width:100%;height:220px;display:flex;align-items:center;justify-content:center;position:relative;}
+.ben-card-img.bi1{background:linear-gradient(135deg,#f0faf3 0%,#c8e6c9 100%);}
+.ben-card-img.bi2{background:linear-gradient(135deg,#fafdf0 0%,#dcedc8 100%);}
+.ben-card-img.bi3{background:linear-gradient(135deg,#f0faf6 0%,#b2dfdb 100%);}
+.ben-card-img.bi4{background:linear-gradient(135deg,#f5faf0 0%,#c5e1a5 100%);}
+.ben-card-img-icon{height: 120%; width: 100%; filter:drop-shadow(0 4px 12px rgba(0,0,0,0.08));}
+.ben-card-img-icon img{
+  width: 100%;
+  height: 100%;
+}
+.ben-num-badge{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;background:var(--primary);color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.ben-card-body{padding:18px 18px 20px;}
+.ben-card-label{font-size:18px;font-weight:600;color:var(--secondary);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;}
+.ben-card-title{font-size:20px;font-weight:800;color:var(--primary);line-height:1.3;margin-bottom:8px;}
+.ben-card-desc{font-size:18px;color:var(--black);line-height:1.3;}
+
+/* BOTTOM */
+.bottom{margin:8px 16px 24px;background:var(--secondary);border-radius:18px;padding:20px 18px;text-align:center; }
+.bottom p{font-size:18px;font-weight:800;color:var(--primary);line-height:1.4;margin-bottom:4px;}
+.bottom p span{color:var(--primary);}
+.bottom small{font-size:16px;color:white;}
+
+
+
+
+
+
+
+
+/* section-4 */
+.ingr-wrap{
+  width: 100%;  
+  max-width:450px;
+  width: 100%;
+  background:#f4fdf8;
+  padding:32px 18px 36px;
+  
+}
+.ingr-tag{
+  gap:6px;
+  background:var(--primary);color:var(--secondary);
+  text-align: center;
+  font-size:32px;font-weight:800;
+  padding:4px 14px;border-radius:20px;
+  text-transform:uppercase;
+  margin-bottom:42px;
+}
+
+.ingr-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  margin-bottom:24px;
+}
+.ingr-card{
+  border-radius:16px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:transform 0.28s cubic-bezier(.34,1.56,.64,1), box-shadow 0.28s ease;
+  position:relative;
+  background:var(--primary);
+  border:1.5px solid transparent;
+}
+.ingr-card:hover{
+  transform:translateY(-7px) scale(1.03);
+  box-shadow:0 18px 40px rgba(15,110,86,0.18);
+  border-color:var(--secondary);
+}
+.ingr-card:hover .ingr-hover-panel{opacity:1;transform:translateY(0);}
+.ingr-card:hover .ingr-img-wrap img{transform:scale(1.08);}
+
+.ingr-img-wrap{
+  width:100%;height:130px;overflow:hidden;position:relative;
+}
+.ingr-img-wrap img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 0.35s ease;
+  display:block;
+}
+.ingr-color-bar{
+  height:4px;width:100%;
+}
+.ingr-body{
+  padding:12px 12px 14px;
+  position:relative;
+}
+.ingr-emoji{
+  position:absolute;
+  top:-18px;right:12px;
+  width:36px;height:36px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;
+  border:2px solid #fff;
+}
+.ingr-name{
+  font-size:20px;font-weight:800;color:var(--secondary);
+  margin-bottom:3px;
+}
+.ingr-benefit-tag{
+  display:inline-block;
+  font-size:16px;font-weight:700;
+  padding:3px 9px;border-radius:10px;
+}
+
+.ingr-hover-panel{
+  position:absolute;inset:0;
+  border-radius:15px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:14px;text-align:center;
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity 0.25s ease,transform 0.25s ease;
+  pointer-events:none;
+}
+.ingr-hover-panel p{
+  font-size:13px;font-weight:600;line-height:1.55;
+  margin-top:8px;
+}
+.ingr-hover-icon{font-size:32px;}
+
+.ingr-footer{
+  background:var(--primary);
+  border-radius:14px;
+  padding:16px 18px;
+  display:flex;align-items:flex-start;gap:12px;
+}
+.ingr-footer-icon{
+  font-size:28px;flex-shrink:0;margin-top:2px;
+}
+.ingr-footer p{
+  font-size:13px;color:#c8f2e4;line-height:1.65;font-weight:500;
+}
+.ingr-footer strong{color:#fff;font-size:14px;display:block;margin-bottom:3px;}
+
+
+
+
+
+
+
+
+/* section-5 */
+
+  .how-section {
+ padding: 28px 18px;
+  }
+  .steps-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 16px;
+  }
+  .step-card {
+    background: #fff;
+    border-radius: var(--secondary);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    border: 1px solid rgba(45,122,79,0.1);
+  }
+  .step-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  border-color: var(--secondary);
+}
+  .step-num {
+    background:var(--secondary);
+    color: #fff;
+    font-size: 28px;
+    font-weight: 800;
+    min-width: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .step-body {
+    padding: 12px;
+    flex: 1;
+  }
+  .step-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 2px;
+  }
+  .step-desc {
+    font-size: 16px;
+    color: var(--black);
+    line-height: 1.2;
+  }
+
+
+
+
+
+  /* section-6 */
+.dr-wrap{
+  max-width:450px;
+  width: 100%;
+  background:#fff;
+  padding:32px 18px 36px;
+}
+.dr-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#E1F5EE;color:var(--primary);
+  font-size:18px;font-weight:800;letter-spacing:1px;
+  padding:4px 14px;border-radius:20px;
+  text-transform:uppercase;margin-bottom:14px;
+}
+.dr-heading{
+  font-size:32px;font-weight:800;color:var(--secondary);
+  line-height:1.28;margin-bottom:6px;
+}
+.dr-heading span{color:var(--primary);}
+.dr-subline{
+  font-size:16px;color:black;line-height:1.6;
+  margin-bottom:22px;
+}
+
+.dr-profile-card{
+  background:var(--primary);
+  border-radius:20px;
+  padding:22px 18px 18px;
+  margin-bottom:16px;
+  position:relative;
+  overflow:hidden;
+}
+.dr-profile-card::before{
+  content:'';
+  position:absolute;
+  top:-40px;right:-40px;
+  width:160px;height:160px;
+  border-radius:50%;
+  background:rgba(93,202,165,0.12);
+}
+.dr-profile-card::after{
+  content:'';
+  position:absolute;
+  bottom:-30px;left:-30px;
+  width:120px;height:120px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.05);
+}
+.dr-top-row{
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:18px;
+  position:relative;z-index:1;
+}
+.dr-avatar-ring{
+  width:64px;height:64px;
+  border-radius:50%;
+  border:2.5px solid var(--secondary);
+  padding:3px;
+  flex-shrink:0;
+}
+.dr-avatar-inner{
+  width:100%;height:100%;
+  border-radius:50%;
+  background:var(--secondary);
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;
+}
+.dr-name{
+  font-size:22px;font-weight:800;color:#fff;
+  margin-bottom:2px;
+}
+.dr-title{
+  font-size:18px;color:var(--secondary);font-weight:500;
+  margin-bottom:5px; line-height: 1;
+}
+.dr-verified{
+  display:inline-flex;align-items:center;gap:4px;
+  background:rgba(93,202,165,0.2);
+  border:1px solid rgba(93,202,165,0.35);
+  color:white;
+  font-size:16px;font-weight:700;
+  padding:3px 9px;border-radius:10px;
+}
+
+.quote-block{
+  position:relative;z-index:1;
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:14px;
+  padding:16px 16px 14px;
+}
+.quote-mark{
+  font-size:52px;
+  color:var(--secondary);
+  line-height:0.6;
+  display:block;
+  margin-bottom:-28px;
+}
+.quote-text{
+  font-size:18px;color:white;
+  line-height:1.2;
+  
+  font-weight:400;
+}
+.quote-text em{
+  font-style:normal;
+  color:var(--secondary);
+  font-weight:600;
+}
+
+.dr-divider{
+  display:flex;align-items:center;gap:10px;
+  margin:16px 0;
+}
+.dr-divider-line{flex:1;height:1px;background:#d4ede4;}
+.dr-divider-icon{font-size:18px;color:var(--secondary);}
+
+.dr-reason-card{
+  background:#f4fdf8;
+  border:1.5px solid #b8e8d4;
+  border-radius:16px;
+  padding:18px 16px;
+  position:relative;
+  overflow:hidden;
+}
+.dr-reason-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;
+  width:4px;height:100%;
+  background:var(--secondary);
+  border-radius:4px 0 0 4px;
+}
+.dr-reason-title{
+  font-size:20px;font-weight:800;color:var(--primary);
+  margin-bottom:10px;padding-left:10px;
+  display:flex;align-items:center;gap:6px;
+}
+.dr-reason-text{
+  font-size:18px;color:var(--black);
+  line-height:1.2;
+  padding-left:10px;
+  
+}
+.dr-reason-text strong{color:var(--secondary);font-weight:700;}
+
+.dr-stats-row{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  margin-top:16px;
+}
+.dr-stat{
+  background:var(--primary);
+  border-radius:12px;
+  padding:14px 8px;
+  text-align:center;
+}
+.dr-stat-num{
+  font-size:20px;font-weight:800;color:#fff;
+  display:block;line-height:1;margin-bottom:4px;
+}
+.dr-stat-label{
+  font-size:13px;color:white;font-weight:600;
+  line-height:1.35;
+}
+
+
+
+
+
+
+
+/* section-7 */
+.box-450 {
+  width: 100%;  
+  max-width: 450px;
+    padding: 30px 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+.main-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.list-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.compare-item {
+    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* BASE */
+.base-layer {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    padding: 10px 20px 10px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 18px;
+    transition: 0.5s ease;
+    border: 1px solid #f9d5d5;
+    box-sizing: border-box;
+}
+
+/* TOP */
+.top-layer {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--secondary);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 17px;
+    z-index: 2;
+    transition: 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+    border: 1px solid #d4edda;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* HOVER */
+.compare-item:hover .top-layer {
+    width: 100%;
+    background: var(--secondary);
+    color: white;
+    box-shadow: 0 8px 20px rgba(30,126,52,0.3);
+}
+
+.compare-item:hover .base-layer {
+    opacity: 0.3;
+    transform: scale(0.95);
+}
+
+/* TAG */
+.better-tag {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background: #A32D2D;
+    color: white;
+    font-size: 15px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 900;
+    z-index: 3;
+}
+
+
+
+
+
+
+
+
+
+  /* section-8 */
+ .use-section {
+    background: linear-gradient(160deg, #f9f3e6, #fff8ed);
+    padding: 28px 18px;
+  }
+  .use-img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: var(--secondary);
+    margin-bottom: 16px;
+  }
+  .use-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .use-step {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px 14px;
+    box-shadow: 0 2px 10px rgba(200,146,42,0.12);
+    border-left: 4px solid var(--secondary);
+  }
+  .use-step-icon { font-size: 28px; flex-shrink: 0; }
+  .use-step-text { font-size: 17px; color: var(--black); line-height: 1.5; }
+  .use-step-text strong { display: block;  color: var(--secondary); font-size: 20px; }
+  .use-step:hover {
+  transform: translateX(8px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(200,146,42,0.25);
+  border-left: 6px solid var(--secondary);
+}
+
+
+
+
+
+
+
+
+/* section-9 */
+.cmp-wrap{
+  width: 100%;
+  max-width:450px;
+  padding:32px 18px 36px;
+}
+.cmp-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#EEEDFE;color:var(--primary);
+  font-size:22px;font-weight:800;letter-spacing:1px;
+  padding:4px 14px;border-radius:20px;
+  text-transform:uppercase;margin-bottom:14px;
+}
+.cmp-heading{
+  font-size:32px;font-weight:800;color:var(--secondary);
+  line-height:1.28;margin-bottom:6px;
+}
+.cmp-heading span{color:white;}
+.cmp-sub{
+  font-size:18px;color:white;line-height:1.6;
+  margin-bottom:26px;
+}
+
+.col-headers{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:12px;
+  margin-bottom:12px;
+  padding:0 2px;
+}
+.col-h{
+  border-radius:14px;
+  padding:14px 12px;
+  text-align:center;
+}
+.col-h-bad{
+  background:#A32D2D;
+}
+.col-h-good{
+  background:var(--secondary);
+  border:1.5px solid var(--primary);
+}
+.col-h-icon{font-size:26px;display:block;margin-bottom:6px;}
+.col-h-label{
+  font-size:20px;font-weight:800;
+  display:block;line-height:1.3;
+}
+.col-h-bad .col-h-label{color:var(--secondary); font-size: 20px;}
+.col-h-good .col-h-label{color:var(--primary);}
+.col-h-sub{
+  font-size:18px;font-weight:600;
+  display:block;margin-top:3px;
+}
+.col-h-bad .col-h-sub{color:var(--secondary);}
+.col-h-good .col-h-sub{color:var(--primary);}
+
+.rows-wrap{display:flex;flex-direction:column;gap:10px;}
+
+.cmp-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:12px;
+  align-items:stretch;
+  position:relative;
+}
+.cmp-row::before{
+  content:'VS';
+  position:absolute;
+  left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  font-size:14px;font-weight:800;
+  color:var(--primary);
+  background:var(--secondary);
+  padding:2px 5px;
+  border-radius:6px;
+  z-index:2;
+  letter-spacing:0.5px;
+}
+
+.cmp-cell{
+  border-radius:14px;
+  padding:14px 12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  gap:6px;
+  transition:transform 0.22s cubic-bezier(.34,1.56,.64,1);
+}
+.cmp-cell:hover{transform:scale(1.04);}
+
+.cell-bad{
+  background:#fff;
+  border:1.5px solid #F7C1C1;
+}
+.cell-good{
+  background:#E1F5EE;
+  border:1.5px solid #9FE1CB;
+}
+
+.cell-icon{font-size:22px;line-height:1;}
+.cell-text{
+  font-size:18px;font-weight:700;line-height:1.35;
+}
+.cell-bad .cell-text{color:black;}
+.cell-good .cell-text{color:#085041;}
+
+.cell-badge{
+  font-size:16px;font-weight:700;
+  padding:2px 8px;border-radius:8px;
+  margin-top:2px;
+}
+.cell-bad .cell-badge{background:#FCEBEB;color:#A32D2D;}
+.cell-good .cell-badge{background:var(--primary);color:#fff;}
+
+.cmp-verdict{
+  margin-top:20px;
+  background:var(--secondary);
+  border-radius:18px;
+  padding:20px 18px;
+  display:flex;align-items:flex-start;gap:14px;
+  position:relative;
+  overflow:hidden;
+}
+
+.verdict-icon{
+  font-size:30px;flex-shrink:0;margin-top:2px;
+  position:relative;z-index:1;
+}
+.verdict-text{position:relative;z-index:1;}
+.verdict-text strong{
+  display:block;
+  font-size:20px;font-weight:800;color:var(--primary);
+  margin-bottom:4px;
+}
+.verdict-text p{
+  font-size:18px;color:white;line-height:1.2;
+}
+
+
+
+
+
+
+
+
+
+/* section-10 */
+
+  .product-section {
+    background: linear-gradient(175deg, var(--primary-dark) 0%, #1e6040 100%);
+    padding: 28px 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .product-section::after {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .product-section .section-title { color: #fff; }
+  .product-section .divider { background: linear-gradient(90deg, var(--secondary), var(--secondary)); }
+  .product-label {
+    background: var(--secondary);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  .product-hero-img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 16px;
+    filter: drop-shadow(0 12px 32px rgba(0,0,0,0.4));
+    animation: floatUp 3s ease-in-out infinite;
+  }
+  .product-desc {
+    color: rgba(255,255,255,0.88);
+    font-size: 18px;
+    line-height: 1.7;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  .product-desc strong { color: var(--secondary); }
+  
+  .hero-cta {
+    background:var(--secondary);
+    color: #fff;
+    font-weight: 800;
+    font-size: 17px;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 32px;
+    cursor: pointer;
+    display: block;
+    width: calc(100% - 40px);
+    margin: 0 20px 24px;
+    box-shadow: 0 8px 24px rgba(200,146,42,0.45);
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 2;
+    text-decoration: none;
+    text-align: center;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .hero-cta:active { transform: scale(0.97); }
+  .hero-cta::after {
+    content: ' →';
+    font-size: 20px;
+  }
+@keyframes floatUp {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+
+
+
+
+
+/* ===== section-11. CTA ===== */
+#cta{
+  background:var(--primary);
+  padding:30px 18px 32px;
+  text-align:center;
+  color:var(--white);
+}
+.cta-title{
+  font-size:2rem;font-weight:700;
+  margin-bottom:6px;line-height:1.35;
+  color: var(--secondary);
+}
+.cta-sub{font-size:1rem;opacity:.85;margin-bottom:22px;line-height:1.6}
+.cta-form{
+  display:flex;flex-direction:column;gap:10px;
+  max-width:100%;
+}
+.cta-input{
+  width:100%;
+  padding:14px 16px;
+  border-radius:10px;
+  border:none;
+  font-size:1rem;
+  font-family:inherit;
+  background:rgba(255,255,255,.15);
+  color:var(--white);
+  backdrop-filter:blur(4px);
+  border:1.5px solid rgba(255,255,255,.25);
+  transition:border-color .2s;
+}
+.cta-input::placeholder{color:rgba(255,255,255,.6)}
+.cta-input:focus{outline:none;border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.2)}
+.cta-submit{
+  width:100%;
+  padding:15px;
+  border-radius:50px;
+  background:linear-gradient(135deg,var(--secondary),#e0a93f);
+  color:var(--white);
+  font-size:1.05rem;
+  font-weight:800;
+  box-shadow:0 4px 20px rgba(0,0,0,.25);
+  transition:transform .18s;
+  border:none;
+  cursor:pointer;
+  font-family:inherit;
+}
+.cta-submit:active{transform:scale(.97)}
+
+
+
+
+
+
+
+
+
+
+/* section-12 */
+
+  .testi-section {
+    padding: 36px 20px;
+  }
+  
+.section-title{
+  color:var(--secondary);
+  font-size:2rem;
+  line-height:1.35;
+  font-weight:700;
+  margin-bottom:18px;
+  text-align: center;
+
+}
+  .testi-card {
+    background: #fff;
+    border-radius: var(--secondary);
+    padding: 18px 16px;
+    margin-bottom: 24px;
+    border: 1px solid #d4ede4;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+  .testi-card::before {
+    content: '"';
+    position: absolute;
+    top: -8px; right: 12px;
+    font-size: 72px;
+    color: var(--black);
+    font-family: Georgia, serif;
+    line-height: 1;
+    z-index: 0;
+  }
+  .testi-img-wrap {
+    width: 100%;
+    height: 140px;
+    background: var(--primary);
+    border-radius: var(--secondary);
+    margin-bottom: 14px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  .testi-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .testi-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+  }
+  .testi-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .testi-name strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: -5px;
+    color: var(--black);
+  }
+  .testi-name span {
+    font-size: 18px;
+    color: black;
+  }
+  .stars { color: var(--secondary); font-size: 14px; margin-bottom: 8px; position: relative; z-index: 1; }
+  .testi-problem-badge {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    position: relative; z-index: 1;
+  }
+  .testi-text {
+    font-size: 18px;
+    color: black;
+    line-height: 1.3;
+    position: relative;
+    z-index: 1;
+  }
+.testi-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  border-color: var(--primary);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== section-13. FAQ ===== */
+.faq-section{
+max-width:450px;
+width: 100%;
+background-color: var(--primary);
+margin:auto;
+}
+
+.faq-title{
+text-align:center;
+font-size:32px;
+font-weight:800;
+margin-bottom:20px;
+color:var(--secondary);
+}
+
+/* FAQ Card */
+
+.faq-item{
+background:#fff;
+border-radius:14px;
+padding:5px 25px;
+margin-bottom:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+cursor:pointer;
+transition:0.3s;
+margin: 10px 20px;
+}
+
+.faq-item:hover{
+transform:translateY(-2px);
+}
+
+/* Question */
+
+.faq-question{
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:18px;
+font-weight:600;
+color:var(--primary);
+}
+
+/* Plus Icon */
+
+.faq-icon{
+font-size:22px;
+font-weight:700;
+color:var(--primary);
+}
+
+/* Answer */
+
+.faq-answer{
+max-height:0;
+overflow:hidden;
+transition:0.4s;
+font-size:16px;
+color:#555;
+line-height:1.6;
+margin-top:10px;
+}
+
+/* Active */
+
+.faq-item.active .faq-answer{
+max-height:120px;
+}
+
+.faq-item.active .faq-icon{
+transform:rotate(45deg);
+}
+
+
+
+
+
+
+
+/* ===== DISCLAIMER ===== */
+#disclaimer{
+  background:#f1f1f1;
+  padding:16px 18px 80px;
+  border-top:1px solid #e0e0e0;
+}
+#disclaimer p{font-size:.68rem;color:#888;line-height:1.65;text-align:center}
+
+/* ===== ANIMATIONS ===== */
+@media (prefers-reduced-motion:no-preference){
+  .fade-up{
+    opacity:0;
+    transform:translateY(22px);
+    transition:opacity .5s ease,transform .5s ease;
+  }
+  .fade-up.visible{opacity:1;transform:translateY(0)}
+}
+
+
+</style>
+</head>
+
+<body>
+
+
+
+ <header>
+  <nav>
+    <div class="logo">Gathheal</div>
+    <a class="buttonn" href="#orderForm">Buy Now 🛒</a>
+  </nav>
+</header>
+
+
+
+<section class="sec">
+  <img src="images/banner.avif" class="images" alt="">
+</section>
+
+
+
+
+
+
+<!-- section-1 -->
+<section class="sec">
+
+<div class="ps">
+
+<div class="ps-header">
+  <span class="ps-header-tag">Problem Section</span>
+  <h2 class="ps-header-title">क्या आपको भी ये रोज़ face करना पड़ता है?</h2>
+</div>
+
+
+
+<div class="prob-section">
+  <p class="prob-label">रोज़ की ये 4 problems</p>
+  <div class="prob-cards">
+
+    <div class="prob-card">
+      <div class="prob-card-left">
+        <div class="prob-card-img-ph">
+          <img src="images/sect-1-1stimg.avif" alt="" width="92" height="102" loading="lazy">
+        </div>
+      </div>
+      <div class="prob-card-body">
+        <p class="prob-card-title">लोग बार-बार पूछते हैं</p>
+        <p class="prob-card-desc">हर कोई आपकी गाँठ देखकर सवाल करता है — शर्मिंदगी और असहजता महसूस होती है</p>
+      </div>
+    </div>
+
+    <div class="prob-card">
+      <div class="prob-card-left">
+        <div class="prob-card-img-ph">
+          <img src="images/sect-1-2ndimg.avif" alt="" width="92" height="102" loading="lazy">
+        </div>
+      </div>
+      <div class="prob-card-body">
+        <p class="prob-card-title">कपड़े पहनते समय शर्म</p>
+        <p class="prob-card-desc">गाँठ की वजह से कपड़े choose करना मुश्किल हो जाता है — confidence टूटता है</p>
+      </div>
+    </div>
+
+    <div class="prob-card">
+      <div class="prob-card-left">
+        <div class="prob-card-img-ph">
+          <img src="images/sect-1-3rdimg.avif" alt="" width="92" height="102" loading="lazy">
+        </div>
+      </div>
+      <div class="prob-card-body">
+        <p class="prob-card-title">दर्द और सूजन</p>
+        <p class="prob-card-desc">रोज़ दर्द और सूजन का discomfort — काम करना, सोना, सब affected होता है</p>
+      </div>
+    </div>
+
+    <div class="prob-card">
+      <div class="prob-card-left">
+        <div class="prob-card-img-ph">
+          <img src="images/sect-1-4thimg.avif" alt="" width="92" height="102" loading="lazy">
+        </div>
+      </div>
+      <div class="prob-card-body">
+        <p class="prob-card-title">हर समय डर</p>
+        <p class="prob-card-desc">"कहीं गाँठ बढ़ न जाए" — ये डर दिमाग में हर वक़्त बना रहता है</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="op-warning">
+  <span class="op-warning-tag">सबसे बड़ा डर</span>
+  <p class="op-warning-text">लोग कहते हैं —<br>"अब तो ऑपरेशन ही होगा!"</p>
+  <p class="op-warning-sub">समय रहते इलाज न हो तो नौबत ऑपरेशन तक आ सकती है</p>
+</div>
+
+<div class="consq-section">
+  <p class="consq-label">अगर इलाज नहीं किया तो…</p>
+  <div class="consq-grid">
+
+    <div class="consq-card">
+      <div class="consq-card-img-ph c1">
+        <img src="images/sect-1-5thimg.avif" alt="" width="100" height="80" loading="lazy">
+      </div>
+      <div class="consq-card-body">
+        <p class="consq-card-title">गाँठ का size बढ़ सकता है</p>
+      </div>
+    </div>
+
+    <div class="consq-card">
+      <div class="consq-card-img-ph c2">
+        <img src="images/sect-1-6thimg.avif" alt="" width="100" height="80" loading="lazy">
+      </div>
+      <div class="consq-card-body">
+        <p class="consq-card-title">Infection फैल सकता है</p>
+      </div>
+    </div>
+
+    <div class="consq-card">
+      <div class="consq-card-img-ph c3">
+        <img src="images/sect-1-7th.avif" alt="" width="100" height="80" loading="lazy">
+      </div>
+      <div class="consq-card-body">
+        <p class="consq-card-title">दर्द लगातार बढ़ सकता है</p>
+      </div>
+    </div>
+
+    <div class="consq-card">
+      <div class="consq-card-img-ph c4">
+        <img src="images/sect-1-8thimg.avif" alt="" width="100" height="80" loading="lazy">
+      </div>
+      <div class="consq-card-body">
+        <p class="consq-card-title">गंभीर रूप भी ले सकता है</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="final-strip">
+  <p>👉 छोटी सी गाँठ —<br><span>बड़ी परेशानी बन सकती है!</span></p>
+</div>
+
+</div>  
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- section-2 -->
+<section class="sec">
+  <div class="monolith-card">
+    <span class="label-gold">Ayurvedic Solution</span>
+    
+    <div class="pedestal-frame">
+        <div class="glass-wall"></div>
+        <div class="solid-base"></div>
+
+        <!-- Lazy Loaded Image -->
+        <img 
+          src="images/gathheal-pro.avif" 
+          alt="Gathheal Capsule"
+          loading="lazy"
+          width="250"
+          height="280"
+        >
+    </div>
+
+    <div class="info-box">
+        <h2 class="h-bold">
+            अब घबराने की <span>ज़रूरत नहीं</span><br>
+            है…
+        </h2>
+
+        <p class="p-light">
+            क्योंकि अब आ गया है — <strong style="color: var(--secondary); font-size: 21px;">“Gathheal Capsule”</strong><br>
+            👉 एक आयुर्वेदिक समाधान जो शरीर की <strong>गाँठ को जड़ से खत्म</strong> करने में मदद करता है।
+        </p>
+    </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+<!-- section-3 -->
+    
+<div class="wrap">
+
+<!-- HEADER -->
+<div class="hdr">
+  <h2 class="hdr-h">How its Works</h2>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="section">
+
+  <div class="hw-card">
+    <div class="hw-card-img ci1">
+      <span class="hw-card-badge">✔ Action 1</span>
+      <span class="hw-card-img-icon">
+        <img src="images/sect-3-1stimg.avif" alt="">
+      </span>
+    </div>
+    <div class="hw-card-body">
+      <p class="hw-card-step">Step 01 of 03</p>
+      <h3 class="hw-card-title">सूजन कम करता है</h3>
+      <p class="hw-card-desc">Gathheal के आयुर्वेदिक तत्व गाँठ की सूजन को अंदर से target करते हैं और धीरे-धीरे शांत करते हैं।</p>
+      <span class="hw-card-check">Anti-inflammatory action</span>
+    </div>
+  </div>
+
+  <div class="hw-card">
+    <div class="hw-card-img ci2">
+      <span class="hw-card-badge">✔ Action 2</span>
+      <span class="hw-card-img-icon">
+        <img src="images/sect-3-2ndimg.avif" alt="" width="100" height="80" loading="lazy">
+      </span>
+    </div>
+    <div class="hw-card-body">
+      <p class="hw-card-step">Step 02 of 03</p>
+      <h3 class="hw-card-title">गाँठ को धीरे-धीरे गलाता है</h3>
+      <p class="hw-card-desc">गाँठ के tissue को dissolve करने में मदद करता है — size धीरे-धीरे कम होता जाता है।</p>
+      <span class="hw-card-check">Deep tissue action</span>
+    </div>
+  </div>
+
+  <div class="hw-card">
+    <div class="hw-card-img ci3">
+      <span class="hw-card-badge">✔ Action 3</span>
+      <span class="hw-card-img-icon">
+        <img src="images/sect-3-3rdimg.avif" alt="" width="100" height="80" loading="lazy">
+      </span>
+    </div>
+    <div class="hw-card-body">
+      <p class="hw-card-step">Step 03 of 03</p>
+      <h3 class="hw-card-title">दर्द और discomfort कम करता है</h3>
+      <p class="hw-card-desc">रोज़ाना का दर्द और भारीपन कम होता है — जीना आसान हो जाता है।</p>
+      <span class="hw-card-check">Natural pain relief</span>
+    </div>
+  </div>
+</div>
+
+<!-- DIVIDER -->
+<div class="divider-strip">
+  <span class="ds-icon">
+    <img src="images/pro-gath.avif" alt="" width="100" height="80" loading="lazy">
+  </span>
+  <p><strong>और इतना ही नहीं —</strong> Gathheal के 4 बड़े फायदे जो आपकी ज़िंदगी बदल देंगे</p>
+</div>
+
+<!-- BENEFITS -->
+<div class="ben-section">
+  <p class="sec-title" style="padding:0 0 0 0;margin-bottom:16px;display:flex;align-items:center;gap:8px;font-size:32px;font-weight:700;color:var(--secondary);letter-spacing:1.5px;text-transform:uppercase;">मुख्य फायदे <span style="flex:1;height:1px;background:#d4e8da;display:block;"></span></p>
+
+  <div class="ben-card">
+    <div class="ben-card-img bi1">
+      <span class="ben-num-badge">1</span>
+      <span class="ben-card-img-icon">
+        <img src="images/sect-3-4thimg.avif" alt="" width="100" height="80" loading="lazy">
+      </span>
+    </div>
+    <div class="ben-card-body">
+      <p class="ben-card-label">फायदा 01</p>
+      <h3 class="ben-card-title">गाँठ को छोटा करने में मदद</h3>
+      <p class="ben-card-desc">नियमित उपयोग से गाँठ का size धीरे-धीरे कम होता है और skin normal दिखने लगती है।</p>
+    </div>
+  </div>
+
+  <div class="ben-card">
+    <div class="ben-card-img bi2">
+      <span class="ben-num-badge">2</span>
+      <span class="ben-card-img-icon">
+        <img src="images/sect-3-5thimg.avif" alt="" width="100" height="80" loading="lazy">
+      </span>
+    </div>
+    <div class="ben-card-body">
+      <p class="ben-card-label">फायदा 02</p>
+      <h3 class="ben-card-title">नई गाँठ बनने से रोकता है</h3>
+      <p class="ben-card-desc">Body की immunity को strengthen करता है ताकि दोबारा गाँठ न बने।</p>
+    </div>
+  </div>
+
+  <div class="ben-card">
+    <div class="ben-card-img bi3">
+      <span class="ben-num-badge">3</span>
+      <span class="ben-card-img-icon">
+        <img src="images/sect-3-6thimg.avif" alt="" width="100" height="80" loading="lazy">
+      </span>
+    </div>
+    <div class="ben-card-body">
+      <p class="ben-card-label">फायदा 03</p>
+      <h3 class="ben-card-title">Skin smooth और normal बनाता है</h3>
+      <p class="ben-card-desc">गाँठ की जगह skin को repair करके smooth और even बनाता है।</p>
+    </div>
+  </div>
+
+<!-- BOTTOM -->
+<div class="bottom">
+  <p>जड़ से असर —<span>अंदर से ठीक!</span></p>
+  <small>Temporary relief नहीं — permanent solution</small>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- section-4 -->
+<section class="sec">
+    
+<div class="ingr-wrap">
+  <div class="ingr-tag">🌿 Key Ingredients</div>
+
+  <div class="ingr-grid">
+
+    <div class="ingr-card" id="c1">
+      <div class="ingr-img-wrap">
+        <img src="images/अश्वगंधा.avif" alt="Ashwagandha" loading="lazy" width="400" height="250">
+      </div>
+      <div class="ingr-color-bar"></div>
+      <div class="ingr-body">
+        <div class="ingr-emoji" style="background:#E1F5EE;">🌿</div>
+        <div class="ingr-name">अश्वगंधा</div>
+        <span class="ingr-benefit-tag" style="background:#E1F5EE;color:var(--primary);">Immunity Booster</span>
+      </div>
+      <div class="ingr-hover-panel" style="background:rgba(110, 100, 15, 0.92);">
+        <div class="ingr-hover-icon">🌿</div>
+        <p style="color:#fff;">सूजन कम करता है और रोग प्रतिरोधक क्षमता बढ़ाता है। गाँठ की जड़ पर सीधा असर करता है।</p>
+      </div>
+    </div>
+
+    <div class="ingr-card" id="c2">
+      <div class="ingr-img-wrap">
+        <img src="images/कंचनार.avif" alt="Kanchanar flower" loading="lazy" width="400" height="250">
+      </div>
+      <div class="ingr-color-bar"></div>
+      <div class="ingr-body">
+        <div class="ingr-emoji" style="background:#FBEAF0;">🌸</div>
+        <div class="ingr-name">कंचनार</div>
+        <span class="ingr-benefit-tag" style="background:#E1F5EE;color:var(--primary);">Gland Cleanser</span>
+      </div>
+      <div class="ingr-hover-panel" style="background:rgba(110, 100, 15, 0.92);">
+        <div class="ingr-hover-icon">🌸</div>
+        <p style="color:#fff;">ग्रंथियों की गाँठ को साफ करने में सबसे असरदार। आयुर्वेद का सबसे पुराना नुस्खा।</p>
+      </div>
+    </div>
+
+    <div class="ingr-card" id="c3">
+      <div class="ingr-img-wrap">
+        <img src="images/haldi.avif" alt="Turmeric haldi" loading="lazy" width="400" height="250">
+      </div>
+      <div class="ingr-color-bar"></div>
+      <div class="ingr-body">
+        <div class="ingr-emoji" style="background:#FAEEDA;">💛</div>
+        <div class="ingr-name">हल्दी</div>
+        <span class="ingr-benefit-tag" style="background:#E1F5EE;color:var(--primary);">Anti-Inflammatory</span>
+      </div>
+      <div class="ingr-hover-panel" style="background:rgba(110, 100, 15, 0.92);">
+        <div class="ingr-hover-icon">💛</div>
+        <p style="color:#fff;">Curcumin सूजन और दर्द को तेज़ी से कम करता है। Infection को फैलने से रोकता है।</p>
+      </div>
+    </div>
+
+    <div class="ingr-card" id="c4">
+      <div class="ingr-img-wrap">
+        <img src="images/त्रिफला.avif" alt="Triphala herbs" loading="lazy" width="400" height="250">
+      </div>
+      <div class="ingr-color-bar"></div>
+      <div class="ingr-body">
+        <div class="ingr-emoji" style="background:#EAF3DE;">🍃</div>
+        <div class="ingr-name">त्रिफला</div>
+        <span class="ingr-benefit-tag"  style="background:#E1F5EE;color:var(--primary);">Detox + Healing</span>
+      </div>
+      <div class="ingr-hover-panel" style="background:rgba(110, 100, 15, 0.92);">
+        <div class="ingr-hover-icon">🍃</div>
+        <p style="color:#fff;">शरीर को अंदर से detox करता है। नई गाँठ बनने से रोकता है और skin को heal करता है।</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ingr-footer">
+    <div class="ingr-footer-icon">👉</div>
+    <div>
+      <strong>मिलाकर बनता है असरदार फॉर्मूला</strong>
+      <p>ये 4 जड़ी-बूटियाँ मिलकर गाँठ को अंदर से खत्म करती हैं — सूजन घटाएं, गाँठ गलाएं, दर्द मिटाएं</p>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- section-5 -->
+ <section class="sec">
+<div class="how-section">
+  <p class="section-title">CERTIFIED SECTION</span></p>
+  <div class="divider"></div>
+  <div class="steps-grid">
+    
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <img
+        src="images/ayurvedic.avif"
+        alt="100% आयुर्वेदिक"
+        class="step-img"
+        width="90" height="90"
+        loading="lazy"
+      >
+      <div class="step-body">
+        <p class="step-title">100% आयुर्वेदिक</p>
+        <p class="step-desc">प्राकृतिक जड़ी-बूटियों से बना जो शरीर पर सुरक्षित तरीके से काम करता है</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <img
+        src="images/lab.avif"
+        alt="लैब टेस्टेड"
+        class="step-img"
+        width="90" height="90"
+        loading="lazy"
+      >
+      <div class="step-body">
+        <p class="step-title">लैब टेस्टेड</p>
+        <p class="step-desc">हर बैच को quality और safety के लिए जांचा गया है</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <img
+        src="images/chemical.avif"
+        alt="Chemical Free"
+        class="step-img"
+        width="90" height="90"
+        loading="lazy"
+      >
+      <div class="step-body">
+        <p class="step-title">Chemical Free</p>
+        <p class="step-desc">किसी भी harmful chemical या steroid के बिना पूरी तरह safe</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+<!-- section-6 -->
+<section class="sec">
+  
+<div class="dr-wrap">
+
+  <div class="dr-tag">👨‍⚕️ Doctor Recommendation</div>
+  <h2 class="dr-heading">आयुर्वेदिक विशेषज्ञों की<br><span>राय क्या है?</span></h2>
+  <p class="dr-subline">Experts जो सदियों से आयुर्वेद को जानते हैं, वो यही कहते हैं</p>
+
+  <div class="dr-profile-card">
+    <div class="dr-top-row">
+      <div class="dr-avatar-ring">
+        <div class="dr-avatar-inner">👨‍⚕️</div>
+      </div>
+      <div class="dr-info-col">
+        <div class="dr-name">डॉ. राजेश शर्मा</div>
+        <div class="dr-title">आयुर्वेदिक चिकित्सक • 18+ वर्ष अनुभव</div>
+        <span class="dr-verified">✔ Verified Expert</span>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      <span class="quote-mark">"</span>
+      <p class="quote-text">
+        शरीर में बनने वाली गाँठ अक्सर <em>अंदरूनी imbalance</em> और <em>सूजन</em> की वजह से होती है।
+        यह फॉर्मूला गाँठ के <em>मूल कारण पर काम करता है</em>, जिससे धीरे-धीरे गाँठ का size कम होने में मदद मिलती है।"
+      </p>
+    </div>
+  </div>
+
+  <div class="dr-divider">
+    <div class="dr-divider-line"></div>
+    <span class="dr-divider-icon">🌿</span>
+    <div class="dr-divider-line"></div>
+  </div>
+
+  <div class="dr-reason-card">
+    <div class="dr-reason-title">
+      <span>👉</span> Doctors इसे क्यों Prefer करते हैं?
+    </div>
+    <p class="dr-reason-text">
+      कई आयुर्वेदिक डॉक्टर इस तरह के natural solution को prefer करते हैं — क्योंकि यह गाँठ को <strong>दबाने नहीं, बल्कि जड़ से ठीक करने</strong> की दिशा में काम करता है। कोई side effect नहीं, कोई operation नहीं।
+    </p>
+  </div>
+
+  <div class="dr-stats-row">
+    <div class="dr-stat">
+      <span class="dr-stat-num">100%</span>
+      <span class="dr-stat-label">Ayurvedic Formula</span>
+    </div>
+    <div class="dr-stat">
+      <span class="dr-stat-num">0</span>
+      <span class="dr-stat-label">Side Effects</span>
+    </div>
+    <div class="dr-stat">
+      <span class="dr-stat-num">7–15</span>
+      <span class="dr-stat-label">दिन में असर</span>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+<!-- section-7 -->
+<section class="sec">
+  <div class="box-450">
+    <div class="main-title">COMPARE</div>
+
+    <div class="list-wrapper">
+
+       <div class="compare-item">
+            <div class="base-layer">Other: महंगा इलाज</div>
+            <div class="top-layer">Gathheal: किफायती</div>
+             <div class="better-tag">BEST</div>
+        </div>
+
+        <div class="compare-item">
+            <div class="base-layer">Other: ऑपरेशन की जरूरत</div>
+            <div class="top-layer">Gathheal: बिना ऑपरेशन राहत</div>
+           
+        </div>
+
+       
+
+        <div class="compare-item">
+            <div class="base-layer">Other: साइड इफेक्ट्स</div>
+            <div class="top-layer">Gathheal: 100% आयुर्वेदिक</div>
+        </div>
+
+        <div class="compare-item">
+            <div class="base-layer">Other: Temporary Relief</div>
+            <div class="top-layer">Gathheal: जड़ से असर</div>
+        </div>
+
+    </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+<!-- section-8 -->
+<section class="sec">
+<div class="use-section">
+  <p class="section-title">कैसे <span class="green">इस्तेमाल</span> करें?</p>
+  <div class="divider"></div>
+  <img
+    src="images/prod-gathheal.avif"
+    alt="इस्तेमाल का तरीका"
+    class="use-img"
+    width="414" height="190"
+  >
+  <div class="use-steps">
+    <div class="use-step">
+      <span class="use-step-icon">🌅</span>
+      <div class="use-step-text">
+        <strong>सुबह — पहली खुराक</strong>
+        नाश्ते के बाद 1 Capsule गुनगुने पानी के साथ लें
+      </div>
+    </div>
+    <div class="use-step">
+      <span class="use-step-icon">🌙</span>
+      <div class="use-step-text">
+        <strong>रात — दूसरी खुराक</strong>
+        रात के खाने के बाद 1 Capsule गुनगुने पानी के साथ लें
+      </div>
+    </div>
+    <div class="use-step">
+      <span class="use-step-icon">📅</span>
+      <div class="use-step-text">
+        <strong>नियमित रूप से</strong>
+        Best results के लिए लगातार कम से कम 4–8 हफ्ते लें
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- section-9 -->
+<section class="sec">
+  <div class="cmp-wrap">
+
+  <div class="cmp-tag">😍 Before / After</div>
+  <h2 class="cmp-heading">पहले और बाद में <span>फर्क साफ दिखेगा</span></h2>
+  <p class="cmp-sub">देखिए कैसे समय के साथ गाँठ में सुधार आता है</p>
+
+  <div class="col-headers">
+    <div class="col-h col-h-bad">
+      <span class="col-h-icon">
+      </span>
+      <span class="col-h-label">पहले</span>
+      <span class="col-h-sub">Before</span>
+    </div>
+    <div class="col-h col-h-good">
+      <span class="col-h-icon">
+      </span>
+      <span class="col-h-label">बाद में</span>
+      <span class="col-h-sub">After</span>
+    </div>
+  </div>
+
+  <div class="rows-wrap">
+
+    <div class="cmp-row">
+      <div class="cmp-cell cell-bad">
+        <div class="cell-icon">
+          <img src="images/sect-9-1st-bf.avif" width="170" height="120" loading="lazy" style="border-radius: 30px;">
+        </div>
+        <div class="cell-text">बड़ी और दिखने वाली<br>गाँठ</div>
+        <span class="cell-badge">Visible Lump</span>
+      </div>
+      <div class="cmp-cell cell-good">
+        <div class="cell-icon">
+          <img src="images/sect-9-1st-af.avif" width="170" height="120" loading="lazy" style="border-radius: 30px;">
+        </div>
+        <div class="cell-text">कम होती हुई<br>गाँठ</div>
+        <span class="cell-badge">Reduced Lump</span>
+      </div>
+    </div>
+
+    <div class="cmp-row">
+      <div class="cmp-cell cell-bad">
+        <div class="cell-icon">
+          <img src="images/sect-9-2nd-bf.avif" width="170" height="120" loading="lazy" style="border-radius: 30px;">
+        </div>
+        <div class="cell-text">शर्मिंदगी और<br>डर</div>
+        <span class="cell-badge">Low Confidence</span>
+      </div>
+      <div class="cmp-cell cell-good">
+        <div class="cell-icon">
+          <img src="images/sect-9-2nd-af.avif" width="170" height="120" loading="lazy" style="border-radius: 30px;">
+        </div>
+        <div class="cell-text">confidence<br>वापस</div>
+        <span class="cell-badge">High Confidence</span>
+      </div>
+    </div>
+
+    <div class="cmp-row">
+      <div class="cmp-cell cell-bad">
+        <div class="cell-icon">
+          <img src="images/sect-9-3rd-bf.avif" width="170" height="120" loading="lazy" style="border-radius: 30px;">
+        </div>
+        <div class="cell-text">असमान और खराब<br>skin</div>
+        <span class="cell-badge">Uneven Skin</span>
+      </div>
+      <div class="cmp-cell cell-good">
+        <div class="cell-icon">
+          <img src="images/sect-9-3rd-af.avif" width="170" height="120" loading="lazy" style="border-radius: 30px;">
+        </div>
+        <div class="cell-text">साफ और normal<br>skin</div>
+        <span class="cell-badge">Healthy Skin</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cmp-verdict">
+    <div class="verdict-icon">
+      <img src="images/pro-gath.avif" width="60" height="60" loading="lazy">
+    </div>
+    <div class="verdict-text">
+      <strong>अब फर्क खुद देखें!</strong>
+      <p>नियमित उपयोग से गाँठ कम होती है, skin बेहतर होती है और confidence वापस आता है।</p>
+    </div>
+  </div>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+<!-- section-10 -->
+<section class="sec">
+    <div class="product-section">
+  <div style="text-align:center;">
+    <span class="product-label">⚡ Limited Time Offer ⚡</span>
+    <p class="section-title" style="text-align:center; margin-bottom:6px;">
+      आज ऑर्डर करने पर मिल रहा है खास ऑफर!
+    </p>
+    <div class="divider" style="margin:0 auto 16px;"></div>
+  </div>
+  <img
+    src="images/gathheal-pro.avif"
+    alt="Gathheal Capsule"
+    class="product-hero-img"
+    width="200" height="200"
+    loading="lazy"
+  >
+  <p class="product-desc">
+    👉 आज ऑर्डर करने पर आपको मिलेगा<br>
+    <strong>Flat Discount + Free Delivery</strong><br>
+    📦 Stock तेजी से खत्म हो रहा है<br>
+    इसलिए देर न करें, अभी ऑर्डर करें।
+  </p>
+  <a href="#orderForm" class="hero-cta" style="margin:0 0 0 0; width:100%;">अभी ऑर्डर करें</a>
+</div>
+</section>
+
+
+
+
+
+
+
+<html>
+    <head>
+        <style>
+            #loading {
+        display: none;
+        color: #fff;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+
+      #poweredBy {
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        margin-top: 20px;
+      }
+/* FULL SCREEN LOADER */
+#loaderOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* SPINNER */
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #fff;
+  border-top: 5px solid gold;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+   
+        </style>
+
+        <script>
+  function submitForm(event) {
+  event.preventDefault();
+
+  const form = event.target;
+
+  const submitBtn = form.querySelector("button[type='submit'], input[type='submit']");
+  if (submitBtn) {
+    submitBtn.style.display = "none";
+    submitBtn.disabled = true;
+  }
+
+  // 🔥 SHOW LOADER
+  document.getElementById("loaderOverlay").style.display = "flex";
+
+  const formData = new FormData(form);
+  let redirected = false;
+
+  fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.text())
+  .then(data => {
+
+    if (!redirected) {
+      redirected = true;
+
+      // 🔥 REDIRECT
+      window.location.href = './Thankyou.html';
+
+      // 🔥 REFRESH BACK PAGE
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+    }
+
+  })
+  .catch(error => {
+    console.error('Fetch error:', error);
+
+    if (!redirected) {
+      redirected = true;
+      window.location.href = './Thankyou.html';
+    }
+  });
+
+  return false;
+}
+
+  // Animated dots for loading state
+  let dotCount = 1;
+  setInterval(() => {
+    const d = document.getElementById('dotAnim');
+    if (d) { 
+      dotCount = (dotCount % 3) + 1; 
+      d.textContent = '.'.repeat(dotCount); 
+    }
+  }, 500);
+</script>
+    </head>
+    <body>
+<!-- ===== section-11: CTA FORM ===== -->
+<section class="sec">
+<div id="cta">
+  <h2 class="cta-title">अगर आप भी अपनी गाँठ से छुटकारा चाहते हैं
+ तो अभी नीचे दिए गए बटन पर क्लिक करें
+
+</h2>
+<form id="orderForm"  onsubmit="submitForm(event)">
+     
+  <p class="cta-sub">नीचे दिया गया फॉर्म भरें — हमारी टीम आपसे संपर्क करेगी।</p>
+  <div class="cta-form">
+    <input type="text" name="name" class="cta-input" placeholder="👤 अपना नाम दर्ज करें" required>
+      
+      <input type="tel" name="mobile" class="cta-input" maxlength="10" pattern="[6-9][0-9]{9}" placeholder="अपना मोबाइल नंबर दर्ज करें" required>
+     
+    <button class="cta-submit" onclick="handleOrder()">
+      🛒 अभी ऑर्डर करें – Free Delivery!
+    </button>
+    <div id="loaderOverlay">
+  <div style="text-align:center;">
+    <div class="loader"></div>
+    <p style="color:white;margin-top:10px;">
+      Processing<span id="dotAnim"></span>
+    </p>
+  </div>
+</div>
+  </div>
+</form>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-12 -->
+<section class="sec">
+    <div class="testi-section"> 
+  <h2 class="section-title">हज़ारों लोगों ने पाया फायदा</h2>
+
+  <!-- Testi 1 -->
+  <div class="testi-card">
+    <div class="testi-img-wrap">
+      <img src="images/rahul.avif" alt="Rahul" loading="lazy" width="410" height="140">
+    </div>
+    <div class="testi-header">
+      <div class="testi-avatar">RV</div>
+      <div class="testi-name">
+        <strong>राहुल वर्मा</strong>
+        <span>34 वर्ष, दिल्ली</span>
+      </div>
+    </div>
+    <div class="stars">★★★★★</div>
+    <span class="testi-problem-badge">समस्या: गर्दन में गाँठ</span>
+    <p class="testi-text">मेरी गर्दन में काफी समय से एक गाँठ थी, जो धीरे-धीरे बढ़ रही थी। इस प्रोडक्ट को 3 हफ्ते इस्तेमाल करने के बाद मेरी गाँठ काफी छोटी हो गई और अब पहले जैसा discomfort भी नहीं है।</p>
+  </div>
+
+  <!-- Testi 2 -->
+  <div class="testi-card">
+    <div class="testi-img-wrap">
+      <img src="images/pooja.avif" alt="Pooja" loading="lazy" width="410" height="140">
+    </div>
+    <div class="testi-header">
+      <div class="testi-avatar">PS</div>
+      <div class="testi-name">
+        <strong>पूजा शर्मा</strong>
+        <span>31 वर्ष, जयपुर</span>
+      </div>
+    </div>
+    <div class="stars">★★★★★</div>
+    <span class="testi-problem-badge">समस्या: पीठ पर गाँठ</span>
+    <p class="testi-text">डॉक्टर ने मेरी गाँठ के लिए ऑपरेशन की सलाह दी थी, लेकिन मैं डर गई थी। फिर मैंने इसे इस्तेमाल किया और कुछ ही समय में मेरी गाँठ में noticeable फर्क दिखने लगा। अब ऑपरेशन की जरूरत नहीं पड़ी।</p>
+  </div>
+
+  <!-- Testi 3 -->
+  <div class="testi-card">
+    <div class="testi-img-wrap">
+      <img src="images/amit.avif" alt="Amit" loading="lazy" width="410" height="140">
+    </div>
+    <div class="testi-header">
+      <div class="testi-avatar">AS</div>
+      <div class="testi-name">
+        <strong>अमित सिंह</strong>
+        <span>49 वर्ष, मुंबई</span>
+      </div>
+    </div>
+    <div class="stars">★★★★★</div>
+    <span class="testi-problem-badge">समस्या: हाथ पर गाँठ</span>
+    <p class="testi-text">हाथ पर गाँठ होने की वजह से मुझे बहुत शर्मिंदगी महसूस होती थी। लेकिन अब धीरे-धीरे मेरी गाँठ कम हो रही है और मेरा confidence भी वापस आ गया है।</p>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===== section-13: FAQ ===== -->
+<section class="faq-section">
+
+<h2 class="faq-title">FAQs</h2>
+
+<div class="faq-item">
+<div class="faq-question">
+Q1. क्या ये safe है?
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+👉 हाँ, ये 100% आयुर्वेदिक है
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">
+Q2. कितने दिन में असर दिखेगा?
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+👉 7–15 दिन में फर्क दिख सकता है
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">
+Q3. क्या हर प्रकार की गाँठ में काम करेगा?
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+👉 हाँ, हर प्रकार की गाँठ में काम करेगा
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">
+Q4. क्या इसे कोई भी ले सकता है?
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+👉हाँ, इसे सब ले सकते है
+</div>
+</div>
+
+<button class="btn" onclick="location.href='#orderForm'">Order Now</button>   
+
+</section>
+
+
+
+<!-- ===== DISCLAIMER ===== -->
+<section class="sec">
+<div id="disclaimer">
+  <p>
+    ⚠️ <strong>Disclaimer:</strong> यह एक आयुर्वेदिक प्रोडक्ट है
+परिणाम व्यक्ति के शरीर पर निर्भर करते हैं
+किसी गंभीर स्थिति में डॉक्टर से सलाह जरूर लें
+
+  </p>
+  </div>
+</section>
+
+<!-- ===== STICKY CTA ===== -->
+<div class="sticky-cta">
+  <a href="#cta"  class="btn-secondary" >🛒 अभी ऑर्डर करें – Free Delivery!</a>
+</div>
+
+<script>
+  
+document.querySelectorAll(".faq-item").forEach(item=>{
+item.addEventListener("click",()=>{
+item.classList.toggle("active");
+});
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,2966 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ayurvani</title>
+
+<!-- ✅ Optimized Fonts -->
+ <link rel="preload" href="https://fonts.googleapis.com/css2?family=Halant:wght@400;600&display=swap" as="style" onload="this.rel='stylesheet'">
+<noscript>
+<link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;600&display=swap" rel="stylesheet">
+</noscript>
+
+<style>
+
+/* ✅ ROOT THEME */
+:root {
+  --primary: #eabd4b;
+  --secondary: #284900;
+  --white: #fff;
+  --black: #000;
+--glass:rgba(85, 184, 123, 0.295);
+}
+
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+ font-family: 'Halant', 'Source Sans 3', serif;
+  background-color:rgba(169, 160, 160, 0.276);
+}
+body {
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.bar{
+  max-width:450px;
+  width: 100%;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+  background:linear-gradient(135deg,var(--primary),var(--primary));
+  position:relative;
+  overflow:hidden;
+}
+
+/* LIGHT SWEEP EFFECT */
+.bar::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-50%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent);
+  transition:0.6s;
+}
+
+.bar:hover::before{
+  left:120%;
+}
+
+/* LOGO (FIXED PREMIUM HOVER) */
+.logo{
+  font-size:32px;
+  font-weight:800;
+  color:var(--secondary);
+  letter-spacing:2px;
+  position:relative;
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+/* underline */
+.logo::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:2px;
+  background:var(--secondary);
+  border-radius:10px;
+  transition:0.35s ease;
+}
+
+/* glow dot */
+.logo::before{
+  content:"";
+  position:absolute;
+  right:-10px;
+  top:6px;
+  width:6px;
+  height:6px;
+  background:var(--secondary);
+  border-radius:50%;
+  opacity:0;
+  transition:0.3s ease;
+}
+
+/* HOVER */
+.logo:hover{
+  color:var(--secondary);
+  transform:translateY(-2px);
+}
+
+.logo:hover::after{
+  width:100%;
+}
+
+.logo:hover::before{
+  opacity:1;
+  transform:scale(1.2);
+}
+
+/* BUTTON */
+.button{
+  padding:8px 16px;
+  background:var(--secondary);
+  color:var(--white);
+  border-radius:30px;
+  font-weight:700;
+  text-decoration:none;
+  font-size:22px;
+
+  transition:0.3s ease;
+}
+
+/* BUTTON HOVER */
+.button:hover{
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 10px 20px rgba(0,212,255,0.4);
+}
+
+/* BUTTON */
+.btn {
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  background: var(--secondary);
+  cursor: pointer;
+  margin: 10px auto;
+  display: block;
+  width: 55%;
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  top: 0;
+  left: -40%;
+  transform: skewX(-20deg);
+}
+.btn:hover::before {
+  left: 120%;
+  transition: 1.5s;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 430px) {
+  .btn {
+    width: 50% !important;
+    font-size: 15px !important;
+    margin: 10px auto !important;
+  }
+}
+
+
+/* SECTION BASE */
+.sec {
+  width: 100%;
+  max-width: 450px;
+  background: var(--primary);
+  color: var(--white);
+  border-bottom: 2px solid white;
+}
+
+.sect {
+  width: 100%;
+  max-width: 450px;
+  background: var(--secondary);
+  color: var(--white);
+  padding: 20px;
+}
+
+.images {
+  max-width: 450px;
+  width: 100%;
+  align-items: center;
+  padding: 0;
+}
+/* Responsive */
+@media (max-width: 430px) {
+  .logo {
+    font-size: 26px;
+  }
+
+  .cta-btn {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
+
+/* ===== STICKY CTA ===== */
+.sticky-cta{
+  position:fixed;
+  bottom:0;left:50%;
+  transform:translateX(-50%);
+  width:100%;max-width:450px;
+  z-index:999;
+  padding:10px 16px 14px;
+  background:linear-gradient(to top,rgba(255,255,255,.98) 80%,transparent);
+}
+.sticky-cta a{
+  display:block;
+  background:var(--secondary);
+  color:var(--white);
+  text-align:center;
+  padding:15px 20px;
+  border-radius:50px;
+  font-size:1.05rem;
+  font-weight:800;
+  letter-spacing:.3px;
+  box-shadow:0 4px 18px rgba(200,152,59,.45);
+  transition:transform .18s,box-shadow .18s;
+}
+.sticky-cta a:active{transform:scale(.97)}
+.sticky-cta small{display:block;text-align:center;font-size:.68rem;color:var(--black-muted);margin-top:4px}
+
+.btn-secondary{
+  background:var(--secondary);
+  color: var(--white);
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.btn-secondary:hover{
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.35);
+}
+
+
+
+
+
+
+
+/* section-1 */
+.lp-section{
+max-width:450px;
+width: 100%;
+background-color: var(--secondary);
+padding:60px 20px;
+color:#1a1a1a;
+border:1px solid #eee;
+contain:layout style paint;
+}
+
+.lp-header h2{
+font-size:32px;
+font-weight:800;
+line-height:1.2;
+margin:0 0 40px;
+letter-spacing:-1px;
+color: white;
+}
+
+.lp-header h2 span{color:var(--primary)}
+
+.problem-flow{
+display:flex;
+flex-direction:column;
+position:relative;
+}
+
+.problem-flow::before{
+content:'';
+position:absolute;
+left:20px;
+top:0;
+bottom:0;
+width:2px;
+background:linear-gradient(to bottom,var(--primary) 0%,#eee 100%);
+z-index:1;
+}
+
+.flow-item{
+position:relative;
+padding-left:55px;
+padding-bottom:40px;
+z-index:2;
+content-visibility:auto;
+}
+
+.flow-dot{
+position:absolute;
+left:12px;
+top:5px;
+width:18px;
+height:18px;
+background:#fff;
+border:4px solid var(--primary);
+border-radius:50%;
+box-shadow:0 0 10px rgba(230,57,70,.3);
+}
+
+.flow-card{
+background:#fdfdfd;
+border:1px solid #f0f0f0;
+border-radius:24px;
+padding:20px;
+transition:.3s;
+}
+
+.flow-card:hover{
+background:#fff;
+transform:translateY(-5px);
+box-shadow:0 15px 30px rgba(0,0,0,.05);
+border-color:var(--primary);
+}
+
+/* ✅ CLS FIX */
+.flow-card img{
+width:100%;
+height:140px;
+aspect-ratio:16/9;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+.flow-card h3{
+font-size:20px;
+font-weight:800;
+margin:0 0 8px;
+}
+
+.flow-card p{
+font-size:18px;
+color:black;
+line-height:1;
+}
+
+.fear-box{
+background:var(--primary);
+border-radius:30px;
+padding:5px 5px;
+text-align:center;
+margin-top:20px;
+position:relative;
+overflow:hidden;
+margin-bottom: -30px;
+}
+
+
+.fear-box h4{
+color:var(--secondary);
+font-size:26px;
+font-weight:800;
+}
+
+.fear-box p{
+color:var(--white);
+font-weight:700;
+margin-top:10px;
+text-transform:uppercase;
+letter-spacing:2px;
+font-size:18px;
+}
+
+
+
+
+
+
+
+
+
+/* section-2 */
+.lux-card-x{
+max-width:450px;
+width: 100%;
+padding:15px;
+box-shadow:0 30px 60px rgba(0,0,0,.15);
+transition:.4s;
+}
+
+.lux-card-x:hover{
+transform:translateY(-10px) rotateX(5deg);
+box-shadow:0 50px 80px rgba(0,0,0,.2);
+}
+
+/* IMAGE */
+.lux-img-wrap-x{
+width:100%;
+height:340px;
+border-radius:30px;
+overflow:hidden;
+position:relative;
+border: 2px solid var(--secondary);
+}
+
+.lux-img-wrap-x img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.8s;
+}
+
+.lux-card-x:hover .lux-img-wrap-x img{
+transform:scale(1.1);
+}
+
+
+
+/* CONTENT */
+.lux-content-x{
+padding:25px 15px 15px;
+text-align:center;
+}
+
+.lux-cat-x{
+font-size:32px;
+color:var(--secondary);
+letter-spacing:3px;
+font-weight:800;
+margin-bottom:10px;
+display:block;
+}
+
+.lux-title-x{
+font-size:22px;
+color:rgba(255, 255, 255, 0.747);
+margin-bottom:12px;
+font-weight:800;
+line-height:1.3;
+}
+.lux-title-x span{
+  color: var(--secondary);
+}
+
+.lux-desc-x{
+font-size:18px;
+color:black;
+margin-bottom:25px;
+padding:0 10px;
+}
+
+/* FEATURES */
+.lux-features-x{
+display:flex;
+justify-content:space-around;
+margin-bottom:30px;
+border-top:1px solid #eee;
+padding-top:20px;
+
+}
+
+.lux-fitem-x{
+display:flex;
+flex-direction:column;
+gap:5px;
+align-items:center;
+padding:10px;
+border-radius:15px;
+transition:.4s;
+cursor:pointer;
+background-color: var(--secondary);
+}
+
+/* 🔥 HOVER EFFECT ADDED */
+.lux-fitem-x:hover{
+transform:translateY(-8px) scale(1.08);
+}
+
+.lux-fitem-x strong{
+font-size:20px;
+color:var(--primary);
+transition:.3s;
+margin-bottom: -10px;
+}
+
+.lux-fitem-x span{
+font-size:15px;
+color:white;
+transition:.3s;
+}
+
+
+
+
+
+/* BUTTON */
+.lux-btn-x{
+width:100%;
+background:var(--secondary);
+color:#fff;
+padding:20px;
+border-radius:25px;
+font-size:16px;
+font-weight:600;
+border:none;
+cursor:pointer;
+transition:.3s;
+position:relative;
+overflow:hidden;
+box-shadow:0 10px 20px rgba(44,62,80,.2);
+}
+
+.lux-btn-x:hover{
+background:var(--secondary);
+letter-spacing:1px;
+box-shadow:0 15px 30px rgba(30,81,40,.3);
+}
+
+.lux-btn-x::after{
+content:'';
+position:absolute;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:linear-gradient(transparent,rgba(255,255,255,.1),transparent);
+transform:rotate(45deg);
+transition:.8s;
+}
+
+.lux-btn-x:hover::after{
+left:100%;
+}
+
+
+
+
+
+
+
+
+
+
+/* section-3 */
+.pain-container{
+width:450px;
+background:var(--secondary);
+padding:50px 0 0;
+color:var(--white);
+overflow:hidden;
+}
+
+.pain-header{padding:0 30px;margin-bottom:40px; }
+
+.pain-header h2{
+font-size:32px;
+line-height:.8;
+letter-spacing:-2px;
+text-transform:uppercase;
+color: var(--primary);
+text-align: center;
+margin-top: -10px;
+}
+
+
+
+.pain-item{
+display:flex;
+align-items:center;
+padding:30px;
+border-bottom:1px solid white;
+position:relative;
+transition:.4s;
+cursor:pointer;
+}
+
+.pain-item:hover{background:var(--primary)}
+
+.number-tag{
+font-size:40px;
+opacity:.1;
+position:absolute;
+right:20px;
+transition:.4s;
+}
+
+.pain-item:hover .number-tag{
+opacity:.5;
+right:40px;
+transform:scale(1.5);
+}
+
+.img-box{
+width:180px;
+height:120px;
+background:#1a1a1a;
+overflow:hidden;
+clip-path:polygon(10% 0,100% 0,90% 100%,0 100%);
+transition:.4s;
+flex-shrink:0;
+}
+
+.pain-item:hover .img-box{
+clip-path:polygon(0 0,100% 0,100% 100%,0 100%);
+transform:scale(1.1);
+}
+
+.img-box img{
+width:100%;
+height:100%;
+object-fit:cover;
+filter:grayscale(100%);
+transition:.4s;
+}
+
+.pain-item:hover img{filter:grayscale(0)}
+
+.content-box{margin-left:20px}
+
+.content-box p{
+font-size:18px;
+font-weight:700;
+line-height:1.4;
+transition:.3s;
+}
+
+.pain-item:hover .content-box p{
+color:var(--black);
+transform:skewX(-5deg);
+}
+
+
+
+
+
+
+
+
+/* section-4 */
+.ing-wrap{
+ width: 100%;
+  max-width:450px;
+padding:40px 25px;
+border-radius:40px;
+box-shadow:0 20px 60px rgba(0,0,0,0.05);
+}
+
+/* HEADER */
+.ing-head{
+text-align:center;
+margin-top: -10px;
+margin-bottom:30px;
+}
+
+.ing-head h2{
+font-size:32px;
+color:var(--secondary);
+text-transform:uppercase;
+letter-spacing:-1px;
+}
+
+
+
+/* LIST */
+.ing-list{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+/* ITEM */
+.ing-item{
+background:var(--white);
+padding:10px;
+border-radius:25px;
+display:flex;
+align-items:center;
+transition:.4s cubic-bezier(.4,0,.2,1);
+border:1px solid var(--secondary);
+cursor:pointer;
+position:relative;
+overflow:hidden;
+}
+
+.ing-item:hover{
+background:var(--secondary);
+transform:translateX(10px);
+border:2px solid var(--secondary);
+}
+
+/* IMAGE */
+.ing-img{
+width:80px;
+height:80px;
+border-radius:20px;
+overflow:hidden;
+flex-shrink:0;
+transition:.5s;
+border: 2px solid var(--secondary);
+}
+
+.ing-item:hover .ing-img{
+border-radius:50%;
+transform:scale(.9) rotate(10deg);
+border: 2px solid var(--primary);
+}
+
+.ing-img img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* TEXT */
+.ing-text{
+padding:0 20px;
+}
+
+.ing-text p{
+font-size:18px;
+color:var(--black);
+font-weight:600;
+transition:.3s;
+}
+.ing-text span{
+  color: var(--primary);
+  font-size: 22px;
+}
+
+.ing-item:hover .ing-text p{
+color:var(--white);
+}
+
+
+
+.ing-item:hover::after{
+right:20px;
+}
+
+/* BOTTOM BOX */
+.ing-final{
+background:var(--secondary);
+margin-top:20px;
+padding:30px 20px;
+border-radius:30px;
+text-align:center;
+color:var(--white);
+box-shadow:0 15px 30px rgba(57, 230, 144, 0.3);
+}
+
+.ing-final small{
+display:block;
+text-transform:uppercase;
+font-size:18px;
+letter-spacing:2px;
+margin-bottom:10px;
+opacity:.9;
+}
+
+.ing-final h3{
+font-size:26px;
+line-height:1.2;
+}
+
+.ing-final h3 span{
+color:var(--primary);
+}
+
+
+
+
+
+
+
+
+
+
+/* section-5 */
+.sec-wrap{
+ width: 100%;
+ background-color: white;
+  max-width:450px;
+padding:50px 25px;
+box-shadow:0 40px 100px rgba(0,0,0,0.05);
+border:1px solid #f0f0f0;
+}
+
+/* HEADER */
+.sec-head{
+margin-bottom:30px;
+padding-left:20px;
+margin-top: -20px;
+}
+
+.sec-head h2{
+font-size:34px;
+color:var(--secondary);
+line-height:1;
+}
+
+.sec-head h2 span{
+color:var(--primary);
+font-size:16px;
+display:block;
+text-transform:uppercase;
+letter-spacing:4px;
+margin-bottom:5px;
+}
+
+/* FLOW */
+.sec-flow{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+/* CARD */
+.sec-card{
+display:flex;
+align-items:center;
+background:var(--primary);
+padding:10px;
+border-radius:100px 30px 30px 100px;
+border:1px solid var(--secondary);
+transition:.5s cubic-bezier(.34,1.56,.64,1);
+cursor:pointer;
+width:95%;
+}
+
+/* ZIG ZAG */
+.sec-card:nth-child(even){
+align-self:flex-end;
+flex-direction:row-reverse;
+border-radius:30px 100px 100px 30px;
+text-align:right;
+}
+.sec-card:nth-child(even) .sec-text{
+margin-right:15px;
+margin-left:0;
+}
+
+/* IMAGE */
+.sec-img{
+width:75px;
+height:75px;
+border-radius:50%;
+overflow:hidden;
+border:4px solid var(--secondary);
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+flex-shrink:0;
+transition:.5s;
+}
+
+.sec-img img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* TEXT */
+.sec-text{
+margin-left:15px;
+font-size:18px;
+font-weight:600;
+color:var(--secondary);
+line-height:1.3;
+}
+
+/* HOVER */
+.sec-card:hover{
+background:var(--secondary);
+transform:scale(1.08);
+box-shadow:0 25px 50px rgba(15,23,42,0.2);
+border-color:var(--secondary);
+z-index:10;
+}
+
+.sec-card:hover .sec-img{
+transform:rotate(15deg) scale(1.1);
+border-color:var(--primary);
+}
+
+.sec-card:hover .sec-text{
+color:var(--white);
+}
+
+/* FINAL BOX */
+.sec-final{
+margin-top:30px;
+background:var(--secondary);
+padding:10px 10px;
+border-radius:20px;
+text-align:center;
+color:var(--primary);
+position:relative;
+overflow:hidden;
+margin-bottom: -20px;
+}
+
+.sec-final::before{
+content:"";
+position:absolute;
+width:100px;
+height:100px;
+background:rgba(255,255,255,0.1);
+border-radius:50%;
+top:-30px;
+right:-30px;
+}
+
+.sec-final p{
+font-size:20px;
+text-transform:uppercase;
+font-weight:700;
+letter-spacing:2px;
+opacity:.9;
+}
+
+.sec-final h3{
+margin-top:-8px;
+font-size:24px;
+font-weight:800;
+}
+
+
+
+
+
+
+
+
+/* section-6 */
+.herb-wrapper{
+    max-width:450px;
+    width: 100%;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+
+
+/* CONTENT */
+.herb-body{
+    padding:30px;
+    background:var(--secondary);
+}
+
+/* HEADING */
+.herb-body h2{
+    color:var(--primary);
+    font-size:32px;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+/* HIGHLIGHT PILL */
+.herb-pill{
+    background:var(--primary);
+    color:var(--secondary);
+    padding:10px 15px;
+    border-radius:12px;
+    font-weight:700;
+    font-size:14px;
+    text-align:center;
+    margin-bottom:25px;
+    border:2px dashed white;
+    transition:0.3s;
+}
+
+.herb-pill:hover{
+    transform:scale(1.05);
+}
+
+/* STEP ITEM */
+.herb-step{
+    position:relative;
+    padding-left:50px;
+    margin-bottom:25px;
+    transition:0.4s;
+    cursor:pointer;
+}
+
+/* NUMBER */
+.herb-num{
+    position:absolute;
+    left:0;
+    top:0;
+    width:35px;
+    height:35px;
+    background:var(--primary);
+    color:#fff;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    box-shadow:0 4px 10px rgba(9,132,227,0.3);
+    transition:0.3s;
+}
+
+/* TEXT */
+.herb-text h4{
+    margin:0;
+    color:var(--primary);
+    font-size:20px;
+    transition:0.3s;
+}
+
+.herb-text p{
+    margin:5px 0 0;
+    color:white;
+    font-size:18px;
+    line-height:1.5;
+    transition:0.3s;
+}
+
+/* HOVER EFFECT */
+.herb-step:hover{
+    transform:translateX(10px);
+}
+
+.herb-step:hover .herb-num{
+    transform:scale(1.2) rotate(10deg);
+    background:var(--primary);
+}
+
+.herb-step:hover h4{
+    color:var(--primary);
+}
+
+
+
+/* FINAL BOX */
+.herb-final{
+    margin-top:30px;
+    background:var(--primary);
+    color:black;
+    padding:20px;
+    border-radius:18px;
+    position:relative;
+    overflow:hidden;
+    transition:0.4s;
+    font-size: 18px;
+}
+
+.herb-final::after{
+    content:"!";
+    position:absolute;
+    right:-10px;
+    bottom:-20px;
+    font-size:100px;
+    color:rgba(255,255,255,0.1);
+    font-weight:bold;
+}
+
+/* FINAL HOVER */
+.herb-final:hover{
+    transform:scale(1.05);
+    box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* HIGHLIGHT */
+.herb-highlight{
+    color:var(--secondary);
+    font-weight:bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* section-7 */
+.wrapp {width:95%; max-width: 450px; margin-left: 10px;}
+
+/* ── BADGE + HEADING ── */
+.heading-block {
+  text-align: center;
+  margin-bottom: 28px;
+  opacity: 0; transform: translateY(-16px);
+  transition: .55s ease;
+}
+.heading-block.v { opacity:1; transform:none; }
+
+.sec-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #111;
+  color: var(--primary);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 30px;
+  margin-bottom: 12px;
+  margin-top: 30px;
+}
+
+
+
+/* ── ZIGZAG ROWS ── */
+.zig-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.zig-row {
+  display: flex;
+  align-items: stretch;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.09);
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity .5s ease, transform .5s ease;
+  cursor: default;
+}
+.zig-row.v { opacity:1; transform:none; }
+.zig-row:hover { box-shadow: 0 10px 32px rgba(0,0,0,0.16); }
+
+/* BAD half */
+.bad-half {
+  flex: 1;
+  background: #fff0f0;
+  border-left: 4px solid #e53e3e;
+  padding: 16px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background .25s ease;
+}
+.zig-row:hover .bad-half { background: #ffe4e4; }
+
+/* ARROW divider */
+.arrow-div {
+  width: 36px;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--primary);
+  flex-shrink: 0;
+  position: relative;
+}
+.arrow-div::after {
+  content: '→';
+  font-size: 18px;
+  color: var(--primary);
+  animation: arrowPulse 1.8s ease-in-out infinite;
+}
+@keyframes arrowPulse {
+  0%,100% { transform: translateX(0); opacity:.7; }
+  50%      { transform: translateX(3px); opacity:1; }
+}
+
+/* GOOD half */
+.good-half {
+  flex: 1;
+  background: #f0fdf4;
+  border-right: 4px solid var(--secondary);
+  padding: 16px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background .25s ease;
+}
+.zig-row:hover .good-half { background: #dcfce7; }
+
+/* Icons */
+.h-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  transition: transform .3s cubic-bezier(.34,1.56,.64,1);
+}
+.zig-row:hover .h-icon { transform: scale(1.3) rotate(-8deg); }
+
+/* Text */
+.h-text {
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+.bad-half  .h-text { color: #991b1b; }
+.good-half .h-text { color: var(--secondary); }
+
+.h-text small {
+  display: block;
+  font-size: 17px;
+  font-weight: 400;
+  opacity: .65;
+  margin-top: 2px;
+  letter-spacing: .5px;
+}
+
+/* ── COL LABELS below ── */
+.col-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+  margin-bottom: 18px;
+  opacity: 0;
+  transition: opacity .5s ease .2s;
+}
+.col-labels.v { opacity:1; }
+
+.cl {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+.cl.bad  { color: #111; }
+.cl.good { color: var(--secondary); }
+
+.cl-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.cl.bad  .cl-dot { background: #111; }
+.cl.good .cl-dot { background: var(--secondary); }
+
+.cl-mid {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  background-color: #111;
+  letter-spacing: 2px;
+  padding: 10px;
+  border-radius: 20px;
+  margin-left: 30px;
+}
+
+/* ── BOTTOM SCORE CARD ── */
+.score-card {
+  background: #111;
+  border-radius: 20px;
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .5s ease, transform .5s ease;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.score-card.v { opacity:1; transform:none; }
+.score-card:hover { box-shadow: 0 12px 36px rgba(0,0,0,0.35); }
+
+.score-card::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background: linear-gradient(120deg, transparent 40%, rgba(245,166,35,.07));
+  pointer-events:none;
+}
+
+.trophy { font-size: 38px; flex-shrink:0; animation: trophyBob 2.5s ease-in-out infinite; }
+@keyframes trophyBob {
+  0%,100% { transform: rotate(-6deg) scale(1); }
+  50%      { transform: rotate(6deg) scale(1.08); }
+}
+
+.sc-text .sc-top {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: .5px;
+  margin-bottom: 5px;
+}
+
+.sc-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pill {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: .3px;
+}
+.pill.g { background: rgba(22,163,74,.2); border-color: rgba(22,163,74,.4); color:#4ade80; }
+
+
+
+
+
+
+
+
+/* section-8 */
+.liq-wrap-x{
+width:100%;
+max-width:450px;
+height:550px;
+border-radius:50px;
+position:relative;
+overflow:hidden;
+color:#fff;
+}
+
+/* HEADER */
+.liq-head-x{
+position:absolute;
+top:40px;
+left:30px;
+z-index:10;
+}
+
+.liq-head-x h2{
+  font-size:32px;
+  text-align: center;
+  color: var(--secondary);
+text-transform:uppercase;
+}
+
+/* BUBBLE BASE */
+.liq-bubble-x{
+position:absolute;
+background:var(--white);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.1);
+border-radius:50%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+transition:.6s cubic-bezier(.34,1.56,.64,1);
+cursor:pointer;
+padding:20px;
+}
+
+/* POSITIONS */
+.liq-b1{width:140px;height:140px;top:180px;left:40px;}
+.liq-b2{width:180px;height:180px;top:280px;right:30px;background:white;border-color:rgba(0,255,136,.2);}
+.liq-b3{width:160px;height:160px;bottom:60px;left:60px;background:white;border-color:rgba(0,204,255,.2);}
+
+/* HOVER */
+.liq-bubble-x:hover{
+width:250px;
+height:180px;
+border-radius:30px;
+background:var(--secondary);
+color:#000;
+z-index:100;
+transform:scale(1.1);
+}
+
+.liq-b2:hover{background:var(--secondary);}
+.liq-b3:hover{background:var(--secondary);}
+
+/* TEXT */
+.liq-title-x{
+font-weight:800;
+font-size:20px;
+text-transform:uppercase;
+margin-bottom:5px;
+color:var(--secondary);
+}
+
+.liq-info-x{
+font-size:20px;
+font-weight:800;
+display:none;
+}
+
+.liq-bubble-x:hover .liq-info-x{
+display:block;
+animation:fadeIn .4s ease;
+color:var(--primary);
+}
+ .liq-bubble-x:hover .liq-title-x{
+  color: var(--primary);
+ }
+.liq-sub-x{
+font-size:18px;
+opacity:.7;
+display:none;
+}
+
+.liq-bubble-x:hover .liq-sub-x{
+display:block;
+color: var(--primary);
+}
+
+/* ICON */
+.liq-icon-x{
+font-size:30px;
+transition:.3s;
+}
+
+.liq-bubble-x:hover .liq-icon-x{
+transform:translateY(-10px) scale(.8);
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(10px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-20px)}
+}
+
+.liq-b1{animation:float 4s infinite;}
+.liq-b2{animation:float 5s infinite 1s;}
+.liq-b3{animation:float 6s infinite .5s;}
+
+
+
+
+
+
+
+
+
+
+/* section-9 */
+.main-wrapper{
+  width: 100%;
+  background: var(--white);  
+  max-width:450px;
+  
+}
+.main-wrapper h2{
+  color: var(--secondary);
+  text-align: center;
+  font-size: 32px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* CARD */
+.card{
+    border-radius:25px;
+    padding:25px;
+    margin-bottom:20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    position:relative;
+    box-shadow:0 15px 35px rgba(0,0,0,0.1);
+    transition:.4s ease;
+}
+
+/* BEFORE */
+.before-card{
+    background:var(--secondary);
+    border:2px solid var(--primary);
+}
+
+.before-card .tag{color:hsl(0, 98%, 62%);}
+
+/* AFTER */
+.after-card{
+    background:var(--primary);
+    border:3px solid var(--primary);
+    box-shadow:0 0 25px rgba(0,184,148,0.2);
+}
+
+.after-card .tag{color:var(--secondary)}
+
+/* TITLE */
+.tag{
+    font-size:24px;
+    margin-bottom:15px;
+    display:block;
+}
+
+/* ROW */
+.row{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:15px;
+    padding:10px;
+    border-radius:15px;
+    transition:.4s ease;
+    background:rgba(255,255,255,0.05);
+    content-visibility:auto;
+    color: white;
+}
+
+.after-card .row{
+    background:#dab53ec0;
+}
+.before-card .row{
+  background-color: rgba(21, 119, 59, 0.301);
+}
+/* 🔥 HOVER EFFECT */
+.row:hover{
+    transform:translateX(8px) scale(1.02);
+}
+
+
+
+
+
+
+
+/* IMAGE */
+.row img{
+    width:125px;
+    height:75px;
+    border-radius:12px;
+    object-fit:cover;
+    flex-shrink:0;
+    transition:.4s ease;
+}
+
+/* IMAGE HOVER */
+.row:hover img{
+    transform:rotate(8deg) scale(1.1);
+}
+
+/* TEXT */
+.row p{
+    font-size:18px;
+    font-weight:500;
+    flex:1;
+    transition:.3s;
+}
+
+/* VS */
+.vs-divider{
+    text-align:center;
+    margin:-35px 0 -15px;
+    position:relative;
+    z-index:5;
+}
+
+.vs-circle{
+    background:#fff;
+    color:black;
+    width:45px;
+    height:45px;
+    line-height:45px;
+    border-radius:50%;
+    display:inline-block;
+    font-weight:800;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    border:2px solid #eee;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* section-10 */
+.offer-wrap-x{
+max-width:450px;
+width: 100%;
+background:rgba(255,255,255,0.05);
+padding:50px 30px;
+border:2px solid rgba(255,255,255,0.2);
+}
+
+
+
+/* HEADER */
+.head-block-x{
+text-align:center;
+margin-bottom:40px;
+}
+
+.badge-x{
+background:var(--secondary);
+color:#fff;
+padding:12px 25px;
+border-radius:50px;
+font-weight:800;
+font-size:26px;
+display:inline-block;
+margin-bottom:15px;
+}
+
+
+
+/* PRODUCT */
+.product-box-x{
+text-align:center;
+margin:40px 0;
+}
+
+.product-box-x img{
+width:160px;
+height:160px;
+object-fit:cover;
+border-radius:20px;
+border:5px solid #fff;
+transition:.5s;
+}
+
+.offer-wrap-x:hover .product-box-x img{
+transform:scale(1.1) rotate(5deg);
+}
+
+/* FEATURES */
+.features-x{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+margin-bottom:40px;
+}
+
+.feature-card-x{
+background:var(--secondary);
+padding:20px;
+border-radius:20px;
+text-align:center;
+transition:.4s;
+cursor:pointer;
+}
+
+.feature-card-x:hover{
+transform:translateY(-10px) scale(1.08);
+box-shadow:0 0 30px var(--secondary);
+}
+
+.feature-text-x{
+color:#fff;
+font-size:18px;
+font-weight:600;
+}
+
+/* DANGER BOX */
+.urgency-box-x{
+background:var(--secondary);
+padding:25px;
+border-radius:20px;
+text-align:center;
+color:#fff;
+margin-bottom:40px;
+}
+
+.urgency-title-x{
+font-size:18px;
+font-weight:800;
+margin-bottom:10px;
+}
+
+.urgency-text-x{
+font-size:18px;
+}
+
+/* CTA */
+.cta-btn-x{
+width:100%;
+background:var(--secondary);
+padding:18px;
+border:none;
+border-radius:25px;
+color:#fff;
+font-size:18px;
+font-weight:900;
+cursor:pointer;
+transition:.5s;
+}
+
+.cta-btn-x:hover{
+transform:translateY(-8px) scale(1.05);
+box-shadow:0 0 50px var(--primary);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* section-11 */
+.form-box{
+    max-width:450px;
+    width: 100%;
+    background: var(--primary);
+    padding:25px 30px;
+    color:white;
+}
+
+/* Heading */
+.form-box h2{
+    margin-top: -2px;
+    font-size:32px;
+    line-height: 1.1;
+    font-weight:600;
+    margin-bottom:20px;
+    color:var(--secondary);
+}
+
+/* Input container */
+.input-group{
+    margin-bottom:18px;
+}
+
+/* Label */
+label{
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:6px;
+    display:block;
+}
+
+/* Input fields */
+input{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    outline:none;
+    font-size:16px;
+}
+.btn-cta{
+    width:100%;
+    padding:13px;
+    font-size:18px;
+    font-weight:600;
+    background:var(--secondary);
+    color:white;
+    border:none;
+    border-radius:12px;
+    margin-top:8px;
+    cursor:pointer;
+    animation:pulse 2s infinite;
+    }
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(175, 152, 75, 0.6)}
+      70%{box-shadow:0 0 0 20px rgba(236,72,153,0)}
+      100%{box-shadow:0 0 0 0 rgba(236,72,153,0)}
+    }
+
+@media (max-width: 480px){
+
+  .form-box{
+    padding: 20px 16px;
+  }
+
+  .form-box h2{
+    font-size: 22px;
+    text-align:left;
+  }
+
+  label{
+    font-size: 14px;
+  }
+
+  input{
+    font-size: 15px;
+    padding: 11px;
+    border-radius: 8px;
+  }
+
+  .btn-cta{
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* section-13 */
+.ts-wrap{padding:1.5rem 1rem 2rem;background:var(--primary)}
+
+.ts-chip{display:inline-block;background:var(--secondary);color:var(--primary);font-size:27px;font-weight:800;padding:4px 14px;border-radius:20px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+
+.tc{border-radius:16px;margin-bottom:18px;overflow:hidden;border:0.5px solid var(--secondary);transition:transform 0.25s,box-shadow 0.25s}
+
+.tc:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(15,110,86,0.12)}
+
+.tc1-top{position:relative;background:var(--secondary); padding:1.2rem 1rem 2.5rem}
+
+.tc1-quote{font-size:48px;color:rgba(255,255,255,0.15);position:absolute;top:6px;right:14px;line-height:1}
+
+.tc1-stars{display:flex;gap:3px;margin-bottom:8px}
+
+.tc1-text{font-size:18px;line-height:1.3;color:rgba(255,255,255,0.92)}
+
+.tc1-text strong{color:#fff;font-weight:500}
+
+.tc1-bottom{display:flex;align-items:center;gap:12px;padding:0 1rem 1rem;margin-top:-1.4rem;position:relative;z-index:2}
+
+.tc1-img-ring{width:56px;height:56px;border-radius:50%;border:3px solid var(--secondary);overflow:hidden;flex-shrink:0;background:#9FE1CB;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:500; margin-top: 10px; }
+
+.tc1-img-ring img{width:100%;height:100%;object-fit:cover}
+
+.tc1-info{padding-top:1rem}
+
+.tc1-name{font-size:18px;font-weight:800;color:var(--secondary);}
+
+.tc1-loc{font-size:16px;color:var(--secondary);margin-top:-8px}
+
+.tc1-tag{display:inline-block;background:#E1F5EE;color:#085041;font-size:16px;padding:3px 10px;border-radius:20px;font-weight:500;margin-left:auto;margin-top:.8rem;flex-shrink:0}
+
+.ts-summary{display:flex;gap:10px;margin-top:1.5rem}
+
+.ts-stat{flex:1;background:var(--secondary);border-radius:var(--white);padding:12px 8px;text-align:center}
+
+.ts-stat-num{font-size:22px;font-weight:500;color:var(--primary);}
+
+.ts-stat-label{font-size:18px;color:var(--white);margin-top:2px;line-height:1.4}
+
+
+
+
+
+
+/* ===== section-14. FAQ ===== */
+.faq-section{
+max-width:450px;
+width: 100%;
+background-color: var(--primary);
+margin:auto;
+}
+
+.faq-title{
+text-align:center;
+font-size:32px;
+font-weight:800;
+margin-bottom:20px;
+color:var(--secondary);
+}
+
+/* FAQ Card */
+
+.faq-item{
+background:#fff;
+border-radius:14px;
+padding:5px 25px;
+margin-bottom:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+cursor:pointer;
+transition:0.3s;
+margin: 10px 20px;
+}
+
+.faq-item:hover{
+transform:translateY(-2px);
+}
+
+/* Question */
+
+.faq-question{
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:18px;
+font-weight:600;
+color:var(--secondary);
+}
+
+/* Plus Icon */
+
+.faq-icon{
+font-size:22px;
+font-weight:700;
+color:var(--secondary);
+}
+
+/* Answer */
+
+.faq-answer{
+max-height:0;
+overflow:hidden;
+transition:0.4s;
+font-size:16px;
+color:#555;
+line-height:1.6;
+margin-top:10px;
+}
+
+/* Active */
+
+.faq-item.active .faq-answer{
+max-height:120px;
+}
+
+.faq-item.active .faq-icon{
+transform:rotate(45deg);
+}
+
+
+
+
+
+
+
+/* ===== DISCLAIMER ===== */
+#disclaimer{
+  background:#f1f1f1;
+  padding:16px 18px 80px;
+  border-top:1px solid #e0e0e0;
+}
+#disclaimer p{font-size:.68rem;color:#888;line-height:1.65;text-align:center}
+
+/* ===== ANIMATIONS ===== */
+@media (prefers-reduced-motion:no-preference){
+  .fade-up{
+    opacity:0;
+    transform:translateY(22px);
+    transition:opacity .5s ease,transform .5s ease;
+  }
+  .fade-up.visible{opacity:1;transform:translateY(0)}
+}
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+<body>
+
+
+
+     <div class="bar">
+  <div class="logo">Ayurvani</div>
+  <a href="#orderForm" class="button">Buy Now</a>
+</div>
+
+
+<section class="sec">
+  <img src="images/banner.avif" class="images" alt="">
+</section>
+
+
+
+
+
+<!-- section-1 -->
+<section class="sec">
+  
+<div class="lp-section">
+
+<div class="lp-header">
+<h2>क्या आप भी इसी <span>तकलीफ</span> से गुजर रहे हैं?</h2>
+</div>
+
+<div class="problem-flow">
+
+<!-- ITEM 1 -->
+<div class="flow-item">
+<div class="flow-dot"></div>
+<div class="flow-card">
+<img src="images/sect-1-1stimg.avif"
+alt="fear"
+width="400" height="140"
+loading="lazy" decoding="async">
+<h3>बोलने से पहले घबराहट</h3>
+<p>स्टेज हो या ऑफिस मीटिंग, बोलने का ख्याल आते ही दिल की धड़कन बढ़ जाती है।</p>
+</div>
+</div>
+
+<!-- ITEM 2 -->
+<div class="flow-item">
+<div class="flow-dot"></div>
+<div class="flow-card">
+<img src="images/sect-1-2ndgimg.avif"
+alt="stuck"
+width="400" height="140"
+loading="lazy" decoding="async">
+<h3>शब्दों का गला घोंटना</h3>
+<p>विचार दिमाग में साफ हैं, लेकिन जुबान पर आते ही शब्द अटक जाते हैं।</p>
+</div>
+</div>
+
+<!-- ITEM 3 -->
+<div class="flow-item">
+<div class="flow-dot"></div>
+<div class="flow-card">
+<img src="images/sect-1-3rdimg.avif"
+alt="shame"
+width="400" height="140"
+loading="lazy" decoding="async">
+<h3>अपमान और मजाक</h3>
+<p>जब लोग हंसते हैं या अजीब नजरों से देखते हैं, तो आत्मविश्वास पूरी तरह टूट जाता है।</p>
+</div>
+</div>
+
+<!-- ITEM 4 -->
+<div class="flow-item">
+<div class="flow-dot"></div>
+<div class="flow-card">
+<img src="images/sect-1-4thimg.avif"
+alt="career"
+width="400" height="140"
+loading="lazy" decoding="async">
+<h3>बर्बाद होता करियर</h3>
+<p>काबिलियत होने के बावजूद सिर्फ बोलने की कमी से प्रमोशन हाथ से निकल जाता है।</p>
+</div>
+</div>
+
+</div>
+
+<div class="fear-box">
+<p>सबसे बड़ी मानसिक जेल</p>
+<h4>“लोग क्या सोचेंगे?”</h4>
+</div>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-2 -->
+<section class="sec">
+  <div class="lux-card-x">
+
+<div class="lux-img-wrap-x">
+<img src="images/product-ayur.avif"
+width="380" height="340"
+loading="lazy" decoding="async"
+alt="Ayurvani Capsule">
+</div>
+
+<div class="lux-content-x">
+
+<span class="lux-cat-x">SOLUTION</span>
+
+<h1 class="lux-title-x">
+लेकिन अब घबराने की जरूरत नहीं है…<br>
+क्योंकि अब आ गया है —<br><span>
+👉 Ayurvani Capsule</span>
+</h1>
+
+<p class="lux-desc-x">
+एक शक्तिशाली आयुर्वेदिक फॉर्मूला
+जो दिमाग और बोलने के बीच coordination को सुधारने में मदद करता है
+और आपकी आवाज़ को आत्मविश्वास देता है।
+</p>
+
+<div class="lux-features-x">
+
+<div class="lux-fitem-x">
+<strong>Better</strong>
+<span>Coordination</span>
+</div>
+
+<div class="lux-fitem-x">
+<strong>Boost</strong>
+<span>Confidence</span>
+</div>
+
+<div class="lux-fitem-x">
+<strong>Natural</strong>
+<span>Formula</span>
+</div>
+
+</div>
+
+<button class="lux-btn-x" onclick="location.href='#orderForm'">
+अभी अपना ऑर्डर शुरू करें
+</button>
+
+</div>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- section-3 -->
+<section class="sec">
+  <div class="pain-container">
+
+<div class="pain-header">
+<h2>HOW IT WORKS</h2>
+
+</div>
+
+<!-- ITEM 1 -->
+<div class="pain-item">
+<div class="img-box">
+<img src="images/sect-3-1stimg.avif"
+alt="brain"
+width="100" height="100" loading="lazy">
+</div>
+<div class="content-box">
+<p>✔ Brain Support<br>दिमाग की नसों को शांत और मजबूत करता है</p>
+</div>
+<div class="number-tag">01</div>
+</div>
+
+<!-- ITEM 2 -->
+<div class="pain-item">
+<div class="img-box">
+<img src="images/sect-3-2ndimg.avif"
+alt="speech"
+width="100" height="100" loading="lazy">
+</div>
+<div class="content-box">
+<p>✔ Speech Coordination<br>सोच और बोलने के बीच तालमेल बढ़ाता है</p>
+</div>
+<div class="number-tag">02</div>
+</div>
+
+<!-- ITEM 3 -->
+<div class="pain-item">
+<div class="img-box">
+<img src="images/sect-3-3rdimg.avif"
+alt="confidence"
+width="100" height="100" loading="lazy">
+</div>
+<div class="content-box">
+<p>✔ Confidence Boost<br>हिचकिचाहट कम करता है, बोलने में flow लाता है</p>
+</div>
+<div class="number-tag">03</div>
+</div>
+
+<!-- ITEM 4 -->
+<div class="pain-item">
+<div class="img-box">
+<img src="images/sect-3-4thimg.avif"
+alt="stress"
+width="100" height="100" loading="lazy">
+</div>
+<div class="content-box">
+<p>✔ Stress Control<br>nervousness और anxiety को कम करता है</p>
+</div>
+<div class="number-tag">04</div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+<!-- section-4 -->
+<section class="sec">
+  <div class="ing-wrap">
+
+<div class="ing-head">
+<h2>INGREDIENTS</h2>
+</div>
+
+<div class="ing-list">
+
+<div class="ing-item">
+<div class="ing-img">
+<img src="images/अश्वगंधा.avif" width="80" height="80" loading="lazy">
+</div>
+<div class="ing-text">
+<p><span>अश्वगंधा</span><br> दिमाग को शांत और stable बनाता है</p>
+</div>
+</div>
+
+<div class="ing-item">
+<div class="ing-img">
+<img src="images/ब्राह्मी.avif" width="80" height="80" loading="lazy">
+</div>
+<div class="ing-text">
+<p><span>ब्राह्मी </span><br>memory और focus बढ़ाता है</p>
+</div>
+</div>
+
+<div class="ing-item">
+<div class="ing-img">
+<img src="images/शंखपुष्पी.avif" width="80" height="80" loading="lazy">
+</div>
+<div class="ing-text">
+<p><span>शंखपुष्पी</span><br> मानसिक तनाव कम करता है</p>
+</div>
+</div>
+
+<div class="ing-item">
+<div class="ing-img">
+<img src="images/जटामांसी.avif" width="80" height="80" loading="lazy">
+</div>
+<div class="ing-text">
+<p><span>जटामांसी </span><br>nervous system को मजबूत करता है</p>
+</div>
+</div>
+
+</div>
+
+<div class="ing-final">
+<small>Power of Ayurvani</small>
+<h3>Natural Healing से <span>Confidence Boost</span></h3>
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+<!-- section-5 -->
+<section class="sec">
+   <div class="sec-wrap">
+
+<div class="sec-head">
+<h2>Trusted & Certified</h2>
+</div>
+
+<div class="sec-flow">
+
+<div class="sec-card">
+<div class="sec-img">
+<img src="images/ayurvedic.avif" width="75" height="75" loading="lazy">
+</div>
+<div class="sec-text">100% आयुर्वेदिक<br>प्राकृतिक जड़ी-बूटियों से बना</div>
+</div>
+
+<div class="sec-card">
+<div class="sec-img">
+<img src="images/lab-tested.avif" width="75" height="75" loading="lazy">
+</div>
+<div class="sec-text">Lab Tested<br>हर बैच quality check से गुजरता है</div>
+</div>
+
+<div class="sec-card">
+<div class="sec-img">
+<img src="images/no-chemical.avif" width="75" height="75" loading="lazy">
+</div>
+<div class="sec-text">No Harmful Chemicals<br>पूरी तरह safe और side-effect free</div>
+</div>
+
+</div>
+
+<div class="sec-final">
+<p>Trust & Safety</p>
+<h3>अब बिना डर के इस्तेमाल करें</h3>
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- section-6 -->
+<section class="sec">
+  
+<div class="herb-wrapper">
+
+
+<div class="herb-body">
+
+<h2>विशेषज्ञों की सलाह</h2>
+
+<div class="herb-pill">
+Root Cause Solution
+</div>
+
+<!-- ITEM 1 -->
+<div class="herb-step">
+<div class="herb-num">01</div>
+<div class="herb-text">
+<h4>नर्व सिस्टम को मजबूत करता है</h4>
+<p>तुतलाना और हकलाना की जड़ पर काम करके नसों को मजबूत बनाता है</p>
+</div>
+</div>
+
+<!-- ITEM 2 -->
+<div class="herb-step">
+<div class="herb-num">02</div>
+<div class="herb-text">
+<h4>Brain & Speech Coordination</h4>
+<p>दिमाग और बोलने के बीच का तालमेल बेहतर करता है</p>
+</div>
+</div>
+
+<!-- ITEM 3 -->
+<div class="herb-step">
+<div class="herb-num">03</div>
+<div class="herb-text">
+<h4>Natural Improvement</h4>
+<p>बिना किसी side effects के पूरी तरह natural सुधार देता है</p>
+</div>
+</div>
+
+<!-- FINAL -->
+<div class="herb-final">
+<p>
+यह सिर्फ ऊपर से राहत नहीं देता… बल्कि <span class="herb-highlight">तुतलाना, गूंगापन और हकलाना के root cause</span> पर काम करता है।<br>
+👉 इसलिए यह solution temporary relief नहीं, बल्कि <span class="herb-highlight">असली सुधार</span> देने पर focus करता है।
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+<!-- section-7 -->
+<section class="sec">
+
+<div class="wrapp">
+
+  <!-- Heading -->
+  <div class="heading-block lazy">
+    <div class="sec-badge">⚖️Compare</div>
+    <div class="main-titl">
+    </div>
+  </div>
+
+  <!-- Col Labels -->
+  <div class="col-labels lazy">
+    <div class="cl bad"><div class="cl-dot"></div> Other</div>
+    <div class="cl-mid">VS</div>
+    <div class="cl good"><div class="cl-dot"></div> Ayurvani</div>
+  </div>
+
+  <!-- Rows -->
+  <div class="zig-list">
+
+    <div class="zig-row lazy">
+      <div class="bad-half">
+        <span class="h-icon">❌</span>
+        <div class="h-text">सिर्फ temporary relief</div>
+      </div>
+      <div class="arrow-div"></div>
+      <div class="good-half">
+        <span class="h-icon">✅</span>
+        <div class="h-text">जड़ से सुधार है</div>
+      </div>
+    </div>
+
+    <div class="zig-row lazy">
+      <div class="bad-half">
+        <span class="h-icon">❌</span>
+        <div class="h-text">साइड इफेक्ट्स का खतरा</div>
+      </div>
+      <div class="arrow-div"></div>
+      <div class="good-half">
+        <span class="h-icon">✅</span>
+        <div class="h-text">बिना side effect</div>
+      </div>
+    </div>
+
+    <div class="zig-row lazy">
+      <div class="bad-half">
+        <span class="h-icon">❌</span>
+        <div class="h-text">Lifelong dependency</div>
+      </div>
+      <div class="arrow-div"></div>
+      <div class="good-half">
+        <span class="h-icon">✅</span>
+        <div class="h-text">Natural healing process</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Score card -->
+  <div class="score-card lazy" style="margin-top:20px">
+    <div class="trophy">🏆</div>
+    <div class="sc-text">
+      <div class="sc-top">Ayurvani Capsules</div>
+      <div class="sc-pills">
+        <span class="pill g">✅ Natural</span>
+        <span class="pill g">✅ Safe</span>
+        <span class="pill g">✅ Permanent</span>
+        <span class="pill">❌ No dependency</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+<!-- section-8 -->
+<section class="sec">
+  <div class="liq-wrap-x">
+
+<div class="liq-head-x">
+<h2>How To Use</h2>
+</div>
+
+<!-- STEP 1 -->
+<div class="liq-bubble-x liq-b1">
+<div class="liq-icon-x">💊</div>
+<span class="liq-title-x">खुराक</span>
+<p class="liq-info-x">दिन में 2 बार</p>
+<span class="liq-sub-x">नियमित सेवन करें</span>
+</div>
+
+<!-- STEP 2 -->
+<div class="liq-bubble-x liq-b2">
+<div class="liq-icon-x">🥛</div>
+<span class="liq-title-x">विधि</span>
+<p class="liq-info-x">भोजन के बाद</p>
+<span class="liq-sub-x">गुनगुने पानी या दूध के साथ</span>
+</div>
+
+<!-- STEP 3 -->
+<div class="liq-bubble-x liq-b3">
+<div class="liq-icon-x">📅</div>
+<span class="liq-title-x">समय</span>
+<p class="liq-info-x">1-3 महीने</p>
+<span class="liq-sub-x">बेहतर परिणाम के लिए</span>
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- section-9 -->
+  <div class="main-wrapper">
+  <h2> BEFORE / AFTER</h2>
+<!-- BEFORE -->
+<div class="card before-card">
+<span class="tag">❌ पहले</span>
+
+<div class="row">
+<img src="images/sect-9-1st-bf.avif"
+width="125" height="75" loading="lazy" decoding="async">
+<p>बोलते समय रुकना</p>
+</div>
+
+<div class="row">
+<img src="images/sect-9-2nd-bf.avif"
+width="125" height="75" loading="lazy" decoding="async">
+<p>शर्मिंदगी और डर</p>
+</div>
+
+<div class="row" style="margin-bottom:0;">
+<img src="images/sect-9-3rd-bf.avif"
+width="125" height="75" loading="lazy" decoding="async">
+<p>लोगों से बचना</p>
+</div>
+
+</div>
+
+<!-- VS -->
+<div class="vs-divider">
+<div class="vs-circle">VS</div>
+</div>
+
+<!-- AFTER -->
+<div class="card after-card">
+<span class="tag">✅ बाद में</span>
+
+<div class="row">
+<img src="images/sect-9-1st-af.avif"
+width="125" height="75" loading="lazy" decoding="async">
+<p>साफ और confident speech</p>
+</div>
+
+<div class="row">
+<img src="images/sect-9-2nd-af.avif"
+width="125" height="75" loading="lazy" decoding="async">
+<p>लोगों के सामने खुलकर बात</p>
+</div>
+
+<div class="row" style="margin-bottom:0;">
+<img src="images/sect-9-3rd-aff.avif"
+width="125" height="75" loading="lazy" decoding="async">
+<p>personality में जबरदस्त बदलाव</p>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- section-10 -->
+<section class="sec">
+  
+<div class="offer-wrap-x">
+
+<div class="head-block-x">
+<div class="badge-x">⚡ Limited Time Offer ⚡</div>
+</div>
+
+<div class="product-box-x">
+<img src="images/product-ayur.avif" width="160" height="160" loading="lazy" alt="product">
+</div>
+
+<div class="features-x">
+
+<div class="feature-card-x">
+<div class="feature-text-x">✔ Flat Discount</div>
+</div>
+
+<div class="feature-card-x">
+<div class="feature-text-x">✔ Free Delivery</div>
+</div>
+
+<div class="feature-card-x">
+<div class="feature-text-x">📦 Fast Shipping</div>
+</div>
+
+<div class="feature-card-x">
+<div class="feature-text-x">🔥 Limited Stock</div>
+</div>
+
+</div>
+
+<div class="urgency-box-x">
+<div class="urgency-title-x">⚠️ Stock तेजी से खत्म हो रहा है</div>
+<div class="urgency-text-x">
+👉 आज ऑर्डर करें, मौका हाथ से न जाने दें  
+</div>
+</div>
+
+<button class="cta-btn-x" onclick="location.href='#orderForm'">
+👉 अभी Order करें
+</button>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+<html>
+    <head>
+        <style>
+            #loading {
+        display: none;
+        color: #fff;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+
+      #poweredBy {
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        margin-top: 20px;
+      }
+
+   
+        </style>
+
+        <script>
+  function submitForm(event) {
+    event.preventDefault();
+
+    const form = event.target;
+
+    // 👉 Submit button ko hide + disable karo
+    const submitBtn = form.querySelector("button[type='submit'], input[type='submit']");
+    if (submitBtn) {
+      submitBtn.style.display = "none";
+      submitBtn.disabled = true;
+    }
+
+    // 👉 Loading show karo
+    document.getElementById("loading").style.display = "block";
+
+    const formData = new FormData(form);
+    let redirected = false;
+
+    const timeout = setTimeout(() => {
+      if (!redirected) {
+        redirected = true;
+        window.location.href = './ThankYou.html';
+      }
+    }, 2000);
+
+    fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+      if (!redirected) {
+        clearTimeout(timeout);
+        redirected = true;
+        window.location.href = './ThankYou.html';
+      }
+
+      document.getElementById("loading").style.display = "none";
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: 'Processing Your Order. Please wait....',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'OK',
+      });
+    })
+    .catch(error => {
+      console.error('Fetch error:', error);
+
+      if (!redirected) {
+        clearTimeout(timeout);
+        redirected = true;
+        window.location.href = './ThankYou.html';
+      }
+
+      document.getElementById("loading").style.display = "none";
+    });
+
+    return false;
+  }
+
+  // Animated dots for loading state
+  let dotCount = 1;
+  setInterval(() => {
+    const d = document.getElementById('dotAnim');
+    if (d) { 
+      dotCount = (dotCount % 3) + 1; 
+      d.textContent = '.'.repeat(dotCount); 
+    }
+  }, 500);
+</script>
+    </head>
+    <body>
+
+
+<!-- section-11 -->
+<section class="sec">
+<div class="form-box">
+    <h2> अभी ऑर्डर करें और अपनी आवाज़ में confidence वापस पाएं
+
+</h2>
+
+    <form id="orderForm" onsubmit="submitForm(event)">
+        <div class="input-group">
+            <label>नाम:</label>
+            <input type="text" name="name"  placeholder="अपना नाम दर्ज करें" required>
+        </div>
+
+        <div class="input-group">
+            <label>मोबाइल नंबर (10 अंक):</label>
+            <input type="tel" name="phone"  maxlength="10" pattern="[0-9]{10}" placeholder="अपना मोबाइल नंबर दर्ज करें" required>
+        </div>
+
+        <button class="btn-cta"  type="submit">Order Now
+</button>
+<div id="loading">
+            Processing Your Order. Please wait...
+          </div>
+    </form>
+</div>
+</section>
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+<!-- section-13 -->
+<section class="sec">
+  <div class="ts-wrap">
+  <div style="text-align:center;margin-bottom:1.5rem">
+    <div class="ts-chip">Real Customers</div>
+  </div>
+
+  <!-- CARD 1 — dark green banner top, avatar floats up from bottom -->
+  <div class="tc">
+    <div class="tc1-top">
+      <div class="tc1-quote">"</div>
+      <div class="tc1-stars">⭐⭐⭐⭐⭐</div>
+      <p class="tc1-text">पहले मैं ठीक से बोल ही नहीं पाता था… हर शब्द पर अटक जाता था। लोग मज़ाक उड़ाते थे। लेकिन अब मैं <strong>बिना रुके confidently बोल पाता हूँ</strong> — सच में ज़िंदगी बदल गई।</p>
+    </div>
+    <div class="tc1-bottom" style="background:var(--primary)">
+      <div class="tc1-img-ring">
+        <img src="images/ravikant.avif" alt="रविकांत" width="56" height="56" onerror="this.style.display='none';this.parentNode.textContent='रव'">
+      </div>
+      <div class="tc1-info">
+        <div class="tc1-name">रविकांत यादव</div>
+        <div class="tc1-loc">लखनऊ, उत्तर प्रदेश</div>
+      </div>
+      <div class="tc1-tag">हकलाना ठीक हुआ</div>
+    </div>
+  </div>
+
+  <!-- CARD 2 — side image strip layout -->
+ <div class="tc">
+    <div class="tc1-top">
+      <div class="tc1-quote">"</div>
+      <div class="tc1-stars">⭐⭐⭐⭐⭐</div>
+      <p class="tc1-text">तुतलाना और हकलाना मेरी सबसे बड़ी कमजोरी बन गया था…
+ किसी से बात करने में डर लगता था।
+ अब लोग मेरी बात ध्यान से सुनते हैं… और मेरी तारीफ करते हैं।</p>
+    </div>
+    <div class="tc1-bottom" style="background:var(--primary)">
+      <div class="tc1-img-ring">
+        <img src="images/suman.avif" alt="suman" width="56" height="56" onerror="this.style.display='none';this.parentNode.textContent='रव'">
+      </div>
+      <div class="tc1-info">
+        <div class="tc1-name">सुमन देवी</div>
+        <div class="tc1-loc">जयपुर, राजस्थान</div>
+      </div>
+      <div class="tc1-tag">तुतलाना ठीक हुआ</div>
+    </div>
+  </div>
+
+  <!-- CARD 3 — split header with rounded image, footer bar -->
+ <div class="tc">
+    <div class="tc1-top">
+      <div class="tc1-quote">"</div>
+      <div class="tc1-stars">⭐⭐⭐⭐⭐
+        </div>
+      <p class="tc1-text">पहले communication में बहुत problem थी —
+ न बोल पाता था, न अपनी बात सही से समझा पाता था।
+ अब मेरी speech clear हो गई है और confidence भी काफी बढ़ गया है।
+</p>
+    </div>
+    <div class="tc1-bottom" style="background:var(--primary)">
+      <div class="tc1-img-ring">
+        <img src="images/amarjeet.avif" alt="amarjeet" width="56" height="56" onerror="this.style.display='none';this.parentNode.textContent='रव'">
+      </div>
+      <div class="tc1-info">
+        <div class="tc1-name">अमरजीत सिंह</div>
+        <div class="tc1-loc">पटना, बिहार</div>
+      </div>
+      <div class="tc1-tag">Confidence बढ़ा</div>
+    </div>
+  </div>
+  
+    
+    
+
+  <!-- STATS -->
+  <div class="ts-summary">
+    <div class="ts-stat">
+      <div class="ts-stat-num">5,000+</div>
+      <div class="ts-stat-label">खुश ग्राहक</div>
+    </div>
+    <div class="ts-stat">
+      <div class="ts-stat-num">4.9/5</div>
+      <div class="ts-stat-label">औसत रेटिंग</div>
+    </div>
+    <div class="ts-stat">
+      <div class="ts-stat-num">95%</div>
+      <div class="ts-stat-label">सुधार देखा</div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
+
+
+
+<!-- ===== section-14: FAQ ===== -->
+<section class="faq-section">
+
+<h2 class="faq-title">FAQs</h2>
+
+<div class="faq-item">
+<div class="faq-question">
+Q1. क्या ये safe है?
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+👉 हाँ, ये 100% आयुर्वेदिक है
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">
+Q2. कितने दिन में असर दिखेगा?
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+👉 7–15 दिन में फर्क दिख सकता है
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">
+Q3. क्या हर प्रकार की गाँठ में काम करेगा?
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+👉 हाँ, हर प्रकार की गाँठ में काम करेगा
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">
+Q4. क्या इसे कोई भी ले सकता है?
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+👉हाँ, इसे सब ले सकते है
+</div>
+</div>
+
+<button class="btn" onclick="location.href='#orderForm'">Order Now</button>   
+
+</section>
+
+
+
+<!-- ===== DISCLAIMER ===== -->
+<section class="sec">
+<div id="disclaimer">
+  <p>
+    ⚠️ <strong>Disclaimer:</strong> यह एक आयुर्वेदिक सप्लीमेंट है।
+ यह किसी बीमारी के इलाज का दावा नहीं करता।
+ परिणाम व्यक्ति की स्थिति और शरीर के अनुसार अलग-अलग हो सकते हैं।
+ किसी भी स्वास्थ्य समस्या के लिए डॉक्टर की सलाह लेना उचित है।
+
+
+  </p>
+  </div>
+</section>
+
+<!-- ===== STICKY CTA ===== -->
+<div class="sticky-cta">
+  <a href="#orderForm"  class="btn-secondary" >🛒 अभी ऑर्डर करें – Free Delivery!</a>
+</div>
+
+<script>
+  
+document.querySelectorAll(".faq-item").forEach(item=>{
+item.addEventListener("click",()=>{
+item.classList.toggle("active");
+});
+});
+
+
+
+
+
+
+  const all = document.querySelectorAll('.lazy');
+  const ob = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const i = [...all].indexOf(e.target);
+      setTimeout(() => e.target.classList.add('v'), i * 100);
+      ob.unobserve(e.target);
+    });
+  }, { threshold: 0.1 });
+  all.forEach(el => ob.observe(el));
+
+
+
+</script>
+
+</body>
+</html>

@@ -145,6 +145,46 @@ body {
   box-shadow:0 10px 20px rgba(0,212,255,0.4);
 }
 
+/* BUTTON */
+.btn {
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  background: var(--Gold);
+  cursor: pointer;
+  margin: 10px auto;
+  display: block;
+  width: 55%;
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  top: 0;
+  left: -40%;
+  transform: skewX(-20deg);
+}
+.btn:hover::before {
+  left: 120%;
+  transition: 1.5s;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 430px) {
+  .btn {
+    width: 50% !important;
+    font-size: 15px !important;
+    margin: 10px auto !important;
+  }
+}
 
 
 
@@ -3327,7 +3367,7 @@ input{
             ताकि बोलने की प्रक्रिया बेहतर होने में सहयोग मिल सके।
         </p>
     </div>
-
+ <button class="btn"  onclick="location.href='#orderForm'">अभी ऑर्डर करें</button>
 </div>
 
 </section>
@@ -3530,7 +3570,7 @@ input{
                 <span class="product-sub">Trusted Ayurvedic Wellness Formula</span>
             </div>
 
-            <a href="#" class="glow-btn">आज ही शुरू करें</a>
+            <a href="#orderForm" class="glow-btn">आज ही शुरू करें</a>
         </div>
     </div>
 </div>
@@ -3588,7 +3628,7 @@ input{
     </div>
 
     <div class="footer-box">
-        <a href="#" class="premium-btn">Ayurvani के साथ बढ़ें</a>
+        <a href="#orderForm" class="premium-btn">Ayurvani के साथ बढ़ें</a>
     </div>
 </div>
 </section>
@@ -3671,8 +3711,9 @@ input{
 
 </div>
 </div>
-
 </div>
+
+<button class="btn"  onclick="location.href='#orderForm'">अभी ऑर्डर करें</button>
 </section>
 
 
@@ -3802,6 +3843,7 @@ input{
     </div>
   </div>
 
+<button class="btn"  onclick="location.href='#orderForm'">अभी ऑर्डर करें</button>
 </div>
 </section>
 
@@ -4075,7 +4117,7 @@ input{
     const timeout = setTimeout(() => {
       if (!redirected) {
         redirected = true;
-        window.location.href = './ThankYou.html';
+        window.location.href = './Thankyou.html';
       }
     }, 2000);
 
@@ -4088,7 +4130,7 @@ input{
       if (!redirected) {
         clearTimeout(timeout);
         redirected = true;
-        window.location.href = './ThankYou.html';
+        window.location.href = './Thankyou.html';
       }
 
       document.getElementById("loading").style.display = "none";
@@ -4107,7 +4149,7 @@ input{
       if (!redirected) {
         clearTimeout(timeout);
         redirected = true;
-        window.location.href = './ThankYou.html';
+        window.location.href = './Thankyou.html';
       }
 
       document.getElementById("loading").style.display = "none";

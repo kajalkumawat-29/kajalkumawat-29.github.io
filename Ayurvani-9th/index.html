@@ -2745,14 +2745,19 @@ width="125" height="75" loading="lazy" decoding="async">
 
         <div class="input-group">
             <label>मोबाइल नंबर (10 अंक):</label>
-            <input type="tel" name="phone"  maxlength="10" pattern="[0-9]{10}" placeholder="अपना मोबाइल नंबर दर्ज करें" required>
+            <input type="tel" name="phone"  maxlength="10" pattern="[6-9][0-9]{9}" placeholder="अपना मोबाइल नंबर दर्ज करें" required>
         </div>
 
         <button class="btn-cta"  type="submit">Order Now
-</button>
-<div id="loading">
-            Processing Your Order. Please wait...
-          </div>
+</button>  
+<div id="loaderOverlay">
+  <div style="text-align:center;">
+    <div class="loader"></div>
+    <p style="color:white;margin-top:10px;">
+      Processing<span id="dotAnim"></span>
+    </p>
+  </div>
+</div>
     </form>
 </div>
 </section>

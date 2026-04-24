@@ -1,0 +1,2661 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SLIMAX</title>
+
+<!-- ✅ Optimized Fonts -->
+ <link rel="preload" href="https://fonts.googleapis.com/css2?family=Halant:wght@400;600&display=swap" as="style" onload="this.rel='stylesheet'">
+<noscript>
+<link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;600&display=swap" rel="stylesheet">
+</noscript>
+
+<style>
+
+/* ✅ ROOT THEME */
+:root {
+  --primary: #eabd4b;
+  --secondary: #284900;
+  --white: #fff;
+  --black: #000;
+--glass:rgba(85, 184, 123, 0.295);
+}
+
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+ font-family: 'Halant', 'Source Sans 3', serif;
+  background-color:rgba(169, 160, 160, 0.276);
+}
+body {
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.bar{
+  max-width:450px;
+  width: 100%;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+  background:linear-gradient(135deg,var(--primary),var(--primary));
+  position:relative;
+  overflow:hidden;
+}
+
+/* LIGHT SWEEP EFFECT */
+.bar::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-50%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent);
+  transition:0.6s;
+}
+
+.bar:hover::before{
+  left:120%;
+}
+
+/* LOGO (FIXED PREMIUM HOVER) */
+.logo{
+  font-size:32px;
+  font-weight:800;
+  color:var(--secondary);
+  letter-spacing:2px;
+  position:relative;
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+/* underline */
+.logo::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:2px;
+  background:var(--secondary);
+  border-radius:10px;
+  transition:0.35s ease;
+}
+
+/* glow dot */
+.logo::before{
+  content:"";
+  position:absolute;
+  right:-10px;
+  top:6px;
+  width:6px;
+  height:6px;
+  background:var(--secondary);
+  border-radius:50%;
+  opacity:0;
+  transition:0.3s ease;
+}
+
+/* HOVER */
+.logo:hover{
+  color:var(--secondary);
+  transform:translateY(-2px);
+}
+
+.logo:hover::after{
+  width:100%;
+}
+
+.logo:hover::before{
+  opacity:1;
+  transform:scale(1.2);
+}
+
+/* BUTTON */
+.button{
+  padding:8px 16px;
+  background:var(--secondary);
+  color:var(--white);
+  border-radius:30px;
+  font-weight:700;
+  text-decoration:none;
+  font-size:22px;
+
+  transition:0.3s ease;
+}
+
+/* BUTTON HOVER */
+.button:hover{
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 10px 20px rgba(0,212,255,0.4);
+}
+
+/* BUTTON */
+.btn {
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  background: var(--secondary);
+  cursor: pointer;
+  margin: 10px auto;
+  display: block;
+  width: 55%;
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  top: 0;
+  left: -40%;
+  transform: skewX(-20deg);
+}
+.btn:hover::before {
+  left: 120%;
+  transition: 1.5s;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 430px) {
+  .btn {
+    width: 50% !important;
+    font-size: 15px !important;
+    margin: 10px auto !important;
+  }
+}
+
+
+/* SECTION BASE */
+.sec {
+  width: 100%;
+  max-width: 450px;
+  background: var(--primary);
+  color: var(--white);
+  border-bottom: 2px solid white;
+}
+
+.sect {
+  width: 100%;
+  max-width: 450px;
+  background: var(--secondary);
+  color: var(--white);
+  padding: 20px;
+  border-bottom: 2px solid white;
+}
+
+.images {
+  max-width: 450px;
+  width: 100%;
+  align-items: center;
+  padding: 0;
+}
+/* Responsive */
+@media (max-width: 430px) {
+  .logo {
+    font-size: 26px;
+  }
+
+  .cta-btn {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
+
+
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+@keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes glow{0%,100%{box-shadow:0 0 20px rgba(201,168,76,.4)}50%{box-shadow:0 0 50px rgba(201,168,76,.8)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes reveal{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0% 0 0)}}
+@keyframes badgePop{0%{transform:scale(0) rotate(-15deg)}80%{transform:scale(1.1) rotate(3deg)}100%{transform:scale(1) rotate(0)}}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes heartbeat{0%,100%{transform:scale(1)}14%{transform:scale(1.15)}28%{transform:scale(1)}}
+
+
+
+
+
+
+
+
+
+
+
+/* SECTION-1 */
+.pain-story {
+    width: 100%;
+    max-width: 450px;
+    overflow: hidden;
+}
+
+.header-title {
+    padding: 30px 20px;
+    text-align: center;
+   
+}
+
+.header-title h2 {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.2;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+/* The Unique Diagonal Layout */
+.block {
+    position: relative;
+    display: flex;
+    height: 160px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+/* Image Half */
+.block-img {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+    transition: 0.6s ease;
+    filter: grayscale(80%);
+}
+
+.block:nth-child(even) .block-img {
+    order: 2;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.block-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text Half */
+.block-info {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background:var(--white);
+    transition: 0.4s ease;
+}
+
+.block-info p {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: black;
+}
+
+/* HOVER EFFECTS */
+.block:hover .block-img {
+    filter: grayscale(0%);
+    width: 60%;
+}
+
+.block:hover .block-info {
+    width: 40%;
+    background: var(--primary);
+}
+
+.block:hover .block-info p {
+    color:var(--secondary);
+    transform: scale(1.1);
+}
+
+/* Conclusion */
+.truth-banner {
+    margin-top: 20px;
+    padding: 40px 20px;
+    background: var(--primary);
+    text-align: center;
+    clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
+}
+
+.truth-banner h3 {
+    font-size: 20px;
+    color: var(--secondary);
+    font-weight: 900;
+    margin-bottom: 2px;
+}
+
+.truth-banner p {
+    font-size: 18px;
+    color: black;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.alert-dot {
+    height: 10px;
+    width: 10px;
+    background-color: var(--secondary);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(2); }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* section-2 */
+
+.section-product{
+  background:var(--secondary);
+  padding:8px 20px;text-align:center;position:relative;overflow:hidden;
+  contain:layout style paint;
+}
+.section-product::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 50% at 50% 60%,rgba(201,168,76,.1),transparent 70%);
+}
+.product-img-wrap{
+  width:300px;height:300px;margin:0 auto 24px;
+  position:relative;
+  animation:float 4s ease infinite;
+}
+.product-img{
+  width:300px;height:300px;border-radius:50%;
+  border:3px solid rgba(201,168,76,.3);
+  box-shadow:0 0 60px rgba(201,168,76,.25),0 0 120px rgba(201,168,76,.1);
+  object-fit:cover;
+}
+.product-ring{
+  position:absolute;inset:-12px;border-radius:50%;
+  border:1px solid rgba(201,168,76,.2);
+  animation:spin 12s linear infinite;
+}
+.product-ring::after{
+  content:'';position:absolute;top:0;left:50%;
+  width:8px;height:8px;border-radius:50%;
+  background:var(--primary);transform:translateX(-50%) translateY(-50%);
+}
+.product-name{
+  font-size:24px;font-weight:700;
+  margin-bottom:-16px;
+}
+.product-tagline{font-size:18px;color:white;margin-bottom:20px}
+.product-badges{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.pbadge{
+  background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);
+  font-size:18;font-weight:700;color:var(--white);
+  padding:5px;
+  border-radius: 10px;
+  transition:background .3s,transform .3s;
+}
+.pbadge:hover{background:rgba(201,168,76,.25);transform:scale(1.06)}
+
+
+
+
+
+
+
+
+
+
+
+/* section-3 */
+.section-how{
+  background:var(--secondary);
+  padding:18px 20px;
+  contain:layout style paint;
+}
+.sec-title{
+    color: var(--primary);
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: -20px;
+}
+.steps-wrap{display:flex;flex-direction:column;gap:0;margin-top:28px}
+.step{
+  display:flex;gap:16px;align-items:flex-start;
+  padding:20px 0;position:relative;
+}
+.step:not(:last-child)::after{
+  content:'';position:absolute;left:24px;top:64px;bottom:0;
+  width:2px;background:linear-gradient(to bottom,var(--primary),rgba(201,168,76,.1));
+}
+.step-num{
+  flex:0 0 48px;height:48px;border-radius:50%;
+  background:var(--primary);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:1.1rem;color:var(--white);
+  flex-shrink:0;box-shadow:0 4px 20px rgba(201,168,76,.4);
+  transition:transform .3s,box-shadow .3s;
+}
+.step:hover .step-num{transform:scale(1.12);box-shadow:0 8px 32px rgba(201,168,76,.6)}
+.step-icon-img{
+  width:100px;height:100px;border-radius:16px;object-fit:cover;
+  margin-top:8px;flex-shrink:0;
+  border:1px solid rgba(201,168,76,.2);
+  transition:transform .35s,box-shadow .35s;
+}
+.step:hover .step-icon-img{transform:scale(1.05);box-shadow:var(--sh)}
+.step-body{flex:1}
+.step-title{font-size:22px;font-weight:800;color:var(--primary);margin-bottom:6px}
+.step-desc{font-size:18px;color:white;line-height:1.6}
+
+
+
+
+
+
+
+
+
+
+/* section-4 */
+.pain-wrapper {
+    width: 450px;
+    padding: 40px 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.pain-title {
+    text-align: center;
+    padding: 0 30px;
+    margin-bottom: 40px;
+}
+
+.pain-title h2 {
+    color:var(--secondary);
+     font-size: 32px;
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+
+
+.item-stack {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-row {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 1px solid #333;
+    transition: all 0.5s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+.item-row:hover {
+    background: var(--secondary);
+    transform: scale(1.05);
+    z-index: 10;
+    border-bottom-color: transparent;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.item-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 3px solid var(--secondary);
+    transition: all 0.5s ease;
+}
+
+.item-row:hover .item-img {
+    border-radius: 15px;
+    border-color: #fff;
+    transform: rotate(-10deg);
+}
+
+.item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-content {
+    margin-left: 25px;
+}
+
+.item-content p {
+    color:var(--black);
+    font-size: 18px;
+    margin: 0;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.item-content p span{
+    color: var(--secondary);
+    font-size: 20px;
+}
+
+.item-row:hover .item-content p{
+    color: #fff;
+}
+.item-row:hover .item-content p span {
+    color: var(--primary);
+}
+
+
+
+
+
+
+
+
+
+/* section-5-6 */
+.container-450 {
+    max-width: 450px;
+    width: 100%;
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* HEADER */
+.header-section {
+    background: var(--secondary);
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.header-section h2 {
+    color:var(--primary);
+    margin: 0;
+    font-size: 32px;
+}
+
+/* CONTENT */
+.content-card {
+    margin: -20px 20px 20px 20px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    transition: 0.3s ease;
+}
+
+/* Hover Lift */
+.content-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* DOCTOR IMAGE */
+.doctor-img {
+    width: 100%;
+    height: 270px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: 0.4s ease;
+}
+
+/* Image Hover Zoom */
+.doctor-img:hover {
+    transform: scale(1.05);
+}
+
+/* TEXT */
+.highlight-text {
+    color: var(--secondary);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--primary);
+    padding-left: 15px;
+    font-size: 20px;
+}
+
+.description {
+    font-size: 18px;
+    color:black;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* PRODUCT */
+.product-box {
+    background: white;
+    border: 2px dashed var(--primary);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+/* Product Hover */
+.product-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.product-namee {
+    display: block;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--secondary);
+}
+
+/* BADGES */
+.trust-badges {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background: rgba(255,255,255,0.4);
+}
+
+.badge-item {
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Badge Hover */
+.badge-item:hover {
+    transform: translateY(-5px);
+}
+
+.badge-icon {
+    width: 50px;
+    height:50px;
+    background: var(--secondary);
+    border-radius: 50%;
+    margin: 0 auto 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: 0.3s;
+}
+.badge-icon img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+}
+
+.badge-item:hover .badge-icon {
+    background: var(--primary);
+}
+
+/* CTA */
+.cta-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* CTA Hover */
+.cta-button:hover {
+    background: #b38f4d;
+    letter-spacing: 1px;
+    transform: scale(1.02);
+}
+
+
+
+
+
+
+
+
+
+/* section-7 */
+
+.section-compare{
+  background:var(--secondary);
+  padding:18px 0;
+  contain:layout style paint;
+}
+.compare-table{margin-top:24px;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.compare-header{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  background:var(--primary);
+  padding:14px 0;
+}
+.compare-col-head{
+  text-align:center;font-size:22px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.06em;padding:0 8px;
+}
+.compare-col-head.gold{color:var(--secondary)}
+.compare-col-head.grey{color:white}
+.compare-row{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  border-top:1px solid rgba(255,255,255,.06);
+  transition:background .3s;
+}
+.compare-row:hover{background:rgba(201,168,76,.04)}
+.compare-cell{
+  padding:14px 8px;text-align:center;
+  font-size:18px;color:rgba(255,255,255,.6);border-right:1px solid rgba(255,255,255,.05);
+}
+.compare-cell:last-child{border-right:none}
+.compare-cell.feature{text-align:left;padding-left:14px;color:white}
+.compare-cell .tick{color:var(--primary);font-size:1.1rem}
+.compare-cell .cross{color:rgb(212, 44, 44);font-size:1.1rem}
+.compare-cell.gold-col{background:rgba(201,168,76,.06)}
+
+
+
+
+
+
+
+
+
+/* section-8 */
+.usage-section{
+  width:100%;
+  max-width:450px;
+}
+
+/* Header */
+.title-area{
+  margin-bottom:50px;
+  text-align:left;
+  position:relative;
+}
+
+.title-area h2{
+ font-size:32px;
+  color:var(--secondary);
+  line-height:0.9;
+  margin-top: 30px;
+  text-align: center;
+}
+
+
+
+/* Portal Item */
+.portal-item{
+  display:flex;
+  align-items:center;
+  margin-bottom:40px;
+  position:relative;
+  transition:0.4s ease;
+  margin-left: 20px;
+}
+
+/* Number Box */
+.portal-num{
+  width:80px;
+  height:80px;
+  background:var(--secondary);
+  border:1px solid white;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+   font-size:40px;
+  color:white;
+  flex-shrink:0;
+  transition:0.5s cubic-bezier(0.175,0.885,0.32,1.275);
+  position:relative;
+}
+
+.portal-num::after{
+  content:'';
+  position:absolute;
+  inset:-2px;
+  border-radius:22px;
+  padding:2px;
+  mask-composite:exclude;
+  opacity:0.2;
+  transition:0.5s;
+}
+
+/* Content */
+.portal-content{
+  padding-left:20px;
+}
+
+.portal-content h4{
+  color:var(--secondary);
+  font-size:20x;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  margin-bottom:5px;
+  font-weight: 800;
+}
+
+.portal-content p{
+  color:black;
+  font-size:18px;
+  line-height:1.4;
+  font-weight:500;
+}
+
+.portal-content p b{
+  color:var(--secondary);
+  text-decoration:underline;
+  text-decoration-color:var(--secondary);
+  text-underline-offset:4px;
+}
+
+/* Hover */
+.portal-item:hover{
+  transform:translateX(10px);
+}
+
+.portal-item:hover .portal-num{
+  background:var(--secondary);
+  color:#fff;
+  transform:rotate(-10deg) scale(1.1);
+  box-shadow:0 10px 30px rgba(255,62,62,0.3);
+}
+
+.portal-item:hover .portal-num::after{
+  opacity:1;
+}
+
+
+@keyframes pulse{
+  0%{opacity:1;transform:scale(1);}
+  50%{opacity:0.5;transform:scale(1.2);}
+  100%{opacity:1;transform:scale(1);}
+}
+
+
+
+
+
+
+
+
+
+
+/* section-9 */
+.ba-wrap{
+  max-width:450px;
+  width: 100%;
+  background:#fff;
+  padding:32px 18px 36px;
+  
+}
+
+
+.ba-heading{
+  font-size:32px;
+  font-weight:800;
+  color:var(--primary);
+  line-height:1.28;
+  margin-bottom:26px;
+  text-align: center;
+}
+.ba-heading span{color:var(--primary);}
+
+.ba-timeline{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+}
+
+.ba-card{
+  position: relative;
+  border-radius:20px;
+  overflow:hidden;
+  transition:transform 0.25s cubic-bezier(.34,1.56,.64,1);
+}
+.ba-card:hover{transform:scale(1.02);}
+
+/* IMAGE */
+.ba-img-zone{
+  position: relative;
+  width:100%;
+  height:380px;
+  overflow:hidden;
+}
+.ba-img-zone img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform 0.4s ease;
+}
+.ba-card:hover .ba-img-zone img{transform:scale(1.06);}
+
+.ba-img-label{
+  position:absolute;
+  top:14px;
+  left:14px;
+  font-size:18px;
+  font-weight:800;
+  padding:5px 14px;
+  border-radius:20px;
+}
+
+/* BODY */
+.ba-body{
+  padding:18px 16px 20px;
+}
+.ba-body-title{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:14px;
+}
+.ba-body-icon{
+  width:42px;height:42px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;
+}
+.ba-body-label{
+  font-size:20px;font-weight:800;
+}
+.ba-body-sublabel{
+  font-size:18px;font-weight:500;margin-top:1px;
+}
+
+.ba-points{
+  list-style:none;
+  display:flex;flex-direction:column;gap:9px;
+}
+.ba-point{
+  display:flex;gap:10px;
+  padding:10px 12px;
+  border-radius:12px;
+}
+.ba-point-dot{
+  width:22px;height:22px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;
+}
+.ba-point-text{
+  font-size:18px;font-weight:600;line-height:1.45;
+  font-family:'Tiro Devanagari Hindi',serif;
+}
+
+/* BEFORE */
+.ba-card-before{background:#fff5f5;border:1.5px solid #F7C1C1;}
+.ba-card-before .ba-img-label{background:#791F1F;color:#fff;}
+.ba-card-before .ba-body-icon{background:#FCEBEB;}
+.ba-card-before .ba-body-label{color:#791F1F;}
+.ba-card-before .ba-body-sublabel{color:#791F1F;}
+.ba-card-before .ba-point-dot{background:#FCEBEB;color:#791F1F;}
+.ba-card-before .ba-point-text{color:#791F1F;}
+
+/* AFTER */
+.ba-card-after{background:#f0fdf7;border:1.5px solid #9FE1CB;}
+.ba-card-after .ba-img-label{background:var(--secondary);color:#fff;}
+.ba-card-after .ba-body-icon{background:#E1F5EE;}
+.ba-card-after .ba-body-label{color:#085041;}
+.ba-card-after .ba-body-sublabel{color:var(--secondary);}
+.ba-card-after .ba-point-dot{background:#E1F5EE;color:var(--secondary);}
+.ba-card-after .ba-point-text{color:#085041;}
+
+/* ARROW */
+.ba-arrow-pill{
+  background:var(--primary);
+  color:#fff;
+  font-size:18px;
+  padding:7px 18px;
+  border-radius:20px;
+  text-align:center;
+  margin:15px auto;
+}
+
+/* RESULT */
+.ba-result-banner{
+  margin-top:18px;
+  background:var(--primary);
+  border-radius:18px;
+  padding:18px 16px;
+  display:flex;gap:14px;
+  
+}
+.ba-result-text strong{
+  color:var(--secondary);
+  font-size: 20px;
+}
+.ba-result-text p{
+  color:var(--secondary);
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+
+
+
+
+
+
+
+/* section-10 */
+.ofr-sec{
+  background:var(--secondary);
+  padding:36px 20px;
+  position:relative;overflow:hidden;
+  max-width:450px;
+  width:100%;
+}
+.ofr-sec::before{
+  content:'';position:absolute;top:0;left:0;right:0;
+  height:3px;background:var(--primary);
+}
+.ofr-title{color:var(--primary);text-align:center; font-size: 32px;}
+
+.ofr-count-wrap{
+  background:rgba(245,166,35,.12);
+  border:1px solid rgba(245,166,35,.3);
+padding:16px;margin:16px 0;text-align:center;
+}
+.ofr-count-label{color:white;font-size:18px;margin-bottom:10px}
+.ofr-count{display:flex;justify-content:center;gap:10px}
+.ofr-block{
+  background:rgba(255,255,255,.1);
+  border-radius:10px;padding:10px 14px;text-align:center;
+  min-width:54px;
+}
+.ofr-num{
+  
+  font-size:1.6rem;font-weight:800;color:var(--primary);display:block;
+}
+.ofr-lbl{color:white;font-size:16px}
+
+/* IMAGE BOX */
+.ofr-img-box{
+  margin:18px 0;
+  text-align:center;
+}
+.ofr-img-box img{
+  width:100%;
+  max-width:260px;
+  height:auto;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  transition:0.3s;
+}
+.ofr-img-box img:hover{
+  transform:scale(1.05);
+}
+
+/* perks */
+.ofr-perks{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;margin:16px 0
+}
+.ofr-perk{
+  background:rgba(255,255,255,.07);
+  padding:10px 8px;text-align:center;
+  color:#fff;font-size:18px;
+  border-radius: 20px;
+  border:1px solid rgba(255,255,255,.1);
+}
+.ofr-perk .ofr-icon{font-size:1.2rem;display:block;margin-bottom:4px}
+
+/* CTA */
+.ofr-btn{
+  display:block;width:100%;
+  background:var(--primary);
+  color:#fff;
+  font-size:1.15rem;font-weight:700;
+  padding:18px 24px;border-radius:50px;
+  text-align:center;border:none;
+  box-shadow:0 6px 24px rgba(245,166,35,.45);
+  transition:transform .2s,box-shadow .2s;
+  animation:pulse 2s infinite;
+  text-decoration:none;
+  margin-top: 20px;
+}
+.ofr-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 32px rgba(245,166,35,.6);
+  animation:none
+}
+.ofr-sub{
+  text-align:center;
+  font-size:16px;
+  color:white;
+  margin-top:18px;
+  
+}
+
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.03)}
+  100%{transform:scale(1)}
+}
+/* 🔥 SECTION HOVER GLOW */
+.ofr-sec:hover{
+  box-shadow:0 20px 60px rgba(0,0,0,0.6);
+  transform:translateY(-4px);
+  transition:0.4s;
+}
+
+/* 🔥 COUNTDOWN BLOCK HOVER */
+.ofr-block:hover{
+  background:rgba(255,255,255,0.2);
+  transform:translateY(-3px) scale(1.05);
+  transition:0.3s;
+}
+
+/* 🔥 PRODUCT IMAGE PREMIUM HOVER */
+.ofr-img-box img:hover{
+  transform:scale(1.08) rotate(-1deg);
+  box-shadow:0 15px 40px rgba(0,0,0,0.6);
+}
+
+/* 🔥 PERKS HOVER */
+.ofr-perk{
+  transition:0.3s;
+}
+.ofr-perk:hover{
+  background:var(--secondary);
+  color:#000;
+  transform:translateY(-4px) scale(1.05);
+}
+.ofr-perk:hover .ofr-icon{
+  transform:scale(1.2);
+}
+
+/* 🔥 CTA BUTTON SUPER HOVER */
+.ofr-btn:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 12px 40px rgba(245,166,35,.7);
+  letter-spacing:1px;
+}
+
+
+
+
+
+
+
+
+
+
+/* section-11 */
+.form-box{
+    max-width:450px;
+    width: 100%;
+    background: var(--primary);
+    padding:25px 30px;
+    color:white;
+}
+
+/* Heading */
+.form-box h2{
+    margin-top: -2px;
+    font-size:32px;
+    line-height: 1.1;
+    font-weight:600;
+    margin-bottom:20px;
+    color:var(--secondary);
+}
+
+/* Input container */
+.input-group{
+    margin-bottom:18px;
+}
+
+/* Label */
+label{
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:6px;
+    display:block;
+}
+
+/* Input fields */
+input{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    outline:none;
+    font-size:16px;
+}
+.btn-cta{
+    width:100%;
+    padding:13px;
+    font-size:18px;
+    font-weight:600;
+    background:var(--secondary);
+    color:white;
+    border:none;
+    border-radius:12px;
+    margin-top:8px;
+    cursor:pointer;
+    animation:pulse 2s infinite;
+    }
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(175, 152, 75, 0.6)}
+      70%{box-shadow:0 0 0 20px rgba(236,72,153,0)}
+      100%{box-shadow:0 0 0 0 rgba(236,72,153,0)}
+    }
+
+@media (max-width: 480px){
+
+  .form-box{
+    padding: 20px 16px;
+  }
+
+  .form-box h2{
+    font-size: 22px;
+    text-align:left;
+  }
+
+  label{
+    font-size: 14px;
+  }
+
+  input{
+    font-size: 15px;
+    padding: 11px;
+    border-radius: 8px;
+  }
+
+  .btn-cta{
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+/* section-12 */
+.usage-section{
+  width:90%;
+  max-width:450px;
+  position:relative;
+}
+
+/* Header */
+.header-box{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.header-box h2{
+  font-size:32px;
+  font-weight:800;
+  color:var(--secondary);
+  text-transform:uppercase;
+  margin-top: 30px;
+}
+
+
+/* Timeline */
+.timeline-path{
+  position:relative;
+  padding-left:30px;
+}
+
+.timeline-path::before{
+  content:'';
+  position:absolute;
+  left:25px;
+  top:10px;
+  bottom:0;
+  width:2px;
+  background:var(--secondary);
+}
+
+/* Step */
+.step-item{
+  display:flex;
+  align-items:center;
+  margin-bottom:30px;
+  position:relative;
+}
+
+.step-node{
+  position:absolute;
+  left:-10px;
+  top:50%;
+  transform:translateY(-50%);
+  width:12px;
+  height:12px;
+  background:var(--secondary);
+  border-radius:50%;
+  z-index:2;
+  box-shadow:0 0 10px var(--secondary);
+}
+
+/* Card */
+.card-body{
+  flex-grow:1;
+  display:flex;
+  align-items:center;
+  padding:15px;
+  background:var(--secondary);
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.4s ease;
+  backdrop-filter:blur(5px);
+  cursor:pointer;
+  margin-left: 20px;
+}
+
+.img-container{
+  width:70px;
+  height:70px;
+  border-radius:15px;
+  overflow:hidden;
+  flex-shrink:0;
+  margin-right:15px;
+  border:1px solid rgba(255,255,255,0.1);
+}
+
+.img-container img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Text */
+.text-content p{
+  color:var(--primary);
+  font-size:18px;
+  line-height:1.4;
+}
+
+.text-content p b{
+  color:#fff;
+}
+
+/* Hover */
+.step-item:hover .card-body{
+  transform:translateX(10px);
+  border-color:var(--secondary);
+}
+
+
+
+/* Footer */
+.pro-tip{
+  margin-top:10px;
+  background:rgba(0,255,136,0.05);
+  border:1px dashed var(--secondary);
+  padding:15px;
+  border-radius:20px;
+  text-align:center;
+  color:var(--secondary);
+  font-weight:600;
+  font-size:16px;
+  margin-bottom: 20px;
+  margin-left: 40px;
+}
+
+
+
+
+
+
+
+
+
+/* section-13 */
+.wrapper {
+    width: 90%;
+    margin-left: 20px;
+    margin-bottom: 40px;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 32px;
+    color:var(--secondary);
+    font-weight: 800;
+    margin-bottom: -10px;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+
+/* Split Card Design */
+.split-card {
+    display: flex;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 180px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+}
+
+/* Image Side (40%) */
+.image-side {
+    width: 40%;
+    position: relative;
+}
+
+.image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Label on Image */
+.img-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    font-size: 19px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+/* Content Side (60%) */
+.content-side {
+    width: 60%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+}
+
+.stars {
+    color: var(--secondary);
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.quote {
+    font-size: 18px;
+    line-height: 1.5;
+    color:black;
+    font-weight: 500;
+}
+
+.success-text {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Alternating Layout */
+.split-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.split-card:nth-child(even) .content-side {
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
+/* ─── section-14 FAQ ─── */
+.faq-section{background:var(--primary)}
+.faq-item{
+  border:1px solid #eee;
+  border-radius:10px;
+  margin: 10px;
+  overflow:hidden;
+}
+.faq-q{
+  padding:14px 16px;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:600;
+  font-size:18px;
+  user-select:none;
+  color: black;
+  background-color: white;
+  
+}
+.faq-q .arrow{
+  transition:transform .3s;
+  color:var(--secondary);
+}
+.faq-item.open .faq-q .arrow{
+  transform:rotate(180deg);
+}
+.faq-a{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .35s ease,padding .35s;
+  background:#f9fffe;
+  font-size:.82rem;
+  color:black;
+  line-height:1.6;
+  padding:0 16px;
+}
+.faq-item.open .faq-a{
+  max-height:200px;
+  padding:0 16px 14px;
+}
+
+/* ─── CTA BUTTON ─── */
+.cta-btn{
+  display:block;
+  width:100%;
+  background:var(--secondary);
+  color:#fff;
+  font-weight:700;
+  font-size:1.05rem;
+  padding:16px;
+  border-radius:40px;
+  text-align:center;
+  text-decoration:none;
+  box-shadow:0 6px 20px rgba(245,166,35,.35);
+}
+
+/* ─── DISCLAIMER ─── */
+.disclaimer{
+  background:#f5f5f5;
+  padding:18px;
+  font-size:.72rem;
+  color:#777;
+  text-align:center;
+  line-height:1.5;
+}
+
+/* ─── STICKY CTA ─── */
+.sticky-cta{
+  position:fixed;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:100%;
+  max-width:450px;
+  background:var(--primary);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 14px;
+  z-index:999;
+  border-top:2px solid var(--secondary);
+  backdrop-filter:blur(10px);
+}
+
+.sticky-price{
+  color:#fff;
+}
+/* small improvement */
+html{scroll-behavior:smooth}
+
+/* ─── SECTION COMMON ─── */
+.section-tag{
+  color:var(--secondary);
+  font-size:32px;
+  font-weight:700;
+  text-transform:uppercase;
+  padding:4px 12px;
+  border-radius:50px;
+  margin-bottom:10px;
+  text-align: center;
+}
+.section-title{font-size:1.5rem;font-weight:800;line-height:1.25;margin-bottom:6px}
+.section-sub{font-size:.88rem;color:var(--text-muted);line-height:1.6;margin-bottom:20px}
+
+
+
+
+
+</style>
+</head>
+<body>
+
+
+    
+     <div class="bar">
+  <div class="logo">SLIMAX</div>
+  <a href="#orderForm" class="button">Buy Now</a>
+</div>
+
+
+<section class="sec">
+  <img src="images/banner.avif" class="images"  alt="">
+</section>
+
+
+
+
+
+
+
+
+<!-- SECTION-1 -->
+<section class="sect">
+    <div class="pain-story">
+
+    <div class="header-title">
+        <h2>क्या आप भी इन समस्याओं से परेशान हैं?</h2>
+    </div>
+
+    <div class="block">
+        <div class="block-img">
+            <img src="images/sect-1-1stimg.avif"
+                 width="300" height="200" loading="lazy" alt="Belly Fat">
+        </div>
+        <div class="block-info">
+            <p>पेट और कमर के आसपास तेजी से Fat जमा होना</p>
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="block-img">
+            <img src="images/sect-1-2ndimg.avif"
+                 width="300" height="200" loading="lazy" alt="Fatigue">
+        </div>
+        <div class="block-info">
+            <p>थोड़ा सा काम करते ही थकान और सांस फूलना</p>
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="block-img">
+            <img src="images/sect-1-3rdimg.avif"
+                 width="300" height="200" loading="lazy" alt="Energy">
+        </div>
+        <div class="block-info">
+            <p>हमेशा Low Energy और भारीपन महसूस होना</p>
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="block-img">
+            <img src="images/sect-1-4thimg.avif"
+                 width="300" height="200" loading="lazy" alt="Clothes">
+        </div>
+        <div class="block-info">
+            <p>कपड़े Tight होना और Confidence गिरना</p>
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="block-img">
+            <img src="images/sect-1-5thimg.avif"
+                 width="300" height="200" loading="lazy" alt="Awkward">
+        </div>
+        <div class="block-info">
+            <p>लोगों के सामने Awkward feel करना</p>
+        </div>
+    </div>
+
+    <div class="truth-banner">
+        <h3>असली समस्या सिर्फ मोटापा नहीं है…</h3>
+        <p>ये body के अंदर <b>toxins</b>, <b>slow metabolism</b> और <b>fat imbalance</b> का नतीजा है।</p>
+    </div>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-2 -->
+<section class="sec">
+    <div class="section-product reveal">
+  <div class="sec-eyebrow" style="text-align: center; margin-top:20px; margin-bottom: 40px; font-size: 32px; color: var(--primary); font-weight: 800;">Product section</div>
+  <div class="product-img-wrap">
+    <img class="product-img" src="images/product.avif" width="300" height="300" alt="KetoSlim Pro product" loading="lazy">
+    <div class="product-ring"></div>
+  </div>
+  <div class="product-name">अब घबराने की जरूरत नहीं है…</div>
+  <p class="product-tagline">👉 पेश है — 100% Ayurvedic Fat Control Formula- <strong style="color: var(--primary); font-size: 32px;"><br> SLIMAX <br></strong>
+जो सिर्फ वजन कम नहीं करता…
+ बल्कि body को अंदर से detox करके fat को जड़ से खत्म करने में मदद करता है।</p>
+  <div class="product-badges">
+    <span class="pbadge">✔ बिना gym</span>
+    <span class="pbadge"> ✔ बिना strict diet</span>
+    <span class="pbadge">✔ घर बैठे natural fat loss</span>
+  </div>
+
+  </div>
+</section>
+
+ 
+
+
+
+
+
+
+
+<!-- section-3 -->
+ <section class="sec">
+<div class="section-how reveal">
+  <h2 class="sec-title">How it works</em></h2>
+
+  <div class="steps-wrap">
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div style="flex:1">
+        <img class="step-icon-img" src="images/sect-3-1stimg.avif" width="100" height="100" alt="Step 1" loading="lazy">
+        <div class="step-body">
+          <div class="step-title">🧹 Detox Process</div>
+          <p class="step-desc">✔ सबसे पहले body में जमा toxins को बाहर निकालता है — अंदर से सफाई शुरू होती है</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div style="flex:1">
+        <img class="step-icon-img" src="images/sect-3-2ndimg.avif" width="100" height="100" alt="Step 2" loading="lazy">
+        <div class="step-body">
+          <div class="step-title">⚡ Metabolism Boost</div>
+          <p class="step-desc">✔ फिर metabolism को तेज करता है — body ज्यादा calories burn करने लगती है</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div style="flex:1">
+        <img class="step-icon-img" src="images/sect-3-3rdimg.avif" width="100" height="100" alt="Step 3" loading="lazy">
+        <div class="step-body">
+          <div class="step-title">🔥 Fat Burning Activation</div>
+          <p class="step-desc">✔ fat burning process को activate करता है और पुराने जमा fat को धीरे-धीरे melt करता है</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div style="flex:1">
+        <img class="step-icon-img" src="images/sect-3-4thimg.avif" width="100" height="100" alt="Step 4" loading="lazy">
+        <div class="step-body">
+          <div class="step-title">✨ Energy & Transformation</div>
+          <p class="step-desc">✔ साथ ही energy level बढ़ाता है और body को अंदर से transform करता है</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+<!-- section-4 -->
+<section class="sec">
+    <div class="pain-wrapper">
+    <div class="pain-title">
+        <h2><span>KEY INGREDIENTS</h2>
+    </div>
+
+    <div class="item-stack">
+
+        <div class="item-row">
+            <div class="item-img">
+                <img src="images/Guggul.avif"
+                     width="90" height="90" loading="lazy" alt="Guggul">
+            </div>
+            <div class="item-content">
+                <p><span>✔ Guggul</span><br>fat breakdown में मदद करता है</p>
+            </div>
+        </div>
+
+        <div class="item-row">
+            <div class="item-img">
+                <img src="images/triphala.avif"
+                     width="90" height="90" loading="lazy" alt="Triphala">
+            </div>
+            <div class="item-content">
+                <p><span>✔ Triphala</span><br>digestion improve करता है</p>
+            </div>
+        </div>
+
+        <div class="item-row">
+            <div class="item-img">
+                <img src="images/tea.avif"
+                     width="90" height="90" loading="lazy" alt="Green Tea">
+            </div>
+            <div class="item-content">
+                <p><span>✔ Green Tea Extract</span> <br>metabolism boost करता है</p>
+            </div>
+        </div>
+
+        <div class="item-row" style="border:none;">
+            <div class="item-img">
+                <img src="images/pipli.avif"
+                     width="90" height="90" loading="lazy" alt="Pippali">
+            </div>
+            <div class="item-content">
+                <p><span>✔ Pippali </span><br>fat जमा होने से रोकता है</p>
+            </div>
+        </div>
+
+    </div>
+
+  
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- section-5-6 -->
+<section class="sec">
+    <div class="container-450">
+
+    <div class="header-section">
+        <h2>Doctor Recommendation</h2>
+    </div>
+
+    <div class="content-card">
+
+        <img 
+        src="images/doctor.avif" 
+        alt="Doctor"
+        class="doctor-img"
+        loading="lazy"
+        width="450"
+        height="270">
+
+        <div class="highlight-text">
+            आजकल बढ़ता हुआ वजन सिर्फ खाने की वजह से नहीं…
+            बल्कि body में toxins जमा होना और metabolism slow होना इसका बड़ा कारण है।
+        </div>
+        
+        <p class="description">
+            👉 अगर इसे सही समय पर control न किया जाए
+            तो ये diabetes, BP और heart problems का कारण बन सकता है।
+            <br><br>
+            👉 इसलिए natural detox + metabolism correction
+            सबसे safe और long-term तरीका माना जाता है।
+        </p>
+
+        <div class="product-box">
+            <span class="product-namee">Slimax Powder</span>
+            <small style="color: black; font-size: 16px;">Natural Detox + Metabolism Support Formula</small>
+        </div>
+
+    </div>
+
+    <div class="trust-badges">
+        <div class="badge-item">
+            <div class="badge-icon">
+                <img src="images/ayurvedic.avif" alt="">
+            </div>
+            100% <br> Ayurvedic
+        </div>
+        <div class="badge-item">
+            <div class="badge-icon">
+                <img src="images/iso-certification.avif" alt="">
+            </div>
+            ISO <br> Certified
+        </div>
+        <div class="badge-item">
+            <div class="badge-icon">
+                <img src="images/gmp.avif" alt="">
+            </div>
+            GMP <br> certified
+        </div>
+    </div>
+
+    <a href="#orderForm" class="cta-button">अधिक जानकारी प्राप्त करें</a>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- section-7 -->
+<section class="sec">
+ <div class="section-compare reveal">
+  <h2 class="sec-title">OTHER VS SLIMAX</h2>
+
+  <div class="compare-table">
+    <div class="compare-header">
+      <div class="compare-col-head grey">विशेषता</div>
+      <div class="compare-col-head gold">हमारा Formula ✅</div>
+      <div class="compare-col-head grey">Other Products ❌</div>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-cell feature">Temporary Weight Loss</div>
+      <div class="compare-cell gold-col"><span class="tick">✘</span></div>
+      <div class="compare-cell"><span class="cross">✔</span></div>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-cell feature">Root Cause पर काम</div>
+      <div class="compare-cell gold-col"><span class="tick">✔</span></div>
+      <div class="compare-cell"><span class="cross">✘</span></div>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-cell feature">Side Effects का खतरा</div>
+      <div class="compare-cell gold-col"><span class="tick">✘</span></div>
+      <div class="compare-cell"><span class="cross">✔</span></div>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-cell feature">100% Safe</div>
+      <div class="compare-cell gold-col"><span class="tick">✔</span></div>
+      <div class="compare-cell"><span class="cross">✘</span></div>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-cell feature">Weight वापस बढ़ जाता है</div>
+      <div class="compare-cell gold-col"><span class="tick">✘</span></div>
+      <div class="compare-cell"><span class="cross">✔</span></div>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-cell feature">Long-term Control</div>
+      <div class="compare-cell gold-col"><span class="tick">✔</span></div>
+      <div class="compare-cell"><span class="cross">✘</span></div>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-cell feature">Chemical Based</div>
+      <div class="compare-cell gold-col"><span class="tick">✘</span></div>
+      <div class="compare-cell"><span class="cross">✔</span></div>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-cell feature">Pure Ayurvedic</div>
+      <div class="compare-cell gold-col"><span class="tick">✔</span></div>
+      <div class="compare-cell"><span class="cross">✘</span></div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+
+
+
+
+
+
+<!-- section-8 -->
+<section class="sec">
+    <div class="usage-section">
+
+    <div class="title-area">
+        <h2>HOW TO <span>USE IT</span></h2>
+        <div class="divider"></div>
+    </div>
+
+    <div class="portal-item">
+        <div class="portal-num">01</div>
+        <div class="portal-content">
+            <h4>Timing</h4>
+            <p>रोज़ <b>2 बार</b>, खाने के बाद <b>गुनगुने पानी</b> के साथ लें</p>
+        </div>
+    </div>
+
+    <div class="portal-item">
+        <div class="portal-num">02</div>
+        <div class="portal-content">
+            <h4>Consistency</h4>
+            <p>बेहतर result के लिए <b>1–3 महीने</b> तक नियमित उपयोग करें</p>
+        </div>
+    </div>
+
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+<!-- section-9 -->
+<section class="sec">
+    
+<div class="ba-wrap">
+
+  <h2 class="ba-heading">Before/After</h2>
+
+  <div class="ba-timeline">
+
+    <!-- BEFORE -->
+    <div class="ba-card ba-card-before">
+      <div class="ba-img-zone">
+        <img loading="lazy" width="450" height="380"
+        src="images/before-img.avif" alt="Before">
+        <span class="ba-img-label">❌ पहले</span>
+      </div>
+
+      <div class="ba-body">
+        <div class="ba-body-title">
+          <div class="ba-body-icon">😟</div>
+          <div>
+            <div class="ba-body-label">पहले की स्थिति</div>
+            <div class="ba-body-sublabel">struggle और discomfort</div>
+          </div>
+        </div>
+
+        <ul class="ba-points">
+          <li class="ba-point">
+            <div class="ba-point-dot">✕</div>
+            <span class="ba-point-text">भारी शरीर और बढ़ता हुआ पेट</span>
+          </li>
+          <li class="ba-point">
+            <div class="ba-point-dot">✕</div>
+            <span class="ba-point-text">हर काम में जल्दी थक जाना</span>
+          </li>
+          <li class="ba-point">
+            <div class="ba-point-dot">✕</div>
+            <span class="ba-point-text">low confidence और awkward feel</span>
+          </li>
+          <li class="ba-point">
+            <div class="ba-point-dot">✕</div>
+            <span class="ba-point-text">कपड़े tight होना</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ba-arrow-pill">AFTER RESULT ↓</div>
+
+    <!-- AFTER -->
+    <div class="ba-card ba-card-after">
+      <div class="ba-img-zone">
+        <img loading="lazy" width="450" height="380"
+        src="images/afterimg.avif" alt="After">
+        <span class="ba-img-label">✅ बाद में</span>
+      </div>
+
+      <div class="ba-body">
+        <div class="ba-body-title">
+          <div class="ba-body-icon">😎</div>
+          <div>
+            <div class="ba-body-label">बाद की स्थिति</div>
+            <div class="ba-body-sublabel">confidence और energy</div>
+          </div>
+        </div>
+
+        <ul class="ba-points">
+          <li class="ba-point">
+            <div class="ba-point-dot">✓</div>
+            <span class="ba-point-text">slim, fit और balanced body</span>
+          </li>
+          <li class="ba-point">
+            <div class="ba-point-dot">✓</div>
+            <span class="ba-point-text">पूरा दिन energy से भरा हुआ feel</span>
+          </li>
+          <li class="ba-point">
+            <div class="ba-point-dot">✓</div>
+            <span class="ba-point-text">high confidence — लोग notice करेंगे</span>
+          </li>
+          <li class="ba-point">
+            <div class="ba-point-dot">✓</div>
+            <span class="ba-point-text">हर outfit perfectly fit</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RESULT -->
+  <div class="ba-result-banner">
+    <div class="ba-result-text">
+      <strong>Final Result</strong>
+      <p>अब body सिर्फ slim नहीं — confident, active और attractive बनती है।</p>
+    </div>
+  </div>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- section-10 -->
+<section class="sec">
+    <div class="ofr-sec reveal">
+  
+  <h2 class="ofr-title">आज का Special Offer</h2>
+
+  <div class="ofr-count-wrap">
+    <div class="ofr-count-label">⏳ यह offer सिर्फ आज के लिए — Timer देखें:</div>
+    <div class="ofr-count">
+      <div class="ofr-block"><span class="ofr-num" id="ch">00</span><span class="ofr-lbl">Hours</span></div>
+      <div class="ofr-block"><span class="ofr-num" id="cm">00</span><span class="ofr-lbl">Min</span></div>
+      <div class="ofr-block"><span class="ofr-num" id="cs">00</span><span class="ofr-lbl">Sec</span></div>
+    </div>
+  </div>
+
+  <div class="ofr-img-box">
+    <img src="images/product.avif" 
+         alt="Product"
+         loading="lazy"
+         width="300"
+         height="300">
+  </div>
+
+  <div class="ofr-perks">
+    <div class="ofr-perk"><span class="ofr-icon">🚚</span>Free Delivery</div>
+    <div class="ofr-perk"><span class="ofr-icon">💵</span>Cash on Delivery</div>
+    <div class="ofr-perk"><span class="ofr-icon">🔒</span>Secure Order</div>
+    <div class="ofr-perk"><span class="ofr-icon">📦</span>Same Day Ship</div>
+  </div>
+
+  <a href="#orderForm" class="ofr-btn">🔥 अभी Order करें — Free Delivery पाएं!</a>
+  <p class="ofr-sub">⚠️ Stock सीमित है — अभी order करें, देर मत करें</p>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- section-11 -->
+
+<html>
+    <head>
+        <style>
+            #loading {
+        display: none;
+        color: #fff;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+
+      #poweredBy {
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        margin-top: 20px;
+      }
+/* FULL SCREEN LOADER */
+#loaderOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* SPINNER */
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #fff;
+  border-top: 5px solid gold;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+   
+        </style>
+
+        <script>
+  function submitForm(event) {
+  event.preventDefault();
+
+  const form = event.target;
+
+  const submitBtn = form.querySelector("button[type='submit'], input[type='submit']");
+  if (submitBtn) {
+    submitBtn.style.display = "none";
+    submitBtn.disabled = true;
+  }
+
+  // 🔥 SHOW LOADER
+  document.getElementById("loaderOverlay").style.display = "flex";
+
+  const formData = new FormData(form);
+  let redirected = false;
+
+  fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.text())
+  .then(data => {
+
+    if (!redirected) {
+      redirected = true;
+
+      // 🔥 REDIRECT
+      window.location.href = './Thankyou.html';
+
+      // 🔥 REFRESH BACK PAGE
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+    }
+
+  })
+  .catch(error => {
+    console.error('Fetch error:', error);
+
+    if (!redirected) {
+      redirected = true;
+      window.location.href = './Thankyou.html';
+    }
+  });
+
+  return false;
+}
+
+  // Animated dots for loading state
+  let dotCount = 1;
+  setInterval(() => {
+    const d = document.getElementById('dotAnim');
+    if (d) { 
+      dotCount = (dotCount % 3) + 1; 
+      d.textContent = '.'.repeat(dotCount); 
+    }
+  }, 500);
+</script>
+    </head>
+    <body>
+
+
+<!-- section-11 -->
+<section class="sec">
+<div class="form-box">
+    <h2> अभी ऑर्डर करें और अपनी आवाज़ में confidence वापस पाएं
+
+</h2>
+
+    <form id="orderForm" onsubmit="submitForm(event)">
+        <div class="input-group">
+            <label>नाम:</label>
+            <input type="text" name="name"  placeholder="अपना नाम दर्ज करें" required>
+        </div>
+
+        <div class="input-group">
+            <label>मोबाइल नंबर (10 अंक):</label>
+            <input type="tel" name="phone"  maxlength="10" pattern="[6-9][0-9]{9}" placeholder="अपना मोबाइल नंबर दर्ज करें" required>
+        </div>
+
+        <button class="btn-cta"  type="submit">Order Now
+</button>  
+<div id="loaderOverlay">
+  <div style="text-align:center;">
+    <div class="loader"></div>
+    <p style="color:white;margin-top:10px;">
+      Processing<span id="dotAnim"></span>
+    </p>
+  </div>
+</div>
+    </form>
+</div>
+</section>
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+<!-- section-12 -->
+<section class="sec">
+    <div class="usage-section">
+
+    <div class="header-box">
+        <h2>GUARANTEE SECTION</h2>
+    </div>
+
+    <div class="timeline-path">
+
+        <div class="step-item">
+            <div class="step-node"></div>
+            <div class="card-body">
+                <div class="img-container">
+                    <img src="images/safe.avif" alt="Ayurvedic" loading="lazy" width="150" height="150">
+                </div>
+                <div class="text-content">
+                    <p><b>100% Ayurvedic & Safe</b> Guarantee</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="step-item">
+            <div class="step-node"></div>
+            <div class="card-body">
+                <div class="img-container">
+                    <img src="images/no-chemical.avif" alt="Chemical Free" loading="lazy" width="150" height="150">
+                </div>
+                <div class="text-content">
+                    <p>कोई <b>harmful chemical</b> नहीं</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="step-item">
+            <div class="step-node"></div>
+            <div class="card-body">
+                <div class="img-container">
+                    <img src="images/no-side-effect.avif" alt="No Side Effect" loading="lazy" width="150" height="150">
+                </div>
+                <div class="text-content">
+                    <p>कोई <b>side effect</b> नहीं</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="step-item">
+            <div class="step-node"></div>
+            <div class="card-body">
+                <div class="img-container">
+                    <img src="images/long-term.avif" alt="Long Term Safe" loading="lazy" width="150" height="150">
+                </div>
+                <div class="text-content">
+                    <p><b>long-term use</b> के लिए safe</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="pro-tip">
+        शुद्ध आयुर्वेदिक जड़ी-बूटियों का भरोसा!
+    </div>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- section-13 -->
+<section class="sec">
+<div class="wrapper">
+<h2 class="main-title">TRUSTED BY THOUSANDS</h2>
+
+<div class="split-card">
+    <div class="image-side">
+        <span class="img-tag">Real Result</span>
+        <img src="images/card-1.avif" loading="lazy" alt="Customer">
+    </div>
+    <div class="content-side">
+        <div class="stars">★★★★★</div>
+        <p class="quote">“पहले conscious रहता था... अब <span class="success-text">पहले से ज्यादा confident</span> feel करता हूँ।”</p>
+    </div>
+</div>
+
+<div class="split-card">
+    <div class="image-side">
+        <span class="img-tag">Real Result</span>
+        <img src="images/card-2.avif" loading="lazy" alt="Customer">
+    </div>
+    <div class="content-side">
+        <div class="stars">★★★★★</div>
+        <p class="quote">“बिना gym के change दिखा। <span class="success-text">कपड़े अब आराम से fit</span> हो रहे हैं।”</p>
+    </div>
+</div>
+
+<div class="split-card">
+    <div class="image-side">
+        <span class="img-tag">Real Result</span>
+        <img src="images/card-3.avif" loading="lazy" alt="Customer">
+    </div>
+    <div class="content-side">
+        <div class="stars">★★★★★</div>
+        <p class="quote">“पेट की चर्बी का issue था... अब <span class="success-text">digestion भी बेहतर</span> हो गया है।”</p>
+    </div>
+</div>
+
+<div class="split-card">
+    <div class="image-side">
+        <span class="img-tag">Real Result</span>
+        <img src="images/card-4.avif" loading="lazy" alt="Customer">
+    </div>
+    <div class="content-side">
+        <div class="stars">★★★★★</div>
+        <p class="quote">“पहले थकान रहती थी... अब body <span class="success-text">active feel होती है</span>।”</p>
+    </div>
+</div>
+
+<div class="split-card">
+    <div class="image-side">
+        <span class="img-tag">Real Result</span>
+        <img src="images/card-5.avif" loading="lazy" alt="Customer">
+    </div>
+    <div class="content-side">
+        <div class="stars">★★★★★</div>
+        <p class="quote">“Confidence वापस आना सबसे बड़ा change है... <span class="success-text">खुद में अच्छा महसूस</span> होता है।”</p>
+    </div>
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+<!-- section-14 FAQ -->
+<section class="sec">
+<div class="faq-section reveal" id="order">
+  <div class="section-tag"> FAQ</div>
+
+  <div class="faq-item">
+    <div class="faq-q">क्या ये safe है? <span class="arrow">▼</span></div>
+    <div class="faq-a">👉 हाँ, ये 100% Ayurvedic है</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">कितने दिन में असर दिखेगा? <span class="arrow">▼</span></div>
+    <div class="faq-a">👉 7–15 दिन में फर्क दिख सकता है</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">क्या बिना diet/exercise काम करेगा? <span class="arrow">▼</span></div>
+    <div class="faq-a">👉 हाँ, लेकिन healthy lifestyle से result बेहतर होगा</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">क्या side effects हैं? <span class="arrow">▼</span></div>
+    <div class="faq-a">👉 नहीं, ये पूरी तरह safe है</div>
+  </div>
+
+  <div style="margin-top:24px">
+    <a href="#orderForm" class="cta-btn">📦 अभी Order करें — Free Delivery!</a>
+    <p style="text-align:center;font-size:.75rem;color:var(--text-muted);margin-top:8px">
+      ✅ COD Available &nbsp;|&nbsp; 🚚 Free Delivery &nbsp;|&nbsp; 🔒 Secure
+    </p>
+  </div>
+</div>
+</section>
+
+
+
+
+<!-- DISCLAIMER -->
+ <section class="sec">
+<div class="disclaimer">
+  <p>⚠️ <strong>Disclaimer:</strong> यह एक आयुर्वेदिक सपोर्ट प्रोडक्ट है।
+ परिणाम व्यक्ति अनुसार भिन्न हो सकते हैं।
+ यह किसी बीमारी के इलाज का विकल्प नहीं है।
+</p>
+</div>
+ </section>
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-price">
+  </div>
+  <a href="#orderForm" class="cta-btn">अभी Order करें →</a>
+</div>
+<script>
+// FAQ Accordion (Same as original)
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var item=q.closest('.faq-item');
+    var isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+    if(!isOpen)item.classList.add('open');
+  });
+});
+
+// Scroll Reveal (Same)
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.12});
+  els.forEach(function(el){io.observe(el);});
+})();
+
+// Sticky CTA Hide Logic (Same)
+window.addEventListener('scroll',function(){
+  var sc=document.getElementById('stickyCta');
+  var nearBottom=(window.innerHeight+window.scrollY)>=document.body.offsetHeight-80;
+  sc.style.display=nearBottom?'none':'flex';
+});
+
+
+
+
+// Countdown Timer SAME
+(function(){
+  var end=new Date();
+  end.setHours(end.getHours()+5,end.getMinutes()+47,end.getSeconds()+30);
+  function tick(){
+    var now=new Date(),diff=Math.max(0,end-now);
+    var h=Math.floor(diff/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
+    document.getElementById('ch').textContent=String(h).padStart(2,'0');
+    document.getElementById('cm').textContent=String(m).padStart(2,'0');
+    document.getElementById('cs').textContent=String(s).padStart(2,'0');
+    if(diff>0)setTimeout(tick,1000);
+  }
+  tick();
+})();
+</script>
+</body>
+</html>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -225,10 +224,6 @@ body {
 }
 
 
-
-
-
-
 /* SECTION-1 */
 .pain-story {
     width: 100%;
@@ -354,15 +349,6 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
-
 /* section-2 */
 
 .section-product{
@@ -411,15 +397,6 @@ body {
 .pbadge:hover{background:rgba(201,168,76,.25);transform:scale(1.06)}
 
 
-
-
-
-
-
-
-
-
-
 /* section-3 */
 .section-how{
   background:var(--secondary);
@@ -460,14 +437,6 @@ body {
 .step-body{flex:1}
 .step-title{font-size:22px;font-weight:800;color:var(--primary);margin-bottom:6px}
 .step-desc{font-size:18px;color:white;line-height:1.6}
-
-
-
-
-
-
-
-
 
 
 /* section-4 */
@@ -562,13 +531,6 @@ body {
 .item-row:hover .item-content p span {
     color: var(--primary);
 }
-
-
-
-
-
-
-
 
 
 /* section-5-6 */
@@ -729,13 +691,6 @@ body {
 }
 
 
-
-
-
-
-
-
-
 /* section-7 */
 
 .section-compare{
@@ -770,13 +725,6 @@ body {
 .compare-cell .tick{color:var(--primary);font-size:1.1rem}
 .compare-cell .cross{color:rgb(212, 44, 44);font-size:1.1rem}
 .compare-cell.gold-col{background:rgba(201,168,76,.06)}
-
-
-
-
-
-
-
 
 
 /* section-8 */
@@ -890,14 +838,6 @@ body {
   50%{opacity:0.5;transform:scale(1.2);}
   100%{opacity:1;transform:scale(1);}
 }
-
-
-
-
-
-
-
-
 
 
 /* section-9 */
@@ -1048,12 +988,6 @@ body {
 }
 
 
-
-
-
-
-
-
 /* section-10 */
 .ofr-sec{
   background:var(--secondary);
@@ -1191,14 +1125,6 @@ padding:16px;margin:16px 0;text-align:center;
 }
 
 
-
-
-
-
-
-
-
-
 /* section-11 */
 .form-box{
     max-width:450px;
@@ -1286,12 +1212,6 @@ input{
     border-radius: 10px;
   }
 }
-
-
-
-
-
-
 
 
 /* section-12 */
@@ -1419,13 +1339,6 @@ input{
 }
 
 
-
-
-
-
-
-
-
 /* section-13 */
 .wrapper {
     width: 90%;
@@ -1520,13 +1433,6 @@ input{
 .split-card:nth-child(even) .content-side {
     text-align: right;
 }
-
-
-
-
-
-
-
 
 
 /* ─── section-14 FAQ ─── */
@@ -1636,8 +1542,317 @@ html{scroll-behavior:smooth}
 .section-sub{font-size:.88rem;color:var(--text-muted);line-height:1.6;margin-bottom:20px}
 
 
+/* ============================================
+   MOBILE OPTIMIZATION — max-width: 480px
+   Only font sizes & layout tweaks for mobile.
+   All colors, effects, animations unchanged.
+   ============================================ */
+@media (max-width: 480px) {
 
+  /* --- NAV BAR --- */
+  .bar {
+    height: 58px;
+    padding: 0 14px;
+  }
+  .logo {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+  .button {
+    font-size: 16px;
+    padding: 7px 13px;
+  }
 
+  /* --- SECTION-1 pain story --- */
+  .header-title {
+    padding: 20px 14px;
+  }
+  .header-title h2 {
+    font-size: 22px; /* main heading */
+  }
+  .block {
+    height: 130px;
+  }
+  .block-info p {
+    font-size: 16px; /* normal text */
+  }
+  .truth-banner h3 {
+    font-size: 18px; /* normal heading */
+  }
+  .truth-banner p {
+    font-size: 16px; /* normal text */
+  }
+
+  /* --- SECTION-2 product --- */
+  .section-product {
+    padding: 8px 14px;
+  }
+  .product-img-wrap {
+    width: 220px;
+    height: 220px;
+  }
+  .product-img {
+    width: 220px;
+    height: 220px;
+  }
+  .product-name {
+    font-size: 18px; /* normal heading */
+  }
+  .product-tagline {
+    font-size: 16px; /* normal text */
+  }
+  .product-tagline strong {
+    font-size: 22px; /* main heading */
+  }
+  .pbadge {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+
+  /* --- SECTION-3 how it works --- */
+  .sec-title {
+    font-size: 22px; /* main heading */
+  }
+  .step-icon-img {
+    width: 75px;
+    height: 75px;
+  }
+  .step-title {
+    font-size: 18px; /* normal heading */
+  }
+  .step-desc {
+    font-size: 16px; /* normal text */
+  }
+
+  /* --- SECTION-4 ingredients --- */
+  .pain-wrapper {
+    width: 100%;
+    padding: 24px 0;
+  }
+  .pain-title h2 {
+    font-size: 22px; /* main heading */
+  }
+  .item-row {
+    padding: 14px 16px;
+  }
+  .item-img {
+    width: 70px;
+    height: 70px;
+  }
+  .item-content {
+    margin-left: 14px;
+  }
+  .item-content p {
+    font-size: 16px; /* normal text */
+  }
+  .item-content p span {
+    font-size: 18px; /* normal heading */
+  }
+
+  /* --- SECTION-5-6 doctor --- */
+  .header-section h2 {
+    font-size: 22px; /* main heading */
+  }
+  .content-card {
+    margin: -14px 12px 14px 12px;
+    padding: 18px;
+  }
+  .highlight-text {
+    font-size: 16px; /* normal text */
+  }
+  .description {
+    font-size: 16px; /* normal text */
+  }
+  .product-namee {
+    font-size: 18px; /* normal heading */
+  }
+  .badge-item {
+    font-size: 14px;
+  }
+  .badge-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* --- SECTION-7 compare --- */
+  .section-compare {
+    padding: 14px 0;
+  }
+  .compare-col-head {
+    font-size: 14px;
+    padding: 0 4px;
+    letter-spacing: 0;
+  }
+  .compare-cell {
+    font-size: 14px;
+    padding: 10px 4px;
+  }
+  .compare-cell.feature {
+    font-size: 14px;
+    padding-left: 8px;
+  }
+
+  /* --- SECTION-8 how to use --- */
+  .title-area h2 {
+    font-size: 22px; /* main heading */
+    margin-top: 20px;
+  }
+  .portal-num {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    border-radius: 14px;
+  }
+  .portal-content h4 {
+    font-size: 16px;
+  }
+  .portal-content p {
+    font-size: 16px; /* normal text */
+  }
+  .portal-item {
+    margin-left: 12px;
+    margin-bottom: 28px;
+  }
+
+  /* --- SECTION-9 before/after --- */
+  .ba-wrap {
+    padding: 22px 12px 26px;
+  }
+  .ba-heading {
+    font-size: 22px; /* main heading */
+    margin-bottom: 18px;
+  }
+  .ba-img-zone {
+    height: 260px;
+  }
+  .ba-img-label {
+    font-size: 16px; /* normal text */
+  }
+  .ba-body-label {
+    font-size: 18px; /* normal heading */
+  }
+  .ba-body-sublabel {
+    font-size: 16px; /* normal text */
+  }
+  .ba-point-text {
+    font-size: 16px; /* normal text */
+  }
+  .ba-arrow-pill {
+    font-size: 16px; /* normal text */
+  }
+  .ba-result-text strong {
+    font-size: 18px; /* normal heading */
+  }
+  .ba-result-text p {
+    font-size: 16px; /* normal text */
+  }
+
+  /* --- SECTION-10 offer --- */
+  .ofr-title {
+    font-size: 22px; /* main heading */
+  }
+  .ofr-count-label {
+    font-size: 16px; /* normal text */
+  }
+  .ofr-num {
+    font-size: 1.3rem;
+  }
+  .ofr-lbl {
+    font-size: 13px;
+  }
+  .ofr-perk {
+    font-size: 14px;
+    padding: 8px 6px;
+  }
+  .ofr-btn {
+    font-size: 16px; /* normal text */
+    padding: 15px 18px;
+  }
+  .ofr-sub {
+    font-size: 14px;
+  }
+
+  /* --- SECTION-11 form --- */
+  .form-box h2 {
+    font-size: 22px; /* main heading */
+  }
+  label {
+    font-size: 16px; /* normal text */
+  }
+  input {
+    font-size: 16px;
+  }
+  .btn-cta {
+    font-size: 16px; /* normal text */
+  }
+
+  /* --- SECTION-12 guarantee --- */
+  .header-box h2 {
+    font-size: 22px; /* main heading */
+    margin-top: 20px;
+  }
+  .text-content p {
+    font-size: 16px; /* normal text */
+  }
+  .img-container {
+    width: 56px;
+    height: 56px;
+  }
+  .card-body {
+    padding: 12px;
+    margin-left: 14px;
+  }
+  .pro-tip {
+    font-size: 14px;
+    margin-left: 28px;
+  }
+
+  /* --- SECTION-13 testimonials --- */
+  .main-title {
+    font-size: 22px; /* main heading */
+    margin-top: 20px;
+  }
+  .wrapper {
+    width: 94%;
+    margin-left: 10px;
+  }
+  .split-card {
+    height: 150px;
+  }
+  .img-tag {
+    font-size: 13px;
+    padding: 2px 6px;
+  }
+  .stars {
+    font-size: 15px;
+  }
+  .quote {
+    font-size: 16px; /* normal text */
+    line-height: 1.4;
+  }
+
+  /* --- SECTION-14 FAQ --- */
+  .section-tag {
+    font-size: 22px; /* main heading */
+  }
+  .faq-q {
+    font-size: 16px; /* normal text */
+    padding: 12px 14px;
+  }
+  .faq-a {
+    font-size: 15px;
+  }
+  .cta-btn {
+    font-size: 16px; /* normal text */
+    padding: 14px;
+  }
+
+  /* --- STICKY CTA --- */
+  .sticky-cta {
+    padding: 8px 12px;
+  }
+
+} /* end @media max-width: 480px */
 
 </style>
 </head>
@@ -1658,12 +1873,6 @@ html{scroll-behavior:smooth}
   fetchpriority="high"
   decoding="async" alt="" alt="">
 </section>
-
-
-
-
-
-
 
 
 <!-- SECTION-1 -->
@@ -1733,17 +1942,6 @@ html{scroll-behavior:smooth}
 </section>
 
 
-
-
-
-
-
-
-
-
-
-
-
 <!-- section-2 -->
 <section class="sec">
     <div class="section-product reveal">
@@ -1766,13 +1964,6 @@ html{scroll-behavior:smooth}
 </section>
 
  
-
-
-
-
-
-
-
 <!-- section-3 -->
  <section class="sec">
 <div class="section-how reveal">
@@ -1827,12 +2018,6 @@ html{scroll-behavior:smooth}
   </div>
 </div>
 </section>
-
-
-
-
-
-
 
 
 <!-- section-4 -->
@@ -1890,14 +2075,6 @@ html{scroll-behavior:smooth}
 
 </div>
 </section>
-
-
-
-
-
-
-
-
 
 
 <!-- section-5-6 -->
@@ -1965,17 +2142,6 @@ html{scroll-behavior:smooth}
 </section>
 
 
-
-
-
-
-
-
-
-
-
-
-
 <!-- section-7 -->
 <section class="sec">
  <div class="section-compare reveal">
@@ -2041,11 +2207,6 @@ html{scroll-behavior:smooth}
 </section>
 
 
-
-
-
-
-
 <!-- section-8 -->
 <section class="sec">
     <div class="usage-section">
@@ -2074,12 +2235,6 @@ html{scroll-behavior:smooth}
 
 </div>
 </section>
-
-
-
-
-
-
 
 
 <!-- section-9 -->
@@ -2183,14 +2338,6 @@ html{scroll-behavior:smooth}
 </section>
 
 
-
-
-
-
-
-
-
-
 <!-- section-10 -->
 <section class="sec">
     <div class="ofr-sec reveal">
@@ -2229,31 +2376,20 @@ html{scroll-behavior:smooth}
 </section>
 
 
+    <style>
+        #loading {
+    display: none;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 10px;
+  }
 
-
-
-
-
-
-
-<!-- section-11 -->
-
-<html>
-    <head>
-        <style>
-            #loading {
-        display: none;
-        color: #fff;
-        font-size: 16px;
-        margin-top: 10px;
-      }
-
-      #poweredBy {
-        text-align: center;
-        color: #fff;
-        font-size: 14px;
-        margin-top: 20px;
-      }
+  #poweredBy {
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 20px;
+  }
 /* FULL SCREEN LOADER */
 #loaderOverlay {
   position: fixed;
@@ -2283,9 +2419,9 @@ html{scroll-behavior:smooth}
   100% { transform: rotate(360deg); }
 }
    
-        </style>
+    </style>
 
-        <script>
+    <script>
   function submitForm(event) {
   event.preventDefault();
 
@@ -2345,8 +2481,6 @@ html{scroll-behavior:smooth}
     }
   }, 500);
 </script>
-    </head>
-    <body>
 
 
 <!-- section-11 -->
@@ -2383,16 +2517,6 @@ html{scroll-behavior:smooth}
     </form>
 </div>
 </section>
-        
-    </body>
-</html>
-
-
-
-
-
-
-
 
 
 <!-- section-12 -->
@@ -2463,14 +2587,6 @@ html{scroll-behavior:smooth}
 </section>
 
 
-
-
-
-
-
-
-
-
 <!-- section-13 -->
 <section class="sec">
 <div class="wrapper">
@@ -2483,7 +2599,7 @@ html{scroll-behavior:smooth}
     </div>
     <div class="content-side">
         <div class="stars">★★★★★</div>
-        <p class="quote">“पहले conscious रहता था... अब <span class="success-text">पहले से ज्यादा confident</span> feel करता हूँ।”</p>
+        <p class="quote">"पहले conscious रहता था... अब <span class="success-text">पहले से ज्यादा confident</span> feel करता हूँ।"</p>
     </div>
 </div>
 
@@ -2494,7 +2610,7 @@ html{scroll-behavior:smooth}
     </div>
     <div class="content-side">
         <div class="stars">★★★★★</div>
-        <p class="quote">“बिना gym के change दिखा। <span class="success-text">कपड़े अब आराम से fit</span> हो रहे हैं।”</p>
+        <p class="quote">"बिना gym के change दिखा। <span class="success-text">कपड़े अब आराम से fit</span> हो रहे हैं।"</p>
     </div>
 </div>
 
@@ -2505,7 +2621,7 @@ html{scroll-behavior:smooth}
     </div>
     <div class="content-side">
         <div class="stars">★★★★★</div>
-        <p class="quote">“पेट की चर्बी का issue था... अब <span class="success-text">digestion भी बेहतर</span> हो गया है।”</p>
+        <p class="quote">"पेट की चर्बी का issue था... अब <span class="success-text">digestion भी बेहतर</span> हो गया है।"</p>
     </div>
 </div>
 
@@ -2516,7 +2632,7 @@ html{scroll-behavior:smooth}
     </div>
     <div class="content-side">
         <div class="stars">★★★★★</div>
-        <p class="quote">“पहले थकान रहती थी... अब body <span class="success-text">active feel होती है</span>।”</p>
+        <p class="quote">"पहले थकान रहती थी... अब body <span class="success-text">active feel होती है</span>।"</p>
     </div>
 </div>
 
@@ -2527,19 +2643,13 @@ html{scroll-behavior:smooth}
     </div>
     <div class="content-side">
         <div class="stars">★★★★★</div>
-        <p class="quote">“Confidence वापस आना सबसे बड़ा change है... <span class="success-text">खुद में अच्छा महसूस</span> होता है।”</p>
+        <p class="quote">"Confidence वापस आना सबसे बड़ा change है... <span class="success-text">खुद में अच्छा महसूस</span> होता है।"</p>
     </div>
 </div>
 
 </div>
 
 </section>
-
-
-
-
-
-
 
 
 <!-- section-14 FAQ -->
@@ -2577,8 +2687,6 @@ html{scroll-behavior:smooth}
 </section>
 
 
-
-
 <!-- DISCLAIMER -->
  <section class="sec">
 <div class="disclaimer">
@@ -2588,14 +2696,16 @@ html{scroll-behavior:smooth}
 </p>
 </div>
  </section>
+
 <!-- STICKY CTA -->
 <div class="sticky-cta" id="stickyCta">
   <div class="sticky-price">
   </div>
   <a href="#orderForm" class="cta-btn">अभी Order करें →</a>
 </div>
+
 <script>
-// FAQ Accordion (Same as original)
+// FAQ Accordion
 document.querySelectorAll('.faq-q').forEach(function(q){
   q.addEventListener('click',function(){
     var item=q.closest('.faq-item');
@@ -2605,7 +2715,7 @@ document.querySelectorAll('.faq-q').forEach(function(q){
   });
 });
 
-// Scroll Reveal (Same)
+// Scroll Reveal
 (function(){
   var els=document.querySelectorAll('.reveal');
   var io=new IntersectionObserver(function(entries){
@@ -2619,17 +2729,14 @@ document.querySelectorAll('.faq-q').forEach(function(q){
   els.forEach(function(el){io.observe(el);});
 })();
 
-// Sticky CTA Hide Logic (Same)
+// Sticky CTA Hide Logic
 window.addEventListener('scroll',function(){
   var sc=document.getElementById('stickyCta');
   var nearBottom=(window.innerHeight+window.scrollY)>=document.body.offsetHeight-80;
   sc.style.display=nearBottom?'none':'flex';
 });
 
-
-
-
-// Countdown Timer SAME
+// Countdown Timer
 (function(){
   var end=new Date();
   end.setHours(end.getHours()+5,end.getMinutes()+47,end.getSeconds()+30);

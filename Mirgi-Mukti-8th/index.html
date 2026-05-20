@@ -238,13 +238,6 @@ nav {
 }
 
 
-
-
-
-
-
-
-
 /* section-2 */
 .main-wrappr {
     width: 100%;
@@ -365,16 +358,6 @@ nav {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 /* section-3 */
 .modernist-section {
     width: 100%;
@@ -382,7 +365,6 @@ nav {
     text-align: center;
     background-color: white;
 
-    /* ✅ Performance */
     content-visibility: auto;
     contain: layout paint;
 }
@@ -489,11 +471,6 @@ nav {
 }
 
 
-
-
-
-
-
 /* section-4 */
 .box {
     max-width: 450px;
@@ -505,8 +482,6 @@ nav {
     position: relative;
 }
 
-
-
 /* TITLE */
 .head {
     padding: 0 30px;
@@ -514,8 +489,6 @@ nav {
     position: relative;
     z-index: 1;
 }
-
-
 
 .head p {
     font-size: 32px;
@@ -525,7 +498,6 @@ nav {
     color: var(--primary);
     letter-spacing: 2px;
     text-align: center;
-
 }
 
 /* ROW */
@@ -651,13 +623,7 @@ nav {
 }
 
 
-
-
-
-
-
 /* section-5 */
-/* Wrapper */
 .main-wrapper {
     width: 100%;
     max-width: 450px;
@@ -773,9 +739,6 @@ nav {
 }
 
 
-
-
-
 /* section-6 */
 .trust-banner{
     width: 100%;
@@ -876,7 +839,7 @@ nav {
     font-weight:bold;
 }
 
-/* 🔥 HOVER EFFECT (ONLY ADDITION) */
+/* 🔥 HOVER EFFECT */
 .cert-strip:hover{
     transform:translateY(-5px) scale(1.02);
     box-shadow:0 10px 25px rgba(0,0,0,0.12);
@@ -890,15 +853,6 @@ nav {
 .cert-strip:active{
     transform:scale(0.98);
 }
-
-
-
-
-
-
-
-
-
 
 
 /* section-7 */
@@ -1048,11 +1002,6 @@ nav {
 }
 
 
-
-
-
-
-
 /* section-8 */
 .container-450 {
     width: 100%;
@@ -1060,7 +1009,6 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    
     margin-bottom: 40px;
 }
 
@@ -1083,9 +1031,7 @@ nav {
     border: 1px solid #e2e8f0;
     transition: 0.5s;
     cursor: pointer;
-    
     margin: 0 20px;
-    
 }
 
 /* HEADER */
@@ -1123,7 +1069,6 @@ nav {
     opacity: 0;
     display: flex;
     transition: 0.5s;
-    
 }
 
 /* SIDES */
@@ -1178,13 +1123,6 @@ nav {
 }
 
 
-
-
-
-
-
-
-
 /* section-9 */
    .how-to-use-card {
             width: 100%;        
@@ -1217,8 +1155,6 @@ nav {
             line-height: 1.2;
             text-align: center;
         }
-
-       
 
         .instruction-stack {
             display: flex;
@@ -1298,15 +1234,6 @@ nav {
             background: #eee;
             z-index: 1;
         }
-
-
-
-
-
-
-
-
-
 
 
 /* section-10 */
@@ -1397,7 +1324,7 @@ nav {
     border: 1px solid rgba(255,255,255,0.05);
 }
 
-/* ✅ CLS FIX (IMPORTANT) */
+/* ✅ CLS FIX */
 .content-card img {
     width: 145px;
     height:115px;
@@ -1443,29 +1370,6 @@ nav {
 .main-wrapp:hover .footer-border {
     width: 100%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* ===== section-11.  OFFER ===== */
@@ -1545,20 +1449,6 @@ nav {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ===== section-12. CTA ===== */
 #cta{
   background:var(--primary);
@@ -1614,14 +1504,6 @@ nav {
   display:flex;align-items:center;gap:5px;
   font-size:.93rem;opacity:.85;font-weight:700;
 }
-
-
-
-
-
-
-
-
 
 
 /* ===== section-13. TESTIMONIALS ===== */
@@ -1690,13 +1572,6 @@ nav {
 .testi-stars{color:#f9a825;font-size:1rem;margin-top:1px}
 
 
-
-
-
-
-
-
-
 /* ===== section-14. FAQ ===== */
 #faq{
   padding:30px 18px;
@@ -1731,11 +1606,6 @@ nav {
 .faq-item input:checked~.faq-a{max-height:100px;padding:0 16px 14px}
 
 
-
-
-
-
-
 /* ===== DISCLAIMER ===== */
 #disclaimer{
   background:#f1f1f1;
@@ -1754,6 +1624,292 @@ nav {
   .fade-up.visible{opacity:1;transform:translateY(0)}
 }
 
+
+/* ============================================
+   MOBILE OPTIMIZATION — max-width: 480px
+   Only font sizes & layout tweaks for mobile.
+   All colors, effects, animations unchanged.
+   ============================================ */
+@media (max-width: 480px) {
+
+  /* --- HEADER / NAV --- */
+  header {
+    padding: 10px 14px;
+  }
+  .logo {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+  .buttonn {
+    font-size: 16px;
+    padding: 10px 14px;
+  }
+
+  /* --- SECTION-2 problem --- */
+  .top-title h1 {
+    font-size: 22px; /* main heading */
+  }
+  .banner-row {
+    height: 170px;
+  }
+  .banner-content h3 {
+    font-size: 18px; /* normal heading */
+  }
+  .banner-content p {
+    font-size: 16px; /* normal text */
+  }
+  .sec-h1 {
+    font-size: 16px; /* normal text */
+    padding: 14px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  /* --- SECTION-3 product --- */
+  .label-top {
+    font-size: 22px; /* main heading */
+    margin-bottom: 18px;
+    margin-top: 14px;
+  }
+  .frame-wrapper {
+    width: 220px;
+    height: 240px;
+  }
+  .h-main {
+    font-size: 22px; /* main heading */
+  }
+  .p-desc {
+    font-size: 16px; /* normal text */
+  }
+
+  /* --- SECTION-4 how it works --- */
+  .head p {
+    font-size: 22px; /* main heading */
+    letter-spacing: 1px;
+  }
+  .box {
+    padding: 30px 10px;
+  }
+  .img-wrap {
+    width: 130px;
+    height: 170px;
+  }
+  .txt h3 {
+    font-size: 18px; /* normal heading */
+  }
+  .txt p {
+    font-size: 16px; /* normal text */
+  }
+  .txt span {
+    font-size: 32px;
+  }
+  .btnnn {
+    font-size: 14px;
+    padding: 14px 28px;
+  }
+
+  /* --- SECTION-5 ingredients --- */
+  .title-area h2 {
+    font-size: 22px; /* main heading */
+  }
+  .step-img {
+    width: 56px;
+    height: 56px;
+  }
+  .step-content h4 {
+    font-size: 18px; /* normal heading */
+  }
+  .step-content p {
+    font-size: 16px; /* normal text */
+  }
+
+  /* --- SECTION-6 certifications --- */
+  .title-top {
+    font-size: 22px; /* main heading */
+    margin-top: 14px;
+  }
+  .text-side h3 {
+    font-size: 18px; /* normal heading */
+  }
+  .badge-label {
+    font-size: 14px;
+  }
+  .verified-tag {
+    font-size: 13px;
+  }
+
+  /* --- SECTION-7 doctor --- */
+  .mirgiTag_903 {
+    font-size: 16px; /* normal text */
+  }
+  .mirgiTitle_904 {
+    font-size: 22px; /* main heading */
+  }
+  .mirgiTextTitle_909 {
+    font-size: 18px; /* normal heading */
+  }
+  .mirgiTextDesc_910 {
+    font-size: 16px; /* normal text */
+  }
+  .mirgiName_913 {
+    font-size: 18px; /* normal heading */
+  }
+  .mirgiSub_914 {
+    font-size: 16px; /* normal text */
+  }
+  .mirgiFooter_917 {
+    font-size: 16px; /* normal text */
+  }
+  .mirgiCtaBtn_916 {
+    font-size: 16px; /* normal text */
+    padding: 14px;
+  }
+  .mirgiIcon_908 {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+    margin-right: 12px;
+  }
+
+  /* --- SECTION-8 compare --- */
+  .main-label {
+    font-size: 22px; /* main heading */
+    margin-top: 14px;
+    margin-bottom: 14px;
+  }
+  .topic-name {
+    font-size: 18px; /* normal heading */
+  }
+  .side {
+    font-size: 16px; /* normal text */
+    padding: 14px;
+  }
+  .small {
+    font-size: 13px;
+  }
+  .card-header {
+    padding: 14px;
+    margin: 0 10px;
+  }
+  .expand-card {
+    margin: 0 12px;
+  }
+
+  /* --- SECTION-9 how to use --- */
+  .how-to-use-card {
+    padding: 24px 18px;
+  }
+  .header-tit {
+    font-size: 22px; /* main heading */
+    margin-bottom: 20px;
+  }
+  .step-bubble h4 {
+    font-size: 16px; /* normal text */
+  }
+  .step-bubble p {
+    font-size: 16px; /* normal text */
+  }
+  .icon-box {
+    min-width: 46px;
+    height: 46px;
+    font-size: 20px;
+    border-radius: 14px;
+  }
+  .time-badge {
+    font-size: 14px;
+  }
+
+  /* --- SECTION-10 before/after --- */
+  .header-title h2 {
+    font-size: 22px; /* main heading */
+  }
+  .content-card h4 {
+    font-size: 16px; /* normal text */
+  }
+  .content-card p {
+    font-size: 14px;
+  }
+  .content-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* --- SECTION-11 offer --- */
+  .offer-badge {
+    font-size: 14px;
+  }
+  .offer-title {
+    font-size: 22px; /* main heading */
+  }
+  .offer-sub {
+    font-size: 16px; /* normal text */
+  }
+  .offer-perk {
+    font-size: 16px; /* normal text */
+  }
+  .count-block .num {
+    font-size: 1.3rem;
+  }
+  .count-block .lbl {
+    font-size: 10px;
+  }
+  .stock-bar p {
+    font-size: 16px; /* normal text */
+  }
+
+  /* --- SECTION-12 CTA form --- */
+  .cta-title {
+    font-size: 22px; /* main heading */
+  }
+  .cta-sub {
+    font-size: 16px; /* normal text */
+  }
+  .cta-input {
+    font-size: 16px; /* normal text */
+    padding: 12px 14px;
+  }
+  .cta-submit {
+    font-size: 16px; /* normal text */
+    padding: 14px;
+  }
+  .guarantee-strip span {
+    font-size: 14px;
+  }
+
+  /* --- SECTION-13 testimonials --- */
+  .section-title {
+    font-size: 22px; /* main heading */
+  }
+  .testi-text {
+    font-size: 16px; /* normal text */
+  }
+  .testi-user div small {
+    font-size: 16px; /* normal text */
+  }
+  .testi-card {
+    margin: 0 12px;
+    padding: 14px;
+  }
+
+  /* --- SECTION-14 FAQ --- */
+  .faq-q {
+    font-size: 16px; /* normal text */
+    padding: 12px 14px;
+  }
+  .faq-a {
+    font-size: 15px;
+  }
+
+  /* --- STICKY CTA --- */
+  .sticky-cta a {
+    font-size: 16px; /* normal text */
+    padding: 13px 18px;
+  }
+  .sticky-cta small {
+    font-size: 12px;
+  }
+
+} /* end @media max-width: 480px */
 
 </style>
 </head>
@@ -1780,9 +1936,6 @@ nav {
   decoding="async"
    alt="">
 </section>
-
-
-
 
 
     <!-- section-2 -->
@@ -1831,7 +1984,7 @@ nav {
              alt="fear">
         <div class="banner-content">
             <h3>हर समय डर रहता है?</h3>
-            <p>“अगला दौरा कब आएगा?”</p>
+            <p>"अगला दौरा कब आएगा?"</p>
         </div>
     </div>
 
@@ -1839,13 +1992,6 @@ nav {
 ज़िंदगी पर असर आत्मविश्वास, करियर और रिश्ते सब प्रभावित होते हैं <span><br>सबसे बड़ा डर अगर ये कभी ठीक नहीं हुआ तो?</span></h1>
 </div>
 </section>
-
-
-
-
-
-
-
 
 
 <!-- section-3 -->
@@ -1879,15 +2025,6 @@ nav {
 </div>
 
 </section>
-
-
-
-
-
-
-
-
-
 
 
 <!-- section-4 -->
@@ -1948,13 +2085,6 @@ nav {
 </div>
 
 </section>
-
-
-
-
-
-
-
 
 
     <!--section-5-->
@@ -2021,11 +2151,6 @@ nav {
     </section>
 
 
-
-
-
-
-
 <!-- section-6 -->
 <section class="sec">
     <div class="trust-banner">
@@ -2070,10 +2195,6 @@ nav {
 
 </div>
 </section>
-
-
-
-
 
 
 <!-- section-7 -->
@@ -2141,12 +2262,6 @@ nav {
 </section>
 
 
-
-
-
-
-
-
 <!-- section-8 -->
 <section class="sec">
     <div class="container-450">
@@ -2211,13 +2326,6 @@ nav {
 </section>
 
 
-
-
-
-
-
-
-
 <!-- section-9 -->
 <section class="sec">
   <div class="how-to-use-card">
@@ -2246,21 +2354,13 @@ nav {
             <div class="content-bubble">
                 <h4>STEP 03</h4>
                 <p>बेहतर परिणाम के लिए <strong>3–6 महीने</strong> नियम से चलें</p>
-                <div class="time-badge">नियमितता ज़रूरी है</div>
+                <div class="time-badge">नियमितता ज़रूरी है</div>
             </div>
         </div>
     </div>
 </div>
 
 </section>
-
-
-
-
-
-
-
-
 
 
 <!-- section-10 -->
@@ -2353,21 +2453,6 @@ nav {
 </section>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- ===== section-11: URGENCY / OFFER ===== -->
 <section class="sec">
 <div id="offer" class="fade-up">
@@ -2414,36 +2499,20 @@ nav {
 </section>
 
 
+    <style>
+        #loading {
+    display: none;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 10px;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
- 
-<html>
-    <head>
-        <style>
-            #loading {
-        display: none;
-        color: #fff;
-        font-size: 16px;
-        margin-top: 10px;
-      }
-
-      #poweredBy {
-        text-align: center;
-        color: #fff;
-        font-size: 14px;
-        margin-top: 20px;
-      }
+  #poweredBy {
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 20px;
+  }
 /* FULL SCREEN LOADER */
 #loaderOverlay {
   position: fixed;
@@ -2473,9 +2542,9 @@ nav {
   100% { transform: rotate(360deg); }
 }
    
-        </style>
+    </style>
 
-        <script>
+    <script>
   function submitForm(event) {
   event.preventDefault();
 
@@ -2535,8 +2604,7 @@ nav {
     }
   }, 500);
 </script>
-    </head>
-    <body>
+
 <!-- ===== section-12: CTA FORM ===== -->
 <section class="sec">
 <div id="cta">
@@ -2576,12 +2644,6 @@ nav {
   </div>
 
 </section>
-
-
-
-
-
-
 
 
 <!-- ===== section-13: TESTIMONIALS ===== -->
@@ -2635,12 +2697,6 @@ nav {
     </div>
   </div>
 </section>
-
-
-
-
-
-
 
 
 <!-- ===== section-14: FAQ ===== -->

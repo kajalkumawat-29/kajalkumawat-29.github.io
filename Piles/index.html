@@ -1502,13 +1502,46 @@ img{max-width:100%;}
       padding-top: 12px;
     }
 
-    /* Mobile Responsive Fine-tuning */
-    @media (max-width: 380px) {
-      .perks-grid { grid-template-columns: 1fr; gap: 8px; }
-      .info-header h2 { font-size: 15px; }
-      .img-frame { height: 170px; }
+   @media (max-width:480px){
+
+    .info-header h2{
+        font-size:28px;
     }
 
+    .info-header p,
+    .badge,
+    .perk-text,
+    .perk-sub,
+    .stock-label,
+    .footer-note{
+        font-size:22px;
+    }
+
+    .benefits-title,
+    .cta-btn{
+        font-size:24px;
+    }
+
+    .img-frame{
+        height:240px;
+    }
+}
+
+/* VERY SMALL DEVICES */
+@media (max-width:340px){
+
+    .info-header h2{
+        font-size:24px;
+    }
+
+    .img-frame{
+        height:210px;
+    }
+
+    .perk-icon{
+        display:none;
+    }
+}
 
 
 
@@ -1820,7 +1853,7 @@ input{
     }
 
     .card-info-text{
-        font-size:22px;
+        font-size:20px;
         line-height:1.35;
     }
 
@@ -1832,7 +1865,7 @@ input{
     .card-graphic-icon{
         width:36px;
         height:36px;
-        font-size:16px;
+        font-size:18px;
     }
 }
 

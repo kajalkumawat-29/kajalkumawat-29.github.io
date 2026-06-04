@@ -1720,7 +1720,7 @@ input{
     /* ── TYPOGRAPHY LAYER (Optimized with Clamp) ── */
     .tagline-top {
       font-family: 'halant', sans-serif;
-      font-size: clamp(15px, 3vw, 22px);
+      font-size: clamp(18px, 3vw, 22px);
       font-weight: 800;
       color: var(--red);
       letter-spacing: 2px;
@@ -1729,7 +1729,7 @@ input{
     }
     
     .heading-bold {
-      font-size: clamp(19.5px, 5.5vw, 32px);
+      font-size: clamp(24px, 5.5vw, 32px);
       font-weight: 900;
       color: var(--text-white);
       line-height: 1.35;
@@ -1752,7 +1752,7 @@ input{
       background: rgba(7, 21, 10, 0.5);
       border: 1px solid rgba(255, 255, 255, 0.02);
       border-radius: var(--radius-card);
-      padding: clamp(12px, 4vw, 16px);
+      padding: clamp(15px, 4vw, 16px);
       display: flex;
       gap: 12px;
       align-items: center;
@@ -1768,8 +1768,8 @@ input{
 
     .card-graphic-icon {
       font-size: clamp(18px, 5vw, 21px);
-      width: clamp(38px, 10vw, 42px);
-      height: clamp(38px, 10vw, 42px);
+      width: clamp(40px, 10vw, 42px);
+      height: clamp(40px, 10vw, 42px);
       background: var(--gold-pale);
       border-radius: var(--radius-sm);
       display: flex;
@@ -1781,7 +1781,7 @@ input{
 
     .card-info-text {
       color: var(--text-white);
-      font-size: clamp(12.8px, 3.6vw, 18px);
+      font-size: clamp(18px, 3.6vw, 18px);
       line-height: 1.5;
       font-weight: 500;
     }
@@ -1800,11 +1800,41 @@ input{
       border-color: var(--red-border);
     }
 
-    /* ── ULTRA LOW MOBILE SCREENS FIX (Below 340px) ── */
-    @media (max-width: 340px) {
-      .layer-card { gap: 8px; padding: 10px; }
-      .card-graphic-icon { display: none; } /* Hide icons on extremely narrow viewports to save space */
+  @media (max-width:480px){
+
+    .guarantee-badge-box{
+        padding:18px 12px;
     }
+
+    .badge-image-center{
+        width:80px;
+        height:80px;
+    }
+
+    .tagline-top{
+        font-size:22px;
+    }
+
+    .heading-bold{
+        font-size:24px;
+    }
+
+    .card-info-text{
+        font-size:22px;
+        line-height:1.35;
+    }
+
+    .layer-card{
+        padding:12px;
+        gap:8px;
+    }
+
+    .card-graphic-icon{
+        width:36px;
+        height:36px;
+        font-size:16px;
+    }
+}
 
 
 

@@ -1502,46 +1502,13 @@ img{max-width:100%;}
       padding-top: 12px;
     }
 
-   @media (max-width:480px){
-
-    .info-header h2{
-        font-size:28px;
+    /* Mobile Responsive Fine-tuning */
+    @media (max-width: 380px) {
+      .perks-grid { grid-template-columns: 1fr; gap: 8px; }
+      .info-header h2 { font-size: 15px; }
+      .img-frame { height: 170px; }
     }
 
-    .info-header p,
-    .badge,
-    .perk-text,
-    .perk-sub,
-    .stock-label,
-    .footer-note{
-        font-size:22px;
-    }
-
-    .benefits-title,
-    .cta-btn{
-        font-size:24px;
-    }
-
-    .img-frame{
-        height:240px;
-    }
-}
-
-/* VERY SMALL DEVICES */
-@media (max-width:340px){
-
-    .info-header h2{
-        font-size:24px;
-    }
-
-    .img-frame{
-        height:210px;
-    }
-
-    .perk-icon{
-        display:none;
-    }
-}
 
 
 

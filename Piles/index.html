@@ -233,10 +233,14 @@ img{max-width:100%;}
     /* ── HERO BANNER MEDIA WITH SHINE HOVER ── */
     .hero-banner {
       width: 100%;
-      height: 280px;
+      height: auto;
+      object-fit:contain;
       position: relative;
       overflow: hidden;
       background: #000;
+      padding:4px;
+       border: 1px solid rgba(46, 204, 113, 0.08);
+       border-radius: var(--radius-card);
     }
     .hero-banner img {
       width: 100%;
@@ -252,7 +256,7 @@ img{max-width:100%;}
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.1), var(--bg-card));
+      
       z-index: 1;
     }
 
@@ -266,7 +270,7 @@ img{max-width:100%;}
       font-size: 22px;
       font-weight: 900;
       letter-spacing: 1.5px;
-      color: var(--red-accent);
+      color: var(--gold);
       text-transform: uppercase;
       margin-bottom: 6px;
     }
@@ -502,37 +506,16 @@ img{max-width:100%;}
       to { opacity: 1; transform: translateX(0); }
     }
 
-    /* Number Column */
-    .t-num {
-      width: 52px;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 30px;
-      font-weight: 900;
-      color: var(--text-dim);
-      transition: color 0.3s;
-      position: relative;
-    }
+  
     .titem:hover .t-num {
       color: var(--gold);
     }
-    .t-num::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 20%;
-      height: 60%;
-      width: 1px;
-      background: var(--bg-accent);
-    }
+    
 
     /* Image */
     .t-img {
-      width: 150px;
-      height: 165px;
+      width: 200px;
+      height: auto;
       flex-shrink: 0;
       overflow: hidden;
       position: relative;
@@ -542,7 +525,7 @@ img{max-width:100%;}
       height: 100%;
       object-fit: cover;
       display: block;
-      filter: grayscale(30%) brightness(0.7);
+      filter: grayscale(30%) brightness(0.9);
       transition: transform 0.55s ease, filter 0.3s;
     }
     .titem:hover .t-img img {
@@ -1266,8 +1249,8 @@ img{max-width:100%;}
 
     /* Top Ticker Bar */
     .top-barr {
-      background: var(--red-accent);
-      color: var(--text-white);
+      background: var(--gold);
+      color: var(--bg-card);
       font-size: 20px;
       font-weight: 500;
       padding-top: 8px;
@@ -1729,7 +1712,7 @@ input{
       font-family: 'halant', sans-serif;
       font-size: clamp(18px, 3vw, 22px);
       font-weight: 800;
-      color: var(--red);
+      color: var(--gold);
       letter-spacing: 2px;
       text-transform: uppercase;
       margin-bottom: 6px;
@@ -1917,7 +1900,7 @@ input{
         </div>
       </div>
       <div class="prob-item">
-        <div class="prob-img-wrap" data-src="images/sect-1-2ndimg.jfif">
+        <div class="prob-img-wrap" data-src="images/sect-1-2ndimg.avif">
           <img alt="खून आना">
         </div>
         <div class="prob-body">
@@ -2158,7 +2141,7 @@ input{
 
     <!-- Item 1 -->
     <div class="titem i1">
-      <div class="t-num">01</div>
+     
       <div class="t-img">
         <img src="images/sect-3-1stimg.avif" alt="Piles Issue" loading="lazy">
       </div>
@@ -2172,13 +2155,12 @@ input{
 
     <!-- Item 2 -->
     <div class="titem i2">
-      <div class="t-num">02</div>
       <div class="t-img">
         <img src="images/sect-3-2ndimg.avif" alt="Pain Discomfort" loading="lazy">
       </div>
       <div class="t-body">
         <div class="t-tag">असहनीय तकलीफ</div>
-        <div class="t-title">मल त्याग के दौरान दर्द या जलन होना</div>
+        <div class="t-title">मल त्याग के दौरान दर्द या जलन</div>
         <div class="t-desc">रोजमर्रा के इस गंभीर कष्ट को कम करने में मदद करता है।</div>
       </div>
       <div class="t-arrow">›</div>
@@ -2186,7 +2168,6 @@ input{
 
     <!-- Item 3 -->
     <div class="titem i3">
-      <div class="t-num">03</div>
       <div class="t-img">
         <img src="images/sect-3-3rdimg.avif" alt="Bleeding Issue" loading="lazy">
       </div>
@@ -2200,7 +2181,6 @@ input{
 
     <!-- Item 4 -->
     <div class="titem i4">
-      <div class="t-num">04</div>
       <div class="t-img">
         <img src="images/sect-3-4thimg.avif" alt="Constipation" loading="lazy">
       </div>

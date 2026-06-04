@@ -34,9 +34,7 @@
   --radius-sm:      10px;
   --radius-pill:    30px;
   --red-accent: #c0392b;
-   --gold-palee: #fdf3c0;
-     
-  
+  --gold-palee: #fdf3c0;
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -202,10 +200,6 @@ img{max-width:100%;}
 }
 
 
-
-
-
-
 /* sect-3 media proof */
   .premium-wrapper {
       width: 100%;
@@ -213,24 +207,15 @@ img{max-width:100%;}
       background: var(--bg-card);
        overflow: hidden;
       border: 1px solid rgba(46, 204, 113, 0.08);
-      
-      /* Intro Entrance Animation */
       animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
       opacity: 0;
     }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── HERO BANNER MEDIA WITH SHINE HOVER ── */
     .hero-banner {
       width: 100%;
       height: 280px;
@@ -245,10 +230,7 @@ img{max-width:100%;}
       display: block;
       transition: var(--transition-smooth);
     }
-    /* Subtle zoom on hover */
-    .premium-wrapper:hover .hero-banner img {
-      transform: scale(1.05);
-    }
+    .premium-wrapper:hover .hero-banner img { transform: scale(1.05); }
     .hero-overlay {
       position: absolute;
       inset: 0;
@@ -256,12 +238,8 @@ img{max-width:100%;}
       z-index: 1;
     }
 
-    /* ── CONTENT BODY ── */
-    .main-body {
-      padding: 24px 16px;
-    }
+    .main-body { padding: 24px 16px; }
 
-    /* SECTION TITLE HEADERS */
     .section-header {
       font-size: 22px;
       font-weight: 900;
@@ -271,16 +249,13 @@ img{max-width:100%;}
       margin-bottom: 6px;
     }
     .main-heading {
-      font-size: clamp(20px, 5vw, 24px); /* Mobile Fluid Typography */
+      font-size: clamp(20px, 5vw, 24px);
       font-weight: 900;
       color: var(--text-white);
       line-height: 1.3;
       margin-bottom: 12px;
     }
-    .main-heading span {
-      color: var(--gold);
-      display: inline-block;
-    }
+    .main-heading span { color: var(--gold); display: inline-block; }
 
     .intro-text {
       font-size: clamp(15px, 3.5vw, 18px);
@@ -289,7 +264,6 @@ img{max-width:100%;}
       margin-bottom: 20px;
     }
 
-    /* ── SHARP GRID CARDS FOR BULLETS + EFFECTS ── */
     .bullet-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -307,41 +281,19 @@ img{max-width:100%;}
       transition: var(--transition-smooth);
       position: relative;
     }
-    /* Lift and Gold Glow Hover Effect */
     .grid-card:hover {
       border-color: rgba(240, 195, 15, 0.4);
       background: rgba(7, 23, 10, 0.8);
       transform: translateY(-4px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     }
-    .check-icon {
-      color: var(--gold);
-      font-size: 13px;
-      font-weight: bold;
-      transition: var(--transition-smooth);
-    }
-    .grid-card:hover .check-icon {
-      transform: scale(1.2);
-    }
-    .card-text {
-      color: var(--text-white);
-      font-size: clamp(11.5px, 3.2vw, 18px);
-      font-weight: 500;
-      line-height: 1.4;
-    }
+    .check-icon { color: var(--gold); font-size: 13px; font-weight: bold; transition: var(--transition-smooth); }
+    .grid-card:hover .check-icon { transform: scale(1.2); }
+    .card-text { color: var(--text-white); font-size: clamp(11.5px, 3.2vw, 18px); font-weight: 500; line-height: 1.4; }
 
-    /* ── SOCIAL PROOF BLOCK ── */
-    .social-proof-section {
-      border-top: 1px dashed rgba(139, 177, 150, 0.2);
-      padding-top: 24px;
-    }
+    .social-proof-section { border-top: 1px dashed rgba(139, 177, 150, 0.2); padding-top: 24px; }
 
-    /* BIG METRIC COUNTERS ROW */
-    .metrics-container {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
+    .metrics-container { display: flex; gap: 12px; margin-bottom: 20px; }
     .metric-pill {
       flex: 1;
       background: var(--bg-inner);
@@ -350,37 +302,12 @@ img{max-width:100%;}
       padding: 12px;
       transition: var(--transition-smooth);
     }
-    .metric-pill:hover {
-      transform: translateY(-2px);
-      border-left-color: var(--gold);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-    }
-    .pill-title {
-      font-family: 'halant', sans-serif;
-      font-size: clamp(16px, 4.5vw, 20px);
-      font-weight: 800;
-      color: var(--green);
-      line-height: 1.2;
-    }
-    .pill-stars {
-      color: var(--gold);
-      font-size: 14px;
-      margin-bottom: 2px;
-      letter-spacing: 1px;
-    }
-    .pill-desc {
-      color: var(--text-white);
-      font-size: clamp(11px, 3vw, 18px);
-      font-weight: 500;
-      margin-top: 2px;
-    }
+    .metric-pill:hover { transform: translateY(-2px); border-left-color: var(--gold); box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
+    .pill-title { font-family: 'halant', sans-serif; font-size: clamp(16px, 4.5vw, 20px); font-weight: 800; color: var(--green); line-height: 1.2; }
+    .pill-stars { color: var(--gold); font-size: 14px; margin-bottom: 2px; letter-spacing: 1px; }
+    .pill-desc { color: var(--text-white); font-size: clamp(11px, 3vw, 18px); font-weight: 500; margin-top: 2px; }
 
-    /* ROW BULLET DESIGN FOR SOCIAL PROOF */
-    .row-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
+    .row-list { display: flex; flex-direction: column; gap: 12px; }
     .row-item {
       background: rgba(7, 23, 10, 0.5);
       border: 1px solid rgba(46, 204, 113, 0.05);
@@ -391,46 +318,16 @@ img{max-width:100%;}
       align-items: center;
       transition: var(--transition-smooth);
     }
-    /* Green Glow Row Hover */
-    .row-item:hover {
-      background: rgba(7, 23, 10, 0.9);
-      border-color: rgba(46, 204, 113, 0.3);
-      transform: translateX(4px);
-    }
-    .green-check {
-      color: var(--green);
-      font-size: 13px;
-      font-weight: bold;
-      transition: var(--transition-smooth);
-    }
-    .row-item:hover .green-check {
-      transform: scale(1.2);
-    }
-    .row-text {
-      color: var(--text-white);
-      font-size: clamp(11.5px, 3.2vw, 18px);
-      line-height: 1.4;
-    }
+    .row-item:hover { background: rgba(7, 23, 10, 0.9); border-color: rgba(46, 204, 113, 0.3); transform: translateX(4px); }
+    .green-check { color: var(--green); font-size: 13px; font-weight: bold; transition: var(--transition-smooth); }
+    .row-item:hover .green-check { transform: scale(1.2); }
+    .row-text { color: var(--text-white); font-size: clamp(11.5px, 3.2vw, 18px); line-height: 1.4; }
 
-    /* ── FLUID MOBILE ADJUSTMENTS FOR ULTRA-SMALL SCREENS ── */
     @media (max-width: 350px) {
-      .bullet-grid {
-        grid-template-columns: 1fr; /* Stack into single column on extremely narrow phones */
-        gap: 8px;
-      }
-      .metrics-container {
-        flex-direction: column;
-        gap: 8px;
-      }
-      .metric-pill {
-        padding: 10px;
-      }
+      .bullet-grid { grid-template-columns: 1fr; gap: 8px; }
+      .metrics-container { flex-direction: column; gap: 8px; }
+      .metric-pill { padding: 10px; }
     }
-
-
-
-
-
 
 
 /* sect-5 target audience */
@@ -443,7 +340,6 @@ img{max-width:100%;}
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
-    /* ── SECTION LABEL ── */
     .sec-label {
       display: flex;
       align-items: center;
@@ -459,18 +355,10 @@ img{max-width:100%;}
       text-transform: uppercase;
       color: var(--bg-dark);
     }
-  
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.2; }
-    }
 
-    /* ── TIMELINE STRIP ── */
-    .timeline {
-      display: flex;
-      flex-direction: column;
-      background: var(--bg-dark);
-    }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+
+    .timeline { display: flex; flex-direction: column; background: var(--bg-dark); }
 
     .titem {
       display: flex;
@@ -482,11 +370,7 @@ img{max-width:100%;}
       transition: background 0.25s;
       position: relative;
     }
-    .titem:hover {
-      background: var(--bg-card);
-    }
-    
-    /* Animation delays */
+    .titem:hover { background: var(--bg-card); }
     .titem:nth-child(1) { animation-delay: 0.05s; }
     .titem:nth-child(2) { animation-delay: 0.15s; }
     .titem:nth-child(3) { animation-delay: 0.25s; }
@@ -494,12 +378,8 @@ img{max-width:100%;}
     .titem:nth-child(5) { animation-delay: 0.45s; }
     .titem:nth-child(6) { animation-delay: 0.55s; }
 
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(-20px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
+    @keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
 
-    /* Number Column */
     .t-num {
       width: 52px;
       flex-shrink: 0;
@@ -513,52 +393,20 @@ img{max-width:100%;}
       transition: color 0.3s;
       position: relative;
     }
-    .titem:hover .t-num {
-      color: var(--gold);
-    }
-    .t-num::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 20%;
-      height: 60%;
-      width: 1px;
-      background: var(--bg-accent);
-    }
+    .titem:hover .t-num { color: var(--gold); }
+    .t-num::after { content: ''; position: absolute; right: 0; top: 20%; height: 60%; width: 1px; background: var(--bg-accent); }
 
-    /* Image */
-    .t-img {
-      width: 150px;
-      height: 165px;
-      flex-shrink: 0;
-      overflow: hidden;
-      position: relative;
-    }
+    .t-img { width: 150px; height: 165px; flex-shrink: 0; overflow: hidden; position: relative; }
     .t-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+      width: 100%; height: 100%; object-fit: cover; display: block;
       filter: grayscale(30%) brightness(0.7);
       transition: transform 0.55s ease, filter 0.3s;
     }
-    .titem:hover .t-img img {
-      transform: scale(1.1);
-      filter: grayscale(0%) brightness(0.9);
-    }
+    .titem:hover .t-img img { transform: scale(1.1); filter: grayscale(0%) brightness(0.9); }
 
-    /* Colored accent line on hover */
     .t-img::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      z-index: 2;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.35s ease;
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; z-index: 2;
+      transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease;
     }
     .i1 .t-img::before { background: var(--red-accent); }
     .i2 .t-img::before { background: var(--gold); }
@@ -566,75 +414,27 @@ img{max-width:100%;}
     .i4 .t-img::before { background: var(--green); }
     .i5 .t-img::before { background: var(--green-mid); }
     .i6 .t-img::before { background: var(--gold-pale); }
-    
-    .titem:hover .t-img::before {
-      transform: scaleX(1);
-    }
+    .titem:hover .t-img::before { transform: scaleX(1); }
 
-    /* Text Content */
-    .t-body {
-      flex: 1;
-      padding: 12px 14px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 4px;
-    }
-    .t-tag {
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
- 
+    .t-body { flex: 1; padding: 12px 14px; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+    .t-tag { font-size: 20px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); }
+    .t-title { font-size: 18px; font-weight: 700; color: var(--text-white); line-height: 1.4; }
+    .t-desc { font-size: 16px; color: var(--text-muted); line-height: 1.5; }
 
-    .t-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text-white);
-      line-height: 1.4;
-    }
-    .t-desc {
-      font-size: 16px;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* Hover Reveal Arrow */
-    .t-arrow {
-      position: absolute;
-      right: 12px;
-      top: 50%;
-      transform: translateY(-50%) translateX(6px);
-      font-size: 14px;
-      opacity: 0;
-      transition: opacity 0.3s, transform 0.3s;
-    }
+    .t-arrow { position: absolute; right: 12px; top: 50%; transform: translateY(-50%) translateX(6px); font-size: 14px; opacity: 0; transition: opacity 0.3s, transform 0.3s; }
     .i1 .t-arrow { color: var(--red-accent); }
     .i2 .t-arrow { color: var(--gold); }
     .i3 .t-arrow { color: var(--gold-soft); }
     .i4 .t-arrow { color: var(--green); }
     .i5 .t-arrow { color: var(--green-mid); }
     .i6 .t-arrow { color: var(--gold-soft); }
-    
-    .titem:hover .t-arrow {
-      opacity: 1;
-      transform: translateY(-50%) translateX(0);
-    }
+    .titem:hover .t-arrow { opacity: 1; transform: translateY(-50%) translateX(0); }
 
-    /* Responsive adjustment for extra small screens */
     @media (max-width: 360px) {
       .t-img { width: 90px; }
       .t-num { width: 42px; font-size: 24px; }
       .t-title { font-size: 12.5px; }
     }
-
-
-
-
-
-
 
 
 /* TESTIMONIAL SECTION */
@@ -657,19 +457,14 @@ img{max-width:100%;}
   font-family:'Halant','halant',serif;
   font-size:32px;color:var(--text-white);line-height:1.25;
 }
-.main-title span{
-  color:var(--gold);display:inline-block;
-  animation:wobble 3s ease-in-out infinite;
-}
+.main-title span{ color:var(--gold);display:inline-block; animation:wobble 3s ease-in-out infinite; }
 @keyframes wobble{0%,100%{transform:rotate(-1deg)}50%{transform:rotate(1deg)}}
 
 .cards-grid{display:flex;flex-direction:column;gap:14px;}
 
 .card-1{
-  background:var(--bg-card);
-  border:1px solid var(--bg-accent);
-  border-radius:var(--radius-card);
-  overflow:hidden;cursor:pointer;
+  background:var(--bg-card);border:1px solid var(--bg-accent);
+  border-radius:var(--radius-card);overflow:hidden;cursor:pointer;
   transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1),border-color 0.3s;
   animation:riseUp 0.6s 0.1s both;
 }
@@ -677,50 +472,32 @@ img{max-width:100%;}
 .card-1-inner{display:flex;min-height:130px;}
 
 .c1-left{
-  background:var(--gold);
-  width:88px;flex-shrink:0;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:6px;
+  background:var(--gold);width:88px;flex-shrink:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
   clip-path:polygon(0 0,85% 0,100% 100%,0 100%);
-  padding:16px 22px 16px 16px;
-  transition:width 0.35s ease;
+  padding:16px 22px 16px 16px;transition:width 0.35s ease;
 }
 .card-1:hover .c1-left{width:100px;}
-.c1-num{
-  font-family:'Halant',serif;
-  font-size:36px;color:var(--bg-dark);line-height:1;font-weight:700;
-}
+.c1-num{ font-family:'Halant',serif; font-size:36px;color:var(--bg-dark);line-height:1;font-weight:700; }
 .c1-label{font-size:11px;color:var(--bg-accent);letter-spacing:1.5px;font-weight:700;}
 
 .c1-right{padding:14px 16px;flex:1;display:flex;flex-direction:column;justify-content:space-between;}
 .c1-stars{display:flex;gap:3px;margin-bottom:8px;}
-.star-s{
-  width:18px;height:18px;background:var(--gold);
-  clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
-}
+.star-s{ width:18px;height:18px;background:var(--gold); clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); }
 .c1-text{font-size:20px;color:var(--text-white);line-height:1.4;flex:1;}
 .c1-text em{color:var(--gold);font-style:italic;font-size:22px;font-weight:700;}
 
 .c1-user{display:flex;align-items:center;gap:10px;margin-top:10px;}
 .avatar-wrap{
-  width:46px;height:46px;border-radius:50%;
-  border:2px solid var(--gold);
-  overflow:hidden;flex-shrink:0;
-  background:var(--bg-accent);position:relative;
+  width:46px;height:46px;border-radius:50%;border:2px solid var(--gold);
+  overflow:hidden;flex-shrink:0;background:var(--bg-accent);position:relative;
 }
-.avatar-wrap img{
-  width:100%;height:100%;object-fit:cover;
-  opacity:0;transition:opacity 0.4s ease;
-  position:absolute;inset:0;
-}
+.avatar-wrap img{ width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.4s ease;position:absolute;inset:0; }
 .avatar-wrap img.loaded{opacity:1;}
 .avatar-placeholder{
-  width:100%;height:100%;
-  display:flex;align-items:center;justify-content:center;
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
   font-size:11px;font-weight:700;color:var(--gold);
-  background:var(--bg-accent);
-  position:absolute;inset:0;
-  transition:opacity 0.4s ease;
+  background:var(--bg-accent);position:absolute;inset:0;transition:opacity 0.4s ease;
 }
 .avatar-placeholder.hidden{opacity:0;pointer-events:none;}
 
@@ -728,1094 +505,336 @@ img{max-width:100%;}
 .c1-ucity{font-size:15px;color:var(--text-muted);}
 
 .footer{
-  margin-top:18px;
-  background:var(--bg-card);
-  border:1px solid var(--bg-accent);
-  border-radius:var(--radius-card);
-  padding:14px 18px;
+  margin-top:18px;background:var(--bg-card);border:1px solid var(--bg-accent);
+  border-radius:var(--radius-card);padding:14px 18px;
   display:flex;align-items:center;gap:14px;
-  animation:riseUp 0.6s 0.45s both;
-  position:relative;overflow:hidden;
+  animation:riseUp 0.6s 0.45s both;position:relative;overflow:hidden;
 }
-.footer::after{
-  content:'';position:absolute;right:-20px;top:-20px;
-  width:80px;height:80px;background:var(--gold);
-  border-radius:50%;opacity:0.07;
-}
-.f-icon{
-  width:40px;height:40px;border-radius:var(--radius-sm);
-  background:var(--gold);
-  display:flex;align-items:center;justify-content:center;
-  font-size:28px;flex-shrink:0;color:var(--bg-dark);
-}
+.footer::after{ content:'';position:absolute;right:-20px;top:-20px;width:80px;height:80px;background:var(--gold);border-radius:50%;opacity:0.07; }
+.f-icon{ width:40px;height:40px;border-radius:var(--radius-sm);background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;color:var(--bg-dark); }
 .f-text b{display:block;color:var(--text-white);font-size:20px;font-weight:700;margin-bottom:3px;}
 .f-text p{color:var(--text-muted);font-size:18px;line-height:1.5;}
 
 @keyframes riseUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 
-@media(max-width:480px){
-  .sec-title{font-size:19px;}
-  .prob-img-wrap{height:80px;}
-  .main-title{font-size:22px;}
-  .c1-num{font-size:28px;}
-  .c1-left{width:76px;}
-  .card-1:hover .c1-left{width:86px;}
-  .c1-text{font-size:13px;}
-}
 
 /* ═══ DOC 2 STYLES ═══ */
 .doc2-wrap{
-  width:100%;
-  max-width:450px;
+  width:100%;max-width:450px;
   background:#f0ede6;
   font-family:'halant','halant',sans-serif;
   overflow-x:hidden;
 }
 
-.top-bar{
-  height:5px;
-  background:linear-gradient(90deg,#1a4a2e,var(--gold) 50%,#1a4a2e);
-}
+.top-bar{ height:5px; background:linear-gradient(90deg,#1a4a2e,var(--gold) 50%,#1a4a2e); }
 
 .hdr{
-  background:#1a4a2e;
-  padding:32px 24px 28px;
-  position:relative;
-  overflow:hidden;
-  text-align:center;
+  background:#1a4a2e;padding:32px 24px 28px;
+  position:relative;overflow:hidden;text-align:center;
 }
-.hdr::after{
-  content:'';
-  position:absolute;
-  bottom:-1px;left:0;right:0;
-  height:28px;
-  background:#f0ede6;
-  clip-path:ellipse(55% 100% at 50% 100%);
-}
+.hdr::after{ content:'';position:absolute;bottom:-1px;left:0;right:0;height:28px;background:#f0ede6;clip-path:ellipse(55% 100% at 50% 100%); }
 .hdr::before{
-  content:'';
-  position:absolute;
-  top:-60px;left:50%;
-  transform:translateX(-50%);
-  width:280px;height:280px;
-  border-radius:50%;
+  content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);
+  width:280px;height:280px;border-radius:50%;
   background:radial-gradient(circle,rgba(201,168,76,0.18) 0%,transparent 70%);
   animation:hdrGlow 4s ease-in-out infinite alternate;
 }
-@keyframes hdrGlow{
-  0%{opacity:0.5;transform:translateX(-50%) scale(1)}
-  100%{opacity:1;transform:translateX(-50%) scale(1.15)}
-}
+@keyframes hdrGlow{ 0%{opacity:0.5;transform:translateX(-50%) scale(1)} 100%{opacity:1;transform:translateX(-50%) scale(1.15)} }
 
 .hdr-tag{
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-  background:rgba(201,168,76,0.15);
-  border:1px solid rgba(201,168,76,0.4);
-  border-radius:30px;
-  padding:6px 18px;
-  font-family:'halant',sans-serif;
-  font-size:18px;
-  font-weight:700;
-  letter-spacing:2.5px;
-  text-transform:uppercase;
-  color:var(--gold);
-  margin-bottom:16px;
-  position:relative;z-index:1;
-  animation:tagPop 0.6s ease both;
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);
+  border-radius:30px;padding:6px 18px;
+  font-family:'halant',sans-serif;font-size:18px;font-weight:700;
+  letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);
+  margin-bottom:16px;position:relative;z-index:1;animation:tagPop 0.6s ease both;
 }
-@keyframes tagPop{
-  from{opacity:0;transform:scale(0.85)}
-  to{opacity:1;transform:scale(1)}
-}
+@keyframes tagPop{ from{opacity:0;transform:scale(0.85)} to{opacity:1;transform:scale(1)} }
 
-.hdr-title{
-  font-family:'halant',serif;
-  font-size:32px;
-  color:#fff;
-  line-height:1.35;
-  position:relative;z-index:1;
-  animation:fadeUp2 0.7s ease 0.2s both;
-}
+.hdr-title{ font-family:'halant',serif;font-size:32px;color:#fff;line-height:1.35;position:relative;z-index:1;animation:fadeUp2 0.7s ease 0.2s both; }
 .hdr-title span{color:var(--gold);}
+.hdr-sub{ font-family:'halant',sans-serif;font-size:16px;color:rgba(255,255,255,0.781);margin-top:8px;position:relative;z-index:1;animation:fadeUp2 0.7s ease 0.35s both; }
+@keyframes fadeUp2{ from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
 
-.hdr-sub{
-  font-family:'halant',sans-serif;
-  font-size:16px;
-  color:rgba(255, 255, 255, 0.781);
-  margin-top:8px;
-  position:relative;z-index:1;
-  animation:fadeUp2 0.7s ease 0.35s both;
-}
-
-@keyframes fadeUp2{
-  from{opacity:0;transform:translateY(14px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-.cards-wrap{
-  padding:12px 16px 32px;
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-}
+.cards-wrap{ padding:12px 16px 32px;display:flex;flex-direction:column;gap:14px; }
 
 .b-card{
-  background:#fff;
-  border-radius:20px;
-  overflow:hidden;
+  background:#fff;border-radius:20px;overflow:hidden;
   box-shadow:0 3px 16px rgba(0,0,0,0.07);
   border:1px solid rgba(26,74,46,0.09);
-  display:flex;
-  align-items:stretch;
+  display:flex;align-items:stretch;
   transition:transform 0.35s cubic-bezier(.22,.68,0,.99),box-shadow 0.35s ease;
-  cursor:default;
-  animation:cardReveal 0.6s ease both;
-  position:relative;
+  cursor:default;animation:cardReveal 0.6s ease both;position:relative;
 }
-.b-card:hover{
-  transform:translateY(-6px) scale(1.015);
-  box-shadow:0 14px 40px rgba(26,74,46,0.14),0 4px 12px rgba(201,168,76,0.12);
-}
-
-.b-card:nth-child(1){animation-delay:0.1s}
-.b-card:nth-child(2){animation-delay:0.22s}
-.b-card:nth-child(3){animation-delay:0.34s}
-.b-card:nth-child(4){animation-delay:0.46s}
+.b-card:hover{ transform:translateY(-6px) scale(1.015); box-shadow:0 14px 40px rgba(26,74,46,0.14),0 4px 12px rgba(201,168,76,0.12); }
+.b-card:nth-child(1){animation-delay:0.1s} .b-card:nth-child(2){animation-delay:0.22s}
+.b-card:nth-child(3){animation-delay:0.34s} .b-card:nth-child(4){animation-delay:0.46s}
 .b-card:nth-child(5){animation-delay:0.58s}
-
-@keyframes cardReveal{
-  from{opacity:0;transform:translateX(-20px)}
-  to{opacity:1;transform:translateX(0)}
-}
+@keyframes cardReveal{ from{opacity:0;transform:translateX(-20px)} to{opacity:1;transform:translateX(0)} }
 
 .b-card.flip{flex-direction:row-reverse;}
 .b-card.flip .b-img-wrap{border-radius:0 20px 20px 0;}
 .b-card:not(.flip) .b-img-wrap{border-radius:20px 0 0 20px;}
-
-.b-card::before{
-  content:'';
-  position:absolute;
-  left:0;top:0;bottom:0;
-  width:4px;
-  background:linear-gradient(to bottom,var(--gold),#2d7a4f);
-  border-radius:4px 0 0 4px;
-  opacity:0;
-  transition:opacity 0.35s ease;
-}
+.b-card::before{ content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,var(--gold),#2d7a4f);border-radius:4px 0 0 4px;opacity:0;transition:opacity 0.35s ease; }
 .b-card.flip::before{left:auto;right:0;border-radius:0 4px 4px 0;}
 .b-card:hover::before{opacity:1;}
 
-.b-img-wrap{
-  width:130px;
-  min-width:130px;
-  flex-shrink:0;
-  position:relative;
-  overflow:hidden;
-}
-.b-img-wrap img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition:transform 0.55s ease,filter 0.4s ease;
-  filter:brightness(0.88) saturate(1.1);
-}
-.b-card:hover .b-img-wrap img{
-  transform:scale(1.1);
-  filter:brightness(1) saturate(1.2);
-}
-.b-img-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to right,transparent 60%,rgba(255,255,255,0.25) 100%);
-  pointer-events:none;
-}
-.b-card.flip .b-img-overlay{
-  background:linear-gradient(to left,transparent 60%,rgba(255,255,255,0.25) 100%);
-}
-.b-num{
-  position:absolute;top:10px;left:10px;
-  width:28px;height:28px;border-radius:50%;
-  background:#1a4a2e;border:2px solid var(--gold);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'halant',sans-serif;font-size:12px;font-weight:700;color:var(--gold);
-  z-index:2;
-}
+.b-img-wrap{ width:130px;min-width:130px;flex-shrink:0;position:relative;overflow:hidden; }
+.b-img-wrap img{ width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.55s ease,filter 0.4s ease;filter:brightness(0.88) saturate(1.1); }
+.b-card:hover .b-img-wrap img{ transform:scale(1.1);filter:brightness(1) saturate(1.2); }
+.b-img-overlay{ position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,rgba(255,255,255,0.25) 100%);pointer-events:none; }
+.b-card.flip .b-img-overlay{ background:linear-gradient(to left,transparent 60%,rgba(255,255,255,0.25) 100%); }
+.b-num{ position:absolute;top:10px;left:10px;width:28px;height:28px;border-radius:50%;background:#1a4a2e;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'halant',sans-serif;font-size:12px;font-weight:700;color:var(--gold);z-index:2; }
 
-.b-text{
-  padding:16px 16px 16px 20px;
-  display:flex;flex-direction:column;justify-content:center;
-  gap:6px;flex:1;min-width:0;
-}
+.b-text{ padding:16px 16px 16px 20px;display:flex;flex-direction:column;justify-content:center;gap:6px;flex:1;min-width:0; }
 .b-card.flip .b-text{padding:16px 20px 16px 16px;}
-
 .b-icon-row{display:flex;align-items:center;gap:7px;margin-bottom:2px;}
 .b-icon{font-size:18px;display:inline-block;animation:iconBob 3s ease-in-out infinite;}
 @keyframes iconBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+.b-kw{ font-family:'halant',sans-serif;font-size:18px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#2d7a4f; }
+.b-heading{ font-family:'halant',serif;font-size:20px;color:black;line-height:1.4;font-style:italic;font-weight:600; }
+.b-desc{ font-family:'halant',sans-serif;font-size:18px;color:black;line-height:1.6; }
+.b-check{ display:inline-flex;align-items:center;gap:5px;background:#e8f5e9;border-radius:20px;padding:4px 10px;font-family:'halant',sans-serif;font-size:16px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#2d6a4f;margin-top:4px;width:fit-content; }
+.check-dot{ width:6px;height:6px;border-radius:50%;background:#4caf50;animation:dotPulse 2s ease-in-out infinite; }
+@keyframes dotPulse{ 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.7)} }
 
-
-.b-kw{
-  font-family:'halant',sans-serif;font-size:18px;font-weight:700;
-  letter-spacing:2px;text-transform:uppercase;color:#2d7a4f;
-}
-
-.b-heading{
-  font-family:'halant',serif;
-  font-size:20px;color:black;line-height:1.4;font-style:italic; font-weight:600;
-}
-
-.b-desc{
-  font-family:'halant',sans-serif;
-  font-size:18px;color:black;line-height:1.6;
-}
-
-.b-check{
-  display:inline-flex;align-items:center;gap:5px;
-  background:#e8f5e9;border-radius:20px;padding:4px 10px;
-  font-family:'halant',sans-serif;font-size:16px;font-weight:700;
-  letter-spacing:1px;text-transform:uppercase;color:#2d6a4f;
-  margin-top:4px;width:fit-content;
-}
-.check-dot{
-  width:6px;height:6px;border-radius:50%;background:#4caf50;
-  animation:dotPulse 2s ease-in-out infinite;
-}
-@keyframes dotPulse{
-  0%,100%{opacity:1;transform:scale(1)}
-  50%{opacity:0.5;transform:scale(0.7)}
-}
-
-.summary-strip{
-  margin:0 16px 28px;
-  background:linear-gradient(135deg,#1a4a2e 0%,#2d6e45 100%);
-  border-radius:18px;padding:22px 20px;
-  position:relative;overflow:hidden;
-  animation:fadeUp2 0.8s ease 0.8s both;
-}
-.summary-strip::before{
-  content:'✦';position:absolute;top:-10px;right:14px;
-  font-size:70px;color:rgba(201,168,76,0.1);
-  font-family:'halant',sans-serif;line-height:1;
-}
-.ss-label{
-  font-family:'halant',sans-serif;font-size:16px;font-weight:700;
-  letter-spacing:2.5px;text-transform:uppercase;
-  color:var(--gold);margin-bottom:8px;
-}
-.ss-text{
-  font-family:'halant',serif;font-style:italic;
-  font-size:19px;color:rgba(255,255,255,0.92);line-height:1.75;
-}
+.summary-strip{ margin:0 16px 28px;background:linear-gradient(135deg,#1a4a2e 0%,#2d6e45 100%);border-radius:18px;padding:22px 20px;position:relative;overflow:hidden;animation:fadeUp2 0.8s ease 0.8s both; }
+.summary-strip::before{ content:'✦';position:absolute;top:-10px;right:14px;font-size:70px;color:rgba(201,168,76,0.1);font-family:'halant',sans-serif;line-height:1; }
+.ss-label{ font-family:'halant',sans-serif;font-size:16px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px; }
+.ss-text{ font-family:'halant',serif;font-style:italic;font-size:19px;color:rgba(255,255,255,0.92);line-height:1.75; }
 .ss-text span{color:var(--gold);font-weight:700;}
 .ss-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
-.ss-pill{
-  background:rgba(201,168,76,0.14);border:1px solid rgba(201,168,76,0.35);
-  border-radius:20px;padding:5px 12px;
-  font-family:'halant',sans-serif;font-size:13px;font-weight:700;
-  letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);
-}
-
-.bot-bar{
-  height:5px;
-  background:linear-gradient(90deg,transparent,#1a4a2e 30%,var(--gold) 50%,#1a4a2e 70%,transparent);
-}
+.ss-pill{ background:rgba(201,168,76,0.14);border:1px solid rgba(201,168,76,0.35);border-radius:20px;padding:5px 12px;font-family:'halant',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold); }
+.bot-bar{ height:5px;background:linear-gradient(90deg,transparent,#1a4a2e 30%,var(--gold) 50%,#1a4a2e 70%,transparent); }
 
 
+/* SECTION-7 */
+.comparison-wrapper { width:100%;max-width:450px;background:var(--bg-card);overflow:hidden; }
+.main-header { background:var(--bg-accent);color:var(--gold);text-align:left;padding:22px 15px;font-size:32px;font-weight:900;border-bottom:3px solid var(--gold);line-height:1.1; }
+.header-labels { display:flex;background:var(--bg-dark);font-weight:700;text-align:center;border-bottom:1px solid var(--bg-accent);font-size:22px; }
+.header-labels div { flex:1;padding:12px; }
+.header-before { color:#ff6b6b;border-right:1px dashed var(--bg-accent); }
+.header-after { color:var(--green); }
+.comparison-row { display:flex;border-bottom:1px solid var(--bg-accent);transition:background 0.3s ease;position:relative;overflow:hidden;animation:fadeInRows 0.6s ease both; }
+.comparison-row:last-child{border-bottom:none;}
+.comparison-row:hover{background:rgba(26,74,46,0.3);}
+.comparison-row:nth-child(3){animation-delay:0.1s} .comparison-row:nth-child(4){animation-delay:0.2s}
+.comparison-row:nth-child(5){animation-delay:0.3s} .comparison-row:nth-child(6){animation-delay:0.4s}
+.comparison-row:nth-child(7){animation-delay:0.5s} .comparison-row:nth-child(8){animation-delay:0.6s}
+@keyframes fadeInRows { from{opacity:0;transform:translateY(15px)} to{opacity:1;transform:translateY(0)} }
+.side-before { flex:1;padding:16px 12px;background-color:rgba(192,57,43,0.05);display:flex;flex-direction:column;align-items:center;text-align:center;border-right:1px dashed var(--bg-accent);transition:transform 0.3s ease; }
+.side-after { flex:1;padding:16px 12px;background-color:rgba(46,204,113,0.04);display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform 0.3s ease; }
+.comparison-row:hover .side-before{transform:scale(0.98);}
+.comparison-row:hover .side-after{transform:scale(1.02);}
+.img-box { width:95px;height:95px;border-radius:50%;margin-bottom:12px;object-fit:cover;border:2px solid transparent;box-shadow:0 4px 10px rgba(0,0,0,0.3);transition:transform 0.4s ease,border-color 0.3s;filter:brightness(0.8); }
+.comparison-row:hover .img-box{transform:rotate(5deg) scale(1.08);filter:brightness(1);}
+.side-before .img-box{border-color:rgba(192,57,43,0.4);}
+.side-after .img-box{border-color:rgba(46,204,113,0.4);}
+.comparison-row:hover .side-before .img-box{border-color:var(--red-accent);}
+.comparison-row:hover .side-after .img-box{border-color:var(--green);}
+.desc-text{font-size:18px;font-weight:500;line-height:1.4;color:var(--text-white);}
+.side-before .desc-text{color:#ffb3b3;}
+.side-after .desc-text{color:#c2f0d5;font-weight:700;}
+.comparison-row::after { content:'➔';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(0);background:var(--gold);color:var(--bg-dark);width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold;transition:transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275);z-index:10;box-shadow:0 2px 5px rgba(0,0,0,0.5); }
+.comparison-row:hover::after{transform:translate(-50%,-50%) scale(1);}
+@media(max-width:360px){.img-box{width:55px;height:55px;}.desc-text{font-size:11.5px;}.main-header{font-size:16px;}}
 
 
+/* section-8 offer */
+@keyframes pulse-badge { 0%,100%{transform:scale(1)} 50%{transform:scale(1.07)} }
+@keyframes float-img { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-8px)} }
+@keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+@keyframes glow-border { 0%,100%{box-shadow:0 0 0 2px rgba(240,195,15,0.2)} 50%{box-shadow:0 0 0 4px rgba(240,195,15,0.4)} }
 
-
-
-
-/* SECTION-7  */
-      .comparison-wrapper {
-            width: 100%;
-            max-width: 450px;
-            background: var(--bg-card);
-           overflow: hidden;
-           
-        }
-
-        .main-header {
-            background: var(--bg-accent);
-            color: var(--gold);
-            text-align: left;
-            padding: 22px 15px;
-            font-size: 32px;
-            font-weight: 900;
-            border-bottom: 3px solid var(--gold);
-            line-height: 1.1;
-        }
-
-        /* Comparison Headers */
-        .header-labels {
-            display: flex;
-            background: var(--bg-dark);
-            font-weight: 700;
-            text-align: center;
-            border-bottom: 1px solid var(--bg-accent);
-            font-size: 22px;
-        }
-        .header-labels div { 
-            flex: 1; 
-            padding: 12px; 
-        }
-        .header-before { 
-            color: #ff6b6b; 
-            border-right: 1px dashed var(--bg-accent);
-        }
-        .header-after { 
-            color: var(--green); 
-        }
-
-        /* Comparison Row Layout */
-        .comparison-row {
-            display: flex;
-            border-bottom: 1px solid var(--bg-accent);
-            transition: background 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            animation: fadeInRows 0.6s ease both;
-        }
-        .comparison-row:last-child { 
-            border-bottom: none; 
-        }
-        .comparison-row:hover {
-            background: rgba(26, 74, 46, 0.3);
-        }
-
-        /* Row Animations Delay */
-        .comparison-row:nth-child(3) { animation-delay: 0.1s; }
-        .comparison-row:nth-child(4) { animation-delay: 0.2s; }
-        .comparison-row:nth-child(5) { animation-delay: 0.3s; }
-        .comparison-row:nth-child(6) { animation-delay: 0.4s; }
-        .comparison-row:nth-child(7) { animation-delay: 0.5s; }
-        .comparison-row:nth-child(8) { animation-delay: 0.6s; }
-
-        @keyframes fadeInRows {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Left Side (Before) */
-        .side-before {
-            flex: 1;
-            padding: 16px 12px;
-            background-color: rgba(192, 57, 43, 0.05);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            border-right: 1px dashed var(--bg-accent);
-            transition: transform 0.3s ease;
-        }
-
-        /* Right Side (After) */
-        .side-after {
-            flex: 1;
-            padding: 16px 12px;
-            background-color: rgba(46, 204, 113, 0.04);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        /* Hover Zoom Effect on Sections */
-        .comparison-row:hover .side-before {
-            transform: scale(0.98);
-        }
-        .comparison-row:hover .side-after {
-            transform: scale(1.02);
-        }
-
-        /* Image Styling */
-        .img-box {
-            width: 95px;
-            height:95px;
-            border-radius: 50%;
-            margin-bottom: 12px;
-            object-fit: cover;
-            border: 2px solid transparent;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: transform 0.4s ease, border-color 0.3s;
-            filter: brightness(0.8);
-        }
-        .comparison-row:hover .img-box {
-            transform: rotate(5deg) scale(1.08);
-            filter: brightness(1);
-        }
-
-        .side-before .img-box { 
-            border-color: rgba(192, 57, 43, 0.4); 
-        }
-        .side-after .img-box { 
-            border-color: rgba(46, 204, 113, 0.4); 
-        }
-        .comparison-row:hover .side-before .img-box { border-color: var(--red-accent); }
-        .comparison-row:hover .side-after .img-box { border-color: var(--green); }
-
-        /* Description Text */
-        .desc-text {
-            font-size: 18px;
-            font-weight: 500;
-            line-height: 1.4;
-            color: var(--text-white);
-        }
-        .side-before .desc-text {
-            color: #ffb3b3;
-        }
-        .side-after .desc-text {
-            color: #c2f0d5;
-            font-weight: 700;
-        }
-
-       
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Mini-badge overlay effect inside row on hover */
-        .comparison-row::after {
-            content: '➔';
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            background: var(--gold);
-            color: var(--bg-dark);
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: bold;
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            z-index: 10;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-        }
-        .comparison-row:hover::after {
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        /* Micro Responsive Adjustment */
-        @media (max-width: 360px) {
-            .img-box { width: 55px; height: 55px; }
-            .desc-text { font-size: 11.5px; }
-            .main-header { font-size: 16px; }
-        }
-
-
-
-
-
-
-
-
-
-
-
-/* section-8 offer section */
- /* Animations */
-    @keyframes pulse-badge {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.07); }
-    }
-    @keyframes shimmer {
-      0% { background-position: -200% center; }
-      100% { background-position: 200% center; }
-    }
-    @keyframes float-img {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes ticker {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    @keyframes glow-border {
-      0%, 100% { box-shadow: 0 0 0 2px rgba(240, 195, 15, 0.2); }
-      50% { box-shadow: 0 0 0 4px rgba(240, 195, 15, 0.4); }
-    }
-
-
-    /* ── MOBILE OPTIMIZATION & WRAPPER ── */
-    .offer-wrap {
-      width: 100%;
-      max-width: 450px;
-      margin: 0 auto;
-      font-family: var(--font-sans);
-      background: var(--bg-card);
-      overflow: hidden;
-      animation: glow-border 2.5s ease-in-out infinite;
-    }
-
-    /* Top Ticker Bar */
-    .top-barr {
-      background: var(--red-accent);
-      color: var(--text-white);
-      font-size: 20px;
-      font-weight: 500;
-      padding-top: 8px;
-      padding-bottom: 8px;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-    .ticker-inner {
-      display: inline-flex;
-      gap: 40px;
-      animation: ticker 14s linear infinite;
-    }
-
-    /* Header Info Text */
-    .info-header {
-      padding: 16px 20px 4px;
-      text-align: center;
-      animation: fadeInUp 0.4s ease both;
-    }
-    .info-header h2 {
-      font-size: 32px;
-      color: var(--gold);
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-    .info-header p {
-      font-size: 22px;
-      color: var(--text-white);
-      line-height: 1.4;
-    }
-
-    /* Badges Row */
-    .badge-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 6px;
-      padding: 8px 15px;
-      animation: fadeInUp 0.5s ease both;
-    }
-    .badge {
-      background: var(--bg-accent);
-      color: var(--gold-palee);
-      font-size: 15px;
-      font-weight: 500;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 0.5px solid rgba(240, 195, 15, 0.2);
-      animation: pulse-badge 2.2s ease-in-out infinite;
-    }
-    .badge:nth-child(2) { animation-delay: 0.4s; }
-    .badge:nth-child(3) { animation-delay: 0.8s; }
-
-    /* Product Image Frame */
-    .img-frame {
-      margin: 10px 20px 0;
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-      border: 2px solid rgba(240, 195, 15, 0.15);
-      background: var(--bg-dark);
-      position: relative;
-      height: 300px;
-      cursor: pointer;
-      transition: border-color 0.3s, transform 0.3s;
-      animation: fadeInUp 0.6s ease both;
-    }
-    .img-frame:hover {
-      border-color: var(--gold);
-      transform: scale(1.01);
-    }
-    .img-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      animation: float-img 3.5s ease-in-out infinite;
-      transition: transform 0.4s;
-    }
-    .img-frame:hover img {
-      animation: none;
-      transform: scale(1.05);
-    }
-    .img-overlay {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: var(--red-accent);
-      color: #fff;
-      font-size: 10px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 999px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    /* Benefits Headline */
-    .benefits-title {
-      font-size: 22px;
-      color: var(--gold-soft);
-      font-weight: 700;
-      margin: 16px 20px 2px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      animation: fadeInUp 0.65s ease both;
-    }
-
-    /* Perks Grid */
-    .perks-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin: 6px 20px 14px;
-      animation: fadeInUp 0.7s ease both;
-    }
-    .perk-card {
-      background: var(--bg-accent);
-      border: 0.5px solid rgba(122, 158, 133, 0.2);
-      border-radius: var(--radius-sm);
-      padding: 10px 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      cursor: default;
-      transition: background 0.25s, border-color 0.25s, transform 0.2s;
-    }
-    .perk-card:hover {
-      background: var(--bg-dark);
-      border-color: var(--gold-soft);
-      transform: translateY(-2px);
-    }
-    .perk-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 15px;
-      flex-shrink: 0;
-    }
-    .perk-text {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--gold-palee);
-      line-height: 1.3;
-    }
-    .perk-sub {
-      font-size: 15px;
-      color: var(--text-white);
-      margin-top: 1px;
-    }
-
-    /* Stock / Urgency Bar */
-    .stock-bar-wrap {
-      margin: 0 20px 14px;
-      animation: fadeInUp 0.8s ease both;
-    }
-    .stock-label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 18px;
-      margin-bottom: 5px;
-      color: var(--gold-palee);
-    }
-    .stock-label b {
-      color: var(--gold);
-      font-weight: 700;
-    }
-    .bar-bg {
-      background: var(--bg-dark);
-      border-radius: 999px;
-      height: 8px;
-      overflow: hidden;
-      border: 0.5px solid rgba(122, 158, 133, 0.15);
-    }
-    .bar-fill {
-      height: 100%;
-      width: 85%; /* Updated value for higher urgency */
-      background: linear-gradient(90deg, var(--red-accent), var(--gold));
-      border-radius: 999px;
-      background-size: 200% auto;
-      animation: shimmer 2s linear infinite;
-    }
-
-    /* CTA Button */
-    .cta-btn {
-      display: block;
-      width: calc(100% - 40px);
-      margin: 0 20px 16px;
-      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
-      color: var(--bg-dark);
-      text-align: center;
-      padding: 13px;
-      border-radius: var(--radius-sm);
-      font-size: 18px;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-      letter-spacing: 0.2px;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      animation: fadeInUp 0.9s ease both;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(240, 195, 15, 0.2);
-    }
-    .cta-btn::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 60%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.3);
-      transform: skewX(-20deg);
-      animation: btn-shine 2.8s ease-in-out infinite;
-    }
-    @keyframes btn-shine {
-      0% { left: -100%; }
-      60%, 100% { left: 160%; }
-    }
-    .cta-btn:hover {
-       transform: scale(0.99);
-      box-shadow: 0 2px 8px rgba(240, 195, 15, 0.4);
-    }
-
-    /* Footer Note */
-    .footer-note {
-      text-align: center;
-      font-size: 15px;
-      color: var(--text-muted);
-      padding-bottom: 16px;
-      animation: fadeInUp 1s ease both;
-      border-top: 1px solid rgba(122, 158, 133, 0.1);
-      margin-top: 4px;
-      padding-top: 12px;
-    }
-
-    /* Mobile Responsive Fine-tuning */
-    @media (max-width: 380px) {
-      .perks-grid { grid-template-columns: 1fr; gap: 8px; }
-      .info-header h2 { font-size: 15px; }
-      .img-frame { height: 170px; }
-    }
-
-
-
-
-
+.offer-wrap { width:100%;max-width:450px;margin:0 auto;font-family:var(--font-sans);background:var(--bg-card);overflow:hidden;animation:glow-border 2.5s ease-in-out infinite; }
+.top-barr { background:var(--red-accent);color:var(--text-white);font-size:20px;font-weight:500;padding-top:8px;padding-bottom:8px;overflow:hidden;white-space:nowrap; }
+.ticker-inner { display:inline-flex;gap:40px;animation:ticker 14s linear infinite; }
+.info-header { padding:16px 20px 4px;text-align:center;animation:fadeInUp 0.4s ease both; }
+.info-header h2 { font-size:32px;color:var(--gold);font-weight:700;margin-bottom:4px; }
+.info-header p { font-size:22px;color:var(--text-white);line-height:1.4; }
+.badge-row { display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;padding:8px 15px;animation:fadeInUp 0.5s ease both; }
+.badge { background:var(--bg-accent);color:var(--gold-palee);font-size:15px;font-weight:500;padding:4px 10px;border-radius:999px;border:0.5px solid rgba(240,195,15,0.2);animation:pulse-badge 2.2s ease-in-out infinite; }
+.badge:nth-child(2){animation-delay:0.4s} .badge:nth-child(3){animation-delay:0.8s}
+.img-frame { margin:10px 20px 0;border-radius:var(--radius-sm);overflow:hidden;border:2px solid rgba(240,195,15,0.15);background:var(--bg-dark);position:relative;height:300px;cursor:pointer;transition:border-color 0.3s,transform 0.3s;animation:fadeInUp 0.6s ease both; }
+.img-frame:hover{border-color:var(--gold);transform:scale(1.01);}
+.img-frame img { width:100%;height:100%;object-fit:cover;display:block;animation:float-img 3.5s ease-in-out infinite;transition:transform 0.4s; }
+.img-frame:hover img{animation:none;transform:scale(1.05);}
+.img-overlay { position:absolute;top:10px;right:10px;background:var(--red-accent);color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:999px;letter-spacing:0.5px;text-transform:uppercase; }
+.benefits-title { font-size:22px;color:var(--gold-soft);font-weight:700;margin:16px 20px 2px;text-transform:uppercase;letter-spacing:0.5px;animation:fadeInUp 0.65s ease both; }
+.perks-grid { display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 20px 14px;animation:fadeInUp 0.7s ease both; }
+.perk-card { background:var(--bg-accent);border:0.5px solid rgba(122,158,133,0.2);border-radius:var(--radius-sm);padding:10px 12px;display:flex;align-items:center;gap:8px;cursor:default;transition:background 0.25s,border-color 0.25s,transform 0.2s; }
+.perk-card:hover{background:var(--bg-dark);border-color:var(--gold-soft);transform:translateY(-2px);}
+.perk-icon { width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0; }
+.perk-text { font-size:15px;font-weight:700;color:var(--gold-palee);line-height:1.3; }
+.perk-sub { font-size:15px;color:var(--text-white);margin-top:1px; }
+.stock-bar-wrap { margin:0 20px 14px;animation:fadeInUp 0.8s ease both; }
+.stock-label { display:flex;justify-content:space-between;font-size:18px;margin-bottom:5px;color:var(--gold-palee); }
+.stock-label b{color:var(--gold);font-weight:700;}
+.bar-bg { background:var(--bg-dark);border-radius:999px;height:8px;overflow:hidden;border:0.5px solid rgba(122,158,133,0.15); }
+.bar-fill { height:100%;width:85%;background:linear-gradient(90deg,var(--red-accent),var(--gold));border-radius:999px;background-size:200% auto;animation:shimmer 2s linear infinite; }
+.cta-btn { display:block;width:calc(100% - 40px);margin:0 20px 16px;background:linear-gradient(135deg,var(--gold-soft),var(--gold));color:var(--bg-dark);text-align:center;padding:13px;border-radius:var(--radius-sm);font-size:18px;font-weight:700;border:none;cursor:pointer;letter-spacing:0.2px;transition:background 0.2s,transform 0.15s,box-shadow 0.2s;animation:fadeInUp 0.9s ease both;position:relative;overflow:hidden;box-shadow:0 4px 15px rgba(240,195,15,0.2); }
+.cta-btn::after { content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:rgba(255,255,255,0.3);transform:skewX(-20deg);animation:btn-shine 2.8s ease-in-out infinite; }
+@keyframes btn-shine { 0%{left:-100%} 60%,100%{left:160%} }
+.cta-btn:hover{transform:scale(0.99);box-shadow:0 2px 8px rgba(240,195,15,0.4);}
+.footer-note { text-align:center;font-size:15px;color:var(--text-muted);padding-bottom:16px;animation:fadeInUp 1s ease both;border-top:1px solid rgba(122,158,133,0.1);margin-top:4px;padding-top:12px; }
+@media(max-width:380px){.perks-grid{grid-template-columns:1fr;gap:8px;}.info-header h2{font-size:15px;}.img-frame{height:170px;}}
 
 
 /* section-9 */
-.form-box{
-    max-width:450px;
-    width: 100%;
-    background: var(--bg-card);
-    padding:25px 30px;
-    color:white;
-    border-top: 1px solid var(--gold);
-}
-
-/* Heading */
-.form-box h2{
-    margin-top: -2px;
-    font-size:32px;
-    line-height: 1.1;
-    font-weight:600;
-    margin-bottom:20px;
-    color:var(--gold);
-}
-
-/* Input container */
-.input-group{
-    margin-bottom:18px;
-}
-
-/* Label */
-label{
-    font-size:16px;
-    font-weight:600;
-    margin-bottom:6px;
-    display:block;
-}
-
-/* Input fields */
-input{
-    width:100%;
-    padding:12px;
-    border-radius:10px;
-    border:none;
-    outline:none;
-    font-size:16px;
-}
-.btn-cta{
-    width:100%;
-    padding:13px;
-    font-size:18px;
-    font-weight:600;
-    background:var(--gold);
-    color:var(--bg-dark);
-    border:none;
-    border-radius:12px;
-    margin-top:8px;
-    cursor:pointer;
-    animation:pulse 2s infinite;
-    }
-    @keyframes pulse{
-      0%{box-shadow:0 0 0 0 rgba(175, 152, 75, 0.6)}
-      70%{box-shadow:0 0 0 20px rgba(236,72,153,0)}
-      100%{box-shadow:0 0 0 0 rgba(236,72,153,0)}
-    }
-
-@media (max-width: 480px){
-
-  .form-box{
-    padding: 20px 16px;
-  }
-
-  .form-box h2{
-    font-size: 22px;
-    text-align:left;
-  }
-
-  label{
-    font-size: 14px;
-  }
-
-  input{
-    font-size: 15px;
-    padding: 11px;
-    border-radius: 8px;
-  }
-
-  .btn-cta{
-    font-size: 16px;
-    padding: 12px;
-    border-radius: 10px;
-  }
-}
+.form-box{ max-width:450px;width:100%;background:var(--bg-card);padding:25px 30px;color:white;border-top:1px solid var(--gold); }
+.form-box h2{ margin-top:-2px;font-size:32px;line-height:1.1;font-weight:600;margin-bottom:20px;color:var(--gold); }
+.input-group{margin-bottom:18px;}
+label{font-size:16px;font-weight:600;margin-bottom:6px;display:block;}
+input{width:100%;padding:12px;border-radius:10px;border:none;outline:none;font-size:16px;}
+.btn-cta{ width:100%;padding:13px;font-size:18px;font-weight:600;background:var(--gold);color:var(--bg-dark);border:none;border-radius:12px;margin-top:8px;cursor:pointer;animation:pulse 2s infinite; }
+@keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(175,152,75,0.6)} 70%{box-shadow:0 0 0 20px rgba(236,72,153,0)} 100%{box-shadow:0 0 0 0 rgba(236,72,153,0)} }
 
 
+/* section-10 guarantee */
+.guarantee-badge-box { width:100%;max-width:450px;background:linear-gradient(180deg,var(--bg-card) 0%,var(--bg-deep) 100%);padding:clamp(20px,6vw,28px) clamp(16px,5vw,22px);text-align:center;position:relative;border:1px solid var(--gold-border);animation:zoomInEntrance 0.5s cubic-bezier(0.175,0.885,0.32,1.15) forwards; }
+@keyframes zoomInEntrance { from{opacity:0;transform:scale(0.95)} to{opacity:1;transform:scale(1)} }
+.badge-image-center { width:clamp(90px,25vw,110px);height:clamp(90px,25vw,110px);margin:0 auto 16px auto;background:var(--bg-deep);border-radius:50%;border:3px solid var(--gold);padding:5px;box-shadow:0 0 25px rgba(240,195,15,0.25);position:relative;overflow:hidden;transition:all 0.4s cubic-bezier(0.25,0.8,0.25,1); }
+.badge-image-center::before { content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--bg-deep) 25%,var(--bg-accent) 50%,var(--bg-deep) 75%);background-size:200% 100%;animation:shimmerLoading 1.5s infinite linear;z-index:1;border-radius:50%; }
+.badge-image-center.loaded::before{display:none;}
+@keyframes shimmerLoading { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+.badge-image-center img { width:100%;height:100%;object-fit:contain;border-radius:50%;display:block;position:relative;z-index:2;opacity:0;transition:opacity 0.3s ease; }
+.badge-image-center.loaded img{opacity:1;}
+.guarantee-badge-box:hover .badge-image-center{transform:rotate(4deg) scale(1.04);box-shadow:0 0 35px rgba(240,195,15,0.4);}
+.tagline-top { font-family:'halant',sans-serif;font-size:clamp(15px,3vw,22px);font-weight:800;color:var(--red);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px; }
+.heading-bold { font-size:clamp(19.5px,5.5vw,32px);font-weight:900;color:var(--text-white);line-height:1.35;margin-bottom:20px; }
+.heading-bold span{color:var(--gold-soft);text-shadow:0 0 10px rgba(240,195,15,0.15);}
+.block-stack{display:flex;flex-direction:column;gap:12px;}
+.layer-card { background:rgba(7,21,10,0.5);border:1px solid rgba(255,255,255,0.02);border-radius:var(--radius-card);padding:clamp(12px,4vw,16px);display:flex;gap:12px;align-items:center;text-align:left;transition:all 0.3s cubic-bezier(0.25,0.8,0.25,1); }
+.layer-card:hover{background:var(--bg-accent);border-color:rgba(46,204,113,0.15);transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.3);}
+.card-graphic-icon { font-size:clamp(18px,5vw,21px);width:clamp(38px,10vw,42px);height:clamp(38px,10vw,42px);background:var(--gold-pale);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid var(--gold-border); }
+.card-info-text{color:var(--text-white);font-size:clamp(12.8px,3.6vw,18px);line-height:1.5;font-weight:500;}
+.layer-card.accent-card{background:linear-gradient(90deg,var(--red-pale),rgba(7,21,10,0.5));border-left:4px solid var(--red);}
+.layer-card.accent-card:hover{background:linear-gradient(90deg,rgba(225,57,53,0.18),var(--bg-accent));border-color:rgba(229,57,53,0.25);}
+.layer-card.accent-card .card-graphic-icon{background:var(--red-pale);border-color:var(--red-border);}
+@media(max-width:340px){.layer-card{gap:8px;padding:10px;}.card-graphic-icon{display:none;}}
+
+/* DISCLAIMER */
+.disclaim { max-width:450px;width:100%;background:var(--bg-card);margin-top:20px;padding:5px;font-size:7px; }
+.disclaim *{margin:0;padding:5px;color:var(--text-white);}
 
 
-
-
-
-
-/* section- 10 gurantee section */
-    .guarantee-badge-box {
-      width: 100%;
-      max-width: 450px;
-      background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-deep) 100%);
-      padding: clamp(20px, 6vw, 28px) clamp(16px, 5vw, 22px);
-      text-align: center;
-      position: relative;
-      border: 1px solid var(--gold-border);
-      
-      /* Smooth Entrance Animation */
-      animation: zoomInEntrance 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.15) forwards;
-    }
-
-    @keyframes zoomInEntrance {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    /* ── FLOATING IMAGE FRAME WITH LAZY-LOAD SHIMMER ── */
-    .badge-image-center {
-      width: clamp(90px, 25vw, 110px);
-      height: clamp(90px, 25vw, 110px);
-      margin: 0 auto 16px auto;
-      background: var(--bg-deep);
-      border-radius: 50%;
-      border: 3px solid var(--gold);
-      padding: 5px;
-      box-shadow: 0 0 25px rgba(240, 195, 15, 0.25);
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-
-    /* CSS Shimmer Placeholder for Lazy Loading */
-    .badge-image-center::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, var(--bg-deep) 25%, var(--bg-accent) 50%, var(--bg-deep) 75%);
-      background-size: 200% 100%;
-      animation: shimmerLoading 1.5s infinite linear;
-      z-index: 1;
-      border-radius: 50%;
-    }
-
-    /* Hide placeholder background once image is completely loaded */
-    .badge-image-center.loaded::before {
-      display: none;
-    }
-
-    @keyframes shimmerLoading {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-
-    .badge-image-center img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* Perfect for logos inside the badge circle */
-      border-radius: 50%;
-      display: block;
-      position: relative;
-      z-index: 2;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    /* Show image smoothly after load */
-    .badge-image-center.loaded img {
-      opacity: 1;
-    }
-    
-    /* Hover micro-animation for the badge */
-    .guarantee-badge-box:hover .badge-image-center {
-      transform: rotate(4deg) scale(1.04);
-      box-shadow: 0 0 35px rgba(240, 195, 15, 0.4);
-    }
-
-    /* ── TYPOGRAPHY LAYER (Optimized with Clamp) ── */
-    .tagline-top {
-      font-family: 'halant', sans-serif;
-      font-size: clamp(15px, 3vw, 22px);
-      font-weight: 800;
-      color: var(--red);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-    
-    .heading-bold {
-      font-size: clamp(19.5px, 5.5vw, 32px);
-      font-weight: 900;
-      color: var(--text-white);
-      line-height: 1.35;
-      margin-bottom: 20px;
-    }
-    .heading-bold span {
-      color: var(--gold-soft);
-      text-shadow: 0 0 10px rgba(240, 195, 15, 0.15);
-    }
-
-    /* ── FLOATING LAYER BLOCKS ── */
-    .block-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    /* Base Support Card Style */
-    .layer-card {
-      background: rgba(7, 21, 10, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.02);
-      border-radius: var(--radius-card);
-      padding: clamp(12px, 4vw, 16px);
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      text-align: left;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-    .layer-card:hover {
-      background: var(--bg-accent);
-      border-color: rgba(46, 204, 113, 0.15);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
-
-    .card-graphic-icon {
-      font-size: clamp(18px, 5vw, 21px);
-      width: clamp(38px, 10vw, 42px);
-      height: clamp(38px, 10vw, 42px);
-      background: var(--gold-pale);
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      border: 1px solid var(--gold-border);
-    }
-
-    .card-info-text {
-      color: var(--text-white);
-      font-size: clamp(12.8px, 3.6vw, 18px);
-      line-height: 1.5;
-      font-weight: 500;
-    }
-
-    /* Accent Card Block styling (Red Theme) */
-    .layer-card.accent-card {
-      background: linear-gradient(90deg, var(--red-pale), rgba(7, 21, 10, 0.5));
-      border-left: 4px solid var(--red);
-    }
-    .layer-card.accent-card:hover {
-      background: linear-gradient(90deg, rgba(225, 57, 53, 0.18), var(--bg-accent));
-      border-color: rgba(229, 57, 53, 0.25);
-    }
-    .layer-card.accent-card .card-graphic-icon {
-      background: var(--red-pale);
-      border-color: var(--red-border);
-    }
-
-    /* ── ULTRA LOW MOBILE SCREENS FIX (Below 340px) ── */
-    @media (max-width: 340px) {
-      .layer-card { gap: 8px; padding: 10px; }
-      .card-graphic-icon { display: none; } /* Hide icons on extremely narrow viewports to save space */
-    }
-
-
-
-
-/* ===== DISCLAIMER ===== */
-.disclaim {
-  max-width: 450px;
-  width: 100%;
-  background: var(--bg-card);
-  margin-top: 20px;
-  padding: 5px;
-  font-size: 7px;
-}
-.disclaim * {
-  margin: 0;
-  padding: 5px;
-  color: var(--text-white);
-}
-
-/* MEDIA */
+/* ═══════════════════════════════════════════
+   MOBILE OPTIMIZATION — font-size cap 24px
+   Sirf >24px wale fonts ko 24px tak cap kiya
+   Baaki kuch bhi nahi badla
+═══════════════════════════════════════════ */
 @media(max-width:480px){
-   .btn {
-    margin-left: 100px !important;
-    width: 40%;
-    font-size: 18px;
-   }
+
+  /* sec-tag: 22px — theek hai, touch nahi */
+
+  /* sec-title: 30px → 24px */
+  .sec-title { font-size: 24px; }
+
+  /* sec-sub: 22px — theek hai */
+
+  /* div-label span: 22px — theek hai */
+
+  /* cause-text: 20px — theek hai */
+  /* cause-text strong: 22px — theek hai */
+  /* cause-hint: 18px — theek hai */
+  /* prob-tag: 16px — theek hai */
+  /* prob-text: 20px — theek hai */
+
+  /* section-header: 22px — theek hai */
+
+  /* sec-label span: 28px → 24px */
+  .sec-label span { font-size: 24px; }
+
+  /* t-num: 30px → 24px */
+  .t-num { font-size: 24px; }
+
+  /* t-tag: 20px — theek hai */
+  /* t-title: 18px — theek hai */
+  /* t-desc: 16px — theek hai */
+
+  /* eyebrow: 22px — theek hai */
+
+  /* main-title: 32px → 24px */
+  .main-title { font-size: 24px; }
+
+  /* c1-num: 36px → 24px */
+  .c1-num { font-size: 24px; }
+
+  /* c1-left width adjust for smaller num */
+  .c1-left { width: 76px; }
+  .card-1:hover .c1-left { width: 86px; }
+
+  /* c1-text: 20px — theek hai */
+  /* c1-text em: 22px — theek hai */
+  /* c1-uname: 18px — theek hai */
+  /* c1-ucity: 15px — theek hai */
+
+  /* f-text b: 20px — theek hai */
+  /* f-text p: 18px — theek hai */
+
+  /* hdr-title: 32px → 24px */
+  .hdr-title { font-size: 24px; }
+
+  /* hdr-tag: 18px — theek hai */
+  /* hdr-sub: 16px — theek hai */
+
+  /* b-kw: 18px — theek hai */
+  /* b-heading: 20px — theek hai */
+  /* b-desc: 18px — theek hai */
+  /* b-check: 16px — theek hai */
+  /* ss-label: 16px — theek hai */
+
+  /* ss-text: 19px — theek hai */
+
+  /* main-header: 32px → 24px */
+  .main-header { font-size: 24px; }
+
+  /* header-labels: 22px — theek hai */
+  /* desc-text: 18px — theek hai */
+
+  /* top-barr: 20px — theek hai */
+
+  /* info-header h2: 32px → 24px */
+  .info-header h2 { font-size: 24px; }
+
+  /* info-header p: 22px — theek hai */
+
+  /* benefits-title: 22px — theek hai */
+
+  /* stock-label: 18px — theek hai */
+  /* cta-btn: 18px — theek hai */
+
+  /* form-box h2: 32px → 24px */
+  .form-box h2 { font-size: 24px; }
+
+  /* prob-img-wrap height */
+  .prob-img-wrap { height: 80px; }
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE OPTIMIZATION — font-size 24px cap
+   Only fonts >24px capped to 24px at <=480px
+   Nothing else changed
+═══════════════════════════════════════════ */
+@media(max-width:480px){
+  .sec-title      { font-size: 24px; }
+  .sec-label span { font-size: 24px; }
+  .t-num          { font-size: 24px; }
+  .main-title     { font-size: 24px; }
+  .c1-num         { font-size: 24px; }
+  .c1-left        { width: 76px; }
+  .card-1:hover .c1-left { width: 86px; }
+  .hdr-title      { font-size: 24px; }
+  .main-header    { font-size: 24px; }
+  .info-header h2 { font-size: 24px; }
+  .form-box h2    { font-size: 24px; }
+  .prob-img-wrap  { height: 80px; }
 }
 </style>
 </head>
 <body>
 
-
-
-  
 <img src="images/banner.avif" class="images" alt="" width="750" height="700" fetchpriority="high" decoding="async">
-
-
-
 
 <div class="page">
 
@@ -1844,36 +863,28 @@ input{
 
     <div class="prob-grid">
       <div class="prob-item">
-        <div class="prob-img-wrap" data-src="images/sect-1-1stimg.avif">
-          <img alt="दर्द और जलन">
-        </div>
+        <div class="prob-img-wrap" data-src="images/sect-1-1stimg.avif"><img alt="दर्द और जलन"></div>
         <div class="prob-body">
           <div class="prob-tag"><div class="prob-dot"></div>Problem 1</div>
           <div class="prob-text">दर्द और जलन</div>
         </div>
       </div>
       <div class="prob-item">
-        <div class="prob-img-wrap" data-src="images/sect-1-2ndimg.jfif">
-          <img alt="खून आना">
-        </div>
+        <div class="prob-img-wrap" data-src="images/sect-1-2ndimg.jfif"><img alt="खून आना"></div>
         <div class="prob-body">
           <div class="prob-tag"><div class="prob-dot"></div>Problem 2</div>
           <div class="prob-text">खून आना</div>
         </div>
       </div>
       <div class="prob-item">
-        <div class="prob-img-wrap" data-src="images/sect-1-3rdimg.avif">
-          <img alt="सूजन और खुजली">
-        </div>
+        <div class="prob-img-wrap" data-src="images/sect-1-3rdimg.avif"><img alt="सूजन और खुजली"></div>
         <div class="prob-body">
           <div class="prob-tag"><div class="prob-dot"></div>Problem 3</div>
           <div class="prob-text">सूजन और खुजली</div>
         </div>
       </div>
       <div class="prob-item">
-        <div class="prob-img-wrap" data-src="images/sect-1-4thimg.avif">
-          <img alt="बैठने में परेशानी">
-        </div>
+        <div class="prob-img-wrap" data-src="images/sect-1-4thimg.avif"><img alt="बैठने में परेशानी"></div>
         <div class="prob-body">
           <div class="prob-tag"><div class="prob-dot"></div>Problem 4</div>
           <div class="prob-text">बैठने-चलने में तकलीफ</div>
@@ -1882,746 +893,178 @@ input{
     </div>
   </div>
 
-  <!-- section divider -->
   <div class="bar"></div>
 
-
-
-
-
-
-
-  <!-- ══ SECTION 2 — HOW IT WORKS (Doc 2) ══ -->
-
-<div class="doc2-wrap">
-
+  <!-- ══ SECTION 2 — HOW IT WORKS ══ -->
+  <div class="doc2-wrap">
     <div class="top-bar"></div>
-
     <div class="hdr">
       <div class="hdr-tag"><span>⚡</span> How It Works</div>
       <h1 class="hdr-title">Pilo Relief कैसे <span>मदद करता है?</span></h1>
       <p class="hdr-sub">Pilo Relief का आयुर्वेदिक फॉर्मूला शरीर को अंदर से सपोर्ट करता है</p>
     </div>
-
     <div class="cards-wrap">
-
       <div class="b-card">
-        <div class="b-img-wrap">
-          <img src="images/sect-2-1stimg.avif" alt="Detox" onerror="this.src='https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=80'">
-          <div class="b-img-overlay"></div>
-          <div class="b-num">1</div>
-        </div>
-        <div class="b-text">
-          <div class="b-icon-row"><span class="b-icon">🌱</span><span class="b-kw">Relief</span></div>
-          <p class="b-heading">सूजन कम करने में सहायक</p>
-          <p class="b-desc">बवासीर से जुड़ी सूजन को कम करने में सहायता करता है</p>
-          <div class="b-check"><div class="check-dot"></div>Proven Support</div>
-        </div>
+        <div class="b-img-wrap"><img src="images/sect-2-1stimg.avif" alt="Detox" onerror="this.src='https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=80'"><div class="b-img-overlay"></div><div class="b-num">1</div></div>
+        <div class="b-text"><div class="b-icon-row"><span class="b-icon">🌱</span><span class="b-kw">Relief</span></div><p class="b-heading">सूजन कम करने में सहायक</p><p class="b-desc">बवासीर से जुड़ी सूजन को कम करने में सहायता करता है</p><div class="b-check"><div class="check-dot"></div>Proven Support</div></div>
       </div>
-
       <div class="b-card flip">
-        <div class="b-img-wrap">
-          <img src="images/sect-2-2ndimg.avif" alt="Reduce size" onerror="this.src='https://images.unsplash.com/photo-1551076805-e1869033e561?w=400&q=80'">
-          <div class="b-img-overlay"></div>
-          <div class="b-num" style="left:auto;right:10px;">2</div>
-        </div>
-        <div class="b-text">
-          <div class="b-icon-row"><span class="b-icon">✨</span><span class="b-kw">Easy</span></div>
-          <p class="b-heading">मल त्याग को आसान बनाने में मददगार</p>
-          <p class="b-desc">मल त्याग की प्रक्रिया को सुचारू और आसान बनाता है</p>
-          <div class="b-check"><div class="check-dot"></div>Smooth Action</div>
-        </div>
+        <div class="b-img-wrap"><img src="images/sect-2-2ndimg.avif" alt="Reduce size" onerror="this.src='https://images.unsplash.com/photo-1551076805-e1869033e561?w=400&q=80'"><div class="b-img-overlay"></div><div class="b-num" style="left:auto;right:10px;">2</div></div>
+        <div class="b-text"><div class="b-icon-row"><span class="b-icon">✨</span><span class="b-kw">Easy</span></div><p class="b-heading">मल त्याग को आसान बनाने में मददगार</p><p class="b-desc">मल त्याग की प्रक्रिया को सुचारू और आसान बनाता है</p><div class="b-check"><div class="check-dot"></div>Smooth Action</div></div>
       </div>
-
       <div class="b-card">
-        <div class="b-img-wrap">
-          <img src="images/sect-2-3rdimg.avif" alt="Pain relief" onerror="this.src='https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80'">
-          <div class="b-img-overlay"></div>
-          <div class="b-num">3</div>
-        </div>
-        <div class="b-text">
-          <div class="b-icon-row"><span class="b-icon">🌊</span><span class="b-kw">Comfort</span></div>
-          <p class="b-heading">दर्द और जलन से राहत</p>
-          <p class="b-desc">दर्द और जलन से राहत दिलाने में पूरी तरह सहायक है</p>
-          <div class="b-check"><div class="check-dot"></div>Soothing Relief</div>
-        </div>
+        <div class="b-img-wrap"><img src="images/sect-2-3rdimg.avif" alt="Pain relief" onerror="this.src='https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80'"><div class="b-img-overlay"></div><div class="b-num">3</div></div>
+        <div class="b-text"><div class="b-icon-row"><span class="b-icon">🌊</span><span class="b-kw">Comfort</span></div><p class="b-heading">दर्द और जलन से राहत</p><p class="b-desc">दर्द और जलन से राहत दिलाने में पूरी तरह सहायक है</p><div class="b-check"><div class="check-dot"></div>Soothing Relief</div></div>
       </div>
-
       <div class="b-card flip">
-        <div class="b-img-wrap">
-          <img src="images/sect-2-4thimg.avif" alt="Blood flow" onerror="this.src='https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400&q=80'">
-          <div class="b-img-overlay"></div>
-          <div class="b-num" style="left:auto;right:10px;">4</div> 
-        </div>
-        <div class="b-text">
-          <div class="b-icon-row"><span class="b-icon">🍂</span><span class="b-kw">Digest</span></div>
-          <p class="b-heading">पाचन तंत्र को बेहतर सपोर्ट</p>
-          <p class="b-desc">पाचन क्रिया को ठीक करके बवासीर से राहत देता है</p>
-          <div class="b-check"><div class="check-dot"></div>Better Digestion</div>
-        </div>
+        <div class="b-img-wrap"><img src="images/sect-2-4thimg.avif" alt="Blood flow" onerror="this.src='https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400&q=80'"><div class="b-img-overlay"></div><div class="b-num" style="left:auto;right:10px;">4</div></div>
+        <div class="b-text"><div class="b-icon-row"><span class="b-icon">🍂</span><span class="b-kw">Digest</span></div><p class="b-heading">पाचन तंत्र को बेहतर सपोर्ट</p><p class="b-desc">पाचन क्रिया को ठीक करके बवासीर से राहत देता है</p><div class="b-check"><div class="check-dot"></div>Better Digestion</div></div>
       </div>
-
-</div>
-
-
+    </div>
     <div class="summary-strip">
       <p class="ss-label">✦ Result Summary</p>
       <p class="ss-text">यह 5-step formula शरीर को <span>अंदर से ठीक</span> करता है —<br>बिना किसी side effect के, पूरी तरह <span>प्राकृतिक</span> रूप से।</p>
-      <div class="ss-pills">
-        <div class="ss-pill">No Pain</div>
-        <div class="ss-pill">100% Natural</div>
-        <div class="ss-pill">Lab Tested</div>
-      </div>
+      <div class="ss-pills"><div class="ss-pill">No Pain</div><div class="ss-pill">100% Natural</div><div class="ss-pill">Lab Tested</div></div>
     </div>
-    
-<button class="cta-btn" onclick="location.href='#orderForm'">अभी खरीदें</button>
-
+    <button class="cta-btn" onclick="location.href='#orderForm'">अभी खरीदें</button>
     <div class="bot-bar"></div>
   </div>
-  <!-- end doc2-wrap -->
 
-  <!-- section divider -->
   <div class="bar"></div>
 
-
-
-
-
-
-
-
-  <!-- section-3 media proof -->
-
-<div class="premium-wrapper">
-
-  <!-- Top Image Element (Lazy Loaded with SEO/Performance Attributes) -->
-  <div class="hero-banner">
-    <img src="images/media-proof.avif" 
-         alt="Ayurveda Trust Media" 
-         loading="lazy" 
-         decoding="async">
-    <div class="hero-overlay"></div>
-  </div>
-
-  <!-- Content Chassis -->
-  <div class="main-body">
-
-    <!-- 1. AUTHORITY / MEDIA PROOF BLOCK -->
-    <div class="authority-section">
-      <div class="section-header">AUTHORITY / MEDIA PROOF</div>
-      <h2 class="main-heading">हजारों लोगों का <span>भरोसा</span></h2>
-      
-      <p class="intro-text">
-        Pilo Relief को चुन रहे हैं वे लोग जो प्राकृतिक आयुर्वेदिक समाधान की तलाश में हैं।
-      </p>
-
-      <!-- Authority Checklist Grid -->
-      <div class="bullet-grid">
-        <div class="grid-card">
-          <span class="check-icon">✔</span>
-          <span class="card-text">गुणवत्ता युक्त आयुर्वेदिक सामग्री</span>
-        </div>
-        <div class="grid-card">
-          <span class="check-icon">✔</span>
-          <span class="card-text">विशेषज्ञों द्वारा तैयार फॉर्मूला</span>
-        </div>
-        <div class="grid-card">
-          <span class="check-icon">✔</span>
-          <span class="card-text">ग्राहकों द्वारा सकारात्मक अनुभव</span>
-        </div>
-        <div class="grid-card">
-          <span class="check-icon">✔</span>
-          <span class="card-text">पूरे भारत में Available</span>
+  <!-- ══ SECTION 3 — MEDIA PROOF ══ -->
+  <div class="premium-wrapper">
+    <div class="hero-banner"><img src="images/media-proof.avif" alt="Ayurveda Trust Media" loading="lazy" decoding="async"><div class="hero-overlay"></div></div>
+    <div class="main-body">
+      <div class="authority-section">
+        <div class="section-header">AUTHORITY / MEDIA PROOF</div>
+        <h2 class="main-heading">हजारों लोगों का <span>भरोसा</span></h2>
+        <p class="intro-text">Pilo Relief को चुन रहे हैं वे लोग जो प्राकृतिक आयुर्वेदिक समाधान की तलाश में हैं।</p>
+        <div class="bullet-grid">
+          <div class="grid-card"><span class="check-icon">✔</span><span class="card-text">गुणवत्ता युक्त आयुर्वेदिक सामग्री</span></div>
+          <div class="grid-card"><span class="check-icon">✔</span><span class="card-text">विशेषज्ञों द्वारा तैयार फॉर्मूला</span></div>
+          <div class="grid-card"><span class="check-icon">✔</span><span class="card-text">ग्राहकों द्वारा सकारात्मक अनुभव</span></div>
+          <div class="grid-card"><span class="check-icon">✔</span><span class="card-text">पूरे भारत में Available</span></div>
         </div>
       </div>
-    </div>
-
-
-    <!-- 2. SOCIAL PROOF BLOCK -->
-    <div class="social-proof-section">
-      <div class="section-header">SOCIAL PROOF</div>
-      <h2 class="main-heading">हजारों <span>संतुष्ट ग्राहक</span></h2>
-
-      <!-- Metrics Display -->
-      <div class="metrics-container">
-        <div class="metric-pill">
-          <div class="pill-stars">⭐⭐⭐⭐⭐</div>
-          <div class="pill-title">4.8/5</div>
-          <div class="pill-desc">ग्राहक संतुष्टि स्कोर</div>
+      <div class="social-proof-section">
+        <div class="section-header">SOCIAL PROOF</div>
+        <h2 class="main-heading">हजारों <span>संतुष्ट ग्राहक</span></h2>
+        <div class="metrics-container">
+          <div class="metric-pill"><div class="pill-stars">⭐⭐⭐⭐⭐</div><div class="pill-title">4.8/5</div><div class="pill-desc">ग्राहक संतुष्टि स्कोर</div></div>
+          <div class="metric-pill"><div class="pill-stars" style="opacity:0;user-select:none;">⭐⭐⭐⭐⭐</div><div class="pill-title" style="color:var(--text-white);">10,000+</div><div class="pill-desc">Happy Customers</div></div>
         </div>
-        <div class="metric-pill">
-          <div class="pill-stars" style="opacity: 0; user-select: none;">⭐⭐⭐⭐⭐</div> <!-- Perfect vertical alignment buffer -->
-          <div class="pill-title" style="color: var(--text-white);">10,000+</div>
-          <div class="pill-desc">Happy Customers</div>
+        <div class="row-list">
+          <div class="row-item"><span class="green-check">✔</span><span class="row-text">कई ग्राहकों ने दर्द, जलन और असुविधा में राहत का अनुभव साझा किया</span></div>
+          <div class="row-item"><span class="green-check">✔</span><span class="row-text">Repeat Orders से लगातार बढ़ता भरोसा</span></div>
         </div>
       </div>
-
-      <!-- Social Proof Checklist Lines -->
-      <div class="row-list">
-        <div class="row-item">
-          <span class="green-check">✔</span>
-          <span class="row-text">कई ग्राहकों ने दर्द, जलन और असुविधा में राहत का अनुभव साझा किया</span>
-        </div>
-        <div class="row-item">
-          <span class="green-check">✔</span>
-          <span class="row-text">Repeat Orders से लगातार बढ़ता भरोसा</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-<!-- sect-5 target audience -->
-<div class="page">
-
-  <!-- Section Label -->
-  <div class="sec-label">
-    <div class="sec-label-dot"></div>
-    <span>Pilo Relief किन लोगों के लिए उपयोगी है?</span>
-  </div>
-
-  <!-- Timeline Content Strips -->
-  <div class="timeline">
-
-    <!-- Item 1 -->
-    <div class="titem i1">
-      <div class="t-num">01</div>
-      <div class="t-img">
-        <img src="images/sect-3-1stimg.avif" alt="Piles Issue" loading="lazy">
-      </div>
-      <div class="t-body">
-        <div class="t-tag">मुख्य समस्या</div>
-        <div class="t-title">जिन्हें बवासीर की समस्या है</div>
-        <div class="t-desc">यह उनके लिए अत्यंत असरदार और राहत देने वाला है।</div>
-      </div>
-      <div class="t-arrow">›</div>
-    </div>
-
-    <!-- Item 2 -->
-    <div class="titem i2">
-      <div class="t-num">02</div>
-      <div class="t-img">
-        <img src="images/sect-3-2ndimg.avif" alt="Pain Discomfort" loading="lazy">
-      </div>
-      <div class="t-body">
-        <div class="t-tag">असहनीय तकलीफ</div>
-        <div class="t-title">मल त्याग के दौरान दर्द या जलन होना</div>
-        <div class="t-desc">रोजमर्रा के इस गंभीर कष्ट को कम करने में मदद करता है।</div>
-      </div>
-      <div class="t-arrow">›</div>
-    </div>
-
-    <!-- Item 3 -->
-    <div class="titem i3">
-      <div class="t-num">03</div>
-      <div class="t-img">
-        <img src="images/sect-3-3rdimg.avif" alt="Bleeding Issue" loading="lazy">
-      </div>
-      <div class="t-body">
-        <div class="t-tag">गंभीर लक्षण</div>
-        <div class="t-title">जिन्हें खून आने की समस्या रहती है</div>
-        <div class="t-desc">लक्षणों को नियंत्रित कर अंदरूनी हीलिंग को बढ़ावा देता है।</div>
-      </div>
-      <div class="t-arrow">›</div>
-    </div>
-
-    <!-- Item 4 -->
-    <div class="titem i4">
-      <div class="t-num">04</div>
-      <div class="t-img">
-        <img src="images/sect-3-4thimg.avif" alt="Constipation" loading="lazy">
-      </div>
-      <div class="t-body">
-        <div class="t-tag">मुख्य कारण</div>
-        <div class="t-title">जो कब्ज (Constipation) से परेशान रहते हैं</div>
-        <div class="t-desc">पेट को साफ कर बवासीर की जड़ पर काम करता है।</div>
-      </div>
-      <div class="t-arrow">›</div>
-    </div>
-
-    <div>
-      
     </div>
   </div>
 
-</div>
-
-
-
-
-
-
+  <!-- ══ SECTION 5 — TARGET AUDIENCE ══ -->
+  <div class="page">
+    <div class="sec-label"><div class="sec-label-dot"></div><span>Pilo Relief किन लोगों के लिए उपयोगी है?</span></div>
+    <div class="timeline">
+      <div class="titem i1"><div class="t-num">01</div><div class="t-img"><img src="images/sect-3-1stimg.avif" alt="Piles Issue" loading="lazy"></div><div class="t-body"><div class="t-tag">मुख्य समस्या</div><div class="t-title">जिन्हें बवासीर की समस्या है</div><div class="t-desc">यह उनके लिए अत्यंत असरदार और राहत देने वाला है।</div></div><div class="t-arrow">›</div></div>
+      <div class="titem i2"><div class="t-num">02</div><div class="t-img"><img src="images/sect-3-2ndimg.avif" alt="Pain Discomfort" loading="lazy"></div><div class="t-body"><div class="t-tag">असहनीय तकलीफ</div><div class="t-title">मल त्याग के दौरान दर्द या जलन होना</div><div class="t-desc">रोजमर्रा के इस गंभीर कष्ट को कम करने में मदद करता है।</div></div><div class="t-arrow">›</div></div>
+      <div class="titem i3"><div class="t-num">03</div><div class="t-img"><img src="images/sect-3-3rdimg.avif" alt="Bleeding Issue" loading="lazy"></div><div class="t-body"><div class="t-tag">गंभीर लक्षण</div><div class="t-title">जिन्हें खून आने की समस्या रहती है</div><div class="t-desc">लक्षणों को नियंत्रित कर अंदरूनी हीलिंग को बढ़ावा देता है।</div></div><div class="t-arrow">›</div></div>
+      <div class="titem i4"><div class="t-num">04</div><div class="t-img"><img src="images/sect-3-4thimg.avif" alt="Constipation" loading="lazy"></div><div class="t-body"><div class="t-tag">मुख्य कारण</div><div class="t-title">जो कब्ज (Constipation) से परेशान रहते हैं</div><div class="t-desc">पेट को साफ कर बवासीर की जड़ पर काम करता है।</div></div><div class="t-arrow">›</div></div>
+    </div>
+  </div>
 
   <!-- ══ SECTION 6 — TESTIMONIALS ══ -->
   <div class="testi-wrap">
-    <div class="top">
-      <div class="eyebrow">★ REAL STORIES ★</div>
-      <h2 class="main-title">लोगों ने महसूस किया <span>फर्क</span></h2>
-    </div>
+    <div class="top"><div class="eyebrow">★ REAL STORIES ★</div><h2 class="main-title">लोगों ने महसूस किया <span>फर्क</span></h2></div>
     <div class="cards-grid">
-      <div class="card-1">
-        <div class="card-1-inner">
-          <div class="c1-left"><div class="c1-num">01</div><div class="c1-label">STORY</div></div>
-          <div class="c1-right">
-            <div>
-              <div class="c1-stars"><div class="star-s"></div><div class="star-s"></div><div class="star-s"></div><div class="star-s"></div><div class="star-s"></div></div>
-              <p class="c1-text">मुझे कई महीनों से दर्द और जलन की समस्या थी। Pilo Relief इस्तेमाल करने के बाद <em>काफी आराम महसूस हुआ।</em></p>
-            </div>
-            <div class="c1-user">
-              <div class="avatar-wrap" data-src="images/rajesh.avif">
-                <div class="avatar-placeholder">RA</div>
-                <img alt="राजेश अग्रवाल">
-              </div>
-              <div><div class="c1-uname">राजेश अग्रवाल</div><div class="c1-ucity">जयपुर, राजस्थान</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-1" style="animation-delay:0.2s">
-        <div class="card-1-inner">
-          <div class="c1-left"><div class="c1-num">02</div><div class="c1-label">STORY</div></div>
-          <div class="c1-right">
-            <div>
-              <div class="c1-stars"><div class="star-s"></div><div class="star-s"></div><div class="star-s"></div><div class="star-s"></div><div class="star-s"></div></div>
-              <p class="c1-text">कब्ज और बवासीर दोनों की परेशानी थी। नियमित उपयोग के बाद <em>काफी सुधार देखने को मिला।</em></p>
-            </div>
-            <div class="c1-user">
-              <div class="avatar-wrap" data-src="images/sunil.avif">
-                <div class="avatar-placeholder">SS</div>
-                <img alt="सुनील शर्मा">
-              </div>
-              <div><div class="c1-uname">सुनील शर्मा</div><div class="c1-ucity">दिल्ली</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-1" style="animation-delay:0.3s">
-        <div class="card-1-inner">
-          <div class="c1-left"><div class="c1-num">03</div><div class="c1-label">STORY</div></div>
-          <div class="c1-right">
-            <div>
-              <div class="c1-stars"><div class="star-s"></div><div class="star-s"></div><div class="star-s"></div><div class="star-s"></div><div class="star-s"></div></div>
-              <p class="c1-text">मल त्याग के दौरान होने वाली असुविधा <em>पहले से काफी कम महसूस हुई।</em> बहुत अच्छा product है।</p>
-            </div>
-            <div class="c1-user">
-              <div class="avatar-wrap" data-src="images/manoj.avif">
-                <div class="avatar-placeholder">MV</div>
-                <img alt="मनोज वर्मा">
-              </div>
-              <div><div class="c1-uname">मनोज वर्मा</div><div class="c1-ucity">लखनऊ</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="card-1"><div class="card-1-inner"><div class="c1-left"><div class="c1-num">01</div><div class="c1-label">STORY</div></div><div class="c1-right"><div><div class="c1-stars"><div class="star-s"></div><div class="star-s"></div><div class="star-s"></div><div class="star-s"></div><div class="star-s"></div></div><p class="c1-text">मुझे कई महीनों से दर्द और जलन की समस्या थी। Pilo Relief इस्तेमाल करने के बाद <em>काफी आराम महसूस हुआ।</em></p></div><div class="c1-user"><div class="avatar-wrap" data-src="images/rajesh.avif"><div class="avatar-placeholder">RA</div><img alt="राजेश अग्रवाल"></div><div><div class="c1-uname">राजेश अग्रवाल</div><div class="c1-ucity">जयपुर, राजस्थान</div></div></div></div></div></div>
+      <div class="card-1" style="animation-delay:0.2s"><div class="card-1-inner"><div class="c1-left"><div class="c1-num">02</div><div class="c1-label">STORY</div></div><div class="c1-right"><div><div class="c1-stars"><div class="star-s"></div><div class="star-s"></div><div class="star-s"></div><div class="star-s"></div><div class="star-s"></div></div><p class="c1-text">कब्ज और बवासीर दोनों की परेशानी थी। नियमित उपयोग के बाद <em>काफी सुधार देखने को मिला।</em></p></div><div class="c1-user"><div class="avatar-wrap" data-src="images/sunil.avif"><div class="avatar-placeholder">SS</div><img alt="सुनील शर्मा"></div><div><div class="c1-uname">सुनील शर्मा</div><div class="c1-ucity">दिल्ली</div></div></div></div></div></div>
+      <div class="card-1" style="animation-delay:0.3s"><div class="card-1-inner"><div class="c1-left"><div class="c1-num">03</div><div class="c1-label">STORY</div></div><div class="c1-right"><div><div class="c1-stars"><div class="star-s"></div><div class="star-s"></div><div class="star-s"></div><div class="star-s"></div><div class="star-s"></div></div><p class="c1-text">मल त्याग के दौरान होने वाली असुविधा <em>पहले से काफी कम महसूस हुई।</em> बहुत अच्छा product है।</p></div><div class="c1-user"><div class="avatar-wrap" data-src="images/manoj.avif"><div class="avatar-placeholder">MV</div><img alt="मनोज वर्मा"></div><div><div class="c1-uname">मनोज वर्मा</div><div class="c1-ucity">लखनऊ</div></div></div></div></div></div>
     </div>
-
-    <div class="footer">
-      <div class="f-icon">★</div>
-      <div class="f-text">
-        <b>10,000+ संतुष्ट ग्राहक</b>
-        <p>4.8/5 रेटिंग · Repeat Orders से बढ़ता भरोसा</p>
-      </div>
-    </div>
+    <div class="footer"><div class="f-icon">★</div><div class="f-text"><b>10,000+ संतुष्ट ग्राहक</b><p>4.8/5 रेटिंग · Repeat Orders से बढ़ता भरोसा</p></div></div>
   </div>
 
 </div>
-
-
-
-
-
-
 
 <!-- SECTION-7 -->
 <div class="comparison-wrapper">
-    <!-- Main Header with Brand Context -->
-    <div class="main-header">Pilo Relief के साथ पहले और बाद का अंतर</div>
-    
-    <!-- Comparison Split Header -->
-    <div class="header-labels">
-        <div class="header-before">पहले 😟</div>
-        <div class="header-after">बाद में 😊</div>
-    </div>
-
-    <!-- Row 1 -->
-    <div class="comparison-row">
-        <div class="side-before">
-            <img src="images/sect-5-1st-bf.avif" class="img-box" alt="Toilet Trouble" loading="lazy">
-            <p class="desc-text">टॉयलेट जाते समय परेशानी</p>
-        </div>
-        <div class="side-after">
-            <img src="images/sect-5-1st-af.avif" class="img-box" alt="Toilet Comfort" loading="lazy">
-            <p class="desc-text">टॉयलेट रूटीन में अधिक आराम</p>
-        </div>
-    </div>
-
-    <!-- Row 2 -->
-    <div class="comparison-row">
-        <div class="side-before">
-            <img src="images/sect-5-2ndimg-bf.avif" class="img-box" alt="Stressed Face" loading="lazy">
-            <p class="desc-text">दर्द की वजह से चेहरा तनावग्रस्त</p>
-        </div>
-        <div class="side-after">
-            <img src="images/sect-5-2ndimg-af.avif" class="img-box" alt="Confident Face" loading="lazy">
-            <p class="desc-text">चेहरे पर राहत और आत्मविश्वास</p>
-        </div>
-    </div>
-
-    <!-- Row 3 -->
-    <div class="comparison-row">
-        <div class="side-before">
-            <img src="images/sect-5-3rdimg-bf.avif" class="img-box" alt="Office Discomfort" loading="lazy">
-            <p class="desc-text">ऑफिस में लंबे समय तक बैठने में दिक्कत</p>
-        </div>
-        <div class="side-after">
-            <img src="images/sect-5-3rdimg-af.avif" class="img-box" alt="Office Comfort" loading="lazy">
-            <p class="desc-text">ऑफिस में आराम से बैठकर काम करना</p>
-        </div>
-    </div>
-
-    <!-- Row 4 -->
-    <div class="comparison-row">
-        <div class="side-before">
-            <img src="images/sect-5-4thimg-bf.avif" class="img-box" alt="Uneasy Feel" loading="lazy">
-            <p class="desc-text">बार-बार असहज महसूस करना</p>
-        </div>
-        <div class="side-after">
-            <img src="images/sect-5-4thimg-af.avif" class="img-box" alt="Easy Feel" loading="lazy">
-            <p class="desc-text">दिनभर अधिक सहज महसूस करना</p>
-        </div>
-    </div>
-
-   
-
+  <div class="main-header">Pilo Relief के साथ पहले और बाद का अंतर</div>
+  <div class="header-labels"><div class="header-before">पहले 😟</div><div class="header-after">बाद में 😊</div></div>
+  <div class="comparison-row"><div class="side-before"><img src="images/sect-5-1st-bf.avif" class="img-box" alt="Toilet Trouble" loading="lazy"><p class="desc-text">टॉयलेट जाते समय परेशानी</p></div><div class="side-after"><img src="images/sect-5-1st-af.avif" class="img-box" alt="Toilet Comfort" loading="lazy"><p class="desc-text">टॉयलेट रूटीन में अधिक आराम</p></div></div>
+  <div class="comparison-row"><div class="side-before"><img src="images/sect-5-2ndimg-bf.avif" class="img-box" alt="Stressed Face" loading="lazy"><p class="desc-text">दर्द की वजह से चेहरा तनावग्रस्त</p></div><div class="side-after"><img src="images/sect-5-2ndimg-af.avif" class="img-box" alt="Confident Face" loading="lazy"><p class="desc-text">चेहरे पर राहत और आत्मविश्वास</p></div></div>
+  <div class="comparison-row"><div class="side-before"><img src="images/sect-5-3rdimg-bf.avif" class="img-box" alt="Office Discomfort" loading="lazy"><p class="desc-text">ऑफिस में लंबे समय तक बैठने में दिक्कत</p></div><div class="side-after"><img src="images/sect-5-3rdimg-af.avif" class="img-box" alt="Office Comfort" loading="lazy"><p class="desc-text">ऑफिस में आराम से बैठकर काम करना</p></div></div>
+  <div class="comparison-row"><div class="side-before"><img src="images/sect-5-4thimg-bf.avif" class="img-box" alt="Uneasy Feel" loading="lazy"><p class="desc-text">बार-बार असहज महसूस करना</p></div><div class="side-after"><img src="images/sect-5-4thimg-af.avif" class="img-box" alt="Easy Feel" loading="lazy"><p class="desc-text">दिनभर अधिक सहज महसूस करना</p></div></div>
 </div>
 
-
-
-
-
-<!-- section-8 offer section -->
+<!-- section-8 offer -->
 <div class="offer-wrap">
-  <!-- Top Moving Ticker -->
-  <div class="top-barr">
-    <div class="ticker-inner">
-      <span>⚡ सीमित समय के लिए विशेष ऑफर Available &nbsp;·&nbsp; देर न करें, समस्या को बढ़ने न दें &nbsp;·&nbsp; आज ही Pilo Relief ऑर्डर करें &nbsp;·&nbsp; ⚡ सीमित समय के लिए विशेष ऑफर Available &nbsp;·&nbsp; देर न करें, समस्या को बढ़ने न दें</span>
-    </div>
-  </div>
-
-  <!-- Heading Text Content -->
-  <div class="info-header">
-    <h2>देर न करें, समस्या को बढ़ने न दें</h2>
-    <p>बवासीर की समस्या समय के साथ गंभीर हो सकती है। आज ही Pilo Relief ऑर्डर करें और अपने स्वास्थ्य की ओर पहला कदम बढ़ाएं।</p>
-  </div>
-
-  <!-- Quick Badges -->
-  <div class="badge-row">
-    <span class="badge">🎁 विशेष डिस्काउंट</span>
-    <span class="badge">🚚 फास्ट डिलीवरी</span>
-    <span class="badge">💰 Cash On Delivery</span>
-  </div>
-
-  <!-- Product Image Frame (With Lazy Loading) -->
-  <div class="img-frame">
-    <!-- Placeholder image replaced with professional wellness product shot, lazy loading enabled -->
-    <img src="images/product.avif" alt="Pilo Relief Ayurvedic Product" loading="lazy" />
-    <div class="img-overlay">Special Offer</div>
-  </div>
-
-  <!-- Benefits Section Headline -->
+  <div class="top-barr"><div class="ticker-inner"><span>⚡ सीमित समय के लिए विशेष ऑफर Available &nbsp;·&nbsp; देर न करें, समस्या को बढ़ने न दें &nbsp;·&nbsp; आज ही Pilo Relief ऑर्डर करें &nbsp;·&nbsp; ⚡ सीमित समय के लिए विशेष ऑफर Available &nbsp;·&nbsp; देर न करें, समस्या को बढ़ने न दें</span></div></div>
+  <div class="info-header"><h2>देर न करें, समस्या को बढ़ने न दें</h2><p>बवासीर की समस्या समय के साथ गंभीर हो सकती है। आज ही Pilo Relief ऑर्डर करें और अपने स्वास्थ्य की ओर पहला कदम बढ़ाएं।</p></div>
+  <div class="badge-row"><span class="badge">🎁 विशेष डिस्काउंट</span><span class="badge">🚚 फास्ट डिलीवरी</span><span class="badge">💰 Cash On Delivery</span></div>
+  <div class="img-frame"><img src="images/product.avif" alt="Pilo Relief Ayurvedic Product" loading="lazy"><div class="img-overlay">Special Offer</div></div>
   <div class="benefits-title">आज ऑर्डर करने पर पाएं</div>
-
-  <!-- Perks Grid Container -->
   <div class="perks-grid">
-    <div class="perk-card">
-      <div class="perk-icon" style="background: rgba(240,195,15,0.15);">🎁</div>
-      <div>
-        <div class="perk-text">विशेष डिस्काउंट Offer</div>
-        <div class="perk-sub">सीमित समय तक</div>
-      </div>
-    </div>
-    <div class="perk-card">
-      <div class="perk-icon" style="background: rgba(46,204,113,0.15);">🚚</div>
-      <div>
-        <div class="perk-text">पूरे भारत में डिलीवरी</div>
-        <div class="perk-sub">सुपर फास्ट सर्विस</div>
-      </div>
-    </div>
-    <div class="perk-card">
-      <div class="perk-icon" style="background: rgba(255,255,255,0.1);">💰</div>
-      <div>
-        <div class="perk-text">Cash On Delivery</div>
-        <div class="perk-sub">घर पर ही पेमेंट करें</div>
-      </div>
-    </div>
-    <div class="perk-card">
-      <div class="perk-icon" style="background: rgba(192,57,43,0.15);">📦</div>
-      <div>
-        <div class="perk-text">सुरक्षित पैकेजिंग</div>
-        <div class="perk-sub">100% प्राइवेसी के साथ</div>
-      </div>
-    </div>
+    <div class="perk-card"><div class="perk-icon" style="background:rgba(240,195,15,0.15);">🎁</div><div><div class="perk-text">विशेष डिस्काउंट Offer</div><div class="perk-sub">सीमित समय तक</div></div></div>
+    <div class="perk-card"><div class="perk-icon" style="background:rgba(46,204,113,0.15);">🚚</div><div><div class="perk-text">पूरे भारत में डिलीवरी</div><div class="perk-sub">सुपर फास्ट सर्विस</div></div></div>
+    <div class="perk-card"><div class="perk-icon" style="background:rgba(255,255,255,0.1);">💰</div><div><div class="perk-text">Cash On Delivery</div><div class="perk-sub">घर पर ही पेमेंट करें</div></div></div>
+    <div class="perk-card"><div class="perk-icon" style="background:rgba(192,57,43,0.15);">📦</div><div><div class="perk-text">सुरक्षित पैकेजिंग</div><div class="perk-sub">100% प्राइवेसी के साथ</div></div></div>
   </div>
-
-  <!-- Stock Bar -->
-  <div class="stock-bar-wrap">
-    <div class="stock-label"><span>⚠️ स्टॉक तेजी से खत्म हो रहा है!</span><b>85% बिक चुका</b></div>
-    <div class="bar-bg"><div class="bar-fill"></div></div>
-  </div>
-
-  <!-- Order Now CTA Button -->
+  <div class="stock-bar-wrap"><div class="stock-label"><span>⚠️ स्टॉक तेजी से खत्म हो रहा है!</span><b>85% बिक चुका</b></div><div class="bar-bg"><div class="bar-fill"></div></div></div>
   <button class="cta-btn" onclick="location.href='#orderForm'">👉 Order Now — ऑफर सीमित है!</button>
-
-  <!-- Footer Note -->
   <div class="footer-note">☎ 24/7 ग्राहक सहायता Available &nbsp;|&nbsp; 100% आयुर्वेदिक एवं सुरक्षित</div>
 </div>
 
+<style>
+#loading{display:none;color:#fff;font-size:16px;margin-top:10px;}
+#poweredBy{text-align:center;color:#fff;font-size:14px;margin-top:20px;}
+</style>
 
-
-
-
-
-
-
-
-
-
-<html>
-    <head>
-        <style>
-            #loading {
-        display: none;
-        color: #fff;
-        font-size: 16px;
-        margin-top: 10px;
-      }
-
-      #poweredBy {
-        text-align: center;
-        color: #fff;
-        font-size: 14px;
-        margin-top: 20px;
-      }
-
-   
-        </style>
-
-        <script>
-  function submitForm(event) {
-    event.preventDefault();
-
-    const form = event.target;
-
-    // 👉 Submit button ko hide + disable karo
-    const submitBtn = form.querySelector("button[type='submit'], input[type='submit']");
-    if (submitBtn) {
-      submitBtn.style.display = "none";
-      submitBtn.disabled = true;
-    }
-
-    // 👉 Loading show karo
-    document.getElementById("loading").style.display = "block";
-
-    const formData = new FormData(form);
-    let redirected = false;
-
-    const timeout = setTimeout(() => {
-      if (!redirected) {
-        redirected = true;
-        window.location.href = './Thankyou.html';
-      }
-    }, 2000);
-
-    fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-      if (!redirected) {
-        clearTimeout(timeout);
-        redirected = true;
-        window.location.href = './Thankyou.html';
-      }
-
-      document.getElementById("loading").style.display = "none";
-
-      Swal.fire({
-        icon: 'success',
-        title: 'Success',
-        text: 'Processing Your Order. Please wait....',
-        confirmButtonColor: '#3085d6',
-        confirmButtonText: 'OK',
-      });
-    })
-    .catch(error => {
-      console.error('Fetch error:', error);
-
-      if (!redirected) {
-        clearTimeout(timeout);
-        redirected = true;
-        window.location.href = './Thankyou.html';
-      }
-
-      document.getElementById("loading").style.display = "none";
-    });
-
-    return false;
-  }
-
-  // Animated dots for loading state
-  let dotCount = 1;
-  setInterval(() => {
-    const d = document.getElementById('dotAnim');
-    if (d) { 
-      dotCount = (dotCount % 3) + 1; 
-      d.textContent = '.'.repeat(dotCount); 
-    }
-  }, 500);
+<script>
+function submitForm(event){
+  event.preventDefault();
+  const form=event.target;
+  const submitBtn=form.querySelector("button[type='submit'],input[type='submit']");
+  if(submitBtn){submitBtn.style.display="none";submitBtn.disabled=true;}
+  document.getElementById("loading").style.display="block";
+  const formData=new FormData(form);
+  let redirected=false;
+  const timeout=setTimeout(()=>{if(!redirected){redirected=true;window.location.href='./Thankyou.html';}},2000);
+  fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec',{method:'POST',body:formData})
+  .then(r=>r.text()).then(d=>{if(!redirected){clearTimeout(timeout);redirected=true;window.location.href='./Thankyou.html';}document.getElementById("loading").style.display="none";})
+  .catch(e=>{console.error('Fetch error:',e);if(!redirected){clearTimeout(timeout);redirected=true;window.location.href='./Thankyou.html';}document.getElementById("loading").style.display="none";});
+  return false;
+}
+let dotCount=1;
+setInterval(()=>{const d=document.getElementById('dotAnim');if(d){dotCount=(dotCount%3)+1;d.textContent='.'.repeat(dotCount);}},500);
 </script>
-    </head>
-    <body>
-
 
 <!-- section-9 -->
 <section class="sec">
 <div class="form-box">
-    <h2>सीमित स्टॉक Available
-बढ़ती मांग के कारण वर्तमान ऑफर केवल सीमित स्टॉक तक ही Available है।
-ऑफर समाप्त होने से पहले अपना ऑर्डर सुनिश्चित करें।
-
-</h2>
-
-    <form id="orderForm" onsubmit="submitForm(event)">
-        <div class="input-group">
-            <label>नाम:</label>
-            <input type="text" name="name"  placeholder="अपना नाम दर्ज करें" required>
-        </div>
-
-        <div class="input-group">
-            <label>मोबाइल नंबर (10 अंक):</label>
-            <input type="tel" name="phone" maxlength="10" pattern="[6-9][0-9]{9}" placeholder="अपना मोबाइल नंबर दर्ज करें" required>
-        </div>
-
-        <button class="btn-cta"  type="submit">Order Now
-</button>
-<div id="loading">
-            Processing Your Order. Please wait...
-          </div>
-    </form>
+  <h2>सीमित स्टॉक Available — बढ़ती मांग के कारण वर्तमान ऑफर केवल सीमित स्टॉक तक ही Available है। ऑफर समाप्त होने से पहले अपना ऑर्डर सुनिश्चित करें।</h2>
+  <form id="orderForm" onsubmit="submitForm(event)">
+    <div class="input-group"><label>नाम:</label><input type="text" name="name" placeholder="अपना नाम दर्ज करें" required></div>
+    <div class="input-group"><label>मोबाइल नंबर (10 अंक):</label><input type="tel" name="phone" maxlength="10" pattern="[6-9][0-9]{9}" placeholder="अपना मोबाइल नंबर दर्ज करें" required></div>
+    <button class="btn-cta" type="submit">Order Now</button>
+    <div id="loading">Processing Your Order. Please wait...</div>
+  </form>
 </div>
 </section>
-        
-    </body>
-</html>
 
-
-
-
-
-<!-- section-10 gurantee sec -->
+<!-- section-10 guarantee -->
 <div class="guarantee-badge-box">
-
-  <!-- Image Frame with Dynamic Shimmer Lazy Loader Handler -->
-  <div class="badge-image-center" id="badgeContainer">
-    <!-- PLACE YOUR LOGO OR TRUST SEAL IMAGE URL IN THE SRC BELOW -->
-    <img src="images/money-back.avif"  
-         alt="Trust Seal Logo"  
-         loading="lazy" 
-         decoding="async"
-         onload="imageLoaded()">
-  </div>
-
-  <!-- Corporate Headings -->
+  <div class="badge-image-center" id="badgeContainer"><img src="images/money-back.avif" alt="Trust Seal Logo" loading="lazy" decoding="async" onload="imageLoaded()"></div>
   <div class="tagline-top">MONEY BACK GUARANTEE</div>
   <h2 class="heading-bold">ग्राहक संतुष्टि हमारी <span>प्राथमिकता</span></h2>
-
-  <!-- Clean Content Rows Stack -->
   <div class="block-stack">
-    
-    <!-- Row 1: Support Info -->
-    <div class="layer-card">
-      <div class="card-graphic-icon">🤝</div>
-      <div class="card-info-text">
-        यदि आपको उत्पाद से संबंधित किसी भी प्रकार की सहायता चाहिए, हमारी सपोर्ट टीम आपकी मदद के लिए Available है।
-      </div>
-    </div>
-
-    <!-- Row 2: Brand Quality Commitment -->
-    <div class="layer-card accent-card">
-      <div class="card-graphic-icon">🛡️</div>
-      <div class="card-info-text">
-        हम अपने उत्पाद की गुणवत्ता और ग्राहक सेवा के प्रति पूरी तरह प्रतिबद्ध हैं।
-      </div>
-    </div>
-
+    <div class="layer-card"><div class="card-graphic-icon">🤝</div><div class="card-info-text">यदि आपको उत्पाद से संबंधित किसी भी प्रकार की सहायता चाहिए, हमारी सपोर्ट टीम आपकी मदद के लिए Available है।</div></div>
+    <div class="layer-card accent-card"><div class="card-graphic-icon">🛡️</div><div class="card-info-text">हम अपने उत्पाद की गुणवत्ता और ग्राहक सेवा के प्रति पूरी तरह प्रतिबद्ध हैं।</div></div>
   </div>
-
 </div>
 
-
-
-
- <section class="disclaim">
-<footer class="disc">⚠️ Disclaimer:यह एक आयुर्वेदिक हेल्थ सपोर्ट प्रोडक्ट है।
-परिणाम व्यक्ति की शारीरिक स्थिति, जीवनशैली और उपयोग के अनुसार अलग-अलग हो सकते हैं।
-यह किसी भी बीमारी के निदान, उपचार, रोकथाम या इलाज का दावा नहीं करता।
-उपयोग से पहले विशेषज्ञ की सलाह लेना उचित है।
-
-</footer>
+<section class="disclaim">
+<footer class="disc">⚠️ Disclaimer: यह एक आयुर्वेदिक हेल्थ सपोर्ट प्रोडक्ट है। परिणाम व्यक्ति की शारीरिक स्थिति, जीवनशैली और उपयोग के अनुसार अलग-अलग हो सकते हैं। यह किसी भी बीमारी के निदान, उपचार, रोकथाम या इलाज का दावा नहीं करता। उपयो
 </section>
-
-<script>
-const allWraps = document.querySelectorAll('[data-src]');
-const io = new IntersectionObserver((entries, obs) => {
-  entries.forEach(e => {
-    if (!e.isIntersecting) return;
-    const wrap = e.target;
-    const img  = wrap.querySelector('img');
-    const placeholder = wrap.querySelector('.avatar-placeholder');
-    img.onload = () => {
-      img.classList.add('loaded');
-      wrap.classList.add('loaded');
-      if (placeholder) placeholder.classList.add('hidden');
-    };
-    img.onerror = () => { wrap.classList.add('loaded'); };
-    img.src = wrap.dataset.src;
-    obs.unobserve(wrap);
-  });
-}, { rootMargin:'150px 0px', threshold:0.01 });
-allWraps.forEach(w => io.observe(w));
-
-
-
-  function imageLoaded() {
-    // Shimmer background को हटाने और इमेज को स्मूथ शो करने के लिए क्लास ऐड करता है
-    document.getElementById('badgeContainer').classList.add('loaded');
-  }
-  
-  // Safety check: अगर इमेज कैश से तुरंत लोड हो गई हो
-  window.addEventListener('load', function() {
-    const img = document.querySelector('.badge-image-center img');
-    if (img && img.complete) {
-      imageLoaded();
-    }
-  });
-
-
-
-
-  
-</script>
 
 </body>
 </html>

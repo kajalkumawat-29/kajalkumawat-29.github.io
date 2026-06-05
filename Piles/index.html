@@ -892,61 +892,166 @@ input{width:100%;padding:12px;border-radius:10px;border:none;outline:none;font-s
   <div class="footer-note">☎ 24/7 ग्राहक सहायता Available &nbsp;|&nbsp; 100% आयुर्वेदिक एवं सुरक्षित</div>
 </div>
 
-<style>
-#loading{display:none;color:#fff;font-size:16px;margin-top:10px;}
-</style>
 
-<script>
-function submitForm(event) {
+
+
+
+
+
+
+
+<html>
+    <head>
+        <style>
+            #loading {
+        display: none;
+        color: #fff;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+
+      #poweredBy {
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        margin-top: 20px;
+      }
+/* FULL SCREEN LOADER */
+#loaderOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* SPINNER */
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #fff;
+  border-top: 5px solid gold;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+   
+        </style>
+
+        <script>
+  function submitForm(event) {
   event.preventDefault();
+
   const form = event.target;
+
   const submitBtn = form.querySelector("button[type='submit'], input[type='submit']");
-  if (submitBtn) { submitBtn.style.display = "none"; submitBtn.disabled = true; }
-  document.getElementById("loading").style.display = "block";
+  if (submitBtn) {
+    submitBtn.style.display = "none";
+    submitBtn.disabled = true;
+  }
+
+  // 🔥 SHOW LOADER
+  document.getElementById("loaderOverlay").style.display = "flex";
+
   const formData = new FormData(form);
   let redirected = false;
-  const timeout = setTimeout(() => {
-    if (!redirected) { redirected = true; window.location.href = './Thankyou.html'; }
-  }, 2000);
+
   fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec', {
-    method: 'POST', body: formData
+    method: 'POST',
+    body: formData
   })
-  .then(r => r.text())
-  .then(() => {
-    if (!redirected) { clearTimeout(timeout); redirected = true; window.location.href = './Thankyou.html'; }
-    document.getElementById("loading").style.display = "none";
+  .then(response => response.text())
+  .then(data => {
+
+    if (!redirected) {
+      redirected = true;
+
+      // 🔥 REDIRECT
+      window.location.href = './Thankyou.html';
+
+      // 🔥 REFRESH BACK PAGE
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+    }
+
   })
-  .catch(() => {
-    if (!redirected) { clearTimeout(timeout); redirected = true; window.location.href = './Thankyou.html'; }
-    document.getElementById("loading").style.display = "none";
+  .catch(error => {
+    console.error('Fetch error:', error);
+
+    if (!redirected) {
+      redirected = true;
+      window.location.href = './Thankyou.html';
+    }
   });
+
   return false;
 }
-let dotCount = 1;
-setInterval(() => {
-  const d = document.getElementById('dotAnim');
-  if (d) { dotCount = (dotCount % 3) + 1; d.textContent = '.'.repeat(dotCount); }
-}, 500);
-</script>
 
-<!-- SECTION 9 — ORDER FORM -->
+  // Animated dots for loading state
+  let dotCount = 1;
+  setInterval(() => {
+    const d = document.getElementById('dotAnim');
+    if (d) { 
+      dotCount = (dotCount % 3) + 1; 
+      d.textContent = '.'.repeat(dotCount); 
+    }
+  }, 500);
+</script>
+    </head>
+    <body>
+<!-- section-10 -->
+
 <section class="sec">
 <div class="form-box">
-  <h2>सीमित स्टॉक Available — बढ़ती मांग के कारण वर्तमान ऑफर केवल सीमित स्टॉक तक ही Available है। ऑफर समाप्त होने से पहले अपना ऑर्डर सुनिश्चित करें।</h2>
-  <form id="orderForm" onsubmit="submitForm(event)">
-    <div class="input-group">
-      <label>नाम:</label>
-      <input type="text" name="name" placeholder="अपना नाम दर्ज करें" required>
-    </div>
-    <div class="input-group">
-      <label>मोबाइल नंबर (10 अंक):</label>
-      <input type="tel" name="phone" maxlength="10" pattern="[6-9][0-9]{9}" placeholder="अपना मोबाइल नंबर दर्ज करें" required>
-    </div>
-    <button class="btn-cta" type="submit">Order Now</button>
-    <div id="loading">Processing Your Order. Please wait...</div>
-  </form>
+    <h2>सीमित स्टॉक Available — बढ़ती मांग के कारण वर्तमान ऑफर केवल सीमित स्टॉक तक ही Available है। ऑफर समाप्त होने से पहले अपना ऑर्डर सुनिश्चित करें।</h2>
+
+    <form id="orderForm" onsubmit="submitForm(event)">
+        <div class="input-group">
+            <label>नाम:</label>
+            <input type="text" name="name" placeholder="अपना नाम दर्ज करें" required>
+        </div>
+
+        <div class="input-group">
+            <label>मोबाइल नंबर (10 अंक):</label>
+            <input type="tel" name="mobile" maxlength="10" pattern="[6-9][0-9]{9}" placeholder="अपना मोबाइल नंबर दर्ज करें" required>
+        </div>
+        <button class="btn-cta"  type="submit">Buy Now 
+</button>
+ <div id="loaderOverlay">
+  <div style="text-align:center;">
+    <div class="loader"></div>
+    <p style="color:white;margin-top:10px;">
+      Processing<span id="dotAnim"></span>
+    </p>
+  </div>
+</div>
+<div id="loading">
+            Processing Your Order. Please wait...
+          </div>
+    </form>
 </div>
 </section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
 
 <!-- SECTION 10 — GUARANTEE -->
 <div class="guarantee-badge-box">
@@ -986,6 +1091,36 @@ const io = new IntersectionObserver((entries, obs) => {
   });
 }, { rootMargin:'150px 0px', threshold:0.01 });
 allWraps.forEach(w => io.observe(w));
+
+
+
+
+  document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  fetch("https://script.google.com/macros/s/AKfycbz5sFiY8d4m-gK5USk7puMY2GCEMrvZEPGMDZJJzKU0hPmAUwzmnZT29dZmH2psrB-mfA/exec", {
+    method: "POST",
+    body: JSON.stringify({
+  name: e.target.name.value,
+  mobile: e.target.mobile.value,
+  problem: e.target.problem.value
+}),
+  })
+  .then(() => {
+    alert("✅ सबमिट हो गया!");
+    e.target.reset();
+  })
+  .catch(() => alert("❌ Error"));
+});
+
+document.querySelectorAll(".faq-item").forEach(item=>{
+item.addEventListener("click",()=>{
+item.classList.toggle("active");
+});
+});
+
+
+
 
 function imageLoaded() {
   document.getElementById('badgeContainer').classList.add('loaded');

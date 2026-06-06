@@ -299,7 +299,7 @@ img { max-width: 100%; }
             object-fit: cover;
             position: relative;
             z-index: 3;
-            opacity: 0;
+            opacity: 1;
             transition: opacity 0.5s ease;
         }
 
@@ -2000,7 +2000,7 @@ input { width: 100%; padding: 12px; border-radius: var(--radius-sm); border: 1px
                     <p class="problem-text">बार-बार मिर्गी के दौरे आने की चिंता</p>
                 </div>
                 <div class="problem-img-wrapper">
-                    <img data-src="images/sect-1-1stimg.avif" alt="Anxiety/Seizure Warning" class="lazy" width="256" height="120">
+                    <img src="images/sect-1-1stimg.avif" alt="Anxiety/Seizure Warning"  width="256" height="120">
                     <div class="skeleton"></div>
                     <div class="skeleton-icon"><i class="ri-image-line"></i><span>Loading...</span></div>
                     <div class="img-overlay"></div>
@@ -2014,7 +2014,7 @@ input { width: 100%; padding: 12px; border-radius: var(--radius-sm); border: 1px
                     <p class="problem-text">दिमागी कमजोरी और नसों की अस्थिरता</p>
                 </div>
                 <div class="problem-img-wrapper">
-                    <img data-src="images/sect-1-2ndimg.avif" alt="Brain Weakness" class="lazy" width="256" height="120">
+                    <img src="images/sect-1-2ndimg.avif" alt="Brain Weakness"  width="256" height="120">
                     <div class="skeleton"></div>
                     <div class="skeleton-icon"><i class="ri-image-line"></i><span>Loading...</span></div>
                     <div class="img-overlay"></div>
@@ -2028,7 +2028,7 @@ input { width: 100%; padding: 12px; border-radius: var(--radius-sm); border: 1px
                     <p class="problem-text">अचानक बेहोशी या शरीर पर नियंत्रण खोना</p>
                 </div>
                 <div class="problem-img-wrapper">
-                    <img data-src="images/sect-1-3rdimg.avif" alt="Fainting/Loss of Control" class="lazy" width="256" height="120">
+                    <img src="images/sect-1-3rdimg.avif" alt="Fainting/Loss of Control"  width="256" height="120">
                     <div class="skeleton"></div>
                     <div class="skeleton-icon"><i class="ri-image-line"></i><span>Loading...</span></div>
                     <div class="img-overlay"></div>
@@ -2042,7 +2042,7 @@ input { width: 100%; padding: 12px; border-radius: var(--radius-sm); border: 1px
                     <p class="problem-text">तनाव, डर और मानसिक बेचैनी</p>
                 </div>
                 <div class="problem-img-wrapper">
-                    <img data-src="images/sect-1-4thimg.avif" alt="Stress & Fear" class="lazy" width="256" height="120">
+                    <img src="images/sect-1-4thimg.avif" alt="Stress & Fear"  width="256" height="120">
                     <div class="skeleton"></div>
                     <div class="skeleton-icon"><i class="ri-image-line"></i><span>Loading...</span></div>
                     <div class="img-overlay"></div>
@@ -2056,7 +2056,7 @@ input { width: 100%; padding: 12px; border-radius: var(--radius-sm); border: 1px
                     <p class="problem-text">याददाश्त और फोकस में कमी</p>
                 </div>
                 <div class="problem-img-wrapper">
-                    <img data-src="images/sect-1-5thimg.avif" alt="Loss of Focus" class="lazy" width="256" height="120">
+                    <img src="images/sect-1-5thimg.avif" alt="Loss of Focus"  width="256" height="120">
                     <div class="skeleton"></div>
                     <div class="skeleton-icon"><i class="ri-image-line"></i><span>Loading...</span></div>
                     <div class="img-overlay"></div>
@@ -2070,7 +2070,7 @@ input { width: 100%; padding: 12px; border-radius: var(--radius-sm); border: 1px
                     <p class="problem-text">परिवार का लगातार चिंता में रहना</p>
                 </div>
                 <div class="problem-img-wrapper">
-                    <img data-src="images/sect-1-6thimg.avif" alt="Family Worry" class="lazy" width="256" height="120">
+                    <img src="images/sect-1-6thimg.avif" alt="Family Worry"  width="256" height="120">
                     <div class="skeleton"></div>
                     <div class="skeleton-icon"><i class="ri-image-line"></i><span>Loading...</span></div>
                     <div class="img-overlay"></div>
@@ -3005,47 +3005,13 @@ input { width: 100%; padding: 12px; border-radius: var(--radius-sm); border: 1px
 
 <script>
 // sect-1 pain details
+   // JS ko page load hone ke baad chalayein (Deferred load)
+window.addEventListener('DOMContentLoaded', () => {
     const lazyImages = document.querySelectorAll('img.lazy');
-
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    const src = img.getAttribute('data-src');
-                    if (!src) return;
-
-                    img.src = src;
-
-                    img.onload = () => {
-                        img.classList.add('loaded');
-                        // Hide skeleton after load
-                        const wrapper = img.closest('.problem-img-wrapper');
-                        const skeleton = wrapper.querySelector('.skeleton');
-                        const skeletonIcon = wrapper.querySelector('.skeleton-icon');
-                        if (skeleton) skeleton.style.opacity = '0';
-                        if (skeletonIcon) skeletonIcon.style.opacity = '0';
-                    };
-
-                    img.onerror = () => {
-                        // On error, keep skeleton with broken icon
-                        const wrapper = img.closest('.problem-img-wrapper');
-                        const skeletonIcon = wrapper.querySelector('.skeleton-icon');
-                        if (skeletonIcon) {
-                            skeletonIcon.innerHTML = '<i class="ri-image-off-line" style="font-size:26px;color:#6B5E3E;opacity:0.5;"></i><span style="font-size:10px;color:#6B5E3E;opacity:0.5;">Image not found</span>';
-                        }
-                        const skeleton = wrapper.querySelector('.skeleton');
-                        if (skeleton) skeleton.style.animation = 'none';
-                    };
-
-                    observer.unobserve(img);
-                }
-            });
-        }, {
-            rootMargin: '0px 0px 100px 0px',
-            threshold: 0.1
-        });
-
-        lazyImages.forEach(img => imageObserver.observe(img));
+    
+    // IntersectionObserver waisa hi rehne dein...
+    // Bas isse document load hone ke baad trigger karein
+});
 
 
 

@@ -732,16 +732,13 @@ margin-bottom:18px;
 .product-section{background:var(--bb);border-left:1px solid var(--border-l);border-right:1px solid var(--border-l);padding:16px 16px 0;display:flex;align-items:center;gap:14px;animation:fadeUp 0.6s 0.35s both;}
 .product-img-wrap{position:relative;flex-shrink:0;}
 .product-img-bg{width:110px;height:110px;border-radius:14px;background:linear-gradient(135deg,var(--ivory-d) 0%,var(--border-l) 100%);display:flex;align-items:center;justify-content:center;animation:floatImg 3s ease-in-out infinite;border:2px solid var(--border-l);}
-.product-svg{width:80px;height:80px;}
+
 .badge-new{position:absolute;top:-8px;right:-8px;background:var(--saffron);color:var(--tp);font-size:9px;font-weight:700;padding:4px 8px;border-radius:20px;letter-spacing:0.5px;animation:badgePop 0.5s 0.8s both;}
 .badge-off{position:absolute;bottom:-8px;left:-8px;background:#DC2626;color:var(--tp);font-size:10px;font-weight:700;padding:4px 9px;border-radius:20px;animation:badgePop 0.5s 1s both;}
 .product-info{flex:1;}
 .product-name{font-size:20px;font-weight:700;color:var(--text);margin-bottom:4px;}
 .product-sub{font-size:18px;color:var(--text-s);margin-bottom:8px;line-height:1.4;}
-.price-row{display:flex;align-items:baseline;gap:6px;margin-bottom:8px;flex-wrap:wrap;}
 .price-now{font-size:20px;font-weight:700;color:var(--saffron);}
-.price-old{font-size:13px;color:var(--text-s);text-decoration:line-through;}
-.price-save{font-size:10px;font-weight:600;color:#DC2626;background:#FEF2F2;padding:2px 7px;border-radius:10px;border:1px solid #FCA5A5;}
 .stars{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--text-s);}
 .stars span{color:#F59E0B;font-size:13px;letter-spacing:1px;}
 .body{background:var(--saffron);border:1px solid var(--border-l);border-top:none;padding:14px 16px 18px;}
@@ -783,8 +780,6 @@ margin-bottom:18px;
 .cta-shine{position:absolute;top:0;left:-100%;width:45%;height:100%;background:rgba(255,255,255,0.2);transform:skewX(-20deg);animation:shimmer 2.5s 2.5s infinite;}
 .cta-arrow{display:inline-block;transition:transform 0.22s;}
 .cta-btn:hover .cta-arrow{transform:translateX(5px);}
-.cta-sub{text-align:center;font-size:16px;color:var(--white);margin-top:7px;display:flex;align-items:center;justify-content:center;gap:5px;}
-.cta-sub i{font-size:18px;color:var(--saffron);}
 .ftr{background:var(--forest-d);padding:10px 16px;display:flex;justify-content:space-around;}
 .fi{display:flex;align-items:center;gap:4px;font-size:16px;color:rgba(255,255,255,0.8);transition:color 0.2s,transform 0.2s;cursor:default;}
 .fi:hover{color:var(--tp);transform:translateY(-2px);}
@@ -809,7 +804,7 @@ margin-bottom:18px;
 .row-right h4{margin:0;font-size:22px;font-weight:600;color:var(--forest);}
 .row-right p{margin:4px 0 0;font-size:18px;color:var(--text);line-height:1.3; padding-right:80px ;}
 .mechanism-row:hover{background:var(--ivory);}
-.mechanism-row:hover .row-left{color:var(--saffron);background:var(--gg);}
+.mechanism-row:hover {color:var(--saffron);background:var(--gg);}
 .mechanism-row:hover .row-right h4{color:var(--saffron);}
 .img-overlay{width:75px;height:75px;position:absolute;right:16px;top:50%;transform:translateY(-50%);}
 .mechanism-row:hover .img-overlay{opacity:1;filter:grayscale(0);}
@@ -875,8 +870,6 @@ gap:10px;
 align-items:center;
 z-index:999;
 }
-.float-txt strong{display:block;font-size:14px;color:var(--gold-m);}
-.float-txt span{font-size:10px;color:rgba(255,255,255,.8);}
 .float-btn{
 flex:2;padding:11px;
 background:linear-gradient(90deg,#16A34A,#22C55E);
@@ -918,8 +911,6 @@ border-top:1px solid var(--border-l);
   .feature-card{padding:16px 8px;}
   .icon-wrap{width:44px;height:44px;}
   .pulse-effect-img{width:44px;height:44px;}
-  .pc-doctor-heading{font-size:20px;}
-  .pc-recommend-text{font-size:18px;}
   .pc-h2{font-size:24px;}
   .pc-dose-content h3{font-size:20px;}
   .pc-dose-content p{font-size:18px;}
@@ -932,7 +923,6 @@ border-top:1px solid var(--border-l);
   .scan-header h2{font-size:22px;}
   .row-right h4{font-size:18px;}
   .row-right p{font-size:18px;}
-  .row-left{width:55px;font-size:20px;}
   .pc-testimonial-title{font-size:24px;}
   .pc-user-details h2{font-size:18px;}
   .pc-review-text{font-size:18px;}
@@ -940,7 +930,6 @@ border-top:1px solid var(--border-l);
   .sec-h{font-size:24px;}
   .faq-q{font-size:18px;}
   .faq-a{font-size:18px;}
-  .float-txt strong{font-size:18px;}
   .float-btn{font-size:12px;padding:10px;}
 }
 /* --- Mobile Optimization (इस कोड को अपनी मौजूदा CSS के आखिर में जोड़ें) --- */
@@ -956,7 +945,6 @@ border-top:1px solid var(--border-l);
   /* प्रोडक्ट सेक्शन को एडजस्ट करना */
   .product-section { gap: 10px; padding: 12px 12px 0; }
   .product-img-bg { width: 90px !important; height: 90px !important; }
-  .product-svg { width: 60px !important; height: 60px !important; }
   .product-name { font-size: 18px !important; }
   .product-sub { font-size: 15px !important; }
   

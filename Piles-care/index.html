@@ -504,66 +504,114 @@ opacity:0;
 
 
 
-/* section-6 */
-.pc-doctor-wrapper{
-width:100%;
-max-width:450px;
-background:var(--forest);
-border:2px solid var(--saffron);
-padding:20px;
-box-shadow:0 10px 25px rgba(22,163,74,0.10);
-box-sizing:border-box;
-position:relative;
-transition:all .4s ease;
-}
-.pc-doctor-wrapper:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(22,163,74,0.20);border-color:var(--saffron-d);}
-.pc-doctor-wrapper::after{
-content:'🩺';
-position:absolute;
-bottom:15px;right:15px;
-font-size:4rem;
-opacity:.05;
-pointer-events:none;
-transition:.4s;
-}
-.pc-doctor-wrapper:hover::after{opacity:.10;transform:scale(1.1) rotate(-10deg);}
-.pc-trust-pill span{margin-right:6px;animation:pcPulse 1.5s infinite;}
-@keyframes pcPulse{0%{transform:scale(1);}50%{transform:scale(1.2);}100%{transform:scale(1);}}
-.pc-doctor-heading{
-font-size:28px;
-color:var(--gold-m);
-margin:0 0 12px;
-font-weight:800;
-display:flex;
-align-items:center;
-}
-.pc-doctor-heading::before{content:'👨‍⚕️';margin-right:8px;font-size:1.8rem;}
-.pc-recommend-box{
-background:var(--white);
-border:1px solid var(--safron-d);
-border-left:5px solid var(--saffron);
-padding:14px;
-border-radius:12px;
-margin-bottom:12px;
-box-shadow:0 4px 12px rgba(0,0,0,.02);
-transition:.3s;
-}
-.pc-recommend-box:hover{background:var(--ivory);transform:translateX(5px);}
-.pc-recommend-text{font-size:18px;color:var(--text);line-height:1.4;font-weight:600;margin:0;}
-.pc-advice-box{
-display:flex;
-align-items:flex-start;
-background:#FFF8E6;
-border:1px solid #FFE3A3;
-padding:10px 12px;
-border-radius:10px;
-margin-top:12px;
-}
-.pc-advice-icon{font-size:1.2rem;margin-right:8px;margin-top:2px;animation:pcGlow 2s infinite alternate;}
-@keyframes pcGlow{0%{transform:scale(1);filter:drop-shadow(0 0 0px rgba(0,0,0,0));}100%{transform:scale(1.1);filter:drop-shadow(0 0 4px #ffcc00);}}
-.pc-advice-text{font-size:18px;color:#856404;font-weight:700;line-height:1.5;margin:0;}
+/* section-6 */  
+.doctor-section-v4 {
+    max-width: 450px;
+    padding: 30px;
+    background: var(--white);
+   border: 8px solid var(--forest); /* आपके Root से */
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: floatEffect 3s ease-in-out infinite;
+  }
 
+  /* Hover Animation */
+  .doctor-section-v4:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 40px 80px rgba(13, 90, 157, 0.25);
+    border-color: var(--saffron); /* Hover पर Saffron का टच */
+  }
 
+  @keyframes floatEffect {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+ 
+
+  .doc-photo-box {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid var(--forest);
+    background: url('images/doctor.avif');
+    background-size: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .doctor-section-v4:hover .doc-photo-box {
+    transform: rotate(5deg) scale(1.05);
+  }
+
+  .doc-name-main { font-size: 28px; color: #0f172a; font-weight: 900; text-align: center; margin: 0; }
+  .doc-designation { text-align: center; color: var(--forest); font-weight: 700; margin-bottom: 25px; letter-spacing: 1px; }
+
+  .main-quote {
+    background: var(--saffron);
+    padding: 25px;
+    border-radius: 25px;
+    font-size: 19px;
+    line-height: 1.6;
+    color:white;
+    text-align: center;
+    font-weight: 500;
+    border: 1px solid #e2e8f0;
+  }
+
+  .main-quote::after {
+    content: "★★★★★";
+    display: block;
+    color:rgba(255, 187, 0, 0.877); /* आपके Root से */
+    margin-top: 15px;
+    font-size: 20px;
+  }
+
+  .cta-link-doc {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: var(--white);
+    font-weight: 800;
+    text-decoration: none;
+    transition: 0.3s;
+    background-color: var(--forest);
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 20px;
+  }
+  
+  .cta-link-doc:hover {  letter-spacing: 1px; }
+/* मोबाइल स्क्रीन के लिए छोटे बदलाव */
+  @media (max-width: 480px) {
+    .doctor-section-v4 {
+      padding: 20px;
+      border-width: 4px; /* मोबाइल पर बॉर्डर थोड़ा पतला */
+     
+    }
+    .doc-photo-box {
+      width: 100px !important;
+      height: 100px !important;
+    }
+    .doc-name-main { font-size: 22px !important; }
+    .main-quote { font-size: 16px !important; padding: 15px !important; }
+  }
+
+  /* Hover Effect (केवल PC के लिए, मोबाइल पर नहीं दिखेगा) */
+  @media (min-width: 768px) {
+    .doctor-section-v4:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 40px 80px rgba(13, 90, 157, 0.25);
+      border-color: var(--saffron);
+    }
+  }
+
+  @keyframes floatEffect {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
 
 
 
@@ -1070,16 +1118,18 @@ img { max-width: 100%; height: auto; }
 
 
 <!-- section-6 -->
-<div class="pc-doctor-wrapper">
-  <div class="pc-trust-pill"></div>
-  <h2 class="pc-doctor-heading">आयुर्वेद विशेषज्ञ की सलाह</h2>
-  <div class="pc-recommend-box">
-    <p class="pc-recommend-text"><strong>स्वास्थ्य विशेषज्ञों द्वारा सुझाया गया आयुर्वेदिक हेल्थ सपोर्ट</strong><br><br>जो लोग बवासीर से जुड़ी असुविधाओं के कारण अपनी दिनचर्या प्रभावित महसूस करते हैं, वे अपने स्वास्थ्य विशेषज्ञ की सलाह के अनुसार Piles Care को अपनी हेल्थ रूटीन में शामिल कर सकते हैं।</p>
+<div class="doctor-section-v4">
+ 
+  <div class="doc-photo-box"></div>
+  
+  <h2 class="doc-name-main">Dr. R. K. Sharma</h2>
+  <div class="doc-designation">SENIOR AYURVEDIC SPECIALIST</div>
+  
+  <div class="main-quote">
+    "Piles Care का संतुलित आयुर्वेदिक मिश्रण बवासीर की जड़ पर काम करता है। मैंने हजारों मरीजों को इससे राहत पाते देखा है। यह एक सुरक्षित और असरदार विकल्प है।"
   </div>
-  <div class="pc-advice-box">
-    <span class="pc-advice-icon">💡</span>
-    <p class="pc-advice-text">बेहतर परिणामों के लिए उपयोग से पहले स्वास्थ्य विशेषज्ञ की सलाह अवश्य लें।</p>
-  </div>
+
+  <a href="#orderForm" class="cta-link-doc">विशेषज्ञ से सलाह लें →</a>
 </div>
 
 

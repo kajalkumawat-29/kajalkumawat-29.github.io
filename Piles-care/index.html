@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -32,7 +32,10 @@
 .sec{background:var(--forest);}
 .sect{background-color:var(--saffron);}
 *{box-sizing:border-box;margin:0;padding:0;}
-
+html{
+    scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
 body{
 font-family:'halant',sans-serif;
 background:rgba(179, 245, 188, 0.356);
@@ -752,14 +755,13 @@ margin-bottom:18px;
 .scan-header{padding:30px 20px;background:var(--forest);border-bottom:1px solid var(--border-l);}
 .scan-header h2{font-size:26px;color:var(--white);margin:-12px;text-align:center;}
 .mechanism-row{display:flex;border-bottom:1px solid var(--border-l);min-height:100px;transition:all .4s ease;position:relative;background:var(--white);}
-.row-left{width:65px;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:200;color:var(--forest);border-right:1px solid var(--border-l);flex-shrink:0;}
 .row-right{flex:1;padding:16px 20px;display:flex;flex-direction:column;justify-content:center;}
 .row-right h4{margin:0;font-size:22px;font-weight:600;color:var(--forest);}
 .row-right p{margin:4px 0 0;font-size:18px;color:var(--text);line-height:1.3;}
 .mechanism-row:hover{background:var(--ivory);}
 .mechanism-row:hover .row-left{color:var(--saffron);background:var(--gg);}
 .mechanism-row:hover .row-right h4{color:var(--saffron);}
-.img-overlay{width:75px;height:75px;opacity:.2;filter:grayscale(1);position:absolute;right:16px;top:50%;transform:translateY(-50%);}
+.img-overlay{width:75px;height:75px;position:absolute;right:16px;top:50%;transform:translateY(-50%);}
 .mechanism-row:hover .img-overlay{opacity:1;filter:grayscale(0);}
 
 
@@ -978,7 +980,7 @@ img { max-width: 100%; height: auto; }
   <div class="bg-gradient"></div>
   <div class="light-dot"></div>
   <div class="big-heading">PILES<br>CARE</div>
-  <img src="images/product.avif" class="hero-bottle" loading="lazy">
+  <img src="images/product.avif" class="hero-bottle" loading="lazy" alt="product">
   <div class="info-glass">
     <h2 class="hindi-title">🌿 अब समाधान मौजूद है</h2>
     <p class="hindi-desc">एक विशेष Ayurvedic Support Formula, जिसे बवासीर से जुड़ी असुविधाओं के दौरान दैनिक स्वास्थ्य सपोर्ट के उद्देश्य से तैयार किया गया है।</p>
@@ -1198,7 +1200,7 @@ img { max-width: 100%; height: auto; }
     </div>
     <div class="cta-wrap">
       <button class="cta-btn" onclick="location.href='#orderForm'"><div class="cta-shine"></div>🛒 अभी ऑर्डर बुक करें <span class="cta-arrow">→</span></button>
-      <p class="cta-sub"><i class="ti ti-shield-check"></i>100% Secure · Easy Returns · ऑफर जल्द समाप्त होगा</p>
+   
     </div>
   </div>
   <div class="ftr">
@@ -1460,10 +1462,10 @@ input{
 <!-- section-11 guarantee -->
 <div class="split-container">
   <div class="scan-header"><h2>गुणवत्ता और ग्राहक संतुष्टि का वादा</h2></div>
-  <div class="mechanism-row"><div class="row-left">01</div><div class="row-right"><h4>गुणवत्ता वाले जांचे गए Ingredients</h4><p>उच्च गुणवत्ता वाले चयनित Ingredients<br> के साथ तैयार।</p></div><img src="images/pre.avif" class="img-overlay" loading="lazy"></div>
-  <div class="mechanism-row"><div class="row-left">02</div><div class="row-right"><h4>सुरक्षित पैकेजिंग</h4><p>हर ऑर्डर को सुरक्षित और साफ पैकेजिंग <br>में भेजा जाता है।</p></div><img src="images/safe-pack.avif" class="img-overlay" loading="lazy"></div>
-  <div class="mechanism-row"><div class="row-left">03</div><div class="row-right"><h4>ग्राहक सहायता Available</h4><p>जरूरत पड़ने पर हमारी सहायता टीम आपकी <br>मदद के लिए तैयार है।</p></div><img src="images/customer.avif" class="img-overlay" loading="lazy"></div>
-  <div class="mechanism-row"><div class="row-left">04</div><div class="row-right"><h4>भरोसेमंद सेवा</h4><p>हजारों ग्राहकों के भरोसे और संतुष्टि के साथ<br> उपयोग किया गया।</p></div><img src="images/reliable.avif" class="img-overlay" loading="lazy"></div>
+  <div class="mechanism-row"><div class="row-right"><h4>गुणवत्ता वाले जांचे गए Ingredients</h4><p>उच्च गुणवत्ता वाले चयनित Ingredients<br> के साथ तैयार।</p></div><img src="images/pre.avif" class="img-overlay" loading="lazy" alt="quality"></div>
+  <div class="mechanism-row"><div class="row-right"><h4>सुरक्षित पैकेजिंग</h4><p>हर ऑर्डर को सुरक्षित और साफ पैकेजिंग <br>में भेजा जाता है।</p></div><img src="images/safe-pack.avif" class="img-overlay" loading="lazy" alt="safe packing"></div>
+  <div class="mechanism-row"><div class="row-right"><h4>ग्राहक सहायता Available</h4><p>जरूरत पड़ने पर हमारी सहायता टीम आपकी <br>मदद के लिए तैयार है।</p></div><img src="images/customer.avif" class="img-overlay" loading="lazy" alt="customer-support"></div>
+  <div class="mechanism-row"><div class="row-right"><h4>भरोसेमंद सेवा</h4><p>हजारों ग्राहकों के भरोसे और संतुष्टि के साथ<br> उपयोग किया गया।</p></div><img src="images/reliable.avif" class="img-overlay" loading="lazy" alt="reliable"></div>
 </div>
 
 
@@ -1496,10 +1498,9 @@ input{
   <h2 class="sec-h">अक्सर पूछे जाने वाले प्रश्न</h2>
   <div class="faqs">
     <div class="faq"><div class="faq-q" onclick="tFaq(this)">क्या Piles Care आयुर्वेदिक है?</div><div class="faq-a">हाँ, यह आयुर्वेदिक जड़ी-बूटियों से तैयार किया गया फॉर्मूला है।</div></div>
-    <div class="faq"><div class="faq-q" onclick="tFaq(this)">इसे कैसे लेना है?</div><div class="faq-a">1-2 कैप्सूल दिन में दो बार, भोजन के बाद गुनगुने पानी के साथ।</div></div>
-    <div class="faq"><div class="faq-q" onclick="tFaq(this)">क्या पूरे भारत में डिलीवरी Available है?</div><div class="faq-a">हाँ। पूरे भारत में डिलीवरी Available है।</div></div>
+   <div class="faq"><div class="faq-q" onclick="tFaq(this)">क्या पूरे भारत में डिलीवरी Available है?</div><div class="faq-a">हाँ। पूरे भारत में डिलीवरी Available है।</div></div>
     <div class="faq"><div class="faq-q" onclick="tFaq(this)">क्या COD Available है?</div><div class="faq-a">हाँ, अधिकांश स्थानों पर Available है।</div></div>
-    <div class="faq"><div class="faq-q" onclick="tFaq(this)">क्या पुरुष और महिलाएं दोनों उपयोग कर सकते हैं?</div><div class="faq-a">हाँ, वयस्क पुरुष और महिलाएं दोनों इसका उपयोग कर सकते हैं।</div></div>
+    <div class="faq"><div class="faq-q" onclick="tFaq(this)">क्या पुरुष और महिलाएं दोनों उपयोग कर सकते हैं?</div><div class="faq-a">हाँ, पुरुष और महिलाएं दोनों इसका उपयोग कर सकते हैं।</div></div>
   </div>
 </section>
 

@@ -38,6 +38,7 @@ html{
     scroll-behavior: smooth;
   scroll-padding-top: 80px;
 }
+
 body{
 font-family:'halant',sans-serif;
 background:rgba(179, 245, 188, 0.356);
@@ -48,7 +49,11 @@ margin:0 auto;
 padding-bottom:72px;
 overflow-x:hidden;
 }
-
+img{
+max-width:100%;
+height:auto;
+content-visibility:auto;
+}
 /* NAVBAR */
 .bar{
 max-width:450px;
@@ -387,10 +392,9 @@ gap:15px;
 margin-bottom:20px;
 padding:15px;
 border-radius:18px;
-background:var(--white);
+background:#fff;
 border:1px solid var(--border-l);
-backdrop-filter:blur(10px);
-transition:.4s;
+transition:.25s;
 position:relative;
 }
 .step-entry:hover{transform:translateX(8px);box-shadow:var(--sg);}
@@ -960,6 +964,42 @@ border-top:1px solid var(--border-l);
 
 /* यह सुनिश्चित करेगा कि इमेज ओवरफ्लो न हो */
 img { max-width: 100%; height: auto; }
+
+@media (max-width:480px){
+
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition:none !important;
+  }
+
+  .ticker-inner{
+    animation:none !important;
+  }
+
+  .live-dot{
+    animation:none !important;
+  }
+
+  .pulse-effect{
+    animation:none !important;
+  }
+
+  .hero-bottle{
+    animation:none !important;
+  }
+
+  .cta-btn{
+    animation:none !important;
+  }
+
+  .btn-cta{
+    animation:none !important;
+  }
+
+}
 </style>
 </head>
 <body>
@@ -970,9 +1010,12 @@ img { max-width: 100%; height: auto; }
 </nav>
 
 
-
-
-<img src="images/banner.avif" alt="" width="500" height="794" fetchpriority="high" decoding="async">
+<img src="images/banner.avif"
+width="500"
+height="794"
+fetchpriority="high"
+decoding="async"
+alt="Piles Care Banner">
 
 
 <!-- section-1 -->
@@ -1275,14 +1318,14 @@ img { max-width: 100%; height: auto; }
         margin-top: 20px;
       }
 /* FULL SCREEN LOADER */
-#loaderOverlay {
+#loaderOverlay{
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(8px);
+  
   display: none;
   justify-content: center;
   align-items: center;

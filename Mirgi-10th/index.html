@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Mirgi Mukti Capsule</title>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -228,12 +228,12 @@ img { max-width: 100%; }
 .insight-box::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-dark), transparent); }
 .insight-p1 { font-size: 18px; font-weight: 700; color: var(--gold-primary); margin-bottom: 7px; display: flex; align-items: center; gap: 7px; }
 .insight-p1 svg { width:18px; height:18px; filter: drop-shadow(0 0 5px var(--gold-glow)); }
-.insight-p2 { font-size: 18px; line-height: 1.2; color: var(--text-secondary); font-weight: 400; }
+.insight-p2 { font-size: 18px; line-height: 1.2; color: white; font-weight: 400; }
 @media (max-width: 480px) {
     .pain-section { padding: 16px; width: 100%; }
     .section-tag { font-size: 18px; margin-bottom: 20px; }
     .problem-text { font-size: 20px; line-height: 1.4; }
-    .problem-img-wrapper { height: 120px; }
+    .problem-img-wrapper { height: 190px; }
     .insight-p1, .insight-p2 { font-size: 18px; }
 }
 
@@ -327,7 +327,6 @@ img { max-width: 100%; }
 .stack-img-box img.loaded { opacity: 1; }
 .stack-img-box img.loaded ~ .skeleton, .stack-img-box img.loaded ~ .skeleton-icon { opacity: 0; pointer-events: none; }
 .stack-info { flex-grow: 1; padding-top: 5px; }
-.stack-badge { position: absolute; right: -10px; top: -15px; background: var(--gold-primary); color: var(--black-bg); font-size: 14px; font-weight: 800; padding: 4px 12px; border: 2px solid var(--black-border); border-radius: 10px; box-shadow: 2px 2px 0px var(--black-border); }
 .stack-title { font-size: 20px; color: var(--text-secondary); font-weight: 800; margin-bottom: 6px; }
 .stack-desc { font-size: 18px; color:white; line-height: 1.5; font-weight: 400; }
 @media (max-width: 480px) {
@@ -337,7 +336,21 @@ img { max-width: 100%; }
     .stack-img-box { width: 70px; height: 70px; margin-right: 12px; }
     .stack-title { font-size: 20px;  margin-top: 7px; }
     .stack-desc { font-size: 18px; }
-    .stack-badge { font-size: 16px; padding: 2px 8px; top: -10px; right: -5px; }
+     .stack-card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+   .stack-img-box{
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+  }
+   .stack-info{
+    flex: 1;
+    padding-top: 0;
+  }
 }
 
 /* section-4 */
@@ -368,8 +381,8 @@ img { max-width: 100%; }
     .slice-content { width: 60%; padding: 10px; }
     .slice-text { font-size: 18px; line-height: 1.4; }
     .slice-text b { font-size: 20px; }
-    .footer-main-para { font-size: 18px; }
-    .footer-sub-para { font-size: 15px; }
+    .footer-main-para { font-size: 20px; font-weight: 800; }
+    .footer-sub-para { font-size: 17px; line-height: 1.2; }
 }
 
 /* section-5 */
@@ -387,7 +400,7 @@ img { max-width: 100%; }
 .hub-img-box::before,.center-hero-image::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg,#1a1a1a 0%,#2a2418 40%,#332d1a 50%,#2a2418 60%,#1a1a1a 100%); background-size: 200% 100%; animation: shimmer1 1.8s infinite ease-in-out; z-index: 1; border-radius: inherit; }
 .hub-img-box img,.center-hero-image img { position: relative; z-index: 2; }
 .hub-title { font-size: 20px; color: var(--text-primary); margin: 10px 0 5px; }
-.hub-desc { font-size: 18px; color: var(--text-secondary); line-height: 1.1; margin-top: -10px; }
+.hub-desc { font-size: 18px; color: white; line-height: 1.1; margin-top: -10px; }
 .full-width { grid-column: span 2; }
 @media (max-width: 450px) {
     .hub-container { padding: 20px 15px; width: 100% !important; margin: 0 auto; }
@@ -395,7 +408,7 @@ img { max-width: 100%; }
     .hub-grid-wrapper { gap: 12px; }
     .center-hero-image { height: 250px; }
     .center-hero-image img { height: 250px; }
-    .hub-title { font-size: 20px; }
+    .hub-title { font-size: 19px; }
     .hub-desc { font-size: 18px; line-height: 1.3; }
     .hub-img-box { width: 58px; height: 58px; }
     .hub-img-box img { width: 58px; height: 58px; }
@@ -410,8 +423,8 @@ img { max-width: 100%; }
 .profile-img { width: 100%; height: 100%; object-fit: cover; }
 .profile-content { padding: 16px; }
 .profile-title { font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 6px; }
-.profile-subtitle { font-size: 18px; color: var(--gold-primary); margin-bottom: 12px; line-height: 1.2; }
-.profile-message { font-size: 18px; color: var(--text-secondary); line-height: 1.2; font-style: italic; }
+.profile-subtitle { font-size: 18px; color: var(--gold-primary); margin-bottom: 12px; line-height: 1.2; font-weight: 800;}
+.profile-message { font-size: 18px; color: white; line-height: 1.2; font-style: italic; }
 .verify-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(212, 175, 55, 0.1); border: 1px solid var(--gold-border); border-radius: 20px; padding: 4px 10px; font-size: 15px; font-weight: 700; color: var(--gold-primary); margin-top: 12px; }
 @media (max-width: 480px) {
     .expert-zone { padding: 30px 15px; }
@@ -434,7 +447,7 @@ img { max-width: 100%; }
 @keyframes pulseBeat { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } }
 .delta-title { font-family: 'HALANT', serif; font-size: 32px; font-style: italic; font-weight: 700; color: var(--text-primary); line-height: 1.3; }
 .delta-title span { color: var(--gold-primary); }
-.epsilon-sub { font-size: 15px; color: var(--text-secondary); margin-top: 6px; line-height: 1.6; }
+.epsilon-sub { font-size: 15px; color: white; margin-top: 6px; line-height: 1.6; }
 .zeta-flow { position: relative; padding-left: 0; display: flex; flex-direction: column; gap: 0; }
 .zeta-flow::before { content: ''; position: absolute; left: 34px; top: 28px; bottom: 28px; width: 2px; background: repeating-linear-gradient(to bottom, var(--black-border) 0px, var(--black-border) 6px, transparent 6px, transparent 12px); z-index: 0; }
 .theta-step { display: flex; gap: 16px; align-items: flex-start; padding: 14px 0; position: relative; z-index: 1; animation: slideIn 0.6s both; }
@@ -446,13 +459,13 @@ img { max-width: 100%; }
 .lambda-num { font-size: 18px; font-weight: 700; letter-spacing: 2px; margin-bottom: 5px; display: flex; align-items: center; gap: 6px; color: var(--gold-primary); }
 .lambda-num::after { content: ''; flex: 1; height: 1px; background: var(--black-border); }
 .mu-title { font-size: 20px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
-.nu-desc { font-size: 18px; color: var(--text-secondary); line-height: 1.7; }
+.nu-desc { font-size: 18px; color: white; line-height: 1.7; }
 .xi-badge { display: inline-block; margin-top: 8px; font-size: 15px; font-weight: 700; padding: 3px 10px; border-radius: 20px; background: var(--black-card2); color: var(--gold-primary); }
 .omicron-stats { margin-top: 20px; background: var(--black-card); border-radius: var(--radius-card); padding: 20px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; border: 1px solid var(--black-border); }
 .pi-item { text-align: center; padding: 0 10px; border-right: 1px solid var(--black-border); }
 .pi-item:last-child { border-right: none; }
 .rho-val { font-family: 'HALANT', serif; font-size: 22px; font-weight: 700; color: var(--gold-primary); display: block; margin-bottom: 4px; }
-.sigma-label { font-size: 15px; color: var(--text-secondary); }
+.sigma-label { font-size: 15px; color: white; }
 .tau-tip { margin-top: 14px; background: rgba(212, 175, 55, 0.05); border: 1.5px dashed var(--gold-border); border-radius: var(--radius-card); padding: 12px 16px; display: flex; align-items: center; gap: 10px; font-size: 18px; color: var(--text-primary); }
 @media (max-width: 480px) {
     .zeta-container { padding: 20px 10px; }
@@ -461,7 +474,7 @@ img { max-width: 100%; }
     .nu-desc { font-size: 18px; }
     .omicron-stats { padding: 15px 5px; }
     .rho-val { font-size: 20px; }
-    .sigma-label { font-size: 13px; }
+    .sigma-label { font-size: 15px; }
     .tau-tip { font-size: 18px; }
     .beta-badge { font-size: 20px; }
 }
@@ -476,7 +489,7 @@ img { max-width: 100%; }
 .badge-solution { background: var(--gold-primary); color: var(--black-bg); animation: pulseGlow 2s infinite; }
 .visual-element { width: 100%; height: auto; border-radius: var(--radius-sm); display: block; transition: transform 0.5s; }
 .stage-card:hover .visual-element { transform: scale(1.02); }
-.transition-marker { color: var(--black-bg); font-size: 24px; margin-bottom: 5px; margin-top:-20px; animation: floatUpDown 2s infinite ease-in-out; }
+.transition-marker { color: var(--black-bg); font-weight: 900; font-size: 30px; margin-bottom: 5px; margin-top:-20px; animation: floatUpDown 2s infinite ease-in-out; }
 @keyframes textReveal { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes floatUpDown { 0%, 100% { transform: translateY(0); opacity: 0.6; } 50% { transform: translateY(10px); opacity: 1; } }
 @keyframes pulseGlow { 0% { box-shadow: 0 0 0 0 var(--gold-glow); } 70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); } 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); } }
@@ -485,7 +498,7 @@ img { max-width: 100%; }
     .section-headline { font-size: 24px; margin-top: 20px; margin-bottom: 20px; }
     .stage-card { padding: 8px; margin-bottom: 20px; }
     .badge-ui { font-size: 18px; padding: 6px 16px; }
-    .transition-marker { font-size: 20px; margin-top: -10px; }
+    .transition-marker { font-size: 30px; margin-top: -10px; }
 }
 
 /* section-9 */
@@ -510,7 +523,7 @@ img { max-width: 100%; }
 .live-txt { font-size:18px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-dark); font-weight:700; }
 .hdr-title { font-size:32px; font-weight:800; color:var(--text-primary); line-height:1.25; margin-bottom:5px; }
 .hdr-title span { color: var(--gold-primary); }
-.hdr-sub { font-size:18px; color:var(--text-muted); letter-spacing:0.3px; }
+.hdr-sub { font-size:18px; color:white; letter-spacing:0.3px; }
 .prod-zone { background:linear-gradient(180deg,#0c0900 0%,#0a0800 100%); padding:20px 22px 10px; display:flex; flex-direction:column; align-items:center; position:relative; overflow:hidden; border-bottom:1px solid var(--black-border); animation:fadeUp 0.45s ease both 0.05s; }
 .prod-glow-ring { position:absolute; top:50%; left:50%; width:260px; height:260px; transform:translate(-50%,-50%); border-radius:50%; background:radial-gradient(circle, var(--gold-glow) 0%, transparent 70%); pointer-events:none; }
 .prod-img-frame { width:100%; max-width:320px; height:220px; border-radius:var(--radius-card); border:1.5px solid var(--gold-border); background:#14110a; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; animation:pulseGold 3.5s ease-in-out infinite, imgFloat 4s ease-in-out infinite; transition:border-color 0.3s,transform 0.3s; cursor:pointer; }
@@ -601,8 +614,8 @@ img { max-width: 100%; }
 .av-dot { position: absolute; bottom: 2px; right: 2px; width: 12px; height: 12px; border-radius: 50%; background: var(--gold-primary); border: 2px solid var(--black-card); animation: dotPulse3 2s ease-in-out infinite; }
 .user-block { flex: 1; }
 .user-name { font-size: 22px; font-weight: 700; color: var(--text-primary); margin-bottom: -8px; }
-.user-loc { display: flex; align-items: center; gap: 5px; font-size: 18px; color: var(--text-secondary); }
-.user-loc svg { width: 18px; height: 18px; stroke: var(--gold-muted); fill: none; stroke-width: 2; }
+.user-loc { display: flex; align-items: center; gap: 5px; font-size: 18px; color: white; }
+.user-loc svg { width: 18px; height: 18px; stroke: white; fill: none; stroke-width: 2; }
 .stars-line { display: flex; align-items: center; gap: 3px; margin-top: 5px; }
 .stars-line svg { width: 18px; height: 18px; fill: var(--gold-primary); transition: transform 0.2s ease; }
 .tcard:hover .stars-line svg { animation: starPop 0.4s ease both; }
@@ -619,16 +632,16 @@ img { max-width: 100%; }
 .quote-icon { font-size: 28px; color: var(--gold-primary); line-height: 1; opacity: 0.45; font-family: Georgia, serif; font-weight: 900; margin-bottom: 4px; display: inline-block; animation: quoteFloat 3s ease-in-out infinite; }
 .tcard:nth-child(2) .quote-icon { animation-delay: 1s; }
 .tcard:nth-child(3) .quote-icon { animation-delay: 2s; }
-.quote-text { font-size: 18px; color: var(--text-secondary); line-height: 1.7; transition: color 0.3s; }
+.quote-text { font-size: 18px; color: var(--text-primary); line-height: 1.7; transition: color 0.3s; }
 .tcard:hover .quote-text { color: var(--text-primary); }
 .highlight-word { color: var(--gold-primary); font-weight: 600; position: relative; display: inline; }
 .highlight-word::after { content: ''; position: absolute; left: 0; bottom: -1px; width: 0; height: 1px; background: var(--gold-primary); transition: width 0.4s ease; }
 .tcard:hover .highlight-word::after { width: 100%; }
 .tcard-foot { background: var(--black-card2); border-top: 1px solid var(--black-border); padding: 10px 18px; display: flex; align-items: center; justify-content: space-between; transition: background 0.3s; }
 .tcard:hover .tcard-foot { background: var(--black-hover); }
-.verified { display: flex; align-items: center; gap: 5px; font-size: 15px; color: var(--text-secondary); }
-.verified svg { width: 15px; height: 15px; stroke: var(--text-secondary); fill: none; stroke-width: 2; }
-.product-lbl { font-size: 15px; color: var(--text-muted); background: var(--black-border); border-radius: 20px; padding: 3px 9px; transition: background 0.3s, color 0.3s; }
+.verified { display: flex; align-items: center; gap: 5px; font-size: 15px; color: white; }
+.verified svg { width: 15px; height: 15px; stroke: white; fill: none; stroke-width: 2; }
+.product-lbl { font-size: 15px; color: white; background: var(--black-border); border-radius: 20px; padding: 3px 9px; transition: background 0.3s, color 0.3s; }
 .tcard:hover .product-lbl { background: rgba(212,175,55,0.1); color: var(--gold-muted); }
 .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 16px; }
 .tg-item { background: var(--black-card); border: 1px solid var(--black-border); border-radius: var(--radius-sm); padding: 12px 8px; text-align: center; opacity: 0; animation: fadeSlideUp 0.5s ease both; margin-bottom: 28px; transition: border-color 0.3s, transform 0.25s; }
@@ -639,7 +652,7 @@ img { max-width: 100%; }
 .tg-item:hover { border-color: var(--gold-border); transform: translateY(-3px); }
 .tg-val { font-size: 18px; font-weight: 800; color: var(--gold-primary); margin-bottom: 2px; transition: transform 0.2s; }
 .tg-item:hover .tg-val { transform: scale(1.1); }
-.tg-lbl { font-size: 15px; color: var(--text-muted); line-height: 1.3; }
+.tg-lbl { font-size: 15px; color: white; line-height: 1.3; }
 @media (max-width: 480px) {
     .w { width: 100% !important; padding: 25px 15px 30px; box-sizing: border-box; }
     .hd h2 { font-size: 26px; }
@@ -697,7 +710,7 @@ img { max-width: 100%; }
 <div class="pain-section">
   <span class="section-tag">
     <svg class="svg-icon" style="width:18px;height:18px;color:var(--gold-primary)"><use href="#icon-error-warning-fill"/></svg>
-    Problem Section
+ क्या आप भी इससे परेशान हैं?
   </span>
   <div class="problem-list">
     <div class="problem-card">
@@ -842,15 +855,13 @@ img { max-width: 100%; }
   <div class="header-3d"><h2>यह कैसे काम करता है?</h2></div>
   <div class="stack-container">
     <div class="stack-card">
-      <div class="stack-badge">STEP 01</div>
-      <div class="stack-img-box">
+     <div class="stack-img-box">
         <img src="images/sect-2-1stimg.avif" alt="नसों को पोषण" width="150" height="100" loading="lazy">
         <div class="skeleton"></div><div class="skeleton-icon">⬛</div>
       </div>
       <div class="stack-info"><h3 class="stack-title">नसों को पोषण देता है</h3><p class="stack-desc">कमजोर नसों को आवश्यक पोषण प्रदान करने में सहायता करता है।</p></div>
     </div>
     <div class="stack-card">
-      <div class="stack-badge">STEP 02</div>
       <div class="stack-img-box">
         <img src="images/sect-2-2ndimg.avif" alt="दिमाग को सपोर्ट" width="150" height="100" loading="lazy">
         <div class="skeleton"></div><div class="skeleton-icon">⬛</div>
@@ -858,7 +869,6 @@ img { max-width: 100%; }
       <div class="stack-info"><h3 class="stack-title">दिमाग को सपोर्ट करता है</h3><p class="stack-desc">ब्रेन हेल्थ और न्यूरोलॉजिकल बैलेंस को सपोर्ट करने में मदद करता है।</p></div>
     </div>
     <div class="stack-card">
-      <div class="stack-badge">STEP 03</div>
       <div class="stack-img-box">
         <img src="images/sect-2-3rdimg.avif" alt="मानसिक तनाव कम" width="150" height="100" loading="lazy">
         <div class="skeleton"></div><div class="skeleton-icon">⬛</div>
@@ -866,7 +876,6 @@ img { max-width: 100%; }
       <div class="stack-info"><h3 class="stack-title">मानसिक तनाव कम करने में सहायक</h3><p class="stack-desc">तनाव और बेचैनी को नियंत्रित रखने में सहायता कर सकता है।</p></div>
     </div>
     <div class="stack-card">
-      <div class="stack-badge">STEP 04</div>
       <div class="stack-img-box">
         <img src="images/sect-2-4thimg.avif" alt="प्राकृतिक कार्यप्रणाली" width="150" height="100" loading="lazy">
         <div class="skeleton"></div><div class="skeleton-icon">⬛</div>
@@ -874,8 +883,7 @@ img { max-width: 100%; }
       <div class="stack-info"><h3 class="stack-title">शरीर की प्राकृतिक कार्यप्रणाली को सपोर्ट</h3><p class="stack-desc">नियमित उपयोग से संपूर्ण तंत्रिका तंत्र को सपोर्ट प्रदान करता है।</p></div>
     </div>
     <div class="stack-card">
-      <div class="stack-badge">STEP 05</div>
-      <div class="stack-img-box">
+     <div class="stack-img-box">
         <img src="images/sect-2-5thimg.avif" alt="ऊर्जा और आत्मविश्वास" width="150" height="100" loading="lazy">
         <div class="skeleton"></div><div class="skeleton-icon">⬛</div>
       </div>
@@ -905,7 +913,7 @@ img { max-width: 100%; }
 
 <!-- section-5 -->
 <div class="hub-container">
-  <div class="hub-header"><span>Certified & Trusted</span></div>
+  <div class="hub-header"><span>विश्वास के साथ चुना गया formula</span></div>
   <div class="hub-grid-wrapper">
     <div class="feature-hub-card"><div class="hub-img-box"><img src="images/gmp.avif" width="42" height="42" loading="lazy" alt="GMP Certified"></div><h3 class="hub-title">GMP Certified</h3><p class="hub-desc">Manufacturing</p></div>
     <div class="feature-hub-card"><div class="hub-img-box"><img src="images/quality.avif" width="42" height="42" loading="lazy" alt="Quality Tested"></div><h3 class="hub-title">Quality Tested</h3><p class="hub-desc">Ingredients</p></div>
@@ -918,7 +926,7 @@ img { max-width: 100%; }
 
 <!-- section-6 -->
 <section class="expert-zone">
-  <div style="margin-bottom:24px;"><h2 class="expert-zone-h2">Doctor Recommendation</h2></div>
+  <div style="margin-bottom:24px;"><h2 class="expert-zone-h2">डॉक्टरों द्वारा सुझाया गया</h2></div>
   <div class="doctor-profile-box">
     <div class="profile-img-wrap"><img class="profile-img" src="images/doctor.avif" alt="Doctor" width="600" height="600" loading="lazy"></div>
     <div class="profile-content">
@@ -953,9 +961,11 @@ img { max-width: 100%; }
 <!-- section-8 -->
 <div class="transformation-box">
   <h2 class="section-headline">BEFORE / AFTER</h2>
-  <div class="stage-card"><div class="badge-ui badge-problem">वर्तमान स्थिति</div><img src="images/before.avif" alt="Problem" class="visual-element" width="434" height="250" loading="lazy"></div>
-  <div class="transition-marker">▼</div>
-  <div class="stage-card" style="border:1px solid var(--gold-border);"><div class="badge-ui badge-solution">आपका भविष्य</div><img src="images/after.avif" alt="Solution" class="visual-element" width="434" height="250" loading="lazy"></div>
+  <div class="stage-card"><div class="badge-ui badge-problem">आपकी वर्तमान समस्या</div><img src="images/before.avif" alt="Problem" class="visual-element" width="434" height="250" loading="lazy"></div>
+  <div class="transition-marker">
+<i class="fa-solid fa-down-long"></i>
+  </div>
+  <div class="stage-card" style="border:1px solid var(--gold-border);"><div class="badge-ui badge-solution">मिर्गी मुक्ति के बाद क्या बदला</div><img src="images/after.avif" alt="Solution" class="visual-element" width="434" height="250" loading="lazy"></div>
 </div>
 
 <!-- section-9 -->
@@ -1132,7 +1142,7 @@ window.addEventListener('pageshow',function(event){
       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
       <span>Verified Reviews</span>
     </div>
-    <h2>SOCIAL PROOF</h2>
+    <h2>लोगों का भरोसा</h2>
   </div>
   <div class="cards">
     <div class="tcard">
@@ -1161,7 +1171,7 @@ window.addEventListener('pageshow',function(event){
         <p class="quote-text">मैं हमेशा <span class="highlight-word">दौरे की चिंता</span> में रहता था और पूरा परिवार परेशान रहता था। 3 महीने के नियमित उपयोग के बाद मुझे <span class="highlight-word">स्पष्ट रूप से बेहतर</span> महसूस होने लगा।</p>
       </div>
       <div class="tcard-foot">
-        <div class="verified"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>सत्यापित खरीदार</div>
+        <div class="verified"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Verified User</div>
         <div class="product-lbl">आयुर्वेदिक सपोर्ट</div>
       </div>
     </div>
@@ -1191,7 +1201,7 @@ window.addEventListener('pageshow',function(event){
         <p class="quote-text">परिवार में हमेशा <span class="highlight-word">डर बना रहता था</span>। इस आयुर्वेदिक सपोर्ट के बाद <span class="highlight-word">सकारात्मक बदलाव</span> महसूस हुए।</p>
       </div>
       <div class="tcard-foot">
-        <div class="verified"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>सत्यापित खरीदार</div>
+        <div class="verified"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Verified User</div>
         <div class="product-lbl">आयुर्वेदिक सपोर्ट</div>
       </div>
     </div>
@@ -1221,13 +1231,13 @@ window.addEventListener('pageshow',function(event){
         <p class="quote-text">नियमित उपयोग से मुझे <span class="highlight-word">मानसिक रूप से स्थिर</span> महसूस हुआ। <span class="highlight-word">आत्मविश्वास काफी बढ़ा</span> है।</p>
       </div>
       <div class="tcard-foot">
-        <div class="verified"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>सत्यापित खरीदार</div>
+        <div class="verified"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Verified User</div>
         <div class="product-lbl">आयुर्वेदिक सपोर्ट</div>
       </div>
     </div>
   </div>
   <div class="trust-grid">
-    <div class="tg-item"><div class="tg-val">80K+</div><div class="tg-lbl">संतुष्ट ग्राहक</div></div>
+    <div class="tg-item"><div class="tg-val">80000+</div><div class="tg-lbl">संतुष्ट ग्राहक</div></div>
     <div class="tg-item"><div class="tg-val">4.8★</div><div class="tg-lbl">औसत रेटिंग</div></div>
     <div class="tg-item"><div class="tg-val">100%</div><div class="tg-lbl">प्राकृतिक</div></div>
     <div class="tg-item"><div class="tg-val">3+ वर्ष</div><div class="tg-lbl">विश्वसनीय</div></div>

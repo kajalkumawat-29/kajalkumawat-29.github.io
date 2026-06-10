@@ -520,8 +520,8 @@ img { max-width: 100%; }
 .prod-shine { position:absolute; top:0; left:-80%; width:55%; height:100%; background:linear-gradient(105deg,transparent 35%,var(--gold-glow) 50%,transparent 65%); transition:left 0.7s ease; pointer-events:none; }
 .prod-img-frame:hover .prod-shine { left:130%; }
 .prod-tag { display:inline-flex; align-items:center; gap:5px; background:var(--gold-glow); border:1px solid var(--gold-border); border-radius:20px; padding:5px 14px; margin-top:12px; margin-bottom:4px; }
-.prod-tag svg { width:14px; height:14px; color:var(--gold-primary); }
-.prod-tag span { font-size:15px; color:var(--text-secondary); font-weight:600; letter-spacing:0.4px; }
+.prod-tag svg { width:14px; height:14px; color:white; }
+.prod-tag span { font-size:15px; color:white; font-weight:600; letter-spacing:0.4px; }
 .timer-row { margin:14px 18px 0; background:var(--black-card); border:1px solid var(--black-border); border-radius:var(--radius-card); padding:11px 16px; display:flex; align-items:center; justify-content:space-between; animation:fadeUp 0.45s ease both 0.15s; }
 .t-label { display:flex; align-items:center; gap:6px; }
 .t-label svg { width:16px; height:16px; color:var(--red-accent); }
@@ -529,7 +529,7 @@ img { max-width: 100%; }
 .t-blocks { display:flex; align-items:center; gap:6px; }
 .tblock { text-align:center; }
 .tnum { background:#0d0a00; border:1px solid var(--gold-border); border-radius:var(--radius-sm); padding:5px 8px; font-size:17px; font-weight:800; color:var(--gold-primary); min-width:38px; display:block; font-variant-numeric:tabular-nums; animation:tickPop 1s ease-in-out infinite; }
-.tunit { font-size:15px; color:var(--text-muted); margin-top:3px; display:block; }
+.tunit { font-size:15px; color:white; margin-top:3px; display:block; }
 .tsep { font-size:16px; font-weight:800; color:var(--gold-muted); margin-bottom:12px; }
 .offers-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:14px 18px 0; }
 .ocard { background:var(--black-card2); border:1px solid var(--black-border); border-radius:var(--radius-card); padding:13px; display:flex; align-items:flex-start; gap:11px; opacity:0; animation:fadeUp 0.4s ease both; transition:border-color 0.25s,transform 0.22s,background 0.22s; cursor:default; }
@@ -563,27 +563,13 @@ img { max-width: 100%; }
     .timer-row, .stock-box, .warn, .cta-wrap { margin-left: 15px !important; margin-right: 15px !important; }
 }
 
-/* section-10 form */
-.input-group{margin-bottom:18px;}
-label{font-size:16px;font-weight:600;margin-bottom:6px;display:block;}
-#loading-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);z-index:9999;align-items:center;justify-content:center;flex-direction:column;}
-@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
-.form-box { max-width: 450px; width: 100%; background: var(--black-card); padding: 25px 30px; border-top: 1px solid var(--gold-border); }
-.form-box h2 { font-size: 32px; font-weight: 600; margin-bottom: 20px; color: var(--gold-primary); line-height: 1.2; }
-input { width: 100%; padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--black-border); background: var(--black-bg); color: var(--text-primary); outline: none; }
-.btn-cta { width: 100%; padding: 13px; font-size: 18px; font-weight: 600; background: var(--gold-primary); color: var(--black-bg); border: none; border-radius: var(--radius-card); margin-top: 8px; cursor: pointer; animation: pulse 2s infinite; }
-@keyframes pulse { 0% { box-shadow: 0 0 0 0 var(--gold-glow); } 70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); } 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); } }
-.spinner { width: 50px; height: 50px; border: 5px solid var(--black-border); border-top: 5px solid var(--gold-primary); border-radius: 50%; animation: spin 1s linear infinite; }
-#loading { display:none; color:#fff; font-size:16px; margin-top:10px; }
-#poweredBy { text-align:center; color:#fff; font-size:14px; margin-top:20px; }
-#loaderOverlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); backdrop-filter:blur(8px); display:none; justify-content:center; align-items:center; z-index:9999; }
-.loader { width:50px; height:50px; border:5px solid #fff; border-top:5px solid gold; border-radius:50%; animation:spin 1s linear infinite; }
-@media (max-width: 380px) {
-    .form-box { padding: 20px; }
-    .form-box h2 { font-size: 24px; }
-    input { padding: 10px; }
-    .btn-cta { padding: 12px; font-size: 18px; }
-}
+
+
+
+
+
+
+
 
 /* section-11 testimonials */
 @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
@@ -688,6 +674,14 @@ input { width: 100%; padding: 12px; border-radius: var(--radius-sm); border: 1px
 /* DISCLAIMER */
 .disclaim{max-width:450px;width:100%;background:var(--black-bg);padding:5px;font-size:7px;margin-bottom:-10px;}
 .disclaim *{margin:0;padding:5px;color:var(--text-secondary);}
+
+
+
+/* FLOAT BAR */
+.float-bar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:450px;background:var(--black-bg);padding:10px 14px;box-shadow:0 -4px 20px rgba(0,0,0,.18);display:flex;gap:10px;align-items:center;z-index:999;}
+.float-btn{flex:2;padding:11px;background:var(--gold-dark);color:#fff;border:none;border-radius:10px;font-family:'Halant',sans-serif;font-size:14px;font-weight:700;cursor:pointer;}
+
+
 </style>
 </head>
 <body>
@@ -980,7 +974,7 @@ input { width: 100%; padding: 12px; border-radius: var(--radius-sm); border: 1px
       <div class="prod-shine"></div>
     </div>
     <div class="prod-tag">
-      <svg style="width:14px;height:14px;color:var(--gold-primary)"><use href="#icon-star"/></svg>
+      <svg style="width:14px;height:14px;color:white"><use href="#icon-star"/></svg>
       <span>100% Authentic · Trusted by 80,000+ Customers</span>
     </div>
   </div>
@@ -1039,19 +1033,91 @@ input { width: 100%; padding: 12px; border-radius: var(--radius-sm); border: 1px
   </div>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+<html>
+    <head>
+        <style>
+.input-group{margin-bottom:18px;}
+label{font-size:16px;font-weight:600;margin-bottom:6px;display:block;}
+#loading-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);z-index:9999;align-items:center;justify-content:center;flex-direction:column;}
+@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.form-box { max-width: 450px; width: 100%; background: var(--black-card); padding: 25px 30px; border-top: 1px solid var(--gold-border); }
+.form-box h2 { font-size: 32px; font-weight: 600; margin-bottom: 20px; color: var(--gold-primary); line-height: 1.2; }
+input { width: 100%; padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--black-border); background: var(--black-bg); color: var(--text-primary); outline: none; }
+.btn-cta { width: 100%; padding: 13px; font-size: 18px; font-weight: 600; background: var(--gold-primary); color: var(--black-bg); border: none; border-radius: var(--radius-card); margin-top: 8px; cursor: pointer; animation: pulse 2s infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 var(--gold-glow); } 70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); } 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); } }
+.spinner { width: 50px; height: 50px; border: 5px solid var(--black-border); border-top: 5px solid var(--gold-primary); border-radius: 50%; animation: spin 1s linear infinite; }
+#loading { display:none; color:#fff; font-size:16px; margin-top:10px; }
+#poweredBy { text-align:center; color:#fff; font-size:14px; margin-top:20px; }
+#loaderOverlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); backdrop-filter:blur(8px); display:none; justify-content:center; align-items:center; z-index:9999; }
+.loader { width:50px; height:50px; border:5px solid #fff; border-top:5px solid gold; border-radius:50%; animation:spin 1s linear infinite; }
+@media (max-width: 380px) {
+    .form-box { padding: 20px; }
+    .form-box h2 { font-size: 24px; }
+    input { padding: 10px; }
+    .btn-cta { padding: 12px; font-size: 18px; }
+}
+ </style>
+<script>
+  // Form submit
+function submitForm(event){
+  event.preventDefault();
+  var form=event.target;
+  var submitBtn=form.querySelector("button[type='submit'],input[type='submit']");
+  if(submitBtn){submitBtn.style.display='none';submitBtn.disabled=true;}
+  document.getElementById('loaderOverlay').style.display='flex';
+  var formData=new FormData(form);
+  var redirected=false;
+  fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec',{method:'POST',body:formData})
+  .then(function(r){return r.text();})
+  .then(function(){if(!redirected){redirected=true;window.location.href='./Thankyou.html';setTimeout(function(){window.location.reload();},2000);}})
+  .catch(function(){if(!redirected){redirected=true;window.location.href='./Thankyou.html';}});
+  return false;
+}
+
+// Animated dots
+var dotCount=1;
+setInterval(function(){var d=document.getElementById('dotAnim');if(d){dotCount=(dotCount%3)+1;d.textContent='.'.repeat(dotCount);}},500);
+
+// Page show reset
+window.addEventListener('pageshow',function(event){
+  if(event.persisted||(window.performance&&window.performance.navigation.type===2)){document.getElementById('orderForm').reset();}
+});
+</script>
+
+ </head>
+    <body>
 <!-- section-10 -->
 <section class="sec">
 <div class="form-box">
   <h2>अब डर नहीं, आत्मविश्वास चुनिए — अपने या अपने प्रियजन की बेहतर न्यूरोलॉजिकल Wellness के लिए आज ही ऑर्डर करें।</h2>
   <form id="orderForm" onsubmit="submitForm(event)">
-    <div class="input-group"><label>नाम:</label><input type="text" name="name" placeholder="अपना नाम दर्ज करें" required></div>
-    <div class="input-group"><label>मोबाइल नंबर (10 अंक):</label><input type="tel" name="mobile" maxlength="10" pattern="[6-9][0-9]{9}" placeholder="अपना मोबाइल नंबर दर्ज करें" required></div>
+    <div class="input-group"><label>नाम:</label><input  type="text" 
+    name="name" pattern="[A-Za-z\s]+" oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '')"  required"text" name="name" placeholder="अपना नाम दर्ज करें" ></div>
+    <div class="input-group"><label>मोबाइल नंबर (10 अंक):</label><input type="tel" name="mobile" maxlength="10" pattern="[6-9][0-9]{9}" placeholder="अपना मोबाइल नंबर दर्ज करें"   oninput="this.value = this.value.replace(/[^0-9]/g, '')" required></div>
     <button class="btn-cta" type="submit">Buy Now</button>
     <div id="loaderOverlay"><div style="text-align:center;"><div class="loader"></div><p style="color:white;margin-top:10px;">Processing<span id="dotAnim"></span></p></div></div>
     <div id="loading">Processing Your Order. Please wait...</div>
   </form>
 </div>
 </section>
+
+    </body>
+</html>
+
+
+
+
+
 
 <!-- section-11 -->
 <div class="w">
@@ -1191,6 +1257,13 @@ input { width: 100%; padding: 12px; border-radius: var(--radius-sm); border: 1px
 <footer>⚠️ Disclaimer: यह उत्पाद एक आयुर्वेदिक हेल्थ सपोर्ट सप्लीमेंट है। यह किसी भी रोग का इलाज, उपचार, रोकथाम या निदान करने का दावा नहीं करता। परिणाम व्यक्ति की शारीरिक स्थिति, जीवनशैली और उपयोग के अनुसार भिन्न हो सकते हैं। मिर्गी जैसी गंभीर चिकित्सा स्थिति में किसी भी दवा को बंद या बदलने से पहले अपने डॉक्टर की सलाह अवश्य लें।</footer>
 </section>
 
+
+
+
+
+<div class="float-bar">
+  <button class="float-btn" onclick="location.href='#orderForm'">अभी ऑर्डर करें 🛒</button>
+</div>
 <script>
 // Section-2 product image loader
 (function(){
@@ -1217,30 +1290,7 @@ function tick(){
 }
 tick();
 
-// Form submit
-function submitForm(event){
-  event.preventDefault();
-  var form=event.target;
-  var submitBtn=form.querySelector("button[type='submit'],input[type='submit']");
-  if(submitBtn){submitBtn.style.display='none';submitBtn.disabled=true;}
-  document.getElementById('loaderOverlay').style.display='flex';
-  var formData=new FormData(form);
-  var redirected=false;
-  fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec',{method:'POST',body:formData})
-  .then(function(r){return r.text();})
-  .then(function(){if(!redirected){redirected=true;window.location.href='./Thankyou.html';setTimeout(function(){window.location.reload();},2000);}})
-  .catch(function(){if(!redirected){redirected=true;window.location.href='./Thankyou.html';}});
-  return false;
-}
 
-// Animated dots
-var dotCount=1;
-setInterval(function(){var d=document.getElementById('dotAnim');if(d){dotCount=(dotCount%3)+1;d.textContent='.'.repeat(dotCount);}},500);
-
-// Page show reset
-window.addEventListener('pageshow',function(event){
-  if(event.persisted||(window.performance&&window.performance.navigation.type===2)){document.getElementById('orderForm').reset();}
-});
 
 // FAQ accordion
 document.querySelectorAll('.dropdown-btn').forEach(function(button){
@@ -1254,6 +1304,19 @@ document.querySelectorAll('.dropdown-btn').forEach(function(button){
     if(item.classList.contains('active')){content.style.maxHeight=content.scrollHeight+'px';}else{content.style.maxHeight=null;}
   });
 });
+
+
+
+
+
+window.addEventListener('scroll',function(){
+  var floatBar=document.querySelector('.float-bar');
+  var formSection=document.getElementById('orderForm');
+  if(floatBar&&formSection){
+    var rect=formSection.getBoundingClientRect();
+    floatBar.style.display=(rect.top<=window.innerHeight&&rect.bottom>=0)?'none':'flex';
+  }
+},{ passive: true });
 </script>
 </body>
 </html>

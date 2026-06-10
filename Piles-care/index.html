@@ -803,15 +803,6 @@ input{
   return false;
 }
 
-  // Animated dots for loading state
-   let dotCount = 1;
-  setInterval(() => {
-    const d = document.getElementById('dotAnim');
-    if (d) { 
-      dotCount = (dotCount % 3) + 1; 
-      d.textContent = '.'.repeat(dotCount); 
-    }
-  }, 500);
 </script>
     </head>
     <body>

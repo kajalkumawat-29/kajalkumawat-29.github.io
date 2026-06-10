@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Piles Care </title>
-<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<title>Piles Care</title>
+
+<!-- DNS Prefetch & Preconnect -->
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Preload critical font -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Halant:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+
+<!-- Icons loaded non-blocking -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.x/dist/tabler-icons.min.css" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.x/dist/tabler-icons.min.css"></noscript>
 
-<link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;500;600;700&display=swap&font-display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <style>
+/* === CRITICAL CSS === */
 :root{
 --saffron:#16A34A;
 --saffron-d:#15803D;
@@ -34,14 +44,10 @@
 .sec{background:var(--forest);}
 .sect{background-color:var(--saffron);}
 *{box-sizing:border-box;margin:0;padding:0;}
-html{
-    scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-}
-
+html{scroll-behavior:smooth;scroll-padding-top:80px;}
 body{
-font-family:'halant',sans-serif;
-background:rgba(179, 245, 188, 0.356);
+font-family:'Halant',sans-serif;
+background:rgba(179,245,188,0.356);
 color:var(--text);
 width:100%;
 max-width:var(--w);
@@ -49,602 +55,116 @@ margin:0 auto;
 padding-bottom:72px;
 overflow-x:hidden;
 }
-img{
-max-width:100%;
-height:auto;
-content-visibility:auto;
-}
+img{max-width:100%;height:auto;display:block;}
+
 /* NAVBAR */
 .bar{
-max-width:450px;
-width:100%;
-height:56px;
-display:flex;
-align-items:center;
-justify-content:space-between;
+max-width:450px;width:100%;height:56px;
+display:flex;align-items:center;justify-content:space-between;
 padding:0 16px;
 background:linear-gradient(135deg,var(--forest-d),var(--forest));
-border-bottom:none;
-position:sticky;
-top:0;
-z-index:200;
-overflow:hidden;
+position:sticky;top:0;z-index:200;overflow:hidden;
 }
-.bar::before{
-content:"";
-position:absolute;
-top:0;left:-50%;
-width:50%;height:100%;
-background:linear-gradient(120deg,transparent,var(--gg),transparent);
-transition:.6s;
-}
+.bar::before{content:"";position:absolute;top:0;left:-50%;width:50%;height:100%;background:linear-gradient(120deg,transparent,var(--gg),transparent);transition:.6s;}
 .bar:hover::before{left:120%;}
 .logo{font-size:28px;font-weight:800;color:var(--white);letter-spacing:1px;}
 .logo span{color:var(--gold-m);}
-.nav-btn{
-padding:7px 14px;
-background:linear-gradient(90deg,#16A34A,#22C55E);
-color:#fff;
-border-radius:50px;
-font-weight:700;
-font-size:20px;
-text-decoration:none;
-transition:.3s;
-white-space:nowrap;
-}
+.nav-btn{padding:7px 14px;background:linear-gradient(90deg,#16A34A,#22C55E);color:#fff;border-radius:50px;font-weight:700;font-size:20px;text-decoration:none;transition:.3s;white-space:nowrap;}
 .nav-btn:hover{box-shadow:var(--sg);}
 
-
-
+/* FLOAT BAR */
+.float-bar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:var(--w);background:linear-gradient(135deg,var(--forest-d),var(--forest));padding:10px 14px;box-shadow:0 -4px 20px rgba(0,0,0,.18);display:flex;gap:10px;align-items:center;z-index:999;}
+.float-btn{flex:2;padding:11px;background:linear-gradient(90deg,#16A34A,#22C55E);color:#fff;border:none;border-radius:10px;font-family:'Halant',sans-serif;font-size:14px;font-weight:700;cursor:pointer;}
 
 /* section-1 */
-  .vital-path-container {
-    width: 100%;
-    max-width: var(--w);
-    padding: 20px 20px;
-    margin: 0 auto;
-    background: var(--forest);
-    font-family: 'halant', sans-serif;
-    box-sizing: border-box;
-  }
-
-  .path-main-title {
-    text-align: center;
-    color: var(--gold-m);
-    margin-bottom: 30px;
-    font-weight: 800;
-    font-size: 32px;
-    letter-spacing: 2px;
-    line-height: 1.2;
-  }
-
-  .node-row {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    margin-bottom: 50px;
-    transition: all 0.5s ease;
-  }
-
-  .graphic-circle {
-    width: 160px;
-    height: 160px;
-    border-radius: 30px;
-    overflow: hidden;
-    flex-shrink: 0;
-    box-shadow: 15px 15px 0px var(--gold-m);
-    transition: all 0.4s ease;
-  }
-
-  .graphic-circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-  }
-
-  .node-row:hover .graphic-circle {
-    transform: translateY(-10px);
-    box-shadow: 20px 20px 0px var(--saffron-d);
-  }
-  .node-row:hover img { transform: scale(1.15); }
-
-  .desc-zone h3 { font-size: 22px; color: var(--gold-m); margin-bottom: 0px; }
-  .desc-zone p { font-size: 18px; line-height: 1.2; color: var(--white); }
-
-  .flip-direction { flex-direction: row-reverse; }
-  .flip-direction .graphic-circle { box-shadow: -15px 15px 0px var(--gold-m); }
-  .flip-direction:hover .graphic-circle { box-shadow: -20px 20px 0px var(--saffron); }
-
-  @media (max-width: 480px) {
-    .vital-path-container { padding: 20px 15px; }
-    .node-row { gap: 15px; margin-bottom: 40px; }
-    .graphic-circle { width: 100px; height: 100px; border-radius: 20px; box-shadow: 8px 8px 0px var(--gold-m); }
-    .flip-direction .graphic-circle { box-shadow: -8px 8px 0px var(--gold-m); }
-    .path-main-title{
-        font-size: 22px;
-    }
-    .node-row:hover .graphic-circle { transform: translateY(-5px); box-shadow: 10px 10px 0px var(--saffron); }
-    .flip-direction:hover .graphic-circle { box-shadow: -10px 10px 0px var(--saffron); }
-    
-    .desc-zone h3 { font-size: 20px; }
-    .desc-zone p { font-size: 18px; }
-  }
-
-
-
-
+.vital-path-container{width:100%;max-width:var(--w);padding:20px 20px;margin:0 auto;background:var(--forest);font-family:'Halant',sans-serif;box-sizing:border-box;}
+.path-main-title{text-align:center;color:var(--gold-m);margin-bottom:30px;font-weight:800;font-size:32px;letter-spacing:2px;line-height:1.2;}
+.node-row{display:flex;align-items:center;gap:25px;margin-bottom:50px;transition:all 0.5s ease;}
+.graphic-circle{width:160px;height:160px;border-radius:30px;overflow:hidden;flex-shrink:0;box-shadow:15px 15px 0px var(--gold-m);transition:all 0.4s ease;}
+.graphic-circle img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;}
+.node-row:hover .graphic-circle{transform:translateY(-10px);box-shadow:20px 20px 0px var(--saffron-d);}
+.node-row:hover img{transform:scale(1.15);}
+.desc-zone h3{font-size:22px;color:var(--gold-m);margin-bottom:0px;}
+.desc-zone p{font-size:18px;line-height:1.2;color:var(--white);}
+.flip-direction{flex-direction:row-reverse;}
+.flip-direction .graphic-circle{box-shadow:-15px 15px 0px var(--gold-m);}
+.flip-direction:hover .graphic-circle{box-shadow:-20px 20px 0px var(--saffron);}
 
 /* section-2 */
-.wrapper-450{
-width:100%;
-height:auto;
-min-height:500px;
-position:relative;
-overflow:hidden;
-background-color:var(--forest);
-border-bottom:2px solid var(--saffron);
-}
-.bg-gradient{
-position:absolute;
-top:-10%;left:-20%;
-width:150%;height:60%;
-background:var(--saffron);
-transform:rotate(-15deg);
-z-index:1;
-}
-.hero-bottle{
-position:absolute;
-top:20px;right:10px;
-width:220px;
-z-index:5;
-filter:drop-shadow(-20px 30px 40px rgba(0,0,0,0.4));
-transition:0.6s cubic-bezier(0.175,0.885,0.32,1.275);
-}
+.wrapper-450{width:100%;height:auto;min-height:500px;position:relative;overflow:hidden;background-color:var(--forest);border-bottom:2px solid var(--saffron);}
+.bg-gradient{position:absolute;top:-10%;left:-20%;width:150%;height:60%;background:var(--saffron);transform:rotate(-15deg);z-index:1;}
+.hero-bottle{position:absolute;top:20px;right:10px;width:220px;z-index:5;filter:drop-shadow(-20px 30px 40px rgba(0,0,0,0.4));transition:0.6s cubic-bezier(0.175,0.885,0.32,1.275);}
 .wrapper-450:hover .hero-bottle{transform:scale(1.1) rotate(-5deg);}
-.big-heading{
-position:absolute;
-top:30px;left:15px;
-font-size:60px;
-font-weight:900;
-color:white;
-line-height:0.8;
-z-index:2;
-text-transform:uppercase;
-}
-.info-glass{
-position:absolute;
-bottom:20px;left:15px;right:15px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(20px);
-padding:22px;
-border-radius:28px;
-border:1px solid rgba(255,255,255,0.1);
-z-index:10;
-}
-.hindi-title{
-font-size:32px;
-font-weight:700;
-color:var(--white);
-margin:0 0 8px;
-line-height:1.2;
-}
-.hindi-desc{
-font-size:20px;
-color:white;
-margin-bottom:18px;
-line-height:1.4;
-}
-.order-now-btn{
-background:var(--white);
-color:var(--black);
-text-decoration:none;
-padding:14px;
-border-radius:16px;
-display:block;
-text-align:center;
-font-weight:900;
-font-size:18px;
-text-transform:uppercase;
-letter-spacing:1px;
-transition:0.3s;
-box-shadow:0 10px 20px rgba(0,0,0,0.2);
-}
+.big-heading{position:absolute;top:30px;left:15px;font-size:60px;font-weight:900;color:white;line-height:0.8;z-index:2;text-transform:uppercase;}
+.info-glass{position:absolute;bottom:20px;left:15px;right:15px;background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);padding:22px;border-radius:28px;border:1px solid rgba(255,255,255,0.1);z-index:10;}
+.hindi-title{font-size:32px;font-weight:700;color:var(--white);margin:0 0 8px;line-height:1.2;}
+.hindi-desc{font-size:20px;color:white;margin-bottom:18px;line-height:1.4;}
+.order-now-btn{background:var(--white);color:var(--black);text-decoration:none;padding:14px;border-radius:16px;display:block;text-align:center;font-weight:900;font-size:18px;text-transform:uppercase;letter-spacing:1px;transition:0.3s;box-shadow:0 10px 20px rgba(0,0,0,0.2);}
 .order-now-btn:hover{transform:translateY(-5px);}
-.light-dot{
-position:absolute;
-bottom:-50px;right:-50px;
-width:200px;height:200px;
-background:var(--white);
-filter:blur(100px);
-opacity:0.2;
-z-index:1;
-}
-
-
-
-
-
+.light-dot{position:absolute;bottom:-50px;right:-50px;width:200px;height:200px;background:var(--white);filter:blur(100px);opacity:0.2;z-index:1;}
 
 /* section-3 */
-
-  .wellness-flow-wrapper {
-    width: 100%;
-    max-width: var(--w);
-    padding: 40px 20px;
-    background: var(--forest);
-    font-family: 'halant', sans-serif;
-    box-sizing: border-box;
-    border-bottom: 2px solid var(--saffron);
-  }
-  
-  .section-heading { 
-    text-align: center; 
-    color: var(--gold-m); 
-    margin-bottom: 30px; 
-    font-weight: 800; 
-    letter-spacing: 2px; 
-    font-size: 32px;
-  }
-
-  .flow-item {
-    display: flex;
-    align-items: center;
-    position: relative;
-    margin-bottom: 30px;
-    transition: 0.3s;
-  }
-  
-  .visual-pane {
-    width: 200px;
-    height: 180px;
-    border-radius: 20px;
-    overflow: hidden;
-    z-index: 2;
-    box-shadow: var(--sg);
-    transition: transform 0.4s ease;
-    flex-shrink: 0;
-  }
-  .visual-pane img { width: 100%; height: 100%; object-fit: cover; }
-  
-  .info-block {
-    width: 240px;
-    background: var(--white);
-    padding: 10px;
-    margin-left: -40px;
-    border-radius: 20px;
-    z-index: 1;
-    padding-left: 60px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: 0.4s;
-  }
- 
-  .is-mirrored { flex-direction: row-reverse; }
-  .is-mirrored .info-block { margin-left: 0; margin-right: -40px; padding-left: 20px; padding-right: 60px; }
-
- /* HOVER EFFECTS */
-  .flow-item:hover .visual-pane { transform: scale(1.05) rotate(2deg); }
-  .flow-item:hover .info-block { transform: translateX(10px); }
-  .is-mirrored:hover .info-block { transform: translateX(-10px); }
-
-  .step-badge { font-size: 30px; font-weight: 900; color: var(--saffron-d); opacity: 0.4; display: block; }
-  .info-block h3 { margin: 0 0 5px 0; font-size: 22px; color: var(--saffron); margin-top: -10px; }
-  .info-block p { font-size: 18px; line-height: 1.2; color: var(--black); }
-
-
-
-  /* Mobile Optimization */
-  @media (max-width: 480px) {
-    .wellness-flow-wrapper { padding: 20px 10px; }
-    .visual-pane { width: 140px; height: 140px; }
-    .info-block { width: 250px; padding: 15px; padding-left: 50px; }
-    .is-mirrored .info-block { padding-left: 15px; padding-right: 50px; }
-    .step-badge { font-size: 22px; }
-    .info-block h3 { font-size: 20px; }
-    .info-block p { font-size: 18px; }
-    .section-heading{
-        font-size: 22px;
-    }
-  }
-
- 
-
+.wellness-flow-wrapper{width:100%;max-width:var(--w);padding:40px 20px;background:var(--forest);font-family:'Halant',sans-serif;box-sizing:border-box;border-bottom:2px solid var(--saffron);}
+.section-heading{text-align:center;color:var(--gold-m);margin-bottom:30px;font-weight:800;letter-spacing:2px;font-size:32px;}
+.flow-item{display:flex;align-items:center;position:relative;margin-bottom:30px;transition:0.3s;}
+.visual-pane{width:200px;height:180px;border-radius:20px;overflow:hidden;z-index:2;box-shadow:var(--sg);transition:transform 0.4s ease;flex-shrink:0;}
+.visual-pane img{width:100%;height:100%;object-fit:cover;}
+.info-block{width:240px;background:var(--white);padding:10px;margin-left:-40px;border-radius:20px;z-index:1;padding-left:60px;box-shadow:0 10px 30px rgba(0,0,0,0.1);transition:0.4s;}
+.is-mirrored{flex-direction:row-reverse;}
+.is-mirrored .info-block{margin-left:0;margin-right:-40px;padding-left:20px;padding-right:60px;}
+.flow-item:hover .visual-pane{transform:scale(1.05) rotate(2deg);}
+.flow-item:hover .info-block{transform:translateX(10px);}
+.is-mirrored:hover .info-block{transform:translateX(-10px);}
+.step-badge{font-size:30px;font-weight:900;color:var(--saffron-d);opacity:0.4;display:block;}
+.info-block h3{margin:0 0 5px 0;font-size:22px;color:var(--saffron);margin-top:-10px;}
+.info-block p{font-size:18px;line-height:1.2;color:var(--black);}
 
 /* section-4 */
-.ingredients-section{
-padding:50px 12px;
-background:var(--forest);
-border-bottom:2px solid var(--saffron);
-}
-.section-title{
-text-align:center;
-font-size:32px;
-color:var(--gold-m);
-margin-bottom:40px;
-position:relative;
-}
-.section-title::after{
-content:"";
-width:80px;height:4px;
-background:var(--gold-m);
-position:absolute;
-bottom:-12px;left:50%;
-transform:translateX(-50%);
-border-radius:20px;
-}
-.timeline-wrapper{
-max-width:900px;
-margin:auto;
-position:relative;
-}
-.timeline-wrapper::before{
-content:"";
-position:absolute;
-left:25px;top:20px;bottom:20px;
-width:3px;
-background:linear-gradient(to bottom,var(--saffron),var(--forest));
-border-radius:20px;
-}
-.step-entry{
-display:flex;
-align-items:center;
-gap:15px;
-margin-bottom:20px;
-padding:15px;
-border-radius:18px;
-background:#fff;
-border:1px solid var(--border-l);
-transition:.25s;
-position:relative;
-}
+.ingredients-section{padding:50px 12px;background:var(--forest);border-bottom:2px solid var(--saffron);}
+.section-title{text-align:center;font-size:32px;color:var(--gold-m);margin-bottom:40px;position:relative;}
+.section-title::after{content:"";width:80px;height:4px;background:var(--gold-m);position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);border-radius:20px;}
+.timeline-wrapper{max-width:900px;margin:auto;position:relative;}
+.timeline-wrapper::before{content:"";position:absolute;left:25px;top:20px;bottom:20px;width:3px;background:linear-gradient(to bottom,var(--saffron),var(--forest));border-radius:20px;}
+.step-entry{display:flex;align-items:center;gap:15px;margin-bottom:20px;padding:15px;border-radius:18px;background:var(--white);border:1px solid var(--border-l);backdrop-filter:blur(10px);transition:.4s;position:relative;}
 .step-entry:hover{transform:translateX(8px);box-shadow:var(--sg);}
-.dot{
-width:44px;height:44px;min-width:44px;
-border-radius:50%;
-background:linear-gradient(135deg,var(--saffron),var(--forest));
-color:var(--white);
-font-weight:700;
-display:flex;
-align-items:center;justify-content:center;
-z-index:2;
-box-shadow:0 0 20px var(--gg);
-font-size:18px;
-}
-.screen-frame{
-width:90px;height:70px;
-border-radius:12px;
-overflow:hidden;
-border:2px solid var(--border-l);
-flex-shrink:0;
-}
-.screen-frame img{
-width:100%;height:100%;
-object-fit:cover;
-transition:.5s;
-}
+.dot{width:44px;height:44px;min-width:44px;border-radius:50%;background:linear-gradient(135deg,var(--saffron),var(--forest));color:var(--white);font-weight:700;display:flex;align-items:center;justify-content:center;z-index:2;box-shadow:0 0 20px var(--gg);font-size:18px;}
+.screen-frame{width:90px;height:70px;border-radius:12px;overflow:hidden;border:2px solid var(--border-l);flex-shrink:0;}
+.screen-frame img{width:100%;height:100%;object-fit:cover;transition:.5s;}
 .step-entry:hover .screen-frame img{transform:scale(1.15);}
 .info-panel{flex:1;}
-.info-panel b{
-display:block;
-font-size:22px;
-color:var(--saffron);
-margin-bottom:-3px;
-}
+.info-panel b{display:block;font-size:22px;color:var(--saffron);margin-bottom:-3px;}
 .info-panel p{font-size:18px;color:var(--black);}
 
-
-
-
-
-
 /* section-5 */
-.premium-trust-grid{
-width:100%;
-max-width:450px;
-padding:35px 12px;
-text-align:center;
-box-shadow:0 20px 50px rgba(0,0,0,0.05);
-position:relative;
-}
-.feature-title{
-font-size:32px;
-font-weight:900;
-color:var(--gold-m);
-margin-top:-10px;
-position:relative;
-margin-bottom:45px;
-}
-.feature-title::after{
-content:'';
-position:absolute;
-bottom:-10px;left:50%;
-transform:translateX(-50%);
-width:50px;height:5px;
-background:var(--gold-m);
-border-radius:10px;
-}
-.feature-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-}
-.feature-card{
-background:var(--ivory);
-padding:20px 12px;
-border-radius:20px;
-border:1px solid var(--border-l);
-transition:all .3s cubic-bezier(.4,0,.2,1);
-position:relative;
-}
-.feature-card:hover{
-transform:translateY(-8px);
-background:var(--white);
-border-color:var(--saffron);
-box-shadow:var(--sg);
-}
-.icon-wrap{
-width:72px;height:72px;
-background:linear-gradient(135deg,var(--forest),var(--forest-d));
-border-radius:50%;
-display:flex;
-align-items:center;justify-content:center;
-margin:0 auto 12px;
-position:relative;
-color:var(--white);
-font-size:18px;
-box-shadow:0 8px 20px rgba(13,90,157,0.25);
-}
-.pulse-effect{
-position:absolute;
-inset:-6px;
-border:2px solid var(--saffron);
-border-radius:50%;
-animation:premiumPulse 2s infinite;
-opacity:0;
-}
+.premium-trust-grid{width:100%;max-width:450px;padding:35px 12px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,0.05);position:relative;}
+.feature-title{font-size:32px;font-weight:900;color:var(--gold-m);margin-top:-10px;position:relative;margin-bottom:45px;}
+.feature-title::after{content:'';position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:50px;height:5px;background:var(--gold-m);border-radius:10px;}
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.feature-card{background:var(--ivory);padding:20px 12px;border-radius:20px;border:1px solid var(--border-l);transition:all .3s cubic-bezier(.4,0,.2,1);position:relative;}
+.feature-card:hover{transform:translateY(-8px);background:var(--white);border-color:var(--saffron);box-shadow:var(--sg);}
+.icon-wrap{width:72px;height:72px;background:linear-gradient(135deg,var(--forest),var(--forest-d));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;position:relative;color:var(--white);font-size:18px;box-shadow:0 8px 20px rgba(13,90,157,0.25);}
+.pulse-effect{position:absolute;inset:-6px;border:2px solid var(--saffron);border-radius:50%;animation:premiumPulse 2s infinite;opacity:0;}
 .pulse-effect-img{width:72px;height:72px;object-fit:contain;z-index:2;border-radius:50%;}
 @keyframes premiumPulse{0%{transform:scale(1);opacity:.5;}100%{transform:scale(1.4);opacity:0;}}
 .feature-text{font-size:18px;font-weight:800;color:var(--text);line-height:1.4;}
 
-
-
-
-
-
-/* section-6 */  
-.doctor-section-v4 {
-    max-width: 450px;
-    padding: 30px;
-    background: var(--white);
-   border: 8px solid var(--forest); /* आपके Root से */
-    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
-    position: relative;
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    animation: floatEffect 3s ease-in-out infinite;
-  }
-
-  /* Hover Animation */
-  .doctor-section-v4:hover {
-    transform: translateY(-15px) scale(1.02);
-    box-shadow: 0 40px 80px rgba(13, 90, 157, 0.25);
-    border-color: var(--saffron); /* Hover पर Saffron का टच */
-  }
-
-  @keyframes floatEffect {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-
- 
-
-  .doc-photo-box {
-    width: 130px;
-    height: 130px;
-    margin: 0 auto 20px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 6px solid var(--forest);
-    background: url('images/doctor.avif');
-    background-size: cover;
-    transition: transform 0.4s ease;
-  }
-
-  .doctor-section-v4:hover .doc-photo-box {
-    transform: rotate(5deg) scale(1.05);
-  }
-
-  .doc-name-main { font-size: 28px; color: #0f172a; font-weight: 900; text-align: center; margin: 0; }
-  .doc-designation { text-align: center; color: var(--forest); font-weight: 700; margin-bottom: 25px; letter-spacing: 1px; }
-
-  .main-quote {
-    background: var(--saffron);
-    padding: 25px;
-    border-radius: 25px;
-    font-size: 19px;
-    line-height: 1.6;
-    color:white;
-    text-align: center;
-    font-weight: 500;
-    border: 1px solid #e2e8f0;
-  }
-
-  .main-quote::after {
-    content: "★★★★★";
-    display: block;
-    color:rgba(255, 187, 0, 0.877); /* आपके Root से */
-    margin-top: 15px;
-    font-size: 20px;
-  }
-
-  .cta-link-doc {
-    display: block;
-    text-align: center;
-    margin-top: 25px;
-    color: var(--white);
-    font-weight: 800;
-    text-decoration: none;
-    transition: 0.3s;
-    background-color: var(--forest);
-    padding: 20px;
-    border-radius: 20px;
-    font-size: 20px;
-  }
-  
-  .cta-link-doc:hover {  letter-spacing: 1px; }
-/* मोबाइल स्क्रीन के लिए छोटे बदलाव */
-  @media (max-width: 480px) {
-    .doctor-section-v4 {
-      padding: 20px;
-      border-width: 4px; /* मोबाइल पर बॉर्डर थोड़ा पतला */
-     
-    }
-    .doc-photo-box {
-      width: 100px !important;
-      height: 100px !important;
-    }
-    .doc-name-main { font-size: 22px !important; }
-    .main-quote { font-size: 16px !important; padding: 15px !important; }
-  }
-
-  /* Hover Effect (केवल PC के लिए, मोबाइल पर नहीं दिखेगा) */
-  @media (min-width: 768px) {
-    .doctor-section-v4:hover {
-      transform: translateY(-15px) scale(1.02);
-      box-shadow: 0 40px 80px rgba(13, 90, 157, 0.25);
-      border-color: var(--saffron);
-    }
-  }
-
-  @keyframes floatEffect {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-
-
+/* section-6 */
+.doctor-section-v4{max-width:450px;padding:30px;background:var(--white);border:8px solid var(--forest);box-shadow:0 30px 60px rgba(0,0,0,0.15);position:relative;transition:all 0.5s cubic-bezier(0.175,0.885,0.32,1.275);animation:floatEffect 3s ease-in-out infinite;}
+.doctor-section-v4:hover{transform:translateY(-15px) scale(1.02);box-shadow:0 40px 80px rgba(13,90,157,0.25);border-color:var(--saffron);}
+@keyframes floatEffect{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.doc-photo-box{width:130px;height:130px;margin:0 auto 20px;border-radius:50%;overflow:hidden;border:6px solid var(--forest);background:url('images/doctor.avif');background-size:cover;transition:transform 0.4s ease;}
+.doctor-section-v4:hover .doc-photo-box{transform:rotate(5deg) scale(1.05);}
+.doc-name-main{font-size:28px;color:#0f172a;font-weight:900;text-align:center;margin:0;}
+.doc-designation{text-align:center;color:var(--forest);font-weight:700;margin-bottom:25px;letter-spacing:1px;}
+.main-quote{background:var(--saffron);padding:25px;border-radius:25px;font-size:19px;line-height:1.6;color:white;text-align:center;font-weight:500;border:1px solid #e2e8f0;}
+.main-quote::after{content:"★★★★★";display:block;color:rgba(255,187,0,0.877);margin-top:15px;font-size:20px;}
+.cta-link-doc{display:block;text-align:center;margin-top:25px;color:var(--white);font-weight:800;text-decoration:none;transition:0.3s;background-color:var(--forest);padding:20px;border-radius:20px;font-size:20px;}
+.cta-link-doc:hover{letter-spacing:1px;}
 
 /* section-7 */
 .pc-dose-wrapper{max-width:450px;width:100%;margin:25px auto;padding:0 10px;}
-.pc-dose-card{
-background:white;
-color:black;
-padding:14px;
-margin-bottom:10px;
-border-left:8px solid var(--saffron);
-transition:.5s ease-in-out;
-cursor:pointer;
-display:flex;
-align-items:center;
-gap:16px;
-position:relative;
-}
-.pc-h2{
-font-size:32px;
-margin-bottom:5px;
-color:var(--gold-m);
-text-align:center;
-margin-top:-20px;
-margin-bottom:18px;
-}
+.pc-dose-card{background:white;color:black;padding:14px;margin-bottom:10px;border-left:8px solid var(--saffron);transition:.5s ease-in-out;cursor:pointer;display:flex;align-items:center;gap:16px;position:relative;}
+.pc-h2{font-size:32px;margin-bottom:5px;color:var(--gold-m);text-align:center;margin-top:-20px;margin-bottom:18px;}
 .pc-dose-card:hover{background:var(--saffron);transform:scale(1.04);z-index:10;box-shadow:15px 15px 0px var(--gg);}
 .pc-dose-number{font-size:36px;font-weight:900;color:rgba(0,146,19,0.171);}
 .pc-dose-card:hover .pc-dose-number{color:white;}
@@ -653,49 +173,13 @@ margin-bottom:18px;
 .pc-dose-content h3{margin:0;font-size:22px;text-transform:uppercase;letter-spacing:2px;margin-bottom:-6px;color:var(--saffron);}
 .pc-dose-content p{font-size:18px;}
 
-
-
-
 /* section-8 */
-.comparison-main {
-    max-width: var(--w);
-    width: 100%;
-    background: var(--forest);
-    border: 2px solid var(--forest-d);
-    font-family: 'halant', sans-serif;
-    margin: 0 auto;
-  }
-  .sect-8-h2 { color: var(--gold-m); font-size: 32px; font-weight: bold; text-align: center; padding: 18px 0; margin: 0; }
-  
-  .image-header { display: flex; height: 160px; overflow: hidden; }
-  
-  .img-side { flex: 1; position: relative; border: 1px solid rgba(255,255,255,0.1); }
-  
-  .img-side img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* यह इमेज को बिना स्ट्रेच किए पूरा भर देगा */
-    display: block;
-  }
-  
-  .img-side::after {
-    content: attr(data-label);
-    position: absolute;
-    bottom: 10px; left: 10px;
-    color: var(--white);
-    font-weight: bold;
-    background: rgba(0,0,0,0.6);
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-  }
-
-  /* Content area styles - ensure these exist in your CSS */
-  .content-area { padding: 15px; background: #fff; }
-  .box-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .box { padding: 10px; border-radius: 8px; background: #f9f9f9; }
-  .title-h { font-weight: bold; display: block; margin-bottom: 5px; }
-  .title-p { font-size: 14px; margin: 0; color: #333; }
+.comparison-main{max-width:var(--w);width:100%;background:var(--forest);border:2px solid var(--forest-d);font-family:'Halant',sans-serif;margin:0 auto;}
+.sect-8-h2{color:var(--gold-m);font-size:32px;font-weight:bold;text-align:center;padding:18px 0;margin:0;}
+.image-header{display:flex;height:160px;overflow:hidden;}
+.img-side{flex:1;position:relative;border:1px solid rgba(255,255,255,0.1);}
+.img-side img{width:100%;height:100%;object-fit:cover;display:block;}
+.img-side::after{content:attr(data-label);position:absolute;bottom:10px;left:10px;color:var(--white);font-weight:bold;background:rgba(0,0,0,0.6);padding:2px 8px;border-radius:4px;font-size:12px;}
 .content-area{padding:16px;}
 .title-h{font-size:22px;font-weight:bold;margin-bottom:8px;color:var(--saffron);}
 .title-p{font-size:18px;color:black;font-weight:500;line-height:1.3;}
@@ -704,10 +188,6 @@ margin-bottom:18px;
 .box:hover{background:var(--ivory-d);transform:translateY(-5px);}
 .box.red{border-bottom:3px solid red;}
 .box.green{border-bottom:3px solid var(--saffron);}
-
-
-
-
 
 /* section-9 */
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
@@ -718,8 +198,7 @@ margin-bottom:18px;
 @keyframes floatImg{0%,100%{transform:translateY(0px)}50%{transform:translateY(-8px)}}
 @keyframes badgePop{0%{transform:scale(0)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
 @keyframes glowRing{0%,100%{box-shadow:0 0 0 0 var(--gg)}50%{box-shadow:0 0 0 10px rgba(22,163,74,0)}}
-
-.wrap{width:100%;max-width:var(--w);margin:0 auto;font-family:'halant',sans-serif;border-radius:0;overflow:hidden;}
+.wrap{width:100%;max-width:var(--w);margin:0 auto;font-family:'Halant',sans-serif;border-radius:0;overflow:hidden;}
 .ticker-bar{background:var(--saffron);overflow:hidden;height:28px;display:flex;align-items:center;}
 .ticker-inner{display:flex;white-space:nowrap;animation:ticker 18s linear infinite;}
 .ticker-item{font-size:20px;color:var(--tp);font-weight:600;padding:20px 18px;letter-spacing:0.5px;}
@@ -737,7 +216,6 @@ margin-bottom:18px;
 .product-section{background:var(--bb);border-left:1px solid var(--border-l);border-right:1px solid var(--border-l);padding:16px 16px 0;display:flex;align-items:center;gap:14px;animation:fadeUp 0.6s 0.35s both;}
 .product-img-wrap{position:relative;flex-shrink:0;}
 .product-img-bg{width:110px;height:110px;border-radius:14px;background:linear-gradient(135deg,var(--ivory-d) 0%,var(--border-l) 100%);display:flex;align-items:center;justify-content:center;animation:floatImg 3s ease-in-out infinite;border:2px solid var(--border-l);}
-
 .badge-new{position:absolute;top:-8px;right:-8px;background:var(--saffron);color:var(--tp);font-size:9px;font-weight:700;padding:4px 8px;border-radius:20px;letter-spacing:0.5px;animation:badgePop 0.5s 0.8s both;}
 .badge-off{position:absolute;bottom:-8px;left:-8px;background:#DC2626;color:var(--tp);font-size:10px;font-weight:700;padding:4px 9px;border-radius:20px;animation:badgePop 0.5s 1s both;}
 .product-info{flex:1;}
@@ -769,7 +247,6 @@ margin-bottom:18px;
 .stock-note{font-size:15px;color:var(--text-s);margin-top:6px;display:flex;align-items:center;gap:5px;}
 .stock-note i{font-size:13px;color:var(--saffron);}
 .proof-row{background:var(--white);border:1.5px solid rgba(22,163,74,0.18);border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;margin-bottom:12px;animation:fadeUp 0.5s 0.8s both;transition:background 0.25s,border-color 0.25s;}
-
 .avs{display:flex;}
 .av{width:26px;height:26px;border-radius:50%;border:2px solid var(--ivory);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:var(--tp);margin-left:-7px;}
 .av:first-child{margin-left:0;}
@@ -789,14 +266,19 @@ margin-bottom:18px;
 .fi i{font-size:13px;color:var(--gold-m);transition:transform 0.2s;}
 .fi:hover i{transform:scale(1.2) rotate(-5deg);}
 
-
-
-
-
-
-
-
-
+/* section-10 form */
+#loading{display:none;color:#fff;font-size:16px;margin-top:10px;}
+#poweredBy{text-align:center;color:#fff;font-size:14px;margin-top:20px;}
+#loaderOverlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);display:none;justify-content:center;align-items:center;z-index:9999;}
+.loader{width:50px;height:50px;border:5px solid #fff;border-top:5px solid gold;border-radius:50%;animation:spin 1s linear infinite;}
+@keyframes spin{100%{transform:rotate(360deg);}}
+.form-box{max-width:450px;width:100%;padding:25px 30px;color:white;}
+.form-box h2{margin-top:-2px;font-size:32px;line-height:1.1;font-weight:600;margin-bottom:20px;color:var(--forest-d);}
+.input-group{margin-bottom:18px;}
+label{font-size:16px;font-weight:600;margin-bottom:6px;display:block;}
+input{width:100%;padding:12px;border-radius:10px;border:none;outline:none;font-size:16px;}
+.btn-cta{width:100%;padding:13px;font-size:18px;font-weight:600;background:var(--forest);color:white;border:none;border-radius:12px;margin-top:8px;cursor:pointer;animation:pulse 2s infinite;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(175,152,75,0.6)}70%{box-shadow:0 0 0 20px rgba(236,72,153,0)}100%{box-shadow:0 0 0 0 rgba(236,72,153,0)}}
 
 /* section-11 guarantee */
 .split-container{max-width:450px;width:100%;background:var(--white);padding:0;margin:auto;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--border-l);}
@@ -805,17 +287,10 @@ margin-bottom:18px;
 .mechanism-row{display:flex;border-bottom:1px solid var(--border-l);min-height:100px;transition:all .4s ease;position:relative;background:var(--white);}
 .row-right{flex:1;padding:16px 20px;display:flex;flex-direction:column;justify-content:center;}
 .row-right h4{margin:0;font-size:22px;font-weight:600;color:var(--forest);}
-.row-right p{margin:4px 0 0;font-size:18px;color:var(--text);line-height:1.3; padding-right:80px ;}
-.mechanism-row:hover{background:var(--ivory);}
-.mechanism-row:hover {color:var(--saffron);background:var(--gg);}
+.row-right p{margin:4px 0 0;font-size:18px;color:var(--text);line-height:1.3;padding-right:80px;}
+.mechanism-row:hover{color:var(--saffron);background:var(--gg);}
 .mechanism-row:hover .row-right h4{color:var(--saffron);}
 .img-overlay{width:75px;height:75px;position:absolute;right:16px;top:50%;transform:translateY(-50%);}
-.mechanism-row:hover .img-overlay{opacity:1;filter:grayscale(0);}
-
-
-
-
-
 
 /* section-12 testimonials */
 .pc-testimonial-wrapper{max-width:var(--w);width:100%;background:var(--forest);padding:24px 16px;}
@@ -829,23 +304,8 @@ margin-bottom:18px;
 .pc-rating-stars{color:rgb(255,174,0);font-size:18px;margin-top:-6px;}
 .pc-testimonial-card:hover .pc-user-avatar{transform:scale(1.05);border-color:var(--saffron);}
 .pc-review-text{color:black;font-weight:500;line-height:1.3;margin-top:12px;font-size:18px;}
-.pc-user-avatar {
-  width: 75px;
-  height: 75px;
-  border: 4px solid var(--forest);
-  border-radius: 12px;
-  overflow: hidden; /* ताकि फोटो बाहर न निकले */
-  flex-shrink: 0;
-}
-
-.pc-user-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* यह फोटो को सही तरह से फिट कर देगा */
-}
-
-
-
+.pc-user-avatar{width:75px;height:75px;border:4px solid var(--forest);border-radius:12px;overflow:hidden;flex-shrink:0;}
+.pc-user-avatar img{width:100%;height:100%;object-fit:cover;}
 
 /* section-13 FAQ */
 section{padding:16px;}
@@ -858,42 +318,50 @@ section{padding:16px;}
 .faq-a{display:none;padding:0 14px 14px;font-size:16px;color:var(--black);line-height:1.3;}
 .faq.open .faq-a{display:block;}
 
-/* FLOAT BAR */
-.float-bar{
-position:fixed;
-bottom:0;left:50%;
-transform:translateX(-50%);
-width:100%;
-max-width:var(--w);
-background:linear-gradient(135deg,var(--forest-d),var(--forest));
-padding:10px 14px;
-box-shadow:0 -4px 20px rgba(0,0,0,.18);
-display:flex;
-gap:10px;
-align-items:center;
-z-index:999;
-}
-.float-btn{
-flex:2;padding:11px;
-background:linear-gradient(90deg,#16A34A,#22C55E);
-color:#fff;border:none;border-radius:10px;
-font-family:'Halant',sans-serif;
-font-size:14px;font-weight:700;cursor:pointer;
-}
-
 /* DISCLAIMER */
-.disc{
-background:var(--ivory-d);
-padding:14px 16px;
-font-size:8px;
-color:var(--text-s);
-line-height:1.6;
-text-align:center;
-border-top:1px solid var(--border-l);
-}
+.disc{background:var(--ivory-d);padding:14px 16px;font-size:8px;color:var(--text-s);line-height:1.6;text-align:center;border-top:1px solid var(--border-l);}
 
-/* SMALL PHONES (≤380px) */
-@media (max-width:380px){
+/* RESPONSIVE */
+@media(max-width:480px){
+  :root{--w:100%!important;}
+  .vital-path-container{padding:20px 15px;}
+  .node-row{gap:15px;margin-bottom:40px;}
+  .graphic-circle{width:100px;height:100px;border-radius:20px;box-shadow:8px 8px 0px var(--gold-m);}
+  .flip-direction .graphic-circle{box-shadow:-8px 8px 0px var(--gold-m);}
+  .path-main-title{font-size:22px;}
+  .node-row:hover .graphic-circle{transform:translateY(-5px);box-shadow:10px 10px 0px var(--saffron);}
+  .flip-direction:hover .graphic-circle{box-shadow:-10px 10px 0px var(--saffron);}
+  .desc-zone h3{font-size:20px;}
+  .desc-zone p{font-size:18px;}
+  .wellness-flow-wrapper{padding:20px 10px;}
+  .visual-pane{width:140px;height:140px;}
+  .info-block{width:250px;padding:15px;padding-left:50px;}
+  .is-mirrored .info-block{padding-left:15px;padding-right:50px;}
+  .step-badge{font-size:22px;}
+  .info-block h3{font-size:20px;}
+  .info-block p{font-size:18px;}
+  .section-heading{font-size:22px;}
+  .hdr h2{font-size:26px!important;}
+  .hdr p{font-size:16px!important;}
+  .product-section{gap:10px;padding:12px 12px 0;}
+  .product-img-bg{width:90px!important;height:90px!important;}
+  .product-name{font-size:18px!important;}
+  .product-sub{font-size:15px!important;}
+  .offer-grid{grid-template-columns:1fr;gap:8px;}
+  .otxt strong,.otxt span{font-size:16px!important;}
+  .cta-btn{font-size:14px!important;padding:12px!important;}
+  .fi{font-size:13px!important;}
+  .form-box{padding:20px 16px;}
+  .form-box h2{font-size:22px;text-align:left;}
+  label{font-size:14px;}
+  input{font-size:15px;padding:11px;border-radius:8px;}
+  .btn-cta{font-size:16px;padding:12px;border-radius:10px;}
+  .doctor-section-v4{padding:20px;border-width:4px;}
+  .doc-photo-box{width:100px!important;height:100px!important;}
+  .doc-name-main{font-size:22px!important;}
+  .main-quote{font-size:16px!important;padding:15px!important;}
+}
+@media(max-width:380px){
   .logo{font-size:22px;}
   .nav-btn{font-size:18px;padding:6px 11px;}
   .big-heading{font-size:46px;}
@@ -922,7 +390,6 @@ border-top:1px solid var(--border-l);
   .title-h{font-size:18px;}
   .title-p{font-size:18px;}
   .price-now{font-size:18px;}
-  .form-box h2{font-size:21px;}
   .scan-header h2{font-size:22px;}
   .row-right h4{font-size:18px;}
   .row-right p{font-size:18px;}
@@ -935,70 +402,8 @@ border-top:1px solid var(--border-l);
   .faq-a{font-size:18px;}
   .float-btn{font-size:12px;padding:10px;}
 }
-/* --- Mobile Optimization (इस कोड को अपनी मौजूदा CSS के आखिर में जोड़ें) --- */
-@media (max-width: 480px) {
-  :root {
-    --w: 100% !important; /* मोबाइल पर पूरी चौड़ाई */
-  }
-
-  /* हेडर और फोंट साइज को छोटा करना ताकि सब कुछ स्क्रीन में आ जाए */
-  .hdr h2 { font-size: 26px !important; }
-  .hdr p { font-size: 16px !important; }
-  
-  /* प्रोडक्ट सेक्शन को एडजस्ट करना */
-  .product-section { gap: 10px; padding: 12px 12px 0; }
-  .product-img-bg { width: 90px !important; height: 90px !important; }
-  .product-name { font-size: 18px !important; }
-  .product-sub { font-size: 15px !important; }
-  
-  /* ऑफर ग्रिड को मोबाइल पर सही से दिखाना */
-  .offer-grid { grid-template-columns: 1fr; gap: 8px; }
-  
-  /* बटन्स और टेक्स्ट को मोबाइल के हिसाब से एडजस्ट करना */
-  .otxt strong, .otxt span { font-size: 16px !important; }
-  .cta-btn { font-size: 14px !important; padding: 12px !important; }
-  
-  /* फटर (Footer) का साइज */
-  .fi { font-size: 13px !important; }
-}
-
-/* यह सुनिश्चित करेगा कि इमेज ओवरफ्लो न हो */
-img { max-width: 100%; height: auto; }
-
-@media (max-width:480px){
-
-  *,
-  *::before,
-  *::after{
-    animation-duration:.01ms !important;
-    animation-iteration-count:1 !important;
-    transition:none !important;
-  }
-
-  .ticker-inner{
-    animation:none !important;
-  }
-
-  .live-dot{
-    animation:none !important;
-  }
-
-  .pulse-effect{
-    animation:none !important;
-  }
-
-  .hero-bottle{
-    animation:none !important;
-  }
-
-  .cta-btn{
-    animation:none !important;
-  }
-
-  .btn-cta{
-    animation:none !important;
-  }
-
+@media(min-width:768px){
+  .doctor-section-v4:hover{transform:translateY(-15px) scale(1.02);box-shadow:0 40px 80px rgba(13,90,157,0.25);border-color:var(--saffron);}
 }
 </style>
 </head>
@@ -1009,40 +414,27 @@ img { max-width: 100%; height: auto; }
   <a href="#orderForm" class="nav-btn">अभी ऑर्डर करें</a>
 </nav>
 
-
-<img src="images/banner.avif"
-width="500"
-height="794"
-fetchpriority="high"
-decoding="async"
-alt="Piles Care Banner">
-
+<img src="images/banner.avif" alt="Piles Care Banner" width="500" height="794" fetchpriority="high" decoding="async">
 
 <!-- section-1 -->
 <div class="vital-path-container">
   <h2 class="path-main-title">क्या आप भी इन तकलीफों से परेशान हैं?</h2>
-
-  <!-- Item 1 -->
   <div class="node-row">
-    <div class="graphic-circle"><img src="images/sect-1-1stimg.avif" alt="Symptoms" loading="lazy" width="100" height="100"></div>
+    <div class="graphic-circle"><img src="images/sect-1-1stimg.avif" alt="Symptoms" loading="lazy" width="100" height="100" decoding="async"></div>
     <div class="desc-zone">
       <h3>01. समस्याओं की शुरुआत</h3>
       <p>जब बवासीर बढ़ने लगती है, तो सिर्फ दर्द नहीं बढ़ता... परेशानियां भी बढ़ने लगती हैं। क्या आप भी इन समस्याओं का सामना कर रहे हैं?</p>
     </div>
   </div>
-
-  <!-- Item 2 -->
   <div class="node-row flip-direction">
-    <div class="graphic-circle"><img src="images/sect-1-2ndimg.avif" alt="Pain Points" loading="lazy" width="100" height="100"></div>
+    <div class="graphic-circle"><img src="images/sect-1-2ndimg.avif" alt="Pain Points" loading="lazy" width="100" height="100" decoding="async"></div>
     <div class="desc-zone">
       <h3>02. प्रमुख लक्षण</h3>
       <p>शौच के समय दर्द, जलन, खून आना, मस्सों में सूजन, खुजली, बेचैनी, कब्ज और बैठने-चलने में असुविधा।</p>
     </div>
   </div>
-
-  <!-- Item 3 -->
   <div class="node-row">
-    <div class="graphic-circle"><img src="images/sect-1-3rdimg.avif" alt="Solution" loading="lazy" width="100" height="100"></div>
+    <div class="graphic-circle"><img src="images/sect-1-3rdimg.avif" alt="Solution" loading="lazy" width="100" height="100" decoding="async"></div>
     <div class="desc-zone">
       <h3>03. सही समाधान</h3>
       <p>अगर जवाब "हाँ" है, तो अब समय है अपने स्वास्थ्य को सही सपोर्ट देने का और अपनी जीवनशैली में सुधार करने का।</p>
@@ -1050,15 +442,12 @@ alt="Piles Care Banner">
   </div>
 </div>
 
-
-
-
 <!-- section-2 -->
 <div class="wrapper-450">
   <div class="bg-gradient"></div>
   <div class="light-dot"></div>
   <div class="big-heading">PILES<br>CARE</div>
-  <img src="images/product.avif" class="hero-bottle" loading="lazy" alt="product" width="180" height="180">
+  <img src="images/product.avif" class="hero-bottle" loading="lazy" alt="product" width="180" height="180" decoding="async">
   <div class="info-glass">
     <h2 class="hindi-title">🌿 अब समाधान मौजूद है</h2>
     <p class="hindi-desc">एक विशेष Ayurvedic Support Formula, जिसे बवासीर से जुड़ी असुविधाओं के दौरान दैनिक स्वास्थ्य सपोर्ट के उद्देश्य से तैयार किया गया है।</p>
@@ -1066,104 +455,61 @@ alt="Piles Care Banner">
   </div>
 </div>
 
-
-
-
-
 <!-- section-3 -->
 <div class="wellness-flow-wrapper">
   <h2 class="section-heading">Piles Care कैसे काम करता है?</h2>
-
   <div class="flow-item">
-    <div class="visual-pane"><img src="images/sect-3-1stimg.avif" alt="Health" loading="lazy" width="140" height="140"></div>
-    <div class="info-block">
-      <span class="step-badge">01</span>
-      <h3>Digestive Health</h3>
-      <p>healthy digestion और बेहतर मल त्याग प्रक्रिया को सहयोग प्रदान करता है।</p>
-    </div>
+    <div class="visual-pane"><img src="images/sect-3-1stimg.avif" alt="Health" loading="lazy" width="140" height="140" decoding="async"></div>
+    <div class="info-block"><span class="step-badge">01</span><h3>Digestive Health</h3><p>healthy digestion और बेहतर मल त्याग प्रक्रिया को सहयोग प्रदान करता है।</p></div>
   </div>
-
   <div class="flow-item is-mirrored">
-    <div class="visual-pane"><img src="images/sect-3-2ndimg.avif" alt="Balance" loading="lazy"  width="140" height="140"></div>
-    <div class="info-block">
-      <span class="step-badge">02</span>
-      <h3>Natural balance</h3>
-      <p>आयुर्वेदिक तत्व शरीर के अंदरूनी संतुलन को सपोर्ट करते हैं।</p>
-    </div>
+    <div class="visual-pane"><img src="images/sect-3-2ndimg.avif" alt="Balance" loading="lazy" width="140" height="140" decoding="async"></div>
+    <div class="info-block"><span class="step-badge">02</span><h3>Natural balance</h3><p>आयुर्वेदिक तत्व शरीर के अंदरूनी संतुलन को सपोर्ट करते हैं।</p></div>
   </div>
-
-   <div class="flow-item">
-    <div class="visual-pane"><img src="images/sect-3-3rdimg.avif" alt="Health" loading="lazy"  width="140" height="140"></div>
-    <div class="info-block">
-      <span class="step-badge">03</span>
-      <h3>Daily Rest </h3>
-      <p>बवासीर से जुड़ी असुविधाओं के दौरान हेल्थ रूटीन का हिस्सा बनता है।</p>
-    </div>
+  <div class="flow-item">
+    <div class="visual-pane"><img src="images/sect-3-3rdimg.avif" alt="Health" loading="lazy" width="140" height="140" decoding="async"></div>
+    <div class="info-block"><span class="step-badge">03</span><h3>Daily Rest</h3><p>बवासीर से जुड़ी असुविधाओं के दौरान हेल्थ रूटीन का हिस्सा बनता है।</p></div>
   </div>
-
   <div class="flow-item is-mirrored">
-    <div class="visual-pane"><img src="images/sect-3-4thimg.avif" alt="Balance" loading="lazy"  width="140" height="140"></div>
-    <div class="info-block">
-      <span class="step-badge">04</span>
-      <h3>आयुर्वेदिक पोषण </h3>
-      <p>traditional जड़ी-बूटियों का संतुलित मिश्रण।</p>
-    </div>
+    <div class="visual-pane"><img src="images/sect-3-4thimg.avif" alt="Balance" loading="lazy" width="140" height="140" decoding="async"></div>
+    <div class="info-block"><span class="step-badge">04</span><h3>आयुर्वेदिक पोषण</h3><p>traditional जड़ी-बूटियों का संतुलित मिश्रण।</p></div>
   </div>
 </div>
-
- 
-
-
-
 
 <!-- section-4 -->
 <section class="ingredients-section">
   <h2 class="section-title">Piles Care में क्या है खास?</h2>
   <div class="timeline-wrapper">
-    <div class="step-entry"><div class="dot">01</div><div class="screen-frame"><img src="images/nagkesar.avif" alt="नागकेसर" loading="lazy"  width="71" height="54"></div><div class="info-panel"><b>नागकेसर</b><p>स्वास्थ्य संतुलन हेतु उपयोगी</p></div></div>
-    <div class="step-entry"><div class="dot">02</div><div class="screen-frame"><img src="images/harad.avif" alt="हरड़" loading="lazy" width="71" height="54"></div><div class="info-panel"><b>हरड़</b><p>Digestive health को सपोर्ट करे।</p></div></div>
-    <div class="step-entry"><div class="dot">03</div><div class="screen-frame"><img src="images/triphala.avif" alt="त्रिफला" loading="lazy" width="71" height="54"></div><div class="info-panel"><b>त्रिफला</b><p>दैनिक स्वास्थ्य समर्थन।</p></div></div>
-    <div class="step-entry"><div class="dot">04</div><div class="screen-frame"><img src="images/arjun-chhal.avif" alt="अर्जुन छाल" loading="lazy" width="71" height="54"></div><div class="info-panel"><b>अर्जुन छाल</b><p>प्राकृतिक स्वास्थ्य समर्थन।</p></div></div>
-    <div class="step-entry"><div class="dot">05</div><div class="screen-frame"><img src="images/neem.avif" alt="नीम" loading="lazy" width="71" height="54"></div><div class="info-panel"><b>नीम</b><p>Natural गुणों से भरपूर।</p></div></div>
-    <div class="step-entry"><div class="dot">06</div><div class="screen-frame"><img src="images/giloy.avif" alt="गिलोय" loading="lazy" width="71" height="54"></div><div class="info-panel"><b>गिलोय</b><p>आयुर्वेद की प्रमुख जड़ी-बूटी।</p></div></div>
+    <div class="step-entry"><div class="dot">01</div><div class="screen-frame"><img src="images/nagkesar.avif" alt="नागकेसर" loading="lazy" width="71" height="54" decoding="async"></div><div class="info-panel"><b>नागकेसर</b><p>स्वास्थ्य संतुलन हेतु उपयोगी</p></div></div>
+    <div class="step-entry"><div class="dot">02</div><div class="screen-frame"><img src="images/harad.avif" alt="हरड़" loading="lazy" width="71" height="54" decoding="async"></div><div class="info-panel"><b>हरड़</b><p>Digestive health को सपोर्ट करे।</p></div></div>
+    <div class="step-entry"><div class="dot">03</div><div class="screen-frame"><img src="images/triphala.avif" alt="त्रिफला" loading="lazy" width="71" height="54" decoding="async"></div><div class="info-panel"><b>त्रिफला</b><p>दैनिक स्वास्थ्य समर्थन।</p></div></div>
+    <div class="step-entry"><div class="dot">04</div><div class="screen-frame"><img src="images/arjun-chhal.avif" alt="अर्जुन छाल" loading="lazy" width="71" height="54" decoding="async"></div><div class="info-panel"><b>अर्जुन छाल</b><p>प्राकृतिक स्वास्थ्य समर्थन।</p></div></div>
+    <div class="step-entry"><div class="dot">05</div><div class="screen-frame"><img src="images/neem.avif" alt="नीम" loading="lazy" width="71" height="54" decoding="async"></div><div class="info-panel"><b>नीम</b><p>Natural गुणों से भरपूर।</p></div></div>
+    <div class="step-entry"><div class="dot">06</div><div class="screen-frame"><img src="images/giloy.avif" alt="गिलोय" loading="lazy" width="71" height="54" decoding="async"></div><div class="info-panel"><b>गिलोय</b><p>आयुर्वेद की प्रमुख जड़ी-बूटी।</p></div></div>
   </div>
 </section>
-
-
-
 
 <!-- section-5 -->
 <section class="sec">
   <div class="premium-trust-grid">
     <h2 class="feature-title">विश्वास के साथ सही चुनाव</h2>
     <div class="feature-grid">
-      <div class="feature-card"><div class="icon-wrap"><div class="pulse-effect"></div><img src="images/gmp.avif" alt="" class="pulse-effect-img" loading="lazy" width="44" height="44"></div><div class="feature-text">GMP Certified Manufacturing</div></div>
-      <div class="feature-card"><div class="icon-wrap"><div class="pulse-effect"></div><img src="images/iso.avif" alt="" class="pulse-effect-img" loading="lazy" width="44" height="44"></div><div class="feature-text">ISO Certified Facility</div></div>
-      <div class="feature-card"><div class="icon-wrap"><div class="pulse-effect"></div><img src="images/quality.avif" alt="" class="pulse-effect-img" loading="lazy" width="44" height="44"></div><div class="feature-text">Quality Tested Ingredients</div></div>
-      <div class="feature-card"><div class="icon-wrap"><div class="pulse-effect"></div><img src="images/aayurvedic.avif" alt="" class="pulse-effect-img" loading="lazy" width="44" height="44"></div><div class="feature-text">Ayurvedic Formulation</div></div>
+      <div class="feature-card"><div class="icon-wrap"><div class="pulse-effect"></div><img src="images/gmp.avif" alt="GMP" class="pulse-effect-img" loading="lazy" width="44" height="44" decoding="async"></div><div class="feature-text">GMP Certified Manufacturing</div></div>
+      <div class="feature-card"><div class="icon-wrap"><div class="pulse-effect"></div><img src="images/iso.avif" alt="ISO" class="pulse-effect-img" loading="lazy" width="44" height="44" decoding="async"></div><div class="feature-text">ISO Certified Facility</div></div>
+      <div class="feature-card"><div class="icon-wrap"><div class="pulse-effect"></div><img src="images/quality.avif" alt="Quality" class="pulse-effect-img" loading="lazy" width="44" height="44" decoding="async"></div><div class="feature-text">Quality Tested Ingredients</div></div>
+      <div class="feature-card"><div class="icon-wrap"><div class="pulse-effect"></div><img src="images/aayurvedic.avif" alt="Ayurvedic" class="pulse-effect-img" loading="lazy" width="44" height="44" decoding="async"></div><div class="feature-text">Ayurvedic Formulation</div></div>
     </div>
   </div>
 </section>
 
-
-
 <!-- section-6 -->
 <div class="doctor-section-v4">
- 
   <div class="doc-photo-box"></div>
-  
   <h2 class="doc-name-main">Dr. R. K. Sharma</h2>
   <div class="doc-designation">SENIOR AYURVEDIC SPECIALIST</div>
-  
-  <div class="main-quote">
-    "Piles Care का संतुलित आयुर्वेदिक मिश्रण बवासीर की जड़ पर काम करता है। मैंने हजारों मरीजों को इससे राहत पाते देखा है। यह एक सुरक्षित और असरदार विकल्प है।"
-  </div>
-
+  <div class="main-quote">"Piles Care का संतुलित आयुर्वेदिक मिश्रण बवासीर की जड़ पर काम करता है। मैंने हजारों मरीजों को इससे राहत पाते देखा है। यह एक सुरक्षित और असरदार विकल्प है।"</div>
   <a href="#orderForm" class="cta-link-doc">विशेषज्ञ से सलाह लें →</a>
 </div>
-
-
-
 
 <!-- section-7 -->
 <section class="sec">
@@ -1176,20 +522,12 @@ alt="Piles Care Banner">
   </div>
 </section>
 
-
-
-
-
 <!-- section-8 -->
 <div class="comparison-main">
   <h2 class="sect-8-h2">पहले और अब में Difference</h2>
   <div class="image-header">
-    <div class="img-side" data-label="BEFORE" style="background-color:#ccc;">
-        <img src="images/sect-5-bf-1stimg.avif" alt="" loading="lazy" width="156" height="158">
-    </div>
-    <div class="img-side" data-label="AFTER" style="background-color:#eee;">
-        <img src="images/sect-5-af-1stimg.avif" alt="" loading="lazy" width="156" height="158">
-    </div>
+    <div class="img-side" data-label="BEFORE"><img src="images/sect-5-bf-1stimg.avif" alt="Before" loading="lazy" width="156" height="158" decoding="async"></div>
+    <div class="img-side" data-label="AFTER"><img src="images/sect-5-af-1stimg.avif" alt="After" loading="lazy" width="156" height="158" decoding="async"></div>
   </div>
   <div class="content-area">
     <div class="box-grid">
@@ -1198,12 +536,8 @@ alt="Piles Care Banner">
     </div>
   </div>
   <div class="image-header">
-    <div class="img-side" data-label="BEFORE" style="background-color:#ccc;">
-        <img src="images/sect-5-bf-2ndimg.avif" alt="" loading="lazy" width="156" height="158">
-    </div>
-    <div class="img-side" data-label="AFTER" style="background-color:#eee;">
-        <img src="images/sect-5-af-2ndimg.avif" alt="" loading="lazy" width="156" height="158">
-    </div>
+    <div class="img-side" data-label="BEFORE"><img src="images/sect-5-bf-2ndimg.avif" alt="Before" loading="lazy" width="156" height="158" decoding="async"></div>
+    <div class="img-side" data-label="AFTER"><img src="images/sect-5-af-2ndimg.avif" alt="After" loading="lazy" width="156" height="158" decoding="async"></div>
   </div>
   <div class="content-area">
     <div class="box-grid">
@@ -1212,9 +546,6 @@ alt="Piles Care Banner">
     </div>
   </div>
 </div>
-
-
-
 
 <!-- section-9 -->
 <div class="wrap">
@@ -1245,7 +576,7 @@ alt="Piles Care Banner">
   <div class="product-section">
     <div class="product-img-wrap">
       <div class="product-img-bg">
-       <img src="images/product.avif" alt="Piles Care" style="width: 80px; height: 80px; object-fit: contain;" loading="lazy">
+        <img src="images/product.avif" alt="Piles Care" style="width:80px;height:80px;object-fit:contain;" loading="lazy" decoding="async">
       </div>
       <div class="badge-new">NEW</div>
       <div class="badge-off">40% OFF</div>
@@ -1253,8 +584,6 @@ alt="Piles Care Banner">
     <div class="product-info">
       <div class="product-name">Piles Care Capsules</div>
       <div class="product-sub">100% Natural Ayurvedic Formula<br>Fast Relief · No Side Effects</div>
-    
-    
     </div>
   </div>
   <div class="body">
@@ -1283,305 +612,70 @@ alt="Piles Care Banner">
     </div>
     <div class="cta-wrap">
       <button class="cta-btn" onclick="location.href='#orderForm'"><div class="cta-shine"></div>🛒 अभी ऑर्डर बुक करें <span class="cta-arrow">→</span></button>
-   
     </div>
   </div>
   <div class="ftr">
-     <div class="fi"><i class="ti ti-headset"></i><span>24/7 Support</span></div>
+    <div class="fi"><i class="ti ti-headset"></i><span>24/7 Support</span></div>
     <div class="fi"><i class="ti ti-certificate"></i><span>Certified</span></div>
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-<html>
-    <head>
-        <style>
-            #loading {
-        display: none;
-        color: #fff;
-        font-size: 16px;
-        margin-top: 10px;
-      }
-
-      #poweredBy {
-        text-align: center;
-        color: #fff;
-        font-size: 14px;
-        margin-top: 20px;
-      }
-/* FULL SCREEN LOADER */
-#loaderOverlay{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-/* SPINNER */
-.loader {
-  width: 50px;
-  height: 50px;
-  border: 5px solid #fff;
-  border-top: 5px solid gold;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-
-
-
-.form-box{
-    max-width:450px;
-    width: 100%;
-    padding:25px 30px;
-    color:white;
-}
-
-/* Heading */
-.form-box h2{
-    margin-top: -2px;
-    font-size:32px;
-    line-height: 1.1;
-    font-weight:600;
-    margin-bottom:20px;
-    color:var(--forest-d);
-}
-
-/* Input container */
-.input-group{
-    margin-bottom:18px;
-}
-
-/* Label */
-label{
-    font-size:16px;
-    font-weight:600;
-    margin-bottom:6px;
-    display:block;
-}
-
-/* Input fields */
-input{
-    width:100%;
-    padding:12px;
-    border-radius:10px;
-    border:none;
-    outline:none;
-    font-size:16px;
-}
-.btn-cta{
-    width:100%;
-    padding:13px;
-    font-size:18px;
-    font-weight:600;
-    background:var(--forest);
-    color:white;
-    border:none;
-    border-radius:12px;
-    margin-top:8px;
-    cursor:pointer;
-    animation:pulse 2s infinite;
-    }
-    @keyframes pulse{
-      0%{box-shadow:0 0 0 0 rgba(175, 152, 75, 0.6)}
-      70%{box-shadow:0 0 0 20px rgba(236,72,153,0)}
-      100%{box-shadow:0 0 0 0 rgba(236,72,153,0)}
-    }
-
-@media (max-width: 480px){
-
-  .form-box{
-    padding: 20px 16px;
-  }
-
-  .form-box h2{
-    font-size: 22px;
-    text-align:left;
-  }
-
-  label{
-    font-size: 14px;
-  }
-
-  input{
-    font-size: 15px;
-    padding: 11px;
-    border-radius: 8px;
-  }
-
-  .btn-cta{
-    font-size: 16px;
-    padding: 12px;
-    border-radius: 10px;
-  }
-}
-
-
-
-
-@keyframes spin {
-  100% { transform: rotate(360deg); }
-}
-   
-        </style>
-
-        <script>
-  function submitForm(event) {
-  event.preventDefault();
-
-  const form = event.target;
-
-  const submitBtn = form.querySelector("button[type='submit'], input[type='submit']");
-  if (submitBtn) {
-    submitBtn.style.display = "none";
-    submitBtn.disabled = true;
-  }
-
-  // 🔥 SHOW LOADER
-  document.getElementById("loaderOverlay").style.display = "flex";
-
-  const formData = new FormData(form);
-  let redirected = false;
-
-  fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec', {
-    method: 'POST',
-    body: formData
-  })
-  .then(response => response.text())
-  .then(data => {
-
-    if (!redirected) {
-      redirected = true;
-
-      // 🔥 REDIRECT
-      window.location.href = './Thankyou.html';
-
-      // 🔥 REFRESH BACK PAGE
-      setTimeout(() => {
-        window.location.reload();
-      }, 2000);
-    }
-
-  })
-  .catch(error => {
-    console.error('Fetch error:', error);
-
-    if (!redirected) {
-      redirected = true;
-      window.location.href = './Thankyou.html';
-    }
-  });
-
-  return false;
-}
-
-  // Animated dots for loading state
-   let dotCount = 1;
-  setInterval(() => {
-    const d = document.getElementById('dotAnim');
-    if (d) { 
-      dotCount = (dotCount % 3) + 1; 
-      d.textContent = '.'.repeat(dotCount); 
-    }
-  }, 500);
-</script>
-    </head>
-    <body>
-
 <!-- section-10 -->
 <section class="sect">
-<div class="form-box">
-    <h2>बवासीर की परेशानी को अपनी जिंदगी पर हावी मत होने दीजिए
-अभी Piles Care ऑर्डर करें
-</h2>
-
+  <div class="form-box">
+    <h2>बवासीर की परेशानी को अपनी जिंदगी पर हावी मत होने दीजिए — अभी Piles Care ऑर्डर करें</h2>
     <form id="orderForm" onsubmit="submitForm(event)">
-        <div class="input-group">
-            <label>नाम:</label>
-            <input type="text" name="name"  placeholder="अपना नाम दर्ज करें" required>
+      <div class="input-group">
+        <label>नाम:</label>
+        <input type="text" name="name" placeholder="अपना नाम दर्ज करें" required autocomplete="name">
+      </div>
+      <div class="input-group">
+        <label>मोबाइल नंबर (10 अंक):</label>
+        <input type="tel" name="phone" maxlength="10" pattern="[6-9][0-9]{9}" placeholder="अपना मोबाइल नंबर दर्ज करें" required autocomplete="tel">
+      </div>
+      <button class="btn-cta" type="submit">Order Now</button>
+      <div id="loaderOverlay">
+        <div style="text-align:center;">
+          <div class="loader"></div>
+          <p style="color:white;margin-top:10px;">Processing<span id="dotAnim"></span></p>
         </div>
-
-        <div class="input-group">
-            <label>मोबाइल नंबर (10 अंक):</label>
-            <input type="tel" name="phone"  maxlength="10" pattern="[6-9][0-9]{9}" placeholder="अपना मोबाइल नंबर दर्ज करें" required>
-        </div>
-
-        <button class="btn-cta"  type="submit">Order Now
-</button>
-<div id="loaderOverlay">
-  <div style="text-align:center;">
-    <div class="loader"></div>
-    <p style="color:white;margin-top:10px;">
-      Processing<span id="dotAnim"></span>
-    </p>
-  </div>
-</div>
+      </div>
     </form>
-</div>
+  </div>
 </section>
-        
-    </body>
-</html>
-
-
-
-
 
 <!-- section-11 guarantee -->
 <div class="split-container">
   <div class="scan-header"><h2>गुणवत्ता और ग्राहक संतुष्टि का वादा</h2></div>
-  <div class="mechanism-row"><div class="row-right"><h4>बेहतरीन गुणवत्ता के Ingredients</h4><p>उच्च गुणवत्ता वाले चयनित Ingredients के साथ तैयार।</p></div><img src="images/pre.avif" class="img-overlay" loading="lazy" width="75" height="75" alt="quality"></div>
-  <div class="mechanism-row"><div class="row-right"><h4>सुरक्षित पैकेजिंग</h4><p>हर ऑर्डर को सुरक्षित और साफ पैकेजिंग में भेजा जाता है।</p></div><img src="images/safe-pack.avif" class="img-overlay" loading="lazy" width="75" height="75" alt="safe packing"></div>
-  <div class="mechanism-row"><div class="row-right"><h4>ग्राहक सहायता Available</h4><p>जरूरत पड़ने पर हमारी सहायता टीम आपकी मदद के लिए तैयार है।</p></div><img src="images/customer.avif" class="img-overlay" loading="lazy" width="75" height="75" alt="customer-support"></div>
-  <div class="mechanism-row"><div class="row-right"><h4>भरोसेमंद सेवा</h4><p>हजारों ग्राहकों के भरोसे और संतुष्टि के साथ उपयोग किया गया।</p></div><img src="images/reliable.avif" class="img-overlay" loading="lazy" width="75" height="75" alt="reliable"></div>
+  <div class="mechanism-row"><div class="row-right"><h4>बेहतरीन गुणवत्ता के Ingredients</h4><p>उच्च गुणवत्ता वाले चयनित Ingredients के साथ तैयार।</p></div><img src="images/pre.avif" class="img-overlay" loading="lazy" width="75" height="75" alt="quality" decoding="async"></div>
+  <div class="mechanism-row"><div class="row-right"><h4>सुरक्षित पैकेजिंग</h4><p>हर ऑर्डर को सुरक्षित और साफ पैकेजिंग में भेजा जाता है।</p></div><img src="images/safe-pack.avif" class="img-overlay" loading="lazy" width="75" height="75" alt="safe packing" decoding="async"></div>
+  <div class="mechanism-row"><div class="row-right"><h4>ग्राहक सहायता Available</h4><p>जरूरत पड़ने पर हमारी सहायता टीम आपकी मदद के लिए तैयार है।</p></div><img src="images/customer.avif" class="img-overlay" loading="lazy" width="75" height="75" alt="customer-support" decoding="async"></div>
+  <div class="mechanism-row"><div class="row-right"><h4>भरोसेमंद सेवा</h4><p>हजारों ग्राहकों के भरोसे और संतुष्टि के साथ उपयोग किया गया।</p></div><img src="images/reliable.avif" class="img-overlay" loading="lazy" width="75" height="75" alt="reliable" decoding="async"></div>
 </div>
-
-
-
-
 
 <!-- section-12 testimonials -->
 <div class="pc-testimonial-wrapper">
   <div class="pc-testimonial-title">संतुष्ट ग्राहकों की राय</div>
   <div class="pc-testimonial-card">
-    <div class="pc-testimonial-header"><div class="pc-user-details"><h2>महेश कुमार</h2><p>Verified Customer</p><div class="pc-rating-stars">★★★★★</div></div><div class="pc-user-avatar"><img src="images/mahesh.avif" alt="User" loading="lazy" width="54" height="54"></div></div>
+    <div class="pc-testimonial-header"><div class="pc-user-details"><h2>महेश कुमार</h2><p>Verified Customer</p><div class="pc-rating-stars">★★★★★</div></div><div class="pc-user-avatar"><img src="images/mahesh.avif" alt="महेश कुमार" loading="lazy" width="54" height="54" decoding="async"></div></div>
     <div class="pc-review-text">"पहले हर दिन असुविधा महसूस होती थी। Piles Care को अपनी हेल्थ रूटीन में शामिल करने के बाद मैं खुद को पहले से बेहतर महसूस कर रहा हूं।"</div>
   </div>
   <div class="pc-testimonial-card">
-    <div class="pc-testimonial-header"><div class="pc-user-details"><h2>राजेंद्र सिंह</h2><p>Verified Customer</p><div class="pc-rating-stars">★★★★★</div></div><div class="pc-user-avatar"><img src="images/rajesh.avif" alt="User" loading="lazy" width="54" height="54"></div></div>
+    <div class="pc-testimonial-header"><div class="pc-user-details"><h2>राजेंद्र सिंह</h2><p>Verified Customer</p><div class="pc-rating-stars">★★★★★</div></div><div class="pc-user-avatar"><img src="images/rajesh.avif" alt="राजेंद्र सिंह" loading="lazy" width="54" height="54" decoding="async"></div></div>
     <div class="pc-review-text">"बवासीर की वजह से होने वाली असुविधा और परेशानी के कारण मैंने इसे चुना। इसका आयुर्वेदिक फॉर्मूला मुझे पसंद आया और इसे अपनी दिनचर्या में शामिल करना आसान लगा।"</div>
   </div>
   <div class="pc-testimonial-card">
-    <div class="pc-testimonial-header"><div class="pc-user-details"><h2>सुरेश यादव</h2><p>Verified Customer</p><div class="pc-rating-stars">★★★★★</div></div><div class="pc-user-avatar"><img src="images/suresh.avif" alt="User" loading="lazy" width="54" height="54"></div></div>
+    <div class="pc-testimonial-header"><div class="pc-user-details"><h2>सुरेश यादव</h2><p>Verified Customer</p><div class="pc-rating-stars">★★★★★</div></div><div class="pc-user-avatar"><img src="images/suresh.avif" alt="सुरेश यादव" loading="lazy" width="54" height="54" decoding="async"></div></div>
     <div class="pc-review-text">"Digestive Health को सपोर्ट करने के लिए मैंने Piles Care का उपयोग शुरू किया और मेरा अनुभव अच्छा रहा।"</div>
   </div>
 </div>
-
-
-
-
 
 <!-- section-13 FAQ -->
 <section>
   <h2 class="sec-h">अक्सर पूछे जाने वाले प्रश्न</h2>
   <div class="faqs">
     <div class="faq"><div class="faq-q" onclick="tFaq(this)">क्या Piles Care आयुर्वेदिक है?</div><div class="faq-a">हाँ, यह आयुर्वेदिक जड़ी-बूटियों से तैयार किया गया फॉर्मूला है।</div></div>
-   <div class="faq"><div class="faq-q" onclick="tFaq(this)">क्या पूरे भारत में डिलीवरी Available है?</div><div class="faq-a">हाँ। पूरे भारत में डिलीवरी Available है।</div></div>
+    <div class="faq"><div class="faq-q" onclick="tFaq(this)">क्या पूरे भारत में डिलीवरी Available है?</div><div class="faq-a">हाँ। पूरे भारत में डिलीवरी Available है।</div></div>
     <div class="faq"><div class="faq-q" onclick="tFaq(this)">क्या COD Available है?</div><div class="faq-a">हाँ, अधिकांश स्थानों पर Available है।</div></div>
     <div class="faq"><div class="faq-q" onclick="tFaq(this)">क्या पुरुष और महिलाएं दोनों उपयोग कर सकते हैं?</div><div class="faq-a">हाँ, पुरुष और महिलाएं दोनों इसका उपयोग कर सकते हैं।</div></div>
   </div>
@@ -1595,6 +689,7 @@ input{
   <button class="float-btn" onclick="location.href='#orderForm'">अभी ऑर्डर करें 🛒</button>
 </div>
 
+<!-- All JS deferred at bottom -->
 <script>
 (function(){
   var end=new Date();
@@ -1607,7 +702,8 @@ input{
     document.getElementById('cm').textContent=pad(Math.floor((diff%3600000)/60000));
     document.getElementById('cs').textContent=pad(Math.floor((diff%60000)/1000));
   }
-  tick();setInterval(tick,1000);
+  tick();
+  setInterval(tick,1000);
   setTimeout(function(){document.getElementById('sf').style.width='23%';},400);
   var orders=47;
   setInterval(function(){if(Math.random()>0.6){orders++;var e=document.getElementById('oc');if(e)e.textContent=orders;}},4000);
@@ -1615,9 +711,6 @@ input{
   setInterval(function(){vi=(vi+1)%v.length;var e=document.getElementById('olive');if(e)e.textContent=v[vi]+' लोग अभी देख रहे हैं';},3000);
 })();
 
-
-
-
 function submitForm(event){
   event.preventDefault();
   var form=event.target;
@@ -1633,50 +726,31 @@ function submitForm(event){
   return false;
 }
 
-function submitForm(event){
-  event.preventDefault();
-  var form=event.target;
-  var submitBtn=form.querySelector("button[type='submit'],input[type='submit']");
-  if(submitBtn){submitBtn.style.display='none';submitBtn.disabled=true;}
-  document.getElementById('loaderOverlay').style.display='flex';
-  var formData=new FormData(form);
-  var redirected=false;
-  fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec',{method:'POST',body:formData})
-  .then(function(r){return r.text();})
-  .then(function(){if(!redirected){redirected=true;window.location.href='./Thankyou.html';setTimeout(function(){window.location.reload();},2000);}})
-  .catch(function(){if(!redirected){redirected=true;window.location.href='./Thankyou.html';}});
-  return false;
-}
-  window.addEventListener('pageshow', function(event) {
-    // अगर ब्राउज़र 'back' बटन से आया है
-    if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
-      document.getElementById('orderForm').reset();
-    }
-  });
+var dotCount=1;
+setInterval(function(){
+  var d=document.getElementById('dotAnim');
+  if(d){dotCount=(dotCount%3)+1;d.textContent='.'.repeat(dotCount);}
+},500);
 
+window.addEventListener('pageshow',function(event){
+  if(event.persisted||(window.performance&&window.performance.navigation.type===2)){
+    document.getElementById('orderForm').reset();
+  }
+});
 
-  window.addEventListener('scroll', function() {
-    var floatBar = document.querySelector('.float-bar');
-    var formSection = document.getElementById('orderForm');
-    
-    if (floatBar && formSection) {
-      var rect = formSection.getBoundingClientRect();
-      
-      // चेक करता है कि क्या फॉर्म स्क्रीन के अंदर आ गया है
-      if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-        floatBar.style.display = 'none';
-      } else {
-        floatBar.style.display = 'flex';
-      }
-    }
-  });
+window.addEventListener('scroll',function(){
+  var floatBar=document.querySelector('.float-bar');
+  var formSection=document.getElementById('orderForm');
+  if(floatBar&&formSection){
+    var rect=formSection.getBoundingClientRect();
+    floatBar.style.display=(rect.top<=window.innerHeight&&rect.bottom>=0)?'none':'flex';
+  }
+},{ passive: true });
 
-
-
-  function tFaq(el){
+function tFaq(el){
   var it=el.parentElement;
   var was=it.classList.contains('open');
-  document.querySelectorAll('.faq').forEach(function(i){i.classList.remove('open')});
+  document.querySelectorAll('.faq').forEach(function(i){i.classList.remove('open');});
   if(!was)it.classList.add('open');
 }
 </script>

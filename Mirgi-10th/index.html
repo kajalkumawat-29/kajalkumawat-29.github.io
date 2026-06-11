@@ -5223,7 +5223,7 @@
 
   window.addEventListener('scroll', function () {
     var floatBar = document.querySelector('.float-bar');
-    var formSection = document.getElementById('orderForm');
+    var formSection = document.getElementById('lp_order_form');
     if (floatBar && formSection) {
       var rect = formSection.getBoundingClientRect();
       floatBar.style.display = (rect.top <= window.innerHeight && rect.bottom >= 0) ? 'none' : 'flex';

@@ -4263,7 +4263,7 @@
 
       .lp_wrap {
         font-family: 'halant', sans-serif;
-        background: var(--gold-primary);
+        background: var(--black-bg);
         overflow: hidden;
         max-width: 450px;
         width: 100%;
@@ -4324,7 +4324,18 @@
       .lp_body {
         padding: 30px 30px 24px;
         text-align: center;
+        
       }
+
+ 
+ .form-mainn{
+        background: rgb(51 183 36);
+    margin-left: -30px;
+    margin-right: -30px;
+    margin-bottom: -24px;
+    padding: 25px 30px;
+    border: 4px solid black;
+}
 
       .lp-heading{
         background-color: var(--black-bg);
@@ -4346,7 +4357,7 @@
       .lp_subline {
         font-size: 22px;
         font-weight: 900;
-        color: var(--black-bg);
+        color: var(--gold-muted);
         line-height: 1.7;
         margin-bottom: 22px;
 
@@ -4363,7 +4374,7 @@
       }
 
       .lp_benefit_card {
-        background: var(--black-bg);
+        background: var(--gold-muted);
         border: 1.5px solid rgba(26, 14, 0, 0.20);
         border-radius: 12px;
         padding: 13px 14px;
@@ -4375,40 +4386,36 @@
       .lp_benefit_icon {
         width: 36px;
         height: 36px;
-        background: var(--gold-muted);
+        background: var(--black-bg);
         border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
-        color: var(--black-bg);
+        color: var(--gold-muted);
         font-size: 18px;
       }
 
       .lp_benefit_title {
         font-size: 18px;
         font-weight: 700;
-        color: var(--gold-muted);
+        color: var(--black-bg);
         line-height: 1.3;
       }
 
       .lp_benefit_desc {
         font-size: 16px;
-        color: white;
+        color:black;
         margin-top: 2px;
         line-height: 1.4;
       }
 
-      .lp_divline {
-        border: none;
-        border-top: 1.5px solid rgba(26, 14, 0, 0.18);
-        margin: 0 0 22px;
-      }
+    
 
       .lp_form_title {
         font-size: 22px;
         font-weight: 700;
-        color: var(--lp-black);
+        color: white;
         margin-bottom: 16px;
         text-align: center;
       }
@@ -4424,7 +4431,7 @@
         gap: 6px;
         font-size: 18px;
         font-weight: 700;
-        color: var(--lp-black);
+        color: white;
         margin-bottom: 7px;
       }
 
@@ -4490,8 +4497,8 @@
       .lp_step_num {
         width: 34px;
         height: 34px;
-        background: var(--black-bg);
-        color: var(--gold-muted);
+        background: var(--gold-muted);
+        color: var(--black-bg);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -4503,7 +4510,7 @@
       .lp_step_label {
         font-size: 18px;
         font-weight: 600;
-        color: var(--lp-black);
+        color: var(--gold-muted);
         text-align: center;
         line-height: 1.2;
       }
@@ -4511,17 +4518,17 @@
       .lp_step_line {
         flex: 0.6;
         height: 2px;
-        background: var(--black-bg);
+        background: var(--gold-muted);
         opacity: 0.3;
         margin-bottom: 18px;
       }
 
       .lp_btn_cta {
         width: 100%;
-        background: var(--black-bg);
-        color: var(--gold-muted);
+        background: #f10e0e;
+        color: white;
         border: none;
-        border-radius: var(--lp-radius-card);
+        border-radius: 20px;
         padding: 19px 20px;
         font-size: 19px;
         font-weight: 800;
@@ -4531,12 +4538,41 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
-        transition: transform 0.15s, background 0.2s;
-        animation: lp_pulse 2s infinite;
+        transition: transform 0.5s, background 0.2s;
+         animation: premiumBounce 3.5s ease-in-out infinite;
         margin-top: 4px;
         line-height: 1.2;
       }
+@keyframes premiumBounce{
 
+    0%,100%{
+        transform:translateY(0) scale(1);
+    }
+
+    10%{
+        transform:translateY(0) scale(1.06);
+    }
+
+    15%{
+        transform:translateY(-6px) scale(1.08);
+    }
+
+    20%{
+        transform:translateY(0) scale(1);
+    }
+
+    60%{
+        transform:translateY(0) scale(1);
+    }
+
+    70%{
+        transform:translateY(-4px) scale(1.04);
+    }
+
+    75%{
+        transform:translateY(0) scale(1);
+    }
+}
       .lp_btn_cta:hover {
         transform: translateY(-2px);
       }
@@ -4548,7 +4584,7 @@
       .lp_cta_sub {
         text-align: center;
         font-size: 18px;
-        color: #2a1800;
+        color: white;
         font-weight: 600;
         margin-top: 12px;
         display: flex;
@@ -4753,6 +4789,14 @@
   .lp_proof_quote{
     font-size:13px;
   }
+  .form-mainn {
+    background: rgb(51 183 36);
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: -24px;
+    padding: 25px 30px;
+    border: 4px solid black;
+}
 
 }
     </style>
@@ -4773,7 +4817,7 @@
         <h1 class="lp_headline">हजारों लोग <span style="color:var(--gold-muted)">बेहतर स्वास्थ्य</span> की ओर<br>कदम बढ़ा चुके हैं
           — अब आपकी बारी है।</h1>
           </div>
- <div class="lp_body">
+        <div class="lp_body">
         <p class="lp_subline">नीचे अपनी Details भरें और तुरंत Order करें।</p>
 
         <div class="lp_benefits">
@@ -4824,8 +4868,9 @@
           </div>
         </div>
 
-        <hr class="lp_divline" aria-hidden="true">
-
+        
+        <div class="form-mainn">
+       
         <p class="lp_form_title">
           <i class="ti ti-clipboard-list" style="font-size:22px;vertical-align:-2px" aria-hidden="true"></i>
           अपनी Details भरें
@@ -4867,7 +4912,7 @@
 
           <div id="lp_loading">Processing Your Order...</div>
         </form>
-
+</div>
       </div>
 
       <div class="lp_footer_band">

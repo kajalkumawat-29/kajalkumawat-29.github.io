@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2474768816312806');
+    fbq('track', 'PageView');
+    fbq('track', 'SubmitLead');
+    fbq('track', 'Lead');
+    fbq('track', 'Purchase', {
+      value: 1999.00,
+      currency: 'INR'
+    });
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2474768816312806&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | Gathheal Capsule</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Google Font -->
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Arya:wght@400;700&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Yantramanav:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet"> -->
+
+  <style>
+    /* Color Themes */
+    :root {
+            --primary: #267156;
+            /* Deep herbal green (label base) */
+            --primary-dark: #fbbf24;
+            /* Darker green (shadows / footer) */
+            --primary-light: #267156;
+            /* Lighter green highlight */
+
+            --secondary: #f59e0b;
+            /* Mid green (gradients, cards) */
+            --secondary-light: #064e3b;
+            /* Soft success green */
+
+            --background: #F4F8F3;
+            /* Page background (very light green-white) */
+            --background-light: #FFFFFF;
+            /* Card background */
+            --light: #E6F0EA;
+            /* Section blocks */
+            --light-pure: #FFFFFF;
+
+            --text-dark: #1B2B21;
+            /* Strong readable text */
+            --text-light: #FFFFFF;
+            /* On dark green */
+            --text-muted: #5F7D6B;
+            /* Supporting text */
+
+            --accent: #bab295;
+            /* Capsule label yellow */
+            --accent-light: #fbcf0b;
+            /* Soft highlight yellow */
+            --warning: #E2C24E;
+
+            --success: #4CAF50;
+            --green-accent: #2F7A45;
+
+            --black-accent: #0F1A13;
+            /* Cap / footer */
+            --shadow-dark: rgba(0, 0, 0, 0.25);
+
+            --purple-dark: #1F5B2E;
+            --purple-medium: #2E6E3F;
+            --purple-light: #E6F0EA;
+
+            --coral-primary: #1F5B2E;
+            --coral-secondary: #2E6E3F;
+            --coral-light: #E6F0EA;
+        }
+
+
+    /* Delivery Animation Styles */
+    @keyframes slideRight {
+      0% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      50% {
+        transform: translateX(10px);
+        opacity: 0.7;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    @keyframes truckMove {
+      0% {
+        transform: translateX(-20px);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .arrow-animation {
+      animation: slideRight 2s ease-in-out infinite;
+    }
+
+    .product-pulse {
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    .truck-bounce {
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    .truck-move {
+      animation: truckMove 1.5s ease-out;
+    }
+
+    .bg-brand-primary {
+      background-color: var(--primary);
+    }
+
+    .bg-brand-secondary {
+      background-color: var(--secondary);
+    }
+
+    .bg-brand-light {
+      background-color: var(--light);
+    }
+
+    .bg-brand-muted {
+      background-color: var(--background);
+    }
+
+    .bg-brand-accent {
+      background-color: var(--text-dark);
+    }
+
+    .text-brand-primary {
+      color: var(--primary);
+    }
+
+    .text-brand-secondary {
+      color: var(--secondary);
+    }
+
+    .text-brand-light {
+      color: var(--light);
+    }
+
+    .text-brand-muted {
+      color: var(--background);
+    }
+
+    .text-brand-accent {
+      color: var(--text-dark);
+    }
+
+    .border-brand-primary {
+      border-color: var(--primary);
+    }
+
+    .border-brand-secondary {
+      border-color: var(--secondary);
+    }
+
+    .border-brand-light {
+      border-color: var(--light);
+    }
+
+    .border-brand-muted {
+      border-color: var(--background);
+    }
+
+    .border-brand-accent {
+      border-color: var(--text-dark);
+    }
+
+    .font-arya {
+      font-family: 'Arya', sans-serif;
+    }
+
+    .font-inknut {
+      font-family: 'Inknut Antiqua', serif;
+    }
+
+    .font-yantra {
+      font-family: 'Yantramanav', sans-serif;
+    }
+
+
+
+/* policy--- */
+
+     .pl-wrap {
+  width: 100%;
+  max-width: 450px;
+  margin: 12px auto 0;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.pl-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.pl-row:last-child {
+  margin-bottom: 0;
+}
+
+.pl-link {
+  background: none;
+  border: none;
+  font-size: 8px;
+  font-weight: 500;
+  color: #267156;
+  opacity: 0.7;
+  cursor: pointer;
+  padding: 2px 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.pl-link:hover {
+  color: #1a5240;
+  opacity: 1;
+}.pl-sep{color:#c9ddd7;font-size:8px;user-select:none}
+  .pp-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:9999;align-items:center;justify-content:center}
+  .pp-overlay.show{display:flex}
+  .pp-modal{background:#fff;border-radius:18px;max-width:420px;width:90%;max-height:80vh;overflow-y:auto;padding:22px 18px 18px;position:relative}
+  .pp-close{position:absolute;top:14px;right:14px;background:#e6f3ed;border:none;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#267156;font-size:16px}
+  .pp-close:hover{background:#c9ddd7}
+  .pp-mtitle{font-size:17px;font-weight:700;color:#1a5240;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+  .pp-mtitle i{font-size:20px}
+  .pp-mbadge{display:inline-block;background:#e6f3ed;color:#267156;font-size:11px;font-weight:600;padding:2px 10px;border-radius:999px;margin-bottom:12px}
+  .pp-mpara{font-size:14px;color:#333;line-height:1.7;margin-bottom:10px}
+  .pp-mlist{padding-left:0;list-style:none;margin:0 0 10px}
+  .pp-mlist li{font-size:14px;color:#333;line-height:1.6;padding:5px 0 5px 20px;position:relative;border-bottom:1px dashed #e2ede9}
+  .pp-mlist li:last-child{border-bottom:none}
+  .pp-mlist li::before{content:"";position:absolute;left:4px;top:13px;width:7px;height:7px;background:#39ad7d;border-radius:50%}
+  .pp-mhl{background:#e6f3ed;border-left:3px solid #267156;border-radius:0 8px 8px 0;padding:9px 13px;font-size:13px;color:#1a5240;margin-bottom:10px}
+  .pp-cgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+  .pp-citem{background:#f4faf7;border:1px solid #c9ddd7;border-radius:10px;padding:10px;text-align:center}
+  .pp-citem i{font-size:20px;color:#267156;display:block;margin-bottom:4px}
+  .pp-citem .pp-clbl{font-size:11px;color:#888;margin-bottom:2px}
+  .pp-citem .pp-cval{font-size:13px;font-weight:600;color:#1a5240}
+  </style>
+  <script>
+    // Get form data and display customer name
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get URL parameters (if any) and clean URL
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('name') || urlParams.has('phone')) {
+        // Clean the URL without reloading the page
+        const cleanUrl = window.location.protocol + '//' + window.location.host + window.location.pathname;
+        window.history.replaceState({}, document.title, cleanUrl);
+      }
+
+      // Get customer data from localStorage (set by index.html)
+      const customerData = localStorage.getItem('customerOrder');
+      let customerName = '';
+
+      if (customerData) {
+        try {
+          const parsedData = JSON.parse(customerData);
+          customerName = parsedData.customerName || '';
+        } catch (e) {
+          console.log('Error parsing customer data:', e);
+        }
+      }
+
+      // Display customer name with 'ji' in the heading
+      const nameDisplay = document.getElementById('customerName');
+      if (nameDisplay && customerName) {
+        nameDisplay.textContent = ` ${customerName} जी`;
+      }
+    });
+
+
+
+
+    // policy--
+    
+var contents = {
+  privacy:`<div class="pp-mtitle"><i class="ti ti-shield-lock" aria-hidden="true"></i>Privacy Policy</div><div class="pp-mbadge">Last updated: June 2025</div><p class="pp-mpara">GathHeal आपकी personal information की सुरक्षा को सर्वोच्च प्राथमिकता देता है। जब आप order करते हैं तो हम निम्नलिखित जानकारी एकत्र करते हैं:</p><ul class="pp-mlist"><li>नाम, मोबाइल नंबर और delivery address</li><li>Payment details (encrypted और secure)</li><li>Order history और purchase records</li></ul><div class="pp-mhl">आपकी जानकारी किसी third-party को नहीं बेची जाती। इसका उपयोग केवल order processing और delivery के लिए किया जाता है।</div><p class="pp-mpara">हम industry-standard SSL encryption का उपयोग करते हैं। किसी भी privacy concern के लिए हमसे contact करें।</p>`,
+
+  terms:`<div class="pp-mtitle"><i class="ti ti-file-description" aria-hidden="true"></i>Terms & Conditions</div><div class="pp-mbadge">Please read carefully</div><p class="pp-mpara">GathHeal का उपयोग करके आप इन terms से सहमत होते हैं:</p><ul class="pp-mlist"><li>Product results व्यक्ति-दर-व्यक्ति अलग हो सकते हैं</li><li>यह product किसी बीमारी का इलाज नहीं है — wellness supplement है</li><li>18 वर्ष से कम आयु के व्यक्ति बिना guardian consent के order न करें</li><li>Fake/fraudulent orders के लिए legal action लिया जा सकता है</li><li>Product images केवल representation के लिए हैं</li></ul><div class="pp-mhl">GathHeal किसी भी समय बिना prior notice के prices, offers या terms बदलने का अधिकार रखता है।</div>`,
+
+  shipping:`<div class="pp-mtitle"><i class="ti ti-truck-delivery" aria-hidden="true"></i>Shipping Policy</div><div class="pp-mbadge">Free Delivery All India</div><p class="pp-mpara">हम पूरे India में FREE shipping प्रदान करते हैं। Delivery timeline:</p><ul class="pp-mlist"><li>Metro cities (Delhi, Mumbai, Bengaluru): 3–5 business days</li><li>Tier-2 / Tier-3 cities: 5–7 business days</li><li>Remote / rural areas: 7–10 business days</li></ul><div class="pp-mhl">Order confirm होने के 24–48 घंटे के अंदर tracking number SMS/WhatsApp पर भेजा जाएगा।</div><ul class="pp-mlist"><li>Delivery attempt 3 बार की जाएगी — उसके बाद order वापस आ जाएगा</li><li>Incorrect address की जिम्मेदारी customer की होगी</li></ul>`,
+
+  cancel:`<div class="pp-mtitle"><i class="ti ti-refresh" aria-hidden="true"></i>Cancellation Policy</div><div class="pp-mbadge">7-Day Easy Return</div><p class="pp-mpara">आप order confirm होने के <strong>24 घंटे के अंदर</strong> cancellation request कर सकते हैं।</p><ul class="pp-mlist"><li>Order dispatch होने के बाद cancellation संभव नहीं</li><li>Damaged या wrong product मिलने पर 7 दिन के अंदर complaint करें</li><li>Opened/used products return नहीं किए जाएंगे</li><li>Refund 5–7 business days में original payment method पर</li></ul><div class="pp-mhl">Return के लिए product original packaging में होना ज़रूरी है। Unboxing video होने पर claim जल्दी process होता है।</div>`,
+
+  contact:`<div class="pp-mtitle"><i class="ti ti-headset" aria-hidden="true"></i>Contact Us</div><p class="pp-mpara">हमारी team आपकी मदद के लिए उपलब्ध है — सोमवार से शनिवार, सुबह 9 बजे से शाम 6 बजे तक।</p><div class="pp-cgrid"><div class="pp-citem"><i class="ti ti-phone" aria-hidden="true"></i><div class="pp-clbl">Call / WhatsApp</div><div class="pp-cval">+91 XXXXX XXXXX</div></div><div class="pp-citem"><i class="ti ti-mail" aria-hidden="true"></i><div class="pp-clbl">Email</div><div class="pp-cval">support@gathheal.com</div></div><div class="pp-citem"><i class="ti ti-clock" aria-hidden="true"></i><div class="pp-clbl">Support Hours</div><div class="pp-cval">Mon–Sat 9am–6pm</div></div><div class="pp-citem"><i class="ti ti-message-circle" aria-hidden="true"></i><div class="pp-clbl">Response Time</div><div class="pp-cval">Within 24 hours</div></div></div>`,
+
+  disclaimer:`<div class="pp-mtitle"><i class="ti ti-alert-circle" aria-hidden="true"></i>Legal Disclaimer</div><div class="pp-mbadge">Important Notice</div><p class="pp-mpara">GathHeal एक natural wellness supplement है। इस product के बारे में निम्नलिखित बातें ध्यान में रखें:</p><ul class="pp-mlist"><li>यह product किसी भी बीमारी का diagnosis, treatment, cure या prevention नहीं करता</li><li>Results individual to individual अलग हो सकते हैं</li><li>यह product FSSAI guidelines के अनुसार एक food supplement है, drug नहीं</li><li>किसी भी medical condition में उपयोग से पहले doctor से परामर्श करें</li><li>Pregnant, nursing women या किसी chronic illness वाले व्यक्ति पहले physician से consult करें</li></ul><div class="pp-mhl">Website पर दिए गए statements को Food & Drug Administration द्वारा evaluate नहीं किया गया है। यह product किसी disease को diagnose, treat, cure या prevent करने के लिए नहीं है।</div><p class="pp-mpara">Product की images, descriptions और testimonials केवल illustrative purpose के लिए हैं। GathHeal किसी भी indirect या consequential loss के लिए उत्तरदायी नहीं है।</p>`
+};
+
+function openModal(key){
+  document.getElementById('pp-content').innerHTML=contents[key];
+  document.getElementById('pp-overlay').classList.add('show');
+}
+function closeModal(){
+  document.getElementById('pp-overlay').classList.remove('show');
+}
+function closeIfOutside(e){
+  if(e.target===document.getElementById('pp-overlay'))closeModal();
+}
+
+  </script>
+</head>
+
+<body class="min-h-screen flex items-center justify-center px-4 font-inknut"
+  style="background: linear-gradient(135deg, #fef7ed 0%, var(--primary) 25%, var(--secondary) 50%, var(--light) 75%, var(--background) 100%);">
+
+  <section class="w-full max-h-auto max-w-md bg-white rounded-3xl shadow-2xl p-7 relative overflow-hidden"
+    style="border: 3px solid var(--light);">
+
+    <!-- Decorative Elements -->
+    <div class="absolute -top-16 -right-16 w-40 h-40 opacity-20 rounded-full"
+      style="background-color: var(--secondary);"></div>
+    <div class="absolute -bottom-16 -left-16 w-40 h-40 opacity-15 rounded-full"
+      style="background-color: var(--primary);"></div>
+
+    <div class="relative z-10 text-center">
+
+      <!-- Success Icon -->
+      <div class="w-20 h-20 mx-auto mb-5 rounded-full flex items-center justify-center shadow-xl"
+        style="background: linear-gradient(135deg, var(--primary), var(--secondary));">
+        <span class="text-white text-4xl">✔</span>
+      </div>
+
+      <!-- Heading -->
+      <h1 class="text-3xl leading-12 font-extrabold mb-2 font-inknut" style="color: var(--primary);">
+        धन्यवाद!<span id="customerName"></span> (Thank You!)
+      </h1>
+
+      <p class="text-lg font-semibold text-gray-800 font-arya">
+        आपका ऑर्डर सफलतापूर्वक प्राप्त हो गया है
+      </p>
+
+      <p class="mt-3 text-gray-700 font-yantra">
+        हमारी टीम <b>WhatsApp / कॉल</b> के माध्यम से
+        <br>जल्द ही आपसे संपर्क करेगी।
+      </p>
+
+      <!-- Product to Delivery Flow -->
+      <div class="mb-8 mt-6">
+
+        <!-- Inline Product → Truck Flow -->
+        <div class="flex items-center justify-center gap-6 mb-6">
+
+          <!-- Product -->
+          <div class="relative flex flex-col items-center">
+            <img src="./images/product.avif" alt="Gathheal Capsule" class="w-24 h-28 object-contain rounded-xl 
+               drop-shadow-[0_10px_25px_rgba(0,0,0,0.25)]
+               filter brightness-105" />
+            <span class="absolute -top-2 -right-2 w-6 h-6 rounded-full
+               flex items-center justify-center text-xs font-bold text-white"
+              style="background-color: var(--primary);">
+              1
+            </span>
+            <p class="mt-2 text-xs font-bold text-gray-700">Product</p>
+          </div>
+
+          <!-- Arrow -->
+          <div class="animate-pulse">
+            <svg class="w-8 h-8" fill="currentColor" style="color: var(--primary);" viewBox="0 0 24 24">
+              <path d="M13.025 1l-2.847 2.828 6.176 6.176H0v3.992h16.354l-6.176 6.176 2.847 2.828L24 12z" />
+            </svg>
+          </div>
+
+          <!-- Truck -->
+          <div class="relative flex flex-col items-center">
+            <div class="w-22 h-18 rounded-xl flex items-center justify-center
+               shadow-xl border-2" style="
+          background: linear-gradient(135deg, var(--secondary), var(--light));
+          border-color: var(--light);
+        ">
+              <span class="text-5xl">🚚</span>
+            </div>
+
+            <span class="absolute -top-2 -right-2 w-6 h-6 rounded-full
+               flex items-center justify-center text-xs font-bold text-white"
+              style="background-color: var(--primary);">
+              2
+            </span>
+            <p class="mt-2 text-xs font-bold text-gray-700">Delivery</p>
+          </div>
+
+        </div>
+
+        <!-- Status -->
+        <div class="grid grid-cols-2 gap-4 text-xs font-yantra text-center" style="color: var(--primary);">
+          <div>
+            <p class="font-bold">आपका ऑर्डर</p>
+            <p class="text-gray-600">Order Placed</p>
+          </div>
+          <div>
+            <p class="font-bold">डिस्पैच</p>
+            <p class="text-gray-600">In Transit</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Info Box -->
+      <div class="mt-5 rounded-2xl p-4 text-sm font-yantra"
+        style="background-color: var(--light); border: 2px solid var(--background); color: var(--primary);">
+        ⚠️ <b>Important:</b>
+        अगर आपने गलत मोबाइल नंबर या एड्रेस डाला है,
+        तो कृपया तुरंत रिप्लाई करके सही डिटेल्स भेजें।
+      </div>
+
+      <!-- Next Steps -->
+      <div class="mt-6 text-left text-gray-800 text-sm font-yantra">
+        <p class="font-bold mb-2 font-arya" style="color: var(--primary);">
+          आगे क्या होगा?
+        </p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>24 घंटे के अंदर कॉल करके ऑर्डर confirm करेंगे</li>
+          <li>आपके पते की पुष्टि करके डिलीवरी तय करेंगे</li>
+          <li>3-5 दिनों में Gathheal Capsule आपके घर पहुंचेगा</li>
+          <li><b>COD</b> - डिलीवरी के समय पैसा दें</li>
+        </ul>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="mt-8">
+        <a href="#"
+          class="block w-full py-3 rounded-2xl text-white text-base font-bold font-arya shadow-xl transition transform hover:scale-105"
+          style="background: linear-gradient(135deg, var(--secondary), var(--primary));">
+          Tracking details
+        </a>
+      </div>
+
+      <!-- Footer Trust -->
+      <p class="mt-5 text-xs text-gray-500 font-yantra">
+        Gathheal Capsule © All Rights Reserved
+      </p>
+
+      <!-- policy--- -->
+
+<div class="pl-wrap">
+  <div class="pl-row">
+    <button class="pl-link" onclick="openModal('privacy')">Privacy Policy</button>
+    <button class="pl-link" onclick="openModal('terms')">Terms & Conditions</pre></button>
+    <button class="pl-link" onclick="openModal('shipping')">Shipping Policy</button>
+  </div>
+
+  <div class="pl-row">
+    <button class="pl-link" onclick="openModal('cancel')">Cancellation Policy</button>
+    <button class="pl-link" onclick="openModal('contact')">Contact Us</button>
+    <button class="pl-link" onclick="openModal('disclaimer')">Legal Disclaimer</button>
+  </div>
+</div>
+
+<div class="pp-overlay" id="pp-overlay" onclick="closeIfOutside(event)">
+  <div class="pp-modal" id="pp-modal">
+    <button class="pp-close" onclick="closeModal()">
+      <i class="ti ti-x" aria-hidden="true"></i>
+    </button>
+    <div id="pp-content"></div>
+  </div>
+</div>
+    </div>
+
+
+  </section>
+
+
+
+
+</body>
+
+</html>

@@ -4910,14 +4910,29 @@ MOBILE SAME LAYOUT FIX
 
 
   //  data delete
-  window.addEventListener('scroll', function () {
-    var floatBar = document.querySelector('.float-bar');
-    var formSection = document.getElementById('lp_order_form');
-    if (floatBar && formSection) {
-      var rect = formSection.getBoundingClientRect();
-      floatBar.style.display = (rect.top <= window.innerHeight && rect.bottom >= 0) ? 'none' : 'flex';
-    }
-  }, { passive: true });
+ (function () {
+  var stickyCta = document.querySelector('.sticky-cta');
+  var orderForm = document.querySelector('#lp_order_form');
+
+  if (!stickyCta || !orderForm) return;
+
+  function checkVisibility() {
+    var rect = orderForm.getBoundingClientRect();
+    var viewH = window.innerHeight;
+
+    // Sirf tab hide karo jab form ka TOP visible ho (user form fill kar raha hai)
+    // Form ka bottom nikal gaya = wapas show karo
+    var formTopVisible = rect.top > 0 && rect.top < viewH;
+
+    stickyCta.setAttribute('style', formTopVisible
+      ? 'display:none !important'
+      : 'display:flex !important; position:fixed !important; bottom:0 !important; left:50% !important; transform:translateX(-50%) !important; width:100% !important; max-width:450px !important; z-index:9999 !important'
+    );
+  }
+
+  window.addEventListener('scroll', checkVisibility, { passive: true });
+  checkVisibility();
+})();
 
 
 
@@ -4948,6 +4963,12 @@ MOBILE SAME LAYOUT FIX
   function closeIfOutside(e) {
     if (e.target === document.getElementById('pp-overlay')) closeModal();
   }
+
+
+
+
+
+
 
 </script>
 

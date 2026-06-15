@@ -7,19 +7,20 @@
   <meta name="description"
     content="GathHeal - Ayurvedic Support Formula for natural wellness. Kanchanar, Triphala, Turmeric aur Guggul se bana premium Ayurvedic formula.">
 
-  <!-- PERF FIX 1: preconnect to external domains -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <!-- Tabler Icons: non-blocking load -->
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"></noscript>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<!-- Google Font: non-blocking -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&display=swap"></noscript>
-
+<link rel="preload" as="style"
+  href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&display=swap"
+  onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&display=swap">
+</noscript>
+<link rel="preload" as="style"
+  href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.44.0/dist/tabler-icons.min.css"
+  onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.44.0/dist/tabler-icons.min.css">
+</noscript>
   <title>GathHeal – Ayurvedic Wellness Formula | Ganth se Rahat</title>
   <style>
     /* ===========================
@@ -4307,8 +4308,17 @@
           : 'display:flex !important;position:fixed !important;bottom:0 !important;left:50% !important;transform:translateX(-50%) !important;width:100% !important;max-width:450px !important;z-index:9999 !important'
         );
       }
-      window.addEventListener('scroll', checkVisibility, { passive: true });
+      let ticking = false;
+window.addEventListener('scroll', function () {
+  if (!ticking) {
+    requestAnimationFrame(function () {
       checkVisibility();
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, { passive: true });
+checkVisibility();
     })();
 
     var gn = document.getElementById('ghName');

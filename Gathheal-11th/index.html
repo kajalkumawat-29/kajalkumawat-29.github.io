@@ -10,13 +10,15 @@
   <!-- PERF FIX 1: preconnect to external domains -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+ <!-- Tabler Icons: non-blocking load -->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"></noscript>
 
-  <!-- PERF FIX 2: tabler icons loaded only ONCE (was 3x before) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
-
-  <!-- PERF FIX 3: font with display=swap to avoid render-blocking -->
-  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+<!-- Google Font: non-blocking -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&display=swap"></noscript>
 
   <title>GathHeal – Ayurvedic Wellness Formula | Ganth se Rahat</title>
   <style>
@@ -3544,8 +3546,10 @@
     </div>
 
     <!-- PERF FIX 4: banner image — eager load (above fold), explicit dimensions -->
-    <img src="images/banner.avif" alt="GathHeal Banner" width="450" height="250" loading="eager" fetchpriority="high">
-
+  <img src="images/banner.avif" alt="GathHeal Banner" 
+     width="450" height="250" 
+     loading="eager" fetchpriority="high"
+     sizes="(max-width:450px) 100vw, 450px">
     <!-- ===========================
   2. PROBLEM SECTION
 =========================== -->

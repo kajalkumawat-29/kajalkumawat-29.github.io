@@ -13,7 +13,7 @@
  <!-- Tabler Icons: non-blocking load -->
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"></noscript>
-
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <!-- Google Font: non-blocking -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +25,11 @@
     /* ===========================
    CSS VARIABLES & RESET
 =========================== */
+@font-face {
+  font-family: 'Tiro Devanagari Hindi';
+  font-display: swap;
+  src: local('');
+}
     :root {
       --primary: #267156;
       --primary-dark: #1a5240;
@@ -222,6 +227,7 @@
 =========================== */
     #problem {
       padding: 50px 15px;
+      min-height: 900px; 
       background: var(--primary);
     }
 
@@ -3563,7 +3569,7 @@
         <!-- PERF FIX 5: all below-fold images get loading="lazy" + explicit width/height -->
         <div class="prob-card">
           <div class="prob-img">
-            <img src="images/sect-1-1stimg.avif" alt="गांठ का बढ़ता आकार" width="140" height="125" loading="lazy"
+            <img src="images/sect-1-1stimg.avif" alt="गांठ का बढ़ता आकार" width="280" height="250" loading="lazy"
               decoding="async">
           </div>
           <div class="prob-body">
@@ -3574,7 +3580,7 @@
 
         <div class="prob-card">
           <div class="prob-img">
-            <img src="images/sect-1-2ndimg.avif" alt="दर्द और दबाव" width="140" height="125" loading="lazy"
+            <img src="images/sect-1-2ndimg.avif" alt="दर्द और दबाव" width="280" height="250" loading="lazy"
               decoding="async">
           </div>
           <div class="prob-body">
@@ -3585,7 +3591,7 @@
 
         <div class="prob-card">
           <div class="prob-img">
-            <img src="images/sect-1-3rdimg.avif" alt="मानसिक तनाव" width="140" height="125" loading="lazy"
+            <img src="images/sect-1-3rdimg.avif" alt="मानसिक तनाव" width="280" height="250" loading="lazy"
               decoding="async">
           </div>
           <div class="prob-body">
@@ -3596,7 +3602,7 @@
 
         <div class="prob-card">
           <div class="prob-img">
-            <img src="images/sect-1-4thimg.avif" alt="आत्मविश्वास प्रभावित" width="140" height="125" loading="lazy"
+            <img src="images/sect-1-4thimg.avif" alt="आत्मविश्वास प्रभावित" width="280" height="250" loading="lazy"
               decoding="async">
           </div>
           <div class="prob-body">
@@ -3607,7 +3613,7 @@
 
         <div class="prob-card">
           <div class="prob-img">
-            <img src="images/sect-1-5thimg.avif" alt="रोज़मर्रा परेशानी" width="140" height="125" loading="lazy"
+            <img src="images/sect-1-5thimg.avif" alt="रोज़मर्रा परेशानी" width="280" height="250" loading="lazy"
               decoding="async">
           </div>
           <div class="prob-body">
@@ -3629,7 +3635,7 @@
       <div class="product-card">
         <span class="product-float-badge">Premium Ayurvedic Formula</span>
         <div class="product-img-wrap">
-          <img src="images/product.avif" alt="GathHeal Product" width="250" height="250" loading="lazy"
+          <img src="images/product.avif" alt="GathHeal Product" width="500" height="500" loading="lazy"
             decoding="async">
         </div>
         <h2 class="product-name">GathHeal</h2>
@@ -3707,7 +3713,7 @@
         शामिल हैं चुनिंदा Ayurvedic Herbs</p>
       <div class="solution-pillars">
         <div class="pillar-card">
-          <img src="images/कंचनार.avif" alt="कंचनार" loading="lazy" decoding="async" width="150" height="150"
+          <img src="images/कंचनार.avif" alt="कंचनार" loading="lazy" decoding="async" width="220" height="220"
             class="pillar-img" />
           <div>
             <div class="pillar-num">01</div>
@@ -3716,7 +3722,7 @@
           </div>
         </div>
         <div class="pillar-card">
-          <img src="images/त्रिफला.avif" alt="त्रिफला" loading="lazy" decoding="async" width="150" height="150"
+          <img src="images/त्रिफला.avif" alt="त्रिफला" loading="lazy" decoding="async" width="220" height="220"
             class="pillar-img" />
           <div>
             <div class="pillar-num">02</div>
@@ -3725,7 +3731,7 @@
           </div>
         </div>
         <div class="pillar-card">
-          <img src="images/haldi.avif" alt="हल्दी" loading="lazy" decoding="async" width="150" height="150"
+          <img src="images/haldi.avif" alt="हल्दी" loading="lazy" decoding="async" width="220" height="220"
             class="pillar-img" />
           <div>
             <div class="pillar-num">03</div>
@@ -3734,7 +3740,7 @@
           </div>
         </div>
         <div class="pillar-card">
-          <img src="images/varun.avif" alt="वरुण" loading="lazy" decoding="async" width="150" height="150"
+          <img src="images/varun.avif" alt="वरुण" loading="lazy" decoding="async" width="220" height="220"
             class="pillar-img" />
           <div>
             <div class="pillar-num">04</div>

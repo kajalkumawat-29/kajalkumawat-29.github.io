@@ -13,11 +13,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap"
-    rel="stylesheet" />
-  <!-- Critical: Font -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></noscript>
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"></noscript>
+
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap"></noscript><!-- Critical: Font -->
   <noscript>
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" />
@@ -30,9 +33,7 @@
    Mobile-First: Optimized for 450px
    ============================================= */
 
-    /* --- Google Font Import (Noto Sans Devanagari) --- */
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap');
-
+   
     /* --- CSS Variables --- */
     :root {
       --primary: #6865cb;
@@ -2584,8 +2585,10 @@ padding:17px;
         ⚠️ Warning
     </div>
 
-    <img src="images/banner.avif" alt="" width="450" height="250" 
-     loading="eager" fetchpriority="high">
+   <img src="images/banner.avif" alt="" 
+  width="450" height="697"
+  fetchpriority="high"
+  decoding="async">
 
 </div>
 
@@ -2602,7 +2605,7 @@ padding:17px;
             <p>✔ शरीर में बनी गांठ का धीरे-धीरे<br> बढ़ना।</p>
           </div>
           <div class="offset-img-frame">
-            <img src="images/sect-1-1stimg.avif" loading="lazy">
+            <img src="images/sect-1-1stimg.avif" loading="lazy"  width="110" height="110">
           </div>
         </div>
 
@@ -2613,7 +2616,7 @@ padding:17px;
             <p>✔ गांठ के आसपास दर्द या भारीपन<br> महसूस होना।</p>
           </div>
           <div class="offset-img-frame">
-            <img src="images/sect-1-2ndimg.avif" loading="lazy">
+            <img src="images/sect-1-2ndimg.avif" loading="lazy"  width="110" height="110">
           </div>
         </div>
 
@@ -2624,7 +2627,7 @@ padding:17px;
             <p>✔ सूजन की वजह से discomfort <br>होना।</p>
           </div>
           <div class="offset-img-frame">
-            <img src="images/sect-1-3rdimg.avif" loading="lazy">
+            <img src="images/sect-1-3rdimg.avif" loading="lazy"  width="110" height="110">
           </div>
         </div>
 
@@ -2637,7 +2640,7 @@ padding:17px;
             <p>✔ बार-बार यही चिंता रहना कि <br>समस्या और न बढ़ जाए।</p>
           </div>
           <div class="offset-img-frame">
-            <img src="images/sect-1-4thimg.avif" loading="lazy">
+            <img src="images/sect-1-4thimg.avif" loading="lazy"  width="110" height="110">
           </div>
         </div>
 
@@ -2655,7 +2658,7 @@ padding:17px;
           <div class="leaf-frame-container">
             <div class="special-badge">AYURVEDIC FORMULA</div>
 
-            <img src="images/product-gath.avif" alt="GathHeal" loading="lazy">
+            <img src="images/product-gath.avif" alt="GathHeal" loading="lazy"  width="410" height="320">
           </div>
 
           <div class="content-header">
@@ -2710,7 +2713,7 @@ padding:17px;
 
 
             <div class="mask-container">
-              <img src="images/कंचनार.avif" loading="lazy">
+              <img src="images/कंचनार.avif" loading="lazy"  width="160" height="85">
             </div>
 
             <div class="text-side">
@@ -2724,7 +2727,7 @@ padding:17px;
 
 
             <div class="mask-container">
-              <img src="images/त्रिफला.avif" loading="lazy">
+              <img src="images/त्रिफला.avif" loading="lazy" >
             </div>
 
             <div class="text-side">
@@ -2738,7 +2741,7 @@ padding:17px;
 
 
             <div class="mask-container">
-              <img src="images/गुग्गुल.avif" loading="lazy">
+              <img src="images/गुग्गुल.avif" loading="lazy" >
             </div>
 
             <div class="text-side">
@@ -2752,7 +2755,7 @@ padding:17px;
 
 
             <div class="mask-container">
-              <img src="images/haldi.avif" loading="lazy">
+              <img src="images/haldi.avif" loading="lazy" >
             </div>
 
             <div class="text-side">
@@ -2786,7 +2789,7 @@ padding:17px;
             <!-- 1 -->
             <div class="hex-row">
               <div class="hex-shape">
-                <img src="images/aayur.avif" alt="" loading="lazy">
+                <img src="images/aayur.avif" alt="" loading="lazy"  width="80" height="80" >
               </div>
 
               <div class="hex-content">
@@ -2798,7 +2801,7 @@ padding:17px;
             <!-- 2 -->
             <div class="hex-row">
               <div class="hex-shape">
-                <img src="images/capsule.avif" alt="" loading="lazy">
+                <img src="images/capsule.avif" alt="" loading="lazy"  width="80" height="80">
               </div>
 
               <div class="hex-content">
@@ -2810,7 +2813,7 @@ padding:17px;
             <!-- 3 -->
             <div class="hex-row">
               <div class="hex-shape">
-                <img src="images/quality.avif" alt="" loading="lazy">
+                <img src="images/quality.avif" alt="" loading="lazy"  width="80" height="80">
               </div>
 
               <div class="hex-content">
@@ -2822,7 +2825,7 @@ padding:17px;
             <!-- 4 -->
             <div class="hex-row">
               <div class="hex-shape">
-                <img src="images/home.avif" alt="" loading="lazy">
+                <img src="images/home.avif" alt="" loading="lazy"  width="80" height="80">
               </div>
 
               <div class="hex-content">
@@ -2868,7 +2871,7 @@ padding:17px;
 
             <div class="content">
 
-                <img src="images/sect-6-1stimg.avif" alt="प्राकृतिक Support" loading="lazy">
+                <img src="images/sect-6-1stimg.avif" alt="प्राकृतिक Support" loading="lazy" width="414" height="180"  >
 
                 <h3>शरीर को Natural Support देना</h3>
 
@@ -2889,7 +2892,7 @@ padding:17px;
 
             <div class="content">
 
-                <img src="images/sect-6-4thimg.avif" alt="बेहतर वेलनेस अनुभव" loading="lazy">
+                <img src="images/sect-6-4thimg.avif" alt="बेहतर वेलनेस अनुभव" loading="lazy" width="414" height="180">
 
                 <h3>Better Wellness Experience</h3>
 
@@ -2914,7 +2917,7 @@ padding:17px;
 
             <div class="content">
 
-                <img src="images/sect-6-3rdimg.avif" alt="अंदरूनी सिस्टम Support" loading="lazy">
+                <img src="images/sect-6-3rdimg.avif" alt="अंदरूनी सिस्टम Support" loading="lazy" width="414" height="180">
 
                 <h3>Internal system को Support करना</h3>
 
@@ -3015,12 +3018,12 @@ padding:17px;
         <!-- Row 1 -->
         <div class="gh-duo-track">
             <div class="gh-panel-cell gh-negative-state">
-                <img src="images/bf-1stimg.avif" alt="चिंता" loading="lazy">
+                <img src="images/bf-1stimg.avif" alt="चिंता" loading="lazy" width="160" height="85">
                 <p>❌ गांठ को लेकर लगातार चिंता</p>
             </div>
             <div class="gh-center-node">VS</div>
             <div class="gh-panel-cell gh-positive-state">
-                <img src="images/af-1stimg.avif" alt="संतोष" loading="lazy">
+                <img src="images/af-1stimg.avif" alt="संतोष" loading="lazy" width="160" height="85">
                 <p>✅ खुद की देखभाल करने का Satisfaction</p>
             </div>
         </div>
@@ -3028,12 +3031,12 @@ padding:17px;
         <!-- Row 2 -->
         <div class="gh-duo-track">
             <div class="gh-panel-cell gh-negative-state">
-                <img src="images/bf-2ndimg.avif" alt="Discomfort" loading="lazy">
+                <img src="images/bf-2ndimg.avif" alt="Discomfort" loading="lazy" width="160" height="85">
                 <p>❌ दर्द या stress की वजह से Discomfort</p>
             </div>
             <div class="gh-center-node">VS</div>
             <div class="gh-panel-cell gh-positive-state">
-                <img src="images/af-2ndimg.avif" alt="आराम" loading="lazy">
+                <img src="images/af-2ndimg.avif" alt="आराम" loading="lazy" width="160" height="85">
                 <p>✅ अधिक आराम महसूस करने की उम्मीद</p>
             </div>
         </div>
@@ -3041,12 +3044,12 @@ padding:17px;
         <!-- Row 3 -->
         <div class="gh-duo-track">
             <div class="gh-panel-cell gh-negative-state">
-                <img src="images/BF-3RDIMG.avif" alt="डर" loading="lazy">
+                <img src="images/BF-3RDIMG.avif" alt="डर" loading="lazy" width="160" height="85">
                 <p>❌ मन में डर और Doubt</p>
             </div>
             <div class="gh-center-node">VS</div>
             <div class="gh-panel-cell gh-positive-state">
-                <img src="images/af-3rdimg.avif" alt="सकारात्मक कदम" loading="lazy">
+                <img src="images/af-3rdimg.avif" alt="सकारात्मक कदम" loading="lazy" width="160" height="85">
                 <p>✅ Better daily routine की ओर Positive steps</p>
             </div>
         </div>
@@ -3054,12 +3057,12 @@ padding:17px;
         <!-- Row 4 -->
         <div class="gh-duo-track">
             <div class="gh-panel-cell gh-negative-state">
-                <img src="images/bf-4thimg.avif" alt="परेशानी" loading="lazy">
+                <img src="images/bf-4thimg.avif" alt="परेशानी" loading="lazy" width="160" height="85">
                 <p>❌ Daily के कामों में परेशानी</p>
             </div>
             <div class="gh-center-node">VS</div>
             <div class="gh-panel-cell gh-positive-state">
-                <img src="images/af-4thimg.avif" alt="Confidence" loading="lazy">
+                <img src="images/af-4thimg.avif" alt="Confidence" loading="lazy" width="160" height="85">
                 <p>✅ Confidence के साथ आगे बढ़ने का प्रयास</p>
             </div>
         </div>
@@ -3074,7 +3077,7 @@ padding:17px;
 
         <!-- Card 1 -->
         <div class="card">
-          <img src="images/rakesh.avif" alt="Customer" class="profile-img" loading="lazy">
+          <img src="images/rakesh.avif" alt="Customer" class="profile-img" loading="lazy"  width="80" height="80">
 
           <div class="card-header">
             <div class="name">राकेश, जयपुर</div>
@@ -3089,7 +3092,7 @@ padding:17px;
 
         <!-- Card 2 -->
         <div class="card">
-          <img src="images/suresh.avif" alt="Customer" class="profile-img" loading="lazy">
+          <img src="images/suresh.avif" alt="Customer" class="profile-img" loading="lazy"  width="80" height="80">
 
           <div class="card-header">
             <div class="name">सुरेश</div>
@@ -3105,7 +3108,7 @@ padding:17px;
 
         <!-- Card 3 -->
         <div class="card">
-          <img src="images/manoj.avif" alt="Customer" class="profile-img" loading="lazy">
+          <img src="images/manoj.avif" alt="Customer" class="profile-img" loading="lazy"  width="80" height="80">
 
           <div class="card-header">
             <div class="name">मनोज, दिल्ली</div>

@@ -5,36 +5,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>GathHeal Ayurvedic Capsules – गांठ से आराम काNatural सहयोग</title>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&display=swap"
-    as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-  <!-- Preconnect for Google Fonts -->
+  <!-- Preconnect for Google Fonts & CDNs -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+  <!-- Preload font woff2 files to avoid font shift CLS -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- NON-BLOCKING CSS loads (deferred via onload trick) -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></noscript>
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></noscript>
 
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"></noscript>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"></noscript>
 
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap"></noscript><!-- Critical: Font -->
-  <noscript>
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" />
-  </noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&display=swap"></noscript>
 
-  <!-- Stylesheet -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap"></noscript>
+
   <style>
-    /* =============================================
-   GathHeal Ayurvedic Landing Page - CSS
-   Mobile-First: Optimized for 450px
-   ============================================= */
-
-   
-    /* --- CSS Variables --- */
     :root {
       --primary: #6865cb;
       --primary-dark: #4f4ca8;
@@ -49,4149 +43,986 @@
       --radius-sm: 10px;
       --radius-md: 16px;
       --radius-lg: 24px;
-      --shadow-sm: 0 2px 10px rgba(104, 101, 203, 0.10);
-      --shadow-md: 0 4px 24px rgba(104, 101, 203, 0.16);
-      --shadow-lg: 0 8px 40px rgba(104, 101, 203, 0.22);
+      --shadow-sm: 0 2px 10px rgba(104,101,203,0.10);
+      --shadow-md: 0 4px 24px rgba(104,101,203,0.16);
+      --shadow-lg: 0 8px 40px rgba(104,101,203,0.22);
       --font: 'Tiro Devanagari Hindi', serif;
       --max-w: 450px;
-
     }
 
-    /* --- Reset & Base --- */
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
 
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-      -webkit-text-size-adjust: 100%;
-    }
+    html { scroll-behavior:smooth; font-size:16px; -webkit-text-size-adjust:100%; }
 
-    body {
-      font-family: var(--font);
-      background: #f8f7fe;
-      color: var(--text-dark);
-      line-height: 1.6;
-      overflow-x: hidden;
-      padding-bottom: 80px;
-      /* space for sticky CTA */
+    body { font-family:var(--font); background:#f8f7fe; color:var(--text-dark); line-height:1.6; overflow-x:hidden; padding-bottom:80px; }
 
-    }
+    .container { max-width:var(--max-w); margin:0 auto; padding:0 18px; }
 
-    /* --- Container --- */
-    .container {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 18px;
-    }
+    img { display:block; max-width:100%; height:auto; }
 
-    /* --- Images --- */
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
+    .btn-primary { display:flex; align-items:center; justify-content:center; gap:8px; background:var(--primary); color:var(--white); font-family:var(--font); font-size:22px; font-weight:700; padding:15px 24px; border-radius:50px; border:none; cursor:pointer; text-decoration:none; width:100%; min-height:54px; box-shadow:var(--shadow-md); transition:background 0.2s,transform 0.15s; letter-spacing:0.01em; }
+    .btn-primary:hover,.btn-primary:focus { transform:translateY(-1px); outline-offset:2px; }
+    .btn-primary:active { transform:translateY(0); }
 
-    /* --- Buttons --- */
-    .btn-primary {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      background: var(--primary);
-      color: var(--white);
-      font-family: var(--font);
-      font-size: 22px;
-      font-weight: 700;
-      padding: 15px 24px;
-      border-radius: 50px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      width: 100%;
-      min-height: 54px;
-      box-shadow: var(--shadow-md);
-      transition: background 0.2s, transform 0.15s;
-      letter-spacing: 0.01em;
-    }
+    .btn-secondary { display:flex; align-items:center; justify-content:center; background:var(--secondary); color:var(--primary-dark); font-family:var(--font); font-size:22px; font-weight:700; padding:13px 24px; border-radius:50px; border:2px solid var(--secondary-dark); cursor:pointer; text-decoration:none; width:100%; min-height:50px; transition:background 0.2s; }
+    .btn-secondary:hover,.btn-secondary:focus { background:var(--secondary-dark); outline:3px solid var(--primary); outline-offset:2px; }
 
-    .btn-primary:hover,
-    .btn-primary:focus {
-      transform: translateY(-1px);
-      outline-offset: 2px;
-    }
+    .site-header { background:var(--primary); box-shadow:var(--shadow-sm); position:sticky; top:0; z-index:100; }
+    .site-header .container { display:flex; align-items:center; justify-content:space-between; padding-top:12px; padding-bottom:12px; }
+    .logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+    .logo-text { font-size:28px; font-weight:800; color:var(--secondary); line-height:1.1; margin-bottom:-5px; }
+    .logo-sub { font-size:15px; color:var(--white); font-weight:500; }
+    .button { padding:8px 16px; background:var(--secondary); color:var(--primary); border-radius:30px; font-weight:700; text-decoration:none; font-size:24px; transition:0.3s ease; display:flex; align-items:center; }
+    .button:hover { transform:translateY(-3px); }
 
-    .btn-primary:active {
-      transform: translateY(0);
-    }
+    /* img-box — aspect-ratio fix for CLS */
+    .img-box { position:relative; width:100%; }
+    .img-box img { width:100%; aspect-ratio:450/697; height:auto; }
 
-    .btn-secondary {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--secondary);
-      color: var(--primary-dark);
-      font-family: var(--font);
-      font-size: 22px;
-      font-weight: 700;
-      padding: 13px 24px;
-      border-radius: 50px;
-      border: 2px solid var(--secondary-dark);
-      cursor: pointer;
-      text-decoration: none;
-      width: 100%;
-      min-height: 50px;
-      transition: background 0.2s;
-    }
+    .warning-popup { position:absolute; top:0px; left:50%; transform:translateX(-50%); background:var(--secondary); color:#d32f2f; padding:7px 18px 1px 18px; border-radius:30px; font-size:18px; font-weight:700; box-shadow:0 5px 20px rgba(0,0,0,0.2); z-index:5; white-space:nowrap; animation:floatPopup 2s infinite ease-in-out; }
+    @keyframes floatPopup { 0%,100%{transform:translateX(-50%) translateY(0) scale(1);} 50%{transform:translateX(-50%) translateY(-10px) scale(1.08);} }
 
-    .btn-secondary:hover,
-    .btn-secondary:focus {
-      background: var(--secondary-dark);
-      outline: 3px solid var(--primary);
-      outline-offset: 2px;
-    }
-
-
-    /* =============================================
-   HEADER / NAV
-   ============================================= */
-    .site-header {
-      background: var(--primary);
-      box-shadow: var(--shadow-sm);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .site-header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 12px;
-      padding-bottom: 12px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-
-    .logo-text {
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--secondary);
-      line-height: 1.1;
-      margin-bottom: -5px;
-    }
-
-    .logo-sub {
-      font-size: 15px;
-      color: var(--white);
-      font-weight: 500;
-    }
-
-    .header-badge {
-      background: var(--primary-light);
-      color: var(--primary);
-      font-size: 0.65rem;
-      font-weight: 700;
-      padding: 5px 10px;
-      border-radius: 20px;
-      border: 1px solid var(--primary);
-      white-space: nowrap;
-    }
-
-
-    .button {
-      padding: 8px 16px;
-      background: var(--secondary);
-      color: var(--primary);
-      border-radius: 30px;
-      font-weight: 700;
-      text-decoration: none;
-      font-size: 24px;
-      transition: 0.3s ease;
-      display: flex;
-      align-items: center
-    }
-
-    .button:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-gold)
-    }
-
-
-
-
-    /* section-1 pain detail */
-
-    .offset-wrapper {
-      max-width: 450px;
-      width: 100%;
-      padding: 50px 20px;
-      overflow: hidden;
-      margin-bottom: -40px;
-    }
-
-    .main-header {
-      color: var(--primary);
-      font-size: 32px;
-      text-align: center;
-      margin-bottom: 30px;
-      font-weight: 700;
-      line-height: 1.1;
-
-    }
-
-    /* ITEM */
-
-    .offset-item {
-      position: relative;
-      margin-bottom: 60px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* CONTENT BOX */
-
-    .offset-box {
-      background: var(--white);
-      padding: 30px 20px 20px;
-      border-radius: 20px;
-      border-left: 5px solid var(--primary);
-      z-index: 1;
-      transition: .4s ease;
-      box-shadow: var(--shadow-md);
-    }
-
-    .offset-box h3 {
-      margin: 0;
-      font-size: 22px;
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    .offset-box p {
-      margin: 5px 0 0;
-      font-size: 18px;
-      color: var(--text-mid);
-      line-height: 1.5;
-    }
-
-    /* FLOATING IMAGE */
-
-    .offset-img-frame {
-      position: absolute;
-      bottom: -30px;
-      right: 20px;
-      width: 140px;
-      height: 140px;
-      z-index: 2;
-      border-radius: 15px;
-      overflow: hidden;
-      border: 4px solid var(--primary);
-      box-shadow: var(--shadow-lg);
-      transition: .5s cubic-bezier(0.175,
-          0.885,
-          0.32,
-          1.275);
-    }
-
-    .offset-img-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(.2);
-      transition: .5s;
-    }
-
-    /* ALTERNATE ALIGNMENT */
-
-    .offset-item:nth-child(even) {
-      align-items: flex-end;
-    }
-
-    .offset-item:nth-child(even) .offset-box {
-      border-left: none;
-      border-right: 5px solid var(--primary);
-      text-align: right;
-      width: 90%;
-    }
-
-    .offset-item:nth-child(even) .offset-img-frame {
-      right: auto;
-      left: 20px;
-    }
-
-    /* HOVER */
-
-    .offset-item:hover .offset-box {
-      transform: translateY(-5px);
-    }
-
-    .offset-item:hover .offset-img-frame {
-      transform: scale(1.1) rotate(5deg);
-    }
-
-    .offset-item:hover .offset-img-frame img {
-      filter: grayscale(0);
-    }
-
-    /* BG NUMBER */
-
-    .bg-tag {
-      position: absolute;
-      top: -40px;
-      font-size: 80px;
-      font-weight: 800;
-      color: rgba(104, 101, 203, .08);
-      z-index: 0;
-    }
-
-    /* MOBILE */
+    /* section-1 */
+    .offset-wrapper { max-width:450px; width:100%; padding:50px 20px; overflow:hidden; margin-bottom:-40px; }
+    .main-header { color:var(--primary); font-size:32px; text-align:center; margin-bottom:30px; font-weight:700; line-height:1.1; }
+    .offset-item { position:relative; margin-bottom:60px; display:flex; flex-direction:column; }
+    .offset-box { background:var(--white); padding:30px 20px 20px; border-radius:20px; border-left:5px solid var(--primary); z-index:1; transition:.4s ease; box-shadow:var(--shadow-md); }
+    .offset-box h3 { margin:0; font-size:22px; color:var(--primary); font-weight:700; }
+    .offset-box p { margin:5px 0 0; font-size:18px; color:var(--text-mid); line-height:1.5; }
+    .offset-img-frame { position:absolute; bottom:-30px; right:20px; width:140px; height:140px; z-index:2; border-radius:15px; overflow:hidden; border:4px solid var(--primary); box-shadow:var(--shadow-lg); transition:.5s cubic-bezier(0.175,0.885,0.32,1.275); }
+    .offset-img-frame img { width:100%; height:100%; object-fit:cover; filter:grayscale(.2); transition:.5s; }
+    .offset-item:nth-child(even) { align-items:flex-end; }
+    .offset-item:nth-child(even) .offset-box { border-left:none; border-right:5px solid var(--primary); text-align:right; width:90%; }
+    .offset-item:nth-child(even) .offset-img-frame { right:auto; left:20px; }
+    .offset-item:hover .offset-box { transform:translateY(-5px); }
+    .offset-item:hover .offset-img-frame { transform:scale(1.1) rotate(5deg); }
+    .offset-item:hover .offset-img-frame img { filter:grayscale(0); }
+    .bg-tag { position:absolute; top:-40px; font-size:80px; font-weight:800; color:rgba(104,101,203,.08); z-index:0; }
 
     @media screen and (max-width:480px) {
-
-      .offset-wrapper {
-        max-width: 450px;
-        padding: 35px 12px;
-        margin-bottom: -30px;
-      }
-
-      .main-header {
-        font-size: 24px;
-        margin-top: -20px;
-        margin-bottom: 15px;
-      }
-
-      .offset-item {
-        position: relative;
-        margin-bottom: 50px;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start;
-      }
-
-      .offset-box {
-        padding: 20px 14px 16px;
-        border-radius: 16px;
-        width: 90%;
-      }
-        .offset-box br{
-       
-       display: none;
-        }
-      .offset-box h3 {
-        font-size: 18px;
-      }
-
-      .offset-box p {
-        font-size: 16px;
-        line-height: 1.3;
-      }
-       .offset-item:nth-child(even) .offset-box p{
-        padding-left: 80px;
-      }
- .offset-item:nth-child(odd) .offset-box p{
-        padding-right: 80px;
-      }
-
-
-      .offset-img-frame {
-        width: 110px;
-        height: 110px;
-        bottom: -24px;
-        right: 14px;
-        border-width: 3px;
-      }
-
-      .offset-item:nth-child(even) {
-        align-items: flex-end;
-      }
-
-      .offset-item:nth-child(even) .offset-box {
-        width: 90%;
-        text-align: right;
-      }
-
-      .offset-item:nth-child(even) .offset-img-frame {
-        left: 14px;
-        right: auto;
-      }
-
-      .bg-tag {
-        top: -28px;
-        font-size: 60px;
-      }
+      .offset-wrapper { max-width:450px; padding:35px 12px; margin-bottom:-30px; }
+      .main-header { font-size:24px; margin-top:-20px; margin-bottom:15px; }
+      .offset-item { position:relative; margin-bottom:50px; display:flex !important; flex-direction:column !important; align-items:flex-start; }
+      .offset-box { padding:20px 14px 16px; border-radius:16px; width:90%; }
+      .offset-box br { display:none; }
+      .offset-box h3 { font-size:18px; }
+      .offset-box p { font-size:16px; line-height:1.3; }
+      .offset-item:nth-child(even) .offset-box p { padding-left:80px; }
+      .offset-item:nth-child(odd) .offset-box p { padding-right:80px; }
+      .offset-img-frame { width:110px; height:110px; bottom:-24px; right:14px; border-width:3px; }
+      .offset-item:nth-child(even) { align-items:flex-end; }
+      .offset-item:nth-child(even) .offset-box { width:90%; text-align:right; }
+      .offset-item:nth-child(even) .offset-img-frame { left:14px; right:auto; }
+      .bg-tag { top:-28px; font-size:60px; }
     }
 
-
-
-    /* section-2 product intro */
-
-    .sect {
-      max-width: var(--max-w);
-      width: 100%;
-      margin: auto;
-      padding: 30px 15px;
-      background-color: var(--primary);
-    }
-
-    .offer-card {
-      width: 100%;
-      max-width: 450px;
-
-      padding: 30px;
-      position: relative;
-
-
-    }
-
-    /* --- LEAF DESIGN FRAME --- */
-
-    .leaf-frame-container {
-      width: 100%;
-      height: 320px;
-      border-radius: 0px 120px 0px 120px;
-      overflow: hidden;
-      position: relative;
-      background: var(--white);
-      border: 3px solid var(--secondary);
-      margin-bottom: 30px;
-      box-shadow: var(--shadow-md);
-    }
-
-    .leaf-frame-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .6s ease;
-    }
-
-    .offer-card:hover .leaf-frame-container img {
-      transform: scale(1.1);
-    }
-
-    /* Badge */
-
-    .special-badge {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      background: var(--secondary);
-      color: var(--text-dark);
-      padding: 8px 15px;
-      border-radius: 12px;
-      font-size: 11px;
-      font-weight: 800;
-      z-index: 10;
-    }
-
-    /* Content */
-
-    .content-header {
-      margin-bottom: 25px;
-    }
-
-    .content-header h2 {
-      font-size: 30px;
-      color: var(--secondary);
-      line-height: 1.2;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    /* Offer Items */
-
-    .offer-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 35px;
-    }
-
-    .offer-item {
-      background: var(--white);
-      padding: 16px 20px;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      border-left: 5px solid var(--secondary);
-      transition: .3s;
-    }
-
-    .offer-item:hover {
-      transform: translateX(10px);
-    }
-
-    .offer-item span {
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--text-dark);
-      line-height: 1.4;
-    }
-
-    /* CTA */
-
-    .cta-btnn {
-      display: block;
-      width: 100%;
-      padding: 22px;
-      background: var(--secondary);
-      color: var(--primary);
-      text-align: center;
-      text-decoration: none;
-      border-radius: 20px;
-      font-weight: 800;
-      font-size: 20px;
-      letter-spacing: 1px;
-      transition: .3s;
-    }
-
-    .cta-btnn:hover {
-      transform: translateY(-5px);
-    }
-
-    /* MOBILE */
+    /* section-2 */
+    .sect { max-width:var(--max-w); width:100%; margin:auto; padding:30px 15px; background-color:var(--primary); }
+    .offer-card { width:100%; max-width:450px; padding:30px; position:relative; }
+    .leaf-frame-container { width:100%; height:320px; border-radius:0px 120px 0px 120px; overflow:hidden; position:relative; background:var(--white); border:3px solid var(--secondary); margin-bottom:30px; box-shadow:var(--shadow-md); }
+    .leaf-frame-container img { width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+    .offer-card:hover .leaf-frame-container img { transform:scale(1.1); }
+    .special-badge { position:absolute; top:20px; left:20px; background:var(--secondary); color:var(--text-dark); padding:8px 15px; border-radius:12px; font-size:11px; font-weight:800; z-index:10; }
+    .content-header { margin-bottom:25px; }
+    .content-header h2 { font-size:30px; color:var(--secondary); line-height:1.2; margin-bottom:10px; font-weight:700; }
+    .offer-stack { display:flex; flex-direction:column; gap:12px; margin-bottom:35px; }
+    .offer-item { background:var(--white); padding:16px 20px; border-radius:20px; display:flex; align-items:center; gap:15px; border-left:5px solid var(--secondary); transition:.3s; }
+    .offer-item:hover { transform:translateX(10px); }
+    .offer-item span { font-size:17px; font-weight:600; color:var(--text-dark); line-height:1.4; }
+    .cta-btnn { display:block; width:100%; padding:22px; background:var(--secondary); color:var(--primary); text-align:center; text-decoration:none; border-radius:20px; font-weight:800; font-size:20px; letter-spacing:1px; transition:.3s; }
+    .cta-btnn:hover { transform:translateY(-5px); }
 
     @media (max-width:480px) {
-
-      .offer-card {
-        width: 100%;
-        padding: 20px 15px;
-      }
-
-      .leaf-frame-container {
-        height: 240px;
-        border-radius: 0px 90px 0px 90px;
-        margin-bottom: 20px;
-      }
-
-      .special-badge {
-        top: 15px;
-        left: 15px;
-        font-size: 10px;
-        padding: 6px 12px;
-      }
-
-      .content-header {
-        margin-bottom: 18px;
-      }
-
-      .content-header h2 {
-        font-size: 24px;
-        line-height: 1.2;
-      }
-
-      .offer-stack {
-        gap: 10px;
-        margin-bottom: 25px;
-      }
-
-      .offer-item {
-        padding: 12px 14px;
-        border-radius: 16px;
-        gap: 10px;
-      }
-
-      .offer-item:hover {
-        transform: translateX(5px);
-      }
-
-      .offer-item span {
-        font-size: 16px;
-      }
-
-      .cta-btn {
-        padding: 18px;
-        font-size: 17px;
-        border-radius: 16px;
-      }
-
-      .cta-btn:hover {
-        transform: translateY(-3px);
-      }
+      .offer-card { width:100%; padding:20px 15px; }
+      .leaf-frame-container { height:240px; border-radius:0px 90px 0px 90px; margin-bottom:20px; }
+      .special-badge { top:15px; left:15px; font-size:10px; padding:6px 12px; }
+      .content-header { margin-bottom:18px; }
+      .content-header h2 { font-size:24px; line-height:1.2; }
+      .offer-stack { gap:10px; margin-bottom:25px; }
+      .offer-item { padding:12px 14px; border-radius:16px; gap:10px; }
+      .offer-item:hover { transform:translateX(5px); }
+      .offer-item span { font-size:16px; }
+      .cta-btn { padding:18px; font-size:17px; border-radius:16px; }
+      .cta-btn:hover { transform:translateY(-3px); }
     }
 
-
-
-
-    /* section-3 key ingridients */
-
-    .magazine-layout {
-      max-width: 450px;
-      width: 100%;
-      padding: 40px 20px;
-      position: relative;
-      overflow: hidden;
-      border-bottom: 2px solid var(--primary);
-    }
-
-    .main-tit {
-      font-size: 32px;
-      color: var(--primary);
-      text-align: center;
-      margin-bottom: 60px;
-      line-height: 1.1;
-      font-weight: 700;
-    }
-
-    /* Ingredient Card */
-
-    .ingredient-card {
-      display: flex;
-      margin-bottom: 50px;
-      position: relative;
-      align-items: center;
-      z-index: 1;
-      
-    }
-
-    .ingredient-card.reverse {
-      flex-direction: row-reverse;
-    }
-
-    /* Image Box */
-
-    .mask-container {
-      width: 140px;
-      height: 140px;
-      position: relative;
-      flex-shrink: 0;
-      transition: .5s ease;
-    }
-
-    .mask-container::before {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      right: 10px;
-      bottom: 10px;
-      border: 2px solid var(--primary);
-      z-index: -1;
-      transition: .5s ease;
-    }
-
-    .ingredient-card:hover .mask-container::before {
-      top: 10px;
-      left: 10px;
-      right: -10px;
-      bottom: -10px;
-    }
-
-    .mask-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border: 5px solid var(--white);
-      border-radius: 10px;
-    }
-
-    /* Content */
-
-    .text-side {
-      padding: 0 20px;
-      flex-grow: 1;
-    }
-
-    .text-side h3 {
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--primary);
-      margin: 0;
-      text-transform: uppercase;
-      letter-spacing: -0.5px;
-    }
-
-    .text-side p {
-      margin-top: 8px;
-      font-size: 18px;
-      color: var(--black);
-      line-height: 1.4;
-      font-weight: 400;
-    }
-
-    .reverse .text-side {
-      text-align: right;
-    }
-
-
-
-
-
-
-    /* Button */
-
-    .btn-key {
-      width: 100%;
-      background: linear-gradient(135deg,
-          var(--primary),
-          var(--primary-dark));
-      color: var(--white);
-      padding: 22px;
-      border: none;
-      border-radius: 16px;
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: .4s;
-      margin-top: -5px;
-      box-shadow: var(--shadow-md);
-    }
-
-    .btn-key:hover {
-      letter-spacing: 4px;
-      transform: translateY(-3px);
-    }
-
-    /* Mobile */
+    /* section-3 */
+    .magazine-layout { max-width:450px; width:100%; padding:40px 20px; position:relative; overflow:hidden; border-bottom:2px solid var(--primary); }
+    .main-tit { font-size:32px; color:var(--primary); text-align:center; margin-bottom:60px; line-height:1.1; font-weight:700; }
+    .ingredient-card { display:flex; margin-bottom:50px; position:relative; align-items:center; z-index:1; }
+    .ingredient-card.reverse { flex-direction:row-reverse; }
+    .mask-container { width:140px; height:140px; position:relative; flex-shrink:0; transition:.5s ease; }
+    .mask-container::before { content:''; position:absolute; top:-10px; left:-10px; right:10px; bottom:10px; border:2px solid var(--primary); z-index:-1; transition:.5s ease; }
+    .ingredient-card:hover .mask-container::before { top:10px; left:10px; right:-10px; bottom:-10px; }
+    .mask-container img { width:100%; height:100%; object-fit:cover; border:5px solid var(--white); border-radius:10px; }
+    .text-side { padding:0 20px; flex-grow:1; }
+    .text-side h3 { font-size:22px; font-weight:700; color:var(--primary); margin:0; text-transform:uppercase; letter-spacing:-0.5px; }
+    .text-side p { margin-top:8px; font-size:18px; color:var(--black); line-height:1.4; font-weight:400; }
+    .reverse .text-side { text-align:right; }
+    .btn-key { width:100%; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:var(--white); padding:22px; border:none; border-radius:16px; font-size:16px; font-weight:700; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:.4s; margin-top:-5px; box-shadow:var(--shadow-md); }
+    .btn-key:hover { letter-spacing:4px; transform:translateY(-3px); }
 
     @media (max-width:480px) {
-
-      .main-tit {
-        font-size: 26px;
-        margin-bottom: 45px;
-      }
-
-      .mask-container {
-        width: 110px;
-        height: 110px;
-      }
-
-      .text-side {
-        padding: 0 12px;
-      }
-
-      .text-side h3 {
-        font-size: 18px;
-      }
-
-      .text-side p {
-        font-size: 16px;
-        line-height: 1.35;
-      }
-
-
-
-      .btn-key {
-        padding: 18px;
-        font-size: 15px;
-      }
+      .main-tit { font-size:26px; margin-bottom:45px; }
+      .mask-container { width:110px; height:110px; }
+      .text-side { padding:0 12px; }
+      .text-side h3 { font-size:18px; }
+      .text-side p { font-size:16px; line-height:1.35; }
+      .btn-key { padding:18px; font-size:15px; }
     }
 
-
-
-
-    /* section-4 certification */
-    .ks-hex-section {
-      width: 100%;
-      max-width: 450px;
-      padding: 30px 15px;
-      overflow: hidden;
-      border-bottom: 2px solid var(--primary);
-      margin-top: -60px;
-
-    }
-
-    .ks-hex-header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .ks-hex-header h2 {
-      font-size: 32px;
-      color: var(--primary);
-      margin: 0;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .ks-hex-header .line {
-      width: 60px;
-      height: 4px;
-      background: var(--primary);
-      margin: 1px auto;
-      border-radius: 10px;
-    }
-
-    .hex-container {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-      padding-bottom: 20px;
-    }
-
-    .hex-row {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .hex-shape {
-      width: 100px;
-      height: 100px;
-      background: linear-gradient(135deg,
-          var(--primary),
-          var(--primary-dark));
-     border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      position: relative;
-      transition: all .4s ease;
-      box-shadow: var(--shadow-md);
-    }
-
-    .hex-shape img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 2px solid var(--primary);
-    }
-
-    .hex-content {
-      background: var(--white);
-      padding: 15px 20px;
-      border-radius: 0 30px 30px 30px;
-      border: 1px dashed var(--primary);
-      flex-grow: 1;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .hex-content h3 {
-      margin-top: -10px;
-      margin-bottom: -5px;
-      font-size: 20px;
-      color: var(--primary);
-      font-weight: 600;
-    }
-
-    .hex-content p {
-      margin: 5px 0 0;
-      font-size: 18px;
-      color: var(--text-mid);
-      line-height: 1.3;
-    }
-
-    .ks-hex-footer {
-      margin-top: -10px;
-      background: linear-gradient(135deg,
-          var(--primary),
-          var(--primary-dark));
-      padding: 20px;
-      border-radius: 25px;
-      text-align: left;
-      color: var(--white);
-      position: relative;
-      font-size: 18px;
-      line-height: 1.6;
-    }
-
-    .ks-hex-footer b {
-      color: var(--secondary);
-      font-size: 20px;
-    }
-
-    /* Hover Effect */
-
-    .hex-row:hover .hex-shape {
-      transform: rotate(10deg) scale(1.05);
-    }
-
-    /* ================= MOBILE OPTIMIZATION ================= */
+    /* section-4 */
+    .ks-hex-section { width:100%; max-width:450px; padding:30px 15px; overflow:hidden; border-bottom:2px solid var(--primary); margin-top:-60px; }
+    .ks-hex-header { text-align:center; margin-bottom:40px; }
+    .ks-hex-header h2 { font-size:32px; color:var(--primary); margin:0; font-weight:700; letter-spacing:1px; }
+    .ks-hex-header .line { width:60px; height:4px; background:var(--primary); margin:1px auto; border-radius:10px; }
+    .hex-container { display:flex; flex-direction:column; gap:25px; padding-bottom:20px; }
+    .hex-row { display:flex; align-items:center; gap:15px; }
+    .hex-shape { width:100px; height:100px; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; position:relative; transition:all .4s ease; box-shadow:var(--shadow-md); }
+    .hex-shape img { width:100%; height:100%; object-fit:cover; border-radius:50%; border:2px solid var(--primary); }
+    .hex-content { background:var(--white); padding:15px 20px; border-radius:0 30px 30px 30px; border:1px dashed var(--primary); flex-grow:1; box-shadow:var(--shadow-sm); }
+    .hex-content h3 { margin-top:-10px; margin-bottom:-5px; font-size:20px; color:var(--primary); font-weight:600; }
+    .hex-content p { margin:5px 0 0; font-size:18px; color:var(--text-mid); line-height:1.3; }
+    .ks-hex-footer { margin-top:-10px; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); padding:20px; border-radius:25px; text-align:left; color:var(--white); position:relative; font-size:18px; line-height:1.6; }
+    .ks-hex-footer b { color:var(--secondary); font-size:20px; }
+    .hex-row:hover .hex-shape { transform:rotate(10deg) scale(1.05); }
 
     @media (max-width:600px) {
-
-      .ks-hex-section {
-        max-width: 100%;
-        padding: 22px 12px;
-        border-radius: 28px;
-      }
-
-      .ks-hex-header {
-        margin-bottom: 28px;
-      }
-
-      .ks-hex-header h2 {
-        font-size: 24px;
-        letter-spacing: 1px;
-      }
-
-      .ks-hex-header .line {
-        width: 40px;
-        height: 3px;
-      }
-
-      .hex-container {
-        gap: 18px;
-        padding-bottom: 10px;
-      }
-
-      .hex-row {
-        gap: 12px;
-        align-items: flex-start;
-      }
-
-      .hex-shape {
-        width: 80px;
-        height: 80px;
-      }
-
-      .hex-shape img {
-        width: 100%;
-        height: 100%;
-      }
-
-      .hex-content {
-        padding: 12px 14px;
-        border-radius: 0 22px 22px 22px;
-      
-      }
-
-      .hex-content h3 {
-        font-size: 18px;
-        margin-top: -6px;
-      }
-
-      .hex-content p {
-        font-size: 16px;
-        line-height: 1.25;
-      }
-
-      .ks-hex-footer {
-        padding: 15px;
-        border-radius: 18px;
-        font-size: 15px;
-        line-height: 1.5;
-          margin-top:20px;
-      }
-
-      .ks-hex-footer b {
-        font-size: 17px;
-      }
-
-      /* Mobile Safe Hover */
-
-      .hex-row:hover .hex-shape {
-        transform: none;
-      }
+      .ks-hex-section { max-width:100%; padding:22px 12px; border-radius:28px; }
+      .ks-hex-header { margin-bottom:28px; }
+      .ks-hex-header h2 { font-size:24px; letter-spacing:1px; }
+      .ks-hex-header .line { width:40px; height:3px; }
+      .hex-container { gap:18px; padding-bottom:10px; }
+      .hex-row { gap:12px; align-items:flex-start; }
+      .hex-shape { width:80px; height:80px; }
+      .hex-content { padding:12px 14px; border-radius:0 22px 22px 22px; }
+      .hex-content h3 { font-size:18px; margin-top:-6px; }
+      .hex-content p { font-size:16px; line-height:1.25; }
+      .ks-hex-footer { padding:15px; border-radius:18px; font-size:15px; line-height:1.5; margin-top:20px; }
+      .ks-hex-footer b { font-size:17px; }
+      .hex-row:hover .hex-shape { transform:none; }
     }
 
+    /* section-5 */
+    .work-section { max-width:450px; width:100%; padding:30px 15px 60px 15px; background-color:var(--primary); }
+    .heading { text-align:center; margin-bottom:35px; }
+    .heading h2 { font-size:32px; line-height:1.2; margin-bottom:10px; color:var(--secondary); }
+    .steps { display:flex; flex-direction:column; gap:25px; }
+    .step { display:flex; align-items:center; gap:12px; }
+    .step.right { flex-direction:row-reverse; }
+    .circle { min-width:52px; width:52px; height:52px; border-radius:50%; background:var(--secondary); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:20px; box-shadow:0 5px 15px rgba(95,143,70,.25); animation:pulse 2s infinite; }
+    .content { flex:1; background:#fff; border-radius:24px; border:2px solid var(--secondary); padding:14px; box-shadow:0 8px 25px rgba(0,0,0,.08); opacity:0; transform:translateY(30px); animation:fadeUp .8s ease forwards; transition:.3s; }
+    .step:nth-child(1) .content { animation-delay:.1s; }
+    .step:nth-child(2) .content { animation-delay:.3s; }
+    .step:nth-child(3) .content { animation-delay:.5s; }
+    .step:nth-child(4) .content { animation-delay:.7s; }
+    .content:hover { transform:translateY(-3px); box-shadow:0 12px 30px rgba(0,0,0,.12); }
+    .content img { width:100%; height:180px; object-fit:cover; border-radius:18px; margin-bottom:12px; transition:.4s; }
+    .content:hover img { transform:scale(1.04); }
+    .content h3 { font-size:22px; color:var(--black); line-height:1.3; margin-bottom:10px; }
+    .content p { font-size:18px; line-height:1.2; color:black; }
 
-
-
-
-    /* section-5 how it works */
-.work-section{
-    max-width:450px;
-    width: 100%;
-    padding:30px 15px 60px 15px;
-    background-color: var(--primary);
-}
-
-.heading{
-    text-align:center;
-    margin-bottom:35px;
-}
-
-
-
-.heading h2{
-    font-size:32px;
-    line-height:1.2;
-    margin-bottom:10px;
-    color:var(--secondary);
-}
-
-
-
-.steps{
-    display:flex;
-    flex-direction:column;
-    gap:25px;
-}
-
-.step{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.step.right{
-    flex-direction:row-reverse;
-}
-
-.circle{
-    min-width:52px;
-    width:52px;
-    height:52px;
-    border-radius:50%;
-    background:var(--secondary);
-    color:var(--primary);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:20px;
-    box-shadow:0 5px 15px rgba(95,143,70,.25);
-    animation:pulse 2s infinite;
-}
-
-.content{
-    flex:1;
-    background:#fff;
-    border-radius:24px;
-    border: 2px solid var(--secondary);
-    padding:14px;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-    opacity:0;
-    transform:translateY(30px);
-    animation:fadeUp .8s ease forwards;
-    transition:.3s;
-}
-
-.step:nth-child(1) .content{
-    animation-delay:.1s;
-}
-
-.step:nth-child(2) .content{
-    animation-delay:.3s;
-}
-
-.step:nth-child(3) .content{
-    animation-delay:.5s;
-}
-
-.step:nth-child(4) .content{
-    animation-delay:.7s;
-}
-
-.content:hover{
-    transform:translateY(-3px);
-    box-shadow:0 12px 30px rgba(0,0,0,.12);
-}
-
-.content img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-    border-radius:18px;
-    margin-bottom:12px;
-    transition:.4s;
-}
-
-.content:hover img{
-    transform:scale(1.04);
-}
-
-.content h3{
-    font-size:22px;
-    color:var(--black);
-    line-height:1.3;
-    margin-bottom:10px;
-}
-
-.content p{
-    font-size:18px;
-    line-height:1.2;
-    color:black;
-}
-/* Mobile Optimization - Same Layout */
-
-@media(max-width:480px){
-
-    .work-section{
-        padding:25px 12px 45px;
+    @media(max-width:480px) {
+      .work-section { padding:25px 12px 45px; }
+      .heading { margin-bottom:28px; }
+      .heading h2 { font-size:26px !important; line-height:1.25; }
+      .steps { gap:20px; }
+      .step { gap:10px; align-items:flex-start; }
+      .circle { min-width:42px; width:42px; height:42px; font-size:16px !important; }
+      .content { border-radius:20px; padding:12px; }
+      .content img { height:140px; border-radius:14px; margin-bottom:10px; }
+      .content h3 { font-size:18px !important; line-height:1.3; margin-bottom:8px; }
     }
 
+    @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(95,143,70,.45);} 70%{box-shadow:0 0 0 12px rgba(95,143,70,0);} 100%{box-shadow:0 0 0 0 rgba(95,143,70,0);} }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(30px);} to{opacity:1;transform:translateY(0);} }
 
-    .heading{
-        margin-bottom:28px;
+    /* section-6 */
+    .gh-use-new { width:100%; max-width:450px; display:flex; justify-content:center; margin-top:-30px; background:var(--secondary); font-family:var(--font),serif; border-bottom:2px solid var(--primary); }
+    .gh-use-card { width:var(--max-w); padding:32px 18px; position:relative; overflow:hidden; }
+    .gh-use-head { text-align:center; position:relative; z-index:2; margin-top:0px; }
+    .gh-use-head h2 { font-size:30px; color:var(--primary); margin:15px 0 5px; font-weight:bold; }
+    .gh-use-head p { color:var(--black); font-size:18px; }
+    .gh-process { margin-top:35px; display:flex; align-items:flex-start; justify-content:center; gap:6px; position:relative; z-index:2; }
+    .gh-item { width:115px; height:210px; text-align:center; background:var(--white); padding:16px 8px; border-radius:var(--radius-md); border:1px solid var(--primary-light); transform:translateY(20px); opacity:0; animation:showStep .7s forwards; transition:all 0.3s cubic-bezier(0.175,0.885,0.32,1.275); box-shadow:var(--shadow-sm); }
+    .delay1 { animation-delay:.25s; }
+    .delay2 { animation-delay:.5s; }
+    @keyframes showStep { to{transform:translateY(0);opacity:1;} }
+    .gh-item:hover { transform:translateY(-8px) scale(1.04); box-shadow:var(--shadow-md); border-color:var(--secondary-dark); }
+    .gh-top { position:relative; display:flex; justify-content:center; }
+    .gh-circle { position:absolute; right:2px; top:-5px; width:24px; height:24px; background:var(--primary-dark); color:var(--white); border-radius:50%; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; z-index:3; box-shadow:0 2px 6px rgba(104,101,203,0.3); }
+    .gh-icon { width:65px; height:65px; border-radius:50%; background:var(--primary-light); display:flex; align-items:center; justify-content:center; color:var(--primary); font-size:24px; animation:bounce 2s infinite; }
+    @keyframes bounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-6px);} }
+    .gh-item h3 { font-size:20px; color:var(--primary); margin:15px 0 6px; line-height:1.1; }
+    .gh-item p { font-size:18px; line-height:1.5; color:var(--text-mid); margin:0; }
+    .gh-arrow { font-size:22px; color:var(--primary); margin-top:55px; animation:arrowMove 1.5s infinite; display:flex; align-items:center; justify-content:center; }
+    @keyframes arrowMove { 50%{transform:translateX(6px);} }
+    .gh-bottom-text { position:relative; z-index:2; margin-top:30px; background:var(--primary); color:var(--white); padding:13px; border-radius:var(--radius-sm); text-align:center; font-size:14px; font-weight:500; box-shadow:var(--shadow-md); }
+
+    @media(max-width:480px) {
+      .gh-use-new { margin-top:-20px; width:100%; }
+      .gh-use-card { padding:25px 12px; width:100%; }
+      .gh-use-head h2 { font-size:26px !important; margin:12px 0 5px; }
+      .gh-use-head p { font-size:16px !important; line-height:1.5; }
+      .gh-process { gap:5px; margin-top:28px; justify-content:center; align-items:flex-start; }
+      .gh-item { width:calc(33.33% - 8px); height:200px; align-items:stretch; }
+      .gh-icon { width:55px; height:55px; font-size:22px; }
+      .gh-circle { width:22px; height:22px; font-size:10px; }
+      .gh-item h3 { font-size:16px !important; margin:12px 0 5px; line-height:1.2; }
+      .gh-item p { font-size:16px !important; line-height:1.35; }
+      .gh-arrow { font-size:18px; margin-top:50px; }
+      .gh-bottom-text { margin-top:25px; font-size:16px !important; line-height:1.4; padding:12px; }
     }
 
-
-    .heading h2{
-        font-size:26px !important;
-        line-height:1.25;
-    }
-
-
-    .steps{
-        gap:20px;
-    }
-
-
-    .step{
-        gap:10px;
-        align-items:flex-start;
-    }
-
-
-    .circle{
-        min-width:42px;
-        width:42px;
-        height:42px;
-        font-size:16px !important;
-    }
-
-
-    .content{
-        border-radius:20px;
-        padding:12px;
-    }
-
-
-    .content img{
-        height:140px;
-        border-radius:14px;
-        margin-bottom:10px;
-    }
-
-
-    .content h3{
-        font-size:18px !important;
-        line-height:1.3;
-        margin-bottom:8px;
-    }
-
-
-}
-
-@keyframes pulse{
-    0%{
-        box-shadow:0 0 0 0 rgba(95,143,70,.45);
-    }
-    70%{
-        box-shadow:0 0 0 12px rgba(95,143,70,0);
-    }
-    100%{
-        box-shadow:0 0 0 0 rgba(95,143,70,0);
-    }
-}
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-
-
-
-
-/* section-6 how to use */
-   .gh-use-new {
-            width: 100%;
-            max-width: 450px;
-            display: flex;
-            justify-content: center;
-            margin-top: -30px;
-            background:  var(--secondary);
-            font-family: var(--font), serif;
-            border-bottom: 2px solid var(--primary);
-        }
-
-        .gh-use-card {
-            width: var(--max-w);
-            padding: 32px 18px;
-           position: relative;
-            overflow: hidden;
-           }
-
-     
-
-        @keyframes floatBg {
-            from { transform: translateY(0); }
-            to { transform: translateY(20px); }
-        }
-
-        .gh-use-head {
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            
-            margin-top: -0px;
-            
-        }
-
-      
-
-        .gh-use-head h2 {
-            font-size: 30px;
-            color: var(--primary);
-            margin: 15px 0 5px;
-            font-weight: bold;
-        }
-
-        .gh-use-head p {
-            color: var(--black);
-            font-size: 18px;
-        }
-
-        .gh-process {
-            margin-top: 35px;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            gap: 6px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .gh-item {
-            width: 115px;
-            height: 210px;
-            text-align: center;
-            background: var(--white);
-            padding: 16px 8px;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--primary-light);
-            transform: translateY(20px);
-            opacity: 0;
-            animation: showStep .7s forwards;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .delay1 { animation-delay: .25s; }
-        .delay2 { animation-delay: .5s; }
-
-        @keyframes showStep {
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .gh-item:hover {
-            transform: translateY(-8px) scale(1.04);
-            box-shadow: var(--shadow-md);
-            border-color: var(--secondary-dark);
-        }
-
-        .gh-top {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-
-        .gh-circle {
-            position: absolute;
-            right: 2px;
-            top: -5px;
-            width: 24px;
-            height: 24px;
-            background: var(--primary-dark);
-            color: var(--white);
-            border-radius: 50%;
-            font-size: 11px;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 3;
-            box-shadow: 0 2px 6px rgba(104, 101, 203, 0.3);
-        }
-
-        .gh-icon {
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            background: var(--primary-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary); /* आइकॉन का कलर */
-            font-size: 24px;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
-        }
-
-        .gh-item h3 {
-            font-size: 20px;
-            color: var(--primary);
-            margin: 15px 0 6px;
-            line-height: 1.1;
-        }
-
-        .gh-item p {
-            font-size: 18px;
-            line-height: 1.5;
-            color: var(--text-mid);
-            margin: 0;
-        }
-
-        .gh-arrow {
-            font-size: 22px;
-            color: var(--primary);
-            margin-top: 55px;
-            animation: arrowMove 1.5s infinite;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        @keyframes arrowMove {
-            50% { transform: translateX(6px); }
-        }
-
-        .gh-bottom-text {
-            position: relative;
-            z-index: 2;
-            margin-top: 30px;
-            background: var(--primary);
-            color: var(--white);
-            padding: 13px;
-            border-radius: var(--radius-sm);
-            text-align: center;
-            font-size: 14px;
-            font-weight: 500;
-            box-shadow: var(--shadow-md);
-        }
-
-       /* Mobile Optimization - Same Layout */
-
-@media(max-width:480px){
-
-    .gh-use-new{
-        margin-top:-20px;
-        width:100%;
-    }
-
-
-    .gh-use-card{
-        padding:25px 12px;
-        width:100%;
-    }
-
-
-    .gh-use-head h2{
-        font-size:26px !important;
-        margin:12px 0 5px;
-    }
-
-
-    .gh-use-head p{
-        font-size:16px !important;
-        line-height:1.5;
-    }
-
-
-    .gh-process{
-        gap:5px;
-        margin-top:28px;
-        justify-content:center;
-        align-items:flex-start;
-    }
-
-
-    /* cards same size */
-    .gh-item{
-        width:calc(33.33% - 8px);
-        height:200px;
-        align-items:stretch;
-    }
-
-
-    .gh-icon{
-        width:55px;
-        height:55px;
-        font-size:22px;
-    }
-
-
-    .gh-circle{
-        width:22px;
-        height:22px;
-        font-size:10px;
-    }
-
-
-    .gh-item h3{
-        font-size:16px !important;
-        margin:12px 0 5px;
-        line-height:1.2;
-    }
-
-
-    .gh-item p{
-        font-size:16px !important;
-        line-height:1.35;
-
-    }
-
-
-    .gh-arrow{
-        font-size:18px;
-        margin-top:50px;
-    }
-
-
-    .gh-bottom-text{
-        margin-top:25px;
-        font-size:16px !important;
-        line-height:1.4;
-        padding:12px;
-    }
-
-}
-
-
-
-
-/* section-7 bf-af */
-    .gh-widget-frame {
-            max-width: var(--max-w);
-            width: 100%;
-            background: var(--primary);
-            padding: 30px 20px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Top Header */
-        .gh-widget-headgroup {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .gh-widget-headgroup h2 {
-            color: var(--secondary);
-            font-family: var(--font), sans-serif;
-            font-size: 32px;
-            letter-spacing: 0.5px;
-            margin-bottom: -18px;
-        }
-
-        .gh-pill-label {
-            background: var(--primary);
-            color: var(--white);
-            padding: 6px 18px;
-            border-radius: 50px;
-            font-size: 20px;
-            font-weight: 600;
-            display: inline-block;
-            box-shadow: var(--shadow-sm);
-        }
-
-        /* Comparison Logic */
-        .gh-split-flow {
-            position: relative;
-        }
-
-        /* Vertical Divider */
-        .gh-split-flow::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--secondary), var(--primary));
-            transform: translateX(-50%);
-        }
-
-        .gh-duo-track {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 35px;
-            position: relative;
-            align-items: stretch;
-        }
-
-        .gh-panel-cell {
-            width: 44%;
-            background: var(--white);
-            border-radius: var(--radius-md);
-            padding: 14px 12px;
-            text-align: center;
-            transition: 0.3s ease;
-            border: 1px solid rgba(104, 101, 203, 0.1);
-            box-shadow: var(--shadow-sm);
-            display:flex;
-            flex-direction:column;
-           }
-
-        /* Before Card Styles */
-        .gh-negative-state { border-bottom: 4px solid rgb(167, 53, 53); }
-        .gh-negative-state:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(217, 83, 79, 0.15);  }
-
-        /* After Card Styles */
-        .gh-positive-state { border-bottom: 4px solid var(--secondary-dark); }
-        .gh-positive-state:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
-
-        .gh-panel-cell img {
-            width: 100%;
-            height: 85px;
-            border-radius: var(--radius-sm);
-            object-fit: cover;
-            margin-bottom: 12px;
-            background: var(--primary-light);
-        }
-
-        .gh-panel-cell p {
-            font-size: 18px;
-            color: var(--black);
-            line-height: 1.4;
-            font-weight: 500;
-            font-family: var(--font), sans-serif;
-        }
-
-        .gh-positive-state p { color: var(--black); font-weight: 500; }
-
-        /* Icon in middle */
-        .gh-center-node {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--white);
-            border: 1px solid var(--secondary);
-            border-radius: 50%;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 15px;
-            z-index: 2;
-            box-shadow: var(--shadow-sm);
-        }
-
-
-
-
-    /* section-8 testimonial */
-
-    .sec {
-      max-width: var(--max-w);
-      width: 100%;
-      margin: auto;
-      padding: 30px 15px;
-      background-color: var(--secondary);
-    }
-
-    .sect-8 {
-      font-size: 32px;
-      color: var(--primary);
-      text-align: center;
-      font-weight: 700;
-      margin-bottom: 30px;
-    }
-
-    /* CARD */
-
-    .card {
-      background: var(--white);
-      width: 350px;
-      border-radius: var(--radius-lg);
-      margin: 60px auto 10px;
-      padding: 0 20px 30px;
-      text-align: center;
-      position: relative;
-      box-shadow: var(--shadow-md);
-      border: 2px solid var(--primary-light);
-      overflow: visible;
-    }
-
-    /* HEADER */
-
-    .card-header {
-      background: linear-gradient(135deg,
-          var(--primary),
-          var(--primary-dark));
-      border-radius: 20px;
-      margin-top: -10px;
-      padding-top: 50px;
-      padding-bottom: 20px;
-      color: var(--white);
-    }
-
-    /* PROFILE IMAGE */
-
-    .profile-img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: 4px solid var(--white);
-      position: absolute;
-      top: -40px;
-      left: 50%;
-      transform: translateX(-50%);
-      object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
-    }
-
-    /* NAME */
-
-    .name {
-      font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    /* STARS */
-
-    .stars {
-      color: #FFD700;
-      font-size: 20px;
-      letter-spacing: 2px;
-    }
-
-    /* TESTIMONIAL TEXT */
-
-    .testimonial-text {
-      color: var(--text-mid);
-      font-style: italic;
-      font-size: 16px;
-      line-height: 1.7;
-      margin-top: 25px;
-      padding: 0 10px;
-    }
-
-    /* MOBILE */
+    /* section-7 */
+    .gh-widget-frame { max-width:var(--max-w); width:100%; background:var(--primary); padding:30px 20px; position:relative; overflow:hidden; box-shadow:var(--shadow-lg); }
+    .gh-widget-headgroup { text-align:center; margin-bottom:40px; }
+    .gh-widget-headgroup h2 { color:var(--secondary); font-family:var(--font),sans-serif; font-size:32px; letter-spacing:0.5px; margin-bottom:-18px; }
+    .gh-pill-label { background:var(--primary); color:var(--white); padding:6px 18px; border-radius:50px; font-size:20px; font-weight:600; display:inline-block; box-shadow:var(--shadow-sm); }
+    .gh-split-flow { position:relative; }
+    .gh-split-flow::before { content:''; position:absolute; left:50%; top:0; bottom:0; width:2px; background:linear-gradient(to bottom,var(--secondary),var(--primary)); transform:translateX(-50%); }
+    .gh-duo-track { display:flex; justify-content:space-between; margin-bottom:35px; position:relative; align-items:stretch; }
+    .gh-panel-cell { width:44%; background:var(--white); border-radius:var(--radius-md); padding:14px 12px; text-align:center; transition:0.3s ease; border:1px solid rgba(104,101,203,0.1); box-shadow:var(--shadow-sm); display:flex; flex-direction:column; }
+    .gh-negative-state { border-bottom:4px solid rgb(167,53,53); }
+    .gh-negative-state:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(217,83,79,0.15); }
+    .gh-positive-state { border-bottom:4px solid var(--secondary-dark); }
+    .gh-positive-state:hover { transform:translateY(-5px); box-shadow:var(--shadow-md); }
+    .gh-panel-cell img { width:100%; height:85px; border-radius:var(--radius-sm); object-fit:cover; margin-bottom:12px; background:var(--primary-light); }
+    .gh-panel-cell p { font-size:18px; color:var(--black); line-height:1.4; font-weight:500; font-family:var(--font),sans-serif; }
+    .gh-positive-state p { color:var(--black); font-weight:500; }
+    .gh-center-node { position:absolute; left:50%; transform:translateX(-50%); background:var(--white); border:1px solid var(--secondary); border-radius:50%; width:32px; height:32px; display:flex; align-items:center; justify-content:center; font-size:15px; z-index:2; box-shadow:var(--shadow-sm); }
+
+    /* section-8 */
+    .sec { max-width:var(--max-w); width:100%; margin:auto; padding:30px 15px; background-color:var(--secondary); }
+    .sect-8 { font-size:32px; color:var(--primary); text-align:center; font-weight:700; margin-bottom:30px; }
+    .card { background:var(--white); width:350px; border-radius:var(--radius-lg); margin:60px auto 10px; padding:0 20px 30px; text-align:center; position:relative; box-shadow:var(--shadow-md); border:2px solid var(--primary-light); overflow:visible; }
+    .card-header { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); border-radius:20px; margin-top:-10px; padding-top:50px; padding-bottom:20px; color:var(--white); }
+    .profile-img { width:80px; height:80px; border-radius:50%; border:4px solid var(--white); position:absolute; top:-40px; left:50%; transform:translateX(-50%); object-fit:cover; box-shadow:0 4px 12px rgba(0,0,0,.15); }
+    .name { font-size:22px; font-weight:700; margin-bottom:8px; }
+    .stars { color:#FFD700; font-size:20px; letter-spacing:2px; }
+    .testimonial-text { color:var(--text-mid); font-style:italic; font-size:16px; line-height:1.7; margin-top:25px; padding:0 10px; }
 
     @media (max-width:480px) {
-
-      .sect-8 {
-        font-size: 26px;
-      }
-
-      .card {
-        width: 100%;
-        max-width: 320px;
-        margin: 80px auto 50px;
-        padding: 0 16px 26px;
-      }
-
-      .card-header {
-        padding-top: 48px;
-        padding-bottom: 18px;
-      }
-
-      .profile-img {
-        width: 72px;
-        height: 72px;
-        top: -36px;
-      }
-
-      .name {
-        font-size: 20px;
-      }
-
-      .stars {
-        font-size: 18px;
-      }
-
-      .testimonial-text {
-        font-size: 18px;
-        line-height: 1.6;
-        padding: 0 5px;
-      }
+      .sect-8 { font-size:26px; }
+      .card { width:100%; max-width:320px; margin:80px auto 50px; padding:0 16px 26px; }
+      .card-header { padding-top:48px; padding-bottom:18px; }
+      .profile-img { width:72px; height:72px; top:-36px; }
+      .name { font-size:20px; }
+      .stars { font-size:18px; }
+      .testimonial-text { font-size:18px; line-height:1.6; padding:0 5px; }
     }
-
-    /* EXTRA SMALL DEVICES */
-
     @media (max-width:360px) {
-
-      .card {
-        max-width: 300px;
-        padding: 0 14px 24px;
-      }
-
-      .profile-img {
-        width: 68px;
-        height: 68px;
-      }
-
-      .name {
-        font-size: 18px;
-      }
-
-      .testimonial-text {
-        font-size: 18px;
-        line-height: 1.5;
-      }
+      .card { max-width:300px; padding:0 14px 24px; }
+      .profile-img { width:68px; height:68px; }
+      .name { font-size:18px; }
+      .testimonial-text { font-size:18px; line-height:1.5; }
     }
 
-
-
-
-
-
-    /* section-9 offer section */
-
-.offer-wrapper{
-    max-width:450px;
-    width: 100%;
-    margin:auto;
-}
-
-.offer-ticket{
-    position:relative;
-    background:var(--secondary);
-    overflow:hidden;
-    box-shadow:var(--shadow-lg);
-}
-
-/* Header */
-.offer-header{
-    position:relative;
-    overflow:hidden;
-    background:linear-gradient(
-        135deg,
-        var(--primary),
-        var(--primary-dark)
-    );
-    color:var(--white);
-    text-align:center;
-    padding:25px 20px 95px;
-}
-
-.offer-header::before{
-    content:"";
-    position:absolute;
-    width:220px;
-    height:220px;
-    border-radius:50%;
-    background:rgba(255,255,255,.08);
-    top:-80px;
-    right:-90px;
-    animation:rotateGlow 12s linear infinite;
-}
-
-.offer-badge{
-    display:inline-block;
-    background:rgba(255,255,255,.15);
-    border:1px solid rgba(255,255,255,.2);
-    padding:8px 16px;
-    border-radius:50px;
-    font-size:24px;
-    font-weight:700;
-    margin-bottom:15px;
-    animation:pulse 2s infinite;
-}
-
-.offer-header h2{
-    font-size:32px;
-    line-height:1.2;
-    margin-bottom:12px;
-    color: var(--secondary);
-}
-
-.offer-header p{
-    font-size:18px;
-    line-height:1.6;
-    opacity:.95;
-}
-
-/* Coupon */
-.coupon-box{
-    position:relative;
-    margin:-65px 18px 20px;
-    background:var(--white);
-    border:3px dashed var(--primary);
-    border-radius:25px;
-    padding:25px 20px;
-    z-index:2;
-    animation:float 4s ease-in-out infinite;
-}
-
-
-.coupon-box::before{
-    left:-18px;
-}
-
-.coupon-box::after{
-    right:-18px;
-}
-
-.offer-title{
-    text-align:center;
-    margin-bottom:20px;
-}
-
-
-.offer-title h3{
-    font-size:28px;
-    color:var(--primary);
-    line-height:1.2;
-}
-
-/* Countdown */
-.timer-box{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    margin-bottom:20px;
-}
-
-.time{
-    background:var(--primary-light);
-    border:1px solid rgba(104,101,203,.2);
-    border-radius:15px;
-    padding:12px 10px;
-    min-width:70px;
-    text-align:center;
-}
-
-.time strong{
-    display:block;
-    font-size:24px;
-    color:var(--primary);
-}
-
-.time span{
-    font-size:18px;
-    color:var(--black);
-}
-
-/* Features */
-.feature{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    padding:15px 0;
-    border-bottom:1px dashed rgba(104,101,203,.2);
-    opacity:0;
-    transform:translateY(20px);
-    animation:fadeUp .6s ease forwards;
-}
-
-.feature:nth-of-type(1){animation-delay:.2s;}
-.feature:nth-of-type(2){animation-delay:.4s;}
-.feature:nth-of-type(3){animation-delay:.6s;}
-
-.feature:last-child{
-    border-bottom:none;
-}
-
-.icon{
-    width:52px;
-    height:52px;
-    border-radius:16px;
-    background:var(--primary-light);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:24px;
-    flex-shrink:0;
-}
-
-.text h4{
-    font-size:20px;
-    color:var(--black);
-    margin-bottom:4px;
-}
-
-.text p{
-    font-size:18px;
-    color:var(--black);
-    line-height:1.5;
-}
-
-/* Footer */
-.offer-footer{
-    padding:0 18px 22px;
-}
-
-.urgency{
-    text-align:center;
-    background:var(--primary-light);
-    color:var(--primary-dark);
-    border:1px solid rgba(104,101,203,.2);
-    border-radius:15px;
-    padding:12px;
-    font-size:18px;
-    font-weight:700;
-    margin-bottom:18px;
-    animation:glow 2s infinite alternate;
-}
-
-.order-btn{
-    position:relative;
-    overflow:hidden;
-    display:block;
-    width:100%;
-    text-align:center;
-    text-decoration:none;
-    background:linear-gradient(
-        135deg,
-        var(--primary),
-        var(--primary-dark)
-    );
-    color:var(--white);
-    padding:18px;
-    border-radius:18px;
-    font-size:19px;
-    font-weight:800;
-    box-shadow:0 12px 25px rgba(104,101,203,.3);
-    animation:btnPulse 2s infinite;
-}
-
-.order-btn::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-100%;
-    width:50%;
-    height:100%;
-    background:rgba(255,255,255,.25);
-    transform:skewX(-25deg);
-    animation:shine 3s infinite;
-}
-
-.order-btn span{
-    display:inline-block;
-    margin-left:8px;
-    animation:arrowMove 1s infinite;
-}
-
-/* Animations */
-@keyframes pulse{
-    0%,100%{transform:scale(1);}
-    50%{transform:scale(1.05);}
-}
-
-@keyframes float{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-6px);}
-}
-
-@keyframes fadeUp{
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes glow{
-    from{
-        box-shadow:0 0 0 rgba(104,101,203,0);
-    }
-    to{
-        box-shadow:0 0 18px rgba(104,101,203,.25);
-    }
-}
-
-@keyframes btnPulse{
-    0%,100%{transform:scale(1);}
-    50%{transform:scale(1.02);}
-}
-
-@keyframes shine{
-    100%{left:150%;}
-}
-
-@keyframes arrowMove{
-    0%,100%{transform:translateX(0);}
-    50%{transform:translateX(5px);}
-}
-
-@keyframes rotateGlow{
-    from{transform:rotate(0deg);}
-    to{transform:rotate(360deg);}
-}
-
-@media(max-width:420px){
-
- /* Mobile Optimization - Same Layout */
-
-@media (max-width:480px){
-
-.offer-header{
-padding:22px 18px 85px;
-}
-
-.offer-badge{
-font-size:18px !important;
-padding:7px 14px;
-}
-
-.offer-header h2{
-font-size:30px !important;
-line-height:1.25;
-}
-
-.offer-header p{
-font-size:17px !important;
-line-height:1.5;
-}
-
-.coupon-box{
-margin:-55px 14px 18px;
-padding:22px 16px;
-}
-
-.offer-title h3{
-font-size:24px !important;
-}
-
-.timer-box{
-gap:8px;
-}
-
-.time{
-min-width:62px;
-padding:10px 8px;
-}
-
-.time strong{
-font-size:22px !important;
-}
-
-.time span{
-font-size:16px !important;
-}
-
-.feature{
-gap:12px;
-padding:14px 0;
-}
-
-.icon{
-width:48px;
-height:48px;
-font-size:22px !important;
-}
-
-.text h4{
-font-size:18px !important;
-}
-
-.text p{
-font-size:16px !important;
-line-height:1.5;
-}
-
-.offer-footer{
-padding:0 14px 20px;
-}
-
-.urgency{
-font-size:16px !important;
-padding:11px;
-}
-
-.order-btn{
-font-size:20px !important;
-padding:17px;
-}
-
-}
-}
-
-
-
-
-    /* =============================================
-   SECTION 11: FAQ
-   ============================================= */
-    .faq-section {
-      background: var(--primary);
-      padding: 36px 0;
-      font-family: var(--font);
+    /* section-9 */
+    .offer-wrapper { max-width:450px; width:100%; margin:auto; }
+    .offer-ticket { position:relative; background:var(--secondary); overflow:hidden; box-shadow:var(--shadow-lg); }
+    .offer-header { position:relative; overflow:hidden; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:var(--white); text-align:center; padding:25px 20px 95px; }
+    .offer-header::before { content:""; position:absolute; width:220px; height:220px; border-radius:50%; background:rgba(255,255,255,.08); top:-80px; right:-90px; animation:rotateGlow 12s linear infinite; }
+    .offer-badge { display:inline-block; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.2); padding:8px 16px; border-radius:50px; font-size:24px; font-weight:700; margin-bottom:15px; animation:pulse 2s infinite; }
+    .offer-header h2 { font-size:32px; line-height:1.2; margin-bottom:12px; color:var(--secondary); }
+    .offer-header p { font-size:18px; line-height:1.6; opacity:.95; }
+    .coupon-box { position:relative; margin:-65px 18px 20px; background:var(--white); border:3px dashed var(--primary); border-radius:25px; padding:25px 20px; z-index:2; animation:float 4s ease-in-out infinite; }
+    .coupon-box::before { left:-18px; }
+    .coupon-box::after { right:-18px; }
+    .offer-title { text-align:center; margin-bottom:20px; }
+    .offer-title h3 { font-size:28px; color:var(--primary); line-height:1.2; }
+    .timer-box { display:flex; justify-content:center; gap:10px; margin-bottom:20px; }
+    .time { background:var(--primary-light); border:1px solid rgba(104,101,203,.2); border-radius:15px; padding:12px 10px; min-width:70px; text-align:center; }
+    .time strong { display:block; font-size:24px; color:var(--primary); }
+    .time span { font-size:18px; color:var(--black); }
+    .feature { display:flex; align-items:center; gap:15px; padding:15px 0; border-bottom:1px dashed rgba(104,101,203,.2); opacity:0; transform:translateY(20px); animation:fadeUp .6s ease forwards; }
+    .feature:nth-of-type(1){animation-delay:.2s;}
+    .feature:nth-of-type(2){animation-delay:.4s;}
+    .feature:nth-of-type(3){animation-delay:.6s;}
+    .feature:last-child { border-bottom:none; }
+    .icon { width:52px; height:52px; border-radius:16px; background:var(--primary-light); display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0; }
+    .text h4 { font-size:20px; color:var(--black); margin-bottom:4px; }
+    .text p { font-size:18px; color:var(--black); line-height:1.5; }
+    .offer-footer { padding:0 18px 22px; }
+    .urgency { text-align:center; background:var(--primary-light); color:var(--primary-dark); border:1px solid rgba(104,101,203,.2); border-radius:15px; padding:12px; font-size:18px; font-weight:700; margin-bottom:18px; animation:glowAnim 2s infinite alternate; }
+    .order-btn { position:relative; overflow:hidden; display:block; width:100%; text-align:center; text-decoration:none; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:var(--white); padding:18px; border-radius:18px; font-size:19px; font-weight:800; box-shadow:0 12px 25px rgba(104,101,203,.3); animation:btnPulse 2s infinite; }
+    .order-btn::before { content:""; position:absolute; top:0; left:-100%; width:50%; height:100%; background:rgba(255,255,255,.25); transform:skewX(-25deg); animation:shine 3s infinite; }
+    .order-btn span { display:inline-block; margin-left:8px; animation:arrowMove 1s infinite; }
+
+    @keyframes pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.05);} }
+    @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-6px);} }
+    @keyframes glowAnim { from{box-shadow:0 0 0 rgba(104,101,203,0);} to{box-shadow:0 0 18px rgba(104,101,203,.25);} }
+    @keyframes btnPulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.02);} }
+    @keyframes shine { 100%{left:150%;} }
+    @keyframes rotateGlow { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+
+    @media(max-width:480px) {
+      .offer-header { padding:22px 18px 85px; }
+      .offer-badge { font-size:18px !important; padding:7px 14px; }
+      .offer-header h2 { font-size:30px !important; line-height:1.25; }
+      .offer-header p { font-size:17px !important; line-height:1.5; }
+      .coupon-box { margin:-55px 14px 18px; padding:22px 16px; }
+      .offer-title h3 { font-size:24px !important; }
+      .timer-box { gap:8px; }
+      .time { min-width:62px; padding:10px 8px; }
+      .time strong { font-size:22px !important; }
+      .time span { font-size:16px !important; }
+      .feature { gap:12px; padding:14px 0; }
+      .icon { width:48px; height:48px; font-size:22px !important; }
+      .text h4 { font-size:18px !important; }
+      .text p { font-size:16px !important; line-height:1.5; }
+      .offer-footer { padding:0 14px 20px; }
+      .urgency { font-size:16px !important; padding:11px; }
+      .order-btn { font-size:20px !important; padding:17px; }
     }
 
-    .faq-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 4px;
+    /* FAQ */
+    .faq-section { background:var(--primary); padding:36px 0; font-family:var(--font); }
+    .faq-list { display:flex; flex-direction:column; gap:10px; margin-top:4px; }
+    .faq-item { background:var(--white); border-radius:var(--radius-md); overflow:hidden; border:2px solid var(--secondary); }
+    .section-heading { color:var(--white); margin-bottom:20px; font-size:32px; text-align:center; font-weight:600; }
+    .faq-question { width:100%; background:none; border:none; padding:15px 16px; text-align:left; font-family:var(--font); font-size:18px; font-weight:700; color:var(--text-dark); cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:10px; min-height:54px; }
+    .faq-arrow { width:22px; height:22px; background:var(--primary-light); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:transform 0.3s; }
+    .faq-arrow svg { width:82px; height:82px; fill:var(--primary); }
+    .faq-item.open .faq-arrow { transform:rotate(180deg); }
+    .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease,padding 0.35s ease; padding:0 16px; font-size:18px; color:var(--text-mid); line-height:1.7; }
+    .faq-item.open .faq-answer { max-height:200px; padding:0 16px 15px; }
+
+    /* Sticky CTA */
+    .sticky-cta { position:fixed; bottom:0; left:0; right:0; z-index:200; padding:10px 18px 14px; max-width:var(--max-w); margin:0 auto; display:flex; justify-content:center; width:100%; }
+    @media (max-width:450px) { .sticky-cta { max-width:100%; } }
+    @media (min-width:451px) { .sticky-cta { left:50%; transform:translateX(-50%); right:auto; width:var(--max-w); } }
+    .sticky-cta-inner { display:flex; align-items:center; gap:10px; }
+    .sticky-cta .btn-primary { display:flex; align-items:center; justify-content:center; flex-shrink:0; width:auto; padding:13px 92px; font-size:22px; animation:pulseCta 1.5s infinite; }
+    @keyframes pulseCta { 0%{transform:scale(1);} 50%{transform:scale(1.05);} 100%{transform:scale(1);} }
+
+    .disclaimer { background:#f0effe; border:1px solid rgba(104,101,203,0.15); border-radius:var(--radius-sm); padding:12px 14px; font-size:0.72rem; color:var(--text-light); line-height:1.6; margin-top:16px; text-align:center; }
+
+    .page-wrap { width:100%; max-width:450px; margin:0 auto; overflow:hidden; box-sizing:border-box; }
+    .page-wrap * { box-sizing:border-box; }
+    body { overflow-x:hidden; }
+    img,video,iframe { max-width:100%; height:auto; }
+    section,.container { width:100%; }
+
+    /* Policy links */
+    .pl-wrap { max-width:450px; width:100%; margin:0 auto; padding:8px 12px; box-sizing:border-box; }
+    .pl-row { display:flex; gap:0; flex-wrap:nowrap; justify-content:center; align-items:center; }
+    .pl-link { background:none; border:none; font-size:7px; opacity:0.44; font-weight:500; color:#267156; cursor:pointer; padding:4px 5px; text-decoration:underline; text-underline-offset:2px; font-family:inherit; white-space:nowrap; transition:color .15s; }
+    .pl-link:hover { color:#1a5240; }
+    .pl-sep { color:#c9ddd7; font-size:11px; user-select:none; }
+    .pp-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:9999; align-items:center; justify-content:center; }
+    .pp-overlay.show { display:flex; }
+    .pp-modal { background:#fff; border-radius:18px; max-width:420px; width:90%; max-height:80vh; overflow-y:auto; padding:22px 18px 18px; position:relative; }
+    .pp-close { position:absolute; top:14px; right:14px; background:#e6f3ed; border:none; border-radius:50%; width:30px; height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:#267156; font-size:16px; }
+    .pp-close:hover { background:#c9ddd7; }
+    .pp-mtitle { font-size:17px; font-weight:700; color:#1a5240; margin-bottom:4px; display:flex; align-items:center; gap:8px; }
+    .pp-mtitle i { font-size:20px; }
+    .pp-mbadge { display:inline-block; background:#e6f3ed; color:#267156; font-size:11px; font-weight:600; padding:2px 10px; border-radius:999px; margin-bottom:12px; }
+    .pp-mpara { font-size:14px; color:#333; line-height:1.7; margin-bottom:10px; }
+    .pp-mlist { padding-left:0; list-style:none; margin:0 0 10px; }
+    .pp-mlist li { font-size:14px; color:#333; line-height:1.6; padding:5px 0 5px 20px; position:relative; border-bottom:1px dashed #e2ede9; }
+    .pp-mlist li:last-child { border-bottom:none; }
+    .pp-mlist li::before { content:""; position:absolute; left:4px; top:13px; width:7px; height:7px; background:#39ad7d; border-radius:50%; }
+    .pp-mhl { background:#e6f3ed; border-left:3px solid #267156; border-radius:0 8px 8px 0; padding:9px 13px; font-size:13px; color:#1a5240; margin-bottom:10px; }
+    .pp-cgrid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
+    .pp-citem { background:#f4faf7; border:1px solid #c9ddd7; border-radius:10px; padding:10px; text-align:center; }
+    .pp-citem i { font-size:20px; color:#267156; display:block; margin-bottom:4px; }
+    .pp-citem .pp-clbl { font-size:11px; color:#888; margin-bottom:2px; }
+    .pp-citem .pp-cval { font-size:11px; font-weight:600; color:#1a5240; }
+    @media (max-width:480px) {
+      .pl-wrap { padding:8px 4px; }
+      .pl-link { font-size:6px; padding:4px 2px; }
+      .pl-sep { font-size:6px; }
     }
 
-    .faq-item {
-      background: var(--white);
-      border: 1px solid rgba(104, 101, 203, 0.15);
-      border-radius: var(--radius-md);
-      overflow: hidden;
+    /* Form styles */
+    .shell { max-width:450px; width:100%; background:var(--white); overflow:hidden; }
+    .top-panel { background:var(--primary); padding:32px 28px 48px; position:relative; }
+    .top-panel::after { content:''; position:absolute; bottom:-4px; left:0; right:0; height:40px; background:var(--secondary); border-radius:40px 40px 0 0; }
+    .leaf-bg { position:absolute; top:12px; right:16px; opacity:0.12; font-size:80px; line-height:1; color:var(--white); pointer-events:none; }
+    .prod-row { display:flex; align-items:center; gap:14px; margin-bottom:18px; position:relative; z-index:1; }
+    .prod-icon { width:112px; height:142px; background:rgba(255,255,255,0.18); border-radius:16px; display:flex; align-items:center; justify-content:center; border:1.5px solid rgba(255,255,255,0.3); flex-shrink:0; }
+    .prod-icon img { height:100%; width:100%; }
+    .prod-name { font-size:18px; color:var(--secondary); letter-spacing:0.4px; margin-bottom:3px; }
+    .prod-title { font-size:22px; font-weight:600; color:var(--secondary); line-height:1.2; }
+    .headline-block { position:relative; z-index:1; }
+    .headline-block h2 { font-size:32px; font-weight:700; color:var(--secondary); line-height:1.35; margin-bottom:6px; }
+    .headline-block p { font-size:18px; color:white; line-height:1.6; }
+    .pill-row { display:flex; gap:8px; margin-top:14px; flex-wrap:wrap; position:relative; z-index:1; justify-content:center; }
+    .pill { background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.28); border-radius:50px; padding:4px 12px; font-size:18px; color:var(--white); display:flex; align-items:center; gap:5px; }
+    .pill i { font-size:18px; }
+    .bottom-panel { padding:0 28px 28px; background-color:var(--secondary); }
+    .step-indicator { display:flex; align-items:center; gap:0; margin:4px 0 28px; }
+    .step-dot { width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; border:2px solid var(--primary); color:var(--primary); background:var(--white); flex-shrink:0; transition:all 0.25s; }
+    .step-dot.active { background:var(--primary); color:var(--white); }
+    .step-dot.done { background:var(--primary); color:var(--white); }
+    .step-line { flex:1; height:2px; background:var(--primary); transition:background 0.3s; }
+    .step-line.done { background:var(--primary); }
+    .field-wrap { margin-bottom:20px; }
+    .field-label { font-size:18px; font-weight:700; letter-spacing:0.7px; color:var(--primary); text-transform:uppercase; margin-bottom:8px; }
+    .big-input { width:100%; border:2px solid var(--primary); border-radius:14px; padding:16px 18px; font-size:17px; font-family:var(--font); color:var(--text-dark); background:#faf9ff; outline:none; opacity:0.49; transition:border 0.2s,box-shadow 0.2s; -webkit-appearance:none; appearance:none; }
+    .big-input:focus { border-color:var(--primary); background:var(--white); box-shadow:0 0 0 4px rgba(104,101,203,0.1); }
+    .big-input::placeholder { color:#c0bddf; font-size:15px; }
+    .big-input::-webkit-outer-spin-button,.big-input::-webkit-inner-spin-button { -webkit-appearance:none; }
+    .err { font-size:12px; color:#c0392b; margin-top:6px; display:none; align-items:center; gap:4px; }
+    .err.show { display:flex; }
+    .sep { border:none; border-top:1.5px dashed var(--primary); margin:20px 0; }
+    .cta-btn { width:100%; height:56px; background:var(--primary); color:var(--white); border:none; border-radius:16px; font-family:var(--font); font-size:20px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; transition:background 0.18s,transform 0.1s; margin-top:8px; }
+    .cta-btn:active { transform:scale(0.98); }
+    .cta-btn:disabled { opacity:0.7; cursor:not-allowed; }
+    .cta-btn i { font-size:20px; }
+    .guarantee-row { display:flex; align-items:center; justify-content:center; gap:6px; margin-top:16px; font-size:18px; color:var(--primary); }
+    .guarantee-row i { font-size:20px; color:var(--primary); }
+    .lp-blur-overlay { display:none; position:fixed; inset:0; background:rgba(223,234,230,0.72); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); z-index:999; align-items:center; justify-content:center; }
+    .gh-loader { display:flex; flex-direction:column; align-items:center; padding:40px 28px; text-align:center; background:var(--white); border-radius:24px; width:90%; max-width:340px; }
+    .gh-ring-wrap { position:relative; width:80px; height:80px; margin-bottom:24px; }
+    .gh-ring-outer { width:80px; height:80px; border-radius:50%; border:2px solid #eee; position:absolute; }
+    .gh-ring-spin { width:80px; height:80px; border-radius:50%; border:3px solid transparent; border-top-color:var(--primary); border-right-color:#a5b4fc; animation:spin 1s linear infinite; position:absolute; }
+    @keyframes spin { to{transform:rotate(360deg);} }
+    .gh-ring-dot { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:30px; height:30px; border-radius:50%; background:var(--primary-light); border:1px solid #eee; display:flex; align-items:center; justify-content:center; }
+    .gh-ring-dot i { font-size:14px; color:var(--primary); }
+    .gh-loader-title { font-size:18px; color:var(--text-dark); font-weight:700; margin-bottom:8px; }
+    .gh-loader-sub { font-size:14px; color:var(--text-mid); line-height:1.8; }
+    .lp-dot-anim { color:var(--primary); }
+    .gh-steps { display:flex; flex-direction:column; gap:8px; margin-top:22px; width:100%; }
+    .gh-step { display:flex; align-items:center; gap:10px; font-size:13px; color:var(--text-light); padding:8px 14px; border-radius:10px; background:#faf9ff; border:1px solid #eee; opacity:0.4; transition:all 0.3s; font-family:var(--font); }
+    .gh-step.active,.gh-step.done { color:var(--primary-dark); border-color:var(--primary); background:#eef0ff; opacity:1; }
+    .gh-step i { font-size:15px; }
+    .gh-progress-track { width:100%; height:4px; background:#eee; border-radius:999px; margin-top:22px; overflow:hidden; }
+    .gh-progress-bar { height:100%; background:var(--primary); border-radius:999px; width:0; transition:width 0.5s ease; }
 
-      border: 2px solid var(--secondary);
+    @media (max-width:480px) {
+      .top-panel { padding:28px 22px 42px; }
+      .bottom-panel { padding:0 22px 24px; }
+      .prod-row { gap:12px; }
+      .prod-icon { width:100px; height:128px; }
+      .prod-name { font-size:16px !important; }
+      .prod-title { font-size:22px !important; line-height:1.2; }
+      .headline-block h2 { font-size:26px !important; line-height:1.3; }
+      .headline-block p { font-size:18px !important; line-height:1.6; }
+      .pill { font-size:14px !important; padding:6px 12px; }
+      .pill i { font-size:16px !important; }
+      .field-label { font-size:16px !important; }
+      .big-input { font-size:17px !important; padding:16px 18px; }
+      .big-input::placeholder { font-size:16px !important; }
+      .step-dot { width:30px; height:30px; font-size:16px; }
+      .cta-btn { height:58px; font-size:22px !important; }
+      .cta-btn i { font-size:22px !important; }
+      .guarantee-row { font-size:16px !important; }
+      .guarantee-row i { font-size:18px !important; }
     }
-
-    .section-heading {
-      color: var(--white);
-      margin-bottom: 20px;
-      font-size: 32px;
-      text-align: center;
-      font-weight: 600;
-    }
-
-    .faq-question {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 15px 16px;
-      text-align: left;
-      font-family: var(--font);
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text-dark);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      min-height: 54px;
-    }
-
-    .faq-arrow {
-      width: 22px;
-      height: 22px;
-      background: var(--primary-light);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: transform 0.3s;
-    }
-
-    .faq-arrow svg {
-      width: 82px;
-      height: 82px;
-      fill: var(--primary);
-    }
-
-    .faq-item.open .faq-arrow {
-      transform: rotate(180deg);
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease, padding 0.35s ease;
-      padding: 0 16px;
-      font-size: 18px;
-      color: var(--text-mid);
-      line-height: 1.7;
-    }
-
-    .faq-item.open .faq-answer {
-      max-height: 200px;
-      padding: 0 16px 15px;
-    }
-
-
-
-    /* =============================================
-   STICKY BOTTOM CTA
-   ============================================= */
-    .sticky-cta {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 200;
-      padding: 10px 18px 14px;
-      max-width: var(--max-w);
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      width: 100%;
-    }
-
-    /* Full-width sticky on mobile — override max-width centering for fixed positioning */
-    @media (max-width: 450px) {
-      .sticky-cta {
-        max-width: 100%;
-      }
-    }
-
-    @media (min-width: 451px) {
-      .sticky-cta {
-        left: 50%;
-        transform: translateX(-50%);
-        right: auto;
-        width: var(--max-w);
-      }
-    }
-
-    .sticky-cta-inner {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .sticky-cta-text {
-      flex: 1;
-      font-size: 0.75rem;
-      color: var(--text-light);
-      line-height: 1.4;
-    }
-
-    .sticky-cta-text strong {
-      display: block;
-      font-size: 0.85rem;
-      color: var(--text-dark);
-    }
-
-    .sticky-cta .btn-primary {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      width: auto;
-      padding: 13px 92px;
-      font-size: 22px;
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.05);
-      }
-
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    /* =============================================
-   DIVIDER
-   ============================================= */
-    .wave-divider {
-      width: 100%;
-      line-height: 0;
-      overflow: hidden;
-    }
-
-    .wave-divider svg {
-      display: block;
-      width: 100%;
-    }
-
-    /* =============================================
-   DISCLAIMER
-   ============================================= */
-    .disclaimer {
-      background: #f0effe;
-      border: 1px solid rgba(104, 101, 203, 0.15);
-      border-radius: var(--radius-sm);
-      padding: 12px 14px;
-      font-size: 0.72rem;
-      color: var(--text-light);
-      line-height: 1.6;
-      margin-top: 16px;
-      text-align: center;
-    }
-
-
-
-    /* 450px Mobile Layout Fix */
-    .page-wrap {
-      width: 100%;
-      max-width: 450px;
-      margin: 0 auto;
-      overflow: hidden;
-      box-sizing: border-box;
-    }
-
-    .page-wrap * {
-      box-sizing: border-box;
-    }
-
-    body {
-      overflow-x: hidden;
-    }
-
-    img,
-    video,
-    iframe {
-      max-width: 100%;
-      height: auto;
-    }
-
-    section,
-    .container {
-      width: 100%;
-    }
-
-
-
-    
-.pl-wrap{
-  max-width:450px;
-  width:100%;
-  margin:0 auto;
-  padding:8px 12px;
-  box-sizing:border-box
-}
-.pl-row{
-  display:flex;
-  gap:0;
-  flex-wrap:nowrap;
-  justify-content:center;
-  align-items:center
-}
-.pl-link{
-  background:none;
-  border:none;
-  font-size:7px;
-  opacity:0.44;
-  font-weight:500;
-  color:#267156;
-  cursor:pointer;
-  padding:4px 5px;
-  text-decoration:underline;
-  text-underline-offset:2px;
-  font-family:inherit;
-  white-space:nowrap;
-  transition:color .15s
-}
-.pl-link:hover{
-  color:#1a5240
-}
-.pl-sep{
-  color:#c9ddd7;
-  font-size:11px;
-  user-select:none
-}
-.pp-overlay{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.45);
-  z-index:9999;
-  align-items:center;
-  justify-content:center
-}
-.pp-overlay.show{
-  display:flex
-}
-.pp-modal{
-  background:#fff;
-  border-radius:18px;
-  max-width:420px;
-  width:90%;
-  max-height:80vh;
-  overflow-y:auto;
-  padding:22px 18px 18px;
-  position:relative
-}
-.pp-close{
-  position:absolute;
-  top:14px;
-  right:14px;
-  background:#e6f3ed;
-  border:none;
-  border-radius:50%;
-  width:30px;
-  height:30px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  color:#267156;
-  font-size:16px
-}
-.pp-close:hover{
-  background:#c9ddd7
-}
-.pp-mtitle{
-  font-size:17px;
-  font-weight:700;
-  color:#1a5240;
-  margin-bottom:4px;
-  display:flex;
-  align-items:center;
-  gap:8px
-}
-.pp-mtitle i{
-  font-size:20px
-}
-.pp-mbadge{
-  display:inline-block;
-  background:#e6f3ed;
-  color:#267156;
-  font-size:11px;
-  font-weight:600;
-  padding:2px 10px;
-  border-radius:999px;
-  margin-bottom:12px
-}
-.pp-mpara{
-  font-size:14px;
-  color:#333;
-  line-height:1.7;
-  margin-bottom:10px
-}
-.pp-mlist{
-  padding-left:0;
-  list-style:none;
-  margin:0 0 10px
-}
-.pp-mlist li{
-  font-size:14px;
-  color:#333;
-  line-height:1.6;
-  padding:5px 0 5px 20px;
-  position:relative;
-  border-bottom:1px dashed #e2ede9
-}
-.pp-mlist li:last-child{
-  border-bottom:none
-}
-.pp-mlist li::before{
-  content:"";
-  position:absolute;
-  left:4px;
-  top:13px;
-  width:7px;
-  height:7px;
-  background:#39ad7d;
-  border-radius:50%
-}
-.pp-mhl{
-  background:#e6f3ed;
-  border-left:3px solid #267156;
-  border-radius:0 8px 8px 0;
-  padding:9px 13px;
-  font-size:13px;
-  color:#1a5240;
-  margin-bottom:10px
-}
-.pp-cgrid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-  margin-top:8px
-}
-.pp-citem{
-  background:#f4faf7;
-  border:1px solid #c9ddd7;
-  border-radius:10px;
-  padding:10px;
-  text-align:center
-}
-.pp-citem i{
-  font-size:20px;
-  color:#267156;
-  display:block;
-  margin-bottom:4px
-}
-.pp-citem .pp-clbl{
-  font-size:11px;
-  color:#888;
-  margin-bottom:2px
-}
-.pp-citem .pp-cval{
-  font-size:11px;
-  font-weight:600;
-  color:#1a5240
-}
-@media (max-width:480px){
-  .pl-wrap{
-    padding:8px 4px
-  }
-  .pl-link{
-    font-size:6px;
-    padding:4px 2px
-  }
-  .pl-sep{
-    font-size:6px
-  }
-}
-.img-box{
-    position:relative;
-    width:100%;
-}
-
-.warning-popup{
-    position:absolute;
-    top:0px;
-    left:50%;
-    transform:translateX(-50%);
-    background:var(--secondary);
-    color:#d32f2f;
-    padding:7px 18px 1px 18px;
-    border-radius:30px;
-    font-size:18px;
-    font-weight:700;
-    box-shadow:0 5px 20px rgba(0,0,0,0.2);
-    z-index:5;
-    white-space:nowrap;
-    animation:floatPopup 2s infinite ease-in-out;
-}
-
-
-@keyframes floatPopup{
-    0%,100%{
-        transform:translateX(-50%) translateY(0) scale(1);
-    }
-
-    50%{
-        transform:translateX(-50%) translateY(-10px) scale(1.08);
-    }
-}
   </style>
-
-  <!-- Structured Data -->
-
 </head>
 
 <body>
   <div class="page-wrap">
 
-
-    <!-- ============================================
-       HEADER
-       ============================================ -->
     <header class="site-header" role="banner">
       <div class="container">
         <a href="#" class="logo" aria-label="GathHeal होम पेज">
-          <div class="logo-icon" aria-hidden="true">
-          </div>
+          <div class="logo-icon" aria-hidden="true"></div>
           <div>
             <div class="logo-text">GathHeal</div>
             <div class="logo-sub">Ayurvedic Capsules</div>
           </div>
-        </a> <a href="#dot1" class="button">Buy Now</a>
-
+        </a>
+        <a href="#dot1" class="button">Buy Now</a>
       </div>
     </header>
 
     <main>
-<div class="img-box">
 
-    <div class="warning-popup">
-        ⚠️ Warning
-    </div>
-
-   <img src="images/banner.avif" alt="" 
-  width="450" height="697"
-  fetchpriority="high"
-  decoding="async">
-
-</div>
+      <div class="img-box">
+        <div class="warning-popup">⚠️ Warning</div>
+        <img src="images/banner.avif" alt="GathHeal Ayurvedic Banner"
+          width="450" height="697"
+          fetchpriority="high"
+          decoding="sync">
+      </div>
 
       <!-- section-1 pain detail -->
       <section class="sec">
-        <div class="main-header">
-          क्या आप इनमें से किसी परेशानी का सामना कर रहे हैं?
-        </div>
+        <div class="main-header">क्या आप इनमें से किसी परेशानी का सामना कर रहे हैं?</div>
 
         <div class="offset-item">
-
           <div class="offset-box">
             <h3>गांठ का बढ़ना</h3>
             <p>✔ शरीर में बनी गांठ का धीरे-धीरे<br> बढ़ना।</p>
           </div>
           <div class="offset-img-frame">
-            <img src="images/sect-1-1stimg.avif" loading="lazy"  width="110" height="110">
+            <img src="images/sect-1-1stimg.avif" alt="गांठ का बढ़ना" loading="lazy" width="110" height="110">
           </div>
         </div>
 
         <div class="offset-item">
-
           <div class="offset-box">
             <h3>दर्द या भारीपन</h3>
             <p>✔ गांठ के आसपास दर्द या भारीपन<br> महसूस होना।</p>
           </div>
           <div class="offset-img-frame">
-            <img src="images/sect-1-2ndimg.avif" loading="lazy"  width="110" height="110">
+            <img src="images/sect-1-2ndimg.avif" alt="दर्द या भारीपन" loading="lazy" width="110" height="110">
           </div>
         </div>
 
         <div class="offset-item">
-
           <div class="offset-box">
             <h3>सूजन और Discomfort</h3>
             <p>✔ सूजन की वजह से discomfort <br>होना।</p>
           </div>
           <div class="offset-img-frame">
-            <img src="images/sect-1-3rdimg.avif" loading="lazy"  width="110" height="110">
+            <img src="images/sect-1-3rdimg.avif" alt="सूजन" loading="lazy" width="110" height="110">
           </div>
         </div>
 
-        
-
         <div class="offset-item">
-
           <div class="offset-box">
             <h3>लगातार चिंता</h3>
             <p>✔ बार-बार यही चिंता रहना कि <br>समस्या और न बढ़ जाए।</p>
           </div>
           <div class="offset-img-frame">
-            <img src="images/sect-1-4thimg.avif" loading="lazy"  width="110" height="110">
+            <img src="images/sect-1-4thimg.avif" alt="चिंता" loading="lazy" width="110" height="110">
           </div>
         </div>
-
-       
       </section>
-
-
-
 
       <!-- section-2 product intro -->
       <section class="sect">
-
         <div class="offer-card">
-
           <div class="leaf-frame-container">
             <div class="special-badge">AYURVEDIC FORMULA</div>
-
-            <img src="images/product-gath.avif" alt="GathHeal" loading="lazy"  width="410" height="320">
+            <img src="images/product-gath.avif" alt="GathHeal" loading="lazy" width="410" height="320">
           </div>
-
           <div class="content-header">
             <h2>अब अपनी सेहत को दें सही सहयोग</h2>
           </div>
-
           <div class="offer-stack">
-
-            <div class="offer-item">
-              <span>✓ शरीर को Naturally सहयोग देना</span>
-            </div>
-
-            <div class="offer-item">
-              <span>✓ सूजन और भारीपन की परेशानी को कम करने में मदद करना</span>
-            </div>
-
-            <div class="offer-item">
-              <span>✓ शरीर की सामान्य Process को Support देना</span>
-            </div>
-
-            <div class="offer-item">
-              <span>✓ अधिक comfortable routine की ओर बढ़ने में help करना</span>
-            </div>
-
+            <div class="offer-item"><span>✓ शरीर को Naturally सहयोग देना</span></div>
+            <div class="offer-item"><span>✓ सूजन और भारीपन की परेशानी को कम करने में मदद करना</span></div>
+            <div class="offer-item"><span>✓ शरीर की सामान्य Process को Support देना</span></div>
+            <div class="offer-item"><span>✓ अधिक comfortable routine की ओर बढ़ने में help करना</span></div>
           </div>
-
-          <a href="#dot1" class="cta-btnn">
-            ORDER NOW
-          </a>
-
+          <a href="#dot1" class="cta-btnn">ORDER NOW</a>
         </div>
-
       </section>
 
-
-
-
-      <!-- section-3 key ingridients -->
+      <!-- section-3 key ingredients -->
       <section class="sec">
-
         <div class="magazine-layout">
-
           <div class="main-tit">
             Gathheal ही क्यों चुने? <br>
-            <span style="font-size:20px;font-weight:500;color:var(--black);">
-             Natural तत्वों की शक्ति के साथ
-            </span>
+            <span style="font-size:20px;font-weight:500;color:var(--black);">Natural तत्वों की शक्ति के साथ</span>
           </div>
 
-          <!-- 01 -->
           <div class="ingredient-card">
-
-
             <div class="mask-container">
-              <img src="images/कंचनार.avif" loading="lazy"  width="160" height="85">
+              <img src="images/कंचनार.avif" alt="कंचनार" loading="lazy" width="140" height="140">
             </div>
-
             <div class="text-side">
               <h3>कंचनार</h3>
               <p>इसका उपयोग शरीर में बनी गांठों और सूजन जैसी समस्याओं में Natural balance बनाए रखने के लिए किया जाता है।</p>
             </div>
           </div>
 
-          <!-- 02 -->
           <div class="ingredient-card reverse">
-
-
             <div class="mask-container">
-              <img src="images/त्रिफला.avif" loading="lazy" >
+              <img src="images/त्रिफला.avif" alt="त्रिफला" loading="lazy" width="140" height="140">
             </div>
-
             <div class="text-side">
               <h3>त्रिफला</h3>
               <p>शरीर से Impure elements को बाहर निकालने और Inner balance बनाए रखने में मदद करता है।</p>
             </div>
           </div>
 
-          <!-- 03 -->
           <div class="ingredient-card">
-
-
             <div class="mask-container">
-              <img src="images/गुग्गुल.avif" loading="lazy" >
+              <img src="images/गुग्गुल.avif" alt="गुग्गुल" loading="lazy" width="140" height="140">
             </div>
-
             <div class="text-side">
               <h3>गुग्गुल</h3>
               <p>शरीर में जमा Additional elements को balance करने और गांठ से जुड़ी परेशानी में सहायक माना जाता है।</p>
             </div>
           </div>
 
-          <!-- 04 -->
           <div class="ingredient-card reverse">
-
-
             <div class="mask-container">
-              <img src="images/haldi.avif" loading="lazy" >
+              <img src="images/haldi.avif" alt="हल्दी" loading="lazy" width="140" height="140">
             </div>
-
             <div class="text-side">
               <h3>हल्दी</h3>
               <p>शरीर में होने वाली सूजन को शांत करने और शरीर की Natural Care में सहायक होती है।</p>
             </div>
           </div>
 
-          <button class="btn-key" onclick="location.href='#dot1'">
-            Order Now
-          </button>
-
+          <button class="btn-key" onclick="location.href='#dot1'">Order Now</button>
         </div>
-
       </section>
-
-
 
       <!-- section-4 certification -->
       <section class="sec">
-
         <div class="ks-hex-section">
-
           <div class="ks-hex-header">
             <h2>भरोसा करने की वजह</h2>
             <div class="line"></div>
           </div>
-
           <div class="hex-container">
-
-            <!-- 1 -->
             <div class="hex-row">
               <div class="hex-shape">
-                <img src="images/aayur.avif" alt="" loading="lazy"  width="80" height="80" >
+                <img src="images/aayur.avif" alt="आयुर्वेदिक" loading="lazy" width="80" height="80">
               </div>
-
               <div class="hex-content">
                 <h3>आयुर्वेदिक Formula</h3>
                 <p>🌿Natural तत्वों से Inspired आयुर्वेदिक Formula</p>
               </div>
             </div>
-
-            <!-- 2 -->
             <div class="hex-row">
               <div class="hex-shape">
-                <img src="images/capsule.avif" alt="" loading="lazy"  width="80" height="80">
+                <img src="images/capsule.avif" alt="कैप्सूल" loading="lazy" width="80" height="80">
               </div>
-
               <div class="hex-content">
                 <h3>Easy Capsule Formula</h3>
                 <p>💊 बिना किसी झंझट के आसानी से use किया जा सकता है।</p>
               </div>
             </div>
-
-            <!-- 3 -->
             <div class="hex-row">
               <div class="hex-shape">
-                <img src="images/quality.avif" alt="" loading="lazy"  width="80" height="80">
+                <img src="images/quality.avif" alt="गुणवत्ता" loading="lazy" width="80" height="80">
               </div>
-
               <div class="hex-content">
                 <h3>गुणवत्ता पर ध्यान</h3>
                 <p>⭐ Quality and Trust को ध्यान में रखकर तैयार।</p>
               </div>
             </div>
-
-            <!-- 4 -->
             <div class="hex-row">
               <div class="hex-shape">
-                <img src="images/home.avif" alt="" loading="lazy"  width="80" height="80">
+                <img src="images/home.avif" alt="Home Delivery" loading="lazy" width="80" height="80">
               </div>
-
               <div class="hex-content">
                 <h3>Home Delivery</h3>
                 <p>🚚 पूरे भारत में Available Home Delivery Facility</p>
               </div>
             </div>
-
           </div>
-
           <div class="ks-hex-footer">
-            <b>GathHeal</b> –Natural Elements से Inspired, Easy Use और reliable Quality के साथ आपकी daily wellness
-            routine का हिस्सा।
+            <b>GathHeal</b> –Natural Elements से Inspired, Easy Use और reliable Quality के साथ आपकी daily wellness routine का हिस्सा।
           </div>
-
-  
-
         </div>
-
       </section>
 
-
-
-
-
-      <!-- section-5 how it works  -->
-<section class="work-section">
-    
-    <div class="heading">
-       
-        <h2>Gathheal कैसे काम करता है?</h2>
-
-      </div>
-
-    <div class="steps">
-
-        <!-- Step 1 -->
-        <div class="step left">
-
-            <div class="circle">
-                <i class="fa-solid fa-seedling"></i>
-            </div>
-
-            <div class="content">
-
-                <img src="images/sect-6-1stimg.avif" alt="प्राकृतिक Support" loading="lazy" width="414" height="180"  >
-
-                <h3>शरीर को Natural Support देना</h3>
-
-                <p>
-                    GATHHEAL में मौजूद आयुर्वेदिक तत्व गांठ को
-                   Natural रूप से Support करना शुरू करते हैं।
-                </p>
-
-            </div>
+      <!-- section-5 how it works -->
+      <section class="work-section">
+        <div class="heading">
+          <h2>Gathheal कैसे काम करता है?</h2>
         </div>
-
-          <!-- Step 4 -->
-        <div class="step right">
-
-            <div class="circle">
-                <i class="fa-solid fa-person-walking"></i>
-            </div>
-
+        <div class="steps">
+          <div class="step left">
+            <div class="circle"><i class="fa-solid fa-seedling"></i></div>
             <div class="content">
-
-                <img src="images/sect-6-4thimg.avif" alt="बेहतर वेलनेस अनुभव" loading="lazy" width="414" height="180">
-
-                <h3>Better Wellness Experience</h3>
-
-                <p>
-                    नियमित उपयोग के साथ यह आपको अधिक हल्का,
-                    comfortable  और active feel कराने में मदद करता है।
-                </p>
-
+              <img src="images/sect-6-1stimg.avif" alt="प्राकृतिक Support" loading="lazy" width="414" height="180">
+              <h3>शरीर को Natural Support देना</h3>
+              <p>GATHHEAL में मौजूद आयुर्वेदिक तत्व गांठ को Natural रूप से Support करना शुरू करते हैं।</p>
             </div>
-        </div>
-
-
-
-
-
-        <!-- Step 3 -->
-        <div class="step left">
-
-            <div class="circle">
-                <i class="fa-solid fa-heart-pulse"></i>
-            </div>
-
+          </div>
+          <div class="step right">
+            <div class="circle"><i class="fa-solid fa-person-walking"></i></div>
             <div class="content">
-
-                <img src="images/sect-6-3rdimg.avif" alt="अंदरूनी सिस्टम Support" loading="lazy" width="414" height="180">
-
-                <h3>Internal system को Support करना</h3>
-
-                <p>
-                    यह शरीर की Natural Process को बेहतर
-                    ढंग से काम करने में support देता है।
-                </p>
-
+              <img src="images/sect-6-4thimg.avif" alt="बेहतर वेलनेस" loading="lazy" width="414" height="180">
+              <h3>Better Wellness Experience</h3>
+              <p>नियमित उपयोग के साथ यह आपको अधिक हल्का, comfortable और active feel कराने में मदद करता है।</p>
             </div>
+          </div>
+          <div class="step left">
+            <div class="circle"><i class="fa-solid fa-heart-pulse"></i></div>
+            <div class="content">
+              <img src="images/sect-6-3rdimg.avif" alt="अंदरूनी सिस्टम Support" loading="lazy" width="414" height="180">
+              <h3>Internal system को Support करना</h3>
+              <p>यह शरीर की Natural Process को बेहतर ढंग से काम करने में support देता है।</p>
+            </div>
+          </div>
         </div>
-    </div>
-
-      
-</section>
-
-
+      </section>
 
       <!-- section-6 how to use -->
-
-    <section class="gh-use-new">
+      <section class="gh-use-new">
         <div class="gh-use-card">
-
-            <div class="gh-use-head">
-                <h2>Gathheal का उपयोग कैसे करें?</h2>
-                <p>आसान 3 Stepd में Daily Use करें</p>
+          <div class="gh-use-head">
+            <h2>Gathheal का उपयोग कैसे करें?</h2>
+            <p>आसान 3 Steps में Daily Use करें</p>
+          </div>
+          <div class="gh-process">
+            <div class="gh-item animate-item">
+              <div class="gh-top">
+                <div class="gh-circle">1</div>
+                <div class="gh-icon"><i class="fa-solid fa-sun"></i></div>
+              </div>
+              <h3>सुबह</h3>
+              <p>भोजन के बाद 1 कैप्सूल</p>
             </div>
-
-            <div class="gh-process">
-
-                <!-- चरण 1: सुबह -->
-                <div class="gh-item animate-item">
-                    <div class="gh-top">
-                        <div class="gh-circle">1</div>
-                        <div class="gh-icon">
-                            <!-- सुबह के लिए सूरज का आइकॉन -->
-                            <i class="fa-solid fa-sun"></i>
-                        </div>
-                    </div>
-                    <h3>सुबह</h3>
-                    <p>भोजन के बाद 1 कैप्सूल</p>
-                </div>
-
-                <div class="gh-arrow">
-                    <i class="fa-solid fa-arrow-right"></i>
-                </div>
-
-                <!-- चरण 2: शाम -->
-                <div class="gh-item animate-item delay1">
-                    <div class="gh-top">
-                        <div class="gh-circle">2</div>
-                        <div class="gh-icon">
-                            <!-- शाम के लिए चाँद का आइकॉन -->
-                            <i class="fa-solid fa-moon"></i>
-                        </div>
-                    </div>
-                    <h3>शाम</h3>
-                    <p>भोजन के बाद 1 कैप्सूल </p>
-                </div>
-
-                <div class="gh-arrow">
-                    <i class="fa-solid fa-arrow-right"></i>
-                </div>
-
-                <!-- चरण 3: नियमित सेवन -->
-                <div class="gh-item animate-item delay2">
-                    <div class="gh-top">
-                        <div class="gh-circle">3</div>
-                        <div class="gh-icon">
-                            <!-- चमकते हुए सितारे का आइकॉन -->
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        </div>
-                    </div>
-                    <h3>नियमित सेवन</h3>
-                    <p>Better experience के लिए </p>
-                </div>
-
+            <div class="gh-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="gh-item animate-item delay1">
+              <div class="gh-top">
+                <div class="gh-circle">2</div>
+                <div class="gh-icon"><i class="fa-solid fa-moon"></i></div>
+              </div>
+              <h3>शाम</h3>
+              <p>भोजन के बाद 1 कैप्सूल</p>
             </div>
-
-            <div class="gh-bottom-text">
-                ✓ Simple Daily Wellness Routine
+            <div class="gh-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="gh-item animate-item delay2">
+              <div class="gh-top">
+                <div class="gh-circle">3</div>
+                <div class="gh-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+              </div>
+              <h3>नियमित सेवन</h3>
+              <p>Better experience के लिए</p>
             </div>
-
+          </div>
+          <div class="gh-bottom-text">✓ Simple Daily Wellness Routine</div>
         </div>
-    </section>
+      </section>
 
-
-
-
-    <!-- section-7 bf-af -->
-<div class="gh-widget-frame">
-    <div class="gh-widget-headgroup">
-        <h2>पहले और अब का अंतर</h2>
-        <span class="gh-pill-label">GathHeal का प्रभाव</span>
-    </div>
-
-    <div class="gh-split-flow">
-        
-        <!-- Row 1 -->
-        <div class="gh-duo-track">
+      <!-- section-7 before-after -->
+      <div class="gh-widget-frame">
+        <div class="gh-widget-headgroup">
+          <h2>पहले और अब का अंतर</h2>
+          <span class="gh-pill-label">GathHeal का प्रभाव</span>
+        </div>
+        <div class="gh-split-flow">
+          <div class="gh-duo-track">
             <div class="gh-panel-cell gh-negative-state">
-                <img src="images/bf-1stimg.avif" alt="चिंता" loading="lazy" width="160" height="85">
-                <p>❌ गांठ को लेकर लगातार चिंता</p>
+              <img src="images/bf-1stimg.avif" alt="चिंता" loading="lazy" width="160" height="85">
+              <p>❌ गांठ को लेकर लगातार चिंता</p>
             </div>
             <div class="gh-center-node">VS</div>
             <div class="gh-panel-cell gh-positive-state">
-                <img src="images/af-1stimg.avif" alt="संतोष" loading="lazy" width="160" height="85">
-                <p>✅ खुद की देखभाल करने का Satisfaction</p>
+              <img src="images/af-1stimg.avif" alt="संतोष" loading="lazy" width="160" height="85">
+              <p>✅ खुद की देखभाल करने का Satisfaction</p>
             </div>
-        </div>
-
-        <!-- Row 2 -->
-        <div class="gh-duo-track">
+          </div>
+          <div class="gh-duo-track">
             <div class="gh-panel-cell gh-negative-state">
-                <img src="images/bf-2ndimg.avif" alt="Discomfort" loading="lazy" width="160" height="85">
-                <p>❌ दर्द या stress की वजह से Discomfort</p>
+              <img src="images/bf-2ndimg.avif" alt="Discomfort" loading="lazy" width="160" height="85">
+              <p>❌ दर्द या stress की वजह से Discomfort</p>
             </div>
             <div class="gh-center-node">VS</div>
             <div class="gh-panel-cell gh-positive-state">
-                <img src="images/af-2ndimg.avif" alt="आराम" loading="lazy" width="160" height="85">
-                <p>✅ अधिक आराम महसूस करने की उम्मीद</p>
+              <img src="images/af-2ndimg.avif" alt="आराम" loading="lazy" width="160" height="85">
+              <p>✅ अधिक आराम महसूस करने की उम्मीद</p>
             </div>
-        </div>
-
-        <!-- Row 3 -->
-        <div class="gh-duo-track">
+          </div>
+          <div class="gh-duo-track">
             <div class="gh-panel-cell gh-negative-state">
-                <img src="images/BF-3RDIMG.avif" alt="डर" loading="lazy" width="160" height="85">
-                <p>❌ मन में डर और Doubt</p>
+              <img src="images/BF-3RDIMG.avif" alt="डर" loading="lazy" width="160" height="85">
+              <p>❌ मन में डर और Doubt</p>
             </div>
             <div class="gh-center-node">VS</div>
             <div class="gh-panel-cell gh-positive-state">
-                <img src="images/af-3rdimg.avif" alt="सकारात्मक कदम" loading="lazy" width="160" height="85">
-                <p>✅ Better daily routine की ओर Positive steps</p>
+              <img src="images/af-3rdimg.avif" alt="सकारात्मक कदम" loading="lazy" width="160" height="85">
+              <p>✅ Better daily routine की ओर Positive steps</p>
             </div>
-        </div>
-
-        <!-- Row 4 -->
-        <div class="gh-duo-track">
+          </div>
+          <div class="gh-duo-track">
             <div class="gh-panel-cell gh-negative-state">
-                <img src="images/bf-4thimg.avif" alt="परेशानी" loading="lazy" width="160" height="85">
-                <p>❌ Daily के कामों में परेशानी</p>
+              <img src="images/bf-4thimg.avif" alt="परेशानी" loading="lazy" width="160" height="85">
+              <p>❌ Daily के कामों में परेशानी</p>
             </div>
             <div class="gh-center-node">VS</div>
             <div class="gh-panel-cell gh-positive-state">
-                <img src="images/af-4thimg.avif" alt="Confidence" loading="lazy" width="160" height="85">
-                <p>✅ Confidence के साथ आगे बढ़ने का प्रयास</p>
+              <img src="images/af-4thimg.avif" alt="Confidence" loading="lazy" width="160" height="85">
+              <p>✅ Confidence के साथ आगे बढ़ने का प्रयास</p>
             </div>
+          </div>
         </div>
+      </div>
 
-    </div>
-</div>
-
-
-      <!-- section-8 testimonial -->
+      <!-- section-8 testimonials -->
       <section class="sec">
         <h1 class="sect-8">लोगों ने क्या कहा?</h1>
-
-        <!-- Card 1 -->
         <div class="card">
-          <img src="images/rakesh.avif" alt="Customer" class="profile-img" loading="lazy"  width="80" height="80">
-
+          <img src="images/rakesh.avif" alt="Customer" class="profile-img" loading="lazy" width="80" height="80">
           <div class="card-header">
             <div class="name">राकेश, जयपुर</div>
             <div class="stars">★★★★★</div>
           </div>
-
-          <p class="testimonial-text">
-            "गांठ की वजह से मुझे काफी discomfort होता था।
-            GathHeal को नियमित रूप से लेने के बाद मुझे गाँठ में पहले से बेहतर महसूस होने लगा।"
-          </p>
+          <p class="testimonial-text">"गांठ की वजह से मुझे काफी discomfort होता था। GathHeal को नियमित रूप से लेने के बाद मुझे गाँठ में पहले से बेहतर महसूस होने लगा।"</p>
         </div>
-
-        <!-- Card 2 -->
         <div class="card">
-          <img src="images/suresh.avif" alt="Customer" class="profile-img" loading="lazy"  width="80" height="80">
-
+          <img src="images/suresh.avif" alt="Customer" class="profile-img" loading="lazy" width="80" height="80">
           <div class="card-header">
             <div class="name">सुरेश</div>
             <div class="stars">★★★★★</div>
           </div>
-
-          <p class="testimonial-text">
-            "बार-बार यही डर रहता था कि गांठ की परेशानी और न बढ़ जाए।
-            GathHeal के बारे में जानकर मैंने इसे आज़माया। नियमित उपयोग के बाद
-            मुझे पहले से बेहतर आराम महसूस हुआ, इसलिए मैं इसे लगातार ले रहा हूँ।"
-          </p>
+          <p class="testimonial-text">"बार-बार यही डर रहता था कि गांठ की परेशानी और न बढ़ जाए। GathHeal के बारे में जानकर मैंने इसे आज़माया। नियमित उपयोग के बाद मुझे पहले से बेहतर आराम महसूस हुआ, इसलिए मैं इसे लगातार ले रहा हूँ।"</p>
         </div>
-
-        <!-- Card 3 -->
         <div class="card">
-          <img src="images/manoj.avif" alt="Customer" class="profile-img" loading="lazy"  width="80" height="80">
-
+          <img src="images/manoj.avif" alt="Customer" class="profile-img" loading="lazy" width="80" height="80">
           <div class="card-header">
             <div class="name">मनोज, दिल्ली</div>
             <div class="stars">★★★★★</div>
           </div>
-
-          <p class="testimonial-text">
-            "गांठ की वजह से काम करते समय लगातार दबाव महसूस होता था।
-            GathHeal को नियमित रूप से लेने के बाद मुझे पहले से ज़्यादा आराम महसूस
-            होने लगा। इसी वजह से मैंने इसे अपने Daily Routine में शामिल रखा।"
-          </p>
+          <p class="testimonial-text">"गांठ की वजह से काम करते समय लगातार दबाव महसूस होता था। GathHeal को नियमित रूप से लेने के बाद मुझे पहले से ज़्यादा आराम महसूस होने लगा।"</p>
         </div>
       </section>
 
-
-
-      
-
-      <!-- section-9 offer section -->
-<div class="offer-wrapper">
-
-    <div class="offer-ticket">
-
-        <div class="offer-header">
-
-            <div class="offer-badge">
-                🎁 Limited Time के लिए Special Offer
-            </div>
-
-            <h2>
-                आज ही शुरुआत करें
-            </h2>
-
-            <p>
-                जितनी जल्दी आप अपनी सेहत का ध्यान रखना शुरू करेंगे,
-                उतनी जल्दी Better lifestyle की दिशा में कदम बढ़ा पाएँगे।
-            </p>
-
-        </div>
-
-        <div class="coupon-box">
-
+      <!-- section-9 offer -->
+      <div class="offer-wrapper">
+        <div class="offer-ticket">
+          <div class="offer-header">
+            <div class="offer-badge">🎁 Limited Time के लिए Special Offer</div>
+            <h2>आज ही शुरुआत करें</h2>
+            <p>जितनी जल्दी आप अपनी सेहत का ध्यान रखना शुरू करेंगे, उतनी जल्दी Better lifestyle की दिशा में कदम बढ़ा पाएँगे।</p>
+          </div>
+          <div class="coupon-box">
             <div class="offer-title">
-
-              
-                <h3>
-                    अपनी परेशानी को और बढ़ने का इंतज़ार क्यों?
-                </h3>
-
+              <h3>अपनी परेशानी को और बढ़ने का इंतज़ार क्यों?</h3>
             </div>
-
             <div class="timer-box">
-
-                <div class="time">
-                    <strong id="hours">00</strong>
-                    <span>घंटे</span>
-                </div>
-
-                <div class="time">
-                    <strong id="minutes">00</strong>
-                    <span>मिनट</span>
-                </div>
-
-                <div class="time">
-                    <strong id="seconds">00</strong>
-                    <span>सेकंड</span>
-                </div>
-
+              <div class="time"><strong id="hours">00</strong><span>घंटे</span></div>
+              <div class="time"><strong id="minutes">00</strong><span>मिनट</span></div>
+              <div class="time"><strong id="seconds">00</strong><span>सेकंड</span></div>
             </div>
-
             <div class="feature">
-
-                <div class="icon">🚚</div>
-
-                <div class="text">
-                    <h4>पूरे भारत में Delivery</h4>
-                    <p>देशभर में आपके घर तक Facility Available।</p>
-                </div>
-
+              <div class="icon">🚚</div>
+              <div class="text"><h4>पूरे भारत में Delivery</h4><p>देशभर में आपके घर तक Facility Available।</p></div>
             </div>
-
             <div class="feature">
-
-                <div class="icon">💳</div>
-
-                <div class="text">
-                    <h4>Easy payment option</h4>
-                    <p>आपकी Facility के अनुसार सरल 
-Payment Process</p>
-                </div>
-
+              <div class="icon">💳</div>
+              <div class="text"><h4>Easy payment option</h4><p>आपकी Facility के अनुसार सरल Payment Process</p></div>
             </div>
-
             <div class="feature">
-
-                <div class="icon">📞</div>
-
-                <div class="text">
-                    <h4>Order सहायता Available</h4>
-                    <p>ज़रूरत पड़ने पर हमारी टीम आपकी Help के लिए Ready है।</p>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="offer-footer">
-
-            <div class="urgency">
-                ⏳ जल्दी करें! यह विशेष ऑफर सीमित समय के लिए Available है।
-            </div>
-
-            <a href="#dot1" class="order-btn">
-                अभी ऑर्डर करें <span>→</span>
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-
-
-
-
-      <!-- section-10 form -->
-      <html>
-
-      <head>
-        <style>
-          .shell {
-            max-width: 450px;
-            width: 100%;
-            background: var(--white);
-            border: 1.5px solid var(--border);
-            overflow: hidden;
-          }
-
-          /* ── Top Panel ── */
-          .top-panel {
-            background: var(--primary);
-            padding: 32px 28px 48px;
-            position: relative;
-          }
-
-          .top-panel::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            right: 0;
-            height: 40px;
-            background: var(--secondary);
-            border-radius: 40px 40px 0 0;
-          }
-
-          .leaf-bg {
-            position: absolute;
-            top: 12px;
-            right: 16px;
-            opacity: 0.12;
-            font-size: 80px;
-            line-height: 1;
-            color: var(--white);
-            pointer-events: none;
-          }
-
-          .prod-row {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 18px;
-            position: relative;
-            z-index: 1;
-          }
-
-          .prod-icon {
-            width: 112px;
-            height: 142px;
-            background: rgba(255, 255, 255, 0.18);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1.5px solid rgba(255, 255, 255, 0.3);
-            flex-shrink: 0;
-          }
-          .prod-icon img{
-            height: 100%;
-            width: 100%;
-          }
-
-          .prod-name {
-            font-size: 18px;
-            color: var(--secondary);
-            letter-spacing: 0.4px;
-            margin-bottom: 3px;
-          }
-
-          .prod-title {
-            font-size: 22px;
-            font-weight: 600;
-            color: var(--secondary);
-            line-height: 1.2;
-          }
-
-          .headline-block {
-            position: relative;
-            z-index: 1;
-          }
-
-          .headline-block h2 {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--secondary);
-            line-height: 1.35;
-            margin-bottom: 6px;
-          }
-
-          .headline-block p {
-            font-size: 18px;
-            color: white;
-            line-height: 1.6;
-          }
-
-          .pill-row {
-            display: flex;
-            gap: 8px;
-            margin-top: 14px;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 1;
-            justify-content: center;
-          }
-
-          .pill {
-            background: rgba(255, 255, 255, 0.18);
-            border: 1px solid rgba(255, 255, 255, 0.28);
-            border-radius: 50px;
-            padding: 4px 12px;
-            font-size: 18px;
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            gap: 5px;
-          }
-
-          .pill i {
-            font-size: 18px;
-          }
-
-          /* ── Bottom Panel ── */
-          .bottom-panel {
-            padding: 0 28px 28px;
-            background-color: var(--secondary);
-          }
-
-          /* ── Step Indicator ── */
-          .step-indicator {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            margin: 4px 0 28px;
-          }
-
-          .step-dot {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: 700;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            background: var(--white);
-            flex-shrink: 0;
-            transition: all 0.25s;
-          }
-
-          .step-dot.active {
-            background: var(--primary);
-            color: var(--white);
-          }
-
-          .step-dot.done {
-            background: var(--primary);
-            color: var(--white);
-          }
-
-          .step-line {
-            flex: 1;
-            height: 2px;
-            background: var(--primary);
-            transition: background 0.3s;
-          }
-
-          .step-line.done {
-            background: var(--primary);
-          }
-
-          /* ── Fields ── */
-          .field-wrap {
-            margin-bottom: 20px;
-          }
-
-          .field-label {
-            font-size: 18px;
-            font-weight: 700;
-            letter-spacing: 0.7px;
-            color: var(--primary);
-            text-transform: uppercase;
-            margin-bottom: 8px;
-          }
-
-          .big-input {
-            width: 100%;
-            border: 2px solid var(--primary);
-            border-radius: 14px;
-            padding: 16px 18px;
-            font-size: 17px;
-            font-family: var(--font);
-            color: var(--text-dark);
-            background: #faf9ff;
-            outline: none;
-            opacity: 0.49;
-            transition: border 0.2s, box-shadow 0.2s;
-            -webkit-appearance: none;
-            appearance: none;
-          }
-
-          .big-input:focus {
-            border-color: var(--primary);
-            background: var(--white);
-            box-shadow: 0 0 0 4px rgba(104, 101, 203, 0.1);
-          }
-
-          .big-input::placeholder {
-            color: #c0bddf;
-            font-size: 15px;
-          }
-
-          .big-input::-webkit-outer-spin-button,
-          .big-input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-          }
-
-          .mob-hint {
-            font-size: 11px;
-            color: var(--text-light);
-            margin-top: 5px;
-          }
-
-          .err {
-            font-size: 12px;
-            color: #c0392b;
-            margin-top: 6px;
-            display: none;
-            align-items: center;
-            gap: 4px;
-          }
-
-          .err.show {
-            display: flex;
-          }
-
-          .sep {
-            border: none;
-            border-top: 1.5px dashed var(--primary);
-            margin: 20px 0;
-          }
-
-          /* ── CTA ── */
-          .cta-btn {
-            width: 100%;
-            height: 56px;
-            background: var(--primary);
-            color: var(--white);
-            border: none;
-            border-radius: 16px;
-            font-family: var(--font);
-            font-size: 20px;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: background 0.18s, transform 0.1s;
-            margin-top: 8px;
-          }
-
-       
-          .cta-btn:active {
-            transform: scale(0.98);
-          }
-
-          .cta-btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-          }
-
-          .cta-btn i {
-            font-size: 20px;
-          }
-
-          .guarantee-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            margin-top: 16px;
-            font-size: 18px;
-            color: var(--primary);
-          }
-
-          .guarantee-row i {
-            font-size: 20px;
-            color: var(--primary);
-          }
-
-         
-
-          /* ── Success ── */
-          .success-wrap {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 12px 0 0;
-          }
-
-          .s-ring {
-            width: 72px;
-            height: 72px;
-            border-radius: 50%;
-            background: var(--primary-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
-          }
-
-          .s-ring i {
-            font-size: 36px;
-            color: var(--primary);
-          }
-
-          .s-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-          }
-
-          .s-sub {
-            font-size: 13.5px;
-            color: var(--text-light);
-            line-height: 1.65;
-          }
-
-          .s-card {
-            background: var(--primary-light);
-            border-radius: 14px;
-            padding: 14px 18px;
-            margin-top: 20px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-          }
-
-          .s-card i {
-            font-size: 22px;
-            color: var(--primary);
-          }
-
-          .s-card-text {
-            font-size: 13px;
-            color: var(--text-mid);
-            text-align: left;
-            line-height: 1.5;
-          }
-
-          /* ── Loader Overlay ── */
-          .lp-blur-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(223, 234, 230, 0.72);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            z-index: 999;
-            align-items: center;
-            justify-content: center;
-          }
-
-          .gh-loader {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 28px;
-            text-align: center;
-            background: var(--white);
-            border-radius: 24px;
-            border: 1px solid var(--border);
-            width: 90%;
-            max-width: 340px;
-          }
-
-          .gh-ring-wrap {
-            position: relative;
-            width: 80px;
-            height: 80px;
-            margin-bottom: 24px;
-          }
-
-          .gh-ring-outer {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 2px solid var(--border);
-            position: absolute;
-          }
-
-          .gh-ring-spin {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 3px solid transparent;
-            border-top-color: var(--primary);
-            border-right-color: #a5b4fc;
-            animation: spin 1s linear infinite;
-            position: absolute;
-          }
-
-          @keyframes spin {
-            to {
-              transform: rotate(360deg);
-            }
-          }
-
-          .gh-ring-dot {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: var(--primary-light);
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-
-          .gh-ring-dot i {
-            font-size: 14px;
-            color: var(--primary);
-          }
-
-          .gh-loader-title {
-            font-size: 18px;
-            color: var(--text-dark);
-            font-weight: 700;
-            margin-bottom: 8px;
-          }
-
-          .gh-loader-sub {
-            font-size: 14px;
-            color: var(--text-mid);
-            line-height: 1.8;
-          }
-
-          .lp-dot-anim {
-            color: var(--primary);
-          }
-
-          .gh-steps {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 22px;
-            width: 100%;
-          }
-
-          .gh-step {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 13px;
-            color: var(--text-light);
-            padding: 8px 14px;
-            border-radius: 10px;
-            background: #faf9ff;
-            border: 1px solid var(--border);
-            opacity: 0.4;
-            transition: all 0.3s;
-            font-family: var(--font);
-          }
-
-          .gh-step.active,
-          .gh-step.done {
-            color: var(--primary-dark);
-            border-color: var(--primary);
-            background: #eef0ff;
-            opacity: 1;
-          }
-
-          .gh-step i {
-            font-size: 15px;
-          }
-
-          .gh-progress-track {
-            width: 100%;
-            height: 4px;
-            background: var(--border);
-            border-radius: 999px;
-            margin-top: 22px;
-            overflow: hidden;
-          }
-
-          .gh-progress-bar {
-            height: 100%;
-            background: var(--primary);
-            border-radius: 999px;
-            width: 0;
-            transition: width 0.5s ease;
-          }
-
-
-
-
-           /* Mobile Optimization - Same Layout */
-
-@media (max-width: 480px) {
-
-.top-panel{
-padding: 28px 22px 42px;
-}
-
-.bottom-panel{
-padding: 0 22px 24px;
-}
-
-.prod-row{
-gap: 12px;
-}
-
-.prod-icon{
-width: 100px;
-height: 128px;
-}
-
-.prod-name{
-font-size: 16px !important;
-}
-
-.prod-title{
-font-size: 22px !important;
-line-height: 1.2;
-}
-
-.headline-block h2{
-font-size: 26px !important;
-line-height: 1.3;
-}
-
-.headline-block p{
-font-size: 18px !important;
-line-height: 1.6;
-}
-
-.pill{
-font-size: 14px !important;
-padding: 6px 12px;
-}
-
-.pill i{
-font-size: 16px !important;
-}
-
-.field-label{
-font-size: 16px !important;
-}
-
-.big-input{
-font-size: 17px !important;
-padding: 16px 18px;
-}
-
-.big-input::placeholder{
-font-size: 16px !important;
-}
-
-.mob-hint{
-font-size: 16px !important;
-}
-
-.err{
-font-size: 16px !important;
-}
-
-.step-dot{
-width: 30px;
-height: 30px;
-font-size: 16px;
-}
-
-.cta-btn{
-height: 58px;
-font-size: 22px !important;
-}
-
-.cta-btn i{
-font-size: 22px !important;
-}
-
-.guarantee-row{
-font-size: 16px !important;
-}
-
-.guarantee-row i{
-font-size: 18px !important;
-}
-
-}
-
-        </style>
-      </head>
-
-      <body>
-
-        <div class="shell">
-          <div class="top-panel">
-            <div class="leaf-bg" aria-hidden="true">✿</div>
-            <div class="prod-row">
-              <div class="prod-icon">
-                <img src="images/product.avif" alt="" loading="lazy">
-              </div>
-              <div>
-                <div class="prod-name">Ayurvedic Formula</div>
-                <div class="prod-title">GathHeal Capsules</div>
-              </div>
-            </div>
-            <div class="headline-block">
-              <h2>गांठ का इंतज़ार क्यों?<br>अभी राहत पाएं</h2>
-              <p>प्राकृतिक आयुर्वेदिक Treatment जो आपकी Daily की ज़िंदगी को बेहतर बनाए</p>
-              <div class="pill-row">
-                <span class="pill"><i class="ti ti-truck-delivery" aria-hidden="true"></i> Free Delivery</span>
-                <span class="pill"><i class="ti ti-cash" aria-hidden="true"></i> Cash on Delivery</span>
-                <span class="pill"><i class="ti ti-shield-check" aria-hidden="true"></i> 100% Natural</span>
-              </div>
+              <div class="icon">📞</div>
+              <div class="text"><h4>Order सहायता Available</h4><p>ज़रूरत पड़ने पर हमारी टीम आपकी Help के लिए Ready है।</p></div>
             </div>
           </div>
-
-          <div class="bottom-panel">
-            <div class="step-indicator">
-              <div class="step-dot active" id="dot1">1</div>
-              <div class="step-line" id="line1"></div>
-              <div class="step-dot" id="dot2">2</div>
-              <div class="step-line" id="line2"></div>
-              <div class="step-dot" id="dot3">3</div>
-            </div>
-
-            <div id="formContent">
-              <div class="field-wrap">
-                <div class="field-label">नाम :</div>
-                <input class="big-input" id="nameInput" type="text" placeholder="जैसे: Ramesh Kumar"
-                  autocomplete="off" />
-                <div class="err" id="nameErr"><i class="ti ti-alert-circle" style="font-size:14px"></i><span
-                    id="nameMsg"></span></div>
-              </div>
-
-              <hr class="sep" />
-
-              <div class="field-wrap">
-                <div class="field-label">मोबाइल नंबर :</div>
-                <input class="big-input" id="mobInput" type="tel" maxlength="10" placeholder="जैसे: 9XXXXXXXXX"
-                  inputmode="numeric" autocomplete="off" />
-                <div class="err" id="mobErr"><i class="ti ti-alert-circle" style="font-size:14px"></i><span
-                    id="mobMsg"></span></div>
-              </div>
-
-              <button class="cta-btn" id="submitBtn" onclick="doSubmit()">
-                <i class="ti ti-package" aria-hidden="true"></i>
-                ऑर्डर कन्फ़र्म करें
-                <i class="ti ti-chevron-right" aria-hidden="true"></i>
-              </button>
-              <div class="guarantee-row">
-                <i class="ti ti-lock" aria-hidden="true"></i>
-                आपकी जानकारी पूरी तरह सुरक्षित है
-              </div>
-            </div>
-
-
+          <div class="offer-footer">
+            <div class="urgency">⏳ जल्दी करें! यह विशेष ऑफर सीमित समय के लिए Available है।</div>
+            <a href="#dot1" class="order-btn">अभी ऑर्डर करें <span>→</span></a>
           </div>
         </div>
-
-        <!-- Loader Overlay -->
-        <div class="lp-blur-overlay" id="loaderOverlay">
-          <div class="gh-loader">
-            <div class="gh-ring-wrap">
-              <div class="gh-ring-outer"></div>
-              <div class="gh-ring-spin"></div>
-              <div class="gh-ring-dot"><i class="ti ti-leaf" aria-hidden="true"></i></div>
-            </div>
-            <div class="gh-loader-title">Order Enter हो रहा है<span class="lp-dot-anim" id="dotAnim">.</span></div>
-            <div class="gh-loader-sub">बस कुछ ही सेकंड में<br>आपका Order Confirm हो जाएगा।</div>
-            <div class="gh-steps">
-              <div class="gh-step" id="lpStep1"><i class="ti ti-check"></i> Detail Verified की जा रही है</div>
-              <div class="gh-step" id="lpStep2"><i class="ti ti-database"></i> Order System में Enter हो रहा है</div>
-              <div class="gh-step" id="lpStep3"><i class="ti ti-truck-delivery"></i> Delivery Schedule हो रही है</div>
-            </div>
-            <div class="gh-progress-track">
-              <div class="gh-progress-bar" id="ghProgress"></div>
-            </div>
-          </div>
-        </div>
-
-        <script>
-          // ── Google Sheets URL ──
-          var SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec';
-
-          var nameInput = document.getElementById('nameInput');
-          var mobInput = document.getElementById('mobInput');
-          var nameErr = document.getElementById('nameErr');
-          var mobErr = document.getElementById('mobErr');
-          var nameMsg = document.getElementById('nameMsg');
-          var mobMsg = document.getElementById('mobMsg');
-
-          // ── Input sanitisation ──
-          nameInput.addEventListener('input', function () {
-            this.value = this.value.replace(/[^a-zA-Z\u0900-\u097F\s]/g, '');
-            nameErr.classList.remove('show');
-            updateSteps();
-          });
-
-          mobInput.addEventListener('input', function () {
-            this.value = this.value.replace(/\D/g, '');
-            if (this.value.length > 10) this.value = this.value.slice(0, 10);
-            mobErr.classList.remove('show');
-          });
-
-          mobInput.addEventListener('keydown', function (e) {
-            var allowed = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
-            if (!allowed.includes(e.key) && !/^\d$/.test(e.key)) e.preventDefault();
-          });
-
-          // ── Step indicator ──
-          function updateSteps() {
-            var n = nameInput.value.trim();
-            var dot1 = document.getElementById('dot1');
-            var dot2 = document.getElementById('dot2');
-            var line1 = document.getElementById('line1');
-
-            if (n.length > 0) {
-              dot1.classList.add('done');
-              dot1.innerHTML = '<i class="ti ti-check" style="font-size:14px" aria-hidden="true"></i>';
-              line1.classList.add('done');
-              dot2.classList.add('active');
-            } else {
-              dot1.classList.remove('done');
-              dot1.textContent = '1';
-              line1.classList.remove('done');
-              dot2.classList.remove('active');
-            }
-          }
-
-          // ── Dot animation ──
-          var dotCount = 1;
-          setInterval(function () {
-            dotCount = (dotCount % 3) + 1;
-            var el = document.getElementById('dotAnim');
-            if (el) el.textContent = '.'.repeat(dotCount);
-          }, 500);
-
-          // ── Loader step animation ──
-          function runSteps(callback) {
-            var prog = document.getElementById('ghProgress');
-            var steps = [
-              { id: 'lpStep1', prog: 30, delay: 400 },
-              { id: 'lpStep2', prog: 65, delay: 1100 },
-              { id: 'lpStep3', prog: 100, delay: 1900 }
-            ];
-            steps.forEach(function (s) {
-              setTimeout(function () {
-                document.getElementById(s.id).classList.add('active');
-                prog.style.width = s.prog + '%';
-              }, s.delay);
-            });
-            setTimeout(callback, 2800);
-          }
-
-          // ── Main submit ──
-          function doSubmit() {
-            var ok = true;
-            var n = nameInput.value.trim();
-            var m = mobInput.value.trim();
-
-            // Validate name
-            if (!n) {
-              nameMsg.textContent = 'कृपया नाम दर्ज करें';
-              nameErr.classList.add('show');
-              ok = false;
-            } else if (n.length < 2) {
-              nameMsg.textContent = 'कम से कम 2 अक्षर लिखें';
-              nameErr.classList.add('show');
-              ok = false;
-            }
-
-            // Validate mobile
-            if (!m) {
-              mobMsg.textContent = 'मोबाइल नंबर दर्ज करें';
-              mobErr.classList.add('show');
-              ok = false;
-            } else if (m.length !== 10) {
-              mobMsg.textContent = '10 अंकों का नंबर दर्ज करें';
-              mobErr.classList.add('show');
-              ok = false;
-            } else if (!/^[6-9]/.test(m)) {
-              mobMsg.textContent = 'नंबर 6, 7, 8 या 9 से शुरू होना चाहिए';
-              mobErr.classList.add('show');
-              ok = false;
-            }
-
-            if (!ok) return;
-
-            // Disable button
-            var btn = document.getElementById('submitBtn');
-            btn.disabled = true;
-
-            // Show loader
-            var overlay = document.getElementById('loaderOverlay');
-            overlay.style.display = 'flex';
-
-            // Build form data
-            var formData = new FormData();
-            formData.append('name', n);
-            formData.append('phone', m);
-
-            var redirected = false;
-            function onDone() {
-              if (redirected) return;
-              redirected = true;
-              window.location.href = './Thankyou.html';
-            }
-
-            // Run animation, then send data
-            runSteps(function () {
-              fetch(SHEETS_URL, { method: 'POST', body: formData })
-                .then(function (r) { return r.text(); })
-                .then(onDone)
-                .catch(onDone); // show success even if network fails
-            });
-          }
-
-          // ── Reset form on back-navigation ──
-          window.addEventListener('pageshow', function (event) {
-            if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
-              nameInput.value = '';
-              mobInput.value = '';
-              document.getElementById('formContent').style.display = 'block';
-              document.getElementById('successWrap').style.display = 'none';
-              document.getElementById('submitBtn').disabled = false;
-              updateSteps();
-            }
-          });
-        </script>
-      </body>
-
-      </html>
-
-
-
-
-
-      <!-- ============================================
-         SECTION 11: FAQ
-         ============================================ -->
-      <section class="faq-section" id="faq" aria-labelledby="faq-heading">
-        <div class="container">
-          <h2 class="section-heading text-center" id="faq-heading">अक्सर पूछे जाने वाले सवाल</h2>
-
-          <div class="faq-list" role="list">
-
-            <!-- FAQ 1 -->
-            <div class="faq-item" role="listitem">
-              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1" id="faq-btn-1"
-                onclick="toggleFaq(this)">
-                <span>क्या GathHeal एक आयुर्वेदिक प्रोडक्ट है?</span>
-                <span class="faq-arrow" aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M7 10l5 5 5-5z" />
-                  </svg>
-                </span>
-              </button>
-              <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-btn-1">
-                हाँ, यह आयुर्वेदिक सिद्धांतों से प्रेरित फॉर्मूलेशन है।
-              </div>
-            </div>
-
-            <!-- FAQ 2 -->
-            <div class="faq-item" role="listitem">
-              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2" id="faq-btn-2"
-                onclick="toggleFaq(this)">
-                <span>GathHeal किस रूप में Available है?</span>
-                <span class="faq-arrow" aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M7 10l5 5 5-5z" />
-                  </svg>
-                </span>
-              </button>
-              <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-btn-2">
-                यह आसान उपयोग वाली कैप्सूल फॉर्म में Available है।
-              </div>
-            </div>
-
-            <!-- FAQ 3 -->
-            <div class="faq-item" role="listitem">
-              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3" id="faq-btn-3"
-                onclick="toggleFaq(this)">
-                <span>क्या इसे लंबे समय तक लिया जा सकता है?</span>
-                <span class="faq-arrow" aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M7 10l5 5 5-5z" />
-                  </svg>
-                </span>
-              </button>
-              <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-btn-3">
-                हाँ, इसे लंबे समय तक लिया जा सकता है।
-              </div>
-            </div>
-
-            <!-- FAQ 4 -->
-            <div class="faq-item" role="listitem">
-              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4" id="faq-btn-4"
-                onclick="toggleFaq(this)">
-                <span>क्या पूरे भारत में Delivery Available है?</span>
-                <span class="faq-arrow" aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M7 10l5 5 5-5z" />
-                  </svg>
-                </span>
-              </button>
-              <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-btn-4">
-                हाँ, अधिकांश क्षेत्रों में Delivery की Facility Available है।
-              </div>
-            </div>
-
-            <!-- FAQ 5 -->
-            <div class="faq-item" role="listitem">
-              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5" id="faq-btn-5"
-                onclick="toggleFaq(this)">
-                <span>क्या यह शरीर की हर गांठ के लिए बनाया गया है?</span>
-                <span class="faq-arrow" aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M7 10l5 5 5-5z" />
-                  </svg>
-                </span>
-              </button>
-              <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-btn-5">
-                यह शरीर की हर जगह की गांठ से जुड़ी discomfort और सामान्य स्वास्थ्य सहयोग को ध्यान में रखकर तैयार किया
-                गया आयुर्वेदिक फॉर्मूला है।
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-
-      <div class="disclaimer">
-        Disclaimer-परिणाम व्यक्ति की शारीरिक स्थिति और नियमित उपयोग पर निर्भर करते हैं। यह उत्पाद किसी बीमारी का इलाज
-        नहीं करता। गंभीर समस्याओं में चिकित्सक से परामर्श लें।
       </div>
 
-  <!-- POLICY LINKS -->
+      <!-- section-10 form -->
+      <div class="shell">
+        <div class="top-panel">
+          <div class="leaf-bg" aria-hidden="true">✿</div>
+          <div class="prod-row">
+            <div class="prod-icon">
+              <img src="images/product.avif" alt="GathHeal Product" loading="lazy" width="112" height="142">
+            </div>
+            <div>
+              <div class="prod-name">Ayurvedic Formula</div>
+              <div class="prod-title">GathHeal Capsules</div>
+            </div>
+          </div>
+          <div class="headline-block">
+            <h2>गांठ का इंतज़ार क्यों?<br>अभी राहत पाएं</h2>
+            <p>प्राकृतिक आयुर्वेदिक Treatment जो आपकी Daily की ज़िंदगी को बेहतर बनाए</p>
+            <div class="pill-row">
+              <span class="pill"><i class="ti ti-truck-delivery" aria-hidden="true"></i> Free Delivery</span>
+              <span class="pill"><i class="ti ti-cash" aria-hidden="true"></i> Cash on Delivery</span>
+              <span class="pill"><i class="ti ti-shield-check" aria-hidden="true"></i> 100% Natural</span>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-panel">
+          <div class="step-indicator">
+            <div class="step-dot active" id="dot1">1</div>
+            <div class="step-line" id="line1"></div>
+            <div class="step-dot" id="dot2">2</div>
+            <div class="step-line" id="line2"></div>
+            <div class="step-dot" id="dot3">3</div>
+          </div>
+          <div id="formContent">
+            <div class="field-wrap">
+              <div class="field-label">नाम :</div>
+              <input class="big-input" id="nameInput" type="text" placeholder="जैसे: Ramesh Kumar" autocomplete="off" />
+              <div class="err" id="nameErr"><i class="ti ti-alert-circle" style="font-size:14px"></i><span id="nameMsg"></span></div>
+            </div>
+            <hr class="sep" />
+            <div class="field-wrap">
+              <div class="field-label">मोबाइल नंबर :</div>
+              <input class="big-input" id="mobInput" type="tel" maxlength="10" placeholder="जैसे: 9XXXXXXXXX" inputmode="numeric" autocomplete="off" />
+              <div class="err" id="mobErr"><i class="ti ti-alert-circle" style="font-size:14px"></i><span id="mobMsg"></span></div>
+            </div>
+            <button class="cta-btn" id="submitBtn" onclick="doSubmit()">
+              <i class="ti ti-package" aria-hidden="true"></i>
+              ऑर्डर कन्फ़र्म करें
+              <i class="ti ti-chevron-right" aria-hidden="true"></i>
+            </button>
+            <div class="guarantee-row">
+              <i class="ti ti-lock" aria-hidden="true"></i>
+              आपकी जानकारी पूरी तरह सुरक्षित है
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loader Overlay -->
+      <div class="lp-blur-overlay" id="loaderOverlay">
+        <div class="gh-loader">
+          <div class="gh-ring-wrap">
+            <div class="gh-ring-outer"></div>
+            <div class="gh-ring-spin"></div>
+            <div class="gh-ring-dot"><i class="ti ti-leaf" aria-hidden="true"></i></div>
+          </div>
+          <div class="gh-loader-title">Order Enter हो रहा है<span class="lp-dot-anim" id="dotAnim">.</span></div>
+          <div class="gh-loader-sub">बस कुछ ही सेकंड में<br>आपका Order Confirm हो जाएगा।</div>
+          <div class="gh-steps">
+            <div class="gh-step" id="lpStep1"><i class="ti ti-check"></i> Detail Verified की जा रही है</div>
+            <div class="gh-step" id="lpStep2"><i class="ti ti-database"></i> Order System में Enter हो रहा है</div>
+            <div class="gh-step" id="lpStep3"><i class="ti ti-truck-delivery"></i> Delivery Schedule हो रही है</div>
+          </div>
+          <div class="gh-progress-track">
+            <div class="gh-progress-bar" id="ghProgress"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+        <div class="container">
+          <h2 class="section-heading" id="faq-heading">अक्सर पूछे जाने वाले सवाल</h2>
+          <div class="faq-list" role="list">
+            <div class="faq-item" role="listitem">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1" id="faq-btn-1" onclick="toggleFaq(this)">
+                <span>क्या GathHeal एक आयुर्वेदिक प्रोडक्ट है?</span>
+                <span class="faq-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></span>
+              </button>
+              <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-btn-1">हाँ, यह आयुर्वेदिक सिद्धांतों से प्रेरित फॉर्मूलेशन है।</div>
+            </div>
+            <div class="faq-item" role="listitem">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2" id="faq-btn-2" onclick="toggleFaq(this)">
+                <span>GathHeal किस रूप में Available है?</span>
+                <span class="faq-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></span>
+              </button>
+              <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-btn-2">यह आसान उपयोग वाली कैप्सूल फॉर्म में Available है।</div>
+            </div>
+            <div class="faq-item" role="listitem">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3" id="faq-btn-3" onclick="toggleFaq(this)">
+                <span>क्या इसे लंबे समय तक लिया जा सकता है?</span>
+                <span class="faq-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></span>
+              </button>
+              <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-btn-3">हाँ, इसे लंबे समय तक लिया जा सकता है।</div>
+            </div>
+            <div class="faq-item" role="listitem">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4" id="faq-btn-4" onclick="toggleFaq(this)">
+                <span>क्या पूरे भारत में Delivery Available है?</span>
+                <span class="faq-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></span>
+              </button>
+              <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-btn-4">हाँ, अधिकांश क्षेत्रों में Delivery की Facility Available है।</div>
+            </div>
+            <div class="faq-item" role="listitem">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5" id="faq-btn-5" onclick="toggleFaq(this)">
+                <span>क्या यह शरीर की हर गांठ के लिए बनाया गया है?</span>
+                <span class="faq-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></span>
+              </button>
+              <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-btn-5">यह शरीर की हर जगह की गांठ से जुड़ी discomfort और सामान्य स्वास्थ्य सहयोग को ध्यान में रखकर तैयार किया गया आयुर्वेदिक फॉर्मूला है।</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="disclaimer">Disclaimer-परिणाम व्यक्ति की शारीरिक स्थिति और नियमित उपयोग पर निर्भर करते हैं। यह उत्पाद किसी बीमारी का इलाज नहीं करता। गंभीर समस्याओं में चिकित्सक से परामर्श लें।</div>
+
       <div class="pl-wrap">
         <div class="pl-row">
           <button class="pl-link" onclick="openModal('privacy')">Privacy Policy</button>
@@ -4214,121 +1045,152 @@ font-size: 18px !important;
           <div id="pp-content"></div>
         </div>
       </div>
-    </section>
-
 
     </main>
 
-    <!-- ============================================
-       STICKY BOTTOM CTA
-       ============================================ -->
     <div class="sticky-cta" role="complementary" aria-label="त्वरित ऑर्डर">
       <div class="sticky-cta-inner">
-
-        <a href="#dot1" class="btn-primary" role="button" aria-label="अभी फोन करके ऑर्डर करें">
-          📞 ऑर्डर करें
-        </a>
+        <a href="#dot1" class="btn-primary" role="button" aria-label="अभी ऑर्डर करें">📞 ऑर्डर करें</a>
       </div>
     </div>
 
-
-
-    <!-- ============================================
-       JAVASCRIPT: FAQ Accordion
-       ============================================ -->
     <script>
+      // FAQ
       function toggleFaq(btn) {
         var item = btn.closest('.faq-item');
         var isOpen = item.classList.contains('open');
-        // Close all
-        document.querySelectorAll('.faq-item').forEach(function (el) {
+        document.querySelectorAll('.faq-item').forEach(function(el) {
           el.classList.remove('open');
-          el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          el.querySelector('.faq-question').setAttribute('aria-expanded','false');
         });
-        // Open clicked if it was closed
-        if (!isOpen) {
-          item.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
+        if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+      }
+      document.querySelectorAll('.faq-question').forEach(function(btn) {
+        btn.addEventListener('keydown', function(e) {
+          if (e.key==='Enter'||e.key===' ') { e.preventDefault(); toggleFaq(btn); }
+        });
+      });
+
+      // Timer
+      let duration = 2*60*60;
+      function updateTimer() {
+        document.getElementById("hours").textContent = String(Math.floor(duration/3600)).padStart(2,"0");
+        document.getElementById("minutes").textContent = String(Math.floor((duration%3600)/60)).padStart(2,"0");
+        document.getElementById("seconds").textContent = String(duration%60).padStart(2,"0");
+        duration > 0 ? duration-- : (duration = 2*60*60);
+      }
+      updateTimer();
+      setInterval(updateTimer, 1000);
+
+      // Policy modals
+      var contents = {
+        privacy:`<div class="pp-mtitle"><i class="ti ti-shield-lock"></i>Privacy Policy</div><div class="pp-mbadge">Last updated: June 2025</div><p class="pp-mpara">GathHeal आपकी personal information की सुरक्षा को सर्वोच्च प्राथमिकता देता है। जब आप order करते हैं तो हम निम्नलिखित जानकारी एकत्र करते हैं:</p><ul class="pp-mlist"><li>नाम, मोबाइल नंबर और delivery address</li><li>Payment details (encrypted और secure)</li><li>Order history और purchase records</li></ul><div class="pp-mhl">आपकी जानकारी किसी third-party को नहीं बेची जाती। इसका उपयोग केवल order processing और delivery के लिए किया जाता है।</div><p class="pp-mpara">हम industry-standard SSL encryption का उपयोग करते हैं।</p>`,
+        terms:`<div class="pp-mtitle"><i class="ti ti-file-description"></i>Terms & Conditions</div><div class="pp-mbadge">Please read carefully</div><p class="pp-mpara">GathHeal का उपयोग करके आप इन terms से सहमत होते हैं:</p><ul class="pp-mlist"><li>Product results व्यक्ति-दर-व्यक्ति अलग हो सकते हैं</li><li>यह product किसी बीमारी का इलाज नहीं है — wellness supplement है</li><li>18 वर्ष से कम आयु के व्यक्ति बिना guardian consent के order न करें</li><li>Fake/fraudulent orders के लिए legal action लिया जा सकता है</li><li>Product images केवल representation के लिए हैं</li></ul><div class="pp-mhl">GathHeal किसी भी समय बिना prior notice के prices, offers या terms बदलने का अधिकार रखता है।</div>`,
+        shipping:`<div class="pp-mtitle"><i class="ti ti-truck-delivery"></i>Shipping Policy</div><div class="pp-mbadge">Free Delivery All India</div><p class="pp-mpara">हम पूरे India में FREE shipping प्रदान करते हैं। Delivery timeline:</p><ul class="pp-mlist"><li>Metro cities: 3–5 business days</li><li>Tier-2 / Tier-3 cities: 5–7 business days</li><li>Remote / rural areas: 7–10 business days</li></ul><div class="pp-mhl">Order confirm होने के 24–48 घंटे के अंदर tracking number SMS/WhatsApp पर भेजा जाएगा।</div>`,
+        cancel:`<div class="pp-mtitle"><i class="ti ti-refresh"></i>Cancellation Policy</div><div class="pp-mbadge">7-Day Easy Return</div><p class="pp-mpara">आप order confirm होने के <strong>24 घंटे के अंदर</strong> cancellation request कर सकते हैं।</p><ul class="pp-mlist"><li>Order dispatch होने के बाद cancellation संभव नहीं</li><li>Damaged या wrong product मिलने पर 7 दिन के अंदर complaint करें</li><li>Opened/used products return नहीं किए जाएंगे</li><li>Refund 5–7 business days में original payment method पर</li></ul>`,
+        contact:`<div class="pp-mtitle"><i class="ti ti-headset"></i>Contact Us</div><p class="pp-mpara">हमारी team आपकी मदद के लिए Available है — सोमवार से शनिवार, सुबह 9 बजे से शाम 6 बजे तक।</p><div class="pp-cgrid"><div class="pp-citem"><i class="ti ti-phone"></i><div class="pp-clbl">Call / WhatsApp</div><div class="pp-cval">+91 XXXXX XXXXX</div></div><div class="pp-citem"><i class="ti ti-mail"></i><div class="pp-clbl">Email</div><div class="pp-cval">support@gathheal.com</div></div><div class="pp-citem"><i class="ti ti-clock"></i><div class="pp-clbl">Support Hours</div><div class="pp-cval">Mon–Sat 9am–6pm</div></div><div class="pp-citem"><i class="ti ti-message-circle"></i><div class="pp-clbl">Response Time</div><div class="pp-cval">Within 24 hours</div></div></div>`,
+        disclaimer:`<div class="pp-mtitle"><i class="ti ti-alert-circle"></i>Legal Disclaimer</div><div class="pp-mbadge">Important Notice</div><p class="pp-mpara">GathHeal एक natural wellness supplement है।</p><ul class="pp-mlist"><li>यह product किसी भी बीमारी का diagnosis, treatment, cure या prevention नहीं करता</li><li>Results individual to individual अलग हो सकते हैं</li><li>यह product FSSAI guidelines के अनुसार एक food supplement है, drug नहीं</li><li>किसी भी medical condition में उपयोग से पहले doctor से परामर्श करें</li></ul><div class="pp-mhl">Website पर दिए गए statements को Food & Drug Administration द्वारा evaluate नहीं किया गया है।</div>`
+      };
+      function openModal(key) { document.getElementById('pp-content').innerHTML=contents[key]; document.getElementById('pp-overlay').classList.add('show'); }
+      function closeModal() { document.getElementById('pp-overlay').classList.remove('show'); }
+      function closeIfOutside(e) { if(e.target===document.getElementById('pp-overlay')) closeModal(); }
+
+      // Form
+      var nameInput=document.getElementById('nameInput');
+      var mobInput=document.getElementById('mobInput');
+      var nameErr=document.getElementById('nameErr');
+      var mobErr=document.getElementById('mobErr');
+      var nameMsg=document.getElementById('nameMsg');
+      var mobMsg=document.getElementById('mobMsg');
+
+      nameInput.addEventListener('input',function(){
+        this.value=this.value.replace(/[^a-zA-Z\u0900-\u097F\s]/g,'');
+        nameErr.classList.remove('show');
+        updateSteps();
+      });
+      mobInput.addEventListener('input',function(){
+        this.value=this.value.replace(/\D/g,'');
+        if(this.value.length>10) this.value=this.value.slice(0,10);
+        mobErr.classList.remove('show');
+      });
+      mobInput.addEventListener('keydown',function(e){
+        var allowed=['Backspace','Delete','ArrowLeft','ArrowRight','Tab'];
+        if(!allowed.includes(e.key)&&!/^\d$/.test(e.key)) e.preventDefault();
+      });
+
+      function updateSteps(){
+        var n=nameInput.value.trim();
+        var dot1=document.getElementById('dot1');
+        var dot2=document.getElementById('dot2');
+        var line1=document.getElementById('line1');
+        if(n.length>0){
+          dot1.classList.add('done');
+          dot1.innerHTML='<i class="ti ti-check" style="font-size:14px"></i>';
+          line1.classList.add('done');
+          dot2.classList.add('active');
+        } else {
+          dot1.classList.remove('done');
+          dot1.textContent='1';
+          line1.classList.remove('done');
+          dot2.classList.remove('active');
         }
       }
 
-      // Keyboard support for FAQ
-      document.querySelectorAll('.faq-question').forEach(function (btn) {
-        btn.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            toggleFaq(btn);
-          }
+      var dotCount=1;
+      setInterval(function(){
+        dotCount=(dotCount%3)+1;
+        var el=document.getElementById('dotAnim');
+        if(el) el.textContent='.'.repeat(dotCount);
+      },500);
+
+      function runSteps(callback){
+        var prog=document.getElementById('ghProgress');
+        var steps=[{id:'lpStep1',prog:30,delay:400},{id:'lpStep2',prog:65,delay:1100},{id:'lpStep3',prog:100,delay:1900}];
+        steps.forEach(function(s){
+          setTimeout(function(){document.getElementById(s.id).classList.add('active');prog.style.width=s.prog+'%';},s.delay);
         });
+        setTimeout(callback,2800);
+      }
+
+      function doSubmit(){
+        var ok=true;
+        var n=nameInput.value.trim();
+        var m=mobInput.value.trim();
+        if(!n){nameMsg.textContent='कृपया नाम दर्ज करें';nameErr.classList.add('show');ok=false;}
+        else if(n.length<2){nameMsg.textContent='कम से कम 2 अक्षर लिखें';nameErr.classList.add('show');ok=false;}
+        if(!m){mobMsg.textContent='मोबाइल नंबर दर्ज करें';mobErr.classList.add('show');ok=false;}
+        else if(m.length!==10){mobMsg.textContent='10 अंकों का नंबर दर्ज करें';mobErr.classList.add('show');ok=false;}
+        else if(!/^[6-9]/.test(m)){mobMsg.textContent='नंबर 6, 7, 8 या 9 से शुरू होना चाहिए';mobErr.classList.add('show');ok=false;}
+        if(!ok) return;
+        var btn=document.getElementById('submitBtn');
+        btn.disabled=true;
+        var overlay=document.getElementById('loaderOverlay');
+        overlay.style.display='flex';
+        var formData=new FormData();
+        formData.append('name',n);
+        formData.append('phone',m);
+        var redirected=false;
+        function onDone(){if(redirected)return;redirected=true;window.location.href='./Thankyou.html';}
+        runSteps(function(){
+          fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec',{method:'POST',body:formData})
+            .then(function(r){return r.text();}).then(onDone).catch(onDone);
+        });
+      }
+
+      window.addEventListener('pageshow',function(event){
+        if(event.persisted||(window.performance&&window.performance.navigation.type===2)){
+          nameInput.value='';mobInput.value='';
+          document.getElementById('formContent').style.display='block';
+          document.getElementById('submitBtn').disabled=false;
+          updateSteps();
+        }
       });
 
-
-
-
-
-
-
-      // offer section
-      let duration = 2 * 60 * 60; // 2 hours
-
-function updateTimer() {
-
-    let hours = Math.floor(duration / 3600);
-    let minutes = Math.floor((duration % 3600) / 60);
-    let seconds = duration % 60;
-
-    document.getElementById("hours").textContent =
-        String(hours).padStart(2, "0");
-
-    document.getElementById("minutes").textContent =
-        String(minutes).padStart(2, "0");
-
-    document.getElementById("seconds").textContent =
-        String(seconds).padStart(2, "0");
-
-    if(duration > 0){
-        duration--;
-    }else{
-        duration = 2 * 60 * 60;
-    }
-}
-
-updateTimer();
-setInterval(updateTimer, 1000);
-
-
-
-
-// 
- var contents = {
-      privacy: `<div class="pp-mtitle"><i class="ti ti-shield-lock" aria-hidden="true"></i>Privacy Policy</div><div class="pp-mbadge">Last updated: June 2025</div><p class="pp-mpara">GathHeal आपकी personal information की सुरक्षा को सर्वोच्च प्राथमिकता देता है। जब आप order करते हैं तो हम निम्नलिखित जानकारी एकत्र करते हैं:</p><ul class="pp-mlist"><li>नाम, मोबाइल नंबर और delivery address</li><li>Payment details (encrypted और secure)</li><li>Order history और purchase records</li></ul><div class="pp-mhl">आपकी जानकारी किसी third-party को नहीं बेची जाती। इसका उपयोग केवल order processing और delivery के लिए किया जाता है।</div><p class="pp-mpara">हम industry-standard SSL encryption का उपयोग करते हैं। किसी भी privacy concern के लिए हमसे contact करें।</p>`,
-      terms: `<div class="pp-mtitle"><i class="ti ti-file-description" aria-hidden="true"></i>Terms & Conditions</div><div class="pp-mbadge">Please read carefully</div><p class="pp-mpara">GathHeal का उपयोग करके आप इन terms से सहमत होते हैं:</p><ul class="pp-mlist"><li>Product results व्यक्ति-दर-व्यक्ति अलग हो सकते हैं</li><li>यह product किसी बीमारी का इलाज नहीं है — wellness supplement है</li><li>18 वर्ष से कम आयु के व्यक्ति बिना guardian consent के order न करें</li><li>Fake/fraudulent orders के लिए legal action लिया जा सकता है</li><li>Product images केवल representation के लिए हैं</li></ul><div class="pp-mhl">GathHeal किसी भी समय बिना prior notice के prices, offers या terms बदलने का अधिकार रखता है।</div>`,
-      shipping: `<div class="pp-mtitle"><i class="ti ti-truck-delivery" aria-hidden="true"></i>Shipping Policy</div><div class="pp-mbadge">Free Delivery All India</div><p class="pp-mpara">हम पूरे India में FREE shipping प्रदान करते हैं। Delivery timeline:</p><ul class="pp-mlist"><li>Metro cities (Delhi, Mumbai, Bengaluru): 3–5 business days</li><li>Tier-2 / Tier-3 cities: 5–7 business days</li><li>Remote / rural areas: 7–10 business days</li></ul><div class="pp-mhl">Order confirm होने के 24–48 घंटे के अंदर tracking number SMS/WhatsApp पर भेजा जाएगा।</div><ul class="pp-mlist"><li>Delivery attempt 3 बार की जाएगी — उसके बाद order वापस आ जाएगा</li><li>Incorrect address की जिम्मेदारी customer की होगी</li></ul>`,
-      cancel: `<div class="pp-mtitle"><i class="ti ti-refresh" aria-hidden="true"></i>Cancellation Policy</div><div class="pp-mbadge">7-Day Easy Return</div><p class="pp-mpara">आप order confirm होने के <strong>24 घंटे के अंदर</strong> cancellation request कर सकते हैं।</p><ul class="pp-mlist"><li>Order dispatch होने के बाद cancellation संभव नहीं</li><li>Damaged या wrong product मिलने पर 7 दिन के अंदर complaint करें</li><li>Opened/used products return नहीं किए जाएंगे</li><li>Refund 5–7 business days में original payment method पर</li></ul><div class="pp-mhl">Return के लिए product original packaging में होना ज़रूरी है। Unboxing video होने पर claim जल्दी process होता है।</div>`,
-      contact: `<div class="pp-mtitle"><i class="ti ti-headset" aria-hidden="true"></i>Contact Us</div><p class="pp-mpara">हमारी team आपकी मदद के लिए Available है — सोमवार से शनिवार, सुबह 9 बजे से शाम 6 बजे तक।</p><div class="pp-cgrid"><div class="pp-citem"><i class="ti ti-phone" aria-hidden="true"></i><div class="pp-clbl">Call / WhatsApp</div><div class="pp-cval">+91 XXXXX XXXXX</div></div><div class="pp-citem"><i class="ti ti-mail" aria-hidden="true"></i><div class="pp-clbl">Email</div><div class="pp-cval">support@gathheal.com</div></div><div class="pp-citem"><i class="ti ti-clock" aria-hidden="true"></i><div class="pp-clbl">Support Hours</div><div class="pp-cval">Mon–Sat 9am–6pm</div></div><div class="pp-citem"><i class="ti ti-message-circle" aria-hidden="true"></i><div class="pp-clbl">Response Time</div><div class="pp-cval">Within 24 hours</div></div></div>`,
-      disclaimer: `<div class="pp-mtitle"><i class="ti ti-alert-circle" aria-hidden="true"></i>Legal Disclaimer</div><div class="pp-mbadge">Important Notice</div><p class="pp-mpara">GathHeal एक natural wellness supplement है। इस product के बारे में निम्नलिखित बातें ध्यान में रखें:</p><ul class="pp-mlist"><li>यह product किसी भी बीमारी का diagnosis, treatment, cure या prevention नहीं करता</li><li>Results individual to individual अलग हो सकते हैं</li><li>यह product FSSAI guidelines के अनुसार एक food supplement है, drug नहीं</li><li>किसी भी medical condition में उपयोग से पहले doctor से परामर्श करें</li><li>Pregnant, nursing women या किसी chronic illness वाले व्यक्ति पहले physician से consult करें</li></ul><div class="pp-mhl">Website पर दिए गए statements को Food & Drug Administration द्वारा evaluate नहीं किया गया है। यह product किसी disease को diagnose, treat, cure या prevent करने के लिए नहीं है।</div><p class="pp-mpara">Product की images, descriptions और testimonials केवल illustrative purpose के लिए हैं। GathHeal किसी भी indirect या consequential loss के लिए उत्तरदायी नहीं है।</p>`
-    };
-
-  
-    function openModal(key) {
-      document.getElementById('pp-content').innerHTML = contents[key];
-      document.getElementById('pp-overlay').classList.add('show');
-    }
-    function closeModal() {
-      document.getElementById('pp-overlay').classList.remove('show');
-    }
-    function closeIfOutside(e) {
-      if (e.target === document.getElementById('pp-overlay')) closeModal();
-    }
-
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('sw.js');
-      });
-    }
+      if('serviceWorker' in navigator){
+        window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js');});
+      }
     </script>
 
   </div>
 </body>
-
 </html>

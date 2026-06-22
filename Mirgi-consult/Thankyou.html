@@ -1,0 +1,1222 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>धन्यवाद — Request Submit हो गई</title>
+  <link href="https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+     --primary: #2F5D9F;
+      --white:  #FFFFFF;
+      --white2: #F4A62A;
+      --bg: #FFF8F2;
+      --dark: #2C2C2C;
+      --yellow: #F4A62A;
+      --yellow2: #F4A62A;
+      --muted: #6D4C41;
+      --wa: #d0d325;
+    }
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Halant', serif;
+      background: #E8C9A0;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 450px;
+      background: var(--bg);
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+    }
+
+    /* ── PARTICLES ── */
+    .ptcl {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 450px;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .p {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0;
+      animation: fup 7s ease-in infinite
+    }
+
+    .p1 {
+      width: 5px;
+      height: 5px;
+      background: var(--primary);
+      left: 12%;
+      animation-delay: 0s;
+      animation-duration: 5s
+    }
+
+    .p2 {
+      width: 4px;
+      height: 4px;
+      background: var(--white2);
+      left: 28%;
+      animation-delay: 1s;
+      animation-duration: 7s
+    }
+
+    .p3 {
+      width: 7px;
+      height: 7px;
+      background: var(--primary);
+      left: 48%;
+      animation-delay: 2s;
+      animation-duration: 6s
+    }
+
+    .p4 {
+      width: 4px;
+      height: 4px;
+      background: var(--yellow);
+      left: 68%;
+      animation-delay: 0.5s;
+      animation-duration: 8s
+    }
+
+    .p5 {
+      width: 6px;
+      height: 6px;
+      background: var(--white2);
+      left: 84%;
+      animation-delay: 3s;
+      animation-duration: 5.5s
+    }
+
+    .p6 {
+      width: 3px;
+      height: 3px;
+      background: var(--primary);
+      left: 35%;
+      animation-delay: 4s;
+      animation-duration: 6s
+    }
+
+    @keyframes fup {
+      0% {
+        transform: translateY(105vh) scale(0);
+        opacity: 0
+      }
+
+      10% {
+        opacity: .7
+      }
+
+      90% {
+        opacity: .2
+      }
+
+      100% {
+        transform: translateY(-60px) scale(1.3);
+        opacity: 0
+      }
+    }
+
+    /* ── TOP STATUS BAR ── */
+    .status-bar {
+      background: var(--yellow2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+    }
+
+    .bar-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: yellow;
+      animation: bdot 1.4s ease-in-out infinite;
+    }
+
+    @keyframes bdot {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: .3;
+        transform: scale(.7)
+      }
+    }
+
+    /* ── HERO SUCCESS ── */
+    .hero {
+      background: linear-gradient(150deg, var(--primary) 0%, var(--primary) 50%, var(--primary) 100%);
+      padding: 0 0 38px;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='52' height='52' viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='26' cy='26' r='1.8' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 48px;
+      background: var(--bg);
+      clip-path: ellipse(58% 100% at 50% 100%);
+    }
+
+    /* Animated check */
+    .check-area {
+      display: flex;
+      justify-content: center;
+      padding: 44px 0 28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .check-outer {
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      border: 2.5px solid rgba(255, 255, 255, .22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      animation: ring-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes ring-pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, .3)
+      }
+
+      50% {
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0)
+      }
+    }
+
+    .check-outer::before {
+      content: '';
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 1.5px dashed rgba(255, 255, 255, .2);
+      animation: spin-slow 12s linear infinite;
+    }
+
+    @keyframes spin-slow {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    .check-inner {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .18);
+      backdrop-filter: blur(8px);
+      border: 2px solid rgba(255, 255, 255, .35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      animation: pop 0.65s cubic-bezier(.36, .07, .19, .97) both;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, .18);
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(0) rotate(-20deg);
+        opacity: 0
+      }
+
+      60% {
+        transform: scale(1.18) rotate(6deg)
+      }
+
+      100% {
+        transform: scale(1) rotate(0);
+        opacity: 1
+      }
+    }
+
+    /* Hero text */
+    .hero-text {
+      text-align: center;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+      animation: rise .7s .2s ease both;
+    }
+
+    @keyframes rise {
+      from {
+        transform: translateY(20px);
+        opacity: 0
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1
+      }
+    }
+
+    .hero-eyebrow {
+      font-size: 12px;
+      color: rgba(255, 255, 255, .7);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .hero-h {
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.28;
+      margin-bottom: 12px
+    }
+
+    .hero-h span {
+      color: var(--white2)
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      color: rgba(255, 255, 255, .82);
+      line-height: 1.6
+    }
+
+    /* ── PHONE ALERT CARD ── */
+    .phone-alert {
+      margin: 32px 20px 0;
+      position: relative;
+      z-index: 2;
+      animation: rise .7s .35s ease both;
+    }
+
+    .pa-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px 18px;
+      box-shadow: 0 8px 36px rgba(239, 108, 0, .18);
+      border: 2px solid var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pa-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--primary), var(--primary));
+    }
+
+    .pa-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .pa-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary), var(--primary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(239, 108, 0, .35);
+      animation: ring-phone 2s ease-in-out infinite;
+    }
+
+    @keyframes ring-phone {
+
+      0%,
+      100% {
+        transform: rotate(0)
+      }
+
+      10% {
+        transform: rotate(-12deg)
+      }
+
+      20% {
+        transform: rotate(12deg)
+      }
+
+      30% {
+        transform: rotate(-8deg)
+      }
+
+      40% {
+        transform: rotate(8deg)
+      }
+
+      50% {
+        transform: rotate(0)
+      }
+    }
+
+    .pa-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary)
+    }
+
+    .pa-sub {
+      font-size: 13px;
+      color: var(--muted)
+    }
+
+    .pa-tips {
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    .pa-tip {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: var(--bg);
+      border-left: 3px solid var(--primary);
+      transition: transform .22s, background .22s;
+      cursor: default;
+    }
+
+    .pa-tip:hover {
+      transform: translateX(5px);
+      background: var(--white)
+    }
+
+    .pa-tip:active {
+      transform: scale(.98)
+    }
+
+    .pa-tip-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      margin-top: 1px
+    }
+
+    .pa-tip-text {
+      font-size: 15px;
+      color: var(--dark);
+      line-height: 1.45;
+      font-weight: 500
+    }
+
+    /* ── REASSURANCE SECTION ── */
+    .reassure {
+      margin: 24px 20px 0;
+      animation: rise .7s .5s ease both;
+    }
+
+    .reassure-card {
+      background: linear-gradient(135deg, var(--primary), var(--primary));
+      border-radius: 20px;
+      padding: 22px 18px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(239, 108, 0, .3);
+      cursor: default;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .reassure-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 44px rgba(239, 108, 0, .4)
+    }
+
+    .reassure-card::before {
+      content: '🧠';
+      position: absolute;
+      font-size: 110px;
+      opacity: .07;
+      top: 50%;
+      right: -10px;
+      transform: translateY(-50%);
+    }
+
+    .reassure-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .reassure-badge {
+      background: rgba(255, 255, 255, .2);
+      border: 1px solid rgba(255, 255, 255, .35);
+      border-radius: 30px;
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .reassure-h {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.35;
+      position: relative;
+      z-index: 1
+    }
+
+    .reassure-h span {
+      color: var(--white2)
+    }
+
+    .reassure-body {
+      font-size: 15px;
+      color: rgba(255, 255, 255, .88);
+      line-height: 1.65;
+      position: relative;
+      z-index: 1
+    }
+
+    /* ── WHAT HAPPENS NEXT ── */
+    .next-section {
+      margin: 24px 20px 0;
+      animation: rise .7s .65s ease both;
+    }
+
+    .next-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .next-pill {
+      display: inline-block;
+      background: var(--white);
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 30px;
+    }
+
+    .next-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.3
+    }
+
+    .divln {
+      width: 40px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 2px;
+      margin: 8px 0 18px
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative
+    }
+
+    .steps::before {
+      content: '';
+      position: absolute;
+      left: 21px;
+      top: 24px;
+      bottom: 24px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--primary), var(--white2), var(--yellow));
+      border-radius: 2px;
+    }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 14px 12px;
+      border-radius: 14px;
+      cursor: default;
+      transition: background .22s, transform .22s;
+      position: relative;
+    }
+
+    .step:hover {
+      background: rgba(255, 224, 178, .45);
+      transform: translateX(4px)
+    }
+
+    .step:active {
+      transform: scale(.98)
+    }
+
+    .step-dot {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--primary), var(--primary));
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(239, 108, 0, .35);
+      transition: transform .2s, box-shadow .2s;
+      z-index: 1;
+    }
+
+    .step:hover .step-dot {
+      transform: scale(1.15);
+      box-shadow: 0 6px 20px rgba(239, 108, 0, .5)
+    }
+
+    .step-body {
+      padding-top: 8px
+    }
+
+    .step-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px
+    }
+
+    .step-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5
+    }
+
+    /* ── WHATSAPP CTA ── */
+    .wa-section {
+      margin: 26px 20px 0;
+      animation: rise .7s .8s ease both;
+    }
+
+    .wa-label {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .wa-label::before,
+    .wa-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--white);
+    }
+
+    .wa-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      padding: 18px 20px;
+      background: linear-gradient(135deg, #20B858, var(--wa));
+      color: #fff;
+      border: none;
+      border-radius: 16px;
+      font-family: 'Halant', serif;
+      font-size: 19px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 6px 28px rgba(37, 211, 102, .4);
+      transition: transform .22s, box-shadow .22s;
+      position: relative;
+      overflow: hidden;
+      animation: wa-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes wa-pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 6px 28px rgba(37, 211, 102, .4)
+      }
+
+      50% {
+        box-shadow: 0 6px 40px rgba(37, 211, 102, .7)
+      }
+    }
+
+    .wa-btn::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 55%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .2), transparent);
+      transform: skewX(-20deg);
+      animation: sheen 3.5s ease-in-out infinite;
+    }
+
+    @keyframes sheen {
+      0% {
+        left: -60%
+      }
+
+      60%,
+      100% {
+        left: 150%
+      }
+    }
+
+    .wa-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(37, 211, 102, .6);
+      animation: none
+    }
+
+    .wa-btn:active {
+      transform: scale(.97)
+    }
+
+    .wa-icon {
+      font-size: 28px;
+      flex-shrink: 0
+    }
+
+    .wa-note {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      margin: 26px 20px 0;
+      animation: rise .7s .95s ease both;
+    }
+
+    .trust-inner {
+      background: linear-gradient(135deg, var(--dark), #3D2B0A);
+      border-radius: 18px;
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .trust-inner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--white2), var(--primary));
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .1);
+      cursor: default;
+      transition: background .22s, transform .22s;
+    }
+
+    .trust-item:hover {
+      background: rgba(239, 108, 0, .18);
+      transform: translateX(4px)
+    }
+
+    .trust-item:active {
+      transform: scale(.98)
+    }
+
+    .trust-tick {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--yellow2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+      transition: transform .2s;
+    }
+
+    .trust-item:hover .trust-tick {
+      transform: scale(1.15)
+    }
+
+    .trust-text {
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff
+    }
+
+    /* ── COUNTDOWN ── */
+    .countdown {
+      margin: 24px 20px 0;
+      animation: rise .7s 1.1s ease both;
+    }
+
+    .cd-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 4px 20px rgba(239, 108, 0, .12);
+      border: 1.5px solid var(--white);
+      text-align: center;
+    }
+
+    .cd-label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 14px;
+      font-weight: 600;
+      letter-spacing: .5px;
+    }
+
+    .cd-timer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .cd-box {
+      background: linear-gradient(135deg, var(--primary), var(--primary));
+      border-radius: 12px;
+      padding: 10px 14px;
+      text-align: center;
+      min-width: 62px;
+      box-shadow: 0 4px 14px rgba(239, 108, 0, .3);
+    }
+
+    .cd-num {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      display: block;
+      line-height: 1
+    }
+
+    .cd-unit {
+      font-size: 11px;
+      color: rgba(255, 255, 255, .7);
+      margin-top: 4px;
+      display: block;
+      letter-spacing: 1px;
+      text-transform: uppercase
+    }
+
+    .cd-sep {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--primary);
+      opacity: .7;
+      animation: sep-blink 1s step-end infinite
+    }
+
+    @keyframes sep-blink {
+
+      0%,
+      100% {
+        opacity: .7
+      }
+
+      50% {
+        opacity: 0
+      }
+    }
+
+    .cd-sub {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 12px;
+      line-height: 1.5
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      margin: 28px 0 0;
+      background: var(--dark);
+      padding: 20px 22px;
+      text-align: center;
+      border-top: 3px solid var(--primary);
+    }
+
+    .foot-logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px
+    }
+
+    .foot-tag {
+      font-size: 12px;
+      color: rgba(255, 255, 255, .35)
+    }
+
+    /* bottom spacing */
+    .spacer {
+      height: 40px
+    }
+
+    /* ── FLOATING WA (mobile bottom-right) ── */
+    .float-wa {
+      position: fixed;
+      bottom: 20px;
+      right: calc(50% - 225px + 16px);
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--wa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, .5);
+      text-decoration: none;
+      z-index: 200;
+      animation: bounce-in .8s 1.2s cubic-bezier(.36, .07, .19, .97) both;
+      transition: transform .22s, box-shadow .22s;
+    }
+
+    .float-wa:hover {
+      transform: scale(1.12) rotate(-5deg);
+      box-shadow: 0 10px 32px rgba(37, 211, 102, .65)
+    }
+
+    @keyframes bounce-in {
+      0% {
+        transform: scale(0);
+        opacity: 0
+      }
+
+      65% {
+        transform: scale(1.2)
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1
+      }
+    }
+
+    .float-wa-ping {
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 2px solid #fff;
+      animation: ping 1.6s ease infinite;
+    }
+
+    @keyframes ping {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1
+      }
+
+      50% {
+        transform: scale(1.5);
+        opacity: .5
+      }
+    }
+
+    @media(max-width:450px) {
+      .float-wa {
+        right: 14px
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- particles -->
+  <div class="ptcl">
+    <div class="p p1"></div>
+    <div class="p p2"></div>
+    <div class="p p3"></div>
+    <div class="p p4"></div>
+    <div class="p p5"></div>
+    <div class="p p6"></div>
+  </div>
+
+  <div class="page">
+
+    <!-- STATUS BAR -->
+    <div class="status-bar">
+      <div class="bar-dot"></div>
+      Request Successfully Submitted
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="check-area">
+        <div class="check-outer">
+          <div class="check-inner">✅</div>
+        </div>
+      </div>
+
+      <div class="hero-text">
+        <div class="hero-eyebrow">🙏 धन्यवाद</div>
+        <h1 class="hero-h">
+          आपकी request<br><span>सफलतापूर्वक submit<br>हो गई है</span>
+        </h1>
+        <p class="hero-sub">
+          हमारा expert जल्द ही आपसे संपर्क करेगा और आपकी condition को समझकर आपको सही guidance देगा।
+        </p>
+      </div>
+
+    </section>
+
+    <!-- PHONE ALERT CARD — most important -->
+    <div class="phone-alert">
+      <div class="pa-card">
+        <div class="pa-header">
+          <div class="pa-icon-wrap">📞</div>
+          <div>
+            <div class="pa-title">🔔 Important Notice</div>
+            <div class="pa-sub">Call receive करने के लिए तैयार रहें</div>
+          </div>
+        </div>
+        <div class="pa-tips">
+          <div class="pa-tip">
+            <span class="pa-tip-icon">📱</span>
+            <span class="pa-tip-text">कृपया अपना फोन पास रखें</span>
+          </div>
+          <div class="pa-tip">
+            <span class="pa-tip-icon">🔕</span>
+            <span class="pa-tip-text">Unknown number से call आ सकता है</span>
+          </div>
+          <div class="pa-tip">
+            <span class="pa-tip-icon">🔄</span>
+            <span class="pa-tip-text">Missed call होने पर वापस जरूर call करें</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COUNTDOWN -->
+    <div class="countdown">
+      <div class="cd-card">
+        <div class="cd-label">⏱️ आपका Expert Call करेगा इस समय के अंदर</div>
+        <div class="cd-timer">
+          <div class="cd-box"><span class="cd-num" id="ch">24</span><span class="cd-unit">घंटे</span></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-box"><span class="cd-num" id="cm">00</span><span class="cd-unit">मिनट</span></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-box"><span class="cd-num" id="cs">00</span><span class="cd-unit">सेकंड</span></div>
+        </div>
+        <div class="cd-sub">📵 Silent mode OFF रखें · फोन charge पर रखें</div>
+      </div>
+    </div>
+
+    <!-- REASSURANCE -->
+    <div class="reassure">
+      <div class="reassure-card">
+        <div class="reassure-top">
+          <div class="reassure-badge">🧠 Reassurance</div>
+        </div>
+        <h2 class="reassure-h">आपने <span>सही कदम</span> उठाया है।</h2>
+        <p class="reassure-body">
+          Mirgi conditions में सही समय पर सही guidance लेना बहुत जरूरी होता है। हमारा उद्देश्य
+          आपको बिना किसी confusion के clear direction देना है, ताकि आप अपनी health के लिए <strong
+            style="color:var(--white2)">सही decision</strong> ले सकें।
+        </p>
+      </div>
+    </div>
+
+    <!-- WHAT HAPPENS NEXT -->
+    <div class="next-section">
+      <span class="next-pill">⏱️ What Happens Next</span>
+      <h2 class="next-title" style="margin-top:10px">आगे क्या होगा?</h2>
+      <div class="divln"></div>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-dot">1</div>
+          <div class="step-body">
+            <div class="step-title">Expert आपसे बात करेगा</div>
+            <div class="step-desc">अगले कुछ समय में expert आपसे personally बात करेगा।</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-dot">2</div>
+          <div class="step-body">
+            <div class="step-title">Condition Detail में समझेगा</div>
+            <div class="step-desc">आपकी condition detail में समझेगा — बिना किसी judgment के।</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-dot">3</div>
+          <div class="step-body">
+            <div class="step-title">Situation Normal है या Attention चाहिए</div>
+            <div class="step-desc">आपको बताएगा कि situation normal है या attention की जरूरत है।</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-dot">4</div>
+          <div class="step-body">
+            <div class="step-title">Clear Next Step Guide किया जाएगा</div>
+            <div class="step-desc">आपको clear next step guide किया जाएगा — कोई confusion नहीं।</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+      <div class="trust-inner">
+        <div class="trust-item">
+          <div class="trust-tick">✔</div>
+          <div class="trust-text">Experienced Experts</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-tick">✔</div>
+          <div class="trust-text">No Pressure Advice</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-tick">✔</div>
+          <div class="trust-text">Free Guidance</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="foot-logo">🌿 Health Expert Care</div>
+      <div class="foot-tag">Experienced · Trusted · Free Guidance</div>
+      <p style="font-size:11px;color:rgba(255,255,255,.2);margin-top:7px">© 2026 All Rights Reserved</p>
+    </div>
+
+    <div class="spacer"></div>
+  </div>
+
+
+  <script>
+    // 24-hour countdown
+    const end = new Date(Date.now() + 24 * 3600 * 1000);
+    function tick() {
+      const d = Math.max(0, end - Date.now());
+      const h = Math.floor(d / 3600000);
+      const m = Math.floor((d % 3600000) / 60000);
+      const s = Math.floor((d % 60000) / 1000);
+      document.getElementById('ch').textContent = String(h).padStart(2, '0');
+      document.getElementById('cm').textContent = String(m).padStart(2, '0');
+      document.getElementById('cs').textContent = String(s).padStart(2, '0');
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    // Scroll reveal
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0) scale(1)';
+        }
+      });
+    }, { threshold: .1 });
+    document.querySelectorAll('.pa-tip,.step,.trust-item').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px) scale(.97)';
+      el.style.transition = 'opacity .45s ease, transform .45s ease';
+      io.observe(el);
+    });
+  </script>
+</body>
+
+</html>

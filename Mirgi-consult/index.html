@@ -1,817 +1,6229 @@
+!-- 
 <!DOCTYPE html>
 <html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Ayurvani</title>
+
+ <link rel="preload" href="https://fonts.googleapis.com/css2?family=Halant:wght@400;600&display=swap" as="style" onload="this.rel='stylesheet'">
+<noscript>
+<link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;600&display=swap" rel="stylesheet">
+</noscript>
+
+<style>
+
+/* ✅ ROOT THEME */
+:root {
+  --primary: #eabd4b;
+  --secondary: #284900;
+  --white: #fff;
+  --black: #000;
+--glass:rgba(85, 184, 123, 0.295);
+}
+
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+ font-family: 'Halant', 'Source Sans 3', serif;
+  background-color:rgba(169, 160, 160, 0.276);
+}
+body {
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.bar{
+  max-width:450px;
+  width: 100%;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+  background:linear-gradient(135deg,var(--primary),var(--primary));
+  position:relative;
+  overflow:hidden;
+}
+
+/* LIGHT SWEEP EFFECT */
+.bar::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-50%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent);
+  transition:0.6s;
+}
+
+.bar:hover::before{
+  left:120%;
+}
+
+/* LOGO (FIXED PREMIUM HOVER) */
+.logo{
+  font-size:32px;
+  font-weight:800;
+  color:var(--secondary);
+  letter-spacing:2px;
+  position:relative;
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+/* underline */
+.logo::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:2px;
+  background:var(--secondary);
+  border-radius:10px;
+  transition:0.35s ease;
+}
+
+/* glow dot */
+.logo::before{
+  content:"";
+  position:absolute;
+  right:-10px;
+  top:6px;
+  width:6px;
+  height:6px;
+  background:var(--secondary);
+  border-radius:50%;
+  opacity:0;
+  transition:0.3s ease;
+}
+
+/* HOVER */
+.logo:hover{
+  color:var(--secondary);
+  transform:translateY(-2px);
+}
+
+.logo:hover::after{
+  width:100%;
+}
+
+.logo:hover::before{
+  opacity:1;
+  transform:scale(1.2);
+}
+
+/* BUTTON */
+.button{
+  padding:8px 16px;
+  background:var(--secondary);
+  color:var(--white);
+  border-radius:30px;
+  font-weight:700;
+  text-decoration:none;
+  font-size:32px;
+
+  transition:0.3s ease;
+}
+
+/* BUTTON HOVER */
+.button:hover{
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 10px 20px rgba(0,212,255,0.4);
+}
+
+/* BUTTON */
+.btn {
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  background: var(--secondary);
+  cursor: pointer;
+  margin: 10px auto;
+  display: block;
+  width: 55%;
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  top: 0;
+  left: -40%;
+  transform: skewX(-20deg);
+}
+.btn:hover::before {
+  left: 120%;
+  transition: 1.5s;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 430px) {
+  .btn {
+    width: 50% !important;
+    font-size: 15px !important;
+    margin: 10px auto !important;
+  }
+}
+ 
+</style>
+</head>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Noto+Sans+Devanagari:wght@400;700&display=swap');
+
+    :root {
+        --deep-green: #004d40;
+        --bright-green: #2ecc71;
+        --soft-gray: #f4f4f4;
+    }
+
+    body {
+        background: #e9ece9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        font-family: 'Noto Sans Devanagari', sans-serif;
+    }
+
+    /* Unique Canvas Layout */
+    .canvas-card {
+        width: 450px;
+        height: 500px;
+        background: white;
+        border-radius: 0 50px 50px 50px; /* Asymmetric corners */
+        position: relative;
+        overflow: hidden;
+        box-shadow: 40px 40px 80px rgba(0,0,0,0.1);
+    }
+
+    /* Side Accent Bar */
+    .side-accent {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 15px;
+        height: 100%;
+        background: var(--deep-green);
+        transition: width 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+        z-index: 1;
+    }
+
+    .canvas-card:hover .side-accent {
+        width: 100%;
+        opacity: 0.05; /* Full screen tint on hover */
+    }
+
+    /* Big Background Watermark Text */
+    .watermark {
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 80px;
+        color: rgba(0,0,0,0.03);
+        text-transform: uppercase;
+        line-height: 0.8;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    /* Product Image - "Cutting" the layout */
+    .product-stage {
+        position: absolute;
+        top: 30px;
+        right: -40px;
+        width: 280px;
+        z-index: 2;
+        transition: 0.5s ease;
+    }
+
+    .product-stage img {
+        width: 100%;
+        filter: drop-shadow(-20px 20px 30px rgba(0,0,0,0.2));
+    }
+
+    .canvas-card:hover .product-stage {
+        transform: scale(1.1) translateX(-20px) rotate(-5deg);
+    }
+
+    /* Content Layout */
+    .content-area {
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        width: 100%;
+        padding: 40px;
+        box-sizing: border-box;
+        z-index: 3;
+    }
+
+    .label-box {
+        background: var(--bright-green);
+        color: white;
+        padding: 5px 15px;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 5px;
+        display: inline-block;
+        margin-bottom: 20px;
+        box-shadow: 0 10px 20px rgba(46, 204, 113, 0.3);
+    }
+
+    .headline {
+        font-size: 26px;
+        font-weight: 800;
+        color: var(--deep-green);
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .sub-text {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.6;
+        width: 70%; /* Keeping space for the image */
+    }
+
+    /* Interactive Dot Decoration */
+    .dot-pattern {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 8px);
+        gap: 8px;
+        opacity: 0.2;
+    }
+
+    .dot { width: 8px; height: 8px; background: var(--deep-green); border-radius: 50%; }
+
+</style>
+</head>
+<body>
+
+<div class="canvas-card">
+    <div class="side-accent"></div>
+    <div class="watermark">PURE<br>HEAL</div>
+    
+    <div class="product-stage">
+        <img src="C:\Users\hp\Desktop\Ady-web\MIRGI-MUKTI\mirgi-9th\images\जटामांसी.avif" alt="Herbal Solution">
+    </div>
+
+    <div class="content-area">
+        <div class="label-box">नया आयुर्वेदिक फार्मूला</div>
+        <h2 class="headline">मिर्गी का जड़ से <br>प्राकृतिक समाधान</h2>
+        <p class="sub-text">
+            मस्तिष्क की नसों को शांत कर, दौरों को प्राकृतिक रूप से नियंत्रित करने में सहायक।
+        </p>
+    </div>
+
+    <div class="dot-pattern">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+Devanagari:wght@400;700;900&display=swap');
+
+    body {
+        background: #fdfcfb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        font-family: 'Noto Sans Devanagari', sans-serif;
+    }
+
+    /* Fixed 450px Container */
+    .neo-section {
+        width: 450px;
+        background: #ffffff;
+        border-radius: 40px;
+        padding: 40px 30px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 40px 100px rgba(0,0,0,0.06);
+        border: 1px solid #f0f0f0;
+    }
+
+    /* THE SOLID CUT-OUT FRAME */
+    .frame-composition {
+        width: 100%;
+        height: 350px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    /* The Main Solid Diagonal Panel */
+    .solid-panel {
+        position: absolute;
+        width: 280px;
+        height: 280px;
+        background: #1b4332; /* Deep Solid Green */
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        z-index: 1;
+        box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+    }
+
+    /* Second Accent Panel */
+    .accent-panel {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: #c5a059; /* Solid Gold */
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        opacity: 0.1;
+        transform: translate(20px, 20px);
+        z-index: 0;
+        transition: 0.8s ease;
+    }
+
+    /* Product Image Styling */
+    .frame-composition img {
+        height: 85%;
+        z-index: 2;
+        filter: drop-shadow(0 30px 50px rgba(0,0,0,0.25));
+        transition: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        transform: translateX(-10px);
+    }
+
+    /* Hover State */
+    .neo-section:hover .solid-panel {
+        transform: scale(1.05) rotate(-2deg);
+        background: #2e7d32;
+    }
+
+    .neo-section:hover .accent-panel {
+        transform: translate(-10px, -10px) scale(1.1);
+        opacity: 0.3;
+    }
+
+    .neo-section:hover img {
+        transform: scale(1.15) translateX(10px) translateY(-10px);
+    }
+
+    /* Text Content Area */
+    .text-box {
+        text-align: center;
+        position: relative;
+        z-index: 3;
+    }
+
+    .gold-badge {
+        font-family: 'Marcellus', serif;
+        color: #c5a059;
+        font-size: 11px;
+        letter-spacing: 6px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .h-main {
+        font-size: 34px;
+        color: #1a1a1a;
+        font-weight: 900;
+        line-height: 1.1;
+        margin: 0 0 15px 0;
+    }
+
+    .h-main span {
+        color: #2e7d32;
+    }
+
+    .p-desc {
+        font-size: 15px;
+        color: #555;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="neo-section">
+    <div class="frame-composition">
+        <div class="accent-panel"></div> <div class="solid-panel"></div>  <img src="https://www.pngplay.com/wp-content/uploads/12/Ayurvedic-Medicine-Transparent-PNG.png" alt="Premium Care">
+    </div>
+
+    <div class="text-box">
+        <span class="gold-badge">Natural Breakthrough</span>
+        <h2 class="h-main">मिर्गी का <span>सटीक</span> और <br>सफल उपचार</h2>
+        <p class="p-desc">
+            मस्तिष्क के न्यूरॉन्स को प्राकृतिक शांति देने वाला शुद्ध हर्बल फॉर्मूला, जो दौरों को जड़ से नियंत्रित करता है।
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<style>
+    body {
+        background: #f8fafc;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;
+    }
+
+    .wrapper-450 {
+        width: 450px;
+        padding: 20px;
+    }
+
+    .title-area {
+        text-align: left;
+        margin-bottom: 25px;
+    }
+
+    .title-area h2 {
+        font-size: 26px;
+        margin: 0;
+        color: #0f172a;
+        font-weight: 800;
+    }
+
+    .title-area p {
+        color: #64748b;
+        margin-top: 5px;
+        font-size: 14px;
+    }
+
+    .comparison-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .comp-item {
+        display: flex;
+        background: white;
+        border-radius: 20px;
+        padding: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        transition: all 0.4s ease;
+        border: 1px solid #f1f5f9;
+        cursor: pointer;
+    }
+
+    .side-pill {
+        flex: 1;
+        padding: 15px 10px;
+        border-radius: 14px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* एलोपैथी साइड - डिफ़ॉल्ट */
+    .pill-left {
+        color: #94a3b8;
+        background: transparent;
+    }
+
+    /* आयुर्वेद साइड - डिफ़ॉल्ट */
+    .pill-right {
+        color: #16a34a;
+        background: #f0fdf4;
+    }
+
+    .vs-divider {
+        width: 1px;
+        background: #f1f5f9;
+        margin: 10px 0;
+    }
+
+    /* === Hover Effects === */
+    .comp-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+        border-color: #e2e8f0;
+    }
+
+    /* होवर पर एलोपैथी लाल रंग में उभरेगी */
+    .comp-item:hover .pill-left {
+        background: #fef2f2;
+        color: #dc2626;
+    }
+
+    /* होवर पर आयुर्वेद और ज्यादा डार्क और सॉलिड हो जाएगा */
+    .comp-item:hover .pill-right {
+        background: #16a34a;
+        color: white;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="wrapper-450">
+    <div class="title-area">
+        <h2>सही चुनाव करें</h2>
+        <p>स्वास्थ्य के लिए कौन सा बेहतर है?</p>
+    </div>
+
+    <div class="comparison-stack">
+        <div class="comp-item">
+            <div class="side-pill pill-left">साइड-इफेक्ट ज्यादा</div>
+            <div class="vs-divider"></div>
+            <div class="side-pill pill-right">नेचुरल और सुरक्षित</div>
+        </div>
+
+        <div class="comp-item">
+            <div class="side-pill pill-left">जीवन भर निर्भरता</div>
+            <div class="vs-divider"></div>
+            <div class="side-pill pill-right">जड़ पर काम</div>
+        </div>
+
+        <div class="comp-item">
+            <div class="side-pill pill-left">सुस्ती और कमजोरी</div>
+            <div class="vs-divider"></div>
+            <div class="side-pill pill-right">संतुलन और ऊर्जा</div>
+        </div>
+
+        <div class="comp-item">
+            <div class="side-pill pill-left">सिर्फ कंट्रोल</div>
+            <div class="vs-divider"></div>
+            <div class="side-pill pill-right">धीरे-धीरे सुधार</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>मिर्गी (Epilepsy) Expert Consultation | Free Guidance</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css">
     <style>
         :root {
-            --primary: #2F5D9F;
-            --secondary: #4A7CC7;
-            --accent: #F4A62A;
-            --bg: #F7FAFD;
-            --white: #FFFFFF;
-            --text: #1E293B;
-            --light-blue: #5998f149;
-            --light-orange: #FFF8F0;
-            --radius: 14px;
-            --radius-sm: 8px;
-            --shadow: 0 4px 14px rgba(47, 93, 159, 0.10);
-            --shadow-strong: 0 8px 24px rgba(47, 93, 159, 0.18);
+            --primary-green: #2d5a27;
+            --light-green: #e9f5db;
+            --accent-gold: #c5a059;
+            --glass-bg: rgba(255, 255, 255, 0.85);
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { -webkit-text-size-adjust: 100%; }
 
         body {
-            font-family: "Mukta", sans-serif;
-            background: var(--light-blue);
-            color: var(--text);
-            line-height: 1.55;
-            -webkit-font-smoothing: antialiased;
-            padding-bottom: 60px;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            background-color: #f0f2f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            * { animation: none !important; transition: none !important; }
-        }
-
-        .img { max-width: 450px; width: 100%; height: auto; display: block; }
-
-        .page {
-            max-width: 450px;
-            margin: 0 auto;
-            background: var(--bg);
-            overflow-x: hidden;
+        .container-450 {
+            width: 450px;
+            background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             position: relative;
         }
 
-        .sec { padding: 34px 18px 38px; position: relative; }
-        .sec-heading { font-size: 32px; font-weight: 600; color: var(--primary); line-height: 1.4; margin-bottom: 10px; }
-        .sec-heading.small { font-size: 7px; }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(244, 166, 42, 0.45); }
-            70% { box-shadow: 0 0 0 10px rgba(244, 166, 42, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(244, 166, 42, 0); }
+        /* 3D Floating Header */
+        .header-section {
+            background: var(--primary-green);
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
         }
 
-        /* ===== SECTION 2 — PROBLEM ===== */
-        #howitworks { max-width: 450px; width: 100%; padding: 20px; background-color: var(--primary); margin: auto; }
-        .sec-head { text-align: center; margin-bottom: 35px; }
-        .eyebrow { display: inline-block; padding: 8px 16px; background: var(--accent); color: var(--primary); border-radius: 50px; font-size: 28px; font-weight: 700; margin-bottom: 12px; }
-        .sec-head h2 { font-size: 32px; line-height: 1.2; margin-bottom: 10px; color: var(--accent); }
-        .sec-head p { font-size: 18px; line-height: 1.2; color: white; }
-        .step { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
-        .step.reverse { flex-direction: row-reverse; }
-        .step-image { width: 120px; height: 120px; flex-shrink: 0; overflow: hidden; border-radius: 30px 8px 30px 8px; box-shadow: var(--shadow-strong); }
-        .step.reverse .step-image { border-radius: 8px 30px 8px 30px; }
-        .step-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .step-content { flex: 1; background: var(--light-orange); padding: 16px; border-radius: 20px; box-shadow: var(--shadow); position: relative; }
-        .step-number { font-size: 40px; font-weight: 900; line-height: 1; color: #086fff18; position: absolute; right: 12px; top: 5px; }
-        .step-content h3 { font-size: 20px; margin-bottom: 6px; color: var(--accent); position: relative; z-index: 2; line-height: 1.2; }
-        .step-content h3 i { color: var(--accent); margin-right: 6px; font-size: 15px; }
-        .step-content p { font-size: 18px; line-height: 1.2; color: black; position: relative; z-index: 2; }
-
-        @media(max-width:480px) {
-            #howitworks { padding: 15px 10px; }
-            .sec-head { margin-bottom: 28px; }
-            .eyebrow { font-size: 16px !important; padding: 7px 14px; margin-bottom: 10px; }
-            .sec-head h2 { font-size: 26px !important; line-height: 1.25; margin-bottom: 8px; }
-            .sec-head p { font-size: 16px !important; line-height: 1.5; }
-            .step { gap: 10px; margin-bottom: 18px; }
-            .step-image { width: 90px; height: 90px; border-radius: 22px 6px 22px 6px; }
-            .step.reverse .step-image { border-radius: 6px 22px 6px 22px; }
-            .step-content { padding: 12px; border-radius: 16px; }
-            .step-number { font-size: 30px; top: 6px; right: 10px; }
-            .step-content h3 { font-size: 18px !important; line-height: 1.3; margin-bottom: 5px; }
-            .step-content h3 i { font-size: 16px; }
-            .step-content p { font-size: 16px !important; line-height: 1.5; }
+        .header-section h2 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        /* ===== SECTION 3 — SOLUTION ===== */
-        .trust-head { text-align: center; margin-bottom: 35px; background-color: var(--accent); }
-        .trust-head span { background: #FFF8F0; color: var(--accent); padding: 7px 16px; border-radius: 30px; font-size: 22px; font-weight: 700; }
-        .trust-head h2 { margin-top: 14px; font-size: 32px; padding: 20px; color: var(--primary); line-height: 1.1; }
-        .trust-head p { margin-top: -18px; padding: 10px 30px 20px 30px; font-size: 18px; color: black; line-height: 1.1; }
-        .trust-line { position: relative; padding-left: 30px; }
-        .trust-line::before { content: ""; position: absolute; left: 28px; top: 20px; bottom: 20px; width: 3px; background: linear-gradient(var(--secondary), #DCEAFF); border-radius: 20px; }
-        .trust-row { display: flex; align-items: center; gap: 15px; margin: 0 22px 22px 18px; position: relative; }
-        .dot { position: absolute; left: -28px; width: 18px; height: 18px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 6px #FFF3DF; }
-        .trust-photo { width: 115px; height: 115px; border-radius: 25px; overflow: hidden; background: white; box-shadow: 0 10px 25px rgba(47, 93, 159, .15); flex-shrink: 0; }
-        .trust-photo img { width: 100%; height: 100%; object-fit: cover; }
-        .trust-info { background: white; flex: 1; padding: 15px; border-radius: 20px; box-shadow: 0 10px 25px rgba(47, 93, 159, .10); }
-        .trust-info h3 { font-size: 20px; color: var(--primary); }
-        .trust-info h3 i { color: var(--accent); margin-right: 6px; }
-        .trust-info p { font-size: 18px; color: var(--text); line-height: 1.5; margin-top: 5px; }
-
-        @media(max-width:480px) {
-            .trust-head { margin-bottom: 25px; }
-            .trust-head span { font-size: 16px !important; padding: 7px 14px; }
-            .trust-head h2 { font-size: 26px !important; line-height: 1.25; padding: 16px 12px; }
-            .trust-head p { font-size: 16px !important; line-height: 1.5; padding: 8px 15px 16px; margin-top: -10px; }
-            .trust-line { padding-left: 24px; }
-            .trust-line::before { left: 22px; }
-            .trust-row { gap: 10px; margin: 0 10px 18px 14px; }
-            .dot { left: -22px; width: 14px; height: 14px; }
-            .trust-photo { width: 85px; height: 85px; border-radius: 18px; flex-shrink: 0; }
-            .trust-info { padding: 12px; border-radius: 16px; }
-            .trust-info h3 { font-size: 18px !important; line-height: 1.3; }
-            .trust-info p { font-size: 16px !important; line-height: 1.5; margin-top: 4px; }
+        /* Glassmorphism Content Card */
+        .content-card {
+            margin: -20px 20px 20px 20px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.5);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 3;
         }
 
-        /* ===== SECTION 4 — TRUST ===== */
-        .wrapp { max-width: 450px; width: 100%; margin: 0 auto; padding: 60px 18px 70px; background-color: var(--primary); border-bottom: 2px solid var(--accent); }
-        .headerr { text-align: center; margin-bottom: 56px; }
-        .eyebroww { display: inline-flex; align-items: center; gap: 8px; font-size: 28px; font-weight: 700; letter-spacing: 0.06em; color: var(--accent); background: var(--light-blue); padding: 7px 18px; border-radius: 100px; margin-bottom: 18px; margin-top: -20px; }
-        .eyebroww::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
-        h1.titlee { font-size: 32px; font-weight: 800; color: var(--white); margin-bottom: 16px; line-height: 1.25; }
-        h1.titlee span { color: var(--accent); }
-        .subtitlee { font-size: 18px; line-height: 1.5; color: white; max-width: 560px; margin: 0 auto; }
-        .rows { display: flex; flex-direction: column; }
-        .row { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; position: relative; height: 124px; }
-        .petal { position: relative; height: 100%; }
-        .petal-shape { position: absolute; top: 0; width: 198px; height: 134px; box-shadow: var(--shadow-strong); overflow: hidden; border: 2px solid var(--accent); }
-        .petal-shape img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .petal-content { position: absolute; top: 0; width: 124px; height: 124px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; z-index: 2; padding: 0 8px; }
-        .text-cell { display: flex; align-items: center; height: 100%; padding: 0 14px; }
-        .text-cell .petal-title { font-size: 18px; font-weight: 700; color: var(--white); line-height: 1.4; }
-        .row1 .petal { grid-column: 2; justify-self: start; }
-        .row1 .petal-shape { left: 0; border-radius: 0 0 124px 0; }
-        .row1 .petal-content { left: 0; border-radius: 0 0 124px 0; }
-        .row1 .text-cell { grid-column: 1; justify-content: flex-end; text-align: right; }
-        .row2 .petal { grid-column: 1; justify-self: end; }
-        .row2 .petal-shape { right: 0; border-radius: 124px 0 0 0; }
-        .row2 .petal-content { right: 0; border-radius: 124px 0 0 0; }
-        .row2 .text-cell { grid-column: 2; justify-content: flex-start; text-align: left; }
-        .row3 .petal { grid-column: 2; justify-self: start; }
-        .row3 .petal-shape { left: 0; border-radius: 0 0 124px 0; }
-        .row3 .petal-content { left: 0; border-radius: 0 0 124px 0; }
-        .row3 .text-cell { grid-column: 1; justify-content: flex-end; text-align: right; }
-        .row4 .petal { grid-column: 1; justify-self: end; }
-        .row4 .petal-shape { right: 0; border-radius: 124px 0 0 0; }
-        .row4 .petal-content { right: 0; border-radius: 124px 0 0 0; }
-        .row4 .text-cell { grid-column: 2; justify-content: flex-start; text-align: left; }
-        .ctaa { margin-top: 36px; margin-bottom: -40px; background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 8px 30px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; border: 1px solid #E7EEF7; }
-        .cta-text strong { display: block; font-size: 22px; color: var(--accent); margin-bottom: 4px; }
-        .cta-text span { font-size: 18px; color: black; }
-        .ctaa-btn { background: var(--accent); color: var(--white); font-weight: 600; font-size: 20px; border: none; padding: 13px 26px; border-radius: 100px; cursor: pointer; white-space: nowrap; box-shadow: 0 6px 16px rgba(244, 166, 42, 0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .ctaa-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(244, 166, 42, 0.42); }
-
-        @media (max-width: 480px) {
-            .wrapp { padding: 45px 12px 60px; overflow: hidden; }
-            .headerr { margin-bottom: 35px; }
-            .eyebroww { font-size: 16px; padding: 7px 14px; margin-top: 0; }
-            h1.titlee { font-size: 26px; line-height: 1.3; }
-            .subtitlee { font-size: 16px; line-height: 1.5; }
-            .row { height: 110px; grid-template-columns: 1fr 1fr; }
-            .petal-shape { width: 155px; height: 110px; }
-            .petal-content { width: 105px; height: 105px; }
-            .text-cell { padding: 0 8px; }
-            .text-cell .petal-title { font-size: 16px; }
-            .row1 .petal-shape, .row3 .petal-shape { left: 0; border-radius: 0 0 100px 0; }
-            .row2 .petal-shape, .row4 .petal-shape { right: 0; border-radius: 100px 0 0 0; }
-            .row1 .petal-content, .row3 .petal-content { border-radius: 0 0 100px 0; }
-            .row2 .petal-content, .row4 .petal-content { border-radius: 100px 0 0 0; }
-            .ctaa { margin-top: 25px; margin-bottom: -30px; padding: 16px; gap: 15px; flex-direction: column; text-align: center; }
-            .cta-text strong { font-size: 18px; }
-            .cta-text span { font-size: 16px; }
-            .ctaa-btn { width: 100%; font-size: 16px; padding: 12px 20px; }
+        .highlight-text {
+            color: var(--primary-green);
+            font-weight: 600;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 15px;
         }
 
-        /* ===== SECTION 5 — HOW IT WORKS ===== */
-        .hw-section { width: 100%; max-width: 450px; background-color: var(--primary); border-bottom: 2px solid var(--accent); }
-        .hw-title { text-align: center; margin-bottom: 30px; }
-        .hw-title span { margin-top: 20px; display: inline-block; background: #FFF8F0; color: var(--accent); padding: 7px 15px; border-radius: 30px; font-size: 22px; font-weight: 700; }
-        .hw-title h2 { margin-top: 12px; font-size: 32px; line-height: 1.3; color: var(--accent); }
-        .hw-title p { margin-top: 8px; color: white; font-size: 16px; }
-        .hw-timeline { position: relative; }
-        .hw-timeline::before { content: ""; position: absolute; left: 35px; top: 30px; bottom: 30px; width: 3px; border-radius: 20px; background: linear-gradient(var(--accent), #D9E7FA); }
-        .hw-step { display: flex; gap: 15px; margin-bottom: 22px; position: relative; padding: 0 10px 0 10px; }
-        .hw-number { min-width: 50px; height: 50px; border-radius: 50%; background: var(--accent); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; z-index: 2; border: 4px solid #EEF5FF; box-shadow: 0 8px 18px rgba(47, 93, 159, .18); }
-        .hw-card { flex: 1; background: white; border-radius: 22px; padding: 15px; box-shadow: 0 10px 25px rgba(47, 93, 159, .12); overflow: hidden; position: relative; border: 2px solid var(--accent); }
-        .hw-card::after { content: ""; position: absolute; width: 80px; height: 80px; right: -25px; top: -25px; background: rgba(47, 93, 159, 0.18); border-radius: 50%; }
-        .hw-card-head { display: flex; align-items: center; gap: 12px; position: relative; z-index: 1; }
-        .hw-card img { width: 85px; height: 85px; border-radius: 18px; object-fit: cover; background: white; padding: 3px; box-shadow: 0 6px 15px rgba(47, 93, 159, .2); }
-        .hw-card h3 { font-size: 22px; color: var(--primary); }
-        .hw-card p { margin-top: 10px; font-size: 18px; color: var(--text); line-height: 1.5; }
-        .hw-tag { display: inline-block; margin-top: 10px; background: #EEF5FF; color: var(--primary); padding: 5px 12px; border-radius: 30px; font-size: 16px; font-weight: 700; }
-
-        @media(max-width:480px) {
-            .hw-title { margin-bottom: 25px; }
-            .hw-title span { font-size: 16px !important; padding: 7px 14px; }
-            .hw-title h2 { font-size: 26px !important; line-height: 1.3; }
-            .hw-title p { font-size: 16px !important; line-height: 1.5; }
-            .hw-timeline::before { left: 28px; }
-            .hw-step { gap: 12px; margin-bottom: 18px; padding: 0 8px; }
-            .hw-number { min-width: 42px; width: 42px; height: 42px; font-size: 16px !important; border-width: 3px; }
-            .hw-card { padding: 12px; border-radius: 18px; }
-            .hw-card-head { gap: 10px; }
-            .hw-card img { width: 70px; height: 70px; border-radius: 14px; }
-            .hw-card h3 { font-size: 18px !important; line-height: 1.3; }
-            .hw-card p { font-size: 16px !important; line-height: 1.5; }
-            .hw-tag { font-size: 16px !important; padding: 5px 10px; }
+        .description {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 20px;
         }
 
-        /* ===== SECTION 6 — CONSULTATION FORM ===== */
-        .consult-form-sec { max-width: 450px; width: 100%; background-color: var(--primary); padding: 45px 0; }
-        .consult-card { max-width: 450px; width: 100%; background: var(--white); border-top-left-radius: 30px; border-top-right-radius: 30px; overflow: hidden; box-shadow: var(--shadow-strong); animation: cardIn .8s ease; }
-        @keyframes cardIn { 0% { opacity: 0; transform: translateY(40px); } 100% { opacity: 1; transform: translateY(0); } }
-        .consult-top { height: 380px; position: relative; overflow: hidden; }
-        .consult-top img { width: 100%; height: 100%; object-fit: cover; }
-        .consult-top:after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20, 50, 92, 0.85), transparent); }
-        .expert-badge { position: absolute; top: 18px; right: 18px; z-index: 2; background: white; color: var(--primary); padding: 9px 14px; border-radius: 30px; font-size: 12px; font-weight: 700; }
-        .image-text { position: absolute; bottom: 20px; left: 20px; right: 20px; z-index: 2; color: white; }
-        .image-text h3 { margin: 0; font-size: 32px; }
-        .image-text p { font-size: 18px; margin-top: -10px; }
-        .consult-body { padding: 25px 18px; }
-        .consult-body h2 { text-align: center; font-size: 28px; line-height: 1.3; color: var(--text); margin: 0 0 12px; }
-        .consult-body h2 span { color: var(--secondary); }
-        .sub-text { text-align: center; font-size: 18px; color: black; line-height: 1.2; margin-bottom: 22px; margin-top: -10px; }
-        .feature-row { display: flex; gap: 10px; margin-bottom: 22px; }
-        .feature { flex: 1; background: var(--primary); padding: 14px 8px; border-radius: 18px; text-align: center; font-size: 18px; font-weight: 700; color: var(--accent); }
-        .feature i { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; margin: auto; margin-bottom: 8px; background: white; border-radius: 50%; color: var(--accent); font-size: 20px; box-shadow: var(--shadow); }
-        .form-box { background: var(--light-blue); padding: 18px; border-radius: 22px; }
-        .form-box label { display: block; font-size: 16px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
-        .form-box input { width: 100%; height: 50px; border-radius: 13px; border: 1px solid #dbe7f7; padding: 0 14px; margin-bottom: 6px; font-size: 16px; background: white; }
-        .field-err { display: none; color: #c0392b; font-size: 13px; margin-bottom: 10px; font-weight: 600; }
-        .field-err.show { display: block; }
-        .cta-btn { width: 100%; height: 55px; border: none; border-radius: 15px; background: var(--primary); color: var(--accent); font-size: 20px; font-weight: 700; margin-top: 8px; cursor: pointer; }
-        .bottom-trust { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
-        .bottom-trust span { background: var(--accent); padding: 8px 12px; border-radius: 20px; font-size: 16px; font-weight: 700; color: var(--primary); box-shadow: var(--shadow); }
-        .bottom-trust i { color: var(--primary); margin-right: 5px; }
-
-        @media(max-width:480px) {
-            .consult-form-sec { padding: 30px 0; }
-            .consult-card { border-top-left-radius: 24px; border-top-right-radius: 24px; }
-            .consult-top { height: 300px; }
-            .expert-badge { top: 14px; right: 14px; font-size: 16px !important; padding: 8px 12px; }
-            .image-text { left: 14px; right: 14px; bottom: 14px; }
-            .image-text h3 { font-size: 26px !important; line-height: 1.2; }
-            .image-text p { font-size: 16px !important; margin-top: -5px; line-height: 1.4; }
-            .consult-body { padding: 20px 14px; }
-            .consult-body h2 { font-size: 24px !important; line-height: 1.3; }
-            .sub-text { font-size: 16px !important; line-height: 1.5; margin-bottom: 18px; }
-            .feature-row { gap: 8px; margin-bottom: 18px; }
-            .feature { padding: 12px 6px; font-size: 16px !important; }
-            .feature i { width: 38px; height: 38px; font-size: 18px; margin-bottom: 6px; }
-            .form-box { padding: 14px; border-radius: 18px; }
-            .form-box label { font-size: 16px !important; }
-            .form-box input { height: 48px; font-size: 16px !important; }
-            .form-box input::placeholder { font-size: 16px !important; }
-            .cta-btn { height: 52px; font-size: 18px !important; }
-            .bottom-trust { gap: 6px; margin-top: 14px; }
-            .bottom-trust span { font-size: 16px !important; padding: 7px 10px; }
+        /* Product Highlight Box */
+        .product-box {
+            background: white;
+            border: 2px dashed var(--accent-gold);
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
         }
 
-        /* ===== Loader Overlay ===== */
-        .lp-blur-overlay { display: none; position: fixed; inset: 0; background: rgba(223, 234, 230, 0.72); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 999; align-items: center; justify-content: center; }
-        .gh-loader { display: flex; flex-direction: column; align-items: center; padding: 40px 28px; text-align: center; background: var(--white); border-radius: 24px; border: 1px solid #e5e7eb; width: 90%; max-width: 340px; }
-        .gh-ring-wrap { position: relative; width: 80px; height: 80px; margin-bottom: 24px; }
-        .gh-ring-outer { width: 80px; height: 80px; border-radius: 50%; border: 2px solid #e5e7eb; position: absolute; }
-        .gh-ring-spin { width: 80px; height: 80px; border-radius: 50%; border: 3px solid transparent; border-top-color: var(--primary); border-right-color: #a5b4fc; animation: spin 1s linear infinite; position: absolute; }
-        @keyframes spin { to { transform: rotate(360deg); } }
-        .gh-ring-dot { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 30px; height: 30px; border-radius: 50%; background: var(--light-blue); border: 1px solid #e5e7eb; display: flex; align-items: center; justify-content: center; }
-        .gh-ring-dot i { font-size: 14px; color: var(--primary); }
-        .gh-loader-title { font-size: 18px; color: var(--text); font-weight: 700; margin-bottom: 8px; }
-        .gh-loader-sub { font-size: 14px; color: #475569; line-height: 1.8; }
-        .gh-steps { display: flex; flex-direction: column; gap: 8px; margin-top: 22px; width: 100%; }
-        .gh-step { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #475569; padding: 8px 14px; border-radius: 10px; background: #faf9ff; border: 1px solid #e5e7eb; opacity: 0.4; transition: all 0.3s; }
-        .gh-step.active, .gh-step.done { color: var(--primary); border-color: var(--primary); background: #eef0ff; opacity: 1; }
-        .gh-step i { font-size: 15px; }
-        .gh-progress-track { width: 100%; height: 4px; background: #e5e7eb; border-radius: 999px; margin-top: 22px; overflow: hidden; }
-        .gh-progress-bar { height: 100%; background: var(--primary); border-radius: 999px; width: 0; transition: width 0.5s ease; }
-
-        /* ===== Policy modal ===== */
-        .pl-wrap { max-width: 450px; width: 100%; margin: 0 auto; padding: 8px 12px; box-sizing: border-box }
-        .pl-row { display: flex; gap: 0; flex-wrap: wrap; justify-content: center; align-items: center }
-        .pl-link { background: none; border: none; font-size: 11px; opacity: 0.6; font-weight: 500; color: #267156; cursor: pointer; padding: 4px 5px; text-decoration: underline; text-underline-offset: 2px; font-family: inherit; white-space: nowrap; transition: color .15s }
-        .pl-link:hover { color: #1a5240 }
-        .pl-sep { color: #c9ddd7; font-size: 11px; user-select: none }
-        .pp-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.45); z-index: 9999; align-items: center; justify-content: center }
-        .pp-overlay.show { display: flex }
-        .pp-modal { background: #fff; border-radius: 18px; max-width: 420px; width: 90%; max-height: 60vh; overflow-y: auto; padding: 22px 18px 18px; position: relative }
-        .pp-close { position: absolute; top: 14px; right: 14px; background: #e6f3ed; border: none; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #267156; font-size: 16px }
-        .pp-close:hover { background: #c9ddd7 }
-        .pp-mtitle { font-size: 17px; font-weight: 700; color: #1a5240; margin-bottom: 4px; display: flex; align-items: center; gap: 8px }
-        .pp-mtitle i { font-size: 20px }
-        .pp-mbadge { display: inline-block; background: #e6f3ed; color: #267156; font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 999px; margin-bottom: 12px }
-        .pp-mpara { font-size: 14px; color: #333; line-height: 1.7; margin-bottom: 10px }
-        .pp-mlist { padding-left: 0; list-style: none; margin: 0 0 10px }
-        .pp-mlist li { font-size: 14px; color: #333; line-height: 1.6; padding: 5px 0 5px 20px; position: relative; border-bottom: 1px dashed #e2ede9 }
-        .pp-mlist li:last-child { border-bottom: none }
-        .pp-mlist li::before { content: ""; position: absolute; left: 4px; top: 13px; width: 7px; height: 7px; background: #39ad7d; border-radius: 50% }
-        .pp-mhl { background: #e6f3ed; border-left: 3px solid #267156; border-radius: 0 8px 8px 0; padding: 9px 13px; font-size: 13px; color: #1a5240; margin-bottom: 10px }
-
-        @media (max-width:480px) {
-            .pl-wrap { padding: 8px 4px }
-            .pl-link { font-size: 10px; padding: 4px 2px }
-            .pl-sep { font-size: 10px }
+        .product-box:hover {
+            transform: translateY(-5px);
         }
 
-        /* ===== SECTION 7 — TESTIMONIALS ===== */
-        .testimonial-section { max-width: 450px; width: 100%; background-color: var(--primary); padding: 34px 0; }
-        .heading { text-align: center; margin-bottom: 30px; }
-        .heading span { background: #FFF8F0; color: var(--accent); padding: 8px 16px; border-radius: 30px; font-size: 13px; font-weight: 700; }
-        .heading h2 { margin-top: 12px; font-size: 32px; color: var(--white); }
-        .cards { display: flex; flex-direction: column; gap: 18px; padding: 0 18px; }
-        .card { width: 100%; max-width: 450px; display: flex; flex-direction: column; justify-content: center; align-items: center; background: white; border-radius: 24px; padding: 22px 18px; box-shadow: 0 10px 25px rgba(47, 93, 159, .12); text-align: center; }
-        .card img { width: 75px; height: 75px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary); box-shadow: 0 6px 18px rgba(47, 93, 159, .20); margin: 0 auto 12px; display: block; }
-        .stars { color: var(--accent); font-size: 18px; margin-bottom: 8px; }
-        .name { font-size: 20px; font-weight: 700; color: var(--primary); }
-        .location { font-size: 13px; color: #64748b; margin: 4px 0 10px; }
-        .text { font-size: 18px; line-height: 1.6; color: var(--text); margin-bottom: 15px; }
-        .verify { display: inline-block; background: #EEF5FF; color: var(--primary); padding: 7px 14px; border-radius: 30px; font-size: 18px; font-weight: 700; }
-
-        @media(max-width:480px) {
-            .heading { margin-bottom: 25px; }
-            .heading span { font-size: 16px !important; padding: 7px 14px; }
-            .heading h2 { font-size: 26px !important; margin-top: 8px; line-height: 1.3; }
-            .cards { gap: 16px; padding: 0 14px; }
-            .card { padding: 18px 14px; border-radius: 20px; }
-            .card img { width: 70px; height: 70px; margin-bottom: 10px; }
-            .stars { font-size: 16px !important; margin-bottom: 6px; }
-            .name { font-size: 18px !important; }
-            .location { font-size: 16px !important; margin: 4px 0 8px; }
-            .text { font-size: 16px !important; line-height: 1.5; margin-bottom: 12px; }
-            .verify { font-size: 16px !important; padding: 6px 12px; }
+        .product-name {
+            display: block;
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary-green);
+            margin-bottom: 5px;
         }
 
-        /* ===== SECTION 8 — FAQ ===== */
-        .faq { background: var(--bg); }
-        .faq-list { display: flex; flex-direction: column; gap: 10px; }
-        .faq-item { background: var(--white); border-radius: var(--radius-sm); padding: 14px 16px; box-shadow: var(--shadow); }
-        .faq-item summary { font-size: 18px; font-weight: 500; color: black; cursor: pointer; list-style: none; position: relative; padding-right: 22px; }
-        .faq-item summary::-webkit-details-marker { display: none; }
-        .faq-item summary::after { content: "+"; position: absolute; right: 0; top: 0; font-size: 18px; color: var(--primary); transition: transform .2s ease; }
-        .faq-item[open] summary::after { content: "–"; }
-        .faq-item p { font-size: 18px; color: black; margin-top: 10px; }
-
-        @media(max-width:480px) {
-            .faq-list { gap: 8px; }
-            .faq-item { padding: 12px 14px; border-radius: 12px; }
-            .faq-item summary { font-size: 16px !important; line-height: 1.5; padding-right: 24px; }
-            .faq-item summary::after { font-size: 18px; right: 0; top: 2px; }
-            .faq-item p { font-size: 16px !important; line-height: 1.6; margin-top: 8px; }
+        /* Trust Badge Section */
+        .trust-badges {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: rgba(255,255,255,0.4);
+            border-top: 1px solid rgba(0,0,0,0.05);
         }
 
-        /* ===== SECTION 9 — DISCLAIMER ===== */
-        .disclaimer { background: #FFF4E5; border-top: 3px solid var(--accent); padding-bottom: 30px; padding-top: 10px; }
-        .disclaimer .sec-heading { color: #B5760A; }
-        .disclaimer p { font-size: 12px; color: #6B5530; margin-bottom: 8px; line-height: 1.6; }
+        .badge-item {
+            text-align: center;
+            font-size: 11px;
+            color: #555;
+            font-weight: bold;
+        }
 
-        /* ===== STICKY BOTTOM CTA ===== */
-        .sticky-cta { position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); width: calc(100% - 24px); max-width: 426px; background: var(--accent); color: var(--primary); text-align: center; font-weight: 700; font-size: 18px; text-decoration: none; padding: 14px 0; box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.15); z-index: 50; border-radius: 40px; display: flex; align-items: center; justify-content: center; animation: pulse 2.4s infinite; }
+        .badge-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--primary-green);
+            border-radius: 50%;
+            margin: 0 auto 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+        }
 
-        @media (max-width:360px) {
-            .sec { padding: 26px 14px 30px; }
-            .sec-heading { font-size: 19px; }
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: var(--accent-gold);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #b38f4d;
         }
     </style>
 </head>
-
 <body>
-    <div class="page">
 
-        <img src="images/banner.avif" class="img" width="450" height="230" alt="Mirgi Epilepsy Expert Consultation" fetchpriority="high">
-
-        <!-- SECTION 2 : PROBLEM -->
-        <section id="howitworks">
-            <div class="sec-head">
-                <span class="eyebrow">आपकी समस्या</span>
-                <h2>दौरे कभी भी आ सकते हैं...<br>और यही चिंता सबसे बड़ी समस्या बन जाती है</h2>
-                <p>कई लोग शुरुआती संकेतों को नजरअंदाज कर देते हैं। सही जानकारी और समय पर Guidance की कमी से परेशानी बढ़ सकती है।</p>
-            </div>
-
-            <div class="step">
-                <div class="step-image"><img src="images/sect-2-1stimg.avif" width="120" height="120" loading="lazy" alt="बार-बार दौरे आने का डर"></div>
-                <div class="step-content">
-                    <div class="step-number">01</div>
-                    <h3><i class="fa-solid fa-triangle-exclamation"></i> बार-बार दौरे आने का डर</h3>
-                    <p>कब और कहाँ दौरा आ जाए, इसकी चिंता हमेशा बनी रह सकती है।</p>
-                </div>
-            </div>
-
-            <div class="step reverse">
-                <div class="step-image"><img src="images/sect-2-2ndimg.avif" width="120" height="120" loading="lazy" alt="Public places में discomfort"></div>
-                <div class="step-content">
-                    <div class="step-number">02</div>
-                    <h3><i class="fa-solid fa-person-circle-exclamation"></i> Public Places में uncomfortable feel करना</h3>
-                    <p>भीड़-भाड़ वाली जगहों पर जाने से डर और discomfort feel हो सकती है।</p>
-                </div>
-            </div>
-
-            <div class="step">
-                <div class="step-image"><img src="images/sect-2-3rdimg.avif" width="120" height="120" loading="lazy" alt="आत्मविश्वास में कमी"></div>
-                <div class="step-content">
-                    <div class="step-number">03</div>
-                    <h3><i class="fa-solid fa-face-sad-tear"></i> आत्मविश्वास में कमी</h3>
-                    <p>दौरे आने के डर से व्यक्ति का confidence प्रभावित हो सकता है।</p>
-                </div>
-            </div>
-
-            <div class="step reverse">
-                <div class="step-image"><img src="images/sect-2-4thimg.avif" width="120" height="120" loading="lazy" alt="नींद और तनाव की समस्या"></div>
-                <div class="step-content">
-                    <div class="step-number">04</div>
-                    <h3><i class="fa-solid fa-moon"></i> नींद और तनाव की समस्या</h3>
-                    <p>अनियमित नींद और बढ़ता तनाव समस्या को और कठिन बना सकते हैं।</p>
-                </div>
-            </div>
-
-            <div class="step">
-                <div class="step-image"><img src="images/sect-2-5thimg.avif" width="120" height="120" loading="lazy" alt="पढ़ाई और काम में ध्यान की कमी"></div>
-                <div class="step-content">
-                    <div class="step-number">05</div>
-                    <h3><i class="fa-solid fa-book-open"></i> पढ़ाई और काम में ध्यान की कमी</h3>
-                    <p>Focus और concentration प्रभावित होने से daily के काम मुश्किल लग सकते हैं।</p>
-                </div>
-            </div>
-
-            <div class="step reverse">
-                <div class="step-image"><img src="images/sect-2-6thimg.avif" width="120" height="120" loading="lazy" alt="अकेले Travel करने का डर"></div>
-                <div class="step-content">
-                    <div class="step-number">06</div>
-                    <h3><i class="fa-solid fa-car"></i> अकेले Travel करने का डर</h3>
-                    <p>अचानक समस्या आने की आशंका के कारण Travel से बचने की कोशिश की जा सकती है।</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 3 : SOLUTION -->
-        <section class="trust-wrap">
-            <div class="trust-head">
-                <span>✅ हमारा समाधान</span>
-                <h2>अब अनुमान नहीं, सही Guidance पाएं</h2>
-                <p>हम आपको आपकी स्थिति समझने और सही दिशा चुनने में मदद करते हैं।</p>
-            </div>
-
-            <div class="trust-line">
-                <div class="trust-row">
-                    <div class="dot"></div>
-                    <div class="trust-photo"><img src="images/sect-3-1stimg.avif" width="115" height="115" loading="lazy" alt="Expert Consultation"></div>
-                    <div class="trust-info"><h3><i class="fa-solid fa-user-doctor"></i> Expert Consultation</h3><p>आपकी पूरी बात ध्यान से सुनी जाती है ताकि आपकी स्थिति को बेहतर समझा जा सके।</p></div>
-                </div>
-                <div class="trust-row">
-                    <div class="dot"></div>
-                    <div class="trust-photo"><img src="images/sect-3-2ndimg.avif" width="115" height="115" loading="lazy" alt="Symptom Assessment"></div>
-                    <div class="trust-info"><h3><i class="fa-solid fa-clipboard-check"></i> Symptom Assessment</h3><p>आपके symptoms और history को समझकर सही जानकारी के साथ आगे की दिशा बताई जाती है।</p></div>
-                </div>
-                <div class="trust-row">
-                    <div class="dot"></div>
-                    <div class="trust-photo"><img src="images/sect-3-3rdimg.avif" width="115" height="115" loading="lazy" alt="Condition Understanding"></div>
-                    <div class="trust-info"><h3><i class="fa-solid fa-stethoscope"></i> Condition Understanding</h3><p>आपकी स्थिति की seriousness और जरूरी ध्यान रखने वाली बातों को समझाया जाता है।</p></div>
-                </div>
-                <div class="trust-row">
-                    <div class="dot"></div>
-                    <div class="trust-photo"><img src="images/sect-3-4thimg.avif" width="115" height="115" loading="lazy" alt="Lifestyle Guidance"></div>
-                    <div class="trust-info"><h3><i class="fa-solid fa-heart-pulse"></i> Lifestyle Guidance</h3><p>दैनिक जीवन में किन बातों का ध्यान रखना चाहिए, इसकी सही जानकारी दी जाती है।</p></div>
-                </div>
-                <div class="trust-row">
-                    <div class="dot"></div>
-                    <div class="trust-photo"><img src="images/sect-3-5thimg.avif" width="115" height="115" loading="lazy" alt="Personalized Suggestions"></div>
-                    <div class="trust-info"><h3><i class="fa-solid fa-bullseye"></i> Personalized Suggestions</h3><p>आपकी जरूरत के अनुसार personal Guidance और बेहतर सुझाव दिए जाते हैं।</p></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 4 : TRUST -->
-        <div class="wrapp">
-            <div class="headerr">
-                <div class="eyebroww">भरोसे की वजह</div>
-                <h1 class="titlee">क्यों भरोसा करें <span>हम पर?</span></h1>
-                <p class="subtitlee">आपकी चिंता को समझकर सही दिशा देने का प्रयास — हमारा उद्देश्य सिर्फ आपको clear information और सही Guidance देना है।</p>
-            </div>
-            <div class="rows">
-                <div class="row row1">
-                    <div class="text-cell"><div class="petal-title">अनुभवी Experts<br><span style="font-weight:400;opacity:0.85">सालो के Experience के साथ Simple और clear guidance</span></div></div>
-                    <div class="petal"><div class="petal-shape"><img src="images/sect-4-1stimg.avif" width="198" height="134" loading="lazy" alt=""></div><div class="petal-content"></div></div>
-                </div>
-                <div class="row row2">
-                    <div class="petal"><div class="petal-shape"><img src="images/sect-4-2ndimg.avif" width="198" height="134" loading="lazy" alt=""></div><div class="petal-content"></div></div>
-                    <div class="text-cell"><div class="petal-title">secret Consultation<br><span style="font-weight:400;opacity:0.85">आपकी जानकारी पूरी तरह सुरक्षित</span></div></div>
-                </div>
-                <div class="row row3">
-                    <div class="text-cell"><div class="petal-title">Personalized Guidance<br><span style="font-weight:400;opacity:0.85">आपकी स्थिति के अनुसार personal advice</span></div></div>
-                    <div class="petal"><div class="petal-shape"><img src="images/sect-4-3rdimg.avif" width="198" height="134" loading="lazy" alt=""></div><div class="petal-content"></div></div>
-                </div>
-                <div class="row row4">
-                    <div class="petal"><div class="petal-shape"><img src="images/sect-4-4thimg.avif" width="198" height="134" loading="lazy" alt=""></div><div class="petal-content"></div></div>
-                    <div class="text-cell"><div class="petal-title">Patient-First Approach<br><span style="font-weight:400;opacity:0.85">हमेशा आपकी जरूरत को Priority</span></div></div>
-                </div>
-                <div class="row row1">
-                    <div class="text-cell"><div class="petal-title">Clear Direction<br><span style="font-weight:400;opacity:0.85">बिना confusion अगले कदम की जानकारी</span></div></div>
-                    <div class="petal"><div class="petal-shape"><img src="images/sect-4-5thimg.avif" width="198" height="134" loading="lazy" alt=""></div><div class="petal-content"></div></div>
-                </div>
-                <div class="row row2">
-                    <div class="petal"><div class="petal-shape"><img src="images/sect-4-6thimg.avif" width="198" height="134" loading="lazy" alt=""></div><div class="petal-content"></div></div>
-                    <div class="text-cell"><div class="petal-title">आसान Consultation<br><span style="font-weight:400;opacity:0.85">घर बैठे Expert से बात करें</span></div></div>
-                </div>
-            </div>
-            <div class="ctaa">
-                <div class="cta-text"><strong>अभी अपनी consultation बुक करें</strong><span>सही Guidance एक कॉल की दूरी पर है।</span></div>
-                <button class="ctaa-btn" onclick="document.getElementById('form-sub').scrollIntoView({behavior:'smooth'})">Consultation बुक करें</button>
-            </div>
-        </div>
-
-        <!-- SECTION 5 : HOW IT WORKS -->
-        <section class="hw-section">
-            <div class="hw-title">
-                <span>⚡ HOW IT WORKS</span>
-                <h2>सिर्फ 3 आसान स्टेप्स में शुरुआत करें</h2>
-                <p>घर बैठे अपनी स्थिति समझें और सही दिशा पाएं।</p>
-            </div>
-            <div class="hw-timeline">
-                <div class="hw-step">
-                    <div class="hw-number">1</div>
-                    <div class="hw-card">
-                        <div class="hw-card-head"><img src="images/sect-5-1stimg.avif" width="85" height="85" loading="lazy" alt="Fill Your Details"><div><h3>Fill Your Details</h3><p>नाम और मोबाइल नंबर दर्ज करें।</p></div></div>
-                        <div class="hw-tag">Easy Step</div>
-                    </div>
-                </div>
-                <div class="hw-step">
-                    <div class="hw-number">2</div>
-                    <div class="hw-card">
-                        <div class="hw-card-head"><img src="images/sect-5-2ndimg.avif" width="85" height="85" loading="lazy" alt="Expert Connect"><div><h3>Expert Connect</h3><p>हमारा expert आपसे संपर्क करेगा।</p></div></div>
-                        <div class="hw-tag">Quick Response</div>
-                    </div>
-                </div>
-                <div class="hw-step">
-                    <div class="hw-number">3</div>
-                    <div class="hw-card">
-                        <div class="hw-card-head"><img src="images/sect-5-3rdimg.avif" width="85" height="85" loading="lazy" alt="Get Clear Guidance"><div><h3>Get Clear Guidance</h3><p>आपको आगे के सही कदमों की जानकारी दी जाएगी।</p></div></div>
-                        <div class="hw-tag">Expert Support</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 6 : CONSULTATION FORM -->
-        <section class="consult-form-sec">
-            <div class="consult-card">
-                <div class="consult-top" id="form-sub">
-                    <img src="images/doctor.avif" width="450" height="380" loading="lazy" alt="Trusted Expert">
-                    <div class="expert-badge"><i class="fa-solid fa-star"></i> Trusted Expert</div>
-                    <div class="image-text"><h3>अपनी समस्या को समझें</h3><p>सही सलाह के साथ बेहतर शुरुआत करें</p></div>
-                </div>
-                <div class="consult-body">
-                    <h2>आज ही पाएं <span>Personal Guidance</span></h2>
-                    <p class="sub-text">हमारी टीम आपकी जानकारी समझकर आपको सही दिशा देने में मदद करेगी।</p>
-                    <div class="feature-row">
-                        <div class="feature"><i class="fa-solid fa-phone"></i>Free Call</div>
-                        <div class="feature"><i class="fa-solid fa-lock"></i>Private</div>
-                        <div class="feature"><i class="fa-solid fa-headset"></i>Support</div>
-                    </div>
-                    <div class="form-box">
-                        <form onsubmit="return false;">
-                            <label for="nameInput">आपका नाम</label>
-                            <input class="big-input" id="nameInput" type="text" placeholder="जैसे: Ramesh Kumar" autocomplete="off">
-                            <div class="field-err" id="nameErr"><span id="nameMsg"></span></div>
-                            <label for="mobInput">मोबाइल नंबर</label>
-                            <input class="big-input" id="mobInput" type="tel" maxlength="10" placeholder="जैसे: 9XXXXXXXXX" inputmode="numeric" autocomplete="off">
-                            <div class="field-err" id="mobErr"><span id="mobMsg"></span></div>
-                            <button class="cta-btn" id="submitBtn" type="button" onclick="doSubmit()">Consultation बुक करें</button>
-                        </form>
-                    </div>
-                    <div class="bottom-trust">
-                        <span><i class="fa-solid fa-lock"></i>Confidential</span>
-                        <span><i class="fa-solid fa-circle-check"></i>Safe Process</span>
-                        <span><i class="fa-solid fa-gift"></i>Free Help</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Loader Overlay -->
-        <div class="lp-blur-overlay" id="loaderOverlay">
-            <div class="gh-loader">
-                <div class="gh-ring-wrap">
-                    <div class="gh-ring-outer"></div>
-                    <div class="gh-ring-spin"></div>
-                    <div class="gh-ring-dot"><i class="fa-solid fa-leaf"></i></div>
-                </div>
-                <div class="gh-loader-title">Request Submit हो रहा है<span class="lp-dot-anim" id="dotAnim">.</span></div>
-                <div class="gh-loader-sub">बस कुछ ही सेकंड में<br>आपकी Request Confirm हो जाएगी।</div>
-                <div class="gh-steps">
-                    <div class="gh-step" id="lpStep1"><i class="fa-solid fa-check"></i> Detail Verify की जा रही है</div>
-                    <div class="gh-step" id="lpStep2"><i class="fa-solid fa-database"></i> System में Enter हो रहा है</div>
-                    <div class="gh-step" id="lpStep3"><i class="fa-solid fa-headset"></i> Expert को Assign हो रहा है</div>
-                </div>
-                <div class="gh-progress-track"><div class="gh-progress-bar" id="ghProgress"></div></div>
-            </div>
-        </div>
-
-        <!-- SECTION 7 : TESTIMONIALS -->
-        <section class="testimonial-section">
-            <div class="heading"><h2>लोगों का अनुभव</h2></div>
-            <div class="cards">
-                <div class="card">
-                    <img src="images/mit.avif" width="75" height="75" loading="lazy" alt="Amit Kumar">
-                    <div class="stars">★★★★★</div>
-                    <div class="name">Amit Kumar</div>
-                    <div class="location">📍 Jaipur</div>
-                    <div class="text">"मैं हमेशा डर में रहता था कि दौरा कब आ जाएगा। Expert से बात करके मुझे काफी clarity मिली।"</div>
-                    <div class="verify">✓ Verified Consultation</div>
-                </div>
-                <div class="card">
-                    <img src="images/neha.avif" width="75" height="75" loading="lazy" alt="Neha Sharma">
-                    <div class="stars">★★★★★</div>
-                    <div class="name">Neha Sharma</div>
-                    <div class="location">📍 Delhi</div>
-                    <div class="text">"मुझे समझ नहीं आ रहा था कि क्या करना चाहिए। यहाँ से मिली guidance बहुत उपयोगी रही।"</div>
-                    <div class="verify">✓ Verified Consultation</div>
-                </div>
-                <div class="card">
-                    <img src="images/rakesh.avif" width="75" height="75" loading="lazy" alt="Rakesh Verma">
-                    <div class="stars">★★★★★</div>
-                    <div class="name">Rakesh Verma</div>
-                    <div class="location">📍 Agra</div>
-                    <div class="text">"परिवार के सदस्य के लिए सलाह ली थी। बातचीत के बाद सही दिशा मिली।"</div>
-                    <div class="verify">✓ Verified Consultation</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 8 : FAQ -->
-        <section class="sec faq">
-            <h2 class="sec-heading">अक्सर पूछे जाने वाले सवाल</h2>
-            <div class="faq-list">
-                <details class="faq-item" open><summary>Q1. क्या Consultation Free है?</summary><p>हाँ, शुरुआती consultation बिल्कुल free है।</p></details>
-                <details class="faq-item"><summary>Q2. क्या मेरी जानकारी सुरक्षित रहेगी?</summary><p>हाँ, आपकी जानकारी पूरी तरह confidential रखी जाती है।</p></details>
-                <details class="faq-item"><summary>Q3. Call कब आएगी?</summary><p>आमतौर पर details submit करने के बाद जल्द संपर्क किया जाता है।</p></details>
-                <details class="faq-item"><summary>Q4. क्या मैं WhatsApp पर बात कर सकता हूँ?</summary><p>हाँ, उपलब्ध होने पर WhatsApp support भी दिया जा सकता है।</p></details>
-            </div>
-        </section>
-
-        <!-- SECTION 9 : DISCLAIMER -->
-        <section class="sec disclaimer">
-            <h2 class="sec-heading small">⚠️ Disclaimer</h2>
-            <p>यह पेज केवल educational और informational purpose के लिए है। यह किसी भी प्रकार की medical diagnosis, treatment या cure का दावा नहीं करता। Mirgi (Epilepsy) एक गंभीर चिकित्सीय स्थिति हो सकती है। किसी भी स्वास्थ्य समस्या के लिए qualified doctor से सलाह लें। Emergency की स्थिति में तुरंत medical help प्राप्त करें।</p>
-        </section>
-
-        <!-- POLICY LINKS -->
-        <div class="pl-wrap">
-            <div class="pl-row">
-                <button class="pl-link" onclick="openModal('privacy')">Privacy Policy</button>
-                <span class="pl-sep">|</span>
-                <button class="pl-link" onclick="openModal('terms')">Terms &amp; Conditions</button>
-                <span class="pl-sep">|</span>
-                <button class="pl-link" onclick="openModal('shipping')">Shipping Policy</button>
-                <span class="pl-sep">|</span>
-                <button class="pl-link" onclick="openModal('cancel')">Cancellation Policy</button>
-                <span class="pl-sep">|</span>
-                <button class="pl-link" onclick="openModal('disclaimer')">Legal Disclaimer</button>
-            </div>
-        </div>
-
-        <div class="pp-overlay" id="pp-overlay" onclick="closeIfOutside(event)">
-            <div class="pp-modal" id="pp-modal">
-                <button class="pp-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
-                <div id="pp-content"></div>
-            </div>
-        </div>
-
-        <a href="#form-sub" class="sticky-cta" id="stickyCta">🎯 Free Consultation Book करें</a>
+<div class="container-450">
+    <div class="header-section">
+        <h2>आयुर्वेदिक समाधान</h2>
     </div>
 
-    <script>
-        var SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec';
+    <div class="content-card">
+        <div class="highlight-text">
+            आयुर्वेद में सूजन और असामान्य वृद्धि को शरीर के दोष असंतुलन से जोड़ा जाता है।
+        </div>
+        
+        <p class="description">
+            विशेषज्ञ मानते हैं कि समय रहते प्राकृतिक सपोर्ट लेना शरीर के लिए बेहतर हो सकता है। यह न केवल शरीर को संतुलित करता है बल्कि भविष्य की जटिलताओं को रोकने में भी सहायक है।
+        </p>
 
-        var nameInput = document.getElementById('nameInput');
-        var mobInput = document.getElementById('mobInput');
-        var nameErr = document.getElementById('nameErr');
-        var mobErr = document.getElementById('mobErr');
-        var nameMsg = document.getElementById('nameMsg');
-        var mobMsg = document.getElementById('mobMsg');
+        <div class="product-box">
+            <span class="product-name">गांठ Heal Capsules</span>
+            <small>पारंपरिक आयुर्वेदिक सिद्धांतों पर आधारित</small>
+        </div>
+    </div>
 
-        nameInput.addEventListener('input', function () {
-            this.value = this.value.replace(/[^a-zA-Z\u0900-\u097F\s]/g, '');
-            nameErr.classList.remove('show');
-        });
+    <div class="trust-badges">
+        <div class="badge-item">
+            <div class="badge-icon">✓</div>
+            100% प्राकृतिक
+        </div>
+        <div class="badge-item">
+            <div class="badge-icon">★</div>
+            विशेषज्ञ सलाह
+        </div>
+        <div class="badge-item">
+            <div class="badge-icon">🛡️</div>
+            सुरक्षित फॉर्मूला
+        </div>
+    </div>
 
-        mobInput.addEventListener('input', function () {
-            this.value = this.value.replace(/\D/g, '');
-            if (this.value.length > 10) this.value = this.value.slice(0, 10);
-            mobErr.classList.remove('show');
-        });
+    <a href="#" class="cta-button">अधिक जानकारी प्राप्त करें</a>
+</div>
 
-        mobInput.addEventListener('keydown', function (e) {
-            var allowed = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
-            if (!allowed.includes(e.key) && !/^\d$/.test(e.key)) e.preventDefault();
-        });
+</body>
+</html>
 
-        var dotCount = 1;
-        var dotTimer = null;
-        function startDotAnim() {
-            dotTimer = setInterval(function () {
-                dotCount = (dotCount % 3) + 1;
-                var el = document.getElementById('dotAnim');
-                if (el) el.textContent = '.'.repeat(dotCount);
-            }, 500);
-        }
-        function stopDotAnim() { if (dotTimer) clearInterval(dotTimer); }
 
-        function runSteps(callback) {
-            var prog = document.getElementById('ghProgress');
-            var steps = [
-                { id: 'lpStep1', prog: 30, delay: 400 },
-                { id: 'lpStep2', prog: 65, delay: 1100 },
-                { id: 'lpStep3', prog: 100, delay: 1900 }
-            ];
-            steps.forEach(function (s) {
-                setTimeout(function () {
-                    document.getElementById(s.id).classList.add('active');
-                    prog.style.width = s.prog + '%';
-                }, s.delay);
-            });
-            setTimeout(callback, 2800);
-        }
 
-        function doSubmit() {
-            var ok = true;
-            var n = nameInput.value.trim();
-            var m = mobInput.value.trim();
 
-            if (!n) { nameMsg.textContent = 'कृपया नाम दर्ज करें'; nameErr.classList.add('show'); ok = false; }
-            else if (n.length < 2) { nameMsg.textContent = 'कम से कम 2 अक्षर लिखें'; nameErr.classList.add('show'); ok = false; }
 
-            if (!m) { mobMsg.textContent = 'मोबाइल नंबर दर्ज करें'; mobErr.classList.add('show'); ok = false; }
-            else if (m.length !== 10) { mobMsg.textContent = '10 अंकों का नंबर दर्ज करें'; mobErr.classList.add('show'); ok = false; }
-            else if (!/^[6-9]/.test(m)) { mobMsg.textContent = 'नंबर 6, 7, 8 या 9 से शुरू होना चाहिए'; mobErr.classList.add('show'); ok = false; }
 
-            if (!ok) return;
 
-            var btn = document.getElementById('submitBtn');
-            btn.disabled = true;
 
-            var overlay = document.getElementById('loaderOverlay');
-            overlay.style.display = 'flex';
-            startDotAnim();
 
-            var formData = new FormData();
-            formData.append('name', n);
-            formData.append('phone', m);
 
-            var redirected = false;
-            function onDone() {
-                if (redirected) return;
-                redirected = true;
-                stopDotAnim();
-                window.location.href = './Thankyou.html';
-            }
 
-            runSteps(function () {
-                fetch(SHEETS_URL, { method: 'POST', body: formData })
-                    .then(function (r) { return r.text(); })
-                    .then(onDone)
-                    .catch(onDone);
-            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Outfit', sans-serif; }
+        
+        body { background: #f0f2f5; display: flex; justify-content: center; padding: 20px; }
+
+        .magic-container {
+            width: 100%;
+            max-width: 450px;
+            background: #ffffff;
+            border-radius: 40px;
+            padding: 30px 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            text-align: center;
         }
 
-        window.addEventListener('pageshow', function (event) {
-            if (event.persisted) {
-                nameInput.value = '';
-                mobInput.value = '';
-                nameErr.classList.remove('show');
-                mobErr.classList.remove('show');
-                document.getElementById('submitBtn').disabled = false;
-                document.getElementById('loaderOverlay').style.display = 'none';
-                stopDotAnim();
-            }
-        });
-
-        var contents = {
-            privacy: `<div class="pp-mtitle"><i class="fa-solid fa-shield-halved"></i>Privacy Policy</div><div class="pp-mbadge">Last updated: June 2026</div><p class="pp-mpara">SS Herbal आपकी personal information की सुरक्षा को सर्वोच्च प्राथमिकता देता है। यह Policy बताती है कि हम कौन सी जानकारी एकत्र करते हैं, उसका उपयोग कैसे करते हैं, और आपके पास कौन से rights उपलब्ध हैं। Platform का उपयोग करके आप इस Privacy Policy से सहमत होते हैं।</p><p class="pp-mpara"><strong>हम कौन सी जानकारी एकत्र करते हैं:</strong></p><ul class="pp-mlist"><li>नाम, मोबाइल नंबर, email और delivery/billing address</li><li>Account login details</li><li>Health और wellness inputs (consultation/quiz के दौरान, optional और consent-based)</li><li>आपके messages, reviews और feedback</li><li>Usage data — IP address, device type, browser, cookies</li><li>Logistics और payment partners से order/delivery/payment status</li></ul><div class="pp-mhl">हम आपका full card number, CVV, UPI PIN या net-banking credentials store नहीं करते। सभी payments secure, PCI-DSS compliant payment gateways के माध्यम से process होते हैं।</div><p class="pp-mpara"><strong>उपयोग का उद्देश्य:</strong> आपकी जानकारी का उपयोग account management, order processing, customer support, personalised suggestions, transactional messages (SMS/email/WhatsApp/call) और consent-based marketing के लिए किया जाता है।</p><div class="pp-mhl">हम आपकी personal data नहीं बेचते। इसे केवल service providers, group affiliates, या कानूनी आवश्यकता होने पर ही share किया जाता है।</div><p class="pp-mpara"><strong>आपके Rights:</strong> Digital Personal Data Protection Act, 2023 के अंतर्गत, आपको अपनी data को access, correct, update और erase करने का अधिकार है। इसके लिए हमें [legal email] या [support email] पर लिखें।</p><p class="pp-mpara"><strong>Children's Data:</strong> Platform केवल 18 वर्ष या उससे अधिक आयु के users के लिए है।</p><p class="pp-mpara">किसी भी प्रश्न, request या complaint के लिए हमारे Grievance Officer से [legal email] | [support email] | [phone] पर संपर्क करें।</p>`,
-            terms: `<div class="pp-mtitle"><i class="fa-solid fa-file-lines"></i>Terms of Use</div><div class="pp-mbadge">Last updated: June 2026</div><p class="pp-mpara">SS Herbal की website, mobile app और सभी related services ("Platform") को access, browse, register या purchase करने से पहले इन Terms of Use को ध्यान से पढ़ें।</p><div class="pp-mhl">यदि आप इन Terms से सहमत नहीं हैं, तो कृपया Platform का उपयोग न करें।</div><p class="pp-mpara"><strong>Eligibility:</strong> Platform का उपयोग करने के लिए आपकी आयु कम से कम 18 वर्ष होनी चाहिए।</p><p class="pp-mpara"><strong>Liability:</strong> Platform और products "as is" आधार पर उपलब्ध हैं। हमारी total liability उस product की राशि से अधिक नहीं होगी जिससे claim उत्पन्न हुआ है।</p><p class="pp-mpara"><strong>Governing Law:</strong> ये Terms भारत के कानूनों द्वारा शासित हैं।</p><p class="pp-mpara">किसी भी प्रश्न के लिए हमसे [support email] या [phone] पर संपर्क करें।</p>`,
-            shipping: `<div class="pp-mtitle"><i class="fa-solid fa-truck"></i>Shipping &amp; Cancellation Policy</div><p class="pp-mpara"><strong>Shipping Coverage:</strong> हम वर्तमान में केवल भारत के अंदर ही shipping करते हैं। सभी prices INR में हैं।</p><p class="pp-mpara"><strong>Delivery Timelines:</strong> Orders आम तौर पर confirmation के 1–2 business days के अंदर dispatch किए जाते हैं। Delivery में location के अनुसार 5–10 business days लग सकते हैं।</p><ul class="pp-mlist"><li>Cancellation request केवल dispatch से पहले स्वीकार की जाती है</li><li>Approved prepaid cancellation का पूरा amount 7–15 business days में refund होता है</li></ul><p class="pp-mpara">किसी भी समस्या के लिए हमसे [support email] | [phone] पर संपर्क करें।</p>`,
-            cancel: `<div class="pp-mtitle"><i class="fa-solid fa-rotate-left"></i>Return &amp; Refund Policy</div><div class="pp-mbadge">7-Day Easy Return</div><p class="pp-mpara">हमारे products consumable Ayurvedic और herbal items हैं, इसलिए hygiene और safety requirements के अनुसार निम्नलिखित terms लागू होते हैं।</p><ul class="pp-mlist"><li>Product delivery के समय damaged, defective, expired या leaking मिला हो तभी return eligible है</li><li>Product unopened, unused और original sealed packaging में हो</li></ul><div class="pp-mhl">Hygiene और safety कारणों से, opened या used products return नहीं किए जा सकते।</div><p class="pp-mpara">Request raise करने के लिए [support email] या WhatsApp [phone] पर order number, issue details और photos/video भेजें।</p>`,
-            disclaimer: `<div class="pp-mtitle"><i class="fa-solid fa-circle-exclamation"></i>Legal Disclaimer</div><div class="pp-mbadge">Important Notice</div><p class="pp-mpara">SS Herbal के Ayurvedic और herbal products traditional knowledge और natural ingredients का उपयोग करके overall well-being को support करने के लिए formulate किए जाते हैं।</p><ul class="pp-mlist"><li>ये products किसी भी बीमारी का diagnosis, treatment, cure या prevention नहीं करते</li><li>Website/app/packaging पर दी गई जानकारी केवल general informational purpose के लिए है, medical advice नहीं</li><li>किसी pre-existing health condition की स्थिति में उपयोग से पहले qualified doctor से परामर्श करें</li></ul><div class="pp-mhl">इस website पर दिए गए content पर पूरी तरह निर्भर होकर health-related decisions न लें, medical advice लेने में देरी न करें।</div><p class="pp-mpara">संपर्क करें: [legal email] | [support email]।</p>`
-        };
-
-        function openModal(key) {
-            document.getElementById('pp-content').innerHTML = contents[key];
-            document.getElementById('pp-overlay').classList.add('show');
+        /* --- THE TOGGLE SWITCH --- */
+        .toggle-wrapper {
+            background: #f1f5f9;
+            padding: 8px;
+            border-radius: 50px;
+            display: inline-flex;
+            margin-bottom: 40px;
+            border: 1px solid #e2e8f0;
         }
-        function closeModal() { document.getElementById('pp-overlay').classList.remove('show'); }
-        function closeIfOutside(e) { if (e.target === document.getElementById('pp-overlay')) closeModal(); }
 
-        var sticky = document.getElementById('stickyCta');
-        var formSubSection = document.getElementById('form-sub');
-        if (sticky && formSubSection && 'IntersectionObserver' in window) {
-            var observer = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    sticky.style.display = entry.isIntersecting ? 'none' : 'flex';
-                });
-            }, { threshold: 0.3 });
-            observer.observe(formSubSection);
+        .toggle-btn {
+            padding: 12px 25px;
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
         }
-    </script>
+
+        .active-btn {
+            background: #3b82f6;
+            color: white;
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        /* --- CONTENT CARDS --- */
+        .display-stage {
+            min-height: 250px;
+            position: relative;
+        }
+
+        .comparison-card {
+            background: #f8fafc;
+            border-radius: 30px;
+            padding: 25px;
+            border: 2px solid transparent;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-title {
+            font-size: 30px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-list {
+            list-style: none;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .feature-list li {
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* --- STATE CHANGES --- */
+        /* Others State */
+        .state-others { color: #94a3b8; }
+        .state-others li::before { content: '✕'; color: #ef4444; }
+
+        /* Ayurvani State */
+        .state-ayurvani { 
+            background: #eff6ff; 
+            border-color: #3b82f6; 
+            color: #1e293b; 
+            transform: scale(1.02);
+        }
+        .state-ayurvani li::before { content: '✓'; color: #10b981; font-weight: 900; }
+        .state-ayurvani .card-title { color: #3b82f6; }
+
+        .footer-note {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="magic-container">
+    <div class="toggle-wrapper">
+        <button class="toggle-btn" id="othersBtn" onclick="showState('others')">Ordinary</button>
+        <button class="toggle-btn active-btn" id="ayurBtn" onclick="showState('ayurvani')">Ayurvani ✨</button>
+    </div>
+
+    <div class="display-stage">
+        <div id="mainCard" class="comparison-card state-ayurvani">
+            <span class="card-title" id="cardTitle">Ayurvani Choice</span>
+            <ul class="feature-list" id="featureList">
+                <li>Natural Support</li>
+                <li>Speech Focus Support</li>
+                <li>Herbal Formulation</li>
+                <li>Daily Wellness</li>
+                <li>For Kids & Adults</li>
+            </ul>
+        </div>
+    </div>
+
+    <p class="footer-note">स्विच करें और फर्क देखें</p>
+</div>
+
+<script>
+    function showState(state) {
+        const card = document.getElementById('mainCard');
+        const title = document.getElementById('cardTitle');
+        const list = document.getElementById('featureList');
+        const othersBtn = document.getElementById('othersBtn');
+        const ayurBtn = document.getElementById('ayurBtn');
+
+        if(state === 'others') {
+            card.className = 'comparison-card state-others';
+            title.innerText = 'Ordinary Brands';
+            othersBtn.className = 'toggle-btn active-btn';
+            ayurBtn.className = 'toggle-btn';
+            list.innerHTML = `
+                <li>Temporary Focus</li>
+                <li>Basic Products</li>
+                <li>Chemical Based</li>
+                <li>Short-term Approach</li>
+                <li>Generic Use</li>
+            `;
+        } else {
+            card.className = 'comparison-card state-ayurvani';
+            title.innerText = 'Ayurvani Choice';
+            ayurBtn.className = 'toggle-btn active-btn';
+            othersBtn.className = 'toggle-btn';
+            list.innerHTML = `
+                <li>Natural Support</li>
+                <li>Speech Focus Support</li>
+                <li>Herbal Formulation</li>
+                <li>Daily Wellness</li>
+                <li>For Kids & Adults</li>
+            `;
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Outfit', sans-serif; }
+        
+        body { 
+            background: #f8fafc; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+        .vs-container {
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: relative;
+        }
+
+        /* --- THE VS BADGE --- */
+        .vs-circle {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: #1e293b;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 14px;
+            z-index: 10;
+            border: 4px solid #f8fafc;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* --- CHOICE CARDS --- */
+        .choice-card {
+            padding: 30px 20px;
+            border-radius: 24px;
+            position: relative;
+            transition: all 0.4s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* Ordinary Brand Style */
+        .ordinary-card {
+            background: #ffffff;
+            color: #94a3b8;
+            filter: grayscale(1);
+            opacity: 0.7;
+        }
+
+        /* Ayurvani Style */
+        .ayurvani-card {
+            background: #ffffff;
+            border: 2px solid #3b82f6;
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+            transform: scale(1.02);
+            z-index: 5;
+        }
+
+        .card-header {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .card-name {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .ayurvani-card .card-name { color: #3b82f6; }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .pill {
+            padding: 8px 12px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 700;
+            background: #f1f5f9;
+        }
+
+        .ayurvani-card .pill {
+            background: #eff6ff;
+            color: #1e40af;
+        }
+
+        /* --- THE SWITCHER FOOTER --- */
+        .switch-footer {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            background: #e2e8f0;
+            padding: 6px;
+            border-radius: 16px;
+        }
+
+        .switch-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 13px;
+        }
+
+        .active-blue { background: #3b82f6; color: white; }
+
+    </style>
+</head>
+<body>
+
+<div class="vs-container">
+    <div class="vs-circle">VS</div>
+
+    <div id="ordCard" class="choice-card ordinary-card">
+        <span class="card-header">साधारण विकल्प</span>
+        <h2 class="card-name">Ordinary Brands</h2>
+        <div class="feature-grid">
+            <div class="pill">Chemicals</div>
+            <div class="pill">Side Effects</div>
+            <div class="pill">Temporary</div>
+            <div class="pill">Expensive</div>
+        </div>
+    </div>
+
+    <div id="ayuCard" class="choice-card ayurvani-card">
+        <span class="card-header">बेहतरीन परिणाम</span>
+        <h2 class="card-name">Ayurvani ✨</h2>
+        <div class="feature-grid">
+            <div class="pill">100% Herbal</div>
+            <div class="pill">Safe for Kids</div>
+            <div class="pill">Speech Focus</div>
+            <div class="pill">Expert Choice</div>
+        </div>
+    </div>
+
+    <div class="switch-footer">
+        <button class="switch-btn" id="showOrd" onclick="focusOn('ord')">Ordinary</button>
+        <button class="switch-btn active-blue" id="showAyu" onclick="focusOn('ayu')">Ayurvani</button>
+    </div>
+</div>
+
+<script>
+    function focusOn(type) {
+        const ord = document.getElementById('ordCard');
+        const ayu = document.getElementById('ayuCard');
+        const btnOrd = document.getElementById('showOrd');
+        const btnAyu = document.getElementById('showAyu');
+
+        if(type === 'ord') {
+            ord.className = 'choice-card ayurvani-card'; // Reuse style for focus
+            ord.style.filter = 'none';
+            ord.style.opacity = '1';
+            ayu.className = 'choice-card ordinary-card';
+            btnOrd.className = 'switch-btn active-blue';
+            btnAyu.className = 'switch-btn';
+        } else {
+            ayu.className = 'choice-card ayurvani-card';
+            ord.className = 'choice-card ordinary-card';
+            btnAyu.className = 'switch-btn active-blue';
+            btnOrd.className = 'switch-btn';
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformation Comparison</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #eef2f3;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 40px 10px;
+        }
+
+        /* Container fixed at 450px */
+        .comparison-wrapper {
+            width: 450px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .main-header {
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+
+        /* Comparison Row Layout */
+        .comparison-row {
+            display: flex;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s;
+        }
+
+        .comparison-row:last-child { border-bottom: none; }
+
+        /* Left Side (Before) */
+        .side-before {
+            flex: 1;
+            padding: 15px;
+            background-color: #fff5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-right: 1px dashed #ccc;
+        }
+
+        /* Right Side (After) */
+        .side-after {
+            flex: 1;
+            padding: 15px;
+            background-color: #f0fff4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Image Styling */
+        .img-box {
+            width: 70px;
+            height: 70px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            object-fit: cover;
+            background: #ddd;
+            border: 2px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .side-before .img-box { border-color: #feb2b2; }
+        .side-after .img-box { border-color: #9ae6b4; }
+
+        .label {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .label-before { background: #feb2b2; color: #9b2c2c; }
+        .label-after { background: #9ae6b4; color: #22543d; }
+
+        .desc-text {
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.3;
+            color: #444;
+        }
+
+        /* Comparison Headers */
+        .header-labels {
+            display: flex;
+            background: #f8f9fa;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+        }
+        .header-labels div { flex: 1; padding: 10px; }
+
+    </style>
+</head>
+<body>
+
+<div class="comparison-wrapper">
+    <div class="main-header">THE TRANSFORMATION</div>
+    
+    <div class="header-labels">
+        <div style="color: #d63031;">❌ पहले</div>
+        <div style="color: #27ae60;">✅ बाद में</div>
+    </div>
+
+    <div class="comparison-row">
+        <div class="side-before">
+            <img src="https://via.placeholder.com/100/ffe5e5/d63031?text=Old+Body" class="img-box">
+            <p class="desc-text">भारी शरीर और बढ़ता हुआ पेट</p>
+        </div>
+        <div class="side-after">
+            <img src="https://via.placeholder.com/100/e3faf3/27ae60?text=Fit+Body" class="img-box">
+            <p class="desc-text">Slim, Fit और Balanced Body</p>
+        </div>
+    </div>
+
+    <div class="comparison-row">
+        <div class="side-before">
+            <img src="https://via.placeholder.com/100/ffe5e5/d63031?text=Tired" class="img-box">
+            <p class="desc-text">हर काम में जल्दी थक जाना</p>
+        </div>
+        <div class="side-after">
+            <img src="https://via.placeholder.com/100/e3faf3/27ae60?text=Energy" class="img-box">
+            <p class="desc-text">पूरा दिन Energy से भरा हुआ</p>
+        </div>
+    </div>
+
+    <div class="comparison-row">
+        <div class="side-before">
+            <img src="https://via.placeholder.com/100/ffe5e5/d63031?text=Shy" class="img-box">
+            <p class="desc-text">Low Confidence & Awkward Feel</p>
+        </div>
+        <div class="side-after">
+            <img src="https://via.placeholder.com/100/e3faf3/27ae60?text=Notice" class="img-box">
+            <p class="desc-text">High Confidence, लोग Notice करते हैं</p>
+        </div>
+    </div>
+
+    <div class="comparison-row">
+        <div class="side-before">
+            <img src="https://via.placeholder.com/100/ffe5e5/d63031?text=Tight" class="img-box">
+            <p class="desc-text">कपड़े Tight और Hesitation</p>
+        </div>
+        <div class="side-after">
+            <img src="https://via.placeholder.com/100/e3faf3/27ae60?text=Sharp" class="img-box">
+            <p class="desc-text">Outfit Perfect Fit & Attractive</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Transformation VS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@400;500;600&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #121212; /* Dark Theme for premium look */
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 40px 10px;
+        }
+
+        .container {
+            width: 450px;
+            background: #1e1e1e;
+            border-radius: 30px;
+            padding: 30px 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+
+        /* Top Header */
+        .main-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .main-header h2 {
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+
+        .vs-badge {
+            background: #ff4757;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        /* Comparison Logic */
+        .comparison-wrapper {
+            position: relative;
+        }
+
+        /* Vertical Divider */
+        .comparison-wrapper::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #ff4757, #2ed573);
+            transform: translateX(-50%);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .card {
+            width: 44%;
+            background: #2a2a2a;
+            border-radius: 15px;
+            padding: 12px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        /* Before Card Styles */
+        .before-card { border-bottom: 3px solid #ff4757; }
+        .before-card:hover { transform: translateY(-5px); border-color: #ff4757; background: #352a2a; }
+
+        /* After Card Styles */
+        .after-card { border-bottom: 3px solid #2ed573; }
+        .after-card:hover { transform: translateY(-5px); border-color: #2ed573; background: #2a352e; }
+
+        .card img {
+            width: 100%;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            background: #444;
+        }
+
+        .card p {
+            font-size: 12px;
+            color: #ccc;
+            line-height: 1.3;
+            font-weight: 500;
+        }
+
+        .after-card p { color: #fff; }
+
+        /* Icon in middle */
+        .mid-icon {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1e1e1e;
+            font-size: 18px;
+            z-index: 2;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="main-header">
+        <h2>DESIRE</h2>
+        <span class="vs-badge">BEFORE vs AFTER</span>
+    </div>
+
+    <div class="comparison-wrapper">
+        
+        <div class="row">
+            <div class="card before-card">
+                <img src="https://via.placeholder.com/150/ff4757/ffffff?text=Heavy" alt="Body">
+                <p>भारी शरीर और बढ़ता पेट</p>
+            </div>
+            <div class="mid-icon">⚡</div>
+            <div class="card after-card">
+                <img src="https://via.placeholder.com/150/2ed573/ffffff?text=Fit" alt="Body">
+                <p>Slim, Fit & Balanced</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="card before-card">
+                <img src="https://via.placeholder.com/150/ff4757/ffffff?text=Lazy" alt="Tired">
+                <p>जल्दी थक जाना</p>
+            </div>
+            <div class="mid-icon">🔋</div>
+            <div class="card after-card">
+                <img src="https://via.placeholder.com/150/2ed573/ffffff?text=Active" alt="Energy">
+                <p>Energy से भरा दिन</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="card before-card">
+                <img src="https://via.placeholder.com/150/ff4757/ffffff?text=Shy" alt="Awkward">
+                <p>Low Confidence</p>
+            </div>
+            <div class="mid-icon">🌟</div>
+            <div class="card after-card">
+                <img src="https://via.placeholder.com/150/2ed573/ffffff?text=Proud" alt="Notice">
+                <p>High Confidence</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="card before-card">
+                <img src="https://via.placeholder.com/150/ff4757/ffffff?text=Tight" alt="Clothes">
+                <p>Tight कपड़े & Hesitation</p>
+            </div>
+            <div class="mid-icon">✨</div>
+            <div class="card after-card">
+                <img src="https://via.placeholder.com/150/2ed573/ffffff?text=Perfect" alt="Personality">
+                <p>Attractive Personality</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+    .bento-wrapper {
+        width: 450px;
+        background: #000;
+        margin: 20px auto;
+        padding: 40px 20px;
+        border-radius: 45px;
+        font-family: 'Inter', sans-serif;
+        color: #fff;
+        box-sizing: border-box;
+    }
+
+    .header-section {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .header-section h2 {
+        font-size: 40px;
+        font-weight: 900;
+        margin: 0;
+        letter-spacing: -1px;
+        background: linear-gradient(to bottom, #fff, #666);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* Bento Grid Layout */
+    .bento-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 15px;
+    }
+
+    .bento-card {
+        background: #111;
+        border-radius: 25px;
+        height: 180px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        border: 1px solid #222;
+        transition: all 0.5s ease;
+    }
+
+    /* Full width card for 5th item */
+    .full-width {
+        grid-column: span 2;
+        height: 140px;
+    }
+
+    .card-front, .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .card-front img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.5);
+        z-index: -1;
+    }
+
+    .card-front h3 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .card-back {
+        background: #ff3e3e;
+        transform: translateY(100%);
+        justify-content: center;
+        text-align: center;
+    }
+
+    .card-back p {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    /* Hover Effects */
+    .bento-card:hover {
+        border-color: #ff3e3e;
+        transform: translateY(-5px);
+    }
+
+    .bento-card:hover .card-front {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    .bento-card:hover .card-back {
+        transform: translateY(0);
+    }
+
+    /* Final Red Section */
+    .bento-footer {
+        grid-column: span 2;
+        background: #fff;
+        padding: 30px;
+        border-radius: 25px;
+        margin-top: 5px;
+        text-align: center;
+    }
+
+    .bento-footer p {
+        color: #ff3e3e;
+        font-weight: 800;
+        margin: 0;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .bento-footer h3 {
+        color: #000;
+        font-size: 28px;
+        font-weight: 900;
+        margin: 5px 0 0;
+    }
+</style>
+</head>
+<body>
+
+<div class="bento-wrapper">
+    <div class="header-section">
+        <h2>PROBLEM</h2>
+    </div>
+
+    <div class="bento-grid">
+        <div class="bento-card">
+            <div class="card-front">
+                <img src="https://images.unsplash.com/photo-1541178735423-4f9c3d0f5b4f?w=300" alt="fear">
+                <h3>बोलने से डर</h3>
+            </div>
+            <div class="card-back">
+                <p>भीड़ देखते ही शब्द गायब हो जाते हैं</p>
+            </div>
+        </div>
+
+        <div class="bento-card">
+            <div class="card-front">
+                <img src="https://images.unsplash.com/photo-1599834566382-c4238d2770d1?w=300" alt="stuck">
+                <h3>शब्दों का अटकना</h3>
+            </div>
+            <div class="card-back">
+                <p>जुबान और दिमाग का तालमेल टूट जाता है</p>
+            </div>
+        </div>
+
+        <div class="bento-card">
+            <div class="card-front">
+                <img src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?w=300" alt="shame">
+                <h3>शर्मिंदगी का अहसास</h3>
+            </div>
+            <div class="card-back">
+                <p>दूसरों की नज़रों में खुद को कम आंकना</p>
+            </div>
+        </div>
+
+        <div class="bento-card">
+            <div class="card-front">
+                <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=300" alt="mockery">
+                <h3>मज़ाक बनना</h3>
+            </div>
+            <div class="card-back">
+                <p>दुनिया आपकी खामोशी का मजाक उड़ाती है</p>
+            </div>
+        </div>
+
+        <div class="bento-card full-width">
+            <div class="card-front">
+                <img src="https://images.unsplash.com/photo-1521791136364-798a7bc0d262?w=500" alt="career">
+                <h3>हाथ से निकलते बड़े मौके</h3>
+            </div>
+            <div class="card-back">
+                <p>काबिलियत होने के बाद भी करियर में पीछे रह जाना</p>
+            </div>
+        </div>
+
+        <div class="bento-footer">
+            <p>कड़वा सच</p>
+            <h3>“लोग क्या सोचेंगे?”</h3>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Path Layout</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Outfit:wght@800&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #fffaf0; /* Soft creamy background */
+            font-family: 'Fredoka', sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 30px 10px;
+        }
+
+        .path-wrapper {
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        /* The Animated Dashed Path */
+        .path-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 100px;
+            bottom: 100px;
+            left: 50%;
+            width: 4px;
+            border-left: 4px dashed #ff4757;
+            transform: translateX(-50%);
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .main-heading {
+            text-align: center;
+            margin-bottom: 60px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .main-heading h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 26px;
+            color: #2f3542;
+            line-height: 1.2;
+            background: #fff;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 3px solid #ff4757;
+            border-radius: 50px;
+            box-shadow: 6px 6px 0 #ff4757;
+        }
+
+        /* Step Layout */
+        .step-node {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-node:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* Circle Image with Pulse Effect */
+        .node-img {
+            width: 130px;
+            height: 130px;
+            background: #fff;
+            border-radius: 50%;
+            border: 5px solid #ff4757;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(255, 71, 87, 0.2);
+            transition: 0.4s ease;
+            cursor: pointer;
+        }
+
+        .node-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Hover Effect for Image */
+        .step-node:hover .node-img {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 30px rgba(255, 71, 87, 0.4);
+        }
+
+        /* Text Bubble */
+        .node-text {
+            width: 55%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 20px;
+            border: 2px solid #2f3542;
+            position: relative;
+            box-shadow: 4px 4px 0 #2f3542;
+        }
+
+        .node-text p {
+            font-size: 15px;
+            color: #2f3542;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .node-text b {
+            color: #ff4757;
+        }
+
+        /* Arrow Indicator */
+        .node-text::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+
+        .step-node:nth-child(odd) .node-text::after {
+            left: -12px;
+            border-right: 12px solid #2f3542;
+        }
+
+        .step-node:nth-child(even) .node-text::after {
+            right: -12px;
+            border-left: 12px solid #2f3542;
+        }
+
+        /* Final Truth Banner */
+        .truth-banner {
+            background: #2f3542;
+            color: #fff;
+            padding: 30px 20px;
+            border-radius: 30px;
+            text-align: center;
+            margin-top: 40px;
+            border: 4px solid #ff4757;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .truth-banner h3 {
+            color: #ff4757;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .truth-banner p {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="path-wrapper">
+    <div class="main-heading">
+        <h2>क्या आप भी इन समस्याओं<br>से परेशान हैं?</h2>
+    </div>
+
+    <div class="step-node">
+        <div class="node-img">
+            <img src="https://via.placeholder.com/150" alt="Fat">
+        </div>
+        <div class="node-text">
+            <p>पेट और कमर के आसपास <b>तेजी से fat</b> जमा होना</p>
+        </div>
+    </div>
+
+    <div class="step-node">
+        <div class="node-img">
+            <img src="https://via.placeholder.com/150" alt="Tired">
+        </div>
+        <div class="node-text">
+            <p>थोड़ा सा काम करते ही <b>थकान और सांस</b> फूलना</p>
+        </div>
+    </div>
+
+    <div class="step-node">
+        <div class="node-img">
+            <img src="https://via.placeholder.com/150" alt="Energy">
+        </div>
+        <div class="node-text">
+            <p>हमेशा <b>low energy</b> और भारीपन महसूस होना</p>
+        </div>
+    </div>
+
+    <div class="step-node">
+        <div class="node-img">
+            <img src="https://via.placeholder.com/150" alt="Clothes">
+        </div>
+        <div class="node-text">
+            <p>कपड़े tight होना और <b>confidence</b> गिरना</p>
+        </div>
+    </div>
+
+    <div class="step-node">
+        <div class="node-img">
+            <img src="https://via.placeholder.com/150" alt="Social">
+        </div>
+        <div class="node-text">
+            <p>लोगों के सामने <b>awkward feel</b> करना</p>
+        </div>
+    </div>
+
+    <div class="truth-banner">
+        <h3>असली समस्या सिर्फ मोटापा नहीं है…</h3>
+        <p>ये body के अंदर <b>toxins</b>, <b>slow metabolism</b> और <b>fat imbalance</b> का नतीजा है।</p>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- 
+
+ <!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Ayurvani Capsule</title>
+
+ <link rel="preload" href="https://fonts.googleapis.com/css2?family=Halant:wght@400;600&display=swap" as="style" onload="this.rel='stylesheet'">
+<noscript>
+<link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;600&display=swap" rel="stylesheet">
+</noscript>
+
+<style>
+
+/* ✅ ROOT THEME — BLACK & GOLD */
+:root {
+  --primary: #b8860b;
+  --secondary: #d4a017;
+  --accent: #f5c842;
+  --gold: #fef3c7;
+  --white: #ffffff;
+  --danger: #92700a;
+  --black: #050500;
+  --bg-dark: #050500;
+  --bg-card: #0f0e00;
+  --bg-section: #0a0900;
+  --text-main: white;
+  --text-muted: #fde68a;
+  --border: rgba(212, 160, 23, 0.3);
+  --glass: rgba(184, 134, 11, 0.15);
+}
+
+
+
+
+
+
+
+--> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster Style Pain Section</title>
+    <!-- Premium Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Noto+Sans+Devanagari:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.min.css" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #f3f4f6;
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px 10px;
+        }
+
+        /* 450px Main Container */
+        .poster-container {
+            width: 100%;
+            max-width: 450px;
+            background: #ffffff;
+            border: 2px solid #1e293b;
+            border-radius: 24px;
+            padding: 28px 20px;
+            box-shadow: 0 12px 0px #1e293b; /* Solid retro shadow */
+        }
+
+        /* Main Heading */
+        .poster-header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .poster-title {
+            font-size: 24px;
+            color: #1e293b;
+            font-weight: 700;
+            line-height: 1.4;
+            padding-bottom: 12px;
+            display: inline-block;
+        }
+
+        /* Border line under title */
+        .poster-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: #ef4444;
+            border-radius: 10px;
+        }
+
+        /* Cards Container */
+        .poster-feed {
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+            margin-bottom: 30px;
+        }
+
+        /* Poster Card Style */
+        .poster-card {
+            background: #ffffff;
+            border: 1.5px solid #1e293b;
+            border-radius: 16px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .poster-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0px #ef4444; /* Gives a colorful pop on hover */
+            border-color: #ef4444;
+        }
+
+        /* Badge and Text Area */
+        .card-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .problem-badge {
+            align-self: flex-start;
+            font-family: 'DM Sans', sans-serif;
+            background: #ef4444;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .poster-text {
+            font-size: 16px;
+            color: #1e293b;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        /* Framed Image Display */
+        .image-frame {
+            width: 100%;
+            height: 180px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .poster-card:hover .image-frame img {
+            transform: scale(1.05);
+        }
+
+        /* Bottom Emotional Text Container */
+        .alert-callout {
+            background: #fef2f2;
+            border: 2px dashed #ef4444;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .callout-p1 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #b91c1c;
+            margin-bottom: 6px;
+        }
+
+        .callout-p2 {
+            font-size: 14.5px;
+            line-height: 1.6;
+            color: #7f1d1d;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="poster-container">
+        <!-- Main Title -->
+        <div class="poster-header">
+            <h2 class="poster-title">क्या आप इन समस्याओं से परेशान हैं?</h2>
+        </div>
+
+        <!-- Feed of Cards -->
+        <div class="poster-feed">
+            
+            <!-- Card 1 -->
+            <div class="poster-card">
+                <div class="card-meta">
+                    <span class="problem-badge">Problem 01</span>
+                    <p class="poster-text">बार-बार मिर्गी के दौरे आने की चिंता</p>
+                </div>
+                <div class="image-frame">
+                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=450&q=80" alt="Anxiety">
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="poster-card">
+                <div class="card-meta">
+                    <span class="problem-badge">Problem 02</span>
+                    <p class="poster-text">दिमागी कमजोरी और नसों की अस्थिरता</p>
+                </div>
+                <div class="image-frame">
+                    <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=450&q=80" alt="Brain Weakness">
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="poster-card">
+                <div class="card-meta">
+                    <span class="problem-badge">Problem 03</span>
+                    <p class="poster-text">अचानक बेहoशी या शरीर पर नियंत्रण खोना</p>
+                </div>
+                <div class="image-frame">
+                    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=450&q=80" alt="Fainting">
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="poster-card">
+                <div class="card-meta">
+                    <span class="problem-badge">Problem 04</span>
+                    <p class="poster-text">तनाव, डर और मानसिक बेचैनी</p>
+                </div>
+                <div class="image-frame">
+                    <img src="https://images.unsplash.com/photo-1464998857633-50e59fbf2fe6?auto=format&fit=crop&w=450&q=80" alt="Stress & Fear">
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="poster-card">
+                <div class="card-meta">
+                    <span class="problem-badge">Problem 05</span>
+                    <p class="poster-text">याददाश्त और फोकस में कमी</p>
+                </div>
+                <div class="image-frame">
+                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=450&q=80" alt="Loss of Focus">
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="poster-card">
+                <div class="card-meta">
+                    <span class="problem-badge">Problem 06</span>
+                    <p class="poster-text">परिवार का लगातार चिंता में रहना</p>
+                </div>
+                <div class="image-frame">
+                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=450&q=80" alt="Family Worry">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Callout Box -->
+        <div class="alert-callout">
+            <p class="callout-p1">मिर्गी की समस्या में केवल दौरा ही परेशानी नहीं होता।</p>
+            <p class="callout-p2">असल परेशानी होती है उस डर की, जो हर दिन आपके साथ रहता है।</p>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Expanding Cinematic Cards</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Noto+Sans+Devanagari:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.min.css" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #060913; /* Premium Dark Background */
+            font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 10px;
+        }
+
+        /* Fixed 450px Main Container */
+        .symmetric-pain-box {
+            width: 100%;
+            max-width: 450px;
+            background: #0d1222;
+            border-radius: 40px;
+            padding: 40px 18px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        /* Clean Header */
+        .deck-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .alert-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            padding: 6px 16px;
+            border-radius: 30px;
+            border: 1px solid rgba(239, 68, 68, 0.15);
+            margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+
+        .deck-title {
+            font-size: 24px;
+            color: #ffffff;
+            font-weight: 800;
+            line-height: 1.4;
+        }
+
+        /* Stack of Cards */
+        .card-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 35px;
+        }
+
+        /* Normal State: Symmetric 130px height */
+        .symmetric-card {
+            height: 130px; 
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            /* Extra smooth transition for height and layout change */
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* 42% Image Container initially */
+        .card-img-zone {
+            width: 42%; 
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .card-img-zone img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            filter: grayscale(100%) contrast(1.15) brightness(0.7);
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* Cine Gradient Overlay for Text Readability at bottom */
+        .symmetric-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.1) 100%);
+            opacity: 0;
+            z-index: 2;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Text Area Container */
+        .card-text-zone {
+            width: 58%;
+            margin-left: 42%;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            z-index: 3;
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .card-p {
+            font-size: 15.5px;
+            color: #94a3b8;
+            font-weight: 700;
+            line-height: 1.5;
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+
+        /* ================= THE INTERACTIVE MATRIX ================= */
+
+        .symmetric-card:hover {
+            height: 190px; /* 1. Height increases on hover for full image view */
+            transform: translateY(-4px);
+            border-color: rgba(239, 68, 68, 0.45);
+            box-shadow: 0 25px 50px rgba(239, 68, 68, 0.15);
+        }
+
+        /* Image grows to fill the entire container */
+        .symmetric-card:hover .card-img-zone {
+            width: 100%;
+        }
+
+        /* Image pops with color and zooms slightly */
+        .symmetric-card:hover .card-img-zone img {
+            filter: grayscale(0%) contrast(1) brightness(0.65);
+            transform: scale(1.04);
+        }
+
+        .symmetric-card:hover::before {
+            opacity: 1;
+        }
+
+        /* 2. Text layout shifts to absolute bottom on hover */
+        .symmetric-card:hover .card-text-zone {
+            width: 100%;
+            margin-left: 0;
+            align-items: flex-end; /* Pushes text to the very bottom */
+            padding: 0 22px 20px 22px; /* Bottom padding keeps it elegant */
+        }
+
+        .symmetric-card:hover .card-p {
+            color: #ffffff;
+            font-size: 16px; /* Micro bump for maximum clarity */
+        }
+
+        /* Symmetric Elegant Footer */
+        .premium-footer-deck {
+            background: linear-gradient(135deg, #1a1e36 0%, #0d1123 100%);
+            border-radius: 22px;
+            padding: 22px;
+            border-left: 4px solid #ef4444;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            border-right: 1px solid rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .foot-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .foot-desc {
+            font-size: 14.5px;
+            line-height: 1.6;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="symmetric-pain-box">
+        <!-- Header -->
+        <div class="deck-header">
+            <span class="alert-pill"><i class="ri-error-warning-line"></i> Medical Concern</span>
+            <h2 class="deck-title">क्या आप इन बेहद गंभीर समस्याओं से परेशान हैं?</h2>
+        </div>
+
+        <!-- Cards Stack Base -->
+        <div class="card-stack">
+            
+            <!-- Card 1 -->
+            <div class="symmetric-card">
+                <div class="card-img-zone">
+                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=450&q=80" alt="Anxiety">
+                </div>
+                <div class="card-text-zone">
+                    <p class="card-p">बार-बार मिर्गी के दौरे आने की गहरी चिंता</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="symmetric-card">
+                <div class="card-img-zone">
+                    <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=450&q=80" alt="Brain Weakness">
+                </div>
+                <div class="card-text-zone">
+                    <p class="card-p">दिमागी कमजोरी और नसों की आंतरिक अस्थिरता</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="symmetric-card">
+                <div class="card-img-zone">
+                    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=450&q=80" alt="Fainting">
+                </div>
+                <div class="card-text-zone">
+                    <p class="card-p">अचानक बेहोशी या शरीर पर से नियंत्रण खोना</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="symmetric-card">
+                <div class="card-img-zone">
+                    <img src="https://images.unsplash.com/photo-1464998857633-50e59fbf2fe6?auto=format&fit=crop&w=450&q=80" alt="Stress & Fear">
+                </div>
+                <div class="card-text-zone">
+                    <p class="card-p">लगातार तनाव, डर और मानसिक बेचैनी</p>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="symmetric-card">
+                <div class="card-img-zone">
+                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=450&q=80" alt="Focus">
+                </div>
+                <div class="card-text-zone">
+                    <p class="card-p">याददाश्त की कमजोरी और फोकस न कर पाना</p>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="symmetric-card">
+                <div class="card-img-zone">
+                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=450&q=80" alt="Family Worry">
+                </div>
+                <div class="card-text-zone">
+                    <p class="card-p">आपके कारण पूरे परिवार का हमेशा साये में जीना</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="premium-footer-deck">
+            <h4 class="foot-title">मिर्गी की समस्या में केवल दौरा ही परेशानी नहीं होता।</h4>
+            <p class="foot-desc">असल परेशानी होती है उस डर की, जो हर दिन आपके और आपके परिवार के साथ साये की तरह रहता है।</p>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Animated Cyber-Grid Solution</title>
+    <!-- Premium Web Fonts & Audio-Visual Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Noto+Sans+Devanagari:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.min.css" rel="stylesheet">
+    
+    <style>
+        /* CSS RESET & VARIABLES */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #030605; /* Pure Deep Obsidian Jade */
+            font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 10px;
+            overflow-x: hidden;
+        }
+
+        /* 450px PREMIUM SMARTPHONE FRAME */
+        .cyber-canvas-master {
+            width: 100%;
+            max-width: 450px;
+            background: #07100b; /* Ultra Premium Herbal Dark Emerald Core */
+            border-radius: 44px;
+            padding: 35px 24px;
+            box-shadow: 0 40px 90px rgba(0, 0, 0, 0.9),
+                        0 0 80px rgba(16, 185, 129, 0.03);
+            border: 1px solid rgba(16, 185, 129, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ANIMATED PLASMA BACKGROUND GLOW */
+        .cyber-canvas-master::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.12) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.08) 0%, transparent 45%);
+            z-index: 1;
+            animation: ambientPlasma 12s infinite alternate linear;
+            pointer-events: none;
+        }
+
+        /* HEADER ZONE */
+        .canvas-header-block {
+            position: relative;
+            z-index: 5;
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        }
+
+        .premium-sparkle-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.06);
+            color: #10b981; /* High-Energy Emerald */
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            padding: 7px 16px;
+            border-radius: 40px;
+            border: 1px solid rgba(16, 185, 129, 0.15);
+            margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+
+        .premium-sparkle-tag i {
+            animation: rotateSparkle 3s infinite linear;
+        }
+
+        .master-grid-title {
+            font-size: 25px;
+            color: #ffffff;
+            font-weight: 900;
+            line-height: 1.4;
+            letter-spacing: -0.3px;
+        }
+
+        .master-grid-title span {
+            background: linear-gradient(135deg, #ffffff 30%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        /* MASTER 50-50 LIVE SPLIT GRID */
+        .split-interactive-grid {
+            display: grid;
+            grid-template-columns: 43% 57%;
+            gap: 16px;
+            margin-bottom: 30px;
+            align-items: stretch;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* LEFT SPLIT: 3D FLOATING PRODUCT ENGINE */
+        .left-visual-pod {
+            background: rgba(255, 255, 255, 0.01);
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            min-height: 310px;
+            animation: fadeInUp 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both;
+        }
+
+        .left-visual-pod img {
+            width: 88%;
+            height: 88%;
+            object-fit: contain;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.85));
+            /* Core Breathing & Floating Animation */
+            animation: floatProduct 4.5s infinite ease-in-out;
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 2;
+        }
+
+        /* Core Organic Light Hub Behind Bottle */
+        .left-visual-pod::before {
+            content: '';
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(15px);
+            z-index: 1;
+            animation: coreGlowPulse 3s infinite alternate ease-in-out;
+        }
+
+        /* RIGHT SPLIT: CYBER DECK OF TEXT CELLS */
+        .right-cyber-deck {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 14px;
+        }
+
+        /* HIGHLY ANIMATED INFO ROWS */
+        .cyber-deck-row {
+            background: rgba(16, 185, 129, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 22px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* Entry Cascading Animations */
+        .cyber-deck-row:nth-child(1) { animation: fadeInUp 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s both; }
+        .cyber-deck-row:nth-child(2) { animation: fadeInUp 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s both; }
+
+        .row-cyber-badge {
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #10b981;
+            font-size: 16px;
+            transition: all 0.4s ease;
+        }
+
+        .cyber-deck-row:nth-child(2) .row-cyber-badge {
+            color: #f59e0b;
+        }
+
+        .row-narrative-text {
+            font-size: 13.5px;
+            color: #8c9ba5;
+            font-weight: 600;
+            line-height: 1.6;
+            transition: color 0.3s ease;
+        }
+
+        /* BOTTOM ULTIMATE CONFIDENCE PILL */
+        .ultimate-kinetic-footer {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 26px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            z-index: 5;
+            overflow: hidden;
+            animation: fadeInUp 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s both;
+            cursor: pointer;
+        }
+
+        /* Shimmering glass light streak across bottom card */
+        .ultimate-kinetic-footer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+            transform: skewX(-20deg);
+            animation: cleanShimmer 3.5s infinite ease-in-out;
+        }
+
+        .ultimate-kinetic-footer p {
+            font-size: 16px;
+            font-weight: 900;
+            color: #030605;
+            line-height: 1.5;
+            transition: transform 0.3s ease;
+        }
+
+        /* HOVER STATES & HOVER ANIMATION TRIGGERS */
+        
+        /* 1. Whole Canvas Hover -> Left Pod Image Shifts to 3D Pop */
+        .cyber-canvas-master:hover .left-visual-pod img {
+            animation-play-state: paused; /* Pause floating when user locks focus */
+            transform: scale(1.08) translateY(-4px) rotate(-2deg);
+            filter: drop-shadow(0 30px 50px rgba(0,0,0,0.9))
+                    drop-shadow(0 0 25px rgba(16, 185, 129, 0.25));
+        }
+
+        /* 2. Interactive Deck Rows Reacting on Individual Hover */
+        .cyber-deck-row:hover {
+            background: rgba(16, 185, 129, 0.05);
+            border-color: rgba(16, 185, 129, 0.3);
+            transform: scale(1.02) translateX(4px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        .cyber-deck-row:nth-child(2):hover {
+            background: rgba(245, 158, 11, 0.04);
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+
+        .cyber-deck-row:hover .row-cyber-badge {
+            background: #10b981;
+            color: #07100b !important;
+            transform: scale(1.1) rotate(8deg);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+        }
+
+        .cyber-deck-row:nth-child(2):hover .row-cyber-badge {
+            background: #f59e0b;
+        }
+
+        .cyber-deck-row:hover .row-narrative-text {
+            color: #ffffff;
+        }
+
+        /* 3. Bottom Card Kinetic Response */
+        .ultimate-kinetic-footer:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 30px 60px rgba(16, 185, 129, 0.25);
+        }
+        
+        .ultimate-kinetic-footer:hover p {
+            transform: scale(1.01);
+        }
+
+        /* ALL CORE CSS KEYFRAMES ANIMATIONS ENGINE */
+        @keyframes floatProduct {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes coreGlowPulse {
+            0% { transform: scale(0.9); opacity: 0.6; }
+            100% { transform: scale(1.2); opacity: 1; }
+        }
+
+        @keyframes ambientPlasma {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(360deg) scale(1.1); }
+        }
+
+        @keyframes cleanShimmer {
+            0% { left: -150%; }
+            50% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes rotateSparkle {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cyber-canvas-master">
+        
+        <!-- Section Header Layout -->
+        <div class="canvas-header-block">
+            <span class="premium-sparkle-tag"><i class="ri-sparkling-2-fill"></i> SENSORY ANALYSIS</span>
+            <h2 class="master-grid-title">अब उम्मीद की एक नई शुरुआत, प्रस्तुत है — <br><span>Mirgi Mukti</span></h2>
+        </div>
+
+        <!-- The Kinetic 50-50 Split Interface -->
+        <div class="split-interactive-grid">
+            
+            <!-- LEFT COLUMN: Auto-Floating & 3D Interactive Product Vault -->
+            <div class="left-visual-pod">
+                <!-- यहाँ अपनी मुख्य हाई-क्वालिटी बोतल / बॉक्स की पीएनजी इमेज का लिंक डालें -->
+                <img src="https://images.unsplash.com/photo-1611070973770-b1a672610045?auto=format&fit=crop&w=450&q=80" alt="Mirgi Mukti Kinetic Bottle Shield">
+            </div>
+
+            <!-- RIGHT COLUMN: Premium Animated Content Node Deck -->
+            <div class="right-cyber-deck">
+                
+                <!-- Interactive Row Cell 1 -->
+                <div class="cyber-deck-row">
+                    <div class="row-cyber-badge"><i class="ri-leaf-line"></i></div>
+                    <p class="row-narrative-text">एक विशेष आयुर्वेदिक सपोर्ट फॉर्मूला जिसे शरीर और नसों को अंदर से पोषण देने के उद्देश्य से तैयार किया गया है।</p>
+                </div>
+
+                <!-- Interactive Row Cell 2 -->
+                <div class="cyber-deck-row">
+                    <div class="row-cyber-badge"><i class="ri-pulse-line"></i></div>
+                    <p class="row-narrative-text">यह फॉर्मूला आयुर्वेदिक जड़ी-बूटियों की शक्ति के साथ शरीर की प्राकृतिक कार्यप्रणाली को सपोर्ट करता है और न्यूरोलॉजिकल वेलनेस को बेहतर बनाता है।</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Bottom Zone: Pure Glass-Streak Dynamic Trust Banner -->
+        <div class="ultimate-kinetic-footer">
+            <p>अब हर दिन डर के साथ नहीं, आत्मविश्वास के साथ जीने की शुरुआत करें।</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="piles-container">
+  <h2 class="header-text">HOW IT WORKS</h2>
+
+  <div class="card-stack">
+    <!-- Card 1 -->
+    <div class="card-item">
+      <div class="img-wrapper"><img src="image1.jpg" alt="Work"></div>
+      <div class="text-content">
+        <h3>01. पाचन स्वास्थ्य</h3>
+        <p>स्वस्थ डाइजेशन और बेहतर मल त्याग प्रक्रिया को सहयोग प्रदान करता है।</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card-item reverse">
+      <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500" alt="Work"></div>
+      <div class="text-content">
+        <h3>02. प्राकृतिक संतुलन</h3>
+        <p>आयुर्वेदिक तत्व शरीर के अंदरूनी संतुलन को सपोर्ट करते हैं।</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card-item">
+      <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500" alt="Work"></div>
+      <div class="text-content">
+        <h3>03. दैनिक आराम</h3>
+        <p>बवासीर से जुड़ी असुविधाओं के दौरान हेल्थ रूटीन का हिस्सा।</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .piles-container {
+    width: 450px;
+    padding: 40px 20px;
+    background: #f8f9fa;
+    font-family: 'Syne', sans-serif; /* Stylish Font */
+  }
+  .header-text {
+    text-align: center;
+    font-size: 32px;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+  }
+  .card-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+  }
+  .img-wrapper {
+    width: 180px;
+    height: 180px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 20px 20px 0px #b957a4; /* Unique Color Shadow */
+    flex-shrink: 0;
+  }
+  .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  .img-wrapper img:hover { transform: scale(1.1); }
+  
+  .text-content h3 {
+    font-size: 20px;
+    color: #b957a4;
+    margin-bottom: 10px;
+  }
+  .text-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+  }
+  .reverse { flex-direction: row-reverse; }
+  .reverse .img-wrapper { box-shadow: -20px 20px 0px #b957a4; }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="hi">
+
+
+
+<head>
+
+
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+
+<style>
+
+
+
+
+
+:root{
+
+
+
+--primary:#2F5D9F;
+
+--secondary:#4A7CC7;
+
+--accent:#F4A62A;
+
+--bg:#F7FAFD;
+
+--text:#1E293B;
+
+
+
+}
+
+
+
+
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+
+
+
+
+
+
+body{
+
+
+
+font-family:"Mukta",sans-serif;
+
+
+
+background:var(--bg);
+
+
+
+display:flex;
+
+
+
+justify-content:center;
+
+
+
+padding:30px 10px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.trust-wrap{
+
+
+
+width:100%;
+
+max-width:450px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.trust-head{
+
+
+
+text-align:center;
+
+
+
+margin-bottom:35px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.trust-head span{
+
+
+
+background:#FFF8F0;
+
+
+
+color:var(--accent);
+
+
+
+padding:7px 16px;
+
+
+
+border-radius:30px;
+
+
+
+font-size:13px;
+
+
+
+font-weight:700;
+
+
+
+}
+
+
+
+
+
+
+
+.trust-head h2{
+
+
+
+margin-top:14px;
+
+
+
+font-size:30px;
+
+
+
+color:var(--primary);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.trust-head p{
+
+
+
+margin-top:8px;
+
+
+
+font-size:14px;
+
+
+
+color:#64748b;
+
+
+
+line-height:1.6;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.trust-line{
+
+
+
+position:relative;
+
+
+
+padding-left:30px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.trust-line::before{
+
+
+
+content:"";
+
+
+
+position:absolute;
+
+
+
+left:8px;
+
+
+
+top:20px;
+
+
+
+bottom:20px;
+
+
+
+
+
+width:3px;
+
+
+
+
+
+background:linear-gradient(
+
+var(--secondary),
+
+#DCEAFF
+
+);
+
+
+
+
+
+border-radius:20px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.trust-row{
+
+
+
+display:flex;
+
+
+
+align-items:center;
+
+
+
+gap:15px;
+
+
+
+margin-bottom:22px;
+
+
+
+position:relative;
+
+
+
+
+
+animation:trustMove 4s infinite;
+
+
+
+}
+
+
+
+
+
+
+
+.trust-row:nth-child(2){
+
+
+
+animation-delay:1s;
+
+
+
+}
+
+
+
+
+
+.trust-row:nth-child(3){
+
+
+
+animation-delay:2s;
+
+
+
+}
+
+
+
+
+
+.trust-row:nth-child(4){
+
+
+
+animation-delay:3s;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes trustMove{
+
+
+
+
+
+0%,100%{
+
+transform:translateX(0);
+
+}
+
+
+
+
+
+50%{
+
+
+
+transform:translateX(7px);
+
+
+
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.dot{
+
+
+
+position:absolute;
+
+
+
+left:-28px;
+
+
+
+
+
+width:18px;
+
+
+
+height:18px;
+
+
+
+
+
+border-radius:50%;
+
+
+
+
+
+background:var(--accent);
+
+
+
+
+
+box-shadow:
+
+
+
+0 0 0 6px #FFF3DF;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.trust-photo{
+
+
+
+
+
+width:75px;
+
+
+
+height:75px;
+
+
+
+
+
+border-radius:22px;
+
+
+
+
+
+overflow:hidden;
+
+
+
+
+
+background:white;
+
+
+
+
+
+box-shadow:
+
+
+
+0 10px 25px rgba(47,93,159,.15);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.trust-photo img{
+
+
+
+
+
+width:100%;
+
+
+
+height:100%;
+
+
+
+
+
+object-fit:cover;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.trust-info{
+
+
+
+
+
+background:white;
+
+
+
+
+
+flex:1;
+
+
+
+
+
+padding:14px;
+
+
+
+
+
+border-radius:20px;
+
+
+
+
+
+box-shadow:
+
+
+
+0 10px 25px rgba(47,93,159,.10);
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.trust-info h3{
+
+
+
+
+
+font-size:16px;
+
+
+
+color:var(--primary);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.trust-info p{
+
+
+
+
+
+font-size:12px;
+
+
+
+
+
+color:var(--text);
+
+
+
+
+
+line-height:1.5;
+
+
+
+
+
+margin-top:5px;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+<body>
+
+
+
+
+
+
+
+
+
+<section class="trust-wrap">
+
+
+
+
+
+
+
+
+
+
+
+<div class="trust-head">
+
+
+
+
+
+<span>⭐ भरोसे की वजह</span>
+
+
+
+
+
+<h2>
+
+क्यों भरोसा करें?
+
+</h2>
+
+
+
+
+
+<p>
+
+आपकी चिंता को समझकर सही दिशा देने का प्रयास
+
+</p>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="trust-line">
+
+
+
+
+
+
+
+
+
+
+
+<div class="trust-row">
+
+
+
+
+
+<div class="dot"></div>
+
+
+
+
+
+<div class="trust-photo">
+
+
+
+<img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300">
+
+
+
+</div>
+
+
+
+
+
+<div class="trust-info">
+
+
+
+
+
+<h3>
+
+👨‍⚕️ अनुभवी Experts
+
+</h3>
+
+
+
+
+
+<p>
+
+वर्षों के अनुभव के साथ सरल और स्पष्ट guidance।
+
+</p>
+
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="trust-row">
+
+
+
+
+
+<div class="dot"></div>
+
+
+
+
+
+<div class="trust-photo">
+
+
+
+<img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=300">
+
+
+
+</div>
+
+
+
+
+
+<div class="trust-info">
+
+
+
+
+
+<h3>
+
+🔒 गोपनीय Consultation
+
+</h3>
+
+
+
+
+
+<p>
+
+आपकी जानकारी और बातचीत सुरक्षित।
+
+</p>
+
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="trust-row">
+
+
+
+
+
+<div class="dot"></div>
+
+
+
+
+
+<div class="trust-photo">
+
+
+
+<img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=300">
+
+
+
+</div>
+
+
+
+
+
+<div class="trust-info">
+
+
+
+
+
+<h3>
+
+🎯 Personalized Guidance
+
+</h3>
+
+
+
+
+
+<p>
+
+आपकी स्थिति के अनुसार सलाह।
+
+</p>
+
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="trust-row">
+
+
+
+
+
+<div class="dot"></div>
+
+
+
+
+
+<div class="trust-photo">
+
+
+
+<img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=300">
+
+
+
+</div>
+
+
+
+
+
+<div class="trust-info">
+
+
+
+
+
+<h3>
+
+📞 आसान Consultation
+
+</h3>
+
+
+
+
+
+<p>
+
+घर बैठे Expert से बात करने की सुविधा।
+
+</p>
+
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
 </body>
 
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Circular Orbit Layout</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: #0b132b; /* Deep Premium Dark Blue */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 10px;
+        }
+
+        /* 450px Fixed Container */
+        .orbit-wrapper {
+            max-width: 450px;
+            width: 100%;
+            background: #111a36;
+            border-radius: 30px;
+            padding: 30px 15px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+        }
+
+        .intro-text {
+            color: #94a3b8;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        /* The Magic Wheel Container */
+        .wheel-container {
+            position: relative;
+            width: 100%;
+            height: 420px;
+            margin: 0 auto;
+        }
+
+        /* Center Hub (The Main Title) */
+        .center-hub {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            z-index: 10;
+            box-shadow: 0 0 30px rgba(0, 180, 216, 0.4);
+            border: 4px solid #111a36;
+        }
+
+        .center-hub span {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        .center-hub h2 {
+            font-size: 16px;
+            font-weight: 800;
+        }
+
+        /* Orbit Nodes (The 6 Points) */
+        .orbit-node {
+            position: absolute;
+            width: 135px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        /* Position each node perfectly in a circle around the 450px space */
+        .node-1 { top: 10px; left: 50%; transform: translateX(-50%); } /* Top Center */
+        .node-2 { top: 100px; right: 5px; }  /* Top Right */
+        .node-3 { bottom: 100px; right: 5px; } /* Bottom Right */
+        .node-4 { bottom: 10px; left: 50%; transform: translateX(-50%); } /* Bottom Center */
+        .node-5 { bottom: 100px; left: 5px; } /* Bottom Left */
+        .node-6 { top: 100px; left: 5px; }  /* Top Left */
+
+        /* Icons inside nodes */
+        .node-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(0, 180, 216, 0.1);
+            color: #00b4d8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            margin: 0 auto 6px auto;
+            transition: all 0.3s ease;
+        }
+
+        .node-title {
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .node-desc {
+            color: #94a3b8;
+            font-size: 10px;
+            line-height: 1.3;
+        }
+
+        /* Cool Hover Effect */
+        .orbit-node:hover {
+            background: rgba(0, 180, 216, 0.1);
+            border-color: #00b4d8;
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            z-index: 11;
+        }
+
+        .orbit-node:hover .node-icon {
+            background: #00b4d8;
+            color: #111a36;
+            box-shadow: 0 0 15px #00b4d8;
+        }
+
+        /* Specific transform fixes for corner nodes on hover */
+        .node-1:hover, .node-4:hover { transform: translateX(-50%) scale(1.05); }
+    </style>
+</head>
+<body>
+
+    <div class="orbit-wrapper">
+        <!-- Intro -->
+        <p class="intro-text">
+            आपकी चिंता को समझकर सही दिशा देने का प्रयास। हमारा उद्देश्य सिर्फ आपको स्पष्ट जानकारी और सही मार्गदर्शन देना है।
+        </p>
+
+        <!-- Wheel Area -->
+        <div class="wheel-container">
+            
+            <!-- Central Title Hub -->
+            <div class="center-hub">
+                <span>क्यों भरोसा करें?</span>
+                <h2>भरोसे की वजह</h2>
+            </div>
+
+            <!-- 6 Floating Orbit Nodes -->
+            <!-- 1. Experienced Experts -->
+            <div class="orbit-node node-1">
+                <div class="node-icon"><i class="fa-solid fa-user-md"></i></div>
+                <h3 class="node-title">अनुभवी Experts</h3>
+                <p class="node-desc">वर्षों के अनुभव के साथ स्पष्ट guidance।</p>
+            </div>
+
+            <!-- 2. Confidential Consultation -->
+            <div class="orbit-node node-2">
+                <div class="node-icon"><i class="fa-solid fa-lock"></i></div>
+                <h3 class="node-title">गोपनीय बातचीत</h3>
+                <p class="node-desc">आपकी जानकारी पूरी तरह सुरक्षित।</p>
+            </div>
+
+            <!-- 3. Personalized Guidance -->
+            <div class="orbit-node node-3">
+                <div class="node-icon"><i class="fa-solid fa-sliders"></i></div>
+                <h3 class="node-title">Personalized</h3>
+                <p class="node-desc">स्थिति के अनुसार व्यक्तिगत सलाह।</p>
+            </div>
+
+            <!-- 4. Patient-First Approach -->
+            <div class="orbit-node node-4">
+                <div class="node-icon"><i class="fa-solid fa-heart"></i></div>
+                <h3 class="node-title">Patient-First</h3>
+                <p class="node-desc">हमेशा आपकी जरूरत को प्राथमिकता।</p>
+            </div>
+
+            <!-- 5. Clear Direction -->
+            <div class="orbit-node node-5">
+                <div class="node-icon"><i class="fa-solid fa-compass"></i></div>
+                <h3 class="node-title">Clear Direction</h3>
+                <p class="node-desc">बिना confusion के अगले कदम की जानकारी।</p>
+            </div>
+
+            <!-- 6. Easy Consultation -->
+            <div class="orbit-node node-6">
+                <div class="node-icon"><i class="fa-solid fa-phone-alt"></i></div>
+                <h3 class="node-title">आसान Talk</h3>
+                <p class="node-desc">घर बैठे Expert से बात करने की सुविधा।</p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--primary:#2F5D9F;
+--secondary:#4A7CC7;
+--accent:#F4A62A;
+--bg:#F7FAFD;
+}
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+
+body{
+font-family:'Mukta',sans-serif;
+background:var(--bg);
+padding:25px 10px;
+}
+
+
+.trust-wrap{
+max-width:450px;
+margin:auto;
+}
+
+
+
+.head{
+text-align:center;
+margin-bottom:30px;
+}
+
+
+.tag{
+display:inline-block;
+background:#fff3df;
+color:var(--accent);
+padding:7px 18px;
+border-radius:40px;
+font-size:14px;
+font-weight:700;
+}
+
+
+.head h2{
+font-size:30px;
+color:var(--primary);
+margin-top:14px;
+}
+
+
+.head p{
+font-size:14px;
+color:#64748b;
+line-height:1.7;
+margin-top:10px;
+}
+
+
+
+
+
+.feature-box{
+
+background:white;
+border-radius:32px;
+padding:18px;
+margin-bottom:22px;
+box-shadow:0 15px 35px rgba(47,93,159,.12);
+position:relative;
+overflow:hidden;
+
+}
+
+
+
+
+.feature-box:after{
+
+content:"";
+position:absolute;
+width:120px;
+height:120px;
+background:#eef5ff;
+right:-40px;
+top:-40px;
+border-radius:50%;
+
+}
+
+
+
+
+.top{
+
+display:flex;
+align-items:center;
+gap:15px;
+position:relative;
+z-index:2;
+
+}
+
+
+
+.number{
+
+width:45px;
+height:45px;
+border-radius:15px;
+background:var(--primary);
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+font-weight:700;
+
+}
+
+
+
+.title h3{
+
+font-size:18px;
+color:var(--primary);
+
+}
+
+
+
+.title span{
+
+font-size:12px;
+color:var(--accent);
+font-weight:700;
+
+}
+
+
+
+
+
+.bottom{
+
+display:flex;
+align-items:center;
+gap:15px;
+margin-top:15px;
+position:relative;
+z-index:2;
+
+}
+
+
+
+.photo{
+
+width:85px;
+height:85px;
+border-radius:22px;
+overflow:hidden;
+flex-shrink:0;
+
+}
+
+
+
+.photo img{
+
+width:100%;
+height:100%;
+object-fit:cover;
+
+}
+
+
+
+
+.bottom p{
+
+font-size:13px;
+line-height:1.6;
+color:#475569;
+
+}
+
+
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<section class="trust-wrap">
+
+
+
+<div class="head">
+
+<span class="tag">
+⭐ भरोसे की वजह
+</span>
+
+
+<h2>
+क्यों भरोसा करें?
+</h2>
+
+
+<p>
+आपकी चिंता को समझकर सही दिशा देने का प्रयास। हमारा उद्देश्य आपको स्पष्ट जानकारी और सही मार्गदर्शन देना है।
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="feature-box">
+
+
+<div class="top">
+
+<div class="number">01</div>
+
+<div class="title">
+
+<h3>👨‍⚕️ अनुभवी Experts</h3>
+<span>Expert Support</span>
+
+</div>
+
+</div>
+
+
+<div class="bottom">
+
+<div class="photo">
+<img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300">
+</div>
+
+<p>
+वर्षों के अनुभव के साथ आपकी समस्या को समझकर सरल और स्पष्ट guidance दी जाती है।
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="feature-box">
+
+
+<div class="top">
+
+<div class="number">02</div>
+
+<div class="title">
+
+<h3>🔒 गोपनीय Consultation</h3>
+<span>Safe & Secure</span>
+
+</div>
+
+</div>
+
+
+<div class="bottom">
+
+<div class="photo">
+<img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=300">
+</div>
+
+<p>
+आपकी जानकारी और बातचीत पूरी तरह सुरक्षित और निजी रखी जाती है।
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="feature-box">
+
+
+<div class="top">
+
+<div class="number">03</div>
+
+<div class="title">
+
+<h3>🎯 Personalized Guidance</h3>
+<span>For Your Need</span>
+
+</div>
+
+</div>
+
+
+<div class="bottom">
+
+<div class="photo">
+<img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=300">
+</div>
+
+<p>
+आपकी स्थिति के अनुसार व्यक्तिगत सलाह और बेहतर दिशा दी जाती है।
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="feature-box">
+
+
+<div class="top">
+
+<div class="number">04</div>
+
+<div class="title">
+
+<h3>🤝 Patient-First Approach</h3>
+<span>Your Priority</span>
+
+</div>
+
+</div>
+
+
+<div class="bottom">
+
+<div class="photo">
+<img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=300">
+</div>
+
+<p>
+हमेशा आपकी जरूरत और समझ को प्राथमिकता देकर सहायता दी जाती है।
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="feature-box">
+
+
+<div class="top">
+
+<div class="number">05</div>
+
+<div class="title">
+
+<h3>💡 Clear Direction</h3>
+<span>Right Step</span>
+
+</div>
+
+</div>
+
+
+<div class="bottom">
+
+<div class="photo">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=300">
+</div>
+
+<p>
+बिना confusion के आगे के सही कदम की स्पष्ट जानकारी मिलती है।
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="feature-box">
+
+
+<div class="top">
+
+<div class="number">06</div>
+
+<div class="title">
+
+<h3>📞 आसान Consultation</h3>
+<span>Easy Connect</span>
+
+</div>
+
+</div>
+
+
+<div class="bottom">
+
+<div class="photo">
+<img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=300">
+</div>
+
+<p>
+घर बैठे Expert से बात करने और सही मार्गदर्शन पाने की सुविधा।
+</p>
+
+</div>
+
+
+</div>
+
+
+
+</section>
+
+
+</body>
+</html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--primary:#2F5D9F;
+--accent:#F4A62A;
+--bg:#F7FAFD;
+}
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+
+body{
+font-family:'Mukta',sans-serif;
+background:var(--bg);
+padding:25px 10px;
+}
+
+
+
+.trust-wrap{
+max-width:450px;
+margin:auto;
+}
+
+
+
+.heading{
+text-align:center;
+}
+
+
+.badge{
+background:#fff3df;
+color:var(--accent);
+padding:8px 18px;
+border-radius:50px;
+font-weight:700;
+font-size:14px;
+display:inline-block;
+}
+
+
+.heading h2{
+font-size:30px;
+color:var(--primary);
+margin-top:15px;
+}
+
+
+.heading p{
+font-size:14px;
+color:#64748b;
+line-height:1.7;
+margin-top:10px;
+}
+
+
+
+
+/* center */
+
+.circle-area{
+
+margin-top:35px;
+position:relative;
+height:420px;
+
+}
+
+
+
+
+.center{
+
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+
+width:170px;
+height:170px;
+
+border-radius:50%;
+
+background:white;
+
+box-shadow:0 20px 45px rgba(47,93,159,.18);
+
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+
+text-align:center;
+
+z-index:3;
+
+}
+
+
+
+.center img{
+
+width:75px;
+height:75px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:8px;
+
+}
+
+
+
+.center h3{
+
+font-size:17px;
+color:var(--primary);
+
+}
+
+
+
+
+.circle-line{
+
+position:absolute;
+inset:35px;
+
+border:2px dashed #dbeafe;
+border-radius:50%;
+
+}
+
+
+
+
+.point{
+
+position:absolute;
+
+width:125px;
+background:white;
+
+padding:10px;
+
+border-radius:22px;
+
+box-shadow:0 10px 25px rgba(47,93,159,.12);
+
+text-align:center;
+
+}
+
+
+
+
+.point img{
+
+width:45px;
+height:45px;
+border-radius:15px;
+object-fit:cover;
+
+}
+
+
+
+
+.point h4{
+
+font-size:14px;
+color:var(--primary);
+margin-top:5px;
+
+}
+
+
+
+.point p{
+
+font-size:11px;
+color:#64748b;
+line-height:1.4;
+
+}
+
+
+
+
+.p1{
+top:0;
+left:0;
+}
+
+.p2{
+top:0;
+right:0;
+}
+
+
+.p3{
+top:160px;
+left:-5px;
+}
+
+
+.p4{
+top:160px;
+right:-5px;
+}
+
+
+.p5{
+bottom:0;
+left:0;
+}
+
+
+.p6{
+bottom:0;
+right:0;
+}
+
+
+
+
+
+</style>
+
+
+</head>
+
+<body>
+
+
+<section class="trust-wrap">
+
+
+
+<div class="heading">
+
+
+<span class="badge">
+⭐ भरोसे की वजह
+</span>
+
+
+<h2>
+क्यों भरोसा करें?
+</h2>
+
+
+<p>
+आपकी चिंता को समझकर सही दिशा देने का प्रयास।
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="circle-area">
+
+
+<div class="circle-line"></div>
+
+
+
+<div class="center">
+
+<img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=300">
+
+<h3>
+आपका विश्वास
+</h3>
+
+</div>
+
+
+
+
+
+<div class="point p1">
+
+<img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200">
+
+<h4>Experts</h4>
+
+<p>
+अनुभवी guidance
+</p>
+
+</div>
+
+
+
+
+
+<div class="point p2">
+
+<img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=200">
+
+<h4>गोपनीय</h4>
+
+<p>
+Safe consultation
+</p>
+
+</div>
+
+
+
+
+
+<div class="point p3">
+
+<img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=200">
+
+<h4>Personal</h4>
+
+<p>
+आपके अनुसार सलाह
+</p>
+
+</div>
+
+
+
+
+
+<div class="point p4">
+
+<img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=200">
+
+<h4>Patient First</h4>
+
+<p>
+आपकी प्राथमिकता
+</p>
+
+</div>
+
+
+
+
+
+<div class="point p5">
+
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=200">
+
+<h4>Direction</h4>
+
+<p>
+साफ जानकारी
+</p>
+
+</div>
+
+
+
+
+
+<div class="point p6">
+
+<img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=200">
+
+<h4>Consult</h4>
+
+<p>
+आसान संपर्क
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+</section>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Premium Infographic</title>
+    <style>
+        :root {
+            /* ===== PRIMARY COLORS (Dark Green - Brand) ===== */
+            --color-primary: #1a3a1a;           /* Dark forest green - main brand color */
+            --color-primary-dark: #0f2410;      /* Darker green - headers, bottle caps */
+            --color-primary-light: #2d5a2d;     /* Lighter green - accents */
+            
+            /* ===== SECONDARY COLORS (Gold/Yellow - Premium feel) ===== */
+            --color-secondary: #d4a017;         /* Golden yellow - CTA buttons, borders */
+            --color-secondary-dark: #b8860b;    /* Dark gold - hover states */
+            --color-secondary-light: #f0c14b;   /* Light gold - highlights, badges */
+            
+            /* ===== ACCENT COLORS ===== */
+            --color-accent-orange: #e8954a;     /* Herbal oil color, warm accent */
+            --color-accent-red: #c41e2a;        /* Discount/strike-through price, alerts */
+            --color-accent-cream: #f5e6c8;      /* Powder color, warm backgrounds */
+            
+            /* ===== NEUTRAL COLORS ===== */
+            --color-white: #ffffff;             /* Pure white - text on dark bg, cards */
+            --color-off-white: #faf8f3;         /* Background sections */
+            --color-cream-bg: #f9f4e8;          /* Light cream background sections */
+            --color-black: #1a1a1a;             /* Body text */
+            --color-gray-dark: #4a4a4a;         /* Secondary text */
+            --color-gray-light: #e0ddd5;        /* Borders, dividers */
+            
+            /* ===== BACKGROUND COLORS ===== */
+            --bg-header: #1a3a1a;               
+            --bg-gold-strip: #d4a017;           
+            --bg-card: #ffffff;                 
+            --bg-section-light: #f9f4e8;        
+            
+            /* ===== BORDER COLORS ===== */
+            --border-primary: #1a3a1a;
+            --border-secondary: #d4a017;
+            --border-light: #e0ddd5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--color-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container exactly matched to 450px width as requested */
+        .infographic-container {
+            width: 450px;
+            background-color: var(--color-primary);
+            padding: 30px 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        /* Background Medical/Plus Patterns matching the original image layout */
+        .bg-pattern {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.04);
+            font-size: 24px;
+            user-select: none;
+            pointer-events: none;
+        }
+        .p1 { top: 10%; right: 5%; font-size: 32px; }
+        .p2 { top: 35%; left: 3%; font-size: 28px; }
+        .p3 { top: 60%; right: 4%; font-size: 35px; }
+        .p4 { bottom: 12%; left: 5%; font-size: 30px; }
+
+        /* Header Layout */
+        .main-title {
+            text-align: center;
+            color: var(--color-white);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--color-secondary-light);
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        /* Dotted horizontal line under the title */
+        .subtitle::after {
+            content: '';
+            display: block;
+            width: 85%;
+            height: 2px;
+            border-bottom: 2px dotted rgba(255,255,255,0.35);
+            margin: 12px auto 0 auto;
+        }
+
+        /* Steps Timeline Wrapper */
+        .steps-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 10px;
+        }
+
+        /* Connecting Path Lines (Replicating continuous track zig-zag layout of the image) */
+        .step-card::before {
+            content: '';
+            position: absolute;
+            border: 2px dashed rgba(255, 255, 255, 0.35);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Card 1 Line going down and left to right */
+        .step-card:nth-child(1)::before {
+            top: -20px;
+            left: -12px;
+            width: calc(100% + 24px);
+            height: calc(100% + 40px);
+            border-right: none;
+            border-bottom: none;
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+        }
+
+        /* Card 2 Line looping from right to left */
+        .step-card:nth-child(2)::before {
+            top: -20px;
+            right: -12px;
+            width: calc(100% + 24px);
+            height: calc(100% + 40px);
+            border-left: none;
+            border-bottom: none;
+            border-top-right-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+
+        /* Card 3 Line looping left to right */
+        .step-card:nth-child(3)::before {
+            top: -20px;
+            left: -12px;
+            width: calc(100% + 24px);
+            height: calc(100% + 40px);
+            border-right: none;
+            border-bottom: none;
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+        }
+
+        /* Card 4 Line ending loop */
+        .step-card:nth-child(4)::before {
+            top: -20px;
+            right: -12px;
+            width: calc(100% + 24px);
+            height: 60%;
+            border-left: none;
+            border-bottom: none;
+            border-top-right-radius: 16px;
+        }
+
+        /* Step Card Box Styling */
+        .step-card {
+            background-color: var(--color-cream-bg);
+            border-radius: 14px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+        }
+
+        /* Alternating Content Layouts (Image/Text side swap exactly like source image) */
+        .step-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* Premium Hover Animation (As requested) */
+        .step-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            background-color: var(--color-white);
+            border-color: var(--color-secondary);
+            box-shadow: 0 8px 25px rgba(212, 160, 23, 0.25);
+        }
+
+        /* Small circular loop nodes matching the image dots */
+        .card-node {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: var(--color-cream-bg);
+            border: 2px solid var(--color-white);
+            border-radius: 50%;
+            z-index: 5;
+        }
+        .step-card:nth-child(odd) .card-node { top: -6px; left: -17px; }
+        .step-card:nth-child(even) .card-node { top: -6px; right: -17px; }
+
+        /* Text Block */
+        .card-content {
+            flex: 1;
+        }
+
+        .step-tag {
+            color: var(--color-primary-light);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+            display: inline-block;
+        }
+
+        .step-title {
+            color: var(--color-primary);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+
+        .step-desc {
+            color: var(--color-gray-dark);
+            font-size: 13px;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        /* Illustration Wrapper */
+        .card-icon-wrap {
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.7);
+            border-radius: 10px;
+            padding: 8px;
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .step-card:hover .card-icon-wrap {
+            transform: scale(1.1) rotate(2deg);
+            background: var(--color-cream-bg);
+        }
+
+        .card-icon-wrap svg {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="infographic-container">
+        <div class="bg-pattern p1">✚</div>
+        <div class="bg-pattern p2">✚</div>
+        <div class="bg-pattern p3">✚</div>
+        <div class="bg-pattern p4">✚</div>
+
+        <div class="main-title">How It Works</div>
+        <div class="subtitle">यह कैसे काम करता है?</div>
+
+        <div class="steps-wrapper">
+            
+            <div class="step-card">
+                <div class="card-node"></div>
+                <div class="card-content">
+                    <span class="step-tag">Step 01</span>
+                    <h3 class="step-title">Nutrient Infusion</h3>
+                    <p class="step-desc">जोड़ों को जरूरी nutrients देने में मदद करता है।</p>
+                </div>
+                <div class="card-icon-wrap">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="14" y="10" width="36" height="46" rx="4" fill="#E0DDD5" />
+                        <rect x="18" y="14" width="28" height="38" rx="2" fill="#FFFFFF" />
+                        <rect x="24" y="6" width="16" height="6" rx="2" fill="#D4A017" />
+                        <line x1="22" y1="22" x2="32" y2="22" stroke="#1A3A1A" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="22" y1="30" x2="42" y2="30" stroke="#E8954a" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="22" y1="38" x2="38" y2="38" stroke="#1A3A1A" stroke-width="3" stroke-linecap="round"/>
+                        <circle cx="48" cy="48" r="8" fill="#2D5A2D"/>
+                        <path d="M45 48L47 50L51 46" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="card-node"></div>
+                <div class="card-content">
+                    <span class="step-tag">Step 02</span>
+                    <h3 class="step-title">Natural Strength</h3>
+                    <p class="step-desc">जोड़ों की natural strength को support करता है।</p>
+                </div>
+                <div class="card-icon-wrap">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32 6L12 14V30C12 43.8 20.6 56.6 32 60C43.4 56.6 52 43.8 52 30V14L32 6Z" fill="#2D5A2D" opacity="0.2"/>
+                        <path d="M32 10L16 16.4V30C16 41.3 22.8 51.6 32 54.5C41.2 51.6 48 41.3 48 30V16.4L32 10Z" fill="#1A3A1A" stroke="#D4A017" stroke-width="3"/>
+                        <path d="M24 32H40M32 24V40" stroke="#F0C14B" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="card-node"></div>
+                <div class="card-content">
+                    <span class="step-tag">Step 03</span>
+                    <h3 class="step-title">Enhanced Comfort</h3>
+                    <p class="step-desc">चलने-फिरने में comfort बढ़ाने में सहायता करता है।</p>
+                </div>
+                <div class="card-icon-wrap">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="26" width="44" height="28" rx="4" fill="#D4A017" />
+                        <rect x="22" y="14" width="20" height="12" fill="#E8954A" rx="2"/>
+                        <circle cx="32" cy="40" r="8" fill="#FFFFFF"/>
+                        <path d="M32 35V45M27 40H37" stroke="#C41E2A" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M16 20L22 26M48 20L42 26" stroke="#1A3A1A" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="card-node"></div>
+                <div class="card-content">
+                    <span class="step-tag">Step 04</span>
+                    <h3 class="step-title">Daily Mobility</h3>
+                    <p class="step-desc">धीरे-धीरे रोज की activity को आसान बनाने में मदद करता है।</p>
+                </div>
+                <div class="card-icon-wrap">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M48 22H56L62 32V46H58M6 46H10" stroke="#1A3A1A" stroke-width="3"/>
+                        <rect x="10" y="16" width="38" height="30" rx="3" fill="#FFFFFF" stroke="#1A3A1A" stroke-width="3"/>
+                        <circle cx="20" cy="46" r="6" fill="#4A4A4A" stroke="#FFFFFF" stroke-width="2"/>
+                        <circle cx="48" cy="46" r="6" fill="#4A4A4A" stroke="#FFFFFF" stroke-width="2"/>
+                        <rect x="18" y="24" width="10" height="10" fill="#E8954A" rx="1"/>
+                        <path d="M36 29H44M40 25V33" stroke="#C41E2A" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
 </html>

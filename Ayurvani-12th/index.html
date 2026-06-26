@@ -1,0 +1,5595 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Ayurvani</title>
+  <meta name="description"
+    content="गूंगापन और बोलने की परेशानी के लिए प्राकृतिक आयुर्वेदिक सपोर्ट फॉर्मूला। ब्राह्मी, शंखपुष्पी, अश्वगंधा और वचा जैसे शुद्ध हर्बल तत्वों से बना।">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #4B2A6D;
+      --color-primary-light: #6B4490;
+      --color-primary-dark: #341d4d;
+      --color-secondary: #F3A683;
+      --color-secondary-light: #FBC9AE;
+      --color-secondary-dark: #DD8456;
+      --color-bg: #FFF7ED;
+      --color-bg-alt: #FBEEDD;
+      --color-text: #33251F;
+      --color-text-soft: #5C4A41;
+      --color-sage: #7A8B69;
+      --color-sage-light: #E7ECDF;
+      --color-gold: #C9974C;
+      --color-white: #FFFFFF;
+      --color-danger: #C0524A;
+      --color-success: #4E7A52;
+
+      --font-display: 'halant', sans-serif;
+      --font-body: 'halant', sans-serif;
+
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+      --radius-pill: 999px;
+
+      --space-section-y: 48px;
+      --space-section-x: 18px;
+      --container-max: 450px;
+
+      --shadow-soft: 0 8px 24px -6px rgba(75, 42, 109, 0.18);
+      --shadow-card: 0 6px 18px -4px rgba(75, 42, 109, 0.12);
+      --shadow-strong: 0 16px 36px -10px rgba(75, 42, 109, 0.28);
+
+      --ease-out: cubic-bezier(.16, .84, .44, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+
+    body {
+      margin: 0 auto;
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      max-width: 450px;
+      width: 100%;
+      position: relative;
+      
+    }
+
+    .sec {
+      background-color: var(--color-primary);
+
+    }
+    
+
+    .img {
+      display: block;
+      max-width: 450px;
+      width: 100%;
+      height: auto;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul,
+    ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      margin: 0;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--color-gold);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    .container {
+      max-width: 450px;
+      margin: 0 auto;
+      padding-left: var(--space-section-x);
+      padding-right: var(--space-section-x);
+      width: 100%;
+    }
+
+    .section {
+      padding-top: 20px;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      background: var(--color-sage-light);
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+    }
+
+    .waveform-divider {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .waveform-divider path {
+      fill: none;
+      stroke-linecap: round;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: var(--color-primary);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 0 0 10px 0;
+      z-index: 999;
+    }
+
+    .skip-link:focus {
+      left: 0;
+    }
+
+    /* ============================
+   1. HERO
+============================ */
+  .mobile-navbar{
+  max-width:450px;
+  width:100%;
+  height:64px;
+  margin:auto;
+  padding:0 16px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  background:var(--color-primary);
+
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+
+.nav-logo{
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  color:var(--color-white);
+  font-size:32px;
+  font-weight:700;
+}
+
+
+.nav-btn{
+
+  border:0;
+
+  background:linear-gradient(
+    135deg,
+    var(--color-secondary-dark),
+    var(--color-secondary)
+  );
+
+  color:#341d4d;
+
+  padding:11px 18px;
+
+  border-radius:50px;
+
+  font-size:18px;
+  font-weight:700;
+
+  box-shadow:0 8px 20px rgba(221,132,86,.35);
+}
+@media(max-width:450px){
+
+.mobile-navbar{
+  position:fixed !important;
+  top:0px !important;
+  left:0 !important;
+
+  width:100% !important;
+  max-width:100% !important;
+
+  height:56px;
+
+  margin:0 !important;
+
+  transform:none !important;
+
+  z-index:99999 !important;
+}
+
+
+.nav-logo{
+  font-size:22px;
+}
+
+
+.nav-btn{
+  font-size:20px;
+  padding:9px 14px;
+}
+
+
+body{
+  padding-top:56px;
+}
+
+}
+    /* ============================
+   section-2 PROBLEM SECTION
+============================ */
+    .timeline-container {
+      width: 100%;
+      max-width: 450px;
+      position: relative;
+      background-color: var(--color-bg);
+      padding: 10px 20px;
+    }
+
+    .timeline-h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      color: var(--color-primary);
+      padding-top: 20px;
+    }
+
+    .timeline-line-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 450px;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .timeline-row {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 155px;
+      position: relative;
+      z-index: 5;
+      border-bottom: 1px solid #E7DCCF;
+    }
+
+    .timeline-row:last-child {
+      border-bottom: none;
+    }
+
+    .blob-zone {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .main-blob {
+      width: 120px;
+      height: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 55% 45% 52% 48% / 45% 55% 45% 55%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+    }
+
+    .main-blob img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid var(--color-primary);
+    }
+
+
+    .floating-dot {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      z-index: 6;
+    }
+
+    #row-1 .floating-dot {
+      background: #F3A683;
+      right: 0;
+      bottom: 25px;
+    }
+
+    #row-2 .floating-dot {
+      background: #4B2A6D;
+      left: 0;
+      top: 20px;
+    }
+
+    #row-3 .floating-dot {
+      background: #C9974C;
+      right: 5px;
+      bottom: 20px;
+    }
+
+    #row-4 .floating-dot {
+      background: #F3A683;
+      left: 0;
+      top: 15px;
+    }
+
+    #row-5 .floating-dot {
+      background: #4B2A6D;
+      right: 0;
+      bottom: 15px;
+    }
+
+    #row-6 .floating-dot {
+      background: #C9974C;
+      left: 0;
+      top: 20px;
+    }
+
+    .right-content {
+      padding-left: 25px;
+      width: 270px;
+    }
+
+    .right-content h2 {
+      color: var(--color-primary);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .right-content p {
+      color: var(--color-text-soft);
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    /* ===========================
+   MOBILE SAME DESKTOP LOOK
+=========================== */
+
+    @media (max-width:600px) {
+
+      .timeline-container {
+        width: 100%;
+        max-width: 450px;
+        margin: auto;
+        padding: 10px 15px;
+      }
+
+
+      .timeline-line-svg {
+        width: 100%;
+        height: 100%;
+      }
+
+
+      .timeline-row {
+        height: 155px;
+      }
+
+
+      .blob-zone {
+        width: 120px;
+        height: 120px;
+      }
+
+
+      .main-blob {
+        width: 105px;
+        height: 105px;
+      }
+
+
+      .right-content {
+        width: calc(100% - 120px);
+        padding-left: 18px;
+      }
+
+
+      .right-content h2 {
+        font-size: 18px;
+      }
+
+
+      .right-content p {
+        font-size: 16px;
+        line-height: 1.45;
+      }
+
+
+      .floating-dot {
+        width: 14px;
+        height: 14px;
+      }
+
+    }
+
+
+    @media (max-width:380px) {
+
+      .timeline-container {
+        padding: 10px;
+      }
+
+
+      .timeline-row {
+        height: 145px;
+      }
+
+
+      .blob-zone {
+        width: 105px;
+        height: 105px;
+      }
+
+
+      .main-blob {
+        width: 95px;
+        height: 95px;
+      }
+
+
+      .right-content {
+        width: calc(100% - 105px);
+        padding-left: 12px;
+      }
+
+
+      .right-content h2 {
+        font-size: 17px;
+      }
+
+
+      .right-content p {
+        font-size: 16px;
+      }
+
+    }
+
+
+
+
+    /* ============================
+   section-3 SOLUTION SECTION
+============================ */
+.intro-box { max-width: 450px; width: 100%; background: var(--color-secondary-light); padding: 28px 18px 32px; overflow: hidden; position: relative; box-shadow: 0 25px 60px rgba(75, 42, 109, .18); border-bottom: 2px solid var(--color-primary); }
+
+
+
+.top-badge{
+position:relative;
+z-index:5;
+display:table;
+margin:auto;
+padding:3px 18px;
+border-radius:999px;
+background:rgba(255,255,255,.7);
+color:var(--color-primary);
+font-weight:700;
+font-size:22px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.medicine-box{
+height:330px;
+width: 100%;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+z-index:3;
+}
+
+
+
+
+
+.inner-frame{
+width:280px;
+height:300px;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:5;
+}
+
+.corner-left{
+position:absolute;
+left:0;
+top:0;
+width:70px;
+height:70px;
+border-top:4px solid var(--color-primary);
+border-left:4px solid var(--color-primary);
+border-radius:20px 0 0 0;
+}
+
+.corner-right{
+position:absolute;
+right:0;
+bottom:0;
+width:70px;
+height:70px;
+border-right:4px solid var(--color-primary);
+border-bottom:4px solid var(--color-primary);
+border-radius:0 0 20px 0;
+}
+
+.inner-frame img{
+width:240px;
+height:240px;
+object-fit:contain;
+position:relative;
+z-index:10;
+filter:drop-shadow(0 30px 25px rgba(0,0,0,.35));
+}
+
+.text-area{
+position:relative;
+z-index:5;
+text-align:center;
+}
+
+.text-area h1{
+font-size:34px;
+line-height:1.15;
+font-weight:800;
+color:var(--color-text);
+margin-bottom:14px;
+}
+
+.text-area h1 span{
+color:var(--color-primary);
+}
+
+.info-text{
+font-size:17px;
+line-height:1.6;
+color:black;
+}
+
+.point-row{
+display:flex;
+gap:10px;
+justify-content:center;
+margin:20px 0;
+flex-wrap:wrap;
+}
+
+.point-item{
+background:white;
+padding:10px 14px;
+border-radius:50px;
+font-size:14px;
+font-weight:700;
+color:var(--color-primary);
+box-shadow:0 8px 18px rgba(75,42,109,.12);
+}
+
+.bottom-box{
+background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light));
+color:white;
+border-radius:22px;
+padding:18px;
+margin-top:18px;
+}
+
+.bottom-box h3{
+font-size:22px;
+margin-bottom:8px;
+}
+
+.bottom-box p{
+font-size:16px;
+line-height:1.5;
+}
+/* ===== Mobile Same Layout Optimization ===== */
+
+@media(max-width:450px){
+
+  .intro-box{
+    width:100%;
+    max-width:450px;
+    padding:28px 14px 32px;
+  }
+
+
+
+
+  .top-badge{
+    font-size:20px;
+  }
+
+
+
+  .medicine-box{
+    height:330px;
+  }
+
+
+
+  .medicine-box img{
+
+    height:260px;
+    max-width:100%;
+
+  }
+
+
+
+  .text-area h1{
+    font-size:30px;
+    line-height:1.15;
+  }
+
+
+
+  .info-text{
+    font-size:16px;
+    line-height:1.6;
+  }
+
+
+
+  .point-row{
+    gap:8px;
+  }
+
+
+
+  .point-item{
+    font-size:14px;
+    padding:9px 12px;
+  }
+
+
+
+  .bottom-box{
+    padding:16px;
+  }
+
+
+  .bottom-box h3{
+    font-size:22px;
+  }
+
+
+  .bottom-box p{
+    font-size:16px;
+  }
+
+}
+
+
+
+    /* ============================
+  SECTION-4 BENEFITS SECTION
+============================ */
+    .infographic-canvas {
+      width: 100%;
+      max-width: 450px;
+      height: 650px;
+      position: relative;
+      overflow: hidden;
+      background: transparent;
+      background-color: var(--color-secondary-light);
+    }
+
+
+    .bg-curve-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 450px;
+      height: 1000px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+
+    .header-section {
+      width: 100%;
+      text-align: center;
+      padding-top: 10px;
+      position: relative;
+      z-index: 5;
+    }
+
+
+    .header-section h1 {
+      color: var(--color-primary);
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.2;
+      text-align: center;
+      padding-top: 30px;
+
+    }
+
+
+
+    .step-node {
+      position: absolute;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+    }
+
+
+
+    .number-badge {
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      background: var(--color-primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: bold;
+      top: -10px;
+      z-index: 6;
+    }
+
+
+
+    .blob-graphic {
+      width: 160px;
+      height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 12px rgba(75, 42, 109, .15);
+    }
+
+
+
+    .blob-graphic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--color-primary);
+    }
+
+
+
+    .desc-text {
+      width: 210px;
+    }
+
+
+
+    .desc-text h2 {
+      color: var(--color-primary);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+
+
+    .desc-text p {
+      color: black;
+      font-size: 16px;
+      line-height: 1.35;
+
+    }
+
+
+
+    /* STEP 1 */
+
+    #text-step1 {
+      top: 180px;
+      left: 20px;
+      text-align: right;
+    }
+
+
+    #blob-step1 {
+      top: 160px;
+      right: 25px;
+    }
+
+
+    #blob-step1 .blob-graphic {
+      border-radius: 40% 60% 50% 50% / 40% 40% 60% 60%;
+    }
+
+
+    #blob-step1 .number-badge {
+      right: -5px;
+    }
+
+
+
+    /* STEP 2 */
+
+    #blob-step2 {
+      top: 320px;
+      left: 25px;
+    }
+
+
+    #blob-step2 .blob-graphic {
+      border-radius: 60% 40% 45% 55% / 45% 50% 50% 55%;
+    }
+
+
+    #blob-step2 .number-badge {
+      left: -5px;
+    }
+
+
+
+    #text-step2 {
+      top: 350px;
+      right: 20px;
+      text-align: left;
+    }
+
+
+
+    /* STEP 3 */
+
+    #text-step3 {
+      top: 520px;
+      left: 20px;
+      text-align: right;
+    }
+
+
+    #blob-step3 {
+      top: 490px;
+      right: 25px;
+    }
+
+
+    #blob-step3 .blob-graphic {
+      border-radius: 45% 55% 40% 60% / 50% 40% 60% 50%;
+    }
+
+
+    #blob-step3 .number-badge {
+      right: -5px;
+    }
+
+
+
+    /* STEP 4 */
+
+    #blob-step4 {
+      top: 650px;
+      left: 25px;
+    }
+
+
+    #blob-step4 .blob-graphic {
+      border-radius: 55% 45% 60% 40% / 40% 55% 45% 60%;
+    }
+
+
+    #blob-step4 .number-badge {
+      left: -5px;
+    }
+
+
+    #text-step4 {
+      top: 680px;
+      right: 20px;
+      text-align: left;
+    }
+
+
+
+    /* STEP 5 */
+
+    #text-step5 {
+      top: 820px;
+      left: 20px;
+      text-align: right;
+    }
+
+
+
+    #blob-step5 {
+      top: 790px;
+      right: 25px;
+    }
+
+
+
+    #blob-step5 .blob-graphic {
+      border-radius: 40% 60% 50% 50% / 50% 45% 55% 50%;
+    }
+
+
+    #blob-step5 .number-badge {
+      right: -5px;
+    }
+
+    /* MOBILE OPTIMIZATION */
+    @media(max-width:480px) {
+
+      .infographic-canvas {
+        width: 100%;
+        max-width: 450px;
+        height: 600px;
+        overflow: hidden;
+      }
+
+
+      .bg-curve-line {
+        width: 450px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+
+      .header-section {
+        padding-top: 5px;
+        margin-bottom: 5px;
+      }
+
+
+      .header-section h1 {
+        font-size: 24px;
+        padding-top: 20px;
+      }
+
+
+      /* STEP 1 */
+
+      #text-step1 {
+        top: 170px;
+        left: 10px;
+        width: 180px;
+      }
+
+
+      #blob-step1 {
+        top: 150px;
+        right: 10px;
+      }
+
+
+      /* STEP 2 */
+
+      #blob-step2 {
+        top: 310px;
+        left: 10px;
+      }
+
+
+      #text-step2 {
+        top: 335px;
+        right: 10px;
+        width: 180px;
+      }
+
+
+      /* STEP 3 */
+
+      #text-step3 {
+        top: 490px;
+        left: 10px;
+        width: 180px;
+      }
+
+
+      #blob-step3 {
+        top: 470px;
+        right: 10px;
+      }
+
+
+      /* STEP 4 */
+
+      #blob-step4 {
+        top: 620px;
+        left: 10px;
+      }
+
+
+      #text-step4 {
+        top: 640px;
+        right: 10px;
+        width: 180px;
+      }
+
+
+      .desc-text {
+        width: 180px;
+      }
+
+
+      .desc-text h2 {
+        font-size: 18px;
+      }
+
+
+      .desc-text p {
+        font-size: 14px;
+      }
+
+
+      .blob-graphic {
+        width: 135px;
+        height: 115px;
+      }
+
+    }
+
+
+    @media(max-width:360px) {
+
+      .header-section h1 {
+        font-size: 22px;
+      }
+
+
+      .blob-graphic {
+        width: 120px;
+        height: 100px;
+      }
+
+
+      .desc-text {
+        width: 160px;
+      }
+
+
+      .desc-text h2 {
+        font-size: 16px;
+      }
+
+
+      .desc-text p {
+        font-size: 13px;
+      }
+
+
+      .number-badge {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+      }
+
+    }
+
+
+
+
+
+    /* ============================
+   SECTION-5 INGREDIENTS SECTION
+============================ */
+    .ingredients-section {
+      max-width: 450px;
+      width: 100%;
+      margin: auto;
+      background: var(--color-secondary-light);
+      padding: 35px 15px;
+      overflow: hidden;
+      border-top: 2px solid var(--color-primary);
+    }
+
+    .head {
+      text-align: center;
+    }
+
+    .head .tag {
+      background: var(--color-primary);
+      color: white;
+      padding: 7px 18px;
+      border-radius: 30px;
+      font-size: 22px;
+      display: inline-block;
+    }
+
+    .head h2 {
+      font-size: 28px;
+      color: var(--color-primary);
+      margin-top: 18px;
+      line-height: 1.2;
+    }
+
+    .head p {
+      color: var(--color-soft);
+      margin-top: 8px;
+      font-size: 18px;
+    }
+
+    .ingredient-list {
+      margin-top: 30px;
+    }
+
+    .ingredient {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: white;
+      margin-bottom: 18px;
+      padding: 14px;
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(75, 42, 109, .13);
+    }
+
+    .plant-img {
+      width: 95px;
+      height: 95px;
+      flex-shrink: 0;
+      clip-path: polygon(50% 0%, 85% 20%, 100% 55%, 75% 100%, 25% 100%, 0% 55%, 15% 20%);
+      background: var(--color-secondary-light);
+      padding: 5px;
+    }
+
+    .plant-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      clip-path: inherit;
+    }
+
+    .text h3 {
+      color: var(--color-primary);
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .text p {
+      font-size: 18px;
+      line-height: 1.35;
+      color: black;
+    }
+
+    @media(max-width:480px) {
+      .ingredients-section {
+        padding: 28px 12px;
+      }
+
+      .head h2 {
+        font-size: 24px;
+      }
+
+      .head p {
+        font-size: 16px;
+      }
+
+      .ingredient {
+        gap: 12px;
+        padding: 12px;
+      }
+
+      .plant-img {
+        width: 85px;
+        height: 85px;
+      }
+
+      .text h3 {
+        font-size: 20px;
+      }
+
+      .text p {
+        font-size: 16px;
+        line-height: 1.35;
+      }
+    }
+
+    @media(max-width:360px) {
+      .ingredient {
+        gap: 10px;
+      }
+
+      .plant-img {
+        width: 75px;
+        height: 75px;
+      }
+
+      .text h3 {
+        font-size: 18px;
+      }
+
+      .text p {
+        font-size: 16px;
+      }
+    }
+
+
+    /* ============================
+  SECTION-6 TRUST SECTION
+============================ */
+    .trust-wrap {
+      max-width: 450px;
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      background-color: var(--color-primary-light);
+      padding-bottom: 20px;
+    }
+
+    .heading {
+      text-align: center;
+    }
+
+    .badge {
+      background: var(--color-secondary-light);
+      color: var(--color-primary);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 28px;
+      display: inline-block;
+      margin-top: 30px;
+    }
+
+
+
+    .heading p {
+      font-size: 18px;
+      color: var(--color-white);
+      line-height: 1.2;
+      margin-top: 10px;
+    }
+
+    .circle-area {
+      margin-top: 35px;
+      width: 450px;
+      height: 450px;
+      position: relative;
+    }
+
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: var(--color-white);
+      box-shadow: 0 20px 45px rgba(75, 42, 109, .18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      z-index: 3;
+    }
+
+    .center img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--color-secondary);
+    }
+
+
+    .circle-line {
+      position: absolute;
+      inset: 50px;
+      border: 2px dashed var(--color-secondary);
+      border-radius: 50%;
+      animation: rotateCircle 8s linear infinite;
+    }
+
+    @keyframes rotateCircle {
+
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+
+    }
+
+    .point {
+      position: absolute;
+      width: 135px;
+      background: var(--color-white);
+      padding: 12px 8px;
+      border-radius: 22px;
+      box-shadow: 0 10px 25px rgba(75, 42, 109, .12);
+      text-align: center;
+    }
+
+    .point img {
+      width: 65px;
+      height: 65px;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+
+    .point h4 {
+      font-size: 17px;
+      color: var(--color-primary);
+      margin-top: 5px;
+      line-height: 1.1;
+    }
+
+
+    .p1 {
+      top: 15px;
+      left: 25px;
+    }
+
+    .p2 {
+      top: 15px;
+      right: 15px;
+    }
+
+    .p3 {
+      bottom: 10px;
+      left: 15px;
+    }
+
+    .p4 {
+      bottom: 10px;
+      right: 25px;
+    }
+
+    @media(max-width:480px) {
+
+      .trust-wrap {
+        width: 100%;
+        max-width: 450px;
+        overflow: hidden;
+        padding-bottom: 15px;
+      }
+
+
+      .badge {
+        font-size: 22px;
+        padding: 7px 15px;
+        margin-top: 20px;
+      }
+
+
+      .heading p {
+        font-size: 16px;
+        padding: 0 15px;
+      }
+
+
+      .circle-area {
+        width: 100%;
+        height: 360px;
+        margin-top: 25px;
+      }
+
+
+      .center {
+        width: 140px;
+        height: 140px;
+      }
+
+
+      .circle-line {
+        inset: 45px;
+      }
+
+
+      .point {
+        width: 115px;
+        padding: 10px 6px;
+      }
+
+
+      .point img {
+        width: 55px;
+        height: 55px;
+      }
+
+
+      .point h4 {
+        font-size: 14px;
+      }
+
+
+      .p1 {
+        top: 10px;
+        left: 10px;
+      }
+
+
+      .p2 {
+        top: 10px;
+        right: 10px;
+      }
+
+
+      .p3 {
+        bottom: 5px;
+        left: 10px;
+      }
+
+
+      .p4 {
+        bottom: 5px;
+        right: 10px;
+      }
+
+    }
+
+
+    @media(max-width:360px) {
+
+      .badge {
+        font-size: 20px;
+      }
+
+
+      .circle-area {
+        height: 360px;
+      }
+
+
+      .center {
+        width: 125px;
+        height: 125px;
+      }
+
+
+      .circle-line {
+        inset: 35px;
+      }
+
+
+      .point {
+        width: 100px;
+      }
+
+
+      .point img {
+        width: 45px;
+        height: 45px;
+      }
+
+
+      .point h4 {
+        font-size: 12px;
+      }
+
+    }
+
+    /* ============================
+   SECTION-7 DOCTOR SECTION
+============================ */
+    .doc-section {
+      width: 100%;
+      max-width: 450px;
+      margin: 0 auto;
+      padding: var(--space-section-y) var(--space-section-x);
+      background: var(--color-bg-alt);
+    }
+
+    .doc-eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      margin-top: -20px;
+    }
+
+    .doc-eyebrow .line {
+      width: 26px;
+      height: 1.5px;
+      background: var(--color-primary-light);
+    }
+
+    .doc-eyebrow span {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+
+    /* ===== Prescription-style card ===== */
+    .doc-card {
+      position: relative;
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-strong);
+      overflow: hidden;
+    }
+
+    /* top ribbon strip like a prescription pad header */
+    .doc-card-top {
+      background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+    }
+
+    .doc-card-top::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 14px;
+      background: var(--color-white);
+      border-radius: 14px 14px 0 0;
+    }
+
+    .doc-photo {
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      border: 3px solid rgba(255, 255, 255, 0.85);
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .doc-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .doc-top-text {
+      color: var(--color-white);
+    }
+
+    .doc-name {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .doc-role {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--color-secondary-light);
+    }
+
+    .doc-stamp {
+      margin-left: auto;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 2px dashed rgba(255, 255, 255, 0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .doc-stamp svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    /* body content */
+    .doc-card-body {
+      padding: 26px 22px 24px;
+      position: relative;
+    }
+
+    .doc-quote-mark {
+      position: absolute;
+      top: 6px;
+      right: 18px;
+      font-family: var(--font-display);
+      font-size: 56px;
+      font-weight: 800;
+      color: var(--color-secondary-light);
+      line-height: 1;
+      user-select: none;
+    }
+
+    .doc-headline {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      line-height: 1.45;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+      max-width: 88%;
+    }
+
+    .doc-headline span {
+      color: var(--color-secondary-dark);
+    }
+
+    .doc-divider {
+      width: 100%;
+      height: 1px;
+      background: repeating-linear-gradient(to right, var(--color-gold) 0 6px, transparent 6px 12px);
+      opacity: 0.55;
+      margin: 0 0 16px;
+    }
+
+    .doc-desc {
+      font-size: 18px;
+      line-height: 1.75;
+      color: black;
+    }
+
+    .doc-desc+.doc-desc {
+      margin-top: 10px;
+    }
+
+    /* bottom signature strip */
+    .doc-signature {
+      margin-top: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--color-bg-alt);
+    }
+
+    .doc-sig-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .doc-sig-label {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--color-secondary-dark);
+    }
+
+    .doc-sig-name {
+      font-family: 'Poppins', cursive;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-top: -8px;
+      font-style: italic;
+    }
+
+    .doc-verified {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--color-sage-light);
+      color: var(--color-success);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 7px 12px;
+      border-radius: var(--radius-pill);
+    }
+
+    .doc-verified svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    /* ===== Keep Same Desktop Layout On Mobile ===== */
+
+    @media(max-width:480px) {
+
+      .doc-section {
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+        padding: var(--space-section-y) var(--space-section-x);
+      }
+
+
+      .doc-card {
+        width: 100%;
+      }
+
+
+      .doc-card-top {
+        flex-wrap: nowrap;
+      }
+
+
+      .doc-photo {
+        width: 74px;
+        height: 74px;
+      }
+
+
+      .doc-name {
+        font-size: 15px;
+      }
+
+      .doc-eyebrow span {
+        font-size: 16px;
+      }
+
+      .doc-role {
+        font-size: 13px;
+      }
+
+
+      .doc-card-body {
+        padding: 26px 22px 24px;
+      }
+
+
+      .doc-headline {
+        font-size: 20px;
+      }
+
+
+      .doc-desc {
+        font-size: 16px;
+        line-height: 1.75;
+      }
+
+
+      .doc-signature {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+    }
+
+
+
+
+    /* ============================
+   SECTION-8 HOW TO USE
+============================ */
+    .how-wrap {
+      max-width: 450px;
+      width: 100%;
+      margin: auto;
+      background: var(--color-secondary-light);
+      padding: 22px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(75, 42, 109, .12);
+    }
+
+    .how-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .how-content {
+      flex: 1;
+    }
+
+    .how-label {
+      display: inline-block;
+      background: var(--color-secondary-light);
+      color: var(--color-primary);
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .how-title {
+      font-size: 36px;
+      line-height: .95;
+      color: var(--color-primary);
+    }
+
+    .how-desc {
+      margin-top: 12px;
+      font-size: 18px;
+      line-height: 1.45;
+      color: black;
+    }
+
+    .how-product {
+      width: 135px;
+      height: 160px;
+      border-radius: 30px;
+      background: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(75, 42, 109, .20);
+      position: relative;
+    }
+
+    .how-product img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      padding: 10px;
+      border-radius: 30px;
+    }
+
+    .how-product:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 2px solid rgba(75, 42, 109, .08);
+      border-radius: 30px;
+    }
+
+    .how-line {
+      height: 1px;
+      background: rgba(75, 42, 109, .12);
+      margin: 25px 0;
+    }
+
+    .how-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .how-card {
+      background: white;
+      border-radius: 22px;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 6px 18px rgba(75, 42, 109, .08);
+    }
+
+    .how-icon {
+      width: 55px;
+      height: 55px;
+      min-width: 55px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: var(--color-primary);
+    }
+
+    .how-card h3 {
+      font-size: 22px;
+      color: var(--color-primary);
+      margin-bottom: 3px;
+    }
+
+    .how-card p {
+      font-size: 18px;
+      line-height: 1.4;
+      color: var(--color-soft);
+    }
+
+    .how-note {
+      margin-top: 20px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      padding: 18px;
+      border-radius: 24px;
+      color: white;
+      text-align: center;
+    }
+
+    .how-note h3 {
+      font-size: 21px;
+    }
+
+    .how-note p {
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    @media(max-width:480px) {
+
+      .how-wrap {
+        width: 100%;
+        padding: 18px 12px;
+      }
+
+      .how-top {
+        gap: 10px;
+      }
+
+      .how-label {
+        font-size: 16px;
+        padding: 6px 14px;
+      }
+
+      .how-title {
+        font-size: 32px;
+      }
+
+      .how-desc {
+        font-size: 16px;
+      }
+
+      .how-product {
+        width: 120px;
+        height: 145px;
+      }
+
+      .how-product img {
+        padding: 8px;
+      }
+
+      .how-line {
+        margin: 20px 0;
+      }
+
+      .how-list {
+        gap: 14px;
+      }
+
+      .how-card {
+        padding: 12px;
+        gap: 12px;
+      }
+
+      .how-icon {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        font-size: 22px;
+      }
+
+      .how-card h3 {
+        font-size: 20px;
+      }
+
+      .how-card p {
+        font-size: 16px;
+        line-height: 1.35;
+      }
+
+      .how-note {
+        padding: 16px;
+      }
+
+      .how-note h3 {
+        font-size: 20px;
+      }
+
+      .how-note p {
+        font-size: 16px;
+      }
+
+    }
+
+
+    @media(max-width:360px) {
+
+      .how-product {
+        width: 105px;
+        height: 130px;
+      }
+
+      .how-title {
+        font-size: 30px;
+      }
+
+      .how-card h3 {
+        font-size: 18px;
+      }
+
+      .how-card p {
+        font-size: 16px;
+      }
+
+    }
+
+    /* ============================
+   SECTION-9 BEFORE/AFTER
+============================ */
+    .step-desire-section {
+      max-width: 450px;
+      width: 100%;
+      margin: auto;
+      padding: 25px 0 0 0;
+      background: var(--color-bg-alt);
+      box-sizing: border-box;
+      border-bottom: 2px solid var(--color-primary);
+    }
+
+    .step-desire-header {
+      text-align: center;
+    }
+
+    .step-desire-title {
+      font-size: 28px;
+      color: #4B2A6D;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .step-desire-subtitle {
+      font-size: 18px;
+      color: black;
+      margin-bottom: 20px;
+    }
+
+    .step-desire-wrapper {
+      margin-top: 25px;
+      border-radius: 35px;
+      padding: 70px 20px 20px 20px;
+       position:relative;
+    }
+
+    .step-label{
+  position:absolute;
+  top:0;
+  font-size:22px;
+  font-weight:800;
+  padding:8px 25px;
+  border-radius:30px;
+}
+
+    .step-label {
+      width: max-content;
+      padding: 8px 28px;
+      border-radius: 30px;
+      font-weight: 800;
+      margin: 0px auto;
+      text-align: center;
+    }
+
+    .before-label {
+      background: var(--color-primary);
+      color: var(--color-secondary);
+      font-size: 25px;
+       left:40px;
+    }
+
+    .after-label {
+      background: var(--color-secondary);
+      color: var(--color-primary);
+      font-size: 25px;
+        right:40px;
+    }
+
+    .step-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .step-one,
+    .step-three,
+    .step-five,
+    .step-seven {
+      margin-right: 40px;
+    }
+
+    .step-two,
+    .step-four,
+    .step-six,
+    .step-eight {
+      margin-left: 40px;
+    }
+
+    .step-img img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--color-primary);
+    }
+
+    .step-img-after img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--color-secondary);
+    }
+
+    .step-content {
+      background: #4B2A6D;
+      padding: 15px;
+      border-radius: 25px;
+      flex: 1;
+    }
+
+    .step-content h3 {
+      color: var(--color-secondary-light);
+      font-size: 18px;
+      margin-bottom: -2px;
+      line-height: 1.2;
+    }
+
+    .step-content p {
+      color: #FFF7ED;
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .after-box {
+      background: #F3A683;
+
+    }
+
+    .after-box h3 {
+      color: #4B2A6D;
+    }
+
+    .after-box p {
+      color: black;
+    }
+
+    .step-center {
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .step-center div {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: #4B2A6D;
+      color: #FFF7ED;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: bold;
+      margin: auto;
+    }
+
+    .step-center span {
+      color: #4B2A6D;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    /* MOBILE OPTIMIZATION */
+@media(max-width:600px){
+
+  .step-desire-section{
+    max-width:450px;
+    padding-top:20px;
+  }
+
+
+  .step-desire-title{
+    font-size:24px;
+    line-height:1.3;
+  }
+
+
+  .step-desire-subtitle{
+    font-size:16px;
+    margin-bottom:15px;
+  }
+
+
+  .step-desire-wrapper{
+    padding:65px 12px 20px;
+    margin-top:20px;
+    border-radius:25px;
+  }
+
+
+  .step-label{
+    font-size:17px !important;
+    padding:7px 18px;
+    top:10px;
+  }
+
+
+  .before-label{
+    left:15px;
+  }
+
+
+  .after-label{
+    right:15px;
+  }
+
+
+
+  .step-row{
+    gap:10px;
+    align-items:center;
+  }
+
+
+  .step-one,
+  .step-three,
+  .step-five,
+  .step-seven{
+    margin-right:20px;
+  }
+
+
+  .step-two,
+  .step-four,
+  .step-six,
+  .step-eight{
+    margin-left:20px;
+  }
+
+
+
+  .step-img img,
+  .step-img-after img{
+    width:85px;
+    height:85px;
+    border-width:4px;
+  }
+
+
+
+  .step-content{
+    padding:12px;
+    border-radius:18px;
+  }
+
+
+  .step-content h3{
+    font-size:14px;
+    line-height:1.25;
+  }
+
+
+  .step-content p{
+    font-size:13px;
+    line-height:1.3;
+  }
+
+
+
+  .step-center{
+    margin:18px 0;
+  }
+
+
+  .step-center div{
+    width:45px;
+    height:45px;
+    font-size:24px;
+  }
+
+
+  .step-center span{
+    font-size:15px;
+  }
+
+}
+
+
+
+
+    /* ============================
+   SECTION-10 OFFER SECTION
+============================ */
+
+    .nkx-shell {
+      width: var(--container-max);
+      margin: 0 auto;
+      font-family: var(--font-body);
+      overflow: hidden;
+      border: 1px solid rgba(75, 42, 109, 0.12)
+    }
+
+    .nkx-hero {
+      position: relative;
+      height: 180px;
+      background: var(--color-primary-dark);
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .nkx-hero-veil {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(52, 29, 77, 0.92) 0%, rgba(52, 29, 77, 0.3) 55%, transparent 100%)
+    }
+
+    .nkx-hero-copy {
+      position: relative;
+      z-index: 2;
+      padding: 0 20px 28px;
+      width: 100%
+    }
+
+    .nkx-pill-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--color-secondary);
+      color: var(--color-primary-dark);
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      text-transform: uppercase;
+      display: flex;
+      width: max-content;
+      margin: 0 auto 10px;
+    }
+
+    .nkx-pill-live .nkx-blink {
+      width: 6px;
+      height: 6px;
+      background: var(--color-primary-dark);
+      border-radius: 50%;
+      animation: nkx-pulse 1.2s infinite
+    }
+
+    @keyframes nkx-pulse {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: 0.3
+      }
+    }
+
+    .nkx-heading {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--color-white);
+      line-height: 1.2;
+      margin-bottom: 4px;
+      text-align: center;
+
+    }
+
+    .nkx-tagline {
+      font-size: 18px;
+      color: white;
+      line-height: 1.5;
+      max-width: 340px;
+      text-align: center;
+    }
+
+    .nkx-timer-bar {
+      background: var(--color-primary);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .nkx-timer-label {
+      font-size: 15px;
+      color: var(--color-secondary-light);
+      font-family: var(--font-display);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 6px
+    }
+
+    .ti-clock {
+      font-size: 18px !important;
+    }
+
+    .nkx-timer-row {
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .nkx-timer-block {
+      background: rgba(0, 0, 0, 0.25);
+      color: var(--color-white);
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      border-radius: 8px;
+      width: 42px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .nkx-timer-colon {
+      color: var(--color-secondary);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 38px;
+      margin-top: -4px
+    }
+
+    .nkx-timer-unit {
+      font-size: 15px;
+      color: var(--color-secondary-light);
+      text-align: center;
+      margin-top: 3px;
+      font-family: var(--font-display)
+    }
+
+    .nkx-discount-tag {
+      background: var(--color-secondary);
+      color: var(--color-primary-dark);
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill)
+    }
+
+    .nkx-body {
+      background: var(--color-bg);
+      padding: 18px 20px 22px
+    }
+
+    .nkx-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 18px
+    }
+
+    .nkx-feat-card {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(75, 42, 109, 0.08)
+    }
+
+    .nkx-feat-ico {
+      width: 34px;
+      height: 34px;
+      background: var(--color-sage-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      font-size: 22px;
+      flex-shrink: 0
+    }
+
+    .nkx-feat-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--color-primary);
+      font-family: var(--font-display);
+      line-height: 1.3
+    }
+
+    .nkx-feat-desc {
+      font-size: 16px;
+      color: black;
+      font-weight: 400;
+      margin-top: 1px
+    }
+
+    .nkx-cta-btn {
+      width: 100%;
+      background: var(--color-secondary);
+      color: var(--color-primary-dark);
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      border-radius: var(--radius-pill);
+      padding: 14px 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.01em
+    }
+
+    .nkx-cta-btn:hover {
+      background: var(--color-secondary-dark);
+      transform: translateY(-1px)
+    }
+
+    .nkx-cta-btn:active {
+      transform: scale(0.98)
+    }
+
+    /* ===== Mobile Same Layout Optimization ===== */
+
+    @media(max-width:450px) {
+
+      .nkx-shell {
+        width: 100%;
+        max-width: 450px;
+      }
+
+
+      .nkx-hero {
+        height: 180px;
+        /* same as pc */
+      }
+
+
+      .nkx-hero-copy {
+        padding: 0 18px 30px;
+      }
+
+
+      .nkx-pill-live {
+        font-size: 15px;
+        padding: 4px 12px;
+      }
+
+
+      .nkx-heading {
+        font-size: 28px;
+        /* same */
+        line-height: 1.2;
+      }
+
+
+      .nkx-tagline {
+        font-size: 16px;
+        /* 16 se kam nahi */
+        max-width: 100%;
+      }
+
+
+
+      .nkx-timer-bar {
+        padding: 14px 15px;
+      }
+
+
+      .nkx-timer-block {
+        width: 40px;
+        height: 38px;
+        font-size: 20px;
+      }
+
+
+
+      .nkx-discount-tag {
+        font-size: 16px;
+        padding: 6px 12px;
+      }
+
+
+
+      .nkx-body {
+        padding: 18px 15px 22px;
+      }
+
+
+
+      .nkx-features {
+        gap: 10px;
+      }
+
+
+
+      .nkx-feat-card {
+        padding: 12px 10px;
+      }
+
+
+
+      .nkx-feat-name {
+        font-size: 16px;
+      }
+
+
+      .nkx-feat-desc {
+        font-size: 16px;
+      }
+
+
+      .nkx-cta-btn {
+        font-size: 16px;
+      }
+
+    }
+
+
+
+    @media(max-width:360px) {
+
+      .nkx-timer-bar {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+      }
+
+
+      .nkx-heading {
+        font-size: 24px;
+      }
+
+
+      .nkx-features {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+
+    /* ============================
+   SECTION-12 TESTIMONIALS
+============================ */
+    .av-wrap {
+      width: 100%;
+      max-width: 450px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      background-color: var(--color-primary);
+    }
+
+
+    .av-wrap::after {
+      content: "";
+      position: absolute;
+      bottom: 40px;
+      left: -90px;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, var(--color-sage-light) 0%, transparent 70%);
+      opacity: .6;
+      pointer-events: none;
+    }
+
+    .av-heading {
+      text-align: center;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+      margin-top: -10px;
+    }
+
+    .av-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-display);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-secondary-dark);
+      background: var(--color-white);
+      border: 1px solid var(--color-secondary-light);
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-card);
+    }
+
+    .av-heading h1 {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--color-secondary);
+      margin-top: 16px;
+      line-height: 1.3;
+    }
+
+    .av-heading p {
+      margin-top: 8px;
+      font-size: 18px;
+      color: var(--color-white);
+    }
+
+    /* CARDS */
+    .av-list {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .av-review {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: 24px 22px 22px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid rgba(75, 42, 109, 0.06);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: avRise 0.6s var(--ease-out) forwards;
+    }
+
+    .av-review:nth-child(1) {
+      animation-delay: .05s;
+    }
+
+    .av-review:nth-child(2) {
+      animation-delay: .18s;
+    }
+
+    .av-review:nth-child(3) {
+      animation-delay: .31s;
+    }
+
+    @keyframes avRise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .av-review {
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* signature: tulsi-leaf curl watermark in corner */
+    .av-review .av-leaf {
+      position: absolute;
+      top: -18px;
+      right: -18px;
+      width: 90px;
+      height: 90px;
+      opacity: 0.08;
+      color: var(--color-primary);
+      transform: rotate(8deg);
+    }
+
+    .av-profile {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .av-photo {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--color-white);
+      box-shadow: 0 4px 10px -2px rgba(75, 42, 109, 0.35);
+      border: 2.5px solid var(--color-white);
+      outline: 1px solid var(--color-secondary-light);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .av-photo img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+
+
+    .av-identity {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .av-identity .av-name {
+      font-family: var(--color-primary-light);
+      font-weight: 600;
+      font-size: 22px;
+      color: var(--color-primary-dark);
+    }
+
+    .av-identity .av-place {
+      font-size: 17px;
+      color: black;
+      margin-top: -8px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .av-identity .av-place svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    .av-quoteicon {
+      flex-shrink: 0;
+      width: 30px;
+      height: 24px;
+      color: var(--color-secondary);
+      opacity: 0.85;
+    }
+
+    .av-message {
+      font-size: 18px;
+      line-height: 1.75;
+      color: var(--color-text);
+      position: relative;
+      z-index: 1;
+    }
+
+    .av-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--color-secondary-light);
+      position: relative;
+      z-index: 1;
+    }
+
+    .av-rating {
+      display: flex;
+      gap: 2px;
+    }
+
+    .av-rating svg {
+      width: 15px;
+      height: 15px;
+      color: var(--color-gold);
+    }
+
+    .av-checkmark {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-success);
+      background: var(--color-sage-light);
+      padding: 4px 9px;
+      border-radius: var(--radius-pill);
+    }
+
+    .av-checkmark svg {
+      width: 11px;
+      height: 11px;
+    }
+
+    /* trust strip footer */
+    .av-footer {
+      margin-top: 30px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .av-footer p {
+      font-size: 12.5px;
+      color: var(--color-text-soft);
+    }
+
+    .av-footer .av-sep {
+      color: var(--color-secondary-dark);
+      margin: 0 6px;
+    }
+
+    @media(max-width:480px) {
+      .av-wrap {
+        padding: 18px 12px;
+      }
+
+      .av-heading {
+        margin-bottom: 22px;
+      }
+
+      .av-badge {
+        font-size: 12px;
+        padding: 7px 14px;
+      }
+
+      .av-heading h1 {
+        font-size: 24px;
+      }
+
+      .av-heading p {
+        font-size: 16px;
+      }
+
+      .av-list {
+        gap: 16px;
+      }
+
+      .av-review {
+        padding: 20px 16px;
+        border-radius: 22px;
+      }
+
+      .av-profile {
+        gap: 12px;
+      }
+
+      .av-photo {
+        width: 50px;
+        height: 50px;
+      }
+
+      .av-identity .av-name {
+        font-size: 20px;
+      }
+
+      .av-identity .av-place {
+        font-size: 16px;
+        margin-top: -4px;
+      }
+
+      .av-message {
+        font-size: 16px;
+        line-height: 1.55;
+      }
+
+      .av-quoteicon {
+        width: 26px;
+        height: 22px;
+      }
+
+      .av-meta {
+        margin-top: 14px;
+        padding-top: 12px;
+      }
+
+      .av-rating svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      .av-checkmark {
+        font-size: 14px;
+        padding: 4px 8px;
+      }
+
+      .av-footer {
+        margin-top: 22px;
+      }
+
+      .av-footer p {
+        font-size: 14px;
+      }
+    }
+
+    @media(max-width:360px) {
+      .av-review {
+        padding: 18px 12px;
+      }
+
+      .av-profile {
+        align-items: flex-start;
+      }
+
+      .av-message {
+        font-size: 16px;
+      }
+
+      .av-identity .av-name {
+        font-size: 18px;
+      }
+
+      .av-quoteicon {
+        display: none;
+      }
+    }
+
+
+    /* ============================
+   13. FAQ
+============================ */
+    .faq-section {
+      background: var(--color-bg-alt);
+      
+      padding-bottom: 20px;
+    }
+
+    .faq-heading-wrap {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .faq-heading {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .faq-item {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+
+    .faq-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 18px;
+      text-align: left;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--color-text);
+    }
+
+    .faq-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--color-sage-light);
+      position: relative;
+    }
+
+    .faq-icon::before,
+    .faq-icon::after {
+      content: "";
+      position: absolute;
+      background: var(--color-primary);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform 0.25s var(--ease-out);
+    }
+
+    .faq-icon::before {
+      width: 11px;
+      height: 2px;
+    }
+
+    .faq-icon::after {
+      width: 2px;
+      height: 11px;
+    }
+
+    .faq-item.is-open .faq-icon::after {
+      transform: translate(-50%, -50%) rotate(90deg) scaleY(0);
+    }
+
+    .faq-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s var(--ease-out);
+    }
+
+    .faq-panel-inner {
+      padding: 0 18px 18px;
+      font-size: 18px;
+      color: black;
+      line-height: 1.6;
+    }
+
+    /* ============================
+   DISCLAIMER
+============================ */
+    .disclaimer-section {
+      background: var(--color-bg);
+      padding-top: 0;
+    }
+
+    .disclaimer-box {
+      border: 1.5px dashed #D8C5B0;
+      border-radius: var(--radius-md);
+      padding: 18px 16px;
+      text-align: center;
+      font-size: 8px;
+      color: var(--color-text-soft);
+      line-height: 1.6;
+      
+      margin-top: 20px;
+    }
+
+
+
+
+
+
+
+
+    /* policy */
+    .pl-wrap {
+      max-width: 450px;
+      width: 100%;
+      padding: 8px 12px;
+      box-sizing: border-box;
+      background-color: #FFF4E5;
+
+    }
+
+    .pl-row {
+      display: flex;
+      gap: 0;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center
+    }
+
+    .pl-link {
+      background: none;
+      border: none;
+      font-size: 7px;
+      opacity: 0.44;
+      font-weight: 500;
+      color: #267156;
+      cursor: pointer;
+      padding: 4px 5px;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-family: inherit;
+      white-space: nowrap;
+      transition: color .15s
+    }
+
+    .pl-link:hover {
+      color: #1a5240
+    }
+
+    .pl-sep {
+      color: #c9ddd7;
+      font-size: 11px;
+      user-select: none
+    }
+
+    .pp-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center
+    }
+
+    .pp-overlay.show {
+      display: flex
+    }
+
+    .pp-modal {
+      background: #fff;
+      border-radius: 18px;
+      max-width: 420px;
+      width: 90%;
+      max-height: 60vh;
+      overflow-y: auto;
+      padding: 22px 18px 18px;
+      position: relative
+    }
+
+    .pp-modal::-webkit-scrollbar {
+      width: 6px
+    }
+
+    .pp-modal::-webkit-scrollbar-track {
+      background: transparent
+    }
+
+    .pp-modal::-webkit-scrollbar-thumb {
+      background: #c9c9c9;
+      border-radius: 28px
+    }
+
+    .pp-modal::-webkit-scrollbar-thumb:hover {
+      background: #a8a8a8
+    }
+
+    .pp-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: #e6f3ed;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #267156;
+      font-size: 16px
+    }
+
+    .pp-close:hover {
+      background: #c9ddd7
+    }
+
+    .pp-mtitle {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1a5240;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .pp-mtitle i {
+      font-size: 20px
+    }
+
+    .pp-mbadge {
+      display: inline-block;
+      background: #e6f3ed;
+      color: #267156;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px
+    }
+
+    .pp-mpara {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.7;
+      margin-bottom: 10px
+    }
+
+    .pp-mlist {
+      padding-left: 0;
+      list-style: none;
+      margin: 0 0 10px
+    }
+
+    .pp-mlist li {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.6;
+      padding: 5px 0 5px 20px;
+      position: relative;
+      border-bottom: 1px dashed #e2ede9
+    }
+
+    .pp-mlist li:last-child {
+      border-bottom: none
+    }
+
+    .pp-mlist li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 13px;
+      width: 7px;
+      height: 7px;
+      background: #39ad7d;
+      border-radius: 50%
+    }
+
+    .pp-mhl {
+      background: #e6f3ed;
+      border-left: 3px solid #267156;
+      border-radius: 0 8px 8px 0;
+      padding: 9px 13px;
+      font-size: 13px;
+      color: #1a5240;
+      margin-bottom: 10px
+    }
+
+    .pp-cgrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 8px
+    }
+
+    .pp-citem {
+      background: #f4faf7;
+      border: 1px solid #c9ddd7;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center
+    }
+
+    .pp-citem i {
+      font-size: 20px;
+      color: #267156;
+      display: block;
+      margin-bottom: 4px
+    }
+
+    .pp-citem .pp-clbl {
+      font-size: 11px;
+      color: #888;
+      margin-bottom: 2px
+    }
+
+    .pp-citem .pp-cval {
+      font-size: 11px;
+      font-weight: 600;
+      color: #1a5240
+    }
+
+    @media (max-width:480px) {
+      .pl-wrap {
+        padding: 8px 4px
+      }
+
+      .pl-link {
+        font-size: 6px;
+        padding: 4px 2px
+      }
+
+      .pl-sep {
+        font-size: 6px
+      }
+    }
+
+    .img-box {
+      position: relative;
+      width: 100%;
+    }
+
+
+   
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+   
+ <header class="mobile-navbar">
+  <div class="nav-logo">
+       <span>Ayurvani</span>
+
+  </div>
+
+
+  <button class="nav-btn"
+  onclick="document.getElementById('crf-form-id').scrollIntoView({behavior:'smooth'})">
+    अभी ऑर्डर करें
+  </button>
+
+</header>
+<img src="images/banner.avif" alt="banner" class="img">
+
+
+
+  <!-- section-2 PROBLEM SECTION -->
+  <section class="sec">
+    <div class="timeline-container">
+      <h2 class="timeline-h2">गूंगापन की वजह से कौन-कौन सी परेशानियां हो सकती हैं?</h2>
+      <svg class="timeline-line-svg" viewBox="0 0 450 930" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 0 0
+C 30 60, 110 80, 110 135
+C 110 190, 40 210, 40 290
+C 40 370, 120 390, 120 445
+C 120 500, 40 520, 40 600
+C 40 680, 110 700, 110 755
+C 110 810, 40 830, 40 930" stroke="#6B4490" stroke-width="2" stroke-dasharray="5,6" stroke-linecap="round" />
+      </svg>
+
+      <div class="timeline-row" id="row-1">
+        <div class="blob-zone">
+          <div class="main-blob bg-green"><img src="images/sect-1-1stimg.avif"></div>
+          <div class="floating-dot"></div>
+        </div>
+        <div class="right-content">
+          <h2>अपनी बात दूसरों को समझाने में दिक्कत</h2>
+          <p>कई बार मन की बात कहने के बावजूद लोग आपकी बात सही तरह से समझ नहीं पाते।</p>
+        </div>
+      </div>
+
+      <div class="timeline-row" id="row-2">
+        <div class="blob-zone">
+          <div class="main-blob bg-yellow"><img src="images/sect-1-2ndimg.avif"></div>
+          <div class="floating-dot"></div>
+        </div>
+        <div class="right-content">
+          <h2>स्कूल या पढ़ाई में पीछे रह जाना</h2>
+          <p>बात करने में परेशानी से पढ़ाई और सीखने पर असर पड़ता है।</p>
+        </div>
+      </div>
+
+      <div class="timeline-row" id="row-3">
+        <div class="blob-zone">
+          <div class="main-blob bg-pink"><img src="images/sect-1-3rdimg.avif"></div>
+          <div class="floating-dot"></div>
+        </div>
+        <div class="right-content">
+          <h2>लोगों के सामने बोलने में झिझक</h2>
+          <p>बार-बार झिझक feel होने से लोगों के बीच बोलने का confidence कम होता है।</p>
+        </div>
+      </div>
+
+      <div class="timeline-row" id="row-4">
+        <div class="blob-zone">
+          <div class="main-blob bg-green"><img src="images/sect-1-4thimg.avif"></div>
+          <div class="floating-dot"></div>
+        </div>
+        <div class="right-content">
+          <h2>आत्मविश्वास कम होना</h2>
+          <p>अपनी बात न कह पाने से व्यक्ति खुद को कमजोर महसूस करता है।</p>
+        </div>
+      </div>
+
+      <div class="timeline-row" id="row-5">
+        <div class="blob-zone">
+          <div class="main-blob bg-yellow"><img src="images/sect-1-5thimg.avif"></div>
+          <div class="floating-dot"></div>
+        </div>
+        <div class="right-content">
+          <h2>दोस्त बनाने में परेशानी</h2>
+          <p>नई दोस्ती और Social Interaction में कठिनाई का सामना करना पड़ता है।</p>
+        </div>
+      </div>
+
+      <div class="timeline-row" id="row-6">
+        <div class="blob-zone">
+          <div class="main-blob bg-pink"><img src="images/sect-1-6thimg.avif"></div>
+          <div class="floating-dot"></div>
+        </div>
+        <div class="right-content">
+          <h2>अंदर ही अंदर दुख और निराशा महसूस करना</h2>
+          <p>कई लोग सोचते हैं कि समय के साथ सब ठीक हो जाएगा, लेकिन सही Care न मिलने पर परेशानी बनी रहती है।</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+  <!--SECTION-3 SOLUTION SECTION -->
+ <section class="intro-box">
+<div class="background">
+<div class="top-badge">✨ नई उम्मीद की शुरुआत</div>
+
+<div class="bg-glow"></div>
+
+<div class="medicine-box">
+
+<div class="inner-frame">
+
+<span class="corner-left"></span>
+<span class="corner-right"></span>
+
+<img src="images/product-vani.avif">
+
+</div>
+
+</div>
+</div>
+<div class="text-area">
+
+<h1>
+अब उम्मीद छोड़ने की
+<span>जरूरत नहीं</span>
+</h1>
+
+<p class="info-text">
+अगर आप या आपका कोई अपना गूंगापन या बोलने की परेशानी से जूझ रहा है,
+तो सही Support, सही देखभाल और सही पोषण बहुत जरूरी हो सकता है।
+</p>
+
+<div class="point-row">
+
+<div class="point-item">💜 सही Support</div>
+<div class="point-item">🌿 सही पोषण</div>
+<div class="point-item">🤝 सही देखभाल</div>
+
+</div>
+
+<div class="bottom-box">
+
+<h3>Ayurvedic Formula</h3>
+
+<p>
+Ayurvedic Ingredients से तैयार यह खास Formula
+बोलने से जुड़ी क्षमता को Support करने के लिए बनाया गया है।
+<br><br>
+हर दिन एक छोटा कदम...
+बेहतर Communication की तरफ।
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+  <!-- SECTION-4 BENEFITS SECTION -->
+
+  <div class="infographic-canvas">
+
+
+    <svg class="bg-curve-line" viewBox="0 0 450 1000" fill="none">
+
+      <path d="M289 220 
+C225 170 350 160 350 240
+C350 320 100 310 100 390
+C100 480 350 470 350 560" stroke="#6B4490" stroke-width="3.5" stroke-dasharray="6,8" stroke-linecap="round" />
+
+    </svg>
+
+
+    <div class="header-section">
+
+      <h1>
+        गूंगापन से बेहतर Communication<br>
+        और आत्मविश्वास की ओर
+      </h1>
+
+    </div>
+
+
+
+
+
+    <div class="step-node desc-text" id="text-step1">
+      <h2>बोलने की क्षमता को Support</h2>
+      <p>यह Formula बोलने की परेशानियों में सहायता कर बेहतर Communication में मदद करता है।</p>
+    </div>
+
+
+    <div class="step-node" id="blob-step1">
+      <div class="blob-graphic">
+        <span class="number-badge">1</span>
+        <img src="images/sect-4-1stimg.avif">
+      </div>
+    </div>
+
+
+
+    <div class="step-node" id="blob-step2">
+      <div class="blob-graphic">
+        <span class="number-badge">2</span>
+        <img src="images/sect-4-2ndimg.avif">
+      </div>
+    </div>
+
+
+    <div class="step-node desc-text" id="text-step2">
+      <h2>Communication Skills Support</h2>
+      <p>बातचीत करने की क्षमता और लोगों से जुड़ने के आत्मविश्वास को बढ़ाने में सहायता।</p>
+    </div>
+
+
+
+    <div class="step-node desc-text" id="text-step3">
+      <h2>नर्वस सिस्टम की देखभाल</h2>
+      <p>Nervous System के बेहतर कार्य को Support करने में मदद करता है।</p>
+    </div>
+
+
+    <div class="step-node" id="blob-step3">
+      <div class="blob-graphic">
+        <span class="number-badge">3</span>
+        <img src="images/sect-4-3rdimg.avif">
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+
+
+
+  <!-- SECTION-5 INGREDIENTS SECTION -->
+
+  <section class="ingredients-section">
+
+    <div class="head">
+      <span class="tag">🌿 Ayurvedic Ingredients</span>
+      <h2>हर बूंद में Natural Power</h2>
+      <p>खास जड़ी-बूटियों का संतुलित मिश्रण</p>
+    </div>
+
+    <div class="ingredient-list">
+
+      <div class="ingredient">
+        <div class="plant-img">
+          <img src="images/brahmi.avif">
+        </div>
+        <div class="text">
+          <h3> ब्राह्मी</h3>
+          <p>Brain Health और Focus को Support करने में मदद</p>
+        </div>
+      </div>
+
+      <div class="ingredient">
+        <div class="plant-img">
+          <img src="images/शंखपुष्पी.avif">
+        </div>
+        <div class="text">
+          <h3> शंखपुष्पी</h3>
+          <p>मानसिक शांति और याददाश्त को Support</p>
+        </div>
+      </div>
+
+      <div class="ingredient">
+        <div class="plant-img">
+          <img src="images/अश्वगंधा.avif">
+        </div>
+        <div class="text">
+          <h3> अश्वगंधा</h3>
+          <p>Stress कम करने और Body Strength बढ़ाने में सहायक</p>
+        </div>
+      </div>
+
+      <div class="ingredient">
+        <div class="plant-img">
+          <img src="images/वचा.avif">
+        </div>
+        <div class="text">
+          <h3> वचा</h3>
+          <p>Speech और Communication से जुड़ी पारंपरिक Ayurvedic Herb</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+
+  <!-- SECTION-6 TRUST SECTION -->
+  <section class="trust-wrap">
+
+    <div class="heading">
+
+      <span class="badge">क्यों भरोसा करें?</span>
+
+
+      <p>गुणवत्ता और भरोसे के साथ तैयार किया गया Formula</p>
+
+    </div>
+
+    <div class="circle-area">
+
+      <div class="circle-line"></div>
+
+      <div class="center">
+
+        <img src="images/product-vani.avif">
+
+
+      </div>
+
+      <div class="point p1">
+
+        <img src="images/quality.avif">
+
+        <h4>Quality Checked</h4>
+
+
+      </div>
+
+      <div class="point p2">
+
+        <img src="images/ayurvedic.avif">
+
+        <h4>Ayurvedic Formula</h4>
+
+      </div>
+
+      <div class="point p3">
+
+        <img src="images/natural.avif">
+
+        <h4>Natural Ingredients</h4>
+
+      </div>
+
+      <div class="point p4">
+
+        <img src="images/trusted.avif">
+
+        <h4>Trusted Process</h4>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+
+
+  <!--SECTION-7 DOCTOR SECTION -->
+  <section class="doc-section">
+
+    <div class="doc-eyebrow">
+      <span class="line"></span>
+      <span>Doctor Recommendation</span>
+      <span class="line"></span>
+    </div>
+
+    <div class="doc-card">
+
+      <div class="doc-card-top">
+        <div class="doc-photo">
+          <img src="images/doctor.avif"
+            alt="Ayurvedic Doctor">
+        </div>
+        <div class="doc-top-text">
+          <div class="doc-name">Dr. Anil Sharma</div>
+          <div class="doc-role">BAMS &nbsp;•&nbsp; 15+ Years Experience</div>
+        </div>
+        <div class="doc-stamp">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2l2.5 5.5L20 8.5l-4 4 1 5.5-5-2.8-5 2.8 1-5.5-4-4 5.5-1z" stroke="white" stroke-width="1.6"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="doc-card-body">
+        <span class="doc-quote-mark">"</span>
+
+        <p class="doc-headline">विशेषज्ञों की देखरेख में तैयार <span>Ayurvedic Formula</span></p>
+
+        <div class="doc-divider"></div>
+
+        <p class="doc-desc">यह Formula आयुर्वेद की पारंपरिक जानकारी और चुने गए Herbal Ingredients को ध्यान में रखकर
+          तैयार किया गया है।</p>
+
+        <p class="doc-desc">Quality और Safety को ध्यान में रखते हुए इसे Daily Use के लिए बनाया गया है।</p>
+
+        <div class="doc-signature">
+          <div class="doc-sig-left">
+            <span class="doc-sig-label">Recommended By</span>
+            <span class="doc-sig-name">Dr. Anil Sharma</span>
+          </div>
+          <div class="doc-verified">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            Verified
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+
+  <!-- SECTION-8 HOW TO USE -->
+  <section class="how-wrap">
+
+    <div class="how-top">
+
+      <div class="how-content">
+
+
+        <h2 class="how-title">कैसे लें AyurVani Capsules</h2>
+
+        <p class="how-desc">
+          सही तरीके से उपयोग करें और बेहतर Support पाएं।
+        </p>
+
+      </div>
+
+      <div class="how-product">
+
+        <img src="images/product-vani.avif">
+
+      </div>
+
+    </div>
+
+    <div class="how-line"></div>
+
+    <div class="how-list">
+
+      <div class="how-card">
+
+        <div class="how-icon">
+          <i class="fa-solid fa-clock"></i>
+        </div>
+
+        <div>
+          <h3>दिन में 2 बार</h3>
+          <p>सुबह और शाम Regular Use करें।</p>
+        </div>
+
+      </div>
+
+
+      <div class="how-card">
+
+        <div class="how-icon">
+          <i class="fa-solid fa-glass-water"></i>
+        </div>
+
+        <div>
+          <h3>गुनगुने पानी या दूध के साथ</h3>
+          <p>आसान सेवन के लिए गुनगुने पानी या दूध के साथ लें।</p>
+        </div>
+
+      </div>
+
+
+      <div class="how-card">
+
+        <div class="how-icon">
+          <i class="fa-solid fa-leaf"></i>
+        </div>
+
+        <div>
+          <h3>नियमित उपयोग</h3>
+          <p>लगातार उपयोग बेहतर Support देने में सहायक हो सकता है।</p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="how-note">
+
+      <h3>
+        <i class="fa-solid fa-circle-info"></i> ध्यान दें
+      </h3>
+
+      <p>
+        सुरक्षित उपयोग के लिए सही तरीके से इस्तेमाल करें।
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+
+
+
+  <!-- SECTION-9 BEFORE/AFTER -->
+ <section class="step-desire-section">
+
+  <div class="step-desire-header">
+    <h2 class="step-desire-title">एक बेहतर बदलाव की ओर</h2>
+    <p class="step-desire-subtitle">पहले की परेशानी से नई उम्मीद तक</p>
+  </div>
+
+<div class="step-desire-wrapper">
+
+
+  <div class="step-label before-label">Before</div>
+
+  <div class="step-label after-label">After</div>
+
+
+  <!-- BEFORE 1 LEFT -->
+  <div class="step-row before-row">
+      <div class="step-img">
+        <img src="images/sect-9-1st-bf.avif">
+      </div>
+
+      <div class="step-content before-box">
+        <h3>❌ बोलने में परेशानी</h3>
+        <p>अपनी बात रखने में कठिनाई</p>
+      </div>
+
+    </div>
+
+
+
+    <!-- AFTER 1 RIGHT -->
+    <div class="step-row after-row">
+
+      <div class="step-content after-box">
+
+        <h3>✅ लोगों से खुलकर जुड़ने में सहायता</h3>
+        <p>बेहतर Social Interaction</p>
+
+      </div>
+
+
+      <div class="step-img-after">
+
+        <img src="images/sect-9-1st-af.avif">
+
+      </div>
+
+    </div>
+
+
+
+
+
+    <!-- BEFORE 2 LEFT -->
+    <div class="step-row before-row">
+
+
+      <div class="step-img">
+
+        <img src="images/sect-9-2nd-bf.avif">
+
+      </div>
+
+
+      <div class="step-content before-box">
+
+        <h3>❌ आत्मविश्वास की कमी</h3>
+
+        <p>लोगों के सामने झिझक</p>
+
+      </div>
+
+
+    </div>
+
+
+
+
+
+
+    <!-- AFTER 2 RIGHT -->
+    <div class="step-row after-row">
+
+
+      <div class="step-content after-box">
+
+        <h3>✅ ज्यादा Confidence</h3>
+
+        <p>Daily Life में बेहतर भागीदारी</p>
+
+      </div>
+
+
+      <div class="step-img-after">
+
+        <img src="images/sect-9-2nd-af.avif">
+
+      </div>
+
+
+    </div>
+
+
+
+
+
+
+    <!-- BEFORE 3 LEFT -->
+    <div class="step-row before-row">
+
+
+      <div class="step-img">
+
+        <img src="images/sect-9-3rd-bf.avif">
+
+      </div>
+
+
+      <div class="step-content before-box">
+
+        <h3>❌ Social Interaction से बचना</h3>
+
+        <p>लोगों से जुड़ने में परेशानी</p>
+
+      </div>
+
+
+    </div>
+
+
+
+
+
+
+    <!-- AFTER 3 RIGHT -->
+    <div class="step-row after-row">
+
+
+      <div class="step-content after-box">
+
+        <h3>✅ Positive महसूस करने में मदद</h3>
+
+        <p>खुद पर विश्वास बढ़ाने में सहायता</p>
+
+
+      </div>
+
+
+      <div class="step-img-after">
+
+
+        <img src="images/sect-9-3rd-af.avif">
+
+
+      </div>
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- BEFORE 4 LEFT -->
+    <div class="step-row before-row">
+
+
+      <div class="step-img">
+
+
+        <img src="images/sect-9-4th-bf.avif">
+
+
+      </div>
+
+
+      <div class="step-content before-box">
+
+
+        <h3>❌ Communication में कठिनाई</h3>
+
+        <p>अपनी बात सही से न कह पाना</p>
+
+
+      </div>
+
+
+    </div>
+
+
+    <!-- AFTER 4 RIGHT -->
+    <div class="step-row after-row">
+
+
+      <div class="step-content after-box">
+
+
+        <h3>✅ बेहतर Communication Support</h3>
+
+        <p>अपनी बात रखने में सहायता</p>
+
+
+      </div>
+
+
+
+      <div class="step-img-after">
+
+
+        <img src="images/sect-9-4th-af.avif">
+
+
+      </div>
+
+
+    </div>
+
+
+
+  </div>
+
+</section>
+
+
+  <!-- SECTION-10 OFFER SECTION -->
+
+  <div class="nkx-shell">
+
+    <h2 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">
+      Limited Time Offer Hero Banner
+    </h2>
+
+
+    <div class="nkx-hero">
+
+      <div class="nkx-hero-veil"></div>
+
+      <div class="nkx-hero-copy">
+
+        <div class="nkx-pill-live">
+          <span class="nkx-blink"></span>
+          Limited Time Offer
+        </div>
+
+        <div class="nkx-heading">
+          आज ही शुरुआत करें
+        </div>
+
+        <div class="nkx-tagline">
+          जितनी जल्दी सही Care शुरू करें, उतनी जल्दी बेहतर Support पाएं।
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+    <div class="nkx-timer-bar">
+
+
+      <div>
+
+        <div class="nkx-timer-label">
+          <i class="ti ti-clock" style="font-size:12px;vertical-align:-1px;margin-right:4px" aria-hidden="true"></i>
+          Offer expires in
+        </div>
+
+
+        <div class="nkx-timer-row">
+
+
+          <div>
+
+            <div class="nkx-timer-block" id="nkx-th">
+              05
+            </div>
+
+            <div class="nkx-timer-unit">
+              Hrs
+            </div>
+
+          </div>
+
+
+
+          <div class="nkx-timer-colon">
+            :
+          </div>
+
+
+
+          <div>
+
+            <div class="nkx-timer-block" id="nkx-tm">
+              59
+            </div>
+
+            <div class="nkx-timer-unit">
+              Min
+            </div>
+
+          </div>
+
+
+
+          <div class="nkx-timer-colon">
+            :
+          </div>
+
+
+
+          <div>
+
+            <div class="nkx-timer-block" id="nkx-ts">
+              59
+            </div>
+
+            <div class="nkx-timer-unit">
+              Sec
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+
+      <div class="nkx-discount-tag">
+        Special Discount
+      </div>
+
+
+    </div>
+
+
+
+
+
+
+    <div class="nkx-body">
+
+
+      <div class="nkx-features">
+
+
+
+        <div class="nkx-feat-card">
+
+          <div class="nkx-feat-ico" aria-hidden="true">
+            <i class="ti ti-discount-2"></i>
+          </div>
+
+          <div>
+
+            <div class="nkx-feat-name">
+              Special Discount
+            </div>
+
+            <div class="nkx-feat-desc">
+              Exclusive savings
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+
+        <div class="nkx-feat-card">
+
+          <div class="nkx-feat-ico" aria-hidden="true">
+            <i class="ti ti-headset"></i>
+          </div>
+
+          <div>
+
+            <div class="nkx-feat-name">
+              Free Consultation
+            </div>
+
+            <div class="nkx-feat-desc">
+              Expert guidance
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+
+        <div class="nkx-feat-card">
+
+          <div class="nkx-feat-ico" aria-hidden="true">
+            <i class="ti ti-rocket"></i>
+          </div>
+
+          <div>
+
+            <div class="nkx-feat-name">
+              Fast Delivery
+            </div>
+
+            <div class="nkx-feat-desc">
+              Quick shipping
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+
+        <div class="nkx-feat-card">
+
+          <div class="nkx-feat-ico" aria-hidden="true">
+            <i class="ti ti-shopping-bag"></i>
+          </div>
+
+          <div>
+
+            <div class="nkx-feat-name">
+              Easy Ordering
+            </div>
+
+            <div class="nkx-feat-desc">
+              Simple process
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+
+      <button class="nkx-cta-btn"  onclick="document.getElementById('crf-form-id').scrollIntoView({behavior:'smooth'})">
+
+        <i class="ti ti-sparkles" aria-hidden="true"></i>
+
+        अभी Order करें
+
+        <i class="ti ti-arrow-right" aria-hidden="true"></i>
+
+      </button>
+
+
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+  <!-- SECTION-11 ORDER FORM -->
+  <html>
+
+  <head>
+
+    <style>
+      .crf-page {
+        max-width: 450px;
+        width: 100%;
+        margin: 0 auto;
+        font-family: var(--font-body)
+      }
+
+      .crf-card {
+        background: var(--color-secondary-light);
+        overflow: hidden;
+        box-shadow: var(--shadow-strong);
+        position: relative;
+        padding-bottom: 20px;
+      }
+
+      .crf-header {
+        background: var(--color-primary);
+        padding: 28px 26px 60px;
+        position: relative;
+        overflow: hidden;
+        text-align: center
+      }
+
+      .crf-header-circles {
+        position: absolute;
+        inset: 0;
+        pointer-events: none
+      }
+
+
+
+      .crf-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(255, 255, 255, 0.13);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--color-secondary-light);
+        font-family: var(--font-display);
+        font-size: 11px;
+        font-weight: 600;
+        padding: 5px 14px;
+        border-radius: var(--radius-pill);
+        margin-bottom: 14px;
+        letter-spacing: 0.05em
+      }
+
+      .crf-badge-dot {
+        width: 6px;
+        height: 6px;
+        background: var(--color-secondary);
+        border-radius: 50%;
+        animation: crf-blink 1.3s infinite
+      }
+
+      @keyframes crf-blink {
+
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1)
+        }
+
+        50% {
+          opacity: 0.4;
+          transform: scale(0.7)
+        }
+      }
+
+      .crf-h-title {
+        font-family: var(--font-display);
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--color-secondary);
+        line-height: 1.25;
+        margin-bottom: 6px
+      }
+
+      .crf-h-sub {
+        font-size: 20px;
+        color:white;
+        line-height: 1.6
+      }
+
+      .crf-avatar-row {
+        display: flex;
+        justify-content: center;
+        gap: -8px;
+        margin-top: 16px
+      }
+
+      .crf-av {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 2px solid var(--color-primary);
+        background: var(--color-secondary-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        margin-left: -6px;
+        color: var(--color-primary-dark);
+        font-weight: 700;
+        font-family: var(--font-display)
+      }
+
+      .crf-av:first-child {
+        margin-left: 0
+      }
+
+      .crf-av-txt {
+        font-size: 18px;
+        color: white;
+        margin-left: 8px;
+        align-self: center;
+        font-family: var(--font-display)
+      }
+
+      .crf-float-card {
+        background: var(--color-secondary);
+        border-radius: var(--radius-md);
+        margin: 0 20px;
+        margin-top: -32px;
+        position: relative;
+        z-index: 2;
+        padding: 22px 20px 20px;
+        box-shadow: var(--shadow-card);
+        border: 1px solid rgba(75, 42, 109, 0.08)
+      }
+
+      .crf-step-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px
+      }
+
+      .crf-step {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: var(--color-primary);
+        color: var(--color-white);
+        font-family: var(--font-display);
+        font-size: 12px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0
+      }
+
+      .crf-step-label {
+        font-family: var(--font-display);
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--color-primary)
+      }
+
+      .crf-step-line {
+        flex: 1;
+        height: 1px;
+        background: rgba(75, 42, 109, 0.1)
+      }
+
+      .crf-field {
+        margin-bottom: 14px;
+        position: relative
+      }
+
+      .crf-label {
+        font-family: var(--font-display);
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--color-primary);
+        text-transform: uppercase;
+        margin-bottom: 7px;
+        display: flex;
+        align-items: center;
+        gap: 5px
+      }
+
+      .crf-input-box {
+        display: flex;
+        align-items: center;
+        background: var(--color-bg);
+        border: 1.5px solid rgba(75, 42, 109, 0.14);
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+        transition: border-color 0.2s, box-shadow 0.2s
+      }
+
+      .crf-input-box:focus-within {
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgba(75, 42, 109, 0.08)
+      }
+
+      .crf-input-box.crf-invalid {
+        border-color: var(--color-danger);
+        box-shadow: 0 0 0 3px rgba(192, 82, 74, 0.08)
+      }
+
+      .crf-ico-wrap {
+        width: 42px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(75, 42, 109, 0.06);
+        border-right: 1px solid rgba(75, 42, 109, 0.1);
+        color: var(--color-primary-light);
+        font-size: 18px;
+        flex-shrink: 0
+      }
+
+      .crf-inp {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        padding: 0 14px;
+        height: 48px;
+        font-family: var(--font-body);
+        font-size: 15px;
+        color: var(--color-text)
+      }
+
+      .crf-inp::placeholder {
+        color: rgba(92, 74, 65, 0.4);
+        font-size: 14px
+      }
+
+      .crf-valid-ico {
+        width: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        opacity: 0;
+        transition: opacity 0.2s
+      }
+
+      .crf-valid-ico.crf-ok {
+        opacity: 1;
+        color: var(--color-success)
+      }
+
+      .crf-err-msg {
+        font-size: 11px;
+        color: var(--color-danger);
+        margin-top: 5px;
+        font-family: var(--font-display);
+        display: none;
+        align-items: center;
+        gap: 4px
+      }
+
+      .crf-err-msg.crf-show {
+        display: flex
+      }
+
+      .crf-trust-row {
+        display: flex;
+        justify-content: space-between;
+        margin: 16px 0 18px;
+        gap: 8px
+      }
+
+      .crf-trust-item {
+        flex: 1;
+        background: var(--color-bg);
+        border-radius: var(--radius-sm);
+        padding: 9px 8px;
+        text-align: center;
+        border: 1px solid rgba(75, 42, 109, 0.07)
+      }
+
+      .crf-trust-ico {
+        font-size: 22px;
+        color: var(--color-primary-light);
+       
+      }
+
+      .crf-trust-txt {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--color-text-soft);
+        font-family: var(--font-display);
+        line-height: 1.3
+      }
+
+      .crf-btn {
+        width: 100%;
+        background: var(--color-primary);
+        color: var(--color-secondary);
+        font-family: var(--font-display);
+        font-size: 18px;
+        font-weight: 800;
+        border: none;
+        border-radius: var(--radius-pill);
+        padding: 16px 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: background 0.2s, transform 0.15s;
+        letter-spacing: 0.02em;
+        box-shadow: 0 4px 16px -4px rgba(243, 166, 131, 0.5)
+      }
+
+   
+
+      .crf-btn:active {
+        transform: scale(0.98)
+      }
+
+      .crf-btn-arrow {
+        transition: transform 0.2s
+      }
+
+      .crf-btn:hover .crf-btn-arrow {
+        transform: translateX(4px)
+      }
+
+      .crf-foot {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 14px;
+        padding-bottom: 4px
+      }
+
+      .crf-foot-item {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 15px;
+        color:black;
+        font-family: var(--font-display)
+      }
+
+      .crf-foot-item i {
+        font-size: 18px;
+        color: black;
+      }
+
+      .crf-sep {
+        width: 3px;
+        height: 3px;
+        background: var(--color-secondary);
+        border-radius: 50%
+      }
+
+      .crf-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(52, 29, 77, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 99999;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+      .crf-overlay.crf-on {
+        display: flex
+      }
+
+      .crf-spinner-ring {
+        width: 52px;
+        height: 52px;
+        position: relative
+      }
+
+      .crf-spinner-ring::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 4px solid rgba(255, 255, 255, 0.15)
+      }
+
+      .crf-spinner-ring::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 4px solid transparent;
+        border-top-color: var(--color-secondary);
+        animation: crf-spin 0.75s linear infinite
+      }
+
+      @keyframes crf-spin {
+        to {
+          transform: rotate(360deg)
+        }
+      }
+
+      .crf-spin-label {
+        font-family: var(--font-display);
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--color-white);
+        letter-spacing: 0.02em
+      }
+
+      .crf-spin-sub {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.6);
+        font-family: var(--font-display)
+      }
+
+      .crf-wrap {
+        position: relative
+      }
+      /* ===== CRF Mobile Same Layout Optimization ===== */
+
+@media(max-width:450px){
+
+  .crf-page{
+    width:100%;
+    max-width:450px;
+  }
+
+
+  .crf-header{
+    padding:28px 20px 60px;
+  }
+
+
+  .crf-h-title{
+    font-size:28px;
+  }
+
+
+  .crf-h-sub{
+    font-size:20px;
+  }
+
+
+
+  .crf-float-card{
+    margin-left:14px;
+    margin-right:14px;
+    padding:22px 16px 20px;
+  }
+
+
+
+  .crf-step-label{
+    font-size:18px;
+  }
+
+
+
+  .crf-input-box{
+    width:100%;
+  }
+
+
+  .crf-inp{
+    font-size:16px;
+  }
+
+
+  .crf-inp::placeholder{
+    font-size:14px;
+  }
+
+
+
+  .crf-trust-row{
+    gap:8px;
+  }
+
+
+  .crf-trust-txt{
+    font-size:13px;
+  }
+
+
+
+  .crf-btn{
+    font-size:18px;
+    padding:16px 0;
+  }
+
+
+
+  .crf-foot-item{
+    font-size:15px;
+  }
+
+
+}
+
+
+
+
+@media(max-width:360px){
+
+
+  .crf-header{
+    padding-left:15px;
+    padding-right:15px;
+  }
+
+
+  .crf-h-title{
+    font-size:25px;
+  }
+
+
+  .crf-h-sub{
+    font-size:18px;
+  }
+
+
+  .crf-float-card{
+    margin-left:10px;
+    margin-right:10px;
+  }
+
+
+  .crf-trust-row{
+    gap:5px;
+  }
+
+
+  .crf-trust-item{
+    padding:9px 4px;
+  }
+
+
+}
+    </style>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+
+    <div class="crf-page">
+      <div class="crf-wrap">
+        <div class="crf-card">
+          <h2 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Order Form</h2>
+
+          <div class="crf-header">
+            <div class="crf-header-circles">
+              <div class="crf-c1"></div>
+              <div class="crf-c2"></div>
+              <div class="crf-c3"></div>
+            </div>
+            <div class="crf-h-title" id="crf-form-id">अब इंतजार न करें</div>
+            <div class="crf-h-sub">गूंगापन की परेशानी को समझें और सही Care की तरफ कदम बढ़ाएं।</div>
+            <div class="crf-avatar-row">
+              <div class="crf-av">A</div>
+              <div class="crf-av">R</div>
+              <div class="crf-av">S</div>
+              <div class="crf-av">+</div>
+              <span class="crf-av-txt">80000+ लोग जुड़ चुके हैं</span>
+            </div>
+          </div>
+
+          <div class="crf-float-card">
+            <div class="crf-step-row">
+              <div class="crf-step">1</div>
+              <span class="crf-step-label">आज ही अपना Order करें</span>
+              <div class="crf-step-line"></div>
+              <i class="ti ti-arrow-down" style="font-size:18px;color:var(--color-primary-dark)"
+                aria-hidden="true"></i>
+            </div>
+
+            <form id="crf-form" onsubmit="crfSubmit(event)" novalidate autocomplete="off">
+
+              <div class="crf-field">
+                <div class="crf-label">
+                  <i class="ti ti-user" style="font-size:13px" aria-hidden="true"></i>
+                  Name
+                </div>
+                <div class="crf-input-box" id="crf-name-box">
+                  <div class="crf-ico-wrap" aria-hidden="true"><i class="ti ti-user-circle"></i></div>
+                  <input class="crf-inp" type="text" id="crf-name" name="Name" placeholder="Apna naam likhein"
+                    autocomplete="off">
+                  <div class="crf-valid-ico" id="crf-name-ok"><i class="ti ti-circle-check"></i></div>
+                </div>
+                <div class="crf-err-msg" id="crf-name-err">
+                  <i class="ti ti-alert-circle" style="font-size:12px"></i>
+                  Sirf naam likha ja sakta hai, numbers nahi
+                </div>
+              </div>
+
+              <div class="crf-field">
+                <div class="crf-label">
+                  <i class="ti ti-phone" style="font-size:13px" aria-hidden="true"></i>
+                  Mobile Number
+                </div>
+                <div class="crf-input-box" id="crf-mob-box">
+                  <div class="crf-ico-wrap" aria-hidden="true"><i class="ti ti-device-mobile"></i></div>
+                  <input class="crf-inp" type="tel" id="crf-mob" name="Mobile" placeholder="10 digit number"
+                    maxlength="10" inputmode="numeric" autocomplete="off">
+                  <div class="crf-valid-ico" id="crf-mob-ok"><i class="ti ti-circle-check"></i></div>
+                </div>
+                <div class="crf-err-msg" id="crf-mob-err">
+                  <i class="ti ti-alert-circle" style="font-size:12px"></i>
+                  10 digit chahiye, 6 se 9 ke beech se shuru
+                </div>
+              </div>
+
+              <div class="crf-trust-row">
+                <div class="crf-trust-item">
+                  <div class="crf-trust-ico" aria-hidden="true"><i class="ti ti-discount-2"></i></div>
+                  <div class="crf-trust-txt">Natural Care</div>
+                </div>
+                <div class="crf-trust-item">
+                  <div class="crf-trust-ico" aria-hidden="true"><i class="ti ti-headset"></i></div>
+                  <div class="crf-trust-txt">Customer Support</div>
+                </div>
+                <div class="crf-trust-item">
+                  <div class="crf-trust-ico" aria-hidden="true"><i class="ti ti-rocket"></i></div>
+                  <div class="crf-trust-txt">Quick Support</div>
+                </div>
+                <div class="crf-trust-item">
+                  <div class="crf-trust-ico" aria-hidden="true"><i class="ti ti-shopping-bag"></i></div>
+                  <div class="crf-trust-txt">Safe Packaging</div>
+                </div>
+              </div>
+
+              <button class="crf-btn" type="submit" id="crf-btn">
+                <i class="ti ti-sparkles" aria-hidden="true"></i>
+                 अभी Order करें
+                <i class="ti ti-arrow-right crf-btn-arrow" aria-hidden="true"></i>
+              </button>
+            </form>
+
+            <div class="crf-foot">
+              <div class="crf-foot-item"><i class="ti ti-lock" aria-hidden="true"></i>Secure</div>
+              <div class="crf-sep"></div>
+              <div class="crf-foot-item"><i class="ti ti-shield-check" aria-hidden="true"></i>Trusted</div>
+              <div class="crf-sep"></div>
+              <div class="crf-foot-item"><i class="ti ti-phone-call" aria-hidden="true"></i>24/7 Support</div>
+            </div>
+          </div>
+
+       </div>
+</div>
+        <div class="crf-overlay" id="crf-overlay">
+          <div class="crf-spinner-ring"></div>
+          <div class="crf-spin-label">Processing Your Order<span id="dotAnim"></span></div>
+          <div class="crf-spin-sub">Kripya pratiksha karein...</div>
+        </div>
+      </div>
+    
+
+    <div id="loading" style="display:none"></div>
+
+    <script>
+      document.getElementById('crf-name').addEventListener('input', function () {
+        this.value = this.value.replace(/[0-9]/g, '');
+        const ok = this.value.trim().length > 1;
+        document.getElementById('crf-name-ok').classList.toggle('crf-ok', ok);
+        document.getElementById('crf-name-box').classList.remove('crf-invalid');
+        document.getElementById('crf-name-err').classList.remove('crf-show');
+      });
+
+      document.getElementById('crf-mob').addEventListener('input', function () {
+        this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);
+        const ok = /^[6-9][0-9]{9}$/.test(this.value);
+        document.getElementById('crf-mob-ok').classList.toggle('crf-ok', ok);
+        document.getElementById('crf-mob-box').classList.remove('crf-invalid');
+        document.getElementById('crf-mob-err').classList.remove('crf-show');
+      });
+
+      function crfSubmit(event) {
+        event.preventDefault();
+        const form = event.target;
+        const nameVal = document.getElementById('crf-name').value.trim();
+        const mobVal = document.getElementById('crf-mob').value.trim();
+        let valid = true;
+
+        if (/[0-9]/.test(nameVal)) {
+          document.getElementById('crf-name-box').classList.add('crf-invalid');
+          document.getElementById('crf-name-err').classList.add('crf-show');
+          valid = false;
+        }
+        if (!/^[6-9][0-9]{9}$/.test(mobVal)) {
+          document.getElementById('crf-mob-box').classList.add('crf-invalid');
+          document.getElementById('crf-mob-err').classList.add('crf-show');
+          valid = false;
+        }
+        if (!valid) return false;
+
+        const btn = document.getElementById('crf-btn');
+        btn.style.display = 'none';
+        btn.disabled = true;
+        document.getElementById('crf-overlay').classList.add('crf-on');
+
+        const formData = new FormData(form);
+        let redirected = false;
+
+        const timeout = setTimeout(() => {
+          if (!redirected) {
+            redirected = true;
+            form.reset();
+            document.getElementById('crf-name-ok').classList.remove('crf-ok');
+            document.getElementById('crf-mob-ok').classList.remove('crf-ok');
+            btn.style.display = 'flex';
+            btn.disabled = false;
+            document.getElementById('crf-overlay').classList.remove('crf-on');
+            window.location.href = './ThankYou.html';
+          }
+        }, 2000);
+
+        fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec', {
+          method: 'POST',
+          body: formData
+        })
+          .then(r => r.text())
+          .then(() => {
+            if (!redirected) {
+              clearTimeout(timeout);
+              redirected = true;
+              form.reset();
+              document.getElementById('crf-name-ok').classList.remove('crf-ok');
+              document.getElementById('crf-mob-ok').classList.remove('crf-ok');
+              btn.style.display = 'flex';
+              btn.disabled = false;
+              document.getElementById('crf-overlay').classList.remove('crf-on');
+              window.location.href = './ThankYou.html';
+            }
+          })
+          .catch(err => {
+            console.error('Fetch error:', err);
+            if (!redirected) {
+              clearTimeout(timeout);
+              redirected = true;
+              form.reset();
+              document.getElementById('crf-name-ok').classList.remove('crf-ok');
+              document.getElementById('crf-mob-ok').classList.remove('crf-ok');
+              btn.style.display = 'flex';
+              btn.disabled = false;
+              document.getElementById('crf-overlay').classList.remove('crf-on');
+              window.location.href = './ThankYou.html';
+            }
+          });
+        return false;
+      }
+
+      let dotCount = 1;
+      setInterval(() => {
+        const d = document.getElementById('dotAnim');
+        if (d) { dotCount = (dotCount % 3) + 1; d.textContent = '.'.repeat(dotCount); }
+      }, 500);
+    </script>
+
+  </head>
+
+  </html>
+
+
+
+
+
+
+
+  <!-- SECTION-12 TESTIMONIALS -->
+
+  <div class="av-wrap">
+
+    <div class="av-heading">
+      <h1>परिवारों का भरोसा, AyurVani के साथ</h1>
+      <p>असली ग्राहकों की असली कहानियाँ</p>
+    </div>
+
+    <div class="av-list">
+
+      <!-- Review 1 -->
+      <div class="av-review">
+        <svg class="av-leaf" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 90C50 90 20 70 20 40C20 20 35 10 50 10C65 10 80 20 80 40C80 70 50 90 50 90Z"
+            fill="currentColor" />
+          <path d="M50 90V10" stroke="var(--color-bg)" stroke-width="2" />
+        </svg>
+        <div class="av-profile">
+          <div class="av-photo av-tone-1">
+            <img src="images/rakesh.avif" alt="">
+          </div>
+          <div class="av-identity">
+            <div class="av-name">राकेश जी</div>
+            <div class="av-place">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
+              </svg>
+              जयपुर
+            </div>
+          </div>
+        </div>
+        <svg class="av-quoteicon" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M0 32V20.8C0 14.2 1.6 9 4.8 5.2C8 1.4 12.3 0 17.6 0L18.4 6.4C15.2 6.8 12.8 8 11.2 10C9.6 12 8.8 14.4 8.8 17.2H17.6V32H0Z"
+            fill="currentColor" />
+          <path
+            d="M21.6 32V20.8C21.6 14.2 23.2 9 26.4 5.2C29.6 1.4 33.9 0 39.2 0L40 6.4C36.8 6.8 34.4 8 32.8 10C31.2 12 30.4 14.4 30.4 17.2H39.2V32H21.6Z"
+            fill="currentColor" />
+        </svg>
+        <p class="av-message">मेरे बच्चे को बोलने में काफी परेशानी थी और वह अपनी बात सही से बता नहीं पाता था। इसी वजह से
+          हमने AyurVani का उपयोग शुरू किया। नियमित उपयोग के बाद हमें पहले से बेहतर बदलाव महसूस हुए।</p>
+        <div class="av-meta">
+          <div class="av-rating">
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10 1l2.7 6 6.6.6-5 4.4 1.5 6.5L10 15l-5.8 3.5L5.7 12l-5-4.4 6.6-.6L10 1z" />
+            </svg>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10 1l2.7 6 6.6.6-5 4.4 1.5 6.5L10 15l-5.8 3.5L5.7 12l-5-4.4 6.6-.6L10 1z" />
+            </svg>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10 1l2.7 6 6.6.6-5 4.4 1.5 6.5L10 15l-5.8 3.5L5.7 12l-5-4.4 6.6-.6L10 1z" />
+            </svg>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10 1l2.7 6 6.6.6-5 4.4 1.5 6.5L10 15l-5.8 3.5L5.7 12l-5-4.4 6.6-.6L10 1z" />
+            </svg>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10 1l2.7 6 6.6.6-5 4.4 1.5 6.5L10 15l-5.8 3.5L5.7 12l-5-4.4 6.6-.6L10 1z" />
+            </svg>
+          </div>
+          <div class="av-checkmark">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+            </svg>
+            Verified Users
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="av-review">
+        <svg class="av-leaf" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 90C50 90 20 70 20 40C20 20 35 10 50 10C65 10 80 20 80 40C80 70 50 90 50 90Z"
+            fill="currentColor" />
+          <path d="M50 90V10" stroke="var(--color-bg)" stroke-width="2" />
+        </svg>
+        <div class="av-profile">
+          <div class="av-photo av-tone-2">
+            <img src="images/seema.avif" alt="">
+          </div>
+          <div class="av-identity">
+            <div class="av-name">मीना जी</div>
+            <div class="av-place">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
+              </svg>
+              दिल्ली
+            </div>
+          </div>
+        </div>
+        <svg class="av-quoteicon" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M0 32V20.8C0 14.2 1.6 9 4.8 5.2C8 1.4 12.3 0 17.6 0L18.4 6.4C15.2 6.8 12.8 8 11.2 10C9.6 12 8.8 14.4 8.8 17.2H17.6V32H0Z"
+            fill="currentColor" />
+          <path
+            d="M21.6 32V20.8C21.6 14.2 23.2 9 26.4 5.2C29.6 1.4 33.9 0 39.2 0L40 6.4C36.8 6.8 34.4 8 32.8 10C31.2 12 30.4 14.4 30.4 17.2H39.2V32H21.6Z"
+            fill="currentColor" />
+        </svg>
+        <p class="av-message">मेरी बेटी बोलने में देर कर रही थी और बातचीत करने में भी परेशानी होती थी। AyurVani के बारे
+          में पता चला तो हमने इसे अपनी Routine में शामिल किया। अब हमें अच्छा अनुभव मिल रहा है।</p>
+        <div class="av-meta">
+          <div class="av-rating">
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10 1l2.7 6 6.6.6-5 4.4 1.5 6.5L10 15l-5.8 3.5L5.7 12l-5-4.4 6.6-.6L10 1z" />
+            </svg>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10 1l2.7 6 6.6.6-5 4.4 1.5 6.5L10 15l-5.8 3.5L5.7 12l-5-4.4 6.6-.6L10 1z" />
+            </svg>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10 1l2.7 6 6.6.6-5 4.4 1.5 6.5L10 15l-5.8 3.5L5.7 12l-5-4.4 6.6-.6L10 1z" />
+            </svg>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10 1l2.7 6 6.6.6-5 4.4 1.5 6.5L10 15l-5.8 3.5L5.7 12l-5-4.4 6.6-.6L10 1z" />
+            </svg>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10 1l2.7 6 6.6.6-5 4.4 1.5 6.5L10 15l-5.8 3.5L5.7 12l-5-4.4 6.6-.6L10 1z" />
+            </svg>
+          </div>
+          <div class="av-checkmark">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+            </svg>
+            Verified Users
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="av-review">
+        <svg class="av-leaf" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 90C50 90 20 70 20 40C20 20 35 10 50 10C65 10 80 20 80 40C80 70 50 90 50 90Z"
+            fill="currentColor" />
+          <path d="M50 90V10" stroke="var(--color-bg)" stroke-width="2" />
+        </svg>
+        <div class="av-profile">
+          <div class="av-photo av-tone-3">
+            <img src="images/suresh.avif" alt="">
+          </div>
+          <div class="av-identity">
+            <div class="av-name">संदीप जी</div>
+            <div class="av-place">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
+              </svg>
+              भोपाल
+            </div>
+          </div>
+        </div>
+        <svg class="av-quoteicon" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M0 32V20.8C0 14.2 1.6 9 4.8 5.2C8 1.4 12.3 0 17.6 0L18.4 6.4C15.2 6.8 12.8 8 11.2 10C9.6 12 8.8 14.4 8.8 17.2H17.6V32H0Z"
+            fill="currentColor" />
+          <path
+            d="M21.6 32V20.8C21.6 14.2 23.2 9 26.4 5.2C29.6 1.4 33.9 0 39.2 0L40 6.4C36.8 6.8 34.4 8 32.8 10C31.2 12 30.4 14.4 30.4 17.2H39.2V32H21.6Z"
+            fill="currentColor" />
+        </svg>
+        <p class="av-message">मुझे बोलने में काफी समय से परेशानी महसूस होती थी और लोगों के सामने अपनी बात रखना मुश्किल लगता था। मैंने AyurVani का उपयोग शुरू किया। इसके नियमित उपयोग के बाद मुझे काफी अच्छा महसूस हुआ और मेरा आत्मविश्वास भी पहले से बेहतर लगा।</p>
+        <div class="av-meta">
+          <div class="av-rating">
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10 1l2.7 6 6.6.6-5 4.4 1.5 6.5L10 15l-5.8 3.5L5.7 12l-5-4.4 6.6-.6L10 1z" />
+            </svg>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10 1l2.7 6 6.6.6-5 4.4 1.5 6.5L10 15l-5.8 3.5L5.7 12l-5-4.4 6.6-.6L10 1z" />
+            </svg>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10 1l2.7 6 6.6.6-5 4.4 1.5 6.5L10 15l-5.8 3.5L5.7 12l-5-4.4 6.6-.6L10 1z" />
+            </svg>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10 1l2.7 6 6.6.6-5 4.4 1.5 6.5L10 15l-5.8 3.5L5.7 12l-5-4.4 6.6-.6L10 1z" />
+            </svg>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10 1l2.7 6 6.6.6-5 4.4 1.5 6.5L10 15l-5.8 3.5L5.7 12l-5-4.4 6.6-.6L10 1z" />
+            </svg>
+          </div>
+          <div class="av-checkmark">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+            </svg>
+            Verified Users
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- FAQ -->
+  <section class="faq-section section" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="faq-heading-wrap">
+        <h2 class="faq-heading" id="faq-heading">अक्सर पूछे जाने वाले सवाल</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>क्या यह बच्चों और बड़ों दोनों के लिए है?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-panel">
+            <div class="faq-panel-inner">हां, यह आयुर्वेदिक फॉर्मूला बच्चों और बड़ों दोनों के लिए बनाया गया है।</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>इसका असर कितने दिनों में दिखता है?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-panel">
+            <div class="faq-panel-inner">इसका असर 7-15 दिनों में दिख जाता हैं।
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>क्या इसमें Natural Ingredients हैं?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-panel">
+            <div class="faq-panel-inner">जी हां, इसमें ब्राह्मी, शंखपुष्पी, अश्वगंधा, ज्योतिष्मती और वचा जैसे शुद्ध
+              आयुर्वेदिक तत्व शामिल हैं।</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>क्या इसे रोज इस्तेमाल कर सकते हैं?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-panel">
+            <div class="faq-panel-inner">हाँ, इसे रोज उपयोग किया जा सकता है।</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section class="disclaimer-section section">
+    <div class="container">
+      <div class="disclaimer-box">
+        यह Product किसी बीमारी का इलाज, रोकथाम या निदान करने का दावा नहीं करता।
+        परिणाम व्यक्ति की उम्र, शरीर की स्थिति और उपयोग के तरीके के अनुसार अलग-अलग हो सकते हैं।
+        किसी भी स्वास्थ्य समस्या के लिए अपने Doctor या Healthcare Professional की सलाह अवश्य लें।
+      </div>
+    </div>
+
+    <!-- POLICY LINKS -->
+    <div class="pl-wrap">
+      <div class="pl-row">
+        <button class="pl-link" onclick="openModal('privacy')">Privacy Policy</button>
+        <span class="pl-sep">|</span>
+        <button class="pl-link" onclick="openModal('terms')">Terms & Conditions</button>
+        <span class="pl-sep">|</span>
+        <button class="pl-link" onclick="openModal('shipping')">Shipping Policy</button>
+        <span class="pl-sep">|</span>
+        <button class="pl-link" onclick="openModal('cancel')">Cancellation Policy</button>
+        <span class="pl-sep">|</span>
+        <button class="pl-link" onclick="openModal('disclaimer')">Legal Disclaimer</button>
+      </div>
+    </div>
+
+    <div class="pp-overlay" id="pp-overlay" onclick="closeIfOutside(event)">
+      <div class="pp-modal" id="pp-modal">
+        <button class="pp-close" onclick="closeModal()"><i class="ti ti-x" aria-hidden="true"></i></button>
+        <div id="pp-content"></div>
+      </div>
+    </div>
+  </section>
+
+
+
+ 
+  <script>
+    (function(){ "use strict";
+
+function initFaqAccordion(){
+var items=document.querySelectorAll(".faq-item");
+items.forEach(function(item){
+var trigger=item.querySelector(".faq-trigger");
+var panel=item.querySelector(".faq-panel");
+if(!trigger||!panel)return;
+trigger.addEventListener("click",function(){
+var isOpen=item.classList.contains("is-open");
+items.forEach(function(other){
+other.classList.remove("is-open");
+var op=other.querySelector(".faq-panel");
+var ot=other.querySelector(".faq-trigger");
+if(op)op.style.maxHeight=null;
+if(ot)ot.setAttribute("aria-expanded","false");
+});
+if(!isOpen){
+item.classList.add("is-open");
+panel.style.maxHeight=panel.scrollHeight+"px";
+trigger.setAttribute("aria-expanded","true");
+}
+});
+});
+}
+
+function initOrderForm(){
+var form=document.querySelector(".order-form");
+var success=document.querySelector(".order-form-success");
+if(!form||!success)return;
+form.addEventListener("submit",function(e){
+e.preventDefault();
+var name=form.querySelector("#order-name");
+var mobile=form.querySelector("#order-mobile");
+var address=form.querySelector("#order-address");
+if(name&&!name.value.trim()){name.focus();return;}
+if(mobile&&!/^[6-9]\d{9}$/.test(mobile.value.trim())){mobile.focus();return;}
+if(address&&!address.value.trim()){address.focus();return;}
+form.classList.add("is-hidden");
+success.classList.add("is-visible");
+});
+}
+
+function initScrollHintFade(){
+var hint=document.querySelector(".ingredients-scroll-hint");
+var scroller=document.querySelector(".ingredients-scroller");
+if(!hint||!scroller)return;
+scroller.addEventListener("scroll",function(){
+hint.style.opacity=scroller.scrollLeft>20?"0":"1";
+},{passive:true});
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+initFaqAccordion();
+initOrderForm();
+if("requestIdleCallback" in window){
+requestIdleCallback(initScrollHintFade,{timeout:2000});
+}else{
+setTimeout(initScrollHintFade,200);
+}
+});
+
+})();
+
+    var contents = {
+      privacy: `<div class="pp-mtitle"><i class="ti ti-shield-lock" aria-hidden="true"></i>Privacy Policy</div><div class="pp-mbadge">Last updated: June 2026</div><p class="pp-mpara">SS Herbal आपकी personal information की सुरक्षा को सर्वोच्च प्राथमिकता देता है। यह Policy बताती है कि हम कौन सी जानकारी एकत्र करते हैं, उसका उपयोग कैसे करते हैं, और आपके पास कौन से rights उपलब्ध हैं। Platform का उपयोग करके आप इस Privacy Policy से सहमत होते हैं।</p><p class="pp-mpara"><strong>हम कौन सी जानकारी एकत्र करते हैं:</strong></p><ul class="pp-mlist"><li>नाम, मोबाइल नंबर, email और delivery/billing address</li><li>Account login details</li><li>Health और wellness inputs (consultation/quiz के दौरान, optional और consent-based)</li><li>आपके messages, reviews और feedback</li><li>Usage data — IP address, device type, browser, cookies</li><li>Logistics और payment partners से order/delivery/payment status</li></ul><div class="pp-mhl">हम आपका full card number, CVV, UPI PIN या net-banking credentials store नहीं करते। सभी payments secure, PCI-DSS compliant payment gateways के माध्यम से process होते हैं।</div><p class="pp-mpara"><strong>उपयोग का उद्देश्य:</strong> आपकी जानकारी का उपयोग account management, order processing, customer support, personalised suggestions, transactional messages (SMS/email/WhatsApp/call) और consent-based marketing के लिए किया जाता है। हम fraud detect करने और कानून का पालन करने के लिए भी data का उपयोग करते हैं।</p><div class="pp-mhl">हम आपकी personal data नहीं बेचते। इसे केवल service providers, group affiliates, या कानूनी आवश्यकता होने पर ही share किया जाता है।</div><p class="pp-mpara"><strong>आपके Rights:</strong> Digital Personal Data Protection Act, 2023 के अंतर्गत, आपको अपनी data को access, correct, update और erase करने का अधिकार है, साथ ही consent withdraw करने और grievance redressal का अधिकार भी है। इसके लिए हमें [legal email] या [support email] पर लिखें।</p><p class="pp-mpara"><strong>Data Security:</strong> हम SSL encryption, access controls और secure servers जैसे reasonable measures अपनाते हैं। हालांकि, internet पर कोई भी transmission या storage method पूरी तरह से secure नहीं होता।</p><p class="pp-mpara"><strong>Children's Data:</strong> Platform केवल 18 वर्ष या उससे अधिक आयु के users के लिए है। हम जानबूझकर minors का data एकत्र नहीं करते।</p><p class="pp-mpara"><strong>Cookies &amp; Third-Party Links:</strong> हम cookies का उपयोग आपको signed-in रखने, cart याद रखने और Platform बेहतर बनाने के लिए करते हैं। आप इन्हें अपने browser में control कर सकते हैं। Platform में third-party sites के links और WhatsApp/Instagram/Facebook जैसे platforms पर interaction शामिल हो सकता है, जो उनकी अपनी policies से governed होते हैं।</p><p class="pp-mpara">किसी भी प्रश्न, request या complaint के लिए हमारे Grievance Officer से [legal email] | [support email] | [phone] पर संपर्क करें।</p>`,
+      terms: `<div class="pp-mtitle"><i class="ti ti-file-text" aria-hidden="true"></i>Terms of Use</div><div class="pp-mbadge">Last updated: June 2026</div><p class="pp-mpara">SS Herbal की website, mobile app और सभी related services ("Platform") को access, browse, register या purchase करने से पहले इन Terms of Use को ध्यान से पढ़ें। Platform का उपयोग करके आप इन Terms, हमारी Privacy Policy और सभी referenced policies से सहमत होते हैं।</p><div class="pp-mhl">यदि आप इन Terms से सहमत नहीं हैं, तो कृपया Platform का उपयोग न करें।</div><p class="pp-mpara"><strong>Eligibility &amp; Account:</strong> Platform का उपयोग करने के लिए आपकी आयु कम से कम 18 वर्ष होनी चाहिए और Indian Contract Act, 1872 के अनुसार आप contract करने के योग्य होने चाहिए। आपकी account details accurate रखना और credentials को confidential रखना आपकी जिम्मेदारी है। किसी भी unauthorised उपयोग की सूचना तुरंत हमें दें।</p><ul class="pp-mlist"><li>सभी products Ayurvedic, herbal और natural wellness products हैं — हमारे Legal Disclaimer के अधीन</li><li>Descriptions, images और prices को accurate रखने की कोशिश की जाती है; packaging में मामूली बदलाव हो सकते हैं</li><li>सभी prices INR में हैं, applicable taxes सहित, और बिना सूचना के बदले जा सकते हैं</li><li>Pricing या typographical error की स्थिति में हम order cancel कर सकते हैं और payment refund करेंगे</li></ul><p class="pp-mpara"><strong>Orders &amp; Payments:</strong> आपका order एक offer है; contract तभी बनता है जब हम product dispatch करते हैं। हम किसी भी order को accept या reject कर सकते हैं (stock issues, pricing errors, suspected fraud आदि की स्थिति में)। Payment secure gateways के माध्यम से लिया जाता है; eligible locations के लिए Cash on Delivery भी उपलब्ध है। कभी भी अपनी card या banking details email पर share न करें।</p><p class="pp-mpara"><strong>Acceptable Use:</strong> आप Platform का उपयोग किसी unlawful, fraudulent या harmful उद्देश्य के लिए नहीं करेंगे, बिना authorisation products resell नहीं करेंगे, unauthorised access की कोशिश नहीं करेंगे, हमारे content/trademarks का misuse नहीं करेंगे, और false या abusive reviews पोस्ट नहीं करेंगे।</p><p class="pp-mpara"><strong>Intellectual Property:</strong> SS Herbal नाम, logo, product names, content, designs और software हमारी property हैं और कानून द्वारा सुरक्षित हैं। बिना written permission के इनका उपयोग न करें। Review या photo submit करने पर आप हमें उसे उपयोग करने का non-exclusive, royalty-free license देते हैं।</p><div class="pp-mhl">हमारे products किसी disease को diagnose, treat, cure या prevent करने का दावा नहीं करते और professional medical advice का substitute नहीं हैं।</div><p class="pp-mpara"><strong>Liability:</strong> Platform और products "as is" आधार पर उपलब्ध हैं। कानून द्वारा अनुमत अधिकतम सीमा तक, हम indirect या consequential damages के लिए liable नहीं होंगे; हमारी total liability उस product की राशि से अधिक नहीं होगी जिससे claim उत्पन्न हुआ है।</p><p class="pp-mpara"><strong>Governing Law:</strong> ये Terms भारत के कानूनों द्वारा शासित हैं, और इससे संबंधित विवादों पर [city] की courts का exclusive jurisdiction होगा। हम इन Terms को समय-समय पर revise कर सकते हैं; updates पोस्ट होने पर तुरंत प्रभावी होंगे।</p><p class="pp-mpara">किसी भी प्रश्न के लिए हमसे [support email] या [phone] पर संपर्क करें।</p>`, shipping: `<div class="pp-mtitle"><i class="ti ti-truck-delivery" aria-hidden="true"></i>Shipping Policy</div><div class="pp-mbadge">Free Delivery All India</div><p class="pp-mpara">हम पूरे India में FREE shipping प्रदान करते हैं। Delivery timeline:</p><ul class="pp-mlist"><li>Metro cities (Delhi, Mumbai, Bengaluru): 3–5 business days</li><li>Tier-2 / Tier-3 cities: 5–7 business days</li><li>Remote / rural areas: 7–10 business days</li></ul><div class="pp-mhl">Order confirm होने के 24–48 घंटे के अंदर tracking number SMS/WhatsApp पर भेजा जाएगा।</div><ul class="pp-mlist"><li>Delivery attempt 3 बार की जाएगी — उसके बाद order वापस आ जाएगा</li><li>Incorrect address की जिम्मेदारी customer की होगी</li></ul>`,
+      cancel: `<div class="pp-mtitle"><i class="ti ti-refresh" aria-hidden="true"></i>Return & Refund Policy</div><div class="pp-mbadge">7-Day Easy Return</div><p class="pp-mpara">हमारे products consumable Ayurvedic और herbal items हैं, इसलिए hygiene, safety और consumer-protection requirements के अनुसार निम्नलिखित terms लागू होते हैं।</p><p class="pp-mpara"><strong>Eligibility:</strong> Return या replacement केवल तभी accepted है जब:</p><ul class="pp-mlist"><li>Product delivery के समय damaged, defective, expired या leaking मिला हो</li><li>आपको गलत product मिला हो (order से match नहीं करता)</li><li>Product unopened, unused और original sealed packaging में हो</li></ul><div class="pp-mhl">Hygiene और safety कारणों से, opened या used products return नहीं किए जा सकते — जब तक वे delivery के समय defective या damaged न हों।</div><ul class="pp-mlist"><li>Return request <strong>7 दिन के अंदर</strong> raise करें</li><li>Damaged/defective/wrong product के लिए <strong>24–48 घंटे के अंदर</strong> clear photos/videos के साथ सूचित करें</li><li>Opened/used products return नहीं किए जाएंगे</li><li>Approval के बाद refund <strong>7–15 business days</strong> में original payment method पर processed होता है</li></ul><p class="pp-mpara"><strong>Non-Returnable:</strong> Opened/used products, 7-day window के बाद की requests, misuse/neglect से damaged products, free items/samples, और shipping/COD charges refundable नहीं हैं।</p><div class="pp-mhl">Return के लिए product original packaging में होना ज़रूरी है। Unboxing video होने पर claim जल्दी process होता है।</div><p class="pp-mpara">Request raise करने के लिए [support email] या WhatsApp [phone] पर order number, issue details और photos/video भेजें।</p>`,
+      shipping: `<div class="pp-mtitle"><i class="ti ti-truck" aria-hidden="true"></i>Shipping & Cancellation Policy</div><p class="pp-mpara"><strong>Shipping Coverage:</strong> हम वर्तमान में केवल भारत के अंदर ही shipping करते हैं (international shipping उपलब्ध नहीं)। सभी prices और charges Indian Rupees (INR) में हैं। Shipping charges checkout पर दिखाए जाते हैं।</p><div class="pp-mhl">Cash on Delivery (COD) orders पर additional handling fee लागू हो सकती है, जो non-refundable है। कुछ PIN codes COD-eligible नहीं हो सकते।</div><p class="pp-mpara"><strong>Delivery Timelines:</strong> Orders आम तौर पर confirmation के 1–2 business days के अंदर dispatch किए जाते हैं। Delivery में location के अनुसार 5–10 business days लग सकते हैं; remote areas में अधिक समय लग सकता है। Timelines estimates हैं और courier delays, weather या festivals से प्रभावित हो सकते हैं।</p><p class="pp-mpara"><strong>Tracking:</strong> Order confirm होने पर email/SMS confirmation मिलता है। Dispatch होने के बाद tracking details email/SMS/WhatsApp पर भेजी जाती हैं, और account page से भी track किया जा सकता है।</p><ul class="pp-mlist"><li>Parcel accept करने से पहले उसे check करें — damaged/tampered parcel accept न करें, refuse करें और हमें सूचित करें</li><li>Cancellation request केवल dispatch से पहले स्वीकार की जाती है (preferably order के 4 घंटे के अंदर)</li><li>Dispatch होने के बाद order cancel नहीं किया जा सकता</li><li>Approved prepaid cancellation का पूरा amount 7–15 business days में refund होता है</li></ul><p class="pp-mpara"><strong>Cancellation by SS Herbal:</strong> हम order को cancel कर सकते हैं यदि product out-of-stock हो, pricing/promotion में error हो, address incomplete हो, location non-serviceable हो, या fraud का संदेह हो। ऐसी स्थिति में भुगतान की गई पूरी राशि refund की जाएगी।</p><div class="pp-mhl">Promo codes case-sensitive, single-use और time-limited होते हैं, और already-discounted items पर लागू नहीं होते।</div><p class="pp-mpara">किसी भी समस्या के लिए हमसे [support email] | [phone] पर संपर्क करें।</p>`,
+      disclaimer: `<div class="pp-mtitle"><i class="ti ti-alert-circle" aria-hidden="true"></i>Legal Disclaimer</div><div class="pp-mbadge">Important Notice</div><p class="pp-mpara">SS Herbal के Ayurvedic और herbal products traditional knowledge और natural ingredients का उपयोग करके overall well-being को support करने के लिए formulate किए जाते हैं। इस पर ध्यान दें:</p><ul class="pp-mlist"><li>ये products किसी भी बीमारी का diagnosis, treatment, cure या prevention नहीं करते</li><li>Products Drugs and Cosmetics Act, 1940 और संबंधित rules के अनुसार [AYUSH licence no.] के तहत manufacture किए जाते हैं [और लागू होने पर FSSAI licence no. [FSSAI licence no.] के तहत compliant हैं]</li><li>Results व्यक्ति से व्यक्ति अलग हो सकते हैं</li><li>Website/app/packaging पर दी गई जानकारी केवल general informational purpose के लिए है, medical advice नहीं</li><li>किसी pre-existing health condition, pregnancy, breastfeeding या अन्य medication लेने की स्थिति में उपयोग से पहले qualified doctor से परामर्श करें</li></ul><div class="pp-mhl">इस website या किसी third-party platform पर दिए गए content पर पूरी तरह निर्भर होकर health-related decisions न लें, medical advice लेने में देरी न करें, और prescribed treatment बीच में न छोड़ें। यह website doctor की qualified medical consultation का substitute नहीं है।</div><p class="pp-mpara">Website का उपयोग आपके अपने जोखिम पर है। कानून द्वारा अनुमत अधिकतम सीमा तक, हम website के material के उपयोग या उस पर निर्भरता से उत्पन्न किसी भी loss या damage के लिए उत्तरदायी नहीं होंगे। बिना proper medical consultation के या recommended instructions के विपरीत products का उपयोग करने से उत्पन्न consequences के लिए भी SS Herbal उत्तरदायी नहीं है।</p><p class="pp-mpara">Third-party websites के links केवल convenience के लिए दिए गए हैं; हम उनके content, products या services को endorse नहीं करते। इस disclaimer से संबंधित मामले भारत के कानूनों द्वारा governed हैं, और courts at [city] का exclusive jurisdiction होगा। संपर्क करें: [legal email] | [support email]।</p>`,
+    };
+
+
+    function openModal(key) {
+      document.getElementById('pp-content').innerHTML = contents[key];
+      document.getElementById('pp-overlay').classList.add('show');
+    }
+    function closeModal() {
+      document.getElementById('pp-overlay').classList.remove('show');
+    }
+    function closeIfOutside(e) {
+      if (e.target === document.getElementById('pp-overlay')) closeModal();
+    }
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js');
+      });
+    }
+
+
+
+    // offer
+
+    const nkxEnd = Date.now() + (5 * 3600 + 59 * 60 + 59) * 1000;
+    function nkxPad(n) { return String(n).padStart(2, '0') }
+    function nkxTick() {
+      const d = Math.max(0, nkxEnd - Date.now());
+      document.getElementById('nkx-th').textContent = nkxPad(Math.floor(d / 3600000));
+      document.getElementById('nkx-tm').textContent = nkxPad(Math.floor(d % 3600000 / 60000));
+      document.getElementById('nkx-ts').textContent = nkxPad(Math.floor(d % 60000 / 1000));
+      if (d > 0) setTimeout(nkxTick, 1000);
+    }
+    nkxTick();
+  </script>
+</body>
+
+</html>

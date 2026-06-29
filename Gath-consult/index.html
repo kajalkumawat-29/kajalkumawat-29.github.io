@@ -96,7 +96,7 @@
 }
       
 
-        /* ================= PROBLEM ================= */
+        /* =================section-2 PROBLEM ================= */
         .problem {
             padding: 12px 20px 38px;
             background: var(--secondary);
@@ -243,8 +243,8 @@
         }
 
         .problem2-sign img {
-            width: 69px;
-            height: 69px;
+            width: 150px;
+            height:120px;
             border-radius: 11px;
             border-left: 5px solid var(--primary) !important;
             border: 2px solid var(--primary);
@@ -254,8 +254,8 @@
 
         .problem2-sign p {
             font-family: var(--font-display);
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 20px;
+            font-weight: 700;
             color: var(--primary-dark);
         }
 
@@ -361,8 +361,8 @@
     }
 
     .problem2-sign img {
-        width: 68px;
-        height: 68px;
+        width: 129px;
+        height: 99px;
         border-radius: 12px;
         flex-shrink: 0;
     }
@@ -507,7 +507,7 @@
     }
 
 }
-        /* ================= SOLUTION ================= */
+        /* =================section-3 SOLUTION ================= */
         .solution {
             padding: 12px 20px 40px;
             background: var(--primary);
@@ -575,8 +575,8 @@
         }
 
         .solution2-img-box {
-            width: 88px;
-            height: 88px;
+            width: 128px;
+            height: 98px;
             flex-shrink: 0;
             background: #fff;
             border-radius: 14px;
@@ -662,8 +662,8 @@
     }
 
     .solution2-img-box{
-        width:82px;
-        height:82px;
+        width:112px;
+        height:92px;
         border-radius:12px;
         flex-shrink:0;
     }
@@ -700,7 +700,7 @@
 
 
 
-        /* ================= HOW IT WORKS ================= */
+        /* =================section-5 HOW IT WORKS ================= */
         .how {
             padding: 12px 20px 44px;
             background: #fff;
@@ -761,8 +761,8 @@
             padding: 14px 16px;
         }
         .img-sect-5{
-            width: 180px;
-            height: 120px;
+            width: 320px;
+            height: 180px;
             border-radius: 20px;
             border: 2px solid var(--secondary);
         }
@@ -786,16 +786,177 @@
             color: var(--bg);
             margin-bottom: 10px;
         }
+/* ================= MOBILE OPTIMIZATION ================= */
 
-        .tl-content svg {
-            width: 100%;
-            max-width: 160px;
-            height: auto;
-            display: block;
-            margin-top: 6px;
-        }
+@media (max-width:480px){
 
-        /* ================= REVIEWS (new) ================= */
+    .how{
+        padding:12px 20px 40px;
+    }
+
+    .how .section-title{
+        font-size:28px;
+        line-height:1.35;
+        margin-bottom:26px;
+    }
+
+    .timeline{
+        padding-left:42px;
+    }
+
+    .timeline::before{
+        left:17px;
+    }
+
+    .tl-step{
+        margin-bottom:24px;
+    }
+
+    .tl-num{
+        left:-42px;
+        width:34px;
+        height:34px;
+        font-size:16px;
+    }
+
+    .tl-content{
+        padding:14px;
+        border-radius:16px;
+    }
+
+    .img-sect-5{
+        width:100%;
+        max-width:320px;
+        height:auto;
+        aspect-ratio:16/9;
+        margin:0 auto 14px;
+        border-radius:18px;
+    }
+
+    .img-sect-5 img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        display:block;
+        border-radius:18px;
+    }
+
+    .tl-content h3{
+        font-size:20px;
+        line-height:1.35;
+    }
+
+    .tl-content p{
+        font-size:18px;
+        line-height:1.55;
+        margin-bottom:0;
+    }
+
+}
+
+      
+
+
+
+        /* section-6 trust section */
+        .page{
+    max-width:450px; 
+    width:100%;
+    background:#fff;
+  }
+
+  /* ============ TRUST SECTION (asymmetric bento-grid mosaic) ============ */
+  .trust5{
+    padding:12px 20px 0;
+    background:#fff;
+    text-align: center;
+  }
+ 
+  .trust5-head h2{
+    font-family:var(--font-display);
+    font-size:28px;
+    font-weight:600;
+    line-height:1.4;
+    color:var(--primary);
+    margin-top:10px;
+  }
+  .trust5-head p{
+    font-size:18px;
+    color:black;
+    margin-top:8px;
+    line-height:1.5;
+  }
+.trust5-cell.r2{
+    grid-column:1 / -1;
+    margin:0 50px;
+}
+
+  .trust5-grid{
+    display:grid;
+    grid-template-columns: 1.15fr 1fr;
+    grid-template-rows: auto auto;
+    gap:10px;
+    margin-top:22px;
+  }
+
+  .trust5-cell{
+    border-radius:18px;
+    padding:18px 16px;
+    display:flex;
+    flex-direction:column;
+  }
+  .trust5-cell .ico{
+    width:34px; height:34px;
+    border-radius:10px;
+    background:#fff;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:12px;
+    box-shadow:0 4px 10px -2px rgba(0,0,0,0.08);
+  }
+  .trust5-cell .ico i{ font-size:16px; color:var(--primary); }
+  .trust5-cell p{
+    font-family:var(--font-display);
+    font-size:17px;
+    font-weight:600;
+    line-height:1.35;
+  }
+
+  /* big tall cell, spans both rows on the left */
+  .trust5-cell.big{
+    background:var(--primary);
+    justify-content:flex-end; align-items: center;
+  }
+  .trust5-cell.big .ico{ background:rgba(255,255,255,0.15); margin-bottom:16px; }
+  .trust5-cell.big .ico i{ color:#fff; }
+  .trust5-cell.big p{ color:#fff; font-size:19px; }
+
+  .trust5-cell.r1{ background:var(--secondary); align-items: center; }
+  .trust5-cell.r1 p{ color:var(--primary-dark); }
+
+  .trust5-cell.r2{ background:#F3E1DC; align-items: center;}
+  .trust5-cell.r2 p{ color:var(--cta); }
+  .trust5-cell.r2 .ico i{ color:#B42318; }
+
+  .trust5-foot{
+    margin-top:18px;
+    margin-left:-20px;
+    margin-right:-20px;
+    background:var(--primary);
+    padding:18px 20px;
+    text-align:center;
+    border-bottom: 2px solid var(--secondary);
+  }
+  .trust5-foot p{
+    font-family:var(--font-ui);
+    font-size:18px;
+    font-weight:500;
+    line-height:1.6;
+    color:#fff;
+  }
+  .trust5-foot p strong{ color:var(--secondary); }
+
+
+        /* =================ssection-8 REVIEWS (new) ================= */
         .reviews {
             padding: 12px 20px 44px;
             background: var(--secondary);
@@ -935,111 +1096,9 @@
 
 
 
-        /* section-7 trust section */
-        .page{
-    width:450px; 
-    max-width:100%;
-    background:#fff;
-  }
-
-  /* ============ TRUST SECTION (asymmetric bento-grid mosaic) ============ */
-  .trust5{
-    padding:12px 20px 0;
-    background:#fff;
-    text-align: center;
-  }
- 
-  .trust5-head h2{
-    font-family:var(--font-display);
-    font-size:28px;
-    font-weight:600;
-    line-height:1.4;
-    color:var(--primary);
-    margin-top:10px;
-  }
-  .trust5-head p{
-    font-size:18px;
-    color:black;
-    margin-top:8px;
-    line-height:1.5;
-  }
-.trust5-cell.r2{
-    grid-column:1 / -1;
-    margin:0 50px;
-}
-
-  .trust5-grid{
-    display:grid;
-    grid-template-columns: 1.15fr 1fr;
-    grid-template-rows: auto auto;
-    gap:10px;
-    margin-top:22px;
-  }
-
-  .trust5-cell{
-    border-radius:18px;
-    padding:18px 16px;
-    display:flex;
-    flex-direction:column;
-  }
-  .trust5-cell .ico{
-    width:34px; height:34px;
-    border-radius:10px;
-    background:#fff;
-    display:flex; align-items:center; justify-content:center;
-    margin-bottom:12px;
-    box-shadow:0 4px 10px -2px rgba(0,0,0,0.08);
-  }
-  .trust5-cell .ico i{ font-size:16px; color:var(--primary); }
-  .trust5-cell p{
-    font-family:var(--font-display);
-    font-size:17px;
-    font-weight:600;
-    line-height:1.35;
-  }
-
-  /* big tall cell, spans both rows on the left */
-  .trust5-cell.big{
-    background:var(--primary);
-    justify-content:flex-end; align-items: center;
-  }
-  .trust5-cell.big .ico{ background:rgba(255,255,255,0.15); margin-bottom:16px; }
-  .trust5-cell.big .ico i{ color:#fff; }
-  .trust5-cell.big p{ color:#fff; font-size:19px; }
-
-  .trust5-cell.r1{ background:var(--secondary); align-items: center; }
-  .trust5-cell.r1 p{ color:var(--primary-dark); }
-
-  .trust5-cell.r2{ background:#F3E1DC; align-items: center;}
-  .trust5-cell.r2 p{ color:var(--cta); }
-  .trust5-cell.r2 .ico i{ color:#B42318; }
-
-  .trust5-foot{
-    margin-top:18px;
-    margin-left:-20px;
-    margin-right:-20px;
-    background:var(--primary);
-    padding:18px 20px;
-    text-align:center;
-    border-bottom: 2px solid var(--secondary);
-  }
-  .trust5-foot p{
-    font-family:var(--font-ui);
-    font-size:18px;
-    font-weight:500;
-    line-height:1.6;
-    color:#fff;
-  }
-  .trust5-foot p strong{ color:var(--secondary); }
 
 
-      
-
-
-
-
-
-        /* ================= FAQ ================= */
+        /* =================section-9 FAQ ================= */
         .faq {
             padding: 12px 20px 40px;
             background: var(--soft-bg);
@@ -1439,7 +1498,7 @@
     <div class="app" id="app">
     <img src="images/banner.avif" loading="lazy" alt="" class="img">
 
-            <!-- 2. PROBLEM -->
+            <!--section-2 PROBLEM -->
             <section class="problem reveal">
                 <div class="problem2-head">
                     <h2>गांठ दिखने के बाद मन में कई सवाल आते हैं...</h2>
@@ -1447,7 +1506,7 @@
                         जरूरी है।</p>
                 </div>
                 <div class="problem2-intro">
-                    <img src="images/sect-1-1stimg.avif" loading="lazy" alt="गांठ को समझना">
+                    <img src="images/sect-1-1stimgg.avif" loading="lazy" alt="गांठ को समझना">
                     <div>
                         <h3>गांठ को समझना जरूरी है</h3>
                         <p>सही समय पर सही जानकारी मिलने से बेहतर फैसला लिया जा सकता है।</p>
@@ -1473,24 +1532,26 @@
                 <div class="problem2-warning">
                     <h3>इन बातों को Ignore न करें</h3>
                     <div class="problem2-sign">
-                        <img src="images/sect-1-1stimgg.avif" loading="lazy"
+                        <img src="images/sect-1-1stimg.avif" loading="lazy"
                             alt="लंबे समय से बनी गांठ">
-                        <p>लंबे समय से बनी गांठ</p>
+                        <p> लंबे समय से बनी हुई गांठ पर ध्यान देना जरूरी है</p>
                     </div>
                     <div class="problem2-sign">
                         <img src="images/sect-1-2ndimg.avif" loading="lazy"
                             alt="धीरे-धीरे बढ़ना">
-                        <p>धीरे-धीरे बढ़ना</p>
+                        <p>धीरे-धीरे बढ़ रही गांठ को नजरअंदाज न करें</p>
                     </div>
                     <div class="problem2-sign">
                         <img src="images/sect-1-3rdimg.avif" loading="lazy"
                             alt="बार-बार परेशानी">
-                        <p>बार-बार परेशानी</p>
+                        <p>बार-बार परेशानी देने वाली गांठ चिंता बढ़ा सकती है
+</p>
                     </div>
                     <div class="problem2-sign">
                         <img src="images/sect-1-4thimg.avif" loading="lazy"
                             alt="आकार या feel बदलना">
-                        <p>आकार या feel बदलना</p>
+                        <p>गांठ के आकार  में बदलाव को हल्के में न लें
+</p>
                     </div>
                 </div>
             </section>
@@ -1588,7 +1649,7 @@
 
 
 
-            <!-- 5. HOW IT WORKS -->
+            <!--section-5. HOW IT WORKS -->
             <section class="how reveal">
                 <h2 class="section-title">Consultation Process बहुत आसान है</h2>
                 <div class="timeline">
@@ -1619,62 +1680,11 @@
                 </div>
             </section>
 
-            <!-- 6. REVIEWS (replaced) -->
-            <section class="reviews reveal">
-
-                <div class="rv-title">
-                    <h2>लोगों का भरोसा </h2>
-                    <p>हमारे users के अनुभव</p>
-                </div>
-
-                <div class="rv-stack">
-
-                    <!-- Card 1 -->
-                    <div class="rv-card">
-                        <div class="rv-top-strip">
-                            <div class="rv-profile">
-                                <img src="images/sunita.avif" loading="lazy"
-                                    alt="Verified User">
-                                <div class="rv-profile-info">
-                                    <h4>Sunita Mishra</h4>
-                                    <span>Kota</span>
-                                </div>
-                            </div>
-                            <div class="rv-stars">⭐⭐⭐⭐⭐</div>
-                        </div>
-                        <div class="rv-message">
-                            <p>मुझे गांठ को लेकर काफी चिंता थी, लेकिन consultation के बाद चीजें clear हुईं और सही
-                                guidance मिली।</p>
-                        </div>
-                        <div class="rv-verify">✓ Verified User</div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="rv-card">
-                        <div class="rv-top-strip">
-                            <div class="rv-profile">
-                                <img src="images/manoj.avif" loading="lazy"
-                                    alt="Verified User">
-                                <div class="rv-profile-info">
-                                    <h4>Manoj Sharma</h4>
-                                    <span>Mumbai</span>
-                                </div>
-                            </div>
-                            <div class="rv-stars">⭐⭐⭐⭐⭐</div>
-                        </div>
-                        <div class="rv-message">
-                            <p>पहले मैं confusion में था कि क्या करना चाहिए, expert से बात करके सही direction मिली।</p>
-                        </div>
-                        <div class="rv-verify">✓ Verified User</div>
-                    </div>
-
-                </div>
-            </section>
-
+           
          
 
 
-            <!-- section-7 trust section -->
+            <!-- section-6 trust section -->
              <div class="page">
 
   <section class="trust5">
@@ -1714,7 +1724,7 @@
 
 
 
-<!-- section-8 order form -->
+<!-- section-7 order form -->
 <html>
     <head>
 <style>
@@ -2032,12 +2042,63 @@
 </html>
 
 
+ <!-- 8. REVIEWS (replaced) -->
+            <section class="reviews reveal">
+
+                <div class="rv-title">
+                    <h2>लोगों का भरोसा </h2>
+                    <p>हमारे users के अनुभव</p>
+                </div>
+
+                <div class="rv-stack">
+
+                    <!-- Card 1 -->
+                    <div class="rv-card">
+                        <div class="rv-top-strip">
+                            <div class="rv-profile">
+                                <img src="images/sunita.avif" loading="lazy"
+                                    alt="Verified User">
+                                <div class="rv-profile-info">
+                                    <h4>Sunita Mishra</h4>
+                                    <span>Kota</span>
+                                </div>
+                            </div>
+                            <div class="rv-stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <div class="rv-message">
+                            <p>मुझे गांठ को लेकर काफी चिंता थी, लेकिन consultation के बाद चीजें clear हुईं और सही
+                                guidance मिली।</p>
+                        </div>
+                        <div class="rv-verify">✓ Verified User</div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="rv-card">
+                        <div class="rv-top-strip">
+                            <div class="rv-profile">
+                                <img src="images/manoj.avif" loading="lazy"
+                                    alt="Verified User">
+                                <div class="rv-profile-info">
+                                    <h4>Manoj Sharma</h4>
+                                    <span>Mumbai</span>
+                                </div>
+                            </div>
+                            <div class="rv-stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <div class="rv-message">
+                            <p>पहले मैं confusion में था कि क्या करना चाहिए, expert से बात करके गांठ में सही direction मिली।</p>
+                        </div>
+                        <div class="rv-verify">✓ Verified User</div>
+                    </div>
+
+                </div>
+            </section>
 
 
 
 
 
-            <!-- 9. FAQ -->
+            <!--section-9 FAQ -->
             <section class="faq reveal">
                 <h2 class="section-title">अक्सर पूछे जाने वाले सवाल</h2>
                 <div class="faq-list" id="faqList">

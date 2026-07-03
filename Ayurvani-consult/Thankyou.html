@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>धन्यवाद | Ayurvani</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#5B2C6F;
+    --primary-dark:#43215a;
+    --primary-light:#7d4a96;
+    --secondary-bg:#F8F1FB;
+    --accent:#E67E22;
+    --accent-dark:#c96c15;
+    --text:#2C2C2C;
+    --white:#FFFFFF;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+    width:100%;
+    height:100%;
+  }
+  body{
+    font-family:'Halant', serif;
+    color:var(--text);
+    background:var(--secondary-bg);
+    -webkit-font-smoothing:antialiased;
+    display:flex;
+    justify-content:center;
+    min-height:100vh;
+  }
+
+  .page-wrap{
+    max-width:450px;
+    width:100%;
+    background:var(--secondary-bg);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+
+  .ty-card{
+    width:100%;
+    background:var(--white);
+    border-radius:28px;
+    padding:44px 28px 36px;
+    text-align:center;
+    box-shadow:0 18px 40px rgba(91,44,111,0.15);
+    position:relative;
+  }
+
+  .ty-icon{
+    width:88px;
+    height:88px;
+    margin:0 auto 22px;
+    background:var(--primary);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 10px 24px rgba(91,44,111,0.35);
+  }
+  .ty-icon i{
+    font-size:38px;
+    color:var(--white);
+  }
+
+  .ty-card h1{
+    font-family:'Halant', serif;
+    color:var(--primary);
+    font-size:32px;
+    margin:0 0 14px;
+    line-height:1.35;
+  }
+
+  .ty-card p{
+    font-size:18px;
+    line-height:1.7;
+    color:black;
+    font-weight:500;
+    margin:0 0 10px;
+  }
+
+  .ty-sub{
+    font-size:18px;
+    color:black;
+    margin:0 0 28px;
+  }
+
+  .ty-steps{
+    background:var(--secondary-bg);
+    border-radius:18px;
+    padding:18px;
+    margin:0 0 28px;
+    text-align:left;
+  }
+  .ty-steps h3{
+    margin:0 0 12px;
+    font-size:20px;
+    color:var(--primary);
+    text-align:center;
+    font-weight:700;
+  }
+  .ty-step-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:8px 0;
+  }
+  .ty-step-item .ico{
+    width:34px;
+    height:34px;
+    flex-shrink:0;
+    background:var(--primary);
+    color:var(--white);
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+  }
+  .ty-step-item p{
+    margin:0;
+    font-size:18px;
+    line-height:1.2;
+    color:var(--text);
+  }
+
+  .ty-btn{
+    display:block;
+    width:100%;
+    background:var(--accent);
+    color:var(--white);
+    text-decoration:none;
+    font-family:'Halant', serif;
+    font-size:17px;
+    font-weight:700;
+    padding:15px;
+    border-radius:14px;
+    border:none;
+    cursor:pointer;
+    margin-bottom:12px;
+  }
+  .ty-btn:hover{background:var(--accent-dark);}
+
+  .ty-btn-outline{
+    display:block;
+    width:100%;
+    background:transparent;
+    color:var(--primary);
+    text-decoration:none;
+    font-family:'Halant', serif;
+    font-size:15px;
+    font-weight:600;
+    padding:13px;
+    border-radius:14px;
+    border:2px solid var(--primary);
+  }
+  .ty-btn-outline:hover{background:var(--secondary-bg);}
+
+  .ty-confetti{
+    position:absolute;
+    top:-14px;
+    right:24px;
+    font-size:26px;
+    opacity:0.85;
+  }
+  /* =========================
+   THANK YOU PAGE MOBILE OPTIMIZATION
+   ========================= */
+@media (max-width: 480px) {
+
+  .page-wrap {
+    padding: 18px;
+  }
+
+  .ty-card {
+    padding: 36px 18px 28px;
+    border-radius: 24px;
+  }
+
+  .ty-icon {
+    width: 78px;
+    height: 78px;
+    margin: 0 auto 18px;
+  }
+
+  .ty-icon i {
+    font-size: 34px;
+  }
+
+  .ty-card h1 {
+    font-size: 24px;
+  }
+
+  .ty-card p {
+    font-size: 18px;
+  }
+
+  .ty-sub {
+    font-size: 18px;
+    margin-bottom: 22px;
+  }
+
+  .ty-steps {
+    padding: 14px;
+    margin-bottom: 22px;
+  }
+
+  .ty-steps h3 {
+    font-size: 20px;
+  }
+
+  .ty-step-item .ico {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .ty-step-item p {
+    font-size: 18px;
+  }
+
+  .ty-btn {
+    font-size: 18px;
+    padding: 14px;
+  }
+
+  .ty-btn-outline {
+    font-size: 18px;
+    padding: 12px;
+  }
+
+  .ty-confetti {
+    font-size: 22px;
+    top: -10px;
+    right: 18px;
+  }
+}
+    /* policy */
+    .pl-wrap {
+      max-width: 450px;
+      width: 100%;
+      padding: 8px 12px;
+      box-sizing: border-box;
+
+    }
+
+    .pl-row {
+      display: flex;
+      gap: 0;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center
+    }
+
+    .pl-link {
+      background: none;
+      border: none;
+      font-size: 7px;
+      opacity: 0.44;
+      font-weight: 500;
+      color: #267156;
+      cursor: pointer;
+      padding: 4px 5px;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-family: inherit;
+      white-space: nowrap;
+      transition: color .15s
+    }
+
+    .pl-link:hover {
+      color: #1a5240
+    }
+
+    .pl-sep {
+      color: #c9ddd7;
+      font-size: 11px;
+      user-select: none
+    }
+
+    .pp-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center
+    }
+
+    .pp-overlay.show {
+      display: flex
+    }
+
+    .pp-modal {
+      background: #fff;
+      border-radius: 18px;
+      max-width: 420px;
+      width: 90%;
+      max-height: 60vh;
+      overflow-y: auto;
+      padding: 22px 18px 18px;
+      position: relative
+    }
+
+    .pp-modal::-webkit-scrollbar {
+      width: 6px
+    }
+
+    .pp-modal::-webkit-scrollbar-track {
+      background: transparent
+    }
+
+    .pp-modal::-webkit-scrollbar-thumb {
+      background: #c9c9c9;
+      border-radius: 28px
+    }
+
+    .pp-modal::-webkit-scrollbar-thumb:hover {
+      background: #a8a8a8
+    }
+
+    .pp-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: #e6f3ed;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #267156;
+      font-size: 16px
+    }
+
+    .pp-close:hover {
+      background: #c9ddd7
+    }
+
+    .pp-mtitle {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1a5240;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .pp-mtitle i {
+      font-size: 20px
+    }
+
+    .pp-mbadge {
+      display: inline-block;
+      background: #e6f3ed;
+      color: #267156;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px
+    }
+
+    .pp-mpara {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.7;
+      margin-bottom: 10px
+    }
+
+    .pp-mlist {
+      padding-left: 0;
+      list-style: none;
+      margin: 0 0 10px
+    }
+
+    .pp-mlist li {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.6;
+      padding: 5px 0 5px 20px;
+      position: relative;
+      border-bottom: 1px dashed #e2ede9
+    }
+
+    .pp-mlist li:last-child {
+      border-bottom: none
+    }
+
+    .pp-mlist li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 13px;
+      width: 7px;
+      height: 7px;
+      background: #39ad7d;
+      border-radius: 50%
+    }
+
+    .pp-mhl {
+      background: #e6f3ed;
+      border-left: 3px solid #267156;
+      border-radius: 0 8px 8px 0;
+      padding: 9px 13px;
+      font-size: 13px;
+      color: #1a5240;
+      margin-bottom: 10px
+    }
+
+    .pp-cgrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 8px
+    }
+
+    .pp-citem {
+      background: #f4faf7;
+      border: 1px solid #c9ddd7;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center
+    }
+
+    .pp-citem i {
+      font-size: 20px;
+      color: #267156;
+      display: block;
+      margin-bottom: 4px
+    }
+
+    .pp-citem .pp-clbl {
+      font-size: 11px;
+      color: #888;
+      margin-bottom: 2px
+    }
+
+    .pp-citem .pp-cval {
+      font-size: 11px;
+      font-weight: 600;
+      color: #1a5240
+    }
+
+    @media (max-width:480px) {
+      .pl-wrap {
+        padding: 8px 4px
+      }
+
+      .pl-link {
+        font-size: 6px;
+        padding: 4px 2px
+      }
+
+      .pl-sep {
+        font-size: 6px
+      }
+    }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+  <div class="ty-card">
+    <span class="ty-confetti">🎉</span>
+    <div class="ty-icon"><i class="fa-solid fa-check"></i></div>
+
+    <h1>धन्यवाद!</h1>
+    <p>आपकी Consultation Request सफलतापूर्वक भेज दी गई है।</p>
+    <p class="ty-sub">हमारी टीम जल्द ही आपसे संपर्क करेगी।</p>
+
+    <div class="ty-steps">
+      <h3>आगे क्या होगा?</h3>
+      <div class="ty-step-item">
+        <div class="ico"><i class="fa-solid fa-phone"></i></div>
+        <p>हमारी expert team आपको call करेगी</p>
+      </div>
+      <div class="ty-step-item">
+        <div class="ico"><i class="fa-solid fa-comments"></i></div>
+        <p>आपकी problem को समझकर guidance दी जाएगी</p>
+      </div>
+      <div class="ty-step-item">
+        <div class="ico"><i class="fa-solid fa-circle-check"></i></div>
+        <p>अगला सही step क्या हो, ये बताया जाएगा</p>
+      </div>
+    </div>
+ <!-- POLICY LINKS -->
+    <div class="pl-wrap">
+      <div class="pl-row">
+        <button class="pl-link" onclick="openModal('privacy')">Privacy Policy</button>
+        <span class="pl-sep">|</span>
+        <button class="pl-link" onclick="openModal('terms')">Terms & Conditions</button>
+        <span class="pl-sep">|</span>
+        <button class="pl-link" onclick="openModal('shipping')">Shipping Policy</button>
+        <span class="pl-sep">|</span>
+        <button class="pl-link" onclick="openModal('cancel')">Cancellation Policy</button>
+        <span class="pl-sep">|</span>
+        <button class="pl-link" onclick="openModal('disclaimer')">Legal Disclaimer</button>
+      </div>
+    </div>
+
+    <div class="pp-overlay" id="pp-overlay" onclick="closeIfOutside(event)">
+      <div class="pp-modal" id="pp-modal">
+        <button class="pp-close" onclick="closeModal()"><i class="ti ti-x" aria-hidden="true"></i></button>
+        <div id="pp-content"></div>
+      </div>
+    </div>
+
+    <a href="https://wa.me/" class="ty-btn"><i class="fa-brands fa-whatsapp"></i> WhatsApp पर बात करें</a>
+
+  </div>
+</div>
+
+</body>
+<script>
+     var contents = {
+      privacy: `<div class="pp-mtitle"><i class="ti ti-shield-lock" aria-hidden="true"></i>Privacy Policy</div><div class="pp-mbadge">Last updated: June 2026</div><p class="pp-mpara">SS Herbal आपकी personal information की सुरक्षा को सर्वोच्च प्राथमिकता देता है। यह Policy बताती है कि हम कौन सी जानकारी एकत्र करते हैं, उसका उपयोग कैसे करते हैं, और आपके पास कौन से rights उपलब्ध हैं। Platform का उपयोग करके आप इस Privacy Policy से सहमत होते हैं।</p><p class="pp-mpara"><strong>हम कौन सी जानकारी एकत्र करते हैं:</strong></p><ul class="pp-mlist"><li>नाम, मोबाइल नंबर, email और delivery/billing address</li><li>Account login details</li><li>Health और wellness inputs (consultation/quiz के दौरान, optional और consent-based)</li><li>आपके messages, reviews और feedback</li><li>Usage data — IP address, device type, browser, cookies</li><li>Logistics और payment partners से order/delivery/payment status</li></ul><div class="pp-mhl">हम आपका full card number, CVV, UPI PIN या net-banking credentials store नहीं करते। सभी payments secure, PCI-DSS compliant payment gateways के माध्यम से process होते हैं।</div><p class="pp-mpara"><strong>उपयोग का उद्देश्य:</strong> आपकी जानकारी का उपयोग account management, order processing, customer support, personalised suggestions, transactional messages (SMS/email/WhatsApp/call) और consent-based marketing के लिए किया जाता है। हम fraud detect करने और कानून का पालन करने के लिए भी data का उपयोग करते हैं।</p><div class="pp-mhl">हम आपकी personal data नहीं बेचते। इसे केवल service providers, group affiliates, या कानूनी आवश्यकता होने पर ही share किया जाता है।</div><p class="pp-mpara"><strong>आपके Rights:</strong> Digital Personal Data Protection Act, 2023 के अंतर्गत, आपको अपनी data को access, correct, update और erase करने का अधिकार है, साथ ही consent withdraw करने और grievance redressal का अधिकार भी है। इसके लिए हमें [legal email] या [support email] पर लिखें।</p><p class="pp-mpara"><strong>Data Security:</strong> हम SSL encryption, access controls और secure servers जैसे reasonable measures अपनाते हैं। हालांकि, internet पर कोई भी transmission या storage method पूरी तरह से secure नहीं होता।</p><p class="pp-mpara"><strong>Children's Data:</strong> Platform केवल 18 वर्ष या उससे अधिक आयु के users के लिए है। हम जानबूझकर minors का data एकत्र नहीं करते।</p><p class="pp-mpara"><strong>Cookies &amp; Third-Party Links:</strong> हम cookies का उपयोग आपको signed-in रखने, cart याद रखने और Platform बेहतर बनाने के लिए करते हैं। आप इन्हें अपने browser में control कर सकते हैं। Platform में third-party sites के links और WhatsApp/Instagram/Facebook जैसे platforms पर interaction शामिल हो सकता है, जो उनकी अपनी policies से governed होते हैं।</p><p class="pp-mpara">किसी भी प्रश्न, request या complaint के लिए हमारे Grievance Officer से [legal email] | [support email] | [phone] पर संपर्क करें।</p>`,
+      terms: `<div class="pp-mtitle"><i class="ti ti-file-text" aria-hidden="true"></i>Terms of Use</div><div class="pp-mbadge">Last updated: June 2026</div><p class="pp-mpara">SS Herbal की website, mobile app और सभी related services ("Platform") को access, browse, register या purchase करने से पहले इन Terms of Use को ध्यान से पढ़ें। Platform का उपयोग करके आप इन Terms, हमारी Privacy Policy और सभी referenced policies से सहमत होते हैं।</p><div class="pp-mhl">यदि आप इन Terms से सहमत नहीं हैं, तो कृपया Platform का उपयोग न करें।</div><p class="pp-mpara"><strong>Eligibility &amp; Account:</strong> Platform का उपयोग करने के लिए आपकी आयु कम से कम 18 वर्ष होनी चाहिए और Indian Contract Act, 1872 के अनुसार आप contract करने के योग्य होने चाहिए। आपकी account details accurate रखना और credentials को confidential रखना आपकी जिम्मेदारी है। किसी भी unauthorised उपयोग की सूचना तुरंत हमें दें।</p><ul class="pp-mlist"><li>सभी products Ayurvedic, herbal और natural wellness products हैं — हमारे Legal Disclaimer के अधीन</li><li>Descriptions, images और prices को accurate रखने की कोशिश की जाती है; packaging में मामूली बदलाव हो सकते हैं</li><li>सभी prices INR में हैं, applicable taxes सहित, और बिना सूचना के बदले जा सकते हैं</li><li>Pricing या typographical error की स्थिति में हम order cancel कर सकते हैं और payment refund करेंगे</li></ul><p class="pp-mpara"><strong>Orders &amp; Payments:</strong> आपका order एक offer है; contract तभी बनता है जब हम product dispatch करते हैं। हम किसी भी order को accept या reject कर सकते हैं (stock issues, pricing errors, suspected fraud आदि की स्थिति में)। Payment secure gateways के माध्यम से लिया जाता है; eligible locations के लिए Cash on Delivery भी उपलब्ध है। कभी भी अपनी card या banking details email पर share न करें।</p><p class="pp-mpara"><strong>Acceptable Use:</strong> आप Platform का उपयोग किसी unlawful, fraudulent या harmful उद्देश्य के लिए नहीं करेंगे, बिना authorisation products resell नहीं करेंगे, unauthorised access की कोशिश नहीं करेंगे, हमारे content/trademarks का misuse नहीं करेंगे, और false या abusive reviews पोस्ट नहीं करेंगे।</p><p class="pp-mpara"><strong>Intellectual Property:</strong> SS Herbal नाम, logo, product names, content, designs और software हमारी property हैं और कानून द्वारा सुरक्षित हैं। बिना written permission के इनका उपयोग न करें। Review या photo submit करने पर आप हमें उसे उपयोग करने का non-exclusive, royalty-free license देते हैं।</p><div class="pp-mhl">हमारे products किसी disease को diagnose, treat, cure या prevent करने का दावा नहीं करते और professional medical advice का substitute नहीं हैं।</div><p class="pp-mpara"><strong>Liability:</strong> Platform और products "as is" आधार पर उपलब्ध हैं। कानून द्वारा अनुमत अधिकतम सीमा तक, हम indirect या consequential damages के लिए liable नहीं होंगे; हमारी total liability उस product की राशि से अधिक नहीं होगी जिससे claim उत्पन्न हुआ है।</p><p class="pp-mpara"><strong>Governing Law:</strong> ये Terms भारत के कानूनों द्वारा शासित हैं, और इससे संबंधित विवादों पर [city] की courts का exclusive jurisdiction होगा। हम इन Terms को समय-समय पर revise कर सकते हैं; updates पोस्ट होने पर तुरंत प्रभावी होंगे।</p><p class="pp-mpara">किसी भी प्रश्न के लिए हमसे [support email] या [phone] पर संपर्क करें।</p>`, shipping: `<div class="pp-mtitle"><i class="ti ti-truck-delivery" aria-hidden="true"></i>Shipping Policy</div><div class="pp-mbadge">Free Delivery All India</div><p class="pp-mpara">हम पूरे India में FREE shipping प्रदान करते हैं। Delivery timeline:</p><ul class="pp-mlist"><li>Metro cities (Delhi, Mumbai, Bengaluru): 3–5 business days</li><li>Tier-2 / Tier-3 cities: 5–7 business days</li><li>Remote / rural areas: 7–10 business days</li></ul><div class="pp-mhl">Order confirm होने के 24–48 घंटे के अंदर tracking number SMS/WhatsApp पर भेजा जाएगा।</div><ul class="pp-mlist"><li>Delivery attempt 3 बार की जाएगी — उसके बाद order वापस आ जाएगा</li><li>Incorrect address की जिम्मेदारी customer की होगी</li></ul>`,
+      cancel: `<div class="pp-mtitle"><i class="ti ti-refresh" aria-hidden="true"></i>Return & Refund Policy</div><div class="pp-mbadge">7-Day Easy Return</div><p class="pp-mpara">हमारे products consumable Ayurvedic और herbal items हैं, इसलिए hygiene, safety और consumer-protection requirements के अनुसार निम्नलिखित terms लागू होते हैं।</p><p class="pp-mpara"><strong>Eligibility:</strong> Return या replacement केवल तभी accepted है जब:</p><ul class="pp-mlist"><li>Product delivery के समय damaged, defective, expired या leaking मिला हो</li><li>आपको गलत product मिला हो (order से match नहीं करता)</li><li>Product unopened, unused और original sealed packaging में हो</li></ul><div class="pp-mhl">Hygiene और safety कारणों से, opened या used products return नहीं किए जा सकते — जब तक वे delivery के समय defective या damaged न हों।</div><ul class="pp-mlist"><li>Return request <strong>7 दिन के अंदर</strong> raise करें</li><li>Damaged/defective/wrong product के लिए <strong>24–48 घंटे के अंदर</strong> clear photos/videos के साथ सूचित करें</li><li>Opened/used products return नहीं किए जाएंगे</li><li>Approval के बाद refund <strong>7–15 business days</strong> में original payment method पर processed होता है</li></ul><p class="pp-mpara"><strong>Non-Returnable:</strong> Opened/used products, 7-day window के बाद की requests, misuse/neglect से damaged products, free items/samples, और shipping/COD charges refundable नहीं हैं।</p><div class="pp-mhl">Return के लिए product original packaging में होना ज़रूरी है। Unboxing video होने पर claim जल्दी process होता है।</div><p class="pp-mpara">Request raise करने के लिए [support email] या WhatsApp [phone] पर order number, issue details और photos/video भेजें।</p>`,
+      shipping: `<div class="pp-mtitle"><i class="ti ti-truck" aria-hidden="true"></i>Shipping & Cancellation Policy</div><p class="pp-mpara"><strong>Shipping Coverage:</strong> हम वर्तमान में केवल भारत के अंदर ही shipping करते हैं (international shipping उपलब्ध नहीं)। सभी prices और charges Indian Rupees (INR) में हैं। Shipping charges checkout पर दिखाए जाते हैं।</p><div class="pp-mhl">Cash on Delivery (COD) orders पर additional handling fee लागू हो सकती है, जो non-refundable है। कुछ PIN codes COD-eligible नहीं हो सकते।</div><p class="pp-mpara"><strong>Delivery Timelines:</strong> Orders आम तौर पर confirmation के 1–2 business days के अंदर dispatch किए जाते हैं। Delivery में location के अनुसार 5–10 business days लग सकते हैं; remote areas में अधिक समय लग सकता है। Timelines estimates हैं और courier delays, weather या festivals से प्रभावित हो सकते हैं।</p><p class="pp-mpara"><strong>Tracking:</strong> Order confirm होने पर email/SMS confirmation मिलता है। Dispatch होने के बाद tracking details email/SMS/WhatsApp पर भेजी जाती हैं, और account page से भी track किया जा सकता है।</p><ul class="pp-mlist"><li>Parcel accept करने से पहले उसे check करें — damaged/tampered parcel accept न करें, refuse करें और हमें सूचित करें</li><li>Cancellation request केवल dispatch से पहले स्वीकार की जाती है (preferably order के 4 घंटे के अंदर)</li><li>Dispatch होने के बाद order cancel नहीं किया जा सकता</li><li>Approved prepaid cancellation का पूरा amount 7–15 business days में refund होता है</li></ul><p class="pp-mpara"><strong>Cancellation by SS Herbal:</strong> हम order को cancel कर सकते हैं यदि product out-of-stock हो, pricing/promotion में error हो, address incomplete हो, location non-serviceable हो, या fraud का संदेह हो। ऐसी स्थिति में भुगतान की गई पूरी राशि refund की जाएगी।</p><div class="pp-mhl">Promo codes case-sensitive, single-use और time-limited होते हैं, और already-discounted items पर लागू नहीं होते।</div><p class="pp-mpara">किसी भी समस्या के लिए हमसे [support email] | [phone] पर संपर्क करें।</p>`,
+      disclaimer: `<div class="pp-mtitle"><i class="ti ti-alert-circle" aria-hidden="true"></i>Legal Disclaimer</div><div class="pp-mbadge">Important Notice</div><p class="pp-mpara">SS Herbal के Ayurvedic और herbal products traditional knowledge और natural ingredients का उपयोग करके overall well-being को support करने के लिए formulate किए जाते हैं। इस पर ध्यान दें:</p><ul class="pp-mlist"><li>ये products किसी भी बीमारी का diagnosis, treatment, cure या prevention नहीं करते</li><li>Products Drugs and Cosmetics Act, 1940 और संबंधित rules के अनुसार [AYUSH licence no.] के तहत manufacture किए जाते हैं [और लागू होने पर FSSAI licence no. [FSSAI licence no.] के तहत compliant हैं]</li><li>Results व्यक्ति से व्यक्ति अलग हो सकते हैं</li><li>Website/app/packaging पर दी गई जानकारी केवल general informational purpose के लिए है, medical advice नहीं</li><li>किसी pre-existing health condition, pregnancy, breastfeeding या अन्य medication लेने की स्थिति में उपयोग से पहले qualified doctor से परामर्श करें</li></ul><div class="pp-mhl">इस website या किसी third-party platform पर दिए गए content पर पूरी तरह निर्भर होकर health-related decisions न लें, medical advice लेने में देरी न करें, और prescribed treatment बीच में न छोड़ें। यह website doctor की qualified medical consultation का substitute नहीं है।</div><p class="pp-mpara">Website का उपयोग आपके अपने जोखिम पर है। कानून द्वारा अनुमत अधिकतम सीमा तक, हम website के material के उपयोग या उस पर निर्भरता से उत्पन्न किसी भी loss या damage के लिए उत्तरदायी नहीं होंगे। बिना proper medical consultation के या recommended instructions के विपरीत products का उपयोग करने से उत्पन्न consequences के लिए भी SS Herbal उत्तरदायी नहीं है।</p><p class="pp-mpara">Third-party websites के links केवल convenience के लिए दिए गए हैं; हम उनके content, products या services को endorse नहीं करते। इस disclaimer से संबंधित मामले भारत के कानूनों द्वारा governed हैं, और courts at [city] का exclusive jurisdiction होगा। संपर्क करें: [legal email] | [support email]।</p>`,
+    };
+
+
+    function openModal(key) {
+      document.getElementById('pp-content').innerHTML = contents[key];
+      document.getElementById('pp-overlay').classList.add('show');
+    }
+    function closeModal() {
+      document.getElementById('pp-overlay').classList.remove('show');
+    }
+    function closeIfOutside(e) {
+      if (e.target === document.getElementById('pp-overlay')) closeModal();
+    }
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js');
+      });
+    }
+</script>
+</html>

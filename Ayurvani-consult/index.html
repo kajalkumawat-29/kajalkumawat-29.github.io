@@ -1579,21 +1579,27 @@ line-height:1.2;
    
 
     /* ================= STICKY BOTTOM CTA ================= */
-    .sticky-cta {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      width: 450px;
-      max-width: 100%;
-      background: var(--secondary-bg);
-      padding: 12px 20px;
-      box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.12);
-      z-index: 500;
-      box-sizing: border-box;
-    }
+   .sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 450px;
+  max-width: 100%;
+  background: var(--secondary-bg);
+  padding: 12px 20px;
+  box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.12);
+  z-index: 500;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
+.sticky-cta.hide {
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+}
     .sticky-cta button {
       width: 100%;
       background: var(--accent);
@@ -2771,6 +2777,26 @@ line-height:1.2;
         navigator.serviceWorker.register('sw.js');
       });
     }
+
+
+
+    // Sticky CTA hide/show based on order form visibility
+const stickyCta = document.querySelector('.sticky-cta');
+const orderFormSection = document.getElementById('formSection');
+
+if (stickyCta && orderFormSection) {
+  const ctaObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        stickyCta.classList.add('hide');
+      } else {
+        stickyCta.classList.remove('hide');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  ctaObserver.observe(orderFormSection);
+}
 </script>
 
 </body>

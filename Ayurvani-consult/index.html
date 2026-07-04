@@ -10,17 +10,22 @@
 
  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Halant:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
    <style>
-    :root {
+   :root {
       --primary: #5B2C6F;
       --primary-dark: #43215a;
       --primary-light: #7d4a96;
-      --secondary-bg: #e7d4f0;
-      --accent: #E67E22;
+      --accent: #f1b65d;
       --accent-light: #f5c9a0;
-      --accent-dark: #c96c15;
       --text: #2C2C2C;
       --white: #FFFFFF;
       --line: #e6d5ef;
+      --accent-dark: #CE8A28;
+      --secondary: #F3E8F5;
+      --secondary-dark: #E4C9E8;
+      --secondary-bg: #e7d4f0;
+      --white: #FFFFFF;
+      --text: #3A2440;
+      --text-soft: #7A6483;
     }
 
     * {
@@ -33,6 +38,7 @@
       padding: 0;
       overflow-x: hidden;
       width: 100%;
+      -webkit-overflow-scrolling: touch;
     }
 
     body {
@@ -48,7 +54,6 @@
       max-width: 450px;
       width: 100%;
       position: relative;
-      overflow-x: hidden;
       background: var(--white);
       padding-bottom: 90px;
       
@@ -750,16 +755,17 @@ line-height:1.2;
 
  
 
-    /* section-7 how it works */
+    /* section-6 how it works */
     .hiw-wrap {
       width: 100%;
       max-width: 450px;
       background: var(--primary-light);
       font-family: 'halant', serif;
-      padding: 34px 0 40px;
+      padding: 24px 0 40px;
       overflow: hidden;
       text-align: center;
       box-sizing: border-box;
+      border-bottom: 2px solid var(--white);
     }
 
     .hiw-head {
@@ -771,10 +777,10 @@ line-height:1.2;
     .hiw-heading {
       font-family: halant, serif;
       font-weight: 800;
-      font-size: 32px;
-      line-height: 1.35;
+      font-size: 28px;
+      line-height: 1.2;
       color: var(--white);
-      margin: 0 0 10px;
+      margin-bottom:-3px;
     }
 
     .hiw-desc {
@@ -823,7 +829,7 @@ line-height:1.2;
     }
 
     .hiw-ticket:nth-child(2) .hiw-stub-text {
-      background: var(--accent);
+      background: var(--accent-dark);
     }
 
     .hiw-ticket:nth-child(3) .hiw-stub-text {
@@ -884,7 +890,7 @@ line-height:1.2;
     }
 
     .hiw-ticket:nth-child(2) .hiw-step-label {
-      color: var(--accent);
+      color: var(--accent-dark);
     }
 
     .hiw-ticket:nth-child(3) .hiw-step-label {
@@ -924,7 +930,7 @@ line-height:1.2;
     }
 
     .hiw-ticket:nth-child(2) .hiw-stamp {
-      color: var(--accent);
+      color: var(--accent-dark);
       transform: rotate(10deg);
     }
 
@@ -952,18 +958,15 @@ line-height:1.2;
       padding: 15px;
       text-align: center;
       background: var(--accent);
-      color: var(--white);
+      color: var(--primary);
       font-family: halant, serif;
       font-weight: 700;
-      font-size: 15px;
+      font-size: 18px;
       border: 0;
       border-radius: 14px;
       cursor: pointer;
     }
 
-    .hiw-cta:hover {
-      background: var(--accent-dark);
-    }
 
    /* =========================
    HIW SECTION MOBILE OPTIMIZATION
@@ -971,7 +974,7 @@ line-height:1.2;
 @media (max-width: 480px) {
 
   .hiw-wrap {
-    padding: 26px 0 32px;
+    padding: 16px 0 32px;
   }
 
   .hiw-head {
@@ -1047,7 +1050,7 @@ line-height:1.2;
     .testimonial-area {
       max-width: 450px;
       width: 100%;
-      padding: 45px 16px;
+      padding: 15px 16px;
       background: var(--secondary-bg);
       font-family: halant, serif;
       box-sizing: border-box;
@@ -1126,7 +1129,7 @@ line-height:1.2;
     .verify {
       display: inline-block;
       margin-top: 15px;
-      background: var(--accent);
+      background: var(--accent-dark);
       color: var(--white);
       padding: 7px 15px;
       border-radius: 20px;
@@ -1139,7 +1142,7 @@ line-height:1.2;
 @media (max-width: 480px) {
 
   .testimonial-area {
-    padding: 25px 14px;
+    padding: 15px 14px;
   }
 
   .t-head {
@@ -1192,7 +1195,7 @@ line-height:1.2;
     .faq-side-layout {
       width: 100%;
       max-width: 450px;
-      padding: 45px 18px;
+      padding: 15px 18px;
       background: var(--primary-light);
       font-family: halant, serif;
       box-sizing: border-box;
@@ -1282,7 +1285,7 @@ line-height:1.2;
 @media (max-width: 480px) {
 
   .faq-side-layout {
-    padding: 35px 14px;
+    padding: 15px 14px;
   }
 
   .faq-head {
@@ -1560,7 +1563,7 @@ line-height:1.2;
     @media (max-width:480px) {
       .pl-wrap {
         padding: 8px 4px;
-        margin-bottom: -60px;
+        margin-bottom: -15px;
       }
 
       .pl-link {
@@ -1594,7 +1597,7 @@ line-height:1.2;
     .sticky-cta button {
       width: 100%;
       background: var(--accent);
-      color: var(--white);
+      color: var(--primary);
       border: none;
       font-family: 'Halant', serif;
       font-size: 19px;
@@ -1877,383 +1880,11 @@ line-height:1.2;
 
 </div>
 
-    <!-- section-6 order form  -->
-
-    <html>
-
-    <head>
-      <style>
-        .lp-order {
-          max-width: 450px;
-          width: 100%;
-          padding: 35px 16px;
-          background: var(--accent-light);
-          box-sizing: border-box;
-        }
-
-        .order-head {
-          text-align: center;
-          margin-bottom: 20px;
-        }
-
-        .order-head h2 {
-          font-size: 28px;
-          color: var(--primary);
-          margin: 0;
-
-        }
-
-        .order-head p {
-          font-size: 18px;
-          color: var(--primary);
-          font-weight: 500;
-        }
-
-        .form-card {
-          background: var(--white);
-          border-radius: 26px;
-          padding: 20px 16px;
-          box-shadow: 0 15px 35px rgba(0, 0, 0, .10);
-          border: 1px solid var(--secondary-bg);
-        }
-
-        .progress-bar {
-          display: flex;
-          gap: 8px;
-          margin-bottom: 22px;
-        }
-
-        .progress-bar span {
-          height: 6px;
-          flex: 1;
-          background: #e6d5ef;
-          border-radius: 20px;
-          overflow: hidden;
-          position: relative;
-        }
-
-        .progress-bar span::after {
-          content: "";
-          position: absolute;
-          left: 0;
-          top: 0;
-          height: 100%;
-          width: 0%;
-          background: var(--primary);
-          border-radius: 20px;
-          transition: width 1.3s ease;
-        }
-
-        .progress-bar span.active::after {
-          width: 100%;
-        }
-
-        .form-item {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          background: var(--secondary-bg);
-          border-radius: 18px;
-          padding: 12px;
-          margin-bottom: 16px;
-        }
-
-        .icon-box {
-          width: 45px;
-          height: 45px;
-          background: var(--primary);
-          color: var(--white);
-          border-radius: 14px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 20px;
-          flex-shrink: 0;
-        }
-
-        .input-area {
-          flex: 1;
-          min-width: 0;
-        }
-
-        .input-area label {
-          display: block;
-          font-size: 16px;
-          font-weight: bold;
-          color: var(--primary);
-        }
-
-        .input-area input {
-          width: 100%;
-          border: 0;
-          outline: 0;
-          background: transparent;
-          font-size: 14px;
-          margin-top: 6px;
-          color: var(--text);
-          padding:6px;     
-          border-radius: 6px;     
-          background: var(--white);
-        }
-
-        .form-card button {
-          width: 100%;
-          height: 56px;
-          border: 0;
-          border-radius: 18px;
-          background: var(--accent-light);
-          color: var(--primary);
-          font-size: 15px;
-          font-weight: bold;
-          cursor: pointer;
-        }
-
-        .form-card button:hover {
-          background: var(--accent-dark);
-        }
-
-        .loader-bg {
-          display: none;
-          position: fixed;
-          inset: 0;
-          background: rgba(255, 255, 255, .55);
-          backdrop-filter: blur(7px);
-          z-index: 999;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .loader-box {
-          background: var(--white);
-          padding: 28px 35px;
-          border-radius: 25px;
-          text-align: center;
-          box-shadow: 0 15px 40px rgba(0, 0, 0, .15);
-        }
-
-        .spinner {
-          width: 50px;
-          height: 50px;
-          border: 5px solid var(--secondary-bg);
-          border-top: 5px solid var(--primary);
-          border-radius: 50%;
-          margin: auto;
-          animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-          from {
-            transform: rotate(0deg);
-          }
-
-          to {
-            transform: rotate(360deg);
-          }
-        }
-
-        .loader-box p {
-          color: var(--primary);
-          font-weight: bold;
-        }
-      </style>
-    </head>
-    <!-- ============ section-6 order form ============ -->
-    <section class="lp-order" id="formSection">
-      <div class="order-head">
-        <h2> बोलने से जुड़ी परेशानी को ignore न करें
-        </h2>
-        <p>अगर आप या आपका कोई अपना
-          गूंगापन, तुतलापन या हकलापन जैसी problem face कर रहा है,
-          तो expert guidance लेकर अपनी स्थिति को बेहतर समझें।
-        </p>
-      </div>
-
-      <div class="form-card" id="formPage">
-        <div class="progress-bar">
-          <span id="step1"></span>
-          <span id="step2"></span>
-          <span id="step3"></span>
-        </div>
-
-        <form id="bookingForm">
-          <div class="form-item">
-            <div class="icon-box"><i class="fa-solid fa-user"></i></div>
-            <div class="input-area">
-              <label>आपका नाम*</label>
-              <input id="name" name="name" type="text" placeholder="अपना पूरा नाम लिखें"
-                oninput="this.value=this.value.replace(/[^a-zA-Z\u0900-\u097F\s]/g,'')">
-            </div>
-          </div>
-
-          <div class="form-item">
-            <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
-            <div class="input-area">
-              <label>मोबाइल नंबर*</label>
-              <input id="phone" name="phone" type="tel" maxlength="10" placeholder="10 अंकों का मोबाइल नंबर"
-                oninput="this.value=this.value.replace(/[^0-9]/g,'').replace(/^[0-5]/,'')">
-            </div>
-          </div>
-
-          <button type="submit"><i class="fa-solid fa-bullseye"></i> Free Consultation Book करें</button>
-        </form>
-      </div>
-
-      <div class="loader-bg" id="loader">
-        <div class="loader-box">
-          <div class="spinner"></div>
-          <p>कृपया प्रतीक्षा करें<span id="dotAnim">.</span></p>
-        </div>
-      </div>
 
 
-    </section>
-    <script>
-      // ---------- Booking form validation + progress ----------
-      let nameInput = document.getElementById("name");
-      let phoneInput = document.getElementById("phone");
-
-      let step1 = document.getElementById("step1");
-      let step2 = document.getElementById("step2");
-      let step3 = document.getElementById("step3");
-
-      nameInput.addEventListener("input", () => {
-        if (nameInput.value.trim() != "") {
-          step1.classList.add("active");
-        } else {
-          step1.classList.remove("active");
-        }
-      });
-
-      phoneInput.addEventListener("input", () => {
-        if (phoneInput.value.length == 10 && /^[6-9][0-9]{9}$/.test(phoneInput.value)) {
-          step2.classList.add("active");
-        } else {
-          step2.classList.remove("active");
-        }
-      });
-
-      document.getElementById("bookingForm").addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        if (
-          nameInput.value.trim() == "" ||
-          !/^[a-zA-Z\u0900-\u097F\s]+$/.test(nameInput.value) ||
-          !/^[6-9][0-9]{9}$/.test(phoneInput.value)
-        ) {
-          alert("कृपया सही जानकारी भरें");
-          return;
-        }
-
-        step3.classList.add("active");
-
-        // Google Sheet wali submitForm() call hoti hai
-        submitForm(e);
-      });
-
-      /* ===== Google Sheet submit + redirect to Thankyou.html ===== */
-      function submitForm(event) {
-        event.preventDefault();
-        const form = document.getElementById("bookingForm");
-
-        // Submit button ko hide + disable karo
-        const submitBtn = form.querySelector("button[type='submit'], input[type='submit']");
-        if (submitBtn) {
-          submitBtn.style.display = "none";
-          submitBtn.disabled = true;
-        }
-
-        // Loading show karo
-        document.getElementById("loader").style.display = "flex";
-
-        const formData = new FormData(form);
-        let redirected = false;
-
-        const timeout = setTimeout(() => {
-          if (!redirected) {
-            redirected = true;
-            window.location.href = './Thankyou.html';
-          }
-        }, 2000);
-
-        fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec', {
-          method: 'POST',
-          body: formData
-        })
-          .then(response => response.text())
-          .then(data => {
-            if (!redirected) {
-              clearTimeout(timeout);
-              redirected = true;
-              window.location.href = './Thankyou.html';
-            }
-            document.getElementById("loader").style.display = "none";
-          })
-          .catch(error => {
-            console.error('Fetch error:', error);
-            if (!redirected) {
-              clearTimeout(timeout);
-              redirected = true;
-              window.location.href = './Thankyou.html';
-            }
-            document.getElementById("loader").style.display = "none";
-          });
-
-        return false;
-      }
-
-      // Animated dots for loading state
-      let dotCount = 1;
-      setInterval(() => {
-        const d = document.getElementById('dotAnim');
-        if (d) {
-          dotCount = (dotCount % 3) + 1;
-          d.textContent = '.'.repeat(dotCount);
-        }
-      }, 500);
-
-      /* ===== Back button par aane se purana data form se hat jaye ===== */
-      function resetOrderForm() {
-        const form = document.getElementById("bookingForm");
-        if (form) { form.reset(); }
-
-        if (step1) step1.classList.remove("active");
-        if (step2) step2.classList.remove("active");
-        if (step3) step3.classList.remove("active");
-
-        const loader = document.getElementById("loader");
-        if (loader) loader.style.display = "none";
-
-        const submitBtn = document.querySelector("#bookingForm button[type='submit']");
-        if (submitBtn) {
-          submitBtn.style.display = "";
-          submitBtn.disabled = false;
-        }
-      }
-
-      // Thankyou.html se "back" karne par (bfcache) ya kisi bhi back/forward navigation par form clear ho jaye
-      window.addEventListener("pageshow", function (event) {
-        let cameFromBackForward = event.persisted;
-
-        if (!cameFromBackForward && window.performance && performance.getEntriesByType) {
-          const navEntries = performance.getEntriesByType("navigation");
-          if (navEntries.length && navEntries[0].type === "back_forward") {
-            cameFromBackForward = true;
-          }
-        }
-
-        if (cameFromBackForward) {
-          resetOrderForm();
-        }
-      });
 
 
-    </script>
-</body>
-
-</html>
-
-
-<!-- section-7 how it works -->
+<!-- section-6 how it works -->
 <div class="hiw-wrap">
   <div class="hiw-head">
     <h2 class="hiw-heading">अपना Consultation Session Book करें</h2>
@@ -2306,6 +1937,674 @@ line-height:1.2;
     Session</button>
 
 </div>
+
+
+
+   <!-- section-7 order form  -->
+ <html>
+<head>
+<style>
+ 
+
+    .lp-order {
+      max-width: 450px;
+      width: 100%;
+      padding: 24px 16px 26px;
+      background: var(--primary-light);
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 2px solid var(--white);
+    }
+
+    /* decorative waveform — signature motif echoing "voice/speech" */
+    .wave-deco {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 4px;
+      height: 26px;
+      margin: 0 auto 14px;
+    }
+
+    .wave-deco span {
+      display: block;
+      width: 4px;
+      border-radius: 3px;
+      background: var(--accent);
+      animation: wave 1.4s ease-in-out infinite;
+    }
+
+    .wave-deco span:nth-child(1) { height: 10px; animation-delay: 0s; }
+    .wave-deco span:nth-child(2) { height: 22px; animation-delay: .12s; }
+    .wave-deco span:nth-child(3) { height: 14px; animation-delay: .24s; }
+    .wave-deco span:nth-child(4) { height: 26px; animation-delay: .36s; }
+    .wave-deco span:nth-child(5) { height: 12px; animation-delay: .48s; }
+    .wave-deco span:nth-child(6) { height: 20px; animation-delay: .6s; }
+    .wave-deco span:nth-child(7) { height: 9px; animation-delay: .72s; }
+
+    @keyframes wave {
+      0%, 100% { transform: scaleY(0.6); opacity: .75; }
+      50% { transform: scaleY(1); opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .wave-deco span { animation: none; }
+    }
+
+    .order-head {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .order-head h2 {
+      font-family: halant, sans-serif;
+      font-size: 28px;
+      line-height: 1.2;
+      color: var(--accent);
+      margin: 0 0 10px;
+      font-weight: 700;
+    }
+
+    .order-head p {
+      font-size: 18px;
+      line-height: 1.2;
+      color: white;
+      font-weight: 500;
+      margin: 0 0 14px;
+    }
+
+    .condition-tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .condition-tags span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--white);
+      border: 1.5px solid var(--secondary-dark);
+      color: var(--primary-dark);
+      font-family: halant, sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      box-shadow: 0 4px 10px rgba(91, 42, 111, .08);
+    }
+
+    .condition-tags i {
+      color: var(--primary);
+      font-size: 18px;
+    }
+
+    .order-head .sub-line {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0;
+    }
+
+    .order-head .sub-line i {
+      margin-right: 5px;
+    }
+
+    .form-card {
+      background: var(--white);
+      border-radius: 28px;
+      padding: 24px 18px 20px;
+      box-shadow: 0 20px 45px rgba(91, 42, 111, .16);
+      border: 1px solid #EFE0F0;
+      position: relative;
+    }
+
+    .card-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-dark);
+      color: var(--white);
+      font-family: halant, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 7px 18px;
+      border-radius: 999px;
+      box-shadow: 0 6px 16px rgba(232, 163, 61, .45);
+      white-space: nowrap;
+    }
+
+    .progress-bar {
+      display: flex;
+      gap: 8px;
+      margin: 10px 0 22px;
+    }
+
+    .progress-bar span {
+      height: 6px;
+      flex: 1;
+      background: var(--secondary);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0%;
+      background: var(--primary);
+      border-radius: 20px;
+      transition: width 1.3s ease;
+    }
+
+    .progress-bar span.active::after {
+      width: 100%;
+    }
+
+    .form-item {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      background: var(--secondary-bg);
+      border-radius: 18px;
+      padding: 12px;
+      margin-bottom: 14px;
+      border: 1.5px solid transparent;
+      transition: border-color .2s ease, background .2s ease;
+    }
+
+    .form-item:focus-within {
+      border-color: var(--primary);
+    }
+
+    .icon-box {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--white);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      box-shadow: 0 6px 14px rgba(91, 42, 111, .3);
+    }
+
+    .input-area {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .input-area label {
+      display: block;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: .2px;
+    }
+
+    .input-area input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: var(--white);
+      font-size: 15px;
+      font-family: 'Hind', sans-serif;
+      margin-top: 5px;
+      color: var(--text);
+      padding: 7px 8px;
+      border-radius: 8px;
+    }
+
+    .input-area input::placeholder {
+      color: #C4B2C9;
+    }
+
+    .trust-roww {
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+      margin: 20px 0 18px;
+      padding: 0 2px;
+    }
+
+    .trust-roww div {
+      flex: 1;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .trust-roww i {
+      color: var(--primary);
+      font-size: 18px;
+    }
+
+    .form-card button {
+      width: 100%;
+      height: 58px;
+      border: 0;
+      border-radius: 18px;
+      background:var(--accent-dark);
+      color: var(--white);
+      font-family: halant, sans-serif;
+      font-size: 16.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 6px;
+      gap: 10px;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .form-card button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px rgba(206, 138, 40, .45);
+    }
+
+    .form-card button:active {
+      transform: translateY(0);
+    }
+
+    .form-foot {
+      text-align: center;
+      font-size: 15px;
+      color: var(--text-soft);
+      margin-top: 12px;
+    }
+
+    .form-foot i {
+      color: var(--primary);
+      margin-right: 4px;
+    }
+
+    .loader-bg {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(58, 36, 64, .35);
+      backdrop-filter: blur(7px);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .loader-box {
+      background: var(--white);
+      padding: 30px 38px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, .2);
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid var(--secondary);
+      border-top: 5px solid var(--primary);
+      border-radius: 50%;
+      margin: auto;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .loader-box p {
+      color: var(--primary);
+      font-weight: 700;
+      font-family: halant, sans-serif;
+      margin: 14px 0 0;
+    }
+    /* =========================
+   MOBILE RESPONSIVE FIX
+   ========================= */
+
+@media (max-width: 768px) {
+
+  .lp-order {
+    max-width: 100%;
+    padding: 18px 12px 22px;
+  }
+
+  .order-head h2 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .order-head p {
+    font-size: 15px;
+  }
+
+  .condition-tags span {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .form-card {
+    padding: 18px 14px;
+    border-radius: 22px;
+  }
+
+  .card-badge {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  .form-item {
+    padding: 10px;
+    gap: 10px;
+    border-radius: 14px;
+  }
+
+  .icon-box {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .input-area label {
+    font-size: 12.5px;
+  }
+
+  .input-area input {
+    font-size: 14px;
+  }
+
+  .trust-roww {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .trust-roww div {
+    font-size: 11px;
+  }
+
+  .form-card button {
+    height: 52px;
+    font-size: 15px;
+    border-radius: 14px;
+  }
+
+  .form-foot {
+    font-size: 13px;
+  }
+
+  .wave-deco {
+    height: 22px;
+    gap: 3px;
+  }
+
+  .wave-deco span {
+    width: 3px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 420px) {
+
+  .order-head h2 {
+    font-size: 20px;
+  }
+
+  .condition-tags {
+    gap: 6px;
+  }
+
+  .condition-tags span {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  .form-card {
+    padding: 16px 12px;
+  }
+
+  .form-card button {
+    height: 50px;
+    font-size: 14px;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- ============ section-6 order form ============ -->
+  <section class="lp-order" id="formSection">
+    <div class="wave-deco" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="order-head">
+      <h2>बोलने से जुड़ी परेशानी को ignore न करें</h2>
+      <p>क्या आपका बच्चा या परिवार में कोई इन problems से जूझ रहा है?</p>
+
+      <div class="condition-tags">
+        <span><i class="fa-solid fa-comment-slash"></i>गूंगापन</span>
+        <span><i class="fa-solid fa-comment-slash"></i>तुतलापन</span>
+        <span><i class="fa-solid fa-comment-slash"></i>हकलापन</span>
+      </div>
+
+      <p class="sub-line"><i class="fa-solid fa-star"></i>Expert guidance से अपनी स्थिति को बेहतर समझें</p>
+    </div>
+
+    <div class="form-card" id="formPage">
+      <div class="card-badge"><i class="fa-solid fa-gift"></i>&nbsp; 100% Free Consultation</div>
+
+      <div class="progress-bar">
+        <span id="step1"></span>
+        <span id="step2"></span>
+        <span id="step3"></span>
+      </div>
+
+      <form id="bookingForm">
+        <div class="form-item">
+          <div class="icon-box"><i class="fa-solid fa-user"></i></div>
+          <div class="input-area">
+            <label>आपका नाम*</label>
+            <input id="name" name="name" type="text" placeholder="अपना पूरा नाम लिखें"
+              oninput="this.value=this.value.replace(/[^a-zA-Z\u0900-\u097F\s]/g,'')">
+          </div>
+        </div>
+
+        <div class="form-item">
+          <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+          <div class="input-area">
+            <label>मोबाइल नंबर*</label>
+            <input id="phone" name="phone" type="tel" maxlength="10" placeholder="10 अंकों का मोबाइल नंबर"
+              oninput="this.value=this.value.replace(/[^0-9]/g,'').replace(/^[0-5]/,'')">
+          </div>
+        </div>
+
+      
+
+        <button type="submit"><i class="fa-solid fa-bullseye"></i> Free Consultation Book करें</button>
+     
+      </form>
+        <div class="trust-roww">
+          <div><i class="fa-solid fa-shield-heart"></i>100% Confidential</div>
+          <div><i class="fa-solid fa-user-doctor"></i>Expert Therapist</div>
+          <div><i class="fa-solid fa-clock"></i>Quick Callback</div>
+        </div>
+
+      <div class="form-foot"><i class="fa-solid fa-lock"></i>आपकी जानकारी पूरी तरह सुरक्षित रहेगी</div>
+    </div>
+
+    <div class="loader-bg" id="loader">
+      <div class="loader-box">
+        <div class="spinner"></div>
+        <p>कृपया प्रतीक्षा करें<span id="dotAnim">.</span></p>
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+    // ---------- Booking form validation + progress ----------
+    let nameInput = document.getElementById("name");
+    let phoneInput = document.getElementById("phone");
+
+    let step1 = document.getElementById("step1");
+    let step2 = document.getElementById("step2");
+    let step3 = document.getElementById("step3");
+
+    nameInput.addEventListener("input", () => {
+      if (nameInput.value.trim() != "") {
+        step1.classList.add("active");
+      } else {
+        step1.classList.remove("active");
+      }
+    });
+
+    phoneInput.addEventListener("input", () => {
+      if (phoneInput.value.length == 10 && /^[6-9][0-9]{9}$/.test(phoneInput.value)) {
+        step2.classList.add("active");
+      } else {
+        step2.classList.remove("active");
+      }
+    });
+
+    document.getElementById("bookingForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      if (
+        nameInput.value.trim() == "" ||
+        !/^[a-zA-Z\u0900-\u097F\s]+$/.test(nameInput.value) ||
+        !/^[6-9][0-9]{9}$/.test(phoneInput.value)
+      ) {
+        alert("कृपया सही जानकारी भरें");
+        return;
+      }
+
+      step3.classList.add("active");
+
+      // Google Sheet wali submitForm() call hoti hai
+      submitForm(e);
+    });
+
+    /* ===== Google Sheet submit + redirect to Thankyou.html ===== */
+    function submitForm(event) {
+      event.preventDefault();
+      const form = document.getElementById("bookingForm");
+
+      // Submit button ko hide + disable karo
+      const submitBtn = form.querySelector("button[type='submit'], input[type='submit']");
+      if (submitBtn) {
+        submitBtn.style.display = "none";
+        submitBtn.disabled = true;
+      }
+
+      // Loading show karo
+      document.getElementById("loader").style.display = "flex";
+
+      const formData = new FormData(form);
+      let redirected = false;
+
+      const timeout = setTimeout(() => {
+        if (!redirected) {
+          redirected = true;
+          window.location.href = './Thankyou.html';
+        }
+      }, 2000);
+
+      fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec', {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => response.text())
+        .then(data => {
+          if (!redirected) {
+            clearTimeout(timeout);
+            redirected = true;
+            window.location.href = './Thankyou.html';
+          }
+          document.getElementById("loader").style.display = "none";
+        })
+        .catch(error => {
+          console.error('Fetch error:', error);
+          if (!redirected) {
+            clearTimeout(timeout);
+            redirected = true;
+            window.location.href = './Thankyou.html';
+          }
+          document.getElementById("loader").style.display = "none";
+        });
+
+      return false;
+    }
+
+    // Animated dots for loading state
+    let dotCount = 1;
+    setInterval(() => {
+      const d = document.getElementById('dotAnim');
+      if (d) {
+        dotCount = (dotCount % 3) + 1;
+        d.textContent = '.'.repeat(dotCount);
+      }
+    }, 500);
+
+    /* ===== Back button par aane se purana data form se hat jaye ===== */
+    function resetOrderForm() {
+      const form = document.getElementById("bookingForm");
+      if (form) { form.reset(); }
+
+      if (step1) step1.classList.remove("active");
+      if (step2) step2.classList.remove("active");
+      if (step3) step3.classList.remove("active");
+
+      const loader = document.getElementById("loader");
+      if (loader) loader.style.display = "none";
+
+      const submitBtn = document.querySelector("#bookingForm button[type='submit']");
+      if (submitBtn) {
+        submitBtn.style.display = "";
+        submitBtn.disabled = false;
+      }
+    }
+
+    // Thankyou.html se "back" karne par (bfcache) ya kisi bhi back/forward navigation par form clear ho jaye
+    window.addEventListener("pageshow", function (event) {
+      let cameFromBackForward = event.persisted;
+
+      if (!cameFromBackForward && window.performance && performance.getEntriesByType) {
+        const navEntries = performance.getEntriesByType("navigation");
+        if (navEntries.length && navEntries[0].type === "back_forward") {
+          cameFromBackForward = true;
+        }
+      }
+
+      if (cameFromBackForward) {
+        resetOrderForm();
+      }
+    });
+  </script>
+
+</body>
+
+</html>
+
+
+
 
 
 <!-- ============ section-8 TESTIMONIAL SECTION ============ -->

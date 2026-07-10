@@ -158,6 +158,8 @@
       width: 100%;
       background: var(--color-bg);
       overflow: hidden;
+      
+      border-bottom:2px solid var(--color-primary-dark);
     }
 
     /* ---- Banner ---- */
@@ -1236,7 +1238,7 @@
     }
 
     .product-img-bg {
-      width: 110px;
+      width: 150px;
       height: 110px;
       border-radius: 14px;
       background: linear-gradient(135deg, var(--color-bg-soft) 0%, var(--border-l) 100%);
@@ -1247,6 +1249,13 @@
       border: 2px solid var(--border-l);
     }
 
+.product-img-bg img{
+    width: 500px !important;
+    height: 100px !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: cover;
+}   
     .badge-new {
       position: absolute;
       top: -8px;
@@ -1838,7 +1847,7 @@
 
     </div>
 
-
+<img src="images/product-img.avif" alt="">
 
 
 
@@ -2034,7 +2043,51 @@
 
 
 
-    <!-- ================= 7. TESTIMONIALS / REAL STORIES (borrowed card layout, NEURO SHAKTI PLUS content) ================= -->
+ 
+
+
+
+
+
+
+    <!-- ================= 8. BEFORE / AFTER ================= -->
+    <section class="lp-section reveal" id="before-after">
+      <h2>देखभाल की दिशा में एक कदम</h2>
+
+      <div class="ba-item">
+        <img src="images/sect-7-1stimg.avif" loading="lazy" alt="एक तरफ के हाथ या पैर में कमजोरी महसूस करता व्यक्ति">
+        <div class="ba-cols">
+          <div class="ba-col ba-before"><span class="ba-label">पहले</span>एक तरफ का हाथ या पैर कमजोर महसूस होना</div>
+          <div class="ba-col ba-after"><span class="ba-label">सपोर्ट के साथ</span>हाथ-पैर की सामान्य ताकत और मूवमेंट को
+            सपोर्ट</div>
+        </div>
+      </div>
+
+      <div class="ba-item">
+        <img src="images/sect-7-2ndimg.avif" loading="lazy"
+          alt="चलने में परेशानी और शरीर का बैलेंस बिगड़ने की स्थिति दर्शाता चित्र">
+        <div class="ba-cols">
+          <div class="ba-col ba-before"><span class="ba-label">पहले</span>चलने में परेशानी और शरीर का बैलेंस बिगड़ना
+          </div>
+          <div class="ba-col ba-after"><span class="ba-label">सपोर्ट के साथ</span>चलने-फिरने और बैलेंस बनाए रखने में
+            सहायता</div>
+        </div>
+      </div>
+
+      <div class="ba-item">
+        <img src="images/sect-7-3rdimg.avif" loading="lazy"
+          alt="चेहरे या शरीर के एक हिस्से पर असर की स्थिति दर्शाता चित्र">
+        <div class="ba-cols">
+          <div class="ba-col ba-before"><span class="ba-label">पहले</span>चेहरे या शरीर के एक हिस्से पर असर दिखना</div>
+          <div class="ba-col ba-after"><span class="ba-label">सपोर्ट के साथ</span>शरीर के प्रभावित हिस्से की देखभाल और
+            सामान्य एक्टिविटी पर ध्यान</div>
+        </div>
+      </div>
+    </section>
+
+
+
+       <!-- ================= 7. TESTIMONIALS / REAL STORIES (borrowed card layout, NEURO SHAKTI PLUS content) ================= -->
     <section class="reveal" id="reviews">
       <div class="pc-testimonial-wrapper">
         <div class="pc-testimonial-title">संतुष्ट ग्राहकों के अनुभव</div>
@@ -2087,46 +2140,6 @@
       </div>
     </section>
 
-
-
-
-
-
-
-    <!-- ================= 8. BEFORE / AFTER ================= -->
-    <section class="lp-section reveal" id="before-after">
-      <h2>देखभाल की दिशा में एक कदम</h2>
-
-      <div class="ba-item">
-        <img src="images/sect-7-1stimg.avif" loading="lazy" alt="एक तरफ के हाथ या पैर में कमजोरी महसूस करता व्यक्ति">
-        <div class="ba-cols">
-          <div class="ba-col ba-before"><span class="ba-label">पहले</span>एक तरफ का हाथ या पैर कमजोर महसूस होना</div>
-          <div class="ba-col ba-after"><span class="ba-label">सपोर्ट के साथ</span>हाथ-पैर की सामान्य ताकत और मूवमेंट को
-            सपोर्ट</div>
-        </div>
-      </div>
-
-      <div class="ba-item">
-        <img src="images/sect-7-2ndimg.avif" loading="lazy"
-          alt="चलने में परेशानी और शरीर का बैलेंस बिगड़ने की स्थिति दर्शाता चित्र">
-        <div class="ba-cols">
-          <div class="ba-col ba-before"><span class="ba-label">पहले</span>चलने में परेशानी और शरीर का बैलेंस बिगड़ना
-          </div>
-          <div class="ba-col ba-after"><span class="ba-label">सपोर्ट के साथ</span>चलने-फिरने और बैलेंस बनाए रखने में
-            सहायता</div>
-        </div>
-      </div>
-
-      <div class="ba-item">
-        <img src="images/sect-7-3rdimg.avif" loading="lazy"
-          alt="चेहरे या शरीर के एक हिस्से पर असर की स्थिति दर्शाता चित्र">
-        <div class="ba-cols">
-          <div class="ba-col ba-before"><span class="ba-label">पहले</span>चेहरे या शरीर के एक हिस्से पर असर दिखना</div>
-          <div class="ba-col ba-after"><span class="ba-label">सपोर्ट के साथ</span>शरीर के प्रभावित हिस्से की देखभाल और
-            सामान्य एक्टिविटी पर ध्यान</div>
-        </div>
-      </div>
-    </section>
 
     <!-- ================= 9. OFFER (borrowed rich layout, NEURO SHAKTI PLUS content) ================= -->
     <section class="reveal" id="offer">
@@ -2343,6 +2356,7 @@
           font-weight: 600;
           font-size: 14px;
           color: var(--color-primary);
+          text-align: left;
         }
 
         .field-error {
@@ -2524,11 +2538,12 @@
                 </svg>
                 <div class="col">
                   <small>मोबाइल नंबर</small>
+                  
                   <input type="tel" id="mobileInput" name="mobile" inputmode="numeric" maxlength="10"
                     placeholder="10 अंकों का नंबर" autocomplete="off" required>
+                    
                 </div>
-                <span class="cc">+91</span>
-              </div>
+               </div>
             </div>
             <div class="field-error" id="formError">कृपया सही नाम और 10 अंकों का मोबाइल नंबर (6-9 से शुरू) डालें</div>
 

@@ -1,0 +1,2570 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Kaan Consultation — Sahi Kaaran, Sahi Samadhan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    /* ============ TOKENS ============ */
+    :root{
+        --ink:#173226;
+        --ink-soft:#3c5347;
+        --paper:#F8F5EC;
+        --paper-2:#F0ECE0;
+        --deep:#153327;
+        --primary:#2F7D5A;
+        --primary-dark:#1F5E43;
+        --primary-light:#DCEBDF;
+        --secondary:#C79A3E;
+        --secondary-light:#F2E4C4;
+        --white:#FFFFFF;
+        --line:#cfd9cf;
+        --shadow: 0 14px 34px rgba(21,51,39,0.14);
+        --radius: 18px;
+        --font: 'Halant', 'Noto Serif Devanagari', serif;
+        --bottom-h: 78px;
+    }
+
+    *{box-sizing:border-box;}
+    html,body{margin:0;padding:0;}
+    body{
+        font-family: var(--font);
+        background: var(--paper-2);
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+    .page{
+        max-width: 450px;
+        margin: 0 auto;
+        background: var(--paper);
+        position: relative;
+        overflow-x: hidden;
+        min-height: 100vh;
+        padding-top: 0;
+        padding-bottom: var(--bottom-h);
+        box-shadow: 0 0 60px rgba(0,0,0,0.15);
+    }
+    h1,h2,h3,h4{ font-family: var(--font); margin:0; color: var(--deep); font-weight:600; }
+    p{ margin:0; font-size:18px; }
+    img,svg{ display:block; max-width:100%; }
+    button{ font-family: var(--font); cursor:pointer; }
+
+    /* shared section wrapper - SAME CLASS for every section */
+    .content-section{
+        padding: 46px 24px;
+        position: relative;
+    }
+
+    /* ============ STICKY BOTTOM ============ */
+    .sticky-cta{
+        position: fixed; left:50%; bottom:16px; transform:translateX(-50%);
+        width:calc(100% - 36px); max-width:412px; z-index:500;
+    }
+    .sticky-cta button{
+        width:100%; display:flex; align-items:center; justify-content:center; gap:10px;
+        background: var(--deep); color:#fff; border:2px solid var(--secondary);
+        padding:15px 18px; border-radius:50px; font-weight:700; font-size:17px;
+        box-shadow: 0 14px 30px rgba(0,0,0,.32);
+    }
+    .sticky-cta .pulse-dot{
+        width:9px; height:9px; border-radius:50%; background: var(--secondary); flex:none;
+        box-shadow: 0 0 0 0 rgba(199,154,62,.7);
+        animation: pulseDot 1.8s infinite;
+    }
+    @keyframes pulseDot{
+        0%{ box-shadow: 0 0 0 0 rgba(199,154,62,.6); }
+        70%{ box-shadow: 0 0 0 10px rgba(199,154,62,0); }
+        100%{ box-shadow: 0 0 0 0 rgba(199,154,62,0); }
+    }
+
+    /* ============ section-1 PROBLEM SHOWCASE ============ */
+    .section--problems{ background: var(--deep);
+        border-bottom: 2px solid var(--secondary);}
+    .poster-feed{
+        display:flex; flex-direction:column; gap:18px;
+    }
+    .prob-h2{
+        color:var(--secondary); font-size:28px; line-height:1.4; margin-bottom:26px;
+        text-align:center; font-weight:600;margin-top: -30px;
+    }
+    .poster-card{
+        background: var(--white); border:1.5px solid var(--line); border-radius:16px;
+        padding:14px; display:flex; flex-direction:column; gap:12px;
+        box-shadow: var(--shadow); transition: all .2s ease-in-out;
+        box-shadow: 0 6px 0px var(--secondary);
+        width: 95%;
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+    .poster-card:hover{
+        transform: translateY(-2px);
+    }
+    .problem-badge{
+        align-self:flex-start; font-family: var(--font);
+        background: var(--secondary); color: var(--deep);
+        font-size:16px; font-weight:700; padding:3px 10px; border-radius:6px;
+        text-transform:uppercase; letter-spacing:.5px;
+    }
+    .poster-text{ font-size:18px; color: var(--deep); font-weight:600; line-height:1.5; margin-top:-8px;
+        }
+    .image-frame{
+        width:100%; height:200px; border-radius:12px; overflow:hidden;
+        border:1px solid var(--line);
+    }
+    .image-frame img{ width:100%; height:100%; object-fit:cover; transition: transform .4s ease; }
+    .poster-card:hover .image-frame img{ transform: scale(1.05); }
+    .alert-callout{
+        margin-top:6px; background: var(--secondary-light);width: 95%; margin-left: 10px;margin-bottom: -15px;
+        border:2px dashed var(--secondary); border-radius:16px; padding:18px; text-align:center;
+    }
+    .callout-p1{ font-size:18px; font-weight:700; color: var(--deep); margin-bottom:6px; }
+    .callout-p2{ font-size:16px; line-height:1.6; color: var(--ink-soft); font-weight:500; }
+
+    /* ============ section-2 AWARENESS  ============ */
+     .card-d{
+    max-width:450px;
+    width:100%;
+    background:var(--deep);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+
+}
+
+/* ---- header ---- */
+.headd{
+    padding:16px 24px 20px;
+    border-bottom:1px solid var(--line);
+}
+
+.headd h1{
+    margin:0 0 16px;
+    font-size:28px;
+    line-height:1.5;
+    color:var(--secondary);
+    font-weight:700;
+    text-align: center;
+    font-family:var(--font);
+}
+.quote-e{
+    background:var(--paper-2);
+    border-left:4px solid #c0463f;
+    border-radius:8px;
+    padding:12px 14px;
+}
+.quote-e p{
+    margin:0;
+    font-size:18px;
+    font-style:italic;
+    color:black;
+}
+.quote-e span{
+    display:block;
+    margin-top:6px;
+    font-family:var(--font);
+    font-size:16px;
+    font-weight:700;
+    color:#a9433c;
+}
+
+
+/* ---- condition icon list ---- */
+.cond-list{
+    padding:6px 24px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+.cond-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:10px 14px;
+}
+.cond-item .ic{
+    flex:0 0 auto;
+    width:40px; height:40px;
+    border-radius:50%;
+    background:var(--primary-light);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--primary-dark);
+    font-size:18px;
+}
+.cond-item span{
+    font-family:var(--font);
+    font-size:18px;
+    font-weight:600;
+    color:var(--ink);
+}
+
+/* ---- wrong ways: 3 equal cards ---- */
+.wrong-title{
+    padding:20px 24px 10px;
+    font-family:var(--font);
+    font-weight:700;
+    font-size:22px;
+    color:var(--white);
+    margin:0;
+}
+.wrong-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    padding:0 24px 22px;
+}
+.wrong-card{
+    background:#fbeceb;
+    border:1px solid #ecd3d1;
+    border-radius:12px;
+    padding:14px 8px;
+    text-align:center;
+}
+.wrong-card .ic{
+    width:56px; height:56px;
+    margin:0 auto 8px;
+    border-radius:50%;
+    background:#f3d9d7;
+    display:flex; align-items:center; justify-content:center;
+}
+.wrong-card .ic svg{ width:28px; height:28px; stroke:#a9433c; }
+.wrong-card p{
+    margin:0;
+    font-family:var(--font);
+    font-size:18px;
+    line-height:1.4;
+    color:#8a4038;
+    font-weight:500;
+}
+
+/* ---- conditions ---- */
+.section-tag{
+    margin:0 24px 14px;
+    display:inline-flex;
+    font-family:var(--font);
+    font-weight:700;
+    font-size:22px;
+    color:var(--primary-dark);
+    background:var(--primary-light);
+    padding:5px 14px;
+    border-radius:999px;
+}
+
+/* ---- closing-f ---- */
+.closing-f{
+    margin:0 24px 22px;
+    background:var(--secondary);
+    border-radius:14px;
+    padding:16px 18px;
+}
+.closing-f p{
+    margin:0;
+    font-size:18px;
+    line-height:1.2;
+    color:var(--primary-dark);
+    font-weight: 600;
+}
+.closing-f p + p{ margin-top:6px; color:var(--primary-dark); font-weight:600; }
+
+
+@media (max-width:480px){
+    .card-d{ width:100%; }
+    .wrong-grid{ grid-template-columns:1fr 1fr 1fr; gap:6px; }
+    .section-tag{
+      font-size: 18px;
+    }
+    .wrong-card{ padding:10px 6px; }
+}
+
+    /* ============ section-3 APPROACH ============ */
+
+.earcare-approach-box{
+    max-width:450px;
+    width:100%;
+    margin:auto;
+    background:var(--paper);
+    padding:20px 10px;
+    box-shadow:0 14px 34px rgba(21,51,39,0.14);
+}
+
+.earcare-heading-area{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.earcare-heading-area h2{
+    font-size:28px;
+    color:var(--deep);
+    line-height:1.2;
+    font-weight:800;
+}
+
+.earcare-heading-area p{
+    font-size:18px;
+    color:var(--black);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+/* STEP BOX */
+
+.earcare-step-item{
+    margin-bottom:25px;
+}
+
+.earcare-step-heading{
+    background:var(--primary-dark);
+    color:var(--white);
+    border-radius:30px;
+    height:34px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    font-size:20px;
+    font-weight:700;
+    padding:10px 40px;
+    text-align:center;
+}
+
+.earcare-step-number{
+    position:absolute;
+    right:0;
+    width:34px;
+    height:34px;
+    background:var(--secondary);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:15px;
+    font-weight:800;
+}
+
+.earcare-step-item:nth-child(even) .earcare-step-number{
+    right:auto;
+    left:0;
+}
+
+/* CONTENT AREA */
+
+.earcare-content-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:10px;
+}
+
+.earcare-step-item:nth-child(even) .earcare-content-row{
+    flex-direction:row-reverse;
+}
+
+/* IMAGE */
+
+.earcare-icon-circle{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    border:2px solid var(--primary);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:var(--white);
+    flex-shrink:0;
+}
+
+.earcare-icon-circle img{
+    width:100px;
+    height:100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* TEXT */
+
+.earcare-info-card{
+    background:var(--deep);
+    color:var(--white);
+    padding:14px 16px;
+    border-radius:0 18px 18px 18px;
+    flex:1;
+}
+
+.earcare-step-item:nth-child(even) .earcare-info-card{
+    border-radius:18px 0 18px 18px;
+}
+
+.earcare-info-card ul{
+    padding-left:16px;
+    margin:0;
+}
+
+.earcare-info-card li{
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:5px;
+}
+.earcare-info-card li:last-child{ margin-bottom:0; }
+
+/* FOOTER */
+
+.earcare-bottom-note{
+    background:var(--primary-dark);
+    color:white;
+    padding:15px;
+    border-radius:15px;
+    text-align:center;
+    font-size:18px;
+    font-weight:600;
+    margin-top:15px;
+}
+
+@media(max-width:450px){
+    .earcare-content-row,
+    .earcare-step-item:nth-child(even) .earcare-content-row{
+        gap:8px;
+    }
+    .earcare-icon-circle{
+        width:90px;
+        height:90px;
+    }
+    .earcare-icon-circle svg{
+        width:46px;
+        height:46px;
+    }
+    .earcare-info-card li{
+        font-size:15px;
+    }
+}
+
+    /* section-4 process */
+
+      .qissa-taakhta{
+        width: 450px;
+        max-width: 100%;
+        background:var(--deep);
+       border: 1px solid var(--line);
+        padding: 34px 26px 30px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Heading with washi-tape */
+    .process-main{
+        text-align: center;
+        position: relative;
+        margin-bottom: 18px;
+    }
+
+    .process-heading{
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--secondary);
+        line-height: 1.4;
+        margin-top: -20px;
+    }
+
+    /* Thread line running behind the trail */
+    .process-div{
+        position: relative;
+        padding: 10px 6px 6px;
+    }
+
+    .process-div::before{
+        content:"";
+        position:absolute;
+        top: 20px;
+        bottom: 20px;
+        left: 50%;
+        width: 0;
+        border-left: 2px dashed var(--secondary);
+        opacity: 0.6;
+        z-index: 0;
+    }
+
+    .process-main-div{
+        position: relative;
+        z-index: 1;
+        display: flex;
+        margin-bottom: 22px;
+    }
+
+    .process-main-div:last-child{ margin-bottom: 0; }
+
+    .process-main-div.div-pro{ justify-content: flex-start; }
+    .process-main-div.disha-dayan{ justify-content: flex-end; }
+
+    .process-num{
+        width: 220px;
+        background: var(--white);
+        padding: 10px 10px 14px;
+        border-radius: 4px;
+        box-shadow: 0 10px 22px rgba(21,51,39,0.2);
+        position: relative;
+    }
+
+    .process-main-div.div-pro .process-num{ transform: rotate(-3deg); }
+    .process-main-div.disha-dayan .process-num{ transform: rotate(3deg); }
+
+    .pro-img{
+        width: 100%;
+        aspect-ratio: 4/3;
+        border-radius: 2px;
+        overflow: hidden;
+        background: var(--primary-light);
+    }
+
+    .pro-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .pro-num{
+        position: absolute;
+        top: -14px;
+        left: -14px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: var(--white);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-family: var(--font);
+        font-weight: 700;
+        font-size: 14px;
+        border: 3px solid var(--paper);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+        transform: rotate(-8deg);
+    }
+
+    .process-main-div.disha-dayan .pro-num{
+        background: var(--secondary);
+        color: var(--deep);
+        left: auto;
+        right: -14px;
+        transform: rotate(8deg);
+    }
+
+    .pro-head{
+        font-size: 18px;
+        color: var(--ink);
+        line-height: 1.55;
+        text-align: center;
+        margin-top: 10px;
+        font-weight: 600;
+    }
+
+
+    @media (max-width: 480px){
+        .process-num{ width: 68% !important; }
+    }
+    /* ============ section-5 HOW IT WORKS ============ */
+    .section--steps{ background: var(--primary-light);border-bottom: 1px solid var(--secondary); border-top:1px solid var(--secondary); border-bottom:1px solid var(--secondary); }
+    .hiw-header{ text-align:center; }
+    .hiw-title{ color: var(--black); font-size:28px; line-height:1.3; margin-top:-20px;}
+    .hiw-desc{ font-size:18px; color: black; line-height:1.5; font-weight:500; margin-top:6px; }
+    .hiw-steps{ margin-top:28px; position:relative; }
+    .hiw-steps::before{
+        content:""; position:absolute; left:41px; top:10px; height:84%; width:3px;
+        background: var(--secondary-light); border-radius:10px;
+    }
+    .hiw-step{
+        position:relative; display:flex; gap:14px; margin-bottom:20px;
+        background: var(--deep); padding:14px; border-radius:18px;
+        box-shadow: var(--shadow); border:1px solid var(--line);
+    }
+    .hiw-step:last-child{ margin-bottom:0; background: var(--deep); border-color: var(--deep); }
+    .hiw-step:last-child .hiw-step-title,
+    .hiw-step:last-child .hiw-step-text{ color:#fff; }
+    .hiw-img-wrap{ width:134px; height:134px; flex-shrink:0; position:relative; }
+    .hiw-img-wrap img{ width:100%; height:100%; object-fit:cover; border-radius:16px; }
+    .hiw-number{
+        position:absolute; bottom:-6px; right:-6px; width:28px; height:28px;
+        background: var(--secondary); color: var(--deep); border-radius:50%;
+        display:flex; align-items:center; justify-content:center;
+        font-size:12px; font-weight:700; border:3px solid var(--primary-light); box-shadow: 0 4px 8px rgba(0,0,0,.2);
+    }
+    .hiw-step-title{ margin:2px 0 6px; color: var(--primary-light); font-size:20px; font-weight:600; }
+    .hiw-step-text{ margin:0; color: var(--primary-light); font-size:18px; line-height:1.55; }
+
+
+
+
+    /* ============ section-6 SPECIAL OFFER  ============ */
+  .offer-card{
+    position: relative;
+    max-width: 450px;
+    width: 100%;
+    background:
+      radial-gradient(120% 140% at 100% 0%, var(--primary-light) 0%, transparent 45%),
+      var(--paper);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+
+
+  .ribbon{
+    position:absolute;
+    top:28px;
+    right:-52px;
+    width: 190px;
+    padding: 6px 0;
+    text-align:center;
+    background: linear-gradient(135deg, var(--secondary), #b3872f);
+    color: var(--deep);
+    font-size: 15px;
+    letter-spacing: 0.14em;
+    font-weight:600;
+    transform: rotate(45deg);
+    box-shadow: 0 4px 10px rgba(21,51,39,0.18);
+    z-index: 2;
+  }
+
+  .offer-inner{
+    position:relative;
+    z-index:1;
+    padding: 34px 32px 30px;
+  }
+
+
+
+  h1.headline{
+    margin:0 0 6px;
+    color: var(--deep);
+    font-family: var(--font);
+    font-weight:600;
+    font-size: 25px;
+    line-height:1.28;
+  }
+  h1.headline em{
+    font-style:normal;
+    color: var(--primary-dark);
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom:1px;
+  }
+
+  .subb{
+    margin: 0 0 22px;
+    color: black;
+    font-size: 18px;
+    line-height:1.3;
+  }
+
+  .divider{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin: 0 0 20px;
+  }
+  .divider::before, .divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background: linear-gradient(90deg, transparent, var(--line), transparent);
+  }
+  .divider .glyph{
+    color: var(--secondary);
+    font-size:22px;
+  }
+
+  .perks{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 0 0 24px;
+    padding:0;
+    list-style:none;
+  }
+  .perks li{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+      align-items:center;
+
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 15px 14px 16px;
+    color: var(--ink);
+    font-size: 18px;
+    line-height:1.45;
+    font-weight:500;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .perks li:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(21,51,39,0.1);
+    border-color: var(--primary);
+  }
+  .perks .icon-wrap{
+    width:48px;
+    height:48px;
+    border-radius: 10px;
+    background: var(--primary-light);
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+    flex:0 0 auto;
+  }
+  .perks .icon-wrap i{
+    font-size: 22px;
+    color: var(--primary-dark);
+  }
+  .perks li .icon-wrap{
+    background: var(--secondary-light);
+  }
+  .perks li .icon-wrap i{
+    color: #9a7527;
+  }
+
+  .cta{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    width:100%;
+    border:none;
+    cursor:pointer;
+    padding: 15px 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--white);
+    font-family: var(--font);
+    font-weight:600;
+    font-size: 18px;
+    letter-spacing:0.01em;
+    box-shadow: 0 10px 22px rgba(31,94,67,0.32);
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .cta:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 14px 26px rgba(31,94,67,0.4);
+  }
+  .cta svg{
+    width:17px; height:17px;
+    transition: transform .18s ease;
+  }
+  .cta:hover svg{ transform: translateX(3px); }
+
+  .footnote{
+    text-align:center;
+    margin: 14px 0 0;
+    font-size: 15px;
+    color: var(--ink-soft);
+    opacity:0.75;
+    letter-spacing:0.02em;
+  }
+
+@media (max-width:450px){
+
+  .circle-guarantee-wrapper{
+      width:100%;
+      max-width:100%;
+      padding:20px 14px;
+  }
+
+  .circle-grid{
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+  }
+
+  .image-circle-frame{
+      width:70px;
+      height:70px;
+  }
+
+  .circle-label{
+      font-size:13px;
+  }
+
+  .section-header h2{
+      font-size:26px;
+  }
+
+  .premium-mission-banner p{
+      font-size:15px;
+  }
+
+  .premium-mission-banner::before{
+      font-size:12px;
+      padding:4px 10px;
+  }
+   .ribbon{
+      display:none;
+  }
+
+}
+
+
+    /* ============ section-7 EXPERT TEAM ============ */
+     .wrapper-card {
+            width: 100%;
+            max-width: 450px;
+            background-color: var(--primary-dark);
+            border: 1px solid var(--line);
+           padding: 24px;
+        }
+         .description {
+            color: var(--secondary-light);
+            font-size: 18px;
+            line-height: 1.2;
+            font-weight: 500;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Header */
+        .header-area {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .badgee {
+            background-color: var(--secondary);
+            color: var(--deep);
+            font-weight: 700;
+            font-size: 20px;
+            padding: 4px 14px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 13px;
+            letter-spacing: 0.5px;
+        }
+
+        .main-title {
+            color: var(--secondary);
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        /* Doctor Banner Container */
+        .doctor-banner {
+            width: 100%;
+            height: 320px;
+            background-color: var(--paper-2);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            position: relative;
+            border: 1px solid var(--line);
+        }
+
+        .doctor-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Keywords Grid Layout */
+        .keywords-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        /* Keyword Individual Card */
+        .keyword-item {
+            background-color: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .keyword-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Small Image/Icon frame inside keyword */
+        .keyword-img-box {
+            width: 100px;
+            height:100px;
+            background-color: var(--primary-light);
+            overflow: hidden;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .keyword-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .keyword-text {
+            color: black;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* Bottom Process Description */
+        .footer-guide {
+            background-color: var(--secondary);
+            color: var(--paper);
+            padding: 16px;
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        .footer-guide p {
+            font-size: 18px;
+            line-height: 1.2;
+            font-weight: 500;
+        }
+
+        .footer-guide strong {
+            color:white;
+            display: block;
+            font-size: 20px;
+        }
+
+    /* ============ section-9 REVIEWS  ============ */
+ .wrapper{
+    max-width:450px;
+    width:100%;
+    background:var(--primary-light);
+    padding:18px 14px 26px;
+    border-bottom:1px solid var(--secondary);
+
+}
+
+/* HEADER */
+.top-tag{
+    text-align:center;
+}
+
+.h2{
+    font-size:28px;
+    color:var(--ink);
+    text-align:center;
+}
+
+.sub{
+    text-align:center;
+    font-size:18px;
+    color:black;
+    margin-top:-12px;
+    margin-bottom:22px;
+}
+
+/* CARD */
+.card{
+    display:flex;
+    background:#fff;
+    border-radius:16px;
+    margin:16px 10px 0 10px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+}
+
+/* LEFT PANEL */
+.left{
+    width:135px;
+    background:linear-gradient(180deg,var(--primary),var(--primary-dark));
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    border-top-right-radius:76px;
+    border-bottom-right-radius:76px;
+    padding:14px 8px;
+    color:#fff;
+}
+
+/* avatar image */
+.avatar{
+    width:78px;
+    height:78px;
+    border-radius:50%;
+    border:2px solid rgba(255,255,255,0.7);
+    margin-bottom:8px;
+    overflow:hidden;
+}
+
+.avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.name{
+    font-size:18px;
+    font-weight:600;
+    text-align:center;
+}
+
+.city{
+    font-size:16px;
+    opacity:0.9;
+    margin-top:-5px;
+}
+
+/* RIGHT SIDE */
+.right{
+    flex:1;
+    padding:12px 14px;
+}
+
+.stars{
+    color:var(--secondary);
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+.quote{
+    margin-top:6px;
+    font-size:17px;
+    line-height:1.2;
+    color:var(--ink);
+    font-weight:500;
+}
+
+.badge{
+    margin-top:10px;
+    display:inline-block;
+    background:var(--primary-light);
+    color:var(--primary-dark);
+    font-size:16px;
+    padding:4px 10px;
+    border-radius:20px;
+    font-weight:600;
+}
+
+
+    /* ============ section-10 FAQ ============ */
+  .faq-wrap{
+    max-width:450px;
+    width:100%;
+    background:var(--primary-light);
+    font-family:var(--font);
+    padding:18px;
+    box-sizing:border-box;
+}
+.faq-wrap h2{
+    font-size:28px;
+    color:var(--deep);
+    text-align:center;
+    margin-bottom:18px;
+}
+/* item */
+.faq-item{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    margin-bottom:12px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    background:var(--white);
+}
+
+/* question button */
+.faq-q{
+    width:100%;
+    background:white;
+    border:none;
+    outline:none;
+    padding:16px 14px;
+    text-align:left;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:18px;
+    font-weight:600;
+    color:var(--deep);
+}
+
+/* custom icon (no plus/arrow) */
+.icon{
+    width:26px;
+    height:26px;
+    border-radius:50%;
+    background:var(--primary-light);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:0.3s;
+    position:relative;
+}
+
+/* inner dot style icon */
+.icon::before,
+.icon::after{
+    content:'';
+    position:absolute;
+    background:var(--primary);
+    transition:0.3s;
+}
+
+.icon::before{
+    width:12px;
+    height:2px;
+}
+
+.icon::after{
+    width:2px;
+    height:12px;
+}
+
+/* active state (turns into minus style) */
+.faq-item.active .icon{
+    background:var(--primary-light);
+    transform:rotate(180deg);
+}
+
+.faq-item.active .icon::after{
+    opacity:0;
+}
+
+/* answer */
+.faq-a{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.35s ease;
+    background:var(--white);
+}
+
+.faq-a p{
+    padding:14px 14px 16px;
+    margin:0;
+    color:black;
+    font-size:18px;
+    line-height:1.5;
+}
+/* policy */
+    .pl-wrap {
+      max-width: 450px;
+      width: 100%;
+      padding: 1px 12px;
+      box-sizing: border-box;
+      background: var(--white);
+        margin-bottom: 10px;
+
+    }
+
+    .pl-row {
+      display: flex;
+      gap: 0;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center
+    }
+
+    .pl-link {
+      background: none;
+      border: none;
+      font-size: 7px;
+      opacity: 0.44;
+      font-weight: 500;
+      color: #267156;
+      cursor: pointer;
+      padding: 4px 5px;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-family: inherit;
+      white-space: nowrap;
+      transition: color .15s
+    }
+
+    .pl-link:hover {
+      color: #1a5240
+    }
+
+    .pl-sep {
+      color: #c9ddd7;
+      font-size: 11px;
+      user-select: none
+    }
+
+    .pp-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center
+    }
+
+    .pp-overlay.show {
+      display: flex
+    }
+
+    .pp-modal {
+      background: #fff;
+      border-radius: 18px;
+      max-width: 420px;
+      width: 90%;
+      max-height: 60vh;
+      overflow-y: auto;
+      padding: 22px 18px 18px;
+      position: relative
+    }
+
+    .pp-modal::-webkit-scrollbar {
+      width: 6px
+    }
+
+    .pp-modal::-webkit-scrollbar-track {
+      background: transparent
+    }
+
+    .pp-modal::-webkit-scrollbar-thumb {
+      background: #c9c9c9;
+      border-radius: 28px
+    }
+
+    .pp-modal::-webkit-scrollbar-thumb:hover {
+      background: #a8a8a8
+    }
+
+    .pp-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: #e6f3ed;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #267156;
+      font-size: 16px
+    }
+
+    .pp-close:hover {
+      background: #c9ddd7
+    }
+
+    .pp-mtitle {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1a5240;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .pp-mtitle i {
+      font-size: 20px
+    }
+
+    .pp-mbadge {
+      display: inline-block;
+      background: #e6f3ed;
+      color: #267156;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px
+    }
+
+    .pp-mpara {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.7;
+      margin-bottom: 10px
+    }
+
+    .pp-mlist {
+      padding-left: 0;
+      list-style: none;
+      margin: 0 0 10px
+    }
+
+    .pp-mlist li {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.6;
+      padding: 5px 0 5px 20px;
+      position: relative;
+      border-bottom: 1px dashed #e2ede9
+    }
+
+    .pp-mlist li:last-child {
+      border-bottom: none
+    }
+
+    .pp-mlist li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 13px;
+      width: 7px;
+      height: 7px;
+      background: #39ad7d;
+      border-radius: 50%
+    }
+
+    .pp-mhl {
+      background: #e6f3ed;
+      border-left: 3px solid #267156;
+      border-radius: 0 8px 8px 0;
+      padding: 9px 13px;
+      font-size: 13px;
+      color: #1a5240;
+      margin-bottom: 10px
+    }
+
+    .pp-cgrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 8px
+    }
+
+    .pp-citem {
+      background: #f4faf7;
+      border: 1px solid #c9ddd7;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center
+    }
+
+    .pp-citem i {
+      font-size: 20px;
+      color: #267156;
+      display: block;
+      margin-bottom: 4px
+    }
+
+    .pp-citem .pp-clbl {
+      font-size: 11px;
+      color: #888;
+      margin-bottom: 2px
+    }
+
+    .pp-citem .pp-cval {
+      font-size: 11px;
+      font-weight: 600;
+      color: #1a5240
+    }
+
+    @media (max-width:480px) {
+      .pl-wrap {
+        padding: 8px 4px;
+        margin-bottom: 10px;
+      }
+
+      .pl-link {
+        font-size: 6px;
+        padding: 4px 2px
+      }
+
+      .pl-sep {
+        font-size: 6px
+      }
+    }
+
+        /* ================= DISCLAIMER ================= */
+        .disclaimer {
+            padding: 18px 22px 8px;
+            background: #fff;
+            margin-bottom: -10px;
+            border-top: 1px solid var(--line);
+        }
+
+        .disclaimer p {
+            font-family: var(--font-display);
+            font-size: 8px;
+            line-height: 1.55;
+            color: #9C9C9C;
+            opacity: 0.64;
+            letter-spacing: 0.1px;
+        }
+
+    /* ============================================================
+       MOBILE OPTIMIZATION
+       Same layout/design, fluidly scaled so small phone screens
+       (320px – 480px) render exactly like the desktop/base view.
+       Nothing here changes colors, structure or content — only
+       sizing so nothing overflows or breaks on narrow screens.
+    ============================================================ */
+    @media (max-width: 480px){
+        .prob-h2{ font-size: clamp(22px, 6vw, 28px); }
+        .earcare-heading-area h2,
+        .process-heading,
+        .hiw-title,
+        .h2,
+        .faq-wrap h2,
+        .main-title{ font-size: clamp(22px, 6vw, 28px); }
+
+        .qissa-taakhta{ padding: 30px 16px 26px; }
+        .process-num{ width: 82%; }
+
+        .hiw-img-wrap{ width: 104px; height: 104px; }
+
+        .left{ width: 108px; padding: 12px 6px; }
+        .avatar{ width: 50px; height: 50px; }
+
+        .wrapper-card{ padding: 18px; }
+        .keyword-img-box{ width: 68px; height: 68px; }
+
+        .offer-inner{ padding: 26px 18px 22px; }
+        h1.headline{ font-size: clamp(20px, 5.5vw, 25px); }
+
+        .earcare-icon-circle{ width: 84px; height: 84px; }
+        .earcare-icon-circle img{ width: 76px; height: 76px; }
+
+        .poster-card{ width: 100%; margin-left: 0; }
+        .alert-callout{ width: 100%; margin-left: 0; }
+    }
+
+    @media (max-width: 360px){
+        .wrong-grid{ gap: 4px; }
+        .wrong-card{ padding: 8px 4px; }
+        .wrong-card p{ font-size: 15px; }
+        .keywords-grid{ gap: 8px; }
+        .perks{ gap: 8px; }
+        .process-num{ width: 88%; }
+        .hiw-img-wrap{ width: 90px; height: 90px; }
+        .left{ width: 96px; }
+    }
+
+    </style>
+    </head>
+    <body>
+
+    <div class="page" id="page">
+    <div class="page-blur-target">
+
+<img src="images/banner.avif" alt="">
+
+    <!-- section-1 PROBLEM SHOWCASE  -->
+    <section class="content-section section--problems" id="problems">
+        <h2 class="prob-h2">क्या आपकी समस्या इनमें से कोई है?</h2>
+        <div class="poster-feed">
+
+        <div class="poster-card">
+            <span class="problem-badge">समस्या 01</span>
+            <p class="poster-text">कान का पर्दा फटना</p>
+            <div class="image-frame">
+            <img src="images/sect-1-1stimg.avif" alt="कान का पर्दा फटना" loading="lazy">
+            </div>
+        </div>
+
+        <div class="poster-card">
+            <span class="problem-badge">समस्या 02</span>
+            <p class="poster-text">Tinnitus (कान में लगातार आवाज़ आना)</p>
+            <div class="image-frame">
+            <img src="images/sect-1-2ndimg.avif" alt="Tinnitus" loading="lazy">
+            </div>
+        </div>
+
+        <div class="poster-card">
+            <span class="problem-badge">समस्या 03</span>
+            <p class="poster-text">कान में मवाद आना</p>
+            <div class="image-frame">
+            <img src="images/sect-1-3rdimg.avif" alt="कान में मवाद" loading="lazy">
+            </div>
+        </div>
+
+        <div class="poster-card">
+            <span class="problem-badge">समस्या 04</span>
+            <p class="poster-text">कान में सूजन या दर्द</p>
+            <div class="image-frame">
+            <img src="images/sect-1-4thimg.avif" alt="सूजन या दर्द" loading="lazy">
+            </div>
+        </div>
+
+        <div class="poster-card">
+            <span class="problem-badge">समस्या 05</span>
+            <p class="poster-text">बहरापन या सुनने की क्षमता कम होना</p>
+            <div class="image-frame">
+            <img src="images/sect-1-5thimg.avif" alt="बहरापन" loading="lazy">
+            </div>
+        </div>
+
+        </div>
+
+        <div class="alert-callout">
+        <p class="callout-p1">कान की समस्या में सिर्फ दर्द ही परेशानी नहीं होती।</p>
+        <p class="callout-p2">असली परेशानी होती है सही जानकारी न मिलने की, जो आगे चलकर बड़ी समस्या बन सकती है।</p>
+        </div>
+    </section>
+
+    <!-- section-2 AWARENESS -->
+ <div class="card-d">
+
+    <div class="headd">
+        <h1>कान की समस्या को हल्के में न लें</h1>
+        <div class="quote-e">
+            <p>"थोड़ा दर्द है... अपने आप ठीक हो जाएगा।"</p>
+            <span>❌ यही सबसे बड़ी गलती है</span>
+        </div>
+    </div>
+
+    <p class="wrong-title">बहुत से लोग...</p>
+    <div class="wrong-grid">
+        <div class="wrong-card">
+            <div class="ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="10" cy="10" r="6"/>
+                    <line x1="14.5" y1="14.5" x2="20" y2="20"/>
+                </svg>
+            </div>
+            <p>इंटरनेट देखकर इलाज करते हैं</p>
+        </div>
+        <div class="wrong-card">
+            <div class="ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="6" y="3" width="12" height="18" rx="2"/>
+                    <path d="M9 8h6M9 12h6M9 16h4"/>
+                </svg>
+            </div>
+            <p>मेडिकल स्टोर से खुद दवा लेते हैं</p>
+        </div>
+        <div class="wrong-card">
+            <div class="ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 11l8-7 8 7"/>
+                    <path d="M6 10v9a1 1 0 0 0 1 1h4v-6h2v6h4a1 1 0 0 0 1-1v-9"/>
+                </svg>
+            </div>
+            <p>घरेलू नुस्खों पर भरोसा करते हैं</p>
+        </div>
+    </div>
+
+    <span class="section-tag">जबकि... कारण अलग-अलग होते हैं</span>
+    <div class="cond-list">
+        <div class="cond-item">
+            <div class="ic"><i class="fa-solid fa-ear-deaf"></i></div>
+            <span>कान का पर्दा फटना</span>
+        </div>
+        <div class="cond-item">
+            <div class="ic"><i class="fa-solid fa-bell"></i></div>
+            <span>Tinnitus</span>
+        </div>
+        <div class="cond-item">
+            <div class="ic"><i class="fa-solid fa-droplet"></i></div>
+            <span>कान में मवाद आना</span>
+        </div>
+        <div class="cond-item">
+            <div class="ic"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <span>सूजन</span>
+        </div>
+        <div class="cond-item">
+            <div class="ic"><i class="fa-solid fa-volume-xmark"></i></div>
+            <span>बहरापन</span>
+        </div>
+    </div>
+
+    <div class="closing-f">
+        <p>इन सभी समस्याओं के कारण अलग-अलग हो सकते हैं।</p>
+        <p>सही कारण जाने बिना इलाज शुरू करना नुकसानदायक हो सकता है।</p>
+    </div>
+
+</div>
+
+
+    <!-- section-3 APPROACH -->
+
+<section class="earcare-approach-box">
+
+    <div class="earcare-heading-area">
+        <h2>हमारा Approach</h2>
+        <p>Guess करना बंद करें — सही कारण समझें।</p>
+        <p style="background-color: var(--deep); color: white; border-radius: 20px; padding: 20px; text-align: left;">➤ हमारा उद्देश्य केवल लक्षण बताना नहीं बल्कि आपकी समस्या की सही दिशा में मदद करना है।
+<br>➤ हमारी टीम आपकी शिकायतों को ध्यान से समझती है <br> ➤ और फिर आपको आगे क्या करना चाहिए, उसकी स्पष्ट जानकारी देती है।
+</p>
+    </div>
+
+    <!-- 1 -->
+    <div class="earcare-step-item">
+        <div class="earcare-step-heading">
+           चाहे आपकी समस्या...
+            <span class="earcare-step-number">1</span>
+        </div>
+        <div class="earcare-content-row">
+            <div class="earcare-icon-circle">
+               <img src="images/sect-3-1stimg.png" alt="" loading="lazy">
+            </div>
+            <div class="earcare-info-card">
+                <ul>
+
+                    <li>अचानक तेज़ कान दर्द होना</li>
+                    <li>कान का पर्दा फटना</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="earcare-step-item">
+        <div class="earcare-step-heading">
+           Tinnitus की समस्या
+            <span class="earcare-step-number">2</span>
+        </div>
+        <div class="earcare-content-row">
+            <div class="earcare-icon-circle">
+               <img src="images/sect-3-2ndimg.avif" alt="" loading="lazy">
+            </div>
+            <div class="earcare-info-card">
+                <ul>
+
+                    <li>कान में सीटी जैसी आवाज़ सुनाई देना</li>
+                    <li>लगातार भनभनाहट या शोर सुनाई देना</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="earcare-step-item">
+        <div class="earcare-step-heading">
+            कान में मवाद आना
+            <span class="earcare-step-number">3</span>
+        </div>
+        <div class="earcare-content-row">
+            <div class="earcare-icon-circle">
+               <img src="images/sect-3-3rdimg.avif" alt="" loading="lazy">
+            </div>
+            <div class="earcare-info-card">
+                <ul>
+                    <li>बार-बार कान बहने की समस्या</li>
+                    <li>मवाद के साथ बदबू आना</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="earcare-step-item">
+        <div class="earcare-step-heading">
+           कान में दर्द या सूजन होना
+            <span class="earcare-step-number">4</span>
+        </div>
+        <div class="earcare-content-row">
+            <div class="earcare-icon-circle">
+               <img src="images/sect-3-4thimg.avif" alt="" loading="lazy">
+            </div>
+            <div class="earcare-info-card">
+                <ul>
+                    <li>कान में लालपन और सूजन</li>
+                    <li>कान के अंदर या बाहर सूजन आना</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="earcare-bottom-note">
+        ✔ हम पहले आपकी समस्या समझते हैं, फिर सही सलाह देते हैं।
+    </div>
+
+</section>
+
+    <!-- section-4 PROCESS -->
+<div class="qissa-taakhta">
+
+    <div class="process-main">
+        <div class="process-heading">Consultation कैसे होती है?</div>
+    </div>
+
+    <div class="process-div">
+
+        <div class="process-main-div div-pro">
+            <div class="process-num">
+                <span class="pro-num">1</span>
+                <div class="pro-img">
+                    <img src="images/sect-4-1stimg.avif" alt="समस्या को समझना" loading="lazy">
+                </div>
+                <div class="pro-head">आपकी समस्या को समझा जाता है।</div>
+            </div>
+        </div>
+
+        <div class="process-main-div disha-dayan">
+            <div class="process-num">
+                <span class="pro-num">2</span>
+                <div class="pro-img">
+                    <img src="images/sect-4-2ndimg.avif" alt="Symptoms पर चर्चा" loading="lazy">
+                </div>
+                <div class="pro-head">आपके Symptoms के बारे में Detail से पूछा जाता है।</div>
+            </div>
+        </div>
+
+        <div class="process-main-div div-pro">
+            <div class="process-num">
+                <span class="pro-num">3</span>
+                <div class="pro-img">
+                    <img src="images/sect-4-3rdimg.avif" alt="मार्गदर्शन" loading="lazy">
+                </div>
+                <div class="pro-head">आपकी स्थिति के अनुसार Guidence दी जाती है।</div>
+            </div>
+        </div>
+
+        <div class="process-main-div disha-dayan">
+            <div class="process-num">
+                <span class="pro-num">4</span>
+                <div class="pro-img">
+                    <img src="images/sect-4-4thimg.avif" alt="जांच और इलाज" loading="lazy">
+                </div>
+                <div class="pro-head">आगे किस प्रकार की जांच या इलाज की जरूरत हो सकती है, उसकी जानकारी दी जाती है।</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+    <!-- section-5 HOW IT WORKS  -->
+    <section class="content-section section--steps">
+        <div class="hiw-header">
+        <h2 class="hiw-title">हमारा Step-by-Step Process</h2>
+        <p class="hiw-desc">घर बैठे अपनी स्थिति समझें और सही दिशा पाएं।</p>
+        </div>
+
+        <div class="hiw-steps">
+        <div class="hiw-step">
+            <div class="hiw-img-wrap">
+            <img src="images/sect-5-1stimg.avif" alt="अपनी जानकारी भरें" loading="lazy">
+            <div class="hiw-number">01</div>
+            </div>
+            <div class="hiw-content">
+            <h3 class="hiw-step-title">अपनी जानकारी भरें</h3>
+            <p class="hiw-step-text">Order Form में अपना नाम और मोबाइल नंबर भरें।</p>
+            </div>
+        </div>
+
+        <div class="hiw-step">
+            <div class="hiw-img-wrap">
+            <img src="images/sect-5-2ndimg.avif" alt="हमारी टीम संपर्क करेगी" loading="lazy">
+            <div class="hiw-number">02</div>
+            </div>
+            <div class="hiw-content">
+            <h3 class="hiw-step-title">हमारी टीम आपसे संपर्क करेगी</h3>
+            <p class="hiw-step-text">हमारी Expert Team आपकी समस्या को समझेगी।</p>
+            </div>
+        </div>
+
+        <div class="hiw-step">
+            <div class="hiw-img-wrap">
+            <img src="images/sect-5-3rdimg.avif" alt="सही Consultation प्राप्त करें" loading="lazy">
+            <div class="hiw-number">03</div>
+            </div>
+            <div class="hiw-content">
+            <h3 class="hiw-step-title">सही Consultation प्राप्त करें</h3>
+            <p class="hiw-step-text">कान का पर्दा फटना, Tinnitus, कान में मवाद, सूजन और बहरापन जैसी समस्याओं के अनुसार Guidence मिलेगी।</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- section-6 SPECIAL OFFER -->
+    <div class="offer-card">
+    <span class="ribbon">Limited&nbsp;Time</span>
+
+    <div class="offer-inner">
+
+      <h1 class="headline">सीमित समय के लिए <em>Consultation </em>सुविधा Available</h1>
+      <p class="subb">आपकी समस्या का सही समाधान, Expert Team की Guidence में — बस कुछ ही Slot बचे हैं।</p>
+
+      <div class="divider"><span class="glyph">✦</span></div>
+
+      <ul class="perks">
+        <li>
+          <span class="icon-wrap"><i class="fa-solid fa-user-tie"></i></span>
+          <span>Experienced Team</span>
+        </li>
+        <li>
+          <span class="icon-wrap"><i class="fa-solid fa-ear-listen"></i></span>
+          <span>आपकी समस्या को ध्यान से समझा जाएगा</span>
+        </li>
+        <li>
+          <span class="icon-wrap"><i class="fa-solid fa-diagram-project"></i></span>
+          <span>आसान प्रक्रिया</span>
+        </li>
+        <li>
+          <span class="icon-wrap"><i class="fa-solid fa-compass"></i></span>
+          <span>सही दिशा में मार्गदर्शन</span>
+        </li>
+      </ul>
+
+      <button class="cta" type="button" onclick="scrollToOrder()">
+        आज ही अपनी Consultation बुक करें
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <p class="footnote">सीमित सीटें Available हैं — जल्द बुक करें</p>
+    </div>
+  </div>
+
+    <!-- section-7 EXPERT TEAM -->
+      <div class="wrapper-card">
+
+        <div class="header-area">
+            <span class="badgee">Expert Team</span>
+            <h2 class="main-title">अनुभवी विशेषज्ञों से सही सलाह</h2>
+        </div>
+
+        <div class="doctor-banner">
+            <img src="images/doctor.avif" alt="Expert Doctors" loading="lazy">
+        </div>
+<p class="description">
+                हमारी टीम कान से जुड़ी समस्याओं को समझने और सही दिशा में Guidence देने का गहरा अनुभव रखती है।
+            </p>
+        <div class="keywords-grid">
+
+            <div class="keyword-item">
+                <div class="keyword-img-box">
+                    <img src="images/sect-7-1stimg.avif" alt="कान का पर्दा फटना" loading="lazy">
+                </div>
+                <span class="keyword-text">कान का पर्दा फटना</span>
+            </div>
+
+            <div class="keyword-item">
+                <div class="keyword-img-box">
+                    <img src="images/sect-7-2ndimg.avif" alt="Tinnitus" loading="lazy">
+                </div>
+                <span class="keyword-text">Tinnitus</span>
+            </div>
+
+            <div class="keyword-item">
+                <div class="keyword-img-box">
+                    <img src="images/sect-7-3rdimg.avif" alt="कान में मवाद" loading="lazy">
+                </div>
+                <span class="keyword-text">कान में मवाद</span>
+            </div>
+
+            <div class="keyword-item">
+                <div class="keyword-img-box">
+                    <img src="images/sect-7-4thimg.avif" alt="कान में सूजन" loading="lazy">
+                </div>
+                <span class="keyword-text">कान में सूजन</span>
+            </div>
+
+            <div class="keyword-item" style="grid-column: span 2; flex-direction: row; justify-content: center; gap: 15px;">
+                <div class="keyword-img-box" style="margin-bottom: 0;">
+                    <img src="images/sect-7-5thimg.avif" alt="बहरापन" loading="lazy">
+                </div>
+                <span class="keyword-text" style="font-size: 16px;">बहरापन (Hearing Loss)</span>
+            </div>
+
+        </div>
+
+        <div class="footer-guide">
+            <strong>आपकी बात, हमारा ध्यान</strong>
+            <p>आपकी समस्या को ध्यान से सुनकर आगे की सही प्रक्रिया समझाई जाती है।</p>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- section-8 ORDER FORM -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+
+/* ---------- Wrap ---------- */
+.ecf-wrap {
+  max-width: 450px;
+  width: 100%;
+  background: var(--secondary);
+  font-family: var(--font);
+  padding-bottom: 36px;
+}
+
+/* ---------- Hero ---------- */
+.ecf-hero {
+  background: var(--primary-dark);
+  padding: 34px 22px 66px;
+  border-radius: 0 0 30px 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ecf-ripple {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ecf-ripple .ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--secondary);
+  border-radius: 50%;
+  opacity: 0;
+  animation: ecf-pulse 2.6s ease-out infinite;
+}
+
+.ecf-ripple .ring.r2 { animation-delay: 0.9s; }
+.ecf-ripple .ring.r3 { animation-delay: 1.8s; }
+
+@keyframes ecf-pulse {
+  0% { transform: scale(0.55); opacity: 0.75; }
+  100% { transform: scale(1.65); opacity: 0; }
+}
+
+.ecf-ear-icon {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: linear-gradient(150deg, var(--secondary), var(--secondary-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  color: var(--deep);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
+  position: relative;
+  z-index: 2;
+}
+
+.ecf-title {
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 1.4;
+  color: var(--secondary-light);
+  text-align: center;
+
+}
+
+.ecf-subtitle {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0 0 16px;
+
+}
+
+.ecf-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ecf-chips span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(150deg, var(--secondary), var(--secondary-light));
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(3px);
+  color: var(--primary-dark);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 7px 12px;
+  border-radius: 999px;
+}
+
+.ecf-chips span i {
+  color: var(--primary-dark);
+  font-size: 16px;
+}
+
+/* ---------- Card ---------- */
+.ecf-card {
+  background: var(--white);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  margin: -42px 18px 0;
+  padding: 26px 20px 22px;
+  position: relative;
+  z-index: 3;
+}
+
+.ecf-instruction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.ecf-instruction i { color: var(--secondary); }
+
+.ecf-field {
+  position: relative;
+  margin-bottom: 26px;
+}
+
+.ecf-field input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--line);
+  background: transparent;
+  outline: none;
+  font-family: var(--font);
+  font-size: 16px;
+  color: var(--ink);
+  padding: 12px 26px 10px 2px;
+}
+
+.ecf-field label {
+  position: absolute;
+  left: 2px;
+  top: 12px;
+  font-size: 15.5px;
+  color: var(--ink-soft);
+  font-weight: 500;
+  pointer-events: none;
+  transition: all 0.16s ease;
+}
+
+.ecf-field input:focus {
+  border-bottom-color: var(--primary);
+}
+
+.ecf-field input:focus + label,
+.ecf-field input.has-value + label {
+  top: -9px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.ecf-field .ecf-check {
+  position: absolute;
+  right: 0;
+  top: 13px;
+  color: var(--primary);
+  font-size: 17px;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.18s ease;
+}
+
+.ecf-field.is-valid input {
+  border-bottom-color: var(--primary);
+}
+
+.ecf-field.is-valid .ecf-check {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ---------- Button ---------- */
+.ecf-btn {
+  width: 100%;
+  height: 56px;
+  border: 0;
+  border-radius: 14px;
+  background:  var(--secondary);
+  color: var(--primary-dark);
+  font-family: var(--font);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 6px;
+  box-shadow: 0 14px 26px rgba(199, 154, 62, 0.34);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ecf-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 30px rgba(199, 154, 62, 0.4);
+}
+
+.ecf-btn:active { transform: translateY(0); }
+
+/* ---------- Footer ---------- */
+.ecf-foot {
+  text-align: center;
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin-top: 14px;
+}
+
+.ecf-foot i { color: var(--primary); margin-right: 4px; }
+
+/* ---------- Loader ---------- */
+.ecf-loader-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(21, 51, 39, 0.45);
+  backdrop-filter: blur(6px);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.ecf-loader-box {
+  background: var(--white);
+  padding: 28px 36px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.ecf-loader-spinner {
+  width: 46px;
+  height: 46px;
+  border: 5px solid var(--primary-light);
+  border-top: 5px solid var(--primary);
+  border-radius: 50%;
+  margin: auto;
+  animation: ecf-spin 1s linear infinite;
+}
+
+@keyframes ecf-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.ecf-loader-box p {
+  color: var(--deep);
+  font-weight: 700;
+  font-family: var(--font);
+  margin: 14px 0 0;
+}
+  </style>
+
+
+  <section class="ecf-wrap" id="formSection">
+
+    <div class="ecf-hero">
+      <div class="ecf-ripple">
+        <span class="ring r1"></span>
+        <span class="ring r2"></span>
+        <span class="ring r3"></span>
+        <div class="ecf-ear-icon"><i class="fa-solid fa-ear-listen"></i></div>
+      </div>
+
+      <h1 class="ecf-title">अब अपनी समस्या को नजरअंदाज न करें</h1>
+      <p class="ecf-subtitle">यदि आपको इनमें से कोई भी समस्या है—</p>
+
+      <div class="ecf-chips">
+        <span><i class="fa-solid fa-triangle-exclamation"></i>कान का पर्दा फटना</span>
+        <span><i class="fa-solid fa-wave-square"></i>Tinnitus</span>
+        <span><i class="fa-solid fa-droplet"></i>कान में मवाद</span>
+        <span><i class="fa-solid fa-bandage"></i>सूजन या दर्द</span>
+        <span><i class="fa-solid fa-ear-deaf"></i>बहरापन</span>
+      </div>
+    </div>
+
+    <div class="ecf-card" id="formPage">
+      <p class="ecf-instruction"><i class="fa-solid fa-arrow-up"></i>ऊपर पहचानें, नीचे Detail भरें</p>
+
+      <form id="bookingForm">
+        <div class="ecf-field" id="nameField">
+          <input id="name" name="name" type="text" placeholder=" "
+            oninput="this.value=this.value.replace(/[^a-zA-Z\u0900-\u097F\s]/g,'')">
+          <label>आपका नाम*</label>
+          <i class="fa-solid fa-circle-check ecf-check"></i>
+        </div>
+
+        <div class="ecf-field" id="phoneField">
+          <input id="phone" name="phone" type="tel" maxlength="10" placeholder=" "
+            oninput="this.value=this.value.replace(/[^0-9]/g,'').replace(/^[0-5]/,'')">
+          <label>मोबाइल नंबर*</label>
+          <i class="fa-solid fa-circle-check ecf-check"></i>
+        </div>
+
+        <button type="submit" class="ecf-btn"><i class="fa-solid fa-ear-listen"></i> Free Consultation Book करें</button>
+      </form>
+
+      <div class="ecf-foot"><i class="fa-solid fa-lock"></i>आपकी जानकारी पूरी तरह सुरक्षित रहेगी</div>
+    </div>
+
+    <div class="ecf-loader-overlay" id="loader">
+      <div class="ecf-loader-box">
+        <div class="ecf-loader-spinner"></div>
+        <p>कृपया प्रतीक्षा करें<span id="dotAnim">.</span></p>
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+    let nameInput = document.getElementById("name");
+    let phoneInput = document.getElementById("phone");
+    let nameField = document.getElementById("nameField");
+    let phoneField = document.getElementById("phoneField");
+
+    function syncHasValue(input) {
+      input.classList.toggle("has-value", input.value.trim() !== "");
+    }
+
+    nameInput.addEventListener("input", () => {
+      syncHasValue(nameInput);
+      const valid = nameInput.value.trim() != "" && /^[a-zA-Z\u0900-\u097F\s]+$/.test(nameInput.value);
+      nameField.classList.toggle("is-valid", valid);
+    });
+
+    phoneInput.addEventListener("input", () => {
+      syncHasValue(phoneInput);
+      const valid = phoneInput.value.length == 10 && /^[6-9][0-9]{9}$/.test(phoneInput.value);
+      phoneField.classList.toggle("is-valid", valid);
+    });
+
+    document.getElementById("bookingForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      if (
+        nameInput.value.trim() == "" ||
+        !/^[a-zA-Z\u0900-\u097F\s]+$/.test(nameInput.value) ||
+        !/^[6-9][0-9]{9}$/.test(phoneInput.value)
+      ) {
+        alert("कृपया सही जानकारी भरें");
+        return;
+      }
+
+      submitForm(e);
+    });
+
+    function submitForm(event) {
+      event.preventDefault();
+      const form = document.getElementById("bookingForm");
+
+      const submitBtn = form.querySelector("button[type='submit'], input[type='submit']");
+      if (submitBtn) {
+        submitBtn.style.display = "none";
+        submitBtn.disabled = true;
+      }
+
+      document.getElementById("loader").style.display = "flex";
+
+      const formData = new FormData(form);
+      let redirected = false;
+
+      const timeout = setTimeout(() => {
+        if (!redirected) {
+          redirected = true;
+          window.location.href = './Thankyou.html';
+        }
+      }, 2000);
+
+      fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec', {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => response.text())
+        .then(data => {
+          if (!redirected) {
+            clearTimeout(timeout);
+            redirected = true;
+            window.location.href = './Thankyou.html';
+          }
+          document.getElementById("loader").style.display = "none";
+        })
+        .catch(error => {
+          console.error('Fetch error:', error);
+          if (!redirected) {
+            clearTimeout(timeout);
+            redirected = true;
+            window.location.href = './Thankyou.html';
+          }
+          document.getElementById("loader").style.display = "none";
+        });
+
+      return false;
+    }
+
+    let dotCount = 1;
+    setInterval(() => {
+      const d = document.getElementById('dotAnim');
+      if (d) {
+        dotCount = (dotCount % 3) + 1;
+        d.textContent = '.'.repeat(dotCount);
+      }
+    }, 500);
+
+    function resetOrderForm() {
+      const form = document.getElementById("bookingForm");
+      if (form) { form.reset(); }
+
+      if (nameField) nameField.classList.remove("is-valid");
+      if (phoneField) phoneField.classList.remove("is-valid");
+      if (nameInput) nameInput.classList.remove("has-value");
+      if (phoneInput) phoneInput.classList.remove("has-value");
+
+      const loader = document.getElementById("loader");
+      if (loader) loader.style.display = "none";
+
+      const submitBtn = document.querySelector("#bookingForm button[type='submit']");
+      if (submitBtn) {
+        submitBtn.style.display = "";
+        submitBtn.disabled = false;
+      }
+    }
+
+    window.addEventListener("pageshow", function (event) {
+      let cameFromBackForward = event.persisted;
+
+      if (!cameFromBackForward && window.performance && performance.getEntriesByType) {
+        const navEntries = performance.getEntriesByType("navigation");
+        if (navEntries.length && navEntries[0].type === "back_forward") {
+          cameFromBackForward = true;
+        }
+      }
+
+      if (cameFromBackForward) {
+        resetOrderForm();
+      }
+    });
+  </script>
+
+
+
+
+    <!-- section-9 REVIEWS -->
+
+<div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="top-tag">
+        <h2 class="h2">लोगों का अनुभव</h2>
+        <div class="sub">Real People, Real Feedback</div>
+    </div>
+
+
+
+    <!-- CARD 2 -->
+    <div class="card">
+        <div class="left">
+            <div class="avatar">
+                <img src="images/sect-9-1stimg.avif" alt="Seema" loading="lazy">
+            </div>
+            <div class="name">सीमा जी</div>
+            <div class="city">भोपाल</div>
+        </div>
+        <div class="right">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <div class="quote">मेरे कान में मवाद और दर्द की समस्या थी। Expert के सही Treatment से अब मेरी कान की परेशानी खत्म हो गई है।</div>
+            <div class="badge">Verified Consultation</div>
+        </div>
+    </div>
+
+
+    <!-- CARD 4 -->
+    <div class="card">
+        <div class="left">
+            <div class="avatar">
+                <img src="images/sect-9-3rdimg.avif" alt="Sunita" loading="lazy">
+            </div>
+            <div class="name">सुनीता जी</div>
+            <div class="city">इंदौर</div>
+        </div>
+        <div class="right">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <div class="quote">कान में सूजन और दर्द कई दिनों से था। Expert के Ayurvedic Treatment से अब मेरी कान की समस्या ठीक हो गई</div>
+            <div class="badge">Verified Consultation</div>
+        </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="card">
+        <div class="left">
+            <div class="avatar">
+                <img src="images/sect-9-2ndimg.avif" alt="Vikas" loading="lazy">
+            </div>
+            <div class="name">विकास जी</div>
+            <div class="city">दिल्ली</div>
+        </div>
+        <div class="right">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <div class="quote">कान का पर्दा फटने की वजह से सुनने में काफी परेशानी थी। Ayurvedic इलाज से अब मेरी सुनने की समस्या में काफी सुधार हैं</div>
+            <div class="badge">Verified Consultation</div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+    <!-- section-10 FAQ -->
+ <div class="faq-wrap">
+<h2 class="faq-h2">लोगों का भरोसा</h2>
+    <div class="faq-item">
+        <button class="faq-q">
+           क्या Ayurveda guidance मिल सकती है?
+
+            <div class="icon"></div>
+        </button>
+        <div class="faq-a">
+            <p>हाँ, BAMS Ayurvedic Expert आपकी स्थिति के अनुसार guidance दे सकते हैं।
+</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-q">
+            क्या यह consultation safe है?
+            <div class="icon"></div>
+        </button>
+        <div class="faq-a">
+            <p>👉 हाँ, यह safe guidance-based process है।</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-q">
+            क्या hearing loss ठीक हो सकता है?
+            <div class="icon"></div>
+        </button>
+        <div class="faq-a">
+            <p>👉 समय पर ध्यान देने से सुनने की समस्या में काफी राहत मिल सकती है।</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-q">
+            क्या consultation online भी है?
+            <div class="icon"></div>
+        </button>
+        <div class="faq-a">
+            <p>👉 हाँ, online consultation available है।</p>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+                <!-- DISCLAIMER -->
+            <section class="disclaimer">
+                <p>यह जानकारी केवल general awareness के उद्देश्य से दी गई है। हर व्यक्ति की health condition अलग हो सकती
+                    है, इसलिए किसी भी health concern के लिए योग्य healthcare professional / Ayurvedic Expert से सलाह
+                    लेना जरूरी है।</p>
+                <p>यह consultation किसी भी बीमारी की diagnosis या guaranteed treatment का दावा नहीं करती। सही guidance
+                    के लिए expert की सलाह लें।</p>
+            </section>
+
+            <!-- POLICY LINKS -->
+    <div class="pl-wrap">
+      <div class="pl-row">
+        <button class="pl-link" onclick="openModal('privacy')">Privacy Policy</button>
+        <span class="pl-sep">|</span>
+        <button class="pl-link" onclick="openModal('terms')">Terms & Conditions</button>
+        <span class="pl-sep">|</span>
+        <button class="pl-link" onclick="openModal('shipping')">Shipping Policy</button>
+        <span class="pl-sep">|</span>
+        <button class="pl-link" onclick="openModal('cancel')">Cancellation Policy</button>
+        <span class="pl-sep">|</span>
+        <button class="pl-link" onclick="openModal('disclaimer')">Legal Disclaimer</button>
+      </div>
+    </div>
+
+    <div class="pp-overlay" id="pp-overlay" onclick="closeIfOutside(event)">
+      <div class="pp-modal" id="pp-modal">
+        <button class="pp-close" onclick="closeModal()"><i class="ti ti-x" aria-hidden="true"></i></button>
+        <div id="pp-content"></div>
+      </div>
+    </div>
+
+    </div>
+    </div>
+    <!-- STICKY BOTTOM CTA -->
+    <div class="sticky-cta">
+    <button onclick="scrollToOrder()">
+        <span class="pulse-dot"></span>
+        Free Consultation Book Karein
+    </button>
+    </div>
+
+
+
+    <script>
+
+    // ---------- SCROLL ----------
+    function scrollToOrder(){
+        var el = document.getElementById('formSection');
+        if(el){ el.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+
+    // ---------- FAQ ----------
+  document.querySelectorAll(".faq-q").forEach(btn=>{
+    btn.addEventListener("click",function(){
+        const item = this.parentElement;
+        const answer = item.querySelector(".faq-a");
+
+        item.classList.toggle("active");
+
+        if(item.classList.contains("active")){
+            answer.style.maxHeight = answer.scrollHeight + "px";
+        }else{
+            answer.style.maxHeight = null;
+        }
+    });
+});
+
+
+
+
+ //policy
+     var contents = {
+      privacy: `<div class="pp-mtitle"><i class="ti ti-shield-lock" aria-hidden="true"></i>Privacy Policy</div><div class="pp-mbadge">Last updated: June 2026</div><p class="pp-mpara">SS Herbal आपकी personal information की सुरक्षा को सर्वोच्च प्राथमिकता देता है। यह Policy बताती है कि हम कौन सी जानकारी एकत्र करते हैं, उसका उपयोग कैसे करते हैं, और आपके पास कौन से rights Available हैं। Platform का उपयोग करके आप इस Privacy Policy से सहमत होते हैं।</p><p class="pp-mpara"><strong>हम कौन सी जानकारी एकत्र करते हैं:</strong></p><ul class="pp-mlist"><li>नाम, मोबाइल नंबर, email और delivery/billing address</li><li>Account login details</li><li>Health और wellness inputs (consultation/quiz के दौरान, optional और consent-based)</li><li>आपके messages, reviews और feedback</li><li>Usage data — IP address, device type, browser, cookies</li><li>Logistics और payment partners से order/delivery/payment status</li></ul><div class="pp-mhl">हम आपका full card number, CVV, UPI PIN या net-banking credentials store नहीं करते। सभी payments secure, PCI-DSS compliant payment gateways के माध्यम से process होते हैं।</div><p class="pp-mpara"><strong>उपयोग का उद्देश्य:</strong> आपकी जानकारी का उपयोग account management, order processing, customer support, personalised suggestions, transactional messages (SMS/email/WhatsApp/call) और consent-based marketing के लिए किया जाता है। हम fraud detect करने और कानून का पालन करने के लिए भी data का उपयोग करते हैं।</p><div class="pp-mhl">हम आपकी personal data नहीं बेचते। इसे केवल service providers, group affiliates, या कानूनी आवश्यकता होने पर ही share किया जाता है।</div><p class="pp-mpara"><strong>आपके Rights:</strong> Digital Personal Data Protection Act, 2023 के अंतर्गत, आपको अपनी data को access, correct, update और erase करने का अधिकार है, साथ ही consent withdraw करने और grievance redressal का अधिकार भी है। इसके लिए हमें [legal email] या [support email] पर लिखें।</p><p class="pp-mpara"><strong>Data Security:</strong> हम SSL encryption, access controls और secure servers जैसे reasonable measures अपनाते हैं। हालांकि, internet पर कोई भी transmission या storage method पूरी तरह से secure नहीं होता।</p><p class="pp-mpara"><strong>Children's Data:</strong> Platform केवल 18 वर्ष या उससे अधिक आयु के users के लिए है। हम जानबूझकर minors का data एकत्र नहीं करते।</p><p class="pp-mpara"><strong>Cookies &amp; Third-Party Links:</strong> हम cookies का उपयोग आपको signed-in रखने, cart याद रखने और Platform बेहतर बनाने के लिए करते हैं। आप इन्हें अपने browser में control कर सकते हैं। Platform में third-party sites के links और WhatsApp/Instagram/Facebook जैसे platforms पर interaction शामिल हो सकता है, जो उनकी अपनी policies से governed होते हैं।</p><p class="pp-mpara">किसी भी प्रश्न, request या complaint के लिए हमारे Grievance Officer से [legal email] | [support email] | [phone] पर संपर्क करें।</p>`,
+      terms: `<div class="pp-mtitle"><i class="ti ti-file-text" aria-hidden="true"></i>Terms of Use</div><div class="pp-mbadge">Last updated: June 2026</div><p class="pp-mpara">SS Herbal की website, mobile app और सभी related services ("Platform") को access, browse, register या purchase करने से पहले इन Terms of Use को ध्यान से पढ़ें। Platform का उपयोग करके आप इन Terms, हमारी Privacy Policy और सभी referenced policies से सहमत होते हैं।</p><div class="pp-mhl">यदि आप इन Terms से सहमत नहीं हैं, तो कृपया Platform का उपयोग न करें।</div><p class="pp-mpara"><strong>Eligibility &amp; Account:</strong> Platform का उपयोग करने के लिए आपकी आयु कम से कम 18 वर्ष होनी चाहिए और Indian Contract Act, 1872 के अनुसार आप contract करने के योग्य होने चाहिए। आपकी account details accurate रखना और credentials को confidential रखना आपकी जिम्मेदारी है। किसी भी unauthorised उपयोग की सूचना तुरंत हमें दें।</p><ul class="pp-mlist"><li>सभी products Ayurvedic, herbal और natural wellness products हैं — हमारे Legal Disclaimer के अधीन</li><li>Descriptions, images और prices को accurate रखने की कोशिश की जाती है; packaging में मामूली बदलाव हो सकते हैं</li><li>सभी prices INR में हैं, applicable taxes सहित, और बिना सूचना के बदले जा सकते हैं</li><li>Pricing या typographical error की स्थिति में हम order cancel कर सकते हैं और payment refund करेंगे</li></ul><p class="pp-mpara"><strong>Orders &amp; Payments:</strong> आपका order एक offer है; contract तभी बनता है जब हम product dispatch करते हैं। हम किसी भी order को accept या reject कर सकते हैं (stock issues, pricing errors, suspected fraud आदि की स्थिति में)। Payment secure gateways के माध्यम से लिया जाता है; eligible locations के लिए Cash on Delivery भी Available है। कभी भी अपनी card या banking details email पर share न करें।</p><p class="pp-mpara"><strong>Acceptable Use:</strong> आप Platform का उपयोग किसी unlawful, fraudulent या harmful उद्देश्य के लिए नहीं करेंगे, बिना authorisation products resell नहीं करेंगे, unauthorised access की कोशिश नहीं करेंगे, हमारे content/trademarks का misuse नहीं करेंगे, और false या abusive reviews पोस्ट नहीं करेंगे।</p><p class="pp-mpara"><strong>Intellectual Property:</strong> SS Herbal नाम, logo, product names, content, designs और software हमारी property हैं और कानून द्वारा सुरक्षित हैं। बिना written permission के इनका उपयोग न करें। Review या photo submit करने पर आप हमें उसे उपयोग करने का non-exclusive, royalty-free license देते हैं।</p><div class="pp-mhl">हमारे products किसी disease को diagnose, treat, cure या prevent करने का दावा नहीं करते और professional medical advice का substitute नहीं हैं।</div><p class="pp-mpara"><strong>Liability:</strong> Platform और products "as is" आधार पर Available हैं। कानून द्वारा अनुमत अधिकतम सीमा तक, हम indirect या consequential damages के लिए liable नहीं होंगे; हमारी total liability उस product की राशि से अधिक नहीं होगी जिससे claim उत्पन्न हुआ है।</p><p class="pp-mpara"><strong>Governing Law:</strong> ये Terms भारत के कानूनों द्वारा शासित हैं, और इससे संबंधित विवादों पर [city] की courts का exclusive jurisdiction होगा। हम इन Terms को समय-समय पर revise कर सकते हैं; updates पोस्ट होने पर तुरंत प्रभावी होंगे।</p><p class="pp-mpara">किसी भी प्रश्न के लिए हमसे [support email] या [phone] पर संपर्क करें।</p>`, shipping: `<div class="pp-mtitle"><i class="ti ti-truck-delivery" aria-hidden="true"></i>Shipping Policy</div><div class="pp-mbadge">Free Delivery All India</div><p class="pp-mpara">हम पूरे India में FREE shipping प्रदान करते हैं। Delivery timeline:</p><ul class="pp-mlist"><li>Metro cities (Delhi, Mumbai, Bengaluru): 3–5 business days</li><li>Tier-2 / Tier-3 cities: 5–7 business days</li><li>Remote / rural areas: 7–10 business days</li></ul><div class="pp-mhl">Order confirm होने के 24–48 घंटे के अंदर tracking number SMS/WhatsApp पर भेजा जाएगा।</div><ul class="pp-mlist"><li>Delivery attempt 3 बार की जाएगी — उसके बाद order वापस आ जाएगा</li><li>Incorrect address की जिम्मेदारी customer की होगी</li></ul>`,
+      cancel: `<div class="pp-mtitle"><i class="ti ti-refresh" aria-hidden="true"></i>Return & Refund Policy</div><div class="pp-mbadge">7-Day Easy Return</div><p class="pp-mpara">हमारे products consumable Ayurvedic और herbal items हैं, इसलिए hygiene, safety और consumer-protection requirements के अनुसार निम्नलिखित terms लागू होते हैं।</p><p class="pp-mpara"><strong>Eligibility:</strong> Return या replacement केवल तभी accepted है जब:</p><ul class="pp-mlist"><li>Product delivery के समय damaged, defective, expired या leaking मिला हो</li><li>आपको गलत product मिला हो (order से match नहीं करता)</li><li>Product unopened, unused और original sealed packaging में हो</li></ul><div class="pp-mhl">Hygiene और safety कारणों से, opened या used products return नहीं किए जा सकते — जब तक वे delivery के समय defective या damaged न हों।</div><ul class="pp-mlist"><li>Return request <strong>7 दिन के अंदर</strong> raise करें</li><li>Damaged/defective/wrong product के लिए <strong>24–48 घंटे के अंदर</strong> clear photos/videos के साथ सूचित करें</li><li>Opened/used products return नहीं किए जाएंगे</li><li>Approval के बाद refund <strong>7–15 business days</strong> में original payment method पर processed होता है</li></ul><p class="pp-mpara"><strong>Non-Returnable:</strong> Opened/used products, 7-day window के बाद की requests, misuse/neglect से damaged products, free items/samples, और shipping/COD charges refundable नहीं हैं।</p><div class="pp-mhl">Return के लिए product original packaging में होना ज़रूरी है। Unboxing video होने पर claim जल्दी process होता है।</div><p class="pp-mpara">Request raise करने के लिए [support email] या WhatsApp [phone] पर order number, issue details और photos/video भेजें।</p>`,
+      shipping: `<div class="pp-mtitle"><i class="ti ti-truck" aria-hidden="true"></i>Shipping & Cancellation Policy</div><p class="pp-mpara"><strong>Shipping Coverage:</strong> हम वर्तमान में केवल भारत के अंदर ही shipping करते हैं (international shipping Available नहीं)। सभी prices और charges Indian Rupees (INR) में हैं। Shipping charges checkout पर दिखाए जाते हैं।</p><div class="pp-mhl">Cash on Delivery (COD) orders पर additional handling fee लागू हो सकती है, जो non-refundable है। कुछ PIN codes COD-eligible नहीं हो सकते।</div><p class="pp-mpara"><strong>Delivery Timelines:</strong> Orders आम तौर पर confirmation के 1–2 business days के अंदर dispatch किए जाते हैं। Delivery में location के अनुसार 5–10 business days लग सकते हैं; remote areas में अधिक समय लग सकता है। Timelines estimates हैं और courier delays, weather या festivals से प्रभावित हो सकते हैं।</p><p class="pp-mpara"><strong>Tracking:</strong> Order confirm होने पर email/SMS confirmation मिलता है। Dispatch होने के बाद tracking details email/SMS/WhatsApp पर भेजी जाती हैं, और account page से भी track किया जा सकता है।</p><ul class="pp-mlist"><li>Parcel accept करने से पहले उसे check करें — damaged/tampered parcel accept न करें, refuse करें और हमें सूचित करें</li><li>Cancellation request केवल dispatch से पहले स्वीकार की जाती है (preferably order के 4 घंटे के अंदर)</li><li>Dispatch होने के बाद order cancel नहीं किया जा सकता</li><li>Approved prepaid cancellation का पूरा amount 7–15 business days में refund होता है</li></ul><p class="pp-mpara"><strong>Cancellation by SS Herbal:</strong> हम order को cancel कर सकते हैं यदि product out-of-stock हो, pricing/promotion में error हो, address incomplete हो, location non-serviceable हो, या fraud का संदेह हो। ऐसी स्थिति में भुगतान की गई पूरी राशि refund की जाएगी।</p><div class="pp-mhl">Promo codes case-sensitive, single-use और time-limited होते हैं, और already-discounted items पर लागू नहीं होते।</div><p class="pp-mpara">किसी भी समस्या के लिए हमसे [support email] | [phone] पर संपर्क करें।</p>`,
+      disclaimer: `<div class="pp-mtitle"><i class="ti ti-alert-circle" aria-hidden="true"></i>Legal Disclaimer</div><div class="pp-mbadge">Important Notice</div><p class="pp-mpara">SS Herbal के Ayurvedic और herbal products traditional knowledge और natural ingredients का उपयोग करके overall well-being को support करने के लिए formulate किए जाते हैं। इस पर ध्यान दें:</p><ul class="pp-mlist"><li>ये products किसी भी बीमारी का diagnosis, treatment, cure या prevention नहीं करते</li><li>Products Drugs and Cosmetics Act, 1940 और संबंधित rules के अनुसार [AYUSH licence no.] के तहत manufacture किए जाते हैं [और लागू होने पर FSSAI licence no. [FSSAI licence no.] के तहत compliant हैं]</li><li>Results व्यक्ति से व्यक्ति अलग हो सकते हैं</li><li>Website/app/packaging पर दी गई जानकारी केवल general informational purpose के लिए है, medical advice नहीं</li><li>किसी pre-existing health condition, pregnancy, breastfeeding या अन्य medication लेने की स्थिति में उपयोग से पहले qualified doctor से परामर्श करें</li></ul><div class="pp-mhl">इस website या किसी third-party platform पर दिए गए content पर पूरी तरह निर्भर होकर health-related decisions न लें, medical advice लेने में देरी न करें, और prescribed treatment बीच में न छोड़ें। यह website doctor की qualified medical consultation का substitute नहीं है।</div><p class="pp-mpara">Website का उपयोग आपके अपने जोखिम पर है। कानून द्वारा अनुमत अधिकतम सीमा तक, हम website के material के उपयोग या उस पर निर्भरता से उत्पन्न किसी भी loss या damage के लिए उत्तरदायी नहीं होंगे। बिना proper medical consultation के या recommended instructions के विपरीत products का उपयोग करने से उत्पन्न consequences के लिए भी SS Herbal उत्तरदायी नहीं है।</p><p class="pp-mpara">Third-party websites के links केवल convenience के लिए दिए गए हैं; हम उनके content, products या services को endorse नहीं करते। इस disclaimer से संबंधित मामले भारत के कानूनों द्वारा governed हैं, और courts at [city] का exclusive jurisdiction होगा। संपर्क करें: [legal email] | [support email]।</p>`,
+    };
+
+
+    function openModal(key) {
+      document.getElementById('pp-content').innerHTML = contents[key];
+      document.getElementById('pp-overlay').classList.add('show');
+    }
+    function closeModal() {
+      document.getElementById('pp-overlay').classList.remove('show');
+    }
+    function closeIfOutside(e) {
+      if (e.target === document.getElementById('pp-overlay')) closeModal();
+    }
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js');
+      });
+    }
+    </script>
+
+    </body>
+    </html>

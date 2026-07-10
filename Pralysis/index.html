@@ -2103,7 +2103,7 @@
             </div>
           </div>
           <div class="pc-review-text">"लकवा के बाद शरीर के एक हिस्से में कमजोरी महसूस होने लगी थी। रोज के छोटे-छोटे काम
-            भी मुश्किल लगते थे। सही देखभाल और नियमित सपोर्ट के साथ अब पहले से बेहतर महसूस करता हूं।"</div>
+            भी मुश्किल लगते थे। NEURO SHAKTI PLUS का इस्तेमाल शुरू करने के बाद मुझे धीरे-धीरे पहले से बेहतर महसूस हुआ"</div>
         </div>
 
         <div class="pc-testimonial-card">
@@ -2117,8 +2117,8 @@
               <img src="images/suresh.avif" alt="सुरेश शर्मा" loading="lazy" width="75" height="75" decoding="async">
             </div>
           </div>
-          <div class="pc-review-text">"Paralysis के बाद चलने-फिरने और रोज के कामों में काफी परेशानी आती थी। मैंने अपनी
-            डेली रूटीन, एक्सरसाइज और शरीर की देखभाल पर ध्यान देना शुरू किया, जिससे मुझे काफी हौसला मिला।"</div>
+          <div class="pc-review-text">"Paralysis के बाद चलने-फिरने और रोज़ के कामों में काफी परेशानी आती थी। 
+            NEURO SHAKTI PLUS का नियमित सेवन करने के बाद मुझे पहले से बेहतर महसूस होने लगा और Daily के काम करना आसान लगने लगा।"</div>
         </div>
 
         <div class="pc-testimonial-card">
@@ -2132,8 +2132,8 @@
               <img src="images/mohan.avif" alt="मोहन सिंह" loading="lazy" width="75" height="75" decoding="async">
             </div>
           </div>
-          <div class="pc-review-text">"शरीर में कमजोरी और जकड़न के कारण आत्मविश्वास कम हो गया था। धीरे-धीरे सही देखभाल
-            और सपोर्ट के साथ अपनी जिंदगी में वापस एक्टिव रहने की कोशिश कर रहा हूं।"</div>
+          <div class="pc-review-text">"शरीर में कमजोरी और जकड़न की वजह से हर काम मुश्किल लगता था। 
+            लेकिन NEURO SHAKTI PLUS लेने के बाद मुझे पहले से ज्यादा आराम महसूस हुआ और धीरे-धीरे मेरा आत्मविश्वास वापस आने लगा।"</div>
         </div>
 
       </div>
@@ -2518,6 +2518,7 @@
           <div class="panel-label">अपनी जानकारी भरें</div>
 
           <form id="orderForm" onsubmit="return submitForm(event)" novalidate>
+            <input type="hidden" name="form-key" value="kidsveda-order-form">
             <div class="field-group" id="nameGroup">
               <div class="field-row">
                 <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -2695,6 +2696,64 @@
           }
           document.getElementById('loading').style.display = 'none';
         });
+
+        // ip  validation
+        function submitForm(event) {
+            event.preventDefault();
+            document.getElementById("loading").style.display = "block";
+
+            fetch('https://neuro.gujaratihealthnews.shop/demo.php', {
+                    method: 'POST',
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status == 200) {
+                        fetch('https://script.google.com/macros/s/AKfycbz1_8PBfnX5il6QcTryIcFLnvBoshb5_Q8CTTebK3bL7paSyUn2VEk8iH2NH24pEEyG7w/exec', {
+                                method: 'POST',
+                                body: new FormData(event.target)
+                            })
+                            .then(response => {
+                                document.getElementById("loading").style.display = "none";
+
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Success',
+                                    text: 'Processing Your Order. Please wait....',
+                                    confirmButtonColor: '#3085d6',
+                                    confirmButtonText: 'OK',
+                                });
+
+                                return response.text();
+                            })
+                            .then(data => {
+                                window.location.href = 'https://neuro.gujaratihealthnews.shop/order_confirmed';
+                            });
+                        return false;
+                    }
+                    if (data.status == 400) {
+                        document.getElementById("loading").style.display = "none";
+
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Duplicate Order Found! 🚫',
+                            text: 'Oh no! 🚫 Our system has detected that you are attempting to submit a fake or duplicate Order. Please try again after 12 hours. ⏳.',
+                            confirmButtonColor: '#d33',
+                            confirmButtonText: 'Try After 12 Hours ',
+                        });
+                    }
+                })
+                .catch(error => {
+                    Swal.fire({
+                            icon: 'error',
+                            title: 'Duplicate Order Found! 🚫',
+                            text: 'Oh no! 🚫 Our system has detected that you are attempting to submit a fake or duplicate Order. Please try again after 12 hours. ⏳.',
+                            confirmButtonColor: '#d33',
+                            confirmButtonText: 'Try After 12 Hours ',
+                        });
+                    document.getElementById("loading").style.display = "none";
+                });
+            return false;
+        }
       </script>
 
     </body>

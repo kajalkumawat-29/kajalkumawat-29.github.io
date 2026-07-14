@@ -427,7 +427,28 @@ body {
     border-radius: 20px;
     margin-bottom: 10px;
     letter-spacing: 0.3px;
-  }
+  }/* Mute / Unmute button */
+.mute-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: rgba(0,0,0,0.55);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.mute-btn:hover {
+  background: rgba(0,0,0,0.75);
+}
 
   .counter span.dot {
     width: 8px;
@@ -2730,12 +2751,13 @@ html{scroll-behavior:smooth}
         loop
         preload="metadata"
         poster="">
-        <source src="your-testimonial-video.mp4" type="video/mp4">
+        <source src="images/IMG_6196~3.mp4" type="video/mp4">
         તમારું બ્રાઉઝર વિડિયો ટેગ સપોર્ટ કરતું નથી.
       </video>
       <div class="live-badge" id="liveBadge">
         <span class="blink"></span> ચાલી રહ્યું છે
       </div>
+      <button class="mute-btn" id="muteBtn" onclick="toggleMute()">🔇</button>
     </div>
   </section>
 
@@ -3584,7 +3606,12 @@ startCountdown(5);
     }, {
       threshold: 0.5 // 50% section dikhne par trigger hoga
     });
-
+function toggleMute() {
+  const video = document.getElementById('testimonialVideo');
+  const btn = document.getElementById('muteBtn');
+  video.muted = !video.muted;
+  btn.textContent = video.muted ? '🔇' : '🔊';
+}
     observer.observe(section);
 </script>
 </body>

@@ -128,7 +128,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             column-gap: 20px;
-            row-gap: 50px; /* Enhanced row gap for premium depth */
+            row-gap: 20px; /* Enhanced row gap for premium depth */
             width: 100%;
         }
 
@@ -341,7 +341,7 @@
 
         .ayur-description {
             font-family: 'Halant', serif;
-            font-size: 16px;
+            font-size: 18px;
             color: var(--ink);
             line-height: 1.5;
             font-weight: 500;
@@ -350,6 +350,7 @@
         .ayur-description strong {
             color: var(--blue-deep);
             font-weight: 700;
+            font-size: 20px;
             background: linear-gradient(180deg, transparent 70%, var(--gold-soft) 70%);
         }
 
@@ -503,10 +504,10 @@ margin-bottom: -40px;  }
     z-index:2;
 
   }
-  .journey-card .jc-title{ display:block; font-size:17px; font-weight:600; color:var(--blue-deep); margin-bottom:2px; }
-  .journey-card .jc-text{ display:block; font-size:15px; font-weight:500; color:var(--ink); }
+  .journey-card .jc-title{ display:block; font-size:20px; font-weight:900 !important; color:var(--blue-deep); margin-bottom:2px; }
+  .journey-card .jc-text{ display:block; font-size:17px; font-weight:500; color:var(--ink); }
   .journey-card.left{ left:0; text-align:right; border-right:3px solid var(--gold); }
-  .journey-card.right{ right:0; text-align:left; border-left:3px solid var(--gold); }
+  .journey-card.right{ right:0; text-align:left;  border-left:3px solid var(--gold); }
 
   /* ---------- INGREDIENTS SECTION (zigzag timeline layout) ---------- */
   .ingredients-section{
@@ -603,7 +604,7 @@ margin-bottom: -40px;  }
 
   .wc-node{
     position:absolute;
-    width:100px; height:100px;
+    width:110px; height:110px;
     border-radius:50%;
     background:var(--white);
     border:3px solid var(--gold);
@@ -611,7 +612,7 @@ margin-bottom: -40px;  }
     box-shadow:0 10px 20px -10px rgba(23,60,100,.4);
     z-index:2;
   }
-  .wc-node img{ width:110px; height:100px;  object-fit:cover; border-radius:50%; }
+  .wc-node img{ width:100px; height:100px;  object-fit:cover; border-radius:50%; }
   .wc-node .wc-tag{
     position:absolute; top:-6px; right:-6px;
     width:24px;height:24px;border-radius:50%;
@@ -659,10 +660,7 @@ margin-bottom: -40px;  }
   .cert-strip div{ flex:1; text-align:center; }
   .cert-strip span{ display:block; font-size:12px; color:var(--ink-soft); margin-top:6px; }
 
-  @media (max-width:480px){
-    .wc-wheel-wrap{ transform:scale(0.8); margin:0 auto -50px; }
-  }
-
+ 
   /* ---------- HOW TO USE ---------- */
   .howto-section{ background:var(--blue-deep); border-bottom:2px solid var(--gold); }
   .howto-grid{ display:flex; flex-direction:column; gap:14px; }
@@ -1292,7 +1290,7 @@ margin-bottom: -40px;  }
                     </div>
                 </div>
                 <div class="editorial-caption">
-                    <p class="symptom-editorial-text">दूसरे बच्चों की Activities में Participate न कर पाना</p>
+                    <p class="symptom-editorial-text">दूसरे बच्चों के साथ Active न रह पाना</p>
                 </div>
             </div>
 
@@ -1629,23 +1627,24 @@ margin-bottom: -40px;  }
   </section>
 
   <!-- 9. order-form -->
- <!DOCTYPE html>
+<!-- 9. order-form -->
+<!-- 9. order-form -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neuro Mantra Syrup - Ultra Animated Premium Form</title>
-    
+
     <!-- Font Awesome 6 CDN for Luxury Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Halant Font Integration -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Color Scheme Variables */
         :root {
             --blue-deep: #173C64;
             --blue-mid: #2C5D8F;
@@ -1660,7 +1659,6 @@ margin-bottom: -40px;  }
             --radius-md: 14px;
         }
 
-        /* Enforcing Halant Font Throughout */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -1674,10 +1672,8 @@ margin-bottom: -40px;  }
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-         
         }
 
-        /* 450px Main Premium Container */
         .wrapper {
             width: 100%;
             max-width: 450px;
@@ -1689,7 +1685,6 @@ margin-bottom: -40px;  }
             border: 3px double var(--gold);
         }
 
-        /* Auto-Animating Header Pattern */
         .header {
             background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-mid) 100%);
             color: var(--white);
@@ -1699,7 +1694,6 @@ margin-bottom: -40px;  }
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
-        /* Auto Shaking Badge */
         .badge-live {
             background: var(--gold);
             color: var(--white);
@@ -1730,12 +1724,10 @@ margin-bottom: -40px;  }
             text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
-        /* Content Hub */
         .content {
             padding: 30px 24px;
         }
 
-        /* Branding Section */
         .brand-cluster {
             text-align: center;
             margin-bottom: 25px;
@@ -1766,7 +1758,6 @@ margin-bottom: -40px;  }
             margin-top: 5px;
         }
 
-        /* --- STYLIZED CONTENT DESIGN HOUSING --- */
         .offer-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1797,7 +1788,6 @@ margin-bottom: -40px;  }
             display: block;
         }
 
-        /* Premium Emotional Text Ribbon */
         .emotion-ribbon {
             background: linear-gradient(135deg, rgba(231, 242, 250, 0.7) 0%, rgba(243, 226, 188, 0.4) 100%);
             border-left: 4px solid var(--gold);
@@ -1816,7 +1806,6 @@ margin-bottom: -40px;  }
             line-height: 1.5;
         }
 
-        /* CTA Journey Box */
         .journey-pill {
             background: var(--white);
             border: 1px double var(--gold);
@@ -1842,7 +1831,6 @@ margin-bottom: -40px;  }
             color: var(--ink);
         }
 
-        /* --- FORM ARCHITECTURE --- */
         .form-container{
             background: var(--blue-deep);
             padding: 30px 25px;
@@ -1895,7 +1883,6 @@ margin-bottom: -40px;  }
             background: #fffefb;
         }
 
-        /* Auto-Pulsing Submit Button */
         .btn-submit {
             width: 100%;
             background: linear-gradient(135deg, var(--gold) 0%, #b8862d 100%);
@@ -1914,13 +1901,18 @@ margin-bottom: -40px;  }
             animation: pulseWave 2s infinite;
         }
 
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            animation: none;
+        }
+
         @keyframes pulseWave {
             0% { transform: scale(1); box-shadow: 0 10px 25px rgba(198, 150, 58, 0.4); }
             50% { transform: scale(1.03); box-shadow: 0 15px 35px rgba(198, 150, 58, 0.6); }
             100% { transform: scale(1); box-shadow: 0 10px 25px rgba(198, 150, 58, 0.4); }
         }
 
-        /* Immersive Blur Overlay Setup */
       .overlay {
     position: fixed;
     top: 0;
@@ -1956,7 +1948,6 @@ margin-bottom: -40px;  }
             100% { transform: rotate(360deg); }
         }
 
-        /* Thank You Modal Architecture */
         .thankyou-content {
             display: none;
             background: var(--white);
@@ -2051,8 +2042,8 @@ margin-bottom: -40px;  }
             </div>
             <div class="product-sub">Ayurvedic Support For Growing Minds</div>
         </div>
-        
-        <!-- DESIGNED CONTENT: 2-Column Grid For Offers -->
+
+        <!-- Offers Grid -->
         <div class="offer-grid">
             <div class="offer-card">
                 <i class="fa-solid fa-tags"></i>
@@ -2064,12 +2055,12 @@ margin-bottom: -40px;  }
             </div>
         </div>
 
-        <!-- DESIGNED CONTENT: Premium Asymmetric Emotion Box -->
+        <!-- Emotion Ribbon -->
         <div class="emotion-ribbon">
             <p>बचपन का हर दिन कीमती होता है…<br>इसलिए Support की शुरुआत आज ही करें।</p>
         </div>
 
-        <!-- DESIGNED CONTENT: Dynamic CTA Badge Line -->
+        <!-- Journey Pill -->
         <div class="journey-pill">
             <i class="fa-solid fa-brain"></i>
             <span>अपने बच्चे की Brain Wellness Journey की शुरुआत करें</span>
@@ -2077,7 +2068,26 @@ margin-bottom: -40px;  }
 
         <!-- Lead Form Interface -->
          <div class="form-container">
-        <form id="orderForm" onsubmit="submitForm(event)">
+        <form id="orderForm" onsubmit="return submitForm(event)">
+
+            <!-- Ad attribution — captureUtmParams() se bharenge -->
+            <input type="hidden" name="date" id="date" />
+            <input type="hidden" name="utm_source" />
+            <input type="hidden" name="utm_medium" />
+            <input type="hidden" name="utm_campaign" />
+            <input type="hidden" name="utm_campaign_id" />
+            <input type="hidden" name="utm_adset" />
+            <input type="hidden" name="utm_adset_id" />
+            <input type="hidden" name="utm_ad" />
+            <input type="hidden" name="utm_ad_id" />
+            <input type="hidden" name="utm_placement" />
+
+            <!-- Meta match signals (Conversions API dedup ke liye) -->
+            <input type="hidden" name="event_id" id="event_id" />
+            <input type="hidden" name="fbclid" />
+            <input type="hidden" name="fbc" />
+            <input type="hidden" name="fbp" />
+
             <div class="form-group">
                 <label for="userName">आपका नाम (Name)</label>
                 <div class="input-icon-wrapper">
@@ -2085,6 +2095,7 @@ margin-bottom: -40px;  }
                     <input 
                         type="text" 
                         id="userName" 
+                        name="name"
                         placeholder="केवल नाम लिखें..." 
                         required
                         autocomplete="off"
@@ -2099,6 +2110,7 @@ margin-bottom: -40px;  }
                     <input 
                         type="tel" 
                         id="userPhone" 
+                        name="phone"
                         placeholder="6-9 से शुरू होने वाला 10 अंकों का नंबर" 
                         maxlength="10"
                         required
@@ -2108,8 +2120,8 @@ margin-bottom: -40px;  }
             </div>
 
             <!-- Auto Pulsing Submit Button -->
-            <button type="submit" class="btn-submit">
-                <i class="fa-solid fa-cart-shopping"></i>अभी Order करें
+            <button type="submit" class="btn-submit" id="submitBtn">
+                <i class="fa-solid fa-cart-shopping"></i><span id="buttonText">अभी Order करें</span>
             </button>
         </form>
     </div>
@@ -2133,37 +2145,188 @@ margin-bottom: -40px;  }
         </div>
     </div>
 </div>
+
 <!-- SweetAlert2 (required by the submit script's Swal.fire) -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
+  /* ================= UTM / Meta Ad Attribution Capture ================= */
+  // Meta ads landing URL par UTM params bhejte hain, isliye page load hote
+  // hi unhe sessionStorage me save karke form ke hidden fields me bhar dete hain.
+  var UTM_KEYS = [
+      'utm_source', 'utm_medium',
+      'utm_campaign', 'utm_campaign_id',
+      'utm_adset', 'utm_adset_id',
+      'utm_ad', 'utm_ad_id',
+      'utm_placement'
+  ];
+
+  function setHidden(name, value) {
+      var input = document.querySelector('#orderForm input[name="' + name + '"]');
+      if (input) input.value = value || '';
+  }
+
+  function readCookie(name) {
+      var match = document.cookie.match(new RegExp('(^|;\\s*)' + name + '=([^;]*)'));
+      return match ? decodeURIComponent(match[2]) : '';
+  }
+
+  function writeCookie(name, value, hours) {
+      document.cookie = name + '=' + encodeURIComponent(value) +
+          ';path=/;max-age=' + (hours * 3600) + ';SameSite=Lax';
+  }
+
+  function stickyValue(key, fromUrl) {
+      if (fromUrl) {
+          try { sessionStorage.setItem(key, fromUrl); } catch (e) { /* private mode */ }
+          return fromUrl;
+      }
+      try { return sessionStorage.getItem(key) || ''; } catch (e) { return ''; }
+  }
+
+  function captureUtmParams() {
+      var urlParams = new URLSearchParams(window.location.search);
+
+      UTM_KEYS.forEach(function (key) {
+          setHidden(key, stickyValue(key, urlParams.get(key)));
+      });
+
+      // Meta click ID — sirf pehli landing URL par milta hai, isliye persist karo
+      var fbclid = stickyValue('fbclid', urlParams.get('fbclid'));
+      setHidden('fbclid', fbclid);
+
+      // _fbc Conversions API ke liye chahiye. Pixel khud cookie set karta hai,
+      // lekin agar wo block ho jaaye to fbclid se fallback bana lete hain.
+      var fbc = readCookie('_fbc');
+      if (!fbc && fbclid) {
+          fbc = stickyValue('fbc', 'fb.1.' + Date.now() + '.' + fbclid);
+      }
+      setHidden('fbc', fbc);
+      setHidden('fbp', readCookie('_fbp'));
+  }
+
+  // Browser pixel aur server-side Conversions API dono ek hi event_id use
+  // karenge, taaki Meta dono ko ek hi conversion count kare (dedup).
+  function newEventId() {
+      if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+      return 'evt-' + Date.now() + '-' + Math.random().toString(16).slice(2);
+  }
+  /* ================= End UTM Capture ================= */
+
+
+  /* ================= Duplicate / Fake Order Lock System ================= */
+  // Ek order confirm hone ke baad, isi device se 12 ghante tak dobara
+  // order na ho paaye — cookie me timestamp save karke button lock kar dete hain.
+  var ORDER_LOCK_COOKIE = 'bc_order_placed';
+  var ORDER_LOCK_HOURS = 12;
+
+  function isOrderLocked() {
+      return !!readCookie(ORDER_LOCK_COOKIE);
+  }
+
+  // Cookie me stored timestamp se calculate karta hai kitne ghante baaki hain,
+  // taaki message me flat "12 hours" ki jagah accurate time dikhe.
+  function hoursLeftOnLock() {
+      var placedAt = parseInt(readCookie(ORDER_LOCK_COOKIE), 10);
+      if (!placedAt) return ORDER_LOCK_HOURS;
+      var left = ORDER_LOCK_HOURS - (Date.now() - placedAt) / 3600000;
+      return left > 0 ? Math.ceil(left) : 0;
+  }
+
+  function lockOrderButton() {
+      var btn = document.getElementById('submitBtn');
+      if (btn) btn.disabled = true;
+      var label = document.getElementById('buttonText');
+      if (label) {
+          label.textContent = 'Order Already Placed — Try After ' + hoursLeftOnLock() + ' Hours';
+      }
+  }
+
+  function applyOrderLock() {
+      if (isOrderLocked()) lockOrderButton();
+  }
+  /* ================= End Order Lock System ================= */
+
+
+  // Page load hote hi UTM capture + order lock check ho jaaye
+  captureUtmParams();
+  applyOrderLock();
+
+
   function submitForm(event) {
     event.preventDefault();
     const form = event.target;
-    // 👉 Submit button ko hide + disable karo
-    const submitBtn = form.querySelector("button[type='submit'], input[type='submit']");
-    if (submitBtn) {
-      submitBtn.style.display = "none";
-      submitBtn.disabled = true;
+
+    // Covers the case jab page cache se restore hua ho aur button
+    // abhi bhi enabled dikh raha ho, ya Enter dabane se submit trigger ho gaya ho.
+    if (isOrderLocked()) {
+        lockOrderButton();
+        document.getElementById("loading").style.display = "none";
+        Swal.fire({
+            icon: 'info',
+            title: 'Order Already Placed ✅',
+            text: 'आपका ऑर्डर पहले से ही मिल गया है। कृपया ' +
+                hoursLeftOnLock() + ' घंटे बाद फिर से प्रयास करें। ⏳',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'OK',
+        });
+        return false;
     }
+
+    // Agar page cache se restore hua ho to attribution dobara capture kar lo
+    captureUtmParams();
+
+    // Date + event_id bhi bhar do submit se pehle
+    const dateValue = new Intl.DateTimeFormat('en-IN', {
+        timeZone: 'Asia/Kolkata',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+    }).format(new Date());
+    document.getElementById('date').value = dateValue;
+    document.getElementById('event_id').value = newEventId();
+
     // 👉 Loading show karo
     document.getElementById("loading").style.display = "block";
     const formData = new FormData(form);
     let redirected = false;
+
     const timeout = setTimeout(() => {
       if (!redirected) {
         redirected = true;
+        // Order successful maan ke lock laga do (safety timeout ki wajah se)
+        writeCookie(ORDER_LOCK_COOKIE, Date.now(), ORDER_LOCK_HOURS);
+        lockOrderButton();
         window.location.href = './Thankyou.html';
       }
     }, 2000);
+
     fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec', {
       method: 'POST',
       body: formData
     })
-    .then(response => response.text())
+    .then(response => {
+      if (!response.ok) {
+        return response.text().then(text => {
+          const error = new Error('Order submission failed');
+          error.status = response.status;
+          error.body = text;
+          throw error;
+        });
+      }
+      return response.text();
+    })
     .then(data => {
       if (!redirected) {
         clearTimeout(timeout);
         redirected = true;
+        // Order confirm — 12 ghante ka device lock start karo
+        writeCookie(ORDER_LOCK_COOKIE, Date.now(), ORDER_LOCK_HOURS);
+        lockOrderButton();
         window.location.href = './Thankyou.html';
       }
       document.getElementById("loading").style.display = "none";
@@ -2176,16 +2339,32 @@ margin-bottom: -40px;  }
       });
     })
     .catch(error => {
-      console.error('Fetch error:', error);
-      if (!redirected) {
-        clearTimeout(timeout);
-        redirected = true;
-        window.location.href = './Thankyou.html';
-      }
+      console.error('Order submission failed:', error);
+      clearTimeout(timeout);
       document.getElementById("loading").style.display = "none";
+
+      if (error && error.status === 400) {
+          Swal.fire({
+              icon: 'error',
+              title: 'Duplicate Order Found! 🚫',
+              text: 'Oh no! 🚫 Our system has detected that you are attempting to submit a fake or duplicate order. Please try again after 12 hours. ⏳',
+              confirmButtonColor: '#d33',
+              confirmButtonText: 'Try After 12 Hours',
+          });
+      } else {
+          Swal.fire({
+              icon: 'error',
+              title: 'ऑर्डर भेजा नहीं जा सका',
+              text: 'नेटवर्क समस्या के कारण ऑर्डर भेजा नहीं जा सका। कृपया फिर से प्रयास करें।',
+              confirmButtonColor: '#d33',
+              confirmButtonText: 'फिर से प्रयास करें',
+          });
+      }
     });
+
     return false;
   }
+
   // Animated dots for loading state
   let dotCount = 1;
   setInterval(() => {
@@ -2195,55 +2374,26 @@ margin-bottom: -40px;  }
       d.textContent = '.'.repeat(dotCount); 
     }
   }, 500);
-      const nameInput = document.getElementById('userName');
-    const phoneInput = document.getElementById('userPhone');
-    const formOverlay = document.getElementById('formOverlay');
-    const pageLoader = document.getElementById('pageLoader');
-    const loadingText = document.getElementById('loadingText');
-    const thankYouScreen = document.getElementById('thankYouScreen');
-    const orderForm = document.getElementById('orderForm');
 
-    // 1. Text Only Lock Logic
-    nameInput.addEventListener('input', (e) => {
-        e.target.value = e.target.value.replace(/[^a-zA-Z\s\u0900-\u097F]/g, '');
-    });
+  const nameInput = document.getElementById('userName');
+  const phoneInput = document.getElementById('userPhone');
 
-    // 2. Mobile validation (6-9 Start Check + 10 digits filter)
-    phoneInput.addEventListener('input', (e) => {
-        let value = e.target.value.replace(/\D/g, ''); 
-        
-        if (value.length > 0) {
-            if (!/[6-9]/.test(value.charAt(0))) {
-                value = ''; 
-            }
-        }
-        e.target.value = value;
-    });
+  // 1. Text Only Lock Logic
+  nameInput.addEventListener('input', (e) => {
+      e.target.value = e.target.value.replace(/[^a-zA-Z\s\u0900-\u097F]/g, '');
+  });
 
-    // 3. Submit Processing Block
-    function handleSubmit(event) {
-        event.preventDefault();
-
-        if (phoneInput.value.length !== 10) {
-            alert('कृपया 10 अंकों का मान्य मोबाइल नंबर भरें।');
-            return;
-        }
-
-        formOverlay.style.display = 'flex';
-        pageLoader.style.display = 'block';
-        loadingText.style.display = 'block';
-        
-        const formData = {
-            name: nameInput.value,
-            phone: phoneInput.value
-        };
-        console.log("Transferred Data to Google Sheet:", formData);
-
-        // 3 सेकंड का परफेक्ट बफ़र, फिर Thank You Page पर Redirect
-        setTimeout(() => {
-            window.location.href = "thank-you.html";
-        }, 3000);
-    }
+  // 2. Mobile validation (6-9 Start Check + 10 digits filter)
+  phoneInput.addEventListener('input', (e) => {
+      let value = e.target.value.replace(/\D/g, ''); 
+      
+      if (value.length > 0) {
+          if (!/[6-9]/.test(value.charAt(0))) {
+              value = ''; 
+          }
+      }
+      e.target.value = value;
+  });
 </script>
 
 </body>

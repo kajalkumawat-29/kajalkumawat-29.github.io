@@ -1181,7 +1181,7 @@ margin-bottom: -40px;  }
   width:calc(100% - 32px);
   max-width:418px;
   background:linear-gradient(135deg, var(--gold) 0%, #A87B26 100%);
-  color:var(--white);
+  color:var(--blue-deep);
   text-align:center;
   padding:15px;
   border-radius:100px;
@@ -1921,23 +1921,23 @@ margin-bottom: -40px;  }
         }
 
         /* Immersive Blur Overlay Setup */
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(27, 36, 48, 0.4);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 35px;
-            text-align: center;
-            z-index: 100;
-        }
+      .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(27, 36, 48, 0.4);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 35px;
+    text-align: center;
+    z-index: 9999;
+}
 
         .spinner-zone {
             position: relative;
@@ -2195,6 +2195,55 @@ margin-bottom: -40px;  }
       d.textContent = '.'.repeat(dotCount); 
     }
   }, 500);
+      const nameInput = document.getElementById('userName');
+    const phoneInput = document.getElementById('userPhone');
+    const formOverlay = document.getElementById('formOverlay');
+    const pageLoader = document.getElementById('pageLoader');
+    const loadingText = document.getElementById('loadingText');
+    const thankYouScreen = document.getElementById('thankYouScreen');
+    const orderForm = document.getElementById('orderForm');
+
+    // 1. Text Only Lock Logic
+    nameInput.addEventListener('input', (e) => {
+        e.target.value = e.target.value.replace(/[^a-zA-Z\s\u0900-\u097F]/g, '');
+    });
+
+    // 2. Mobile validation (6-9 Start Check + 10 digits filter)
+    phoneInput.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\D/g, ''); 
+        
+        if (value.length > 0) {
+            if (!/[6-9]/.test(value.charAt(0))) {
+                value = ''; 
+            }
+        }
+        e.target.value = value;
+    });
+
+    // 3. Submit Processing Block
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        if (phoneInput.value.length !== 10) {
+            alert('कृपया 10 अंकों का मान्य मोबाइल नंबर भरें।');
+            return;
+        }
+
+        formOverlay.style.display = 'flex';
+        pageLoader.style.display = 'block';
+        loadingText.style.display = 'block';
+        
+        const formData = {
+            name: nameInput.value,
+            phone: phoneInput.value
+        };
+        console.log("Transferred Data to Google Sheet:", formData);
+
+        // 3 सेकंड का परफेक्ट बफ़र, फिर Thank You Page पर Redirect
+        setTimeout(() => {
+            window.location.href = "thank-you.html";
+        }, 3000);
+    }
 </script>
 
 </body>

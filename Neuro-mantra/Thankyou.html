@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Confirmed — Neuro Mantra Syrup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --blue-deep:#173C64;
+    --blue-mid:#2C5D8F;
+    --blue-pale:#EAF2FA;
+    --gold:#C6963A;
+    --gold-soft:#F3E2BC;
+    --cream:#FBF8F2;
+    --ink:#1B2430;
+    --ink-soft:#4A5568;
+    --white:#FFFFFF;
+    --radius-lg:22px;
+    --radius-md:14px;
+    --shadow:0 10px 28px rgba(23,60,100,.12);
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{
+    font-family:'Halant', serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  body{ display:flex; justify-content:center; min-height:100vh; }
+
+  .page{
+    width:100%;
+    max-width:450px;
+    background:var(--cream);
+    overflow:hidden;
+    position:relative;
+    min-height:100vh;
+  }
+
+  img{ max-width:100%; display:block; }
+
+  /* ---------- CONFIRM HERO ---------- */
+  .confirm-hero{
+    background:linear-gradient(165deg, var(--blue-deep) 0%, var(--blue-mid) 100%);
+    padding:44px 24px 52px;
+    text-align:center;
+    position:relative;
+  }
+  .confirm-hero::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:-1px;
+    height:40px;
+    background:var(--cream);
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 450 40' preserveAspectRatio='none'><path d='M0,20 C75,40 150,0 225,20 C300,40 375,0 450,20 L450,40 L0,40 Z'/></svg>") bottom/100% 100% no-repeat;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 450 40' preserveAspectRatio='none'><path d='M0,20 C75,40 150,0 225,20 C300,40 375,0 450,20 L450,40 L0,40 Z'/></svg>") bottom/100% 100% no-repeat;
+  }
+
+  .confirm-badge{
+    width:88px; height:88px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.1);
+    border:3px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 0 0 8px rgba(198,150,58,0.12);
+    animation:popCheck .6s cubic-bezier(0.175,0.885,0.32,1.275) both;
+  }
+  .confirm-badge i{ font-size:42px; color:var(--gold-soft); }
+  @keyframes popCheck{
+    from{ transform:scale(0.4); opacity:0; }
+    to{ transform:scale(1); opacity:1; }
+  }
+
+  .confirm-hero .eyebrow{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:12.5px; letter-spacing:0.08em; color:var(--gold);
+    background:rgba(198,150,58,0.12); border:1px solid rgba(198,150,58,0.35);
+    padding:6px 12px; border-radius:100px; font-weight:600;
+    margin-bottom:16px;
+  }
+
+  .confirm-hero h1{
+    font-size:28px; line-height:1.32; font-weight:700; color:var(--white);
+    margin-bottom:12px;
+  }
+  .confirm-hero h1 span{ color:var(--gold-soft); }
+  .confirm-hero p{
+    color:#D6E3F2; font-size:16px; line-height:1.6; font-weight:400;
+  }
+
+  /* ---------- ORDER SUMMARY CARD ---------- */
+  section{ padding:30px 22px; }
+
+  .order-card{
+    background:var(--white);
+    border-radius:var(--radius-lg);
+    border:1px dashed var(--gold);
+    box-shadow:var(--shadow);
+    padding:22px 20px;
+    margin-top:-34px;
+    position:relative;
+    z-index:5;
+  }
+  .order-card-head{
+    display:flex; align-items:center; gap:14px;
+    padding-bottom:16px; margin-bottom:16px;
+    border-bottom:1px solid rgba(23,60,100,0.08);
+  }
+  .order-card-img{
+    width:56px; height:56px;
+    border-radius:var(--radius-md);
+    background:linear-gradient(180deg, var(--blue-deep) 0%, var(--blue-mid) 100%);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .order-card-img i{ color:var(--gold-soft); font-size:24px; }
+  .order-card-head h3{ font-size:19px; font-weight:700; color:var(--blue-deep); }
+  .order-card-head span{ font-size:14px; color:var(--ink-soft); font-weight:500; }
+
+  .order-row{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:9px 0;
+    font-size:15px;
+  }
+  .order-row .label{ color:var(--ink-soft); font-weight:500; }
+  .order-row .value{ color:var(--ink); font-weight:700; }
+  .order-row .value.gold{ color:var(--gold); }
+
+  .order-status{
+    margin-top:14px;
+    background:var(--blue-pale);
+    border-radius:var(--radius-md);
+    padding:12px 14px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .order-status i{ color:var(--blue-mid); font-size:16px; }
+  .order-status p{ font-size:14px; color:var(--blue-deep); font-weight:600; margin:0; }
+
+  /* ---------- NEXT STEPS TIMELINE ---------- */
+  .steps-section .section-tag{
+    font-size:12.5px; letter-spacing:0.1em; color:var(--blue-mid);
+    font-weight:600; margin-bottom:8px; display:block;
+  }
+  .steps-section h2{
+    font-size:24px; font-weight:700; color:var(--blue-deep);
+    margin-bottom:22px; line-height:1.3;
+  }
+
+  .step-item{
+    display:flex; gap:14px; margin-bottom:20px; align-items:flex-start;
+  }
+  .step-item:last-child{ margin-bottom:0; }
+  .step-num{
+    flex-shrink:0;
+    width:36px; height:36px; border-radius:50%;
+    background:var(--blue-deep);
+    border:2px solid var(--gold);
+    color:var(--gold-soft);
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px; font-weight:700;
+  }
+  .step-text h4{ font-size:16px; font-weight:600; color:var(--ink); margin-bottom:3px; }
+  .step-text p{ font-size:14.5px; color:var(--ink-soft); line-height:1.5; font-weight:400; }
+
+  /* ---------- SUPPORT CTA ---------- */
+  .support-section{
+    background:var(--blue-pale);
+    text-align:center;
+    border-top:2px solid var(--blue-deep);
+  }
+  .support-section h2{
+    font-size:22px; font-weight:700; color:var(--blue-deep); margin-bottom:8px;
+  }
+  .support-section p{
+    font-size:15px; color:var(--ink-soft); line-height:1.6; margin-bottom:20px; font-weight:400;
+  }
+  .support-btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    width:100%;
+    background:var(--gold);
+    color:var(--white);
+    padding:16px;
+    border-radius:100px;
+    font-size:16px; font-weight:700;
+    text-decoration:none;
+    box-shadow:0 12px 24px -8px rgba(198,150,58,0.6);
+    margin-bottom:12px;
+  }
+  .support-btn.outline{
+    background:var(--white);
+    color:var(--blue-deep);
+    border:2px solid var(--blue-deep);
+    box-shadow:none;
+  }
+
+  /* ---------- TRUST STRIP ---------- */
+  .trust-section{
+    background:var(--blue-deep);
+    text-align:center;
+    padding:32px 22px 38px;
+  }
+  .trust-section h2{
+    font-size:20px; font-weight:700; color:var(--gold-soft); margin-bottom:18px;
+  }
+  .trust-grid{
+    display:flex; justify-content:space-between; gap:10px;
+  }
+  .trust-item{
+    flex:1;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(198,150,58,0.3);
+    border-radius:var(--radius-md);
+    padding:14px 8px;
+  }
+  .trust-item i{ color:var(--gold); font-size:20px; margin-bottom:8px; display:block; }
+  .trust-item span{ font-size:12.5px; color:#D6E3F2; font-weight:600; line-height:1.35; display:block; }
+
+  /* ---------- DISCLAIMER ---------- */
+  .disclaimer-section{
+    background:var(--blue-pale);
+    text-align:center;
+    padding:22px 16px;
+  }
+  .disclaimer-section p{
+    color:var(--blue-deep);
+    font-size:8px;
+    opacity:0.55;
+    line-height:1.5;
+  }
+
+  @media (max-width:480px){
+    .confirm-hero h1{ font-size:22px; }
+    .confirm-hero p{ font-size:14px; }
+    .order-card-head h3{ font-size:17px; }
+    .steps-section h2{ font-size:19px; }
+    .support-section h2{ font-size:18px; }
+    .trust-item span{ font-size:11px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- CONFIRMATION HERO -->
+  <header class="confirm-hero">
+    <div class="confirm-badge"><i class="fa-solid fa-check"></i></div>
+    <span class="eyebrow">Order Confirmed</span>
+    <h1>धन्यवाद! आपकी <span>Neuro Mantra Wellness Journey</span> शुरू हो चुकी है</h1>
+    <p>आपकी Details हमें मिल गई हैं। हमारी Team बहुत जल्द आपसे संपर्क करेगी।</p>
+  </header>
+
+  <!-- ORDER SUMMARY -->
+  <section style="padding-top:0;">
+    <div class="order-card">
+      <div class="order-card-head">
+        <div class="order-card-img"><i class="fa-solid fa-leaf"></i></div>
+        <div>
+          <h3>Neuro Mantra Syrup</h3>
+          <span>Ayurvedic Support For Growing Minds</span>
+        </div>
+      </div>
+      <div class="order-row">
+        <span class="label">Order Status</span>
+        <span class="value gold">Confirmed</span>
+      </div>
+      <div class="order-row">
+        <span class="label">Payment Mode</span>
+        <span class="value">Cash on Delivery</span>
+      </div>
+      <div class="order-row">
+        <span class="label">Contact Window</span>
+        <span class="value">अगले 24 घंटों में</span>
+      </div>
+      <div class="order-status">
+        <i class="fa-solid fa-phone-volume"></i>
+        <p>हमारी Team आपको Call करके Order Confirm करेगी।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXT STEPS -->
+  <section class="steps-section">
+    <span class="section-tag">आगे क्या होगा</span>
+    <h2>अब क्या Expect करें?</h2>
+
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <h4>Confirmation Call</h4>
+        <p>हमारा Representative आपके दिए गए नंबर पर Call करके Order Details Confirm करेगा।</p>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <h4>Dosage Guidance</h4>
+        <p>आपके बच्चे की Age और Need के अनुसार सही Usage Routine समझाई जाएगी।</p>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <h4>Fast Delivery Support</h4>
+        <p>Order Confirm होते ही Product आपके पते पर भेजने की प्रक्रिया शुरू हो जाएगी।</p>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="step-text">
+        <h4>Ongoing Wellness Support</h4>
+        <p>Minimum 2–3 महीने Consistent Use और Guidance Follow करने की सलाह दी जाती है।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORT -->
+  <section class="support-section">
+    <h2>कोई सवाल है?</h2>
+    <p>हमारी Support Team आपकी हर सवाल के लिए उपलब्ध है — बेझिझक संपर्क करें।</p>
+    <a href="https://wa.me/910000000000" class="support-btn">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp पर बात करें
+    </a>
+    <a href="tel:+910000000000" class="support-btn outline">
+      <i class="fa-solid fa-phone"></i> Call करें
+    </a>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section class="trust-section">
+    <h2>आप सही चुनाव कर चुके हैं</h2>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <i class="fa-solid fa-leaf"></i>
+        <span>100% Ayurvedic Herbal Formula</span>
+      </div>
+      <div class="trust-item">
+        <i class="fa-solid fa-shield-heart"></i>
+        <span>No Harmful Steroids</span>
+      </div>
+      <div class="trust-item">
+        <i class="fa-solid fa-child-reaching"></i>
+        <span>Child-Friendly Syrup</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section class="disclaimer-section">
+    <p>Neuro Mantra Syrup एक Ayurvedic Wellness Supplement है। यह किसी भी Disease के Diagnosis, Treatment, Cure या Prevention का दावा नहीं करता। Autism, Cerebral Palsy, Epilepsy, Developmental Delay या किसी भी Neurological Condition के लिए Qualified Doctor की सलाह आवश्यक है। Product का इस्तेमाल हमेशा Doctor की Guidance और Recommended Dosage के अनुसार करें। Results Person To Person Vary कर सकते हैं।</p>
+  </section>
+
+</div>
+</body>
+</html>

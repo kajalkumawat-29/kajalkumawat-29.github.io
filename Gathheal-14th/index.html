@@ -786,10 +786,44 @@
     #offerOrder{ padding:0 !important; }
     .ghf-order-box{ margin-left:18px !important; margin-right:18px !important; }
   }
+
+  /* =====================================================================
+     TOP NAVBAR (added) — logo left, Buy button right, scrolls to order form
+  ===================================================================== */
+  .gh-navbar{
+    position:sticky; top:0; left:0; right:0; z-index:60;
+    width:100%; max-width:var(--maxw);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 18px;
+    background:var(--pulm) !important;
+    border-bottom:1px solid var(--line);
+    box-shadow:0 6px 16px -10px rgba(46,33,38,.3);
+  }
+  .gh-navbar .gh-logo{
+    font-family:'Fraunces', 'Halant', serif;
+    font-size:22px; font-weight:700; color:var(--plum-dark); letter-spacing:.3px;
+  }
+  .gh-navbar .gh-logo span{color:var(--mustard);}
+  .gh-navbar .gh-nav-buy{
+    background:var(--mustard); color:#fff; border:none; border-radius:10px;
+    padding:9px 18px; font-family:'Halant', serif; font-weight:700; font-size:15px;
+    cursor:pointer; display:flex; align-items:center; gap:6px;
+    box-shadow:0 8px 16px -8px rgba(147,104,31,.5);
+  }
+  @media (max-width:380px){
+    .gh-navbar{padding:10px 14px;}
+    .gh-navbar .gh-logo{font-size:19px;}
+    .gh-navbar .gh-nav-buy{padding:8px 14px; font-size:14px;}
+  }
 </style>
 </head>
 <body>
 <div class="page" id="pageRoot">
+    <!-- TOP NAVBAR (added) -->
+    <div class="gh-navbar">
+      <div class="gh-logo">GATH<span>HEAL</span></div>
+      <button type="button" class="gh-nav-buy" id="navBuyBtn">Buy Now<i class="fa-solid fa-bag-shopping"></i></button>
+    </div>
     <img src="images/banner.avif" alt="GATHHEAL Capsule" class="hero-bg"  >
   <!-- 1. PROBLEM -->
    <section>
@@ -1601,6 +1635,14 @@
   document.getElementById('stickyBtn').addEventListener('click', function(){
     orderForm.scrollIntoView({behavior:'smooth', block:'start'});
   });
+
+  // Navbar "Buy Now" button (added) — scrolls to the order form section
+  var navBuyBtn = document.getElementById('navBuyBtn');
+  if(navBuyBtn){
+    navBuyBtn.addEventListener('click', function(){
+      orderForm.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  }
 
   // reveal-on-scroll animation removed for faster mobile loading — all sections show immediately
 

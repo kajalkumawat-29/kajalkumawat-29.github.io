@@ -1392,7 +1392,7 @@
     const timeout = setTimeout(() => {
       if (!redirected) {
         redirected = true;
-        window.location.href = './ThankYou.html';
+        window.location.href = './Thankyou.html';
       }
     }, 2000);
     fetch('https://script.google.com/macros/s/AKfycbyxj8sDZA-VSP3_xTX2mFZ884PyWUwFyqiFIUrMm4GVJbjG2Z7qaEslb1Q-Bnj0alj7/exec', {
@@ -1404,7 +1404,7 @@
       if (!redirected) {
         clearTimeout(timeout);
         redirected = true;
-        window.location.href = './ThankYou.html';
+        window.location.href = './Thankyou.html';
       }
       document.getElementById("ghfLoading").classList.remove('show');
       Swal.fire({
@@ -1420,7 +1420,7 @@
       if (!redirected) {
         clearTimeout(timeout);
         redirected = true;
-        window.location.href = './ThankYou.html';
+        window.location.href = './Thankyou.html';
       }
       document.getElementById("ghfLoading").classList.remove('show');
     });

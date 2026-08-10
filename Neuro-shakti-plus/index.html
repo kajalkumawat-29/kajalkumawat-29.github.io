@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Neuro Shakti — Recovery Journey में सही Support</title>
+<meta name="description" content="Neuro Shakti — nerve &amp; mobility support product। Regular Physiotherapy, सही Guidance और Consistent Care के साथ अपनी Recovery Journey को Support दें।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --wine:        #7A1F3D;
+    --wine-dark:   #4F1428;
+    --wine-tint:   #F4E3E8;
+    --gold:        #D89A2C;
+    --gold-dark:   #B67C1B;
+    --gold-tint:   #FBEFD6;
+    --cream:       #FFF8F0;
+    --ink:         #2B1B20;
+    --ink-soft:    #715961;
+    --white:       #FFFFFF;
+    --line:        #EAD9D0;
+
+    --font-display: 'Halant', serif;
+    --font-body:    'Halant', sans-serif;
+
+    --r-lg: 24px;
+    --r-md: 16px;
+    --r-sm: 10px;
+    --shadow: 0 14px 34px rgba(74,20,40,0.16);
+    --shadow-sm: 0 4px 14px rgba(74,20,40,0.10);
+
+    --page-max: 450px;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{
+    -webkit-text-size-adjust:100%;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+    overscroll-behavior-y:none;
+  }
+  html::-webkit-scrollbar{ display:none; width:0; height:0; }
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    background:var(--wine-tint);
+    color:var(--ink);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+    -webkit-overflow-scrolling:touch;
+  }
+  body::-webkit-scrollbar{ display:none; width:0; height:0; }
+  img{ max-width:100%; display:block; min-width:120px; }
+  button{ font-family:inherit; cursor:pointer; }
+  h1,h2,h3,p,ul{ margin:0; }
+  ul{ padding:0; list-style:none; }
+  a{ color:inherit; }
+
+  /* ===== Page shell (max 450px) ===== */
+  .page-wrap{
+    max-width:var(--page-max);
+    margin:0 auto;
+    background:var(--cream);
+    min-height:100vh;
+    position:relative;
+    overflow-x:hidden;
+    box-shadow: 0 0 24px rgba(0,0,0,0.25);
+    transition: filter .4s ease;
+  }
+  .page-wrap.blurred{
+    filter: blur(8px);
+  }
+
+  /* ===== Utility ===== */
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:16px;
+    font-weight:700;
+    letter-spacing:.03em;
+    color:var(--wine);
+    background:var(--wine-tint);
+    padding:7px 16px;
+    border-radius:999px;
+    margin-bottom:16px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--gold);
+    display:inline-block;
+  }
+  .section{
+    position:relative;
+    padding:16px 22px;
+  }
+
+  h2.title{
+    font-family:var(--font-display);
+    font-size:27px;
+    line-height:1.35;
+    color:var(--wine-dark);
+    font-weight:600;
+    margin-bottom:16px;
+    position:relative;
+  }
+  .lead{
+    font-size:17px;
+    color:var(--ink-soft);
+    margin-bottom:18px;
+  }
+  .sect-img{
+    width:100%;
+    height:auto;
+    aspect-ratio:4/3;
+    object-fit:cover;
+    border-radius:var(--r-lg);
+    box-shadow:var(--shadow);
+    margin-bottom:22px;
+    background:var(--wine-tint);
+  }
+
+  /* ===== Wave dividers between sections ===== */
+  .divider{
+    display:block;
+    width:100%;
+    line-height:0;
+    position:relative;
+    z-index:2;
+  }
+  .divider svg{ width:100%; height:34px; display:block; }
+  .divider--flip svg{ transform:rotate(180deg); }
+  .btn-primary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    width:100%;
+    background:var(--gold);
+    color:var(--wine-dark);
+    font-weight:700;
+    font-size:17px;
+    padding:16px 20px;
+    border:none;
+    border-radius:999px;
+    box-shadow:var(--shadow-sm);
+    transition:background .2s ease, transform .15s ease;
+  }
+  .btn-primary:active{ transform:scale(0.98); }
+  .btn-primary:hover{ background:var(--gold-dark); }
+  .btn-primary:focus-visible{ outline:3px solid var(--wine); outline-offset:2px; }
+
+  /* ===== Top announcement banner (appears once, not repeated) ===== */
+  .top-banner{
+    background:var(--wine-dark);
+    color:var(--gold-tint);
+    text-align:center;
+    font-size:16px;
+    font-weight:600;
+    padding:10px 16px;
+    letter-spacing:.01em;
+  }
+  .top-banner span{ color:var(--gold); }
+
+  /* ===== Hero / Hook ===== */
+  .hero{
+    background:radial-gradient(120% 90% at 15% -10%, var(--gold-tint) 0%, transparent 55%),
+               linear-gradient(180deg, var(--wine-tint) 0%, var(--cream) 82%);
+    padding-top:34px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-60px; right:-70px;
+    width:180px; height:180px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(122,31,61,0.14), transparent 70%);
+    z-index:0;
+  }
+  .hero > *{ position:relative; z-index:1; }
+  .hero h1{
+    font-family:var(--font-display);
+    font-size:29px;
+    line-height:1.42;
+    color:var(--wine-dark);
+    font-weight:700;
+    margin-bottom:18px;
+    padding-bottom:14px;
+    border-bottom:3px solid var(--gold);
+  }
+  .hero .lead{ font-size:17px; }
+
+  /* ===== Pain points — alternating zig-zag layout ===== */
+  .pain{ background:var(--white); overflow:hidden; }
+  .pain-list{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+    margin-top:24px;
+  }
+  .pain-item{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    isolation:isolate;
+  }
+  .pain-item:nth-child(even){ flex-direction:row-reverse; }
+  .pain-item::before{
+    content:attr(data-num);
+    position:absolute;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    font-family:var(--font-display);
+    font-size:72px;
+    font-weight:700;
+    line-height:1;
+    color:var(--wine-tint);
+    z-index:-1;
+    pointer-events:none;
+  }
+  .pain-item:nth-child(even)::before{ color:var(--gold-tint); }
+  .pain-item .thumb{
+    position:relative;
+    flex:0 0 auto;
+    width:150px;
+    height:150px;
+  }
+  .pain-item .thumb::before{
+    content:"";
+    position:absolute;
+    inset:-7px;
+    border:1.5px dashed rgba(122,31,61,0.4);
+    border-radius:26px;
+    z-index:0;
+  }
+  .pain-item:nth-child(even) .thumb::before{ border-color:rgba(216,154,44,0.55); }
+  .pain-item img{
+    position:relative;
+    z-index:1;
+    width:150px;
+    height:150px;
+    min-width:140px;
+    min-height:140px;
+    object-fit:cover;
+    border-radius:22px;
+    border:3px solid var(--gold);
+    box-shadow:var(--shadow);
+    display:block;
+  }
+  .pain-item:nth-child(odd) img{ transform:rotate(-3deg); }
+  .pain-item:nth-child(even) img{ transform:rotate(3deg); border-color:var(--wine); }
+  .pain-item .dot{
+    position:absolute;
+    top:-10px;
+    width:32px; height:32px;
+    border-radius:50%;
+    background:var(--wine);
+    color:var(--white);
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px; font-weight:700;
+    border:2.5px solid var(--white);
+    box-shadow:0 4px 10px rgba(74,20,40,0.35);
+    z-index:2;
+  }
+  .pain-item:nth-child(odd) .dot{ right:-10px; }
+  .pain-item:nth-child(even) .dot{ left:-10px; background:var(--gold-dark); }
+  .pain-item .txt{
+    position:relative;
+    z-index:1;
+    flex:1 1 auto;
+    border-radius:var(--r-md);
+    padding:14px 16px;
+    font-size:15px;
+    line-height:1.45;
+    font-weight:600;
+    color:var(--wine-dark);
+    box-shadow:var(--shadow-sm);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .pain-item:nth-child(odd) .txt{
+    background:var(--wine-tint);
+    border:1px solid rgba(122,31,61,0.16);
+    border-left:4px solid var(--wine);
+  }
+  .pain-item:nth-child(even) .txt{
+    background:var(--gold-tint);
+    border:1px solid rgba(216,154,44,0.3);
+    border-right:4px solid var(--gold-dark);
+    text-align:right;
+  }
+  .pain-item:hover .txt{ transform:translateY(-2px); box-shadow:var(--shadow); }
+  @media (max-width:380px){
+    .pain-item{ gap:12px; }
+    .pain-item .thumb{ width:140px; height:140px; }
+    .pain-item img{ width:140px; height:140px; }
+    .pain-item::before{ font-size:58px; }
+    .pain-item .txt{ font-size:14px; padding:12px 14px; }
+  }
+
+  /* ===== Hope / Solution ===== */
+  .hope{ background:var(--cream);  border:1px solid var(--line); border-radius: 20px; }
+  .hope-combo{
+    position:relative;
+    background:var(--gold-tint);
+    border:1.5px dashed var(--gold-dark);
+    border-radius:var(--r-md);
+    padding:20px 16px;
+    font-weight:700;
+    font-size:16.5px;
+    color:var(--wine-dark);
+    text-align:center;
+    margin:18px 0;
+  }
+  .hope-combo::before{
+    content:"✦";
+    display:block;
+    color:var(--gold-dark);
+    font-size:18px;
+    margin-bottom:8px;
+  }
+
+  /* ---- Solution card: combo line = product, equation style ---- */
+  .hope-solution{
+    position:relative;
+    background:var(--white);
+    border:1.5px solid var(--line);
+    border-radius:var(--r-lg);
+    padding:22px 16px 20px;
+    margin:18px 0;
+    box-shadow:var(--shadow-sm);
+    text-align:center;
+  }
+  .hope-solution-label{
+    display:inline-block;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.03em;
+    color:var(--wine);
+    background:var(--wine-tint);
+    padding:5px 14px;
+    border-radius:999px;
+    margin-bottom:16px;
+  }
+  .hope-solution .hope-combo{ margin:0; }
+
+  .hope-equals{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin:14px 0;
+  }
+  .hope-equals::before,
+  .hope-equals::after{
+    content:"";
+    flex:1 1 auto;
+    height:1px;
+    background:var(--line);
+  }
+  .hope-equals span{
+    flex:0 0 auto;
+    width:40px; height:40px;
+    border-radius:50%;
+    background:var(--wine);
+    color:var(--gold-tint);
+    display:flex; align-items:center; justify-content:center;
+    font-size:20px;
+    font-weight:800;
+    box-shadow:0 6px 14px rgba(74,20,40,0.3);
+  }
+
+  .hope-solution-media{
+    position:relative;
+    width:168px;
+    margin:0 auto;
+  }
+  .hope-solution-media img{
+    width:168px;
+    height:168px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid var(--gold);
+    box-shadow:var(--shadow);
+    display:block;
+    margin:0 auto;
+  }
+  .hope-solution-tag{
+    position:absolute;
+    bottom:-4px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--gold);
+    color:var(--wine-dark);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.02em;
+    padding:6px 16px;
+    border-radius:999px;
+    white-space:nowrap;
+    box-shadow:0 4px 10px rgba(74,20,40,0.3);
+  }
+
+  /* ===== Product ===== */
+  .product{
+    background:radial-gradient(120% 80% at 100% 0%, var(--wine-dark) 0%, var(--wine) 60%);
+    color:var(--white);
+  }
+  .product .eyebrow{ background:rgba(255,255,255,0.15); color:var(--gold-tint); }
+  .product h2.title{ color:var(--white); }
+  .product .lead{ color:rgba(255,255,255,0.86); }
+  .product-name{
+    font-family:var(--font-display);
+    font-size:25px;
+    font-weight:700;
+    color:var(--gold);
+    margin-bottom:12px;
+    padding-bottom:12px;
+    border-bottom:1px solid rgba(255,255,255,0.18);
+  }
+  /* Redesigned product image frame */
+  .product-media{
+    position:relative;
+    margin:22px 0 26px;
+    padding:10px;
+    border-radius:calc(var(--r-lg) + 10px);
+    background:linear-gradient(155deg, rgba(216,154,44,0.22), rgba(255,255,255,0.04));
+    border:1px solid rgba(216,154,44,0.4);
+  }
+  .product-media::before{
+    content:"";
+    position:absolute;
+    inset:4px;
+    border:1.5px dashed rgba(216,154,44,0.55);
+    border-radius:calc(var(--r-lg) + 5px);
+    pointer-events:none;
+  }
+  .product-media .sect-img{
+    margin-bottom:0;
+    border:3px solid var(--gold);
+    box-shadow:0 16px 36px rgba(0,0,0,0.35);
+  }
+  .product-media .media-tag{
+    position:absolute;
+    bottom:-12px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--gold);
+    color:var(--wine-dark);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.03em;
+    padding:6px 16px;
+    border-radius:999px;
+    box-shadow:0 6px 14px rgba(0,0,0,0.3);
+    white-space:nowrap;
+  }
+  .care-list{ display:flex; flex-direction:column; gap:10px; margin:18px 0; }
+  .care-item{
+    display:flex; align-items:center; gap:12px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:var(--r-sm);
+    padding:13px 14px;
+    font-size:16.5px;
+    transition:background .2s ease;
+  }
+  .care-item:hover{ background:rgba(255,255,255,0.14); }
+  .care-item .check{
+    flex:0 0 auto;
+    width:24px;height:24px;
+    border-radius:50%;
+    background:var(--gold);
+    color:var(--wine-dark);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700; font-size:12px;
+  }
+  .tagline{
+    text-align:center;
+    font-style:normal;
+    font-weight:700;
+    color:var(--gold-tint);
+    background:rgba(216,154,44,0.16);
+    border-radius:999px;
+    padding:12px 16px;
+    margin:20px 0;
+    font-size:16.5px;
+  }
+  .product .btn-primary{ margin-top:6px; }
+
+  /* ===== Trust — certificate card layout ===== */
+  .trust{ background:var(--white); }
+  .badge-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px 14px;
+    margin-top:34px;
+  }
+  .badge-card{
+    position:relative;
+    background:linear-gradient(180deg, var(--wine-tint) 0%, var(--white) 60%);
+    border:1px solid var(--line);
+    border-radius:var(--r-md);
+    padding:30px 12px 18px;
+    text-align:center;
+    box-shadow:var(--shadow-sm);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .badge-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow); }
+  .badge-card .ribbon{
+    position:absolute;
+    top:-12px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--wine);
+    color:var(--gold-tint);
+    font-size:10.5px;
+    font-weight:800;
+    letter-spacing:.04em;
+    padding:5px 12px;
+    border-radius:999px;
+    box-shadow:0 4px 10px rgba(74,20,40,0.35);
+    white-space:nowrap;
+    z-index:2;
+  }
+  .badge-card img{
+    width:120px; height:120px;
+    min-width:120px;
+    object-fit:contain;
+    border-radius:50%;
+    background:var(--white);
+    border:3px solid var(--gold);
+    padding:6px;
+    box-shadow:var(--shadow-sm);
+    margin:8px auto 14px;
+  }
+  .badge-card p{
+    font-size:14.5px;
+    font-weight:700;
+    line-height:1.4;
+    color:var(--wine-dark);
+  }
+  .trust-note{
+    margin-top:28px;
+    font-size:16px;
+    color:var(--ink-soft);
+    text-align:center;
+    font-style:italic;
+    padding:14px;
+    border-top:1px dashed var(--line);
+  }
+
+  /* ===== Reviews ===== */
+  .reviews{ background:var(--cream); }
+  .review-card{
+    position:relative;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-left:4px solid var(--gold);
+    border-radius:var(--r-md);
+    padding:18px 16px;
+    margin-bottom:16px;
+    box-shadow:var(--shadow-sm);
+  }
+  .review-card p{ font-size:16.5px; color:var(--ink); margin-bottom:10px; }
+  .review-card .stars{ color:var(--gold); font-size:16px; margin-bottom:2px; letter-spacing:2px; }
+  .review-card cite{ font-style:normal; font-size:16px; color:var(--ink-soft); font-weight:600; }
+  .review-head{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:12px;
+  }
+  .review-avatar{
+    flex:0 0 auto;
+    width:98px; height:98px;
+    min-width:98px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid var(--gold);
+    background:var(--wine-tint);
+  }
+  .reviews-disclaimer{
+    font-size:16px;
+    color:var(--ink-soft);
+    text-align:center;
+    margin-top:8px;
+  }
+
+  /* ===== Order form — redesigned consultation-style card ===== */
+  .order{ background:var(--wine-tint); }
+  .order .title{ text-align:center; }
+  .order .lead{ text-align:center; }
+
+  .order-card{
+    background:var(--white);
+    border-radius:28px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:1px solid var(--line);
+  }
+  .order-card-head{
+    position:relative;
+    background:linear-gradient(135deg, var(--wine-dark) 0%, var(--wine) 100%);
+    padding:26px 22px 22px;
+    text-align:center;
+    color:var(--white);
+    overflow:hidden;
+  }
+  .order-card-head::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(120% 100% at 85% -10%, rgba(216,154,44,0.35), transparent 55%);
+  }
+  .order-card-head > *{ position:relative; z-index:1; }
+  .order-icon-badge{
+    width:54px; height:54px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.14);
+    border:2px solid rgba(255,255,255,0.35);
+    display:flex; align-items:center; justify-content:center;
+    font-size:22px;
+    margin:0 auto 10px;
+  }
+  .order-card-head h3{
+    font-family:var(--font-display);
+    font-size:19px;
+    font-weight:700;
+    margin-bottom:4px;
+  }
+  .order-card-head p{
+    font-size:13.5px;
+    color:rgba(255,255,255,0.85);
+  }
+  .order-steps{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    margin-top:14px;
+    font-size:11.5px;
+    font-weight:700;
+    color:var(--gold-tint);
+  }
+  .order-steps span.step{
+    background:rgba(255,255,255,0.14);
+    padding:5px 10px;
+    border-radius:999px;
+  }
+  .order-steps .arrow{ opacity:.6; }
+
+  .order-card-body{ padding:22px 20px 22px; }
+
+  .field-group{
+    position:relative;
+    display:flex;
+    align-items:stretch;
+    margin-bottom:14px;
+    border-radius:14px;
+    overflow:hidden;
+    border:1.5px solid var(--line);
+    background:var(--white);
+    transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  .field-group:focus-within{
+    border-color:var(--wine);
+    box-shadow:0 0 0 3px rgba(122,31,61,0.14);
+  }
+  .field-icon{
+    flex:0 0 auto;
+    width:46px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--wine-tint);
+    color:var(--wine);
+    font-size:17px;
+  }
+  .field-group input{
+    flex:1 1 auto;
+    min-width:0;
+    border:none;
+    outline:none;
+    padding:13px 14px;
+    font-size:15.5px;
+    font-family:inherit;
+    color:var(--ink);
+    background:transparent;
+  }
+  .field-group.invalid{ border-color:#b3273f; }
+  .field-error{
+    display:none;
+    color:var(--wine);
+    font-size:13px;
+    margin:-8px 0 12px 4px;
+    font-weight:600;
+  }
+  .field-group.invalid + .field-error{ display:block; }
+
+  #orderSubmitBtn{
+    position:relative;
+    background:linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  }
+  #orderSubmitBtn .btn-label{ display:inline-flex; align-items:center; gap:8px; }
+  #orderSubmitBtn .spinner{
+    display:none;
+    width:20px; height:20px;
+    border-radius:50%;
+    border:3px solid rgba(79,20,40,0.25);
+    border-top-color:var(--wine-dark);
+    animation:spin .8s linear infinite;
+  }
+  #orderSubmitBtn.loading .spinner{ display:inline-block; }
+  #orderSubmitBtn.loading .btn-text{ opacity:.7; }
+  #orderSubmitBtn.loading{ pointer-events:none; }
+
+  .order-trust-chips{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:14px;
+  }
+  .order-trust-chips span{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    background:var(--wine-tint);
+    color:var(--wine-dark);
+    font-size:12px;
+    font-weight:700;
+    padding:6px 11px;
+    border-radius:999px;
+  }
+  .form-note{
+    text-align:center;
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-top:14px;
+  }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  @media (prefers-reduced-motion:reduce){
+    .spinner{ animation:none; }
+    .section{ transition:none; }
+  }
+
+  /* ===== Final CTA ===== */
+  .final-cta{
+    background:
+      radial-gradient(circle, rgba(216,154,44,0.35) 1.5px, transparent 1.5px) 0 0/22px 22px,
+      var(--wine-dark);
+    color:var(--white);
+    text-align:center;
+  }
+  .final-cta h2.title{ color:var(--white); }
+  .final-cta .lead{ color:rgba(255,255,255,0.85); }
+  .final-cta .strip{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px 14px;
+    font-size:16px;
+    color:var(--gold-tint);
+    margin:18px 0;
+    font-weight:600;
+  }
+  .final-cta .closing{
+    margin-top:16px;
+    font-size:16.5px;
+    color:var(--gold-tint);
+  }
+
+  /* ===== Sticky CTA ===== */
+  .sticky-cta{
+    position:fixed;
+    left:50%;
+    bottom:16px;
+    transform:translateX(-50%) translateY(0);
+    width:calc(100% - 32px);
+    max-width:calc(var(--page-max) - 32px);
+    z-index:40;
+    transition:transform .3s ease, opacity .3s ease;
+    opacity:1;
+    will-change:transform;
+  }
+  .sticky-cta.hidden{
+    transform:translateX(-50%) translateY(140%);
+    opacity:0;
+    pointer-events:none;
+  }
+  .sticky-cta-inner{ position:relative; }
+  .sticky-cta button{
+    width:100%;
+    background:var(--gold);
+    color:var(--wine-dark);
+    font-weight:700;
+    font-size:17px;
+    padding:15px 20px;
+    border:none;
+    border-radius:999px;
+    box-shadow:0 10px 26px rgba(74,20,40,0.35);
+  }
+  .sticky-cta button:focus-visible{ outline:3px solid var(--wine-dark); outline-offset:2px; }
+
+  /* ===== Redirect-to-thankyou blur overlay ===== */
+  .redirect-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(43,27,32,0);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:100;
+    transition:background .4s ease;
+  }
+  .redirect-overlay.active{
+    display:flex;
+    background:rgba(43,27,32,0.35);
+  }
+  .redirect-overlay .spin-icon{
+    width:54px; height:54px;
+    border-radius:50%;
+    border:4px solid rgba(255,255,255,0.35);
+    border-top-color:var(--gold);
+    animation:spin .8s linear infinite;
+  }
+
+  @media (min-width:480px){
+    .sticky-cta{ bottom:24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrap" id="pageWrap">
+<img src="images/banner.avif" alt="">
+  <!-- ============ 02. PAIN (redesigned grid layout) ============ -->
+  <section class="section pain" id="pain">
+    <span class="eyebrow">Identify</span>
+    <h2 class="title">लकवे के बाद छोटी-सी परेशानी भी बड़ी लगने लगती है</h2>
+    <p class="lead">क्या आपको या आपके किसी अपने को इनमें से कुछ महसूस होता है?</p>
+    <div class="pain-list">
+      <div class="pain-item" data-num="01">
+        <span class="thumb"><img src="images/sect-1-1st.avif" alt="हाथ या पैर में लगातार कमजोरी महसूस होना" loading="lazy" width="150" height="150"><span class="dot">1</span></span>
+        <span class="txt">हाथ या पैर में लगातार कमजोरी महसूस होना</span>
+      </div>
+      <div class="pain-item" data-num="02">
+        <span class="thumb"><img src="images/sect-1-2nd.avif" alt="चलने-फिरने में परेशानी या अस्थिरता" loading="lazy" width="150" height="150"><span class="dot">2</span></span>
+        <span class="txt">चलने-फिरने में परेशानी या अस्थिरता</span>
+      </div>
+      <div class="pain-item" data-num="03">
+        <span class="thumb"><img src="images/sect-1-3rd.avif" alt="शरीर में Stiffness या जकड़न महसूस होना" loading="lazy" width="150" height="150"><span class="dot">3</span></span>
+        <span class="txt">शरीर में Stiffness या जकड़न महसूस होना</span>
+      </div>
+      <div class="pain-item" data-num="04">
+        <span class="thumb"><img src="images/sect-1-4th.avif" alt="हाथों की Grip पहले जैसी मजबूत न रहना" loading="lazy" width="150" height="150"><span class="dot">4</span></span>
+        <span class="txt">हाथों की Grip पहले जैसी मजबूत न रहना</span>
+      </div>
+      <div class="pain-item" data-num="05">
+        <span class="thumb"><img src="images/sect-1-5th.avif" alt="उठने-बैठने या सीढ़ियाँ चढ़ने में परेशानी" loading="lazy" width="150" height="150"><span class="dot">5</span></span>
+        <span class="txt"> रोज़मर्रा के छोटे-छोटे कामों के लिए सहारे की जरूरत पड़ना</span>
+      </div>
+      <div class="pain-item" data-num="06">
+        <span class="thumb"><img src="images/sect-1-6th.avif" alt="रोज़मर्रा के छोटे-छोटे कामों के लिए सहारे की जरूरत पड़ना" loading="lazy" width="150" height="150"><span class="dot">6</span></span>
+        <span class="txt">उठने-बैठने या सीढ़ियाँ चढ़ने में परेशानी</span>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:18px;">हर दिन किसी पर निर्भर रहना आसान नहीं होता। इसीलिए Recovery Journey में सिर्फ़ एक चीज़ पर निर्भर रहने के बजाय Regular Physiotherapy, उचित Medical Guidance, Nutrition और शरीर की नियमित Care पर ध्यान देना महत्वपूर्ण है।</p>
+  </section>
+
+
+  <!-- ============ 03. HOPE / SOLUTION ============ -->
+  <section class="section hope" id="hope">
+    <span class="eyebrow">बदलाव की शुरुआत</span>
+    <h2 class="title">हर छोटी कोशिश मायने रखती है</h2>
+    <p class="lead">Recovery एक दिन में नहीं होती... लेकिन सही देखभाल और लगातार प्रयास के साथ अपने शरीर की Functional Ability को बेहतर बनाने की दिशा में काम किया जा सकता है।</p>
+
+    <div class="hope-solution">
+      <span class="hope-solution-label">इसी का Solution</span>
+      <div class="hope-combo">Physiotherapy + सही Guidance + Regular Care + उचित Support</div>
+      <div class="hope-equals"><span>=</span></div>
+      <div class="hope-solution-media">
+        <img src="images/product.avif" alt="Neuro Shakti - Recovery Journey Solution" loading="lazy" width="600" height="450">
+        <span class="hope-solution-tag">Neuro Shakti</span>
+      </div>
+    </div>
+
+    <p class="lead">इन सभी का combination आपकी recovery journey को व्यवस्थित रखने में मदद कर सकता है। लक्ष्य सिर्फ़ चलना नहीं... बल्कि धीरे-धीरे अपनी Daily Activities में बेहतर Participation की ओर बढ़ना है।</p>
+  </section>
+
+  <div class="divider" style="color:var(--wine);"><svg viewBox="0 0 450 34" preserveAspectRatio="none"><path d="M0,34 C112,4 337,4 450,34 L450,34 L0,34 Z" fill="currentColor"/></svg></div>
+
+  <!-- ============ 04. PRODUCT (text moved above image, redesigned frame) ============ -->
+  <section class="section product" id="product">
+    <span class="eyebrow">हमारा Product</span>
+    <h2 class="title">Recovery Journey में शरीर को दें सही Support</h2>
+    <div class="product-name">पेश है — Neuro Shakti</div>
+    <p class="lead">Neuro Shakti एक nerve &amp; mobility support product है, जिसे शरीर और nervous system की overall care को ध्यान में रखते हुए इस्तेमाल किया जाता है।</p>
+    <p class="lead">Neuro Shakti को अपनी Regular Care Routine के साथ शामिल करें। साथ में जारी रखें:</p>
+
+    <div class="product-media">
+      <img class="sect-img" src="images/product.avif" alt="Neuro Shakti - nerve and mobility support product" loading="lazy" width="600" height="450">
+      <span class="media-tag">Neuro Shakti</span>
+    </div>
+
+    <div class="care-list">
+      <div class="care-item"><span class="check"><i class="fa-solid fa-check"></i></span>Regular Physiotherapy</div>
+      <div class="care-item"><span class="check"><i class="fa-solid fa-check"></i></span>डॉक्टर/विशेषज्ञ की सलाह</div>
+      <div class="care-item"><span class="check"><i class="fa-solid fa-check"></i></span>संतुलित Nutrition</div>
+      <div class="care-item"><span class="check"><i class="fa-solid fa-check"></i></span>पर्याप्त Rest</div>
+      <div class="care-item"><span class="check"><i class="fa-solid fa-check"></i></span>नियमित Exercise &amp; Movement, जैसा विशेषज्ञ सुझाए</div>
+    </div>
+    <p class="tagline">क्योंकि बेहतर Care का मतलब है — Consistency</p>
+    <button class="btn-primary" onclick="scrollToOrder()"><i class="fa-solid fa-phone"></i>&nbsp; अभी Neuro Shakti ऑर्डर करें</button>
+  </section>
+
+  <div class="divider" style="color:var(--white);"><svg viewBox="0 0 450 34" preserveAspectRatio="none"><path d="M0,34 C112,4 337,4 450,34 L450,34 L0,34 Z" fill="currentColor"/></svg></div>
+
+  <!-- ============ 05. TRUST ============ -->
+  <section class="section trust" id="trust">
+    <span class="eyebrow">भरोसा</span>
+    <h2 class="title">जब बात Health की हो, तो भरोसा सबसे पहले आता है</h2>
+    <p class="lead">Neuro Shakti के साथ आपका भरोसा हमारी प्राथमिकता है।</p>
+    <div class="badge-grid">
+      <div class="badge-card">
+        <span class="ribbon">CERTIFIED</span>
+        <img src="images/certified-1.avif" alt="Ayurvedic Guidelines के अनुसार तैयार" loading="lazy" width="120" height="120">
+        <p>Ayurvedic Guidelines के अनुसार तैयार</p>
+      </div>
+      <div class="badge-card">
+        <span class="ribbon">TRUSTED</span>
+        <img src="images/certified-2.avif" alt="Quality-focused Manufacturing" loading="lazy" width="120" height="120">
+        <p>Quality-focused Manufacturing</p>
+      </div>
+      <div class="badge-card">
+        <span class="ribbon">NATURAL</span>
+        <img src="images/certified-3.avif" alt="Selected Herbal Ingredients" loading="lazy" width="120" height="120">
+        <p>Selected Herbal Ingredients</p>
+      </div>
+      <div class="badge-card">
+        <span class="ribbon">HYGIENIC</span>
+        <img src="images/certified-4.avif" alt="Hygienically Packed" loading="lazy" width="120" height="120">
+        <p>Hygienically Packed</p>
+      </div>
+      <div class="badge-card">
+        <span class="ribbon">SAFE</span>
+        <img src="images/certified-5.avif" alt="सुरक्षित और सुविधाजनक Packaging" loading="lazy" width="120" height="120">
+        <p>सुरक्षित और सुविधाजनक Packaging</p>
+      </div>
+      <div class="badge-card">
+        <span class="ribbon">SUPPORT</span>
+        <img src="images/certified-6.avif" alt="Customer Support Available" loading="lazy" width="120" height="120">
+        <p>Customer Support Available</p>
+      </div>
+
+    </div>
+    <p class="trust-note">कोई चमत्कारी वादा नहीं। हमारा उद्देश्य है कि आपको आपकी regular care और recovery journey के लिए एक convenient support option मिले।</p>
+  </section>
+
+  <div class="divider" style="color:var(--cream);"><svg viewBox="0 0 450 34" preserveAspectRatio="none"><path d="M0,34 C112,4 337,4 450,34 L450,34 L0,34 Z" fill="currentColor"/></svg></div>
+
+  <!-- ============ 06. REVIEWS ============ -->
+  <section class="section reviews" id="reviews">
+    <span class="eyebrow">लोगों के अनुभव</span>
+    <h2 class="title">जिन लोगों ने अपनी Care Journey को गंभीरता से लिया</h2>
+
+    <div class="review-card">
+      <div class="review-head">
+        <img class="review-avatar" src="images/customer-1.avif" alt="Customer" loading="lazy" width="48" height="48">
+        <div>
+          <div class="stars">★★★★★</div>
+          <cite>रामकिशन शर्मा, जयपुर
+</cite>
+        </div>
+      </div>
+      <p>लकवा आने के बाद हाथ उठाना भी मुश्किल हो गया था। Neuro Shakti के साथ नियमित देखभाल और एक्सरसाइज़ जारी रखी। धीरे-धीरे पहले से बेहतर महसूस होने लगा।</p>
+    </div>
+    <div class="review-card">
+      <div class="review-head">
+        <img class="review-avatar" src="images/customer-2.avif" alt="Customer" loading="lazy" width="48" height="48">
+        <div>
+          <div class="stars">★★★★★</div>
+          <cite>— संगीता चौधरी, भोपाल 
+</cite>
+        </div>
+      </div>
+      <p>मेरे चाचा को लकवे के बाद बोलने में दिक्कत और हाथ की पकड़ बहुत कमजोर हो गई थी। daily के छोटे-छोटे काम भी दूसरों की मदद से करने पड़ते थे। Neuro Shakti शुरू करने के बाद पहले से अच्छा सुधार महसूस हुआ और उनका आत्मविश्वास भी बढ़ा।"
+</p>
+    </div>
+    <div class="review-card">
+      <div class="review-head">
+        <img class="review-avatar" src="images/customer-3.avif" alt="Customer" loading="lazy" width="48" height="48">
+        <div>
+          <div class="stars">★★★★★</div>
+          <cite>— कविता शर्मा, जयपुर 
+</cite>
+        </div>
+      </div>
+      <p>लकवा आने के बाद मेरे पति का बायाँ हाथ ठीक से काम नहीं करता था और चलने में भी संतुलन नहीं बन पाता था। Neuro Shakti को नियमित रूप से लेने से पहले की तुलना में बेहतर मूवमेंट महसूस हुई। अब वे कई छोटे-छोटे काम खुद करने लगे हैं।</p>
+    </div>
+    <p class="reviews-disclaimer">Note: यहाँ केवल वास्तविक, सत्यापित customer reviews दिखाए जाते हैं।</p>
+  </section>
+
+  <div class="divider" style="color:var(--wine-tint);"><svg viewBox="0 0 450 34" preserveAspectRatio="none"><path d="M0,34 C112,4 337,4 450,34 L450,34 L0,34 Z" fill="currentColor"/></svg></div>
+
+  <!-- ============ 07. ORDER FORM ============ -->
+  <section class="section order" id="order-form">
+    <h2 class="title">अपनी Recovery Journey को आज से एक और Support दें</h2>
+    <p class="lead">Neuro Shakti के बारे में जानकारी पाने या Order करने के लिए नीचे अपना विवरण भरें।</p>
+
+    <form id="orderForm" class="order-card" novalidate>
+
+      <div class="order-card-head">
+        <div class="order-icon-badge"><i class="fa-solid fa-bullseye"></i></div>
+        <h3>अभी अपनी जानकारी भेजें</h3>
+        <p>हमारी Team आपसे जल्द ही संपर्क करेगी</p>
+        <div class="order-steps">
+          <span class="step">1. विवरण भरें</span>
+          <span class="arrow">→</span>
+          <span class="step">2. Team कॉल करेगी</span>
+        </div>
+      </div>
+
+      <div class="order-card-body">
+
+        <!-- Ad attribution — filled from the landing URL by captureUtmParams() -->
+        <input type="hidden" name="date" id="date">
+        <input type="hidden" name="utm_source">
+        <input type="hidden" name="utm_medium">
+        <input type="hidden" name="utm_campaign">
+        <input type="hidden" name="utm_campaign_id">
+        <input type="hidden" name="utm_adset">
+        <input type="hidden" name="utm_adset_id">
+        <input type="hidden" name="utm_ad">
+        <input type="hidden" name="utm_ad_id">
+        <input type="hidden" name="utm_placement">
+        <input type="hidden" name="event_id" id="event_id">
+        <input type="hidden" name="fbclid">
+        <input type="hidden" name="fbc">
+        <input type="hidden" name="fbp">
+
+        <div class="field-group" id="nameField">
+          <span class="field-icon"><i class="fa-solid fa-user"></i></span>
+          <input type="text" id="nameInput" name="name" placeholder="अपना नाम दर्ज करें" autocomplete="name" inputmode="text">
+        </div>
+        <div class="field-error">कृपया केवल अक्षरों में सही नाम दर्ज करें</div>
+
+        <div class="field-group" id="mobileField">
+          <span class="field-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
+          <input type="tel" id="mobileInput" name="mobile" placeholder="अपना मोबाइल नंबर दर्ज करें" autocomplete="tel" inputmode="numeric" maxlength="10">
+        </div>
+        <div class="field-error">10 अंकों का मोबाइल नंबर दर्ज करें, जो 6-9 से शुरू हो</div>
+
+        <button type="submit" class="btn-primary" id="orderSubmitBtn">
+          <span class="spinner" aria-hidden="true"></span>
+          <span class="btn-text"><i class="fa-solid fa-phone"></i>&nbsp; अभी ऑर्डर करें</span>
+        </button>
+
+        <div class="order-trust-chips">
+          <span><i class="fa-solid fa-lock"></i> सुरक्षित जानकारी</span>
+          <span><i class="fa-solid fa-stopwatch"></i> 2 मिनट में पूरा</span>
+          <span><i class="fa-solid fa-circle-check"></i> मुफ़्त Guidance</span>
+        </div>
+
+        <p class="form-note">हमारी Team आपसे संपर्क करके Order और Product से जुड़ी जानकारी बताएगी। आपकी जानकारी सुरक्षित रखी जाएगी।</p>
+      </div>
+    </form>
+  </section>
+
+  <div class="divider" style="color:var(--wine-dark);"><svg viewBox="0 0 450 34" preserveAspectRatio="none"><path d="M0,34 C112,4 337,4 450,34 L450,34 L0,34 Z" fill="currentColor"/></svg></div>
+
+  <!-- ============ 08. FINAL CTA ============ -->
+  <section class="section final-cta" id="final-cta">
+    <img class="sect-img" src="images/product.avif" alt="अपनी daily activities में फिर से शामिल हों" loading="lazy" width="600" height="450">
+    <h2 class="title">क्या आप फिर से अपनी Daily Activities में बेहतर तरीके से शामिल होना चाहते हैं?</h2>
+    <p class="lead">इंतज़ार करने के बजाय अपनी Care Journey पर आज से ध्यान दें। Neuro Shakti को अपनी Regular Care Routine का हिस्सा बनाने के लिए अभी Order करें।</p>
+    <button class="btn-primary" onclick="scrollToOrder()"><i class="fa-solid fa-hand-point-right"></i>&nbsp; अभी ऑर्डर करें</button>
+    <div class="strip">
+      <span>Regular Physiotherapy</span>·<span>सही Guidance</span>·<span>Consistent Care</span>·<span>उचित Support</span>
+    </div>
+    <p class="closing">एक कदम आज उठाइए। आपकी Recovery Journey में हर छोटी कोशिश मायने रखती है।</p>
+  </section>
+
+  <!-- ============ STICKY CTA ============ -->
+  <div class="sticky-cta" id="stickyCta">
+    <div class="sticky-cta-inner">
+      <button type="button" onclick="scrollToOrder()"><i class="fa-solid fa-phone"></i>&nbsp; अभी ऑर्डर करें</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ REDIRECT / BLUR OVERLAY (before going to Thankyou.html) ============ -->
+<div class="redirect-overlay" id="redirectOverlay" aria-hidden="true">
+  <div class="spin-icon"></div>
+</div>
+
+<script>
+  // ============ CONFIG ============
+  // Apna Google Apps Script Web App URL yahan daalein.
+  // (Google Sheet ke Extensions > Apps Script me ek doPost(e) function
+  //  banakar 'Deploy > New deployment > Web app' se ye URL milta hai.)
+  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbyR1gRuODm6e2Oba4bRgLvGnIfHlfhQ07UpY56uDpXL8jPnVY5x9enKjZfZESwsGrJR/exec";
+
+  // Thank you page ka file path (isi folder me rakhein)
+  const THANK_YOU_URL = "Thankyou.html";
+
+  // ============ Sticky CTA show/hide near order form ============
+  const stickyCta = document.getElementById('stickyCta');
+  const orderSection = document.getElementById('order-form');
+  const stickyObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        stickyCta.classList.add('hidden');
+      } else {
+        stickyCta.classList.remove('hidden');
+      }
+    });
+  },{ threshold:0.1 });
+  stickyObserver.observe(orderSection);
+
+  function scrollToOrder(){
+    document.getElementById('order-form').scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+
+  // ============ Ad attribution (UTM + Meta) ============
+  // Meta drops the UTMs on the landing URL, but they are lost the moment
+  // the user reloads or the URL is cleaned, so stash them in sessionStorage
+  // on first view and read from there at submit time.
+  const UTM_KEYS = [
+    'utm_source', 'utm_medium',
+    'utm_campaign', 'utm_campaign_id',
+    'utm_adset', 'utm_adset_id',
+    'utm_ad', 'utm_ad_id',
+    'utm_placement'
+  ];
+
+  function setHidden(name, value){
+    const input = document.querySelector('#orderForm input[name="' + name + '"]');
+    if(input) input.value = value || '';
+  }
+
+  function readCookie(name){
+    const match = document.cookie.match(new RegExp('(^|;\\s*)' + name + '=([^;]*)'));
+    return match ? decodeURIComponent(match[2]) : '';
+  }
+
+  function stickyValue(key, fromUrl){
+    if(fromUrl){
+      try { sessionStorage.setItem(key, fromUrl); } catch(e){ /* private mode */ }
+      return fromUrl;
+    }
+    try { return sessionStorage.getItem(key) || ''; } catch(e){ return ''; }
+  }
+
+  function captureUtmParams(){
+    const urlParams = new URLSearchParams(window.location.search);
+
+    UTM_KEYS.forEach(function(key){
+      setHidden(key, stickyValue(key, urlParams.get(key)));
+    });
+
+    // Meta click ID. Present only on the first landing URL, so persist it.
+    const fbclid = stickyValue('fbclid', urlParams.get('fbclid'));
+    setHidden('fbclid', fbclid);
+
+    // _fbc is what the Conversions API actually wants. The pixel sets the
+    // cookie itself, but build it from fbclid as a fallback in case the
+    // pixel script was blocked or hasn't run yet.
+    let fbc = readCookie('_fbc');
+    if(!fbc && fbclid){
+      fbc = stickyValue('fbc', 'fb.1.' + Date.now() + '.' + fbclid);
+    }
+    setHidden('fbc', fbc);
+    setHidden('fbp', readCookie('_fbp'));
+  }
+
+  // Shared identifier so a browser pixel event and a future server-side
+  // event for the same submission can be deduplicated by Meta.
+  function newEventId(){
+    if(window.crypto && crypto.randomUUID) return crypto.randomUUID();
+    return 'evt-' + Date.now() + '-' + Math.random().toString(16).slice(2);
+  }
+
+  captureUtmParams();
+
+  // ============ Form validation ============
+  const form = document.getElementById('orderForm');
+  const nameInput = document.getElementById('nameInput');
+  const mobileInput = document.getElementById('mobileInput');
+  const submitBtn = document.getElementById('orderSubmitBtn');
+
+  const nameRegex = /^[A-Za-zऀ-ॿ\s]+$/;      // sirf letters (English + Devanagari) aur space
+  const mobileRegex = /^[6-9][0-9]{9}$/;      // 10 digit, 6-9 se start
+
+  // Name: sirf letters/space allow, baaki type hi na ho
+  nameInput.addEventListener('input', ()=>{
+    nameInput.value = nameInput.value.replace(/[^A-Za-zऀ-ॿ\s]/g,'');
+  });
+
+  // Mobile: sirf digits allow, max 10, aur pehla digit 6-9
+  mobileInput.addEventListener('input', ()=>{
+    let v = mobileInput.value.replace(/[^0-9]/g,'');
+    if(v.length > 0 && !/[6-9]/.test(v[0])){
+      v = v.slice(1);
+    }
+    mobileInput.value = v.slice(0,10);
+  });
+
+  function setFieldError(fieldId, invalid){
+    document.getElementById(fieldId).classList.toggle('invalid', invalid);
+  }
+
+  function validateForm(){
+    let valid = true;
+
+    if(!nameRegex.test(nameInput.value.trim())){
+      setFieldError('nameField', true); valid = false;
+    } else { setFieldError('nameField', false); }
+
+    if(!mobileRegex.test(mobileInput.value.trim())){
+      setFieldError('mobileField', true); valid = false;
+    } else { setFieldError('mobileField', false); }
+
+    return valid;
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!validateForm()) return;
+
+    submitBtn.classList.add('loading');
+
+    // Re-capture in case the page was opened/idle before attribution was stored
+    captureUtmParams();
+    document.getElementById('date').value = new Intl.DateTimeFormat('en-IN', {
+      timeZone: 'Asia/Kolkata',
+      year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', second: '2-digit',
+      hour12: false
+    }).format(new Date());
+    document.getElementById('event_id').value = newEventId();
+
+    // Build the Google Sheet payload: lead fields + full ad-attribution block
+    const payload = new URLSearchParams(new FormData(form));
+    payload.set('name', nameInput.value.trim());
+    payload.set('mobile', mobileInput.value.trim());
+    payload.append('timestamp', new Date().toISOString());
+
+    fetch(GOOGLE_SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: payload
+    }).catch(()=>{ /* no-cors: response readable nahi hoti, error yahin ignore */ })
+      .finally(()=>{
+        // thoda buffer taaki loading state dikhe (processing feel)
+        setTimeout(goToThankYou, 1400);
+      });
+  });
+
+  // ============ Buffer -> blur background -> redirect to Thankyou.html ============
+  const pageWrap = document.getElementById('pageWrap');
+  const redirectOverlay = document.getElementById('redirectOverlay');
+
+  function goToThankYou(){
+    submitBtn.classList.remove('loading');
+
+    // background blur trigger karein
+    pageWrap.classList.add('blurred');
+    redirectOverlay.classList.add('active');
+    redirectOverlay.setAttribute('aria-hidden','false');
+
+    // blur transition poora hone ke baad Thankyou.html par bhej dein
+    setTimeout(()=>{
+      window.location.href = THANK_YOU_URL;
+    }, 500);
+  }
+</script>
+</body>
+</html>

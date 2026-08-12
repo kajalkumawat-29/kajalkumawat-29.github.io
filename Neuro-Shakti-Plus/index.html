@@ -1,4 +1,22 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Neuro Shakti — आयुर्वेदिक हर्बल सपोर्ट</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;600;700&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" media="print" onload="this.media='all'">
+
+
+<style>
+  :root{<!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
@@ -17,6 +35,1012 @@
 
 <style>
   :root{
+    /* ---- color tokens: forest / moss / turmeric / clay (unchanged) ---- */
+    --forest:#16301F;
+    --moss:#3B5D3A;
+    --turmeric:#D98E2B;
+    --turmeric-light:#EFB65F;
+    --clay:#B85C38;
+    --cream:#FBF3E3;
+    --card:#FFFFFF;
+    --ink:#241C12;
+    --ink-soft:#5C5140;
+    --line:#E7DBBE;
+
+    --page-w:450px;
+    --pad:20px;
+    --radius-lg:24px;
+    --radius-md:16px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{ background:#DCD3B7; font-family:'halant',sans-serif; color:var(--ink); display:flex; justify-content:center; }
+  img{ display:block; max-width:100%; }
+  h1,h2,h3{ font-family:'Halant',serif; font-weight:700; }
+
+  .page{
+    width:100%; max-width:var(--page-w); background:var(--cream);
+    min-height:100vh; position:relative; overflow-x:hidden; padding-bottom:88px;
+  }
+  section{ padding:52px var(--pad) 46px; position:relative; }
+
+  /* ================= TOP BAR ================= */
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px var(--pad); background:var(--forest); position:relative; z-index:5;
+  }
+  .fa-leaf{
+    color: var(--turmeric-light);
+  }
+  .topbar .brand{ display:flex; align-items:center; gap:8px; font-family:'Halant',serif; color:var(--turmeric-light); font-size:19px; font-weight:700; }
+  .topbar .brand .leaf{ font-size:16px; }
+  .topbar .brand span{ color:var(--cream); font-weight:400; font-size:11px; display:block; letter-spacing:1.2px; }
+  .topbar .callnow{ font-size:15px; color:var(--cream); border:1px solid rgba(255,255,255,.3); padding:6px 12px; border-radius:999px; display:inline-flex; align-items:center; gap:6px; }
+   a{text-decoration: none;}
+  /* ================= HERO — organic blob + floating stat chips ================= */
+  .hero{
+    background:var(--forest); color:var(--cream);
+    padding:40px var(--pad) 28px;
+    border-bottom:1px solid var(--turmeric);
+  }
+  .hero-blob{
+    position:relative; width:300px; height:300px; margin:0 auto 24px;
+    border-radius:63% 37% 54% 46% / 55% 45% 55% 45%;
+    overflow:hidden; border:4px solid rgba(239,182,95,.65);
+    box-shadow:0 22px 40px rgba(0,0,0,.4);
+  }
+  .hero-blob img{ width:100%; height:100%; object-fit:cover; }
+
+  .hero-eyebrow{ font-size:15px; letter-spacing:2.5px; text-transform:uppercase; color:var(--turmeric-light); text-align:center; margin-bottom:8px; }
+  .hero h1{ font-size:23px; line-height:1.5; text-align:center; }
+  .hero h1 em{ color:var(--turmeric-light); font-style:normal; }
+  .hero p.lede{ margin-top:14px; font-size:18px; line-height:1.75; color:#D9E0D3; text-align:center; }
+
+  .hero-stats{ display:flex; justify-content:center; gap:10px; margin-top:24px; flex-wrap:wrap; }
+  .hero-stats .stat{
+    min-width:88px; text-align:center; background:rgba(255,255,255,.08);
+    border:1px solid rgba(239,182,95,.32); border-radius:14px; padding:10px 8px;
+  }
+  .hero-stats .stat strong{ display:block; font-family:'Halant',serif; font-size:17px; color:var(--turmeric-light); }
+  .hero-stats .stat span{ display:block; font-size:15px; color:#D9E0D3; margin-top:2px; letter-spacing:.5px; }
+
+  /* ================= HOPE / REASSURANCE — bare statement, no card ================= */
+  .hope{ padding-top:14px; padding-bottom:6px; }
+  .statement{ position:relative; text-align:center; padding:0 4px; }
+  .statement-mark{
+    font-family:'Halant',serif; font-size:82px; color:var(--turmeric); opacity:.16;
+    position:absolute; top:-38px; left:50%; transform:translateX(-50%); line-height:1; pointer-events:none;
+  }
+  .statement h2{ position:relative; z-index:1; font-size:21px; color:var(--forest); margin-bottom:14px; }
+  .statement p{ position:relative; z-index:1; font-size:13.5px; color:var(--ink-soft); line-height:1.85; }
+  .statement-line{ margin-top:22px; padding-top:16px; border-top:1px dashed var(--line); position:relative; z-index:1; }
+  .statement-line span{ font-size:12px; color:var(--clay); font-weight:600; }
+
+  /* signature: torn diagonal rule */
+  .cut-rule{ height:14px; background:
+    linear-gradient(115deg, transparent 49%, var(--forest) 49.5%, var(--forest) 50.5%, transparent 51%) center/24px 100%;
+  }
+
+  /* ================= FEATURES — vertical journey with vine + nodes ================= */
+  .features{
+    background:var(--forest); color:var(--cream);
+     padding-top:30px;
+  }
+  .feature-head{ text-align:center; margin-bottom:30px; }
+  .feature-head .kicker{ color:var(--turmeric-light); font-size:20px; font-weight: 800; letter-spacing:2px; text-transform:uppercase; }
+  .feature-head h2{ font-size:28px; color:var(--cream); margin-top:8px; }
+
+  .journey-start{ text-align:center; margin-bottom:30px; }
+  .journey-start .node-photo{
+    width:150px; height:150px; border-radius:50%; overflow:hidden; margin:0 auto 12px;
+    border:4px solid var(--turmeric-light); box-shadow:0 16px 28px rgba(0,0,0,.35);
+  }
+  .journey-start .node-photo img{ width:100%; height:100%; object-fit:cover; }
+  .journey-start p{ font-size:18px; color:#D9E0D3; max-width:280px; margin:0 auto; }
+
+  .journey{ position:relative; padding-left:40px; }
+  .journey::before{
+    content:""; position:absolute; left:18px; top:4px; bottom:16px; width:2px;
+    background:repeating-linear-gradient(to bottom, var(--turmeric-light) 0 6px, transparent 6px 13px);
+  }
+  .journey-step{ position:relative; margin-bottom:20px; }
+  .journey-step:last-child{ margin-bottom:0; }
+  .node-num{
+    position:absolute; left:-40px; top:2px; width:30px; height:30px; border-radius:50%;
+    background:var(--turmeric); color:var(--forest); display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:13px; box-shadow:0 6px 12px rgba(0,0,0,.3);
+  }
+  .journey-text{
+    background:rgba(255,255,255,.06); border:1px solid rgba(239,182,95,.3);
+    border-radius:var(--radius-md); padding:14px 16px;
+  }
+  .journey-text h3{ font-size:18px; color:var(--cream); margin-bottom:4px; line-height:1.4; }
+  .journey-text p{ font-size:18px; color:#D9E0D3; line-height:1.6; }
+
+  /* ================= TRUST — bento grid ================= */
+ .trust{
+    background: var(--cream);
+    clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 94%);
+    padding-top: 30px;
+    overflow: hidden;
+  }
+  .trust .feature-head .kicker{ color: var(--turmeric); }
+  .trust .feature-head h2{ color: var(--forest); }
+
+  .swipe-hint{
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    font-size: 15px; color: var(--turmeric); font-weight: 600; letter-spacing: .5px;
+    margin-top: -22px; margin-bottom: 14px;
+  }
+  .swipe-hint .arrow{ display: inline-block; animation: swipe-nudge 1.4s ease-in-out infinite; }
+  @keyframes swipe-nudge{ 0%,100%{ transform: translateX(0); } 50%{ transform: translateX(6px); } }
+
+  .trust-scroll{
+    display: flex; gap: 14px; overflow-x: hidden; scroll-behavior: auto;
+    padding: 4px 4px 10px; margin: 0 calc(-1 * var(--pad));
+    padding-left: var(--pad); padding-right: var(--pad);
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+  
+  .seal-card{
+    flex: 0 0 196px; background: var(--card);
+    border: 1px solid var(--line); border-radius: 20px; padding: 20px 16px 18px;
+    text-align: center; box-shadow: 0 10px 22px rgba(36,28,18,.08);
+  }
+  .seal-card.highlight{ background: var(--forest); border-color: var(--turmeric); }
+  .seal-card.highlight h3{ color: var(--turmeric-light); }
+  .seal-card.highlight p{ color: #D9E0D3; }
+  .seal-ring{
+    width: 140px; height: 140px; margin: 0 auto 14px; border-radius: 50%;
+    border: 3px dashed var(--turmeric); padding: 10px; box-sizing: border-box;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(160deg,#F3ECD6,var(--cream));
+  }
+  .seal-card.highlight .seal-ring{ border-style: solid; background: rgba(255,255,255,.08); }
+  .seal-ring img{ width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
+  .seal-card h3{ font-size: 20px; color: var(--forest); margin-bottom: 6px; line-height: 1.4; white-space: normal; }
+  .seal-card p{ font-size: 18px; color: var(--ink-soft); line-height: 1.55; white-space: normal; }
+  /* ================= TESTIMONIALS — unchanged ================= */
+  .testimonials{
+    background:var(--forest); color:var(--cream);
+    border-bottom: 1px solid var(--turmeric);
+  
+    padding-top:30px; padding-bottom:30px;
+  }
+  .testimonials .feature-head h2{ color:var(--cream); }
+  .testimonials .feature-head .kicker{ color:var(--turmeric-light); }
+
+  .quote-card{
+    background:rgba(255,255,255,.07); border:1px solid rgba(239,182,95,.28);
+    border-radius:var(--radius-lg); padding:26px 20px 22px; margin-bottom:20px; position:relative;
+    text-align:center;
+  }
+  .quote-mark{
+    font-family:'Halant',serif; font-size:56px; color:var(--turmeric); opacity:.35; line-height:1;
+    position:absolute; top:10px; right:18px;
+  }
+  .quote-avatar{
+    width:140px; height:140px; border-radius:50%; overflow:hidden; margin:0 auto 14px;
+    border:4px solid var(--turmeric-light); box-shadow:0 14px 26px rgba(0,0,0,.3);
+  }
+  .quote-avatar img{ width:100%; height:100%; object-fit:cover; }
+  .quote-name{ font-size:22px; font-weight:600; color:var(--cream); }
+  .quote-loc{ font-size:18px; color:#C8D2C2; margin-top:2px; }
+  .stars{ color:var(--turmeric-light); font-size:13px; margin:10px 0 12px; display:flex; justify-content:center; gap:4px; }
+  .quote-card p.quote-text{ font-size:18px; line-height:1.7; color:#E3E9DB; position:relative; z-index:1; text-align:left; }
+
+  /* ================= ORDER FORM — consultation slip ================= */
+  .order-wrap{
+    background:var(--forest); color:var(--cream);
+    padding-top:30px;
+  }
+  .order-head{ text-align:center; margin-bottom:26px; }
+  .order-head .kicker{ color:var(--turmeric-light); font-size:18px; letter-spacing:2px; text-transform:uppercase; display:block; margin-bottom:10px; }
+  .order-head h2{ font-size:28px; color:var(--cream); }
+  .order-head p{ font-size:18px; color:#D9E0D3; margin-top:8px; }
+
+  .consult-card{
+    position:relative; background:var(--card); border:2px dashed var(--turmeric);
+    border-radius:var(--radius-lg); padding:42px 20px 36px; box-shadow:0 20px 40px rgba(0,0,0,.35);
+  }
+  .consult-ribbon{
+    position:absolute; top:-20px; left:50%; transform:translateX(-50%);
+    background:var(--turmeric); color:var(--forest); font-size:18px; font-weight:700;
+    padding:8px 18px; border-radius:999px; white-space:nowrap; box-shadow:0 8px 16px rgba(0,0,0,.3);
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  .consult-stamp{
+    position:absolute; bottom:-20px; right:16px; background:var(--turmeric); color:var(--forest);
+    font-size:18px; font-weight:700; padding:6px 12px; border-radius:8px; transform:rotate(-6deg);
+    box-shadow:0 6px 12px rgba(0,0,0,.22); display:inline-flex; align-items:center; gap:6px;
+  }
+
+  .field{ margin-bottom:18px; }
+  .field label{ display:flex; align-items:center; gap:6px; font-size:16px; font-weight:600; color:var(--forest); margin-bottom:7px; }
+  .input-icon-wrap{ position:relative; }
+  .input-icon-wrap .field-icon{
+    position:absolute; left:14px; top:50%; transform:translateY(-50%);
+    font-size:16px; pointer-events:none; color:var(--clay);
+  }
+  .field input{
+    width:100%; font-family:'Hind',sans-serif; font-size:14px; padding:13px 14px 13px 40px;
+    border:1.5px solid var(--line); border-radius:12px; background:#FCFAF0; color:var(--ink); outline:none;
+  }
+  .field input:focus{ border-color:var(--turmeric); background:#FFFDF6; }
+  .err{ font-size:11.3px; color:#B3261E; margin-top:5px; display:none; }
+  .err.show{ display:block; }
+  .shake{ animation:shake .4s; }
+  @keyframes shake{ 0%,100%{transform:translateX(0);} 20%,60%{transform:translateX(-6px);} 40%,80%{transform:translateX(6px);} }
+
+  .submit-btn{
+    width:100%; border:none; cursor:pointer;
+    background:linear-gradient(135deg, var(--clay) 0%, #8E4227 100%);
+    color:var(--cream); font-weight:700; font-size:15px; padding:16px; border-radius:14px;
+    margin-top:6px; box-shadow:0 10px 20px rgba(184,92,56,.3);
+  }
+  .submit-btn:disabled{ opacity:.55; cursor:not-allowed; box-shadow:none; }
+  .trust-row{
+    display:flex; justify-content:center; gap:10px; margin-top:18px;
+    padding-top:16px; border-top:1px dashed var(--line);
+  }
+  .trust-row span{
+    display:flex; align-items:center; gap:5px; font-size:15px; color:var(--forest); font-weight:600;
+    background:#F3ECD6; padding:7px 11px; border-radius:999px;
+  }
+
+  /* ================= DISCLAIMER ================= */
+  .disclaimer{ background:#EFE6CC; font-size:8px;opacity: 0.45; line-height:1.7; color:var(--ink-soft); padding:22px var(--pad) 30px; text-align:center; }
+
+
+
+  /* policy privacy */
+  
+.pl-wrap{
+  max-width:450px;
+  width:100%;
+  margin-top: -34px;
+  padding:8px 12px;
+  box-sizing:border-box
+}
+.pl-row{
+  display:flex;
+  gap:0;
+  flex-wrap:nowrap;
+  justify-content:center;
+  align-items:center
+}
+.pl-link{
+  background:none;
+  border:none;
+  font-size:7px;
+  opacity:0.44;
+  font-weight:500;
+  color:#267156;
+  cursor:pointer;
+  padding:4px 5px;
+  text-decoration:underline;
+  text-underline-offset:2px;
+  font-family:inherit;
+  white-space:nowrap;
+  transition:color .15s
+}
+.pl-link:hover{
+  color:#1a5240
+}
+.pl-sep{
+  color:#c9ddd7;
+  font-size:11px;
+  user-select:none
+}
+.pp-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  z-index:9999;
+  align-items:center;
+  justify-content:center
+}
+.pp-overlay.show{
+  display:flex
+}
+.pp-modal{
+  background:#fff;
+  border-radius:18px;
+  max-width:420px;
+  width:90%;
+  max-height:80vh;
+  overflow-y:auto;
+  padding:22px 18px 18px;
+  position:relative
+}
+.pp-close{
+  position:absolute;
+  top:14px;
+  right:14px;
+  background:#e6f3ed;
+  border:none;
+  border-radius:50%;
+  width:30px;
+  height:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  color:#267156;
+  font-size:16px
+}
+.pp-close:hover{
+  background:#c9ddd7
+}
+.pp-mtitle{
+  font-size:17px;
+  font-weight:700;
+  color:#1a5240;
+  margin-bottom:4px;
+  display:flex;
+  align-items:center;
+  gap:8px
+}
+.pp-mtitle i{
+  font-size:20px
+}
+.pp-mbadge{
+  display:inline-block;
+  background:#e6f3ed;
+  color:#267156;
+  font-size:11px;
+  font-weight:600;
+  padding:2px 10px;
+  border-radius:999px;
+  margin-bottom:12px
+}
+.pp-mpara{
+  font-size:14px;
+  color:#333;
+  line-height:1.7;
+  margin-bottom:10px
+}
+.pp-mlist{
+  padding-left:0;
+  list-style:none;
+  margin:0 0 10px
+}
+.pp-mlist li{
+  font-size:14px;
+  color:#333;
+  line-height:1.6;
+  padding:5px 0 5px 20px;
+  position:relative;
+  border-bottom:1px dashed #e2ede9
+}
+.pp-mlist li:last-child{
+  border-bottom:none
+}
+.pp-mlist li::before{
+  content:"";
+  position:absolute;
+  left:4px;
+  top:13px;
+  width:7px;
+  height:7px;
+  background:#39ad7d;
+  border-radius:50%
+}
+.pp-mhl{
+  background:#e6f3ed;
+  border-left:3px solid #267156;
+  border-radius:0 8px 8px 0;
+  padding:9px 13px;
+  font-size:13px;
+  color:#1a5240;
+  margin-bottom:10px
+}
+.pp-cgrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-top:8px
+}
+.pp-citem{
+  background:#f4faf7;
+  border:1px solid #c9ddd7;
+  border-radius:10px;
+  padding:10px;
+  text-align:center
+}
+.pp-citem i{
+  font-size:20px;
+  color:#267156;
+  display:block;
+  margin-bottom:4px
+}
+.pp-citem .pp-clbl{
+  font-size:11px;
+  color:#888;
+  margin-bottom:2px
+}
+.pp-citem .pp-cval{
+  font-size:11px;
+  font-weight:600;
+  color:#1a5240
+}
+@media (max-width:480px){
+  .pl-wrap{
+    padding:8px 4px
+  }
+  .pl-link{
+    font-size:6px;
+    padding:4px 2px
+  }
+  .pl-sep{
+    font-size:6px
+  }
+}
+
+
+
+
+
+  /* ================= STICKY CTA (no price) ================= */
+  .sticky-bar{
+    position:fixed; bottom:0; left:50%; transform:translateX(-50%);
+    width:100%; max-width:var(--page-w); background:var(--card); border-top:1px solid var(--line);
+    padding:14px var(--pad); z-index:50; box-shadow:0 -8px 24px rgba(36,28,18,.15);
+  }
+  .sticky-bar a{
+    display:block; text-align:center; text-decoration:none; background:var(--clay); color:var(--cream);
+    font-weight:700; font-size:15px; padding:14px; border-radius:12px;
+  }
+
+  /* ================= LOADING OVERLAY ================= */
+  .loading-overlay{
+    position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center;
+    background:rgba(22,48,31,.4); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+  }
+  .loading-overlay.active{ display:flex; }
+  .loading-box{ background:var(--card); border-radius:20px; padding:28px 34px; text-align:center; box-shadow:0 20px 40px rgba(0,0,0,.25); }
+  .spinner{
+    width:44px; height:44px; margin:0 auto 14px; border:4px solid var(--line);
+    border-top-color:var(--turmeric); border-radius:50%; animation:spin .8s linear infinite;
+  }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  .loading-box p{ font-size:13px; color:var(--forest); font-weight:600; }
+
+  body.blur-body .page > *:not(.loading-overlay){ filter:blur(2px); pointer-events:none; }
+
+  @media (max-width:360px){
+    .seal-card{ flex-basis:180px; }
+  }
+</style>
+</head>
+<body>
+<div class="page" id="pageRoot">
+  <!-- ================= TOP BAR ================= -->
+  <div class="topbar">
+    <div class="brand"><span class="leaf"><i class="fa-solid fa-leaf"></i></span>Neuro Shakti</div>
+    <a href="#order-form " class="callnow"><i class="fa-solid fa-phone"></i> Free Call</a>
+  </div>
+
+<img src="images/banner.avif" alt="">
+  <!-- ================= 1. HERO — organic blob + stat chips ================= -->
+  <section class="hero">
+    <div class="hero-blob">
+      <img src="images/product.avif" alt="Neuro Shakti आयुर्वेदिक हर्बल सपोर्ट">
+    </div>
+    <p class="hero-eyebrow">100% आयुर्वेदिक • हर्बल फॉर्मूला</p>
+    <h1>नसों की सेहत और शरीर की <em>सामान्य गतिशीलता</em> को सपोर्ट करे</h1>
+    <p class="lede">पारंपरिक जड़ी-बूटियों पर आधारित Neuro Shakti, नियमित देखभाल के साथ रोज़मर्रा की सक्रियता बनाए रखने में सहायक हो सकता है।</p>
+    <div class="hero-stats">
+      <div class="stat"><strong>100%</strong><span>प्राकृतिक</span></div>
+      <div class="stat"><strong>GMP</strong><span>प्रमाणित</span></div>
+      <div class="stat"><strong>COD</strong><span>Available</span></div>
+    </div>
+  </section>
+
+
+  <!-- ================= 3. FEATURES — vertical journey with vine + nodes ================= -->
+  <section class="features">
+    <div class="feature-head">
+      <p class="kicker">Neuro Shakti</p>
+      <h2>आयुर्वेदिक हर्बल सपोर्ट</h2>
+    </div>
+
+    <div class="journey-start">
+      <div class="node-photo">
+        <img src="images/product.avif" alt="Neuro Shakti आयुर्वेदिक हर्बल फॉर्मूला">
+      </div>
+      <p>पारंपरिक जड़ी-बूटियों से तैयार Neuro Shakti — आपकी रोज़ की देखभाल में शामिल करने के लिए</p>
+    </div>
+
+    <div class="journey">
+      <div class="journey-step">
+        <span class="node-num">1</span>
+        <div class="journey-text">
+          <h3>100% आयुर्वेदिक हर्बल फॉर्मूला</h3>
+          <p>पूरी तरह प्राकृतिक जड़ी-बूटियों से तैयार, बिना किसी सिंथेटिक मिलावट के।</p>
+        </div>
+      </div>
+      <div class="journey-step">
+        <span class="node-num">2</span>
+        <div class="journey-text">
+          <h3>नसों के स्वास्थ्य को सपोर्ट करने वाली जड़ी-बूटियाँ</h3>
+          <p>पारंपरिक रूप से नसों के सामान्य कार्य को सहारा देने के लिए इस्तेमाल होने वाली जड़ी-बूटियाँ।</p>
+        </div>
+      </div>
+      <div class="journey-step">
+        <span class="node-num">3</span>
+        <div class="journey-text">
+          <h3>शरीर की सामान्य गतिशीलता बनाए रखने में सहायक</h3>
+          <p>रोज़मर्रा की सक्रियता और सामान्य दिनचर्या बनाए रखने में मददगार।</p>
+        </div>
+      </div>
+      <div class="journey-step">
+        <span class="node-num">4</span>
+        <div class="journey-text">
+          <h3>गुणवत्ता-मानकों के अनुसार निर्मित</h3>
+          <p>तय प्रक्रियाओं और गुणवत्ता जांच के साथ तैयार किया गया उत्पाद।</p>
+        </div>
+      </div>
+      <div class="journey-step">
+        <span class="node-num">5</span>
+        <div class="journey-text">
+          <h3>पूरे भारत में Cash on Delivery Available</h3>
+          <p>बिना किसी advance payment के, डिलीवरी के समय भुगतान की सुविधा।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. TRUST — bento grid ================= -->
+  <section class="trust">
+  <div class="feature-head">
+    <p class="kicker">भरोसा</p>
+    <h2>क्यों भरोसा कर रहे हैं हज़ारों परिवार?</h2>
+  </div>
+
+  <p class="swipe-hint">स्वाइप करके सभी वजहें देखें <span class="arrow">→</span></p>
+
+  <div class="trust-scroll" id="trustScroll">
+    <div class="seal-card highlight">
+      <div class="seal-ring"><img src="images/certified-1.avif" alt="आयुर्वेदिक विशेषज्ञ मार्गदर्शन"></div>
+      <h3>विशेषज्ञों का मार्गदर्शन</h3>
+      <p>फॉर्मूला आयुर्वेदिक विशेषज्ञों के मार्गदर्शन पर आधारित तैयार किया गया है।</p>
+    </div>
+
+    <div class="seal-card highlight">
+      <div class="seal-ring"><img src="images/certified-2.avif" alt="पारंपरिक जड़ी-बूटियाँ"></div>
+      <h3>पारंपरिक जड़ी-बूटियों का संतुलन</h3>
+      <p>सदियों पुरानी जड़ी-बूटियों का सोच-समझकर बनाया संयोजन।</p>
+    </div>
+
+    <div class="seal-card highlight">
+      <div class="seal-ring"><img src="images/certified-3.avif" alt="GMP प्रमाणित"></div>
+      <h3>GMP मानकों के अनुसार निर्माण</h3>
+      <p>सख़्त गुणवत्ता जांच के साथ तैयार किया गया उत्पाद।</p>
+    </div>
+
+    <div class="seal-card highlight">
+      <div class="seal-ring"><img src="images/certified-4.avif" alt="आसान ऑर्डर प्रक्रिया"></div>
+      <h3>आसान ऑर्डर प्रक्रिया</h3>
+      <p>बस नाम-नंबर भरें, बाकी जानकारी टीम कॉल पर देगी।</p>
+    </div>
+
+    <div class="seal-card highlight">
+      <div class="seal-ring"><img src="images/certified-5.avif" alt="पूरे भारत में COD"></div>
+      <h3>पूरे भारत में Cash on Delivery</h3>
+      <p>बिना advance payment के — सामान मिलने पर ही भुगतान करें।</p>
+    </div>
+  </div>
+</section>
+
+  <!-- ================= 5. TESTIMONIALS (अपरिवर्तित / UNCHANGED) ================= -->
+  <section class="testimonials">
+    <div class="feature-head">
+      <p class="kicker">अनुभव</p>
+      <h2>हमारे ग्राहकों का अनुभव</h2>
+    </div>
+
+    <div class="quote-card">
+      <span class="quote-mark">"</span>
+      <div class="quote-avatar"><img src="images/testimonial-1.avif" alt="सुरेश यादव"></div>
+      <div class="quote-name">सुरेश यादव</div>
+      <div class="quote-loc">लखनऊ</div>
+      <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <p class="quote-text">रोज़मर्रा की सक्रियता बनाए रखना चाहता था, इसलिए Neuro Shakti को नियमित रूप से लेना शुरू किया और डॉक्टर द्वारा बताई गई एक्सरसाइज़ भी जारी रखी। कुछ समय बाद पहले से बेहतर तरोताज़ा महसूस करता हूँ।</p>
+    </div>
+
+    <div class="quote-card">
+      <span class="quote-mark">"</span>
+      <div class="quote-avatar"><img src="images/testimonial-2.avif" alt="दीपक वर्मा"></div>
+      <div class="quote-name">दीपक वर्मा</div>
+      <div class="quote-loc">इंदौर</div>
+      <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <p class="quote-text">उम्र बढ़ने के साथ मेरी माँ की दिनचर्या में थोड़ी सुस्ती आ गई थी। Neuro Shakti को नियमित देखभाल के साथ इस्तेमाल करने पर उनकी रोज़ की गतिविधियाँ पहले से आसान महसूस होने लगीं।</p>
+    </div>
+
+    <div class="quote-card">
+      <span class="quote-mark">"</span>
+      <div class="quote-avatar"><img src="images/testimonial-3.avif" alt="मनोज सिंह"></div>
+      <div class="quote-name">मनोज सिंह</div>
+      <div class="quote-loc">पटना</div>
+      <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <p class="quote-text">Neuro Shakti को अपनी दिनचर्या में शामिल किया और नियमित एक्सरसाइज़ करता रहा। अब पहले की तुलना में ज़्यादा ताज़गी और ऊर्जा महसूस होती है।</p>
+    </div>
+  </section>
+
+  <!-- ================= 6. ORDER FORM — consultation slip ================= -->
+  <section class="order-wrap" id="order-form">
+    <div class="order-head">
+      <span class="kicker">आख़िरी कदम</span>
+      <h2>अपनी जानकारी भरें</h2>
+      <p>अभी अपना नाम और मोबाइल नंबर दर्ज करें। हमारी विशेषज्ञ टीम आपको कॉल करके पूरी जानकारी देगी।</p>
+    </div>
+
+    <div class="consult-card">
+      <span class="consult-ribbon"><i class="fa-solid fa-clipboard-list"></i> कॉल बैक रिक्वेस्ट फॉर्म</span>
+
+      <form id="orderForm" onsubmit="return submitForm(event)">
+        <input type="hidden" name="key" value="XQP4bdtEZkt3" />
+        <input type="hidden" name="date" id="date" />
+        <input type="hidden" name="utm_source" />
+        <input type="hidden" name="utm_medium" />
+        <input type="hidden" name="utm_campaign" />
+        <input type="hidden" name="utm_campaign_id" />
+        <input type="hidden" name="utm_adset" />
+        <input type="hidden" name="utm_adset_id" />
+        <input type="hidden" name="utm_ad" />
+        <input type="hidden" name="utm_ad_id" />
+        <input type="hidden" name="utm_placement" />
+        <input type="hidden" name="event_id" id="event_id" />
+        <input type="hidden" name="fbclid" />
+        <input type="hidden" name="fbc" />
+        <input type="hidden" name="fbp" />
+
+        <div class="field">
+          <label><i class="fa-solid fa-user"></i> आपका नाम *</label>
+          <div class="input-icon-wrap">
+            <span class="field-icon"><i class="fa-solid fa-user"></i></span>
+            <input type="text" id="name" name="name" required placeholder="पूरा नाम लिखें"
+              pattern="^[A-Za-z\u0900-\u097F]+(?: [A-Za-z\u0900-\u097F]+)+$"
+              oninput="this.value = this.value.replace(/[^A-Za-z\u0900-\u097F ]/g, '').replace(/\s{2,}/g, ' ');">
+          </div>
+          <p class="err" id="nameError">कृपया पूरा नाम दर्ज करें (पहला और आख़िरी नाम)।</p>
+        </div>
+
+        <div class="field">
+          <label><i class="fa-solid fa-mobile-screen-button"></i> मोबाइल नंबर *</label>
+          <div class="input-icon-wrap">
+            <span class="field-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
+            <input type="tel" id="phone" name="phone" maxlength="10" inputmode="numeric" required
+              pattern="[6-9][0-9]{9}" placeholder="10 अंकों का मोबाइल नंबर"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+          </div>
+          <p class="err" id="phoneError">कृपया मान्य 10 अंकों का नंबर दर्ज करें (6-9 से शुरू होता हुआ)।</p>
+        </div>
+
+        <button type="submit" id="submitBtn" class="submit-btn">
+          <span id="buttonText">अभी कॉल बैक बुक करें</span>
+        </button>
+
+        <div class="trust-row">
+          <span><i class="fa-solid fa-check"></i> Free Consultation</span>
+          <span><i class="fa-solid fa-check"></i> Cash on Delivery</span>
+        </div>
+      </form>
+
+      <span class="consult-stamp"><i class="fa-solid fa-check"></i> भरोसेमंद</span>
+    </div>
+  </section>
+
+  <!-- ================= DISCLAIMER ================= -->
+  <div class="disclaimer">
+    Disclaimer: यह उत्पाद किसी बीमारी का इलाज, निदान या रोकथाम नहीं करता। यह केवल सामान्य वेलनेस सपोर्ट के लिए है। परिणाम व्यक्ति-अनुसार भिन्न हो सकते हैं। किसी भी स्वास्थ्य समस्या के लिए कृपया योग्य डॉक्टर की सलाह लें।
+  </div>
+
+  <!-- POLICY LINKS -->
+      <div class="pl-wrap">
+        <div class="pl-row">
+          <button class="pl-link" onclick="openModal('privacy')">Privacy Policy</button>
+          <span class="pl-sep">|</span>
+          <button class="pl-link" onclick="openModal('terms')">Terms & Conditions</button>
+          <span class="pl-sep">|</span>
+          <button class="pl-link" onclick="openModal('shipping')">Shipping Policy</button>
+          <span class="pl-sep">|</span>
+          <button class="pl-link" onclick="openModal('cancel')">Cancellation Policy</button>
+          <span class="pl-sep">|</span>
+          <button class="pl-link" onclick="openModal('contact')">Contact Us</button>
+          <span class="pl-sep">|</span>
+          <button class="pl-link" onclick="openModal('disclaimer')">Legal Disclaimer</button>
+        </div>
+      </div>
+
+      <div class="pp-overlay" id="pp-overlay" onclick="closeIfOutside(event)">
+        <div class="pp-modal" id="pp-modal">
+          <button class="pp-close" onclick="closeModal()"><i class="ti ti-x" aria-hidden="true"></i></button>
+          <div id="pp-content"></div>
+        </div>
+      </div>
+    </div>
+  <!-- ================= STICKY CTA ================= -->
+  <div class="sticky-bar">
+    <a href="#order-form">अभी कॉल बैक बुक करें</a>
+  </div>
+
+  <!-- ================= LOADING OVERLAY ================= -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-box">
+      <div class="spinner"></div>
+      <p>आपका ऑर्डर प्रोसेस हो रहा है...</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  var UTM_KEYS = ['utm_source','utm_medium','utm_campaign','utm_campaign_id','utm_adset','utm_adset_id','utm_ad','utm_ad_id','utm_placement'];
+
+  function setHidden(name, value){
+    var input = document.querySelector('#orderForm input[name="' + name + '"]');
+    if (input) input.value = value || '';
+  }
+
+  function readCookie(name){
+    var match = document.cookie.match(new RegExp('(^|;\\s*)' + name + '=([^;]*)'));
+    return match ? decodeURIComponent(match[2]) : '';
+  }
+
+  var ORDER_LOCK_COOKIE = 'ns_order_placed';
+  var ORDER_LOCK_HOURS = 12;
+
+  function writeCookie(name, value, hours){
+    document.cookie = name + '=' + encodeURIComponent(value) + ';path=/;max-age=' + (hours * 3600) + ';SameSite=Lax';
+  }
+
+  function isOrderLocked(){ return !!readCookie(ORDER_LOCK_COOKIE); }
+
+  function hoursLeftOnLock(){
+    var placedAt = parseInt(readCookie(ORDER_LOCK_COOKIE), 10);
+    if (!placedAt) return ORDER_LOCK_HOURS;
+    var left = ORDER_LOCK_HOURS - (Date.now() - placedAt) / 3600000;
+    return left > 0 ? Math.ceil(left) : 0;
+  }
+
+  function lockOrderButton(){
+    var btn = document.getElementById('submitBtn');
+    if (btn){ btn.disabled = true; }
+    var label = document.getElementById('buttonText');
+    if (label){ label.textContent = 'ऑर्डर पहले से हो चुका है — ' + hoursLeftOnLock() + ' घंटे बाद कोशिश करें'; }
+  }
+
+  function applyOrderLock(){ if (isOrderLocked()) lockOrderButton(); }
+
+  function stickyValue(key, fromUrl){
+    if (fromUrl){ try{ sessionStorage.setItem(key, fromUrl); }catch(e){} return fromUrl; }
+    try{ return sessionStorage.getItem(key) || ''; }catch(e){ return ''; }
+  }
+
+  function captureUtmParams(){
+    var urlParams = new URLSearchParams(window.location.search);
+    UTM_KEYS.forEach(function(key){ setHidden(key, stickyValue(key, urlParams.get(key))); });
+
+    var fbclid = stickyValue('fbclid', urlParams.get('fbclid'));
+    setHidden('fbclid', fbclid);
+
+    var fbc = readCookie('_fbc');
+    if (!fbc && fbclid){ fbc = stickyValue('fbc', 'fb.1.' + Date.now() + '.' + fbclid); }
+    setHidden('fbc', fbc);
+    setHidden('fbp', readCookie('_fbp'));
+  }
+
+  function newEventId(){
+    if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+    return 'evt-' + Date.now() + '-' + Math.random().toString(16).slice(2);
+  }
+
+  captureUtmParams();
+  applyOrderLock();
+
+  function setLoadingState(isVisible){
+    var overlay = document.getElementById('loadingOverlay');
+    if (!overlay) return;
+    overlay.classList.toggle('active', isVisible);
+    document.body.classList.toggle('blur-body', isVisible);
+  }
+
+  function validateName(name){
+    var normalized = name.replace(/\s{2,}/g, ' ').trim();
+    return /^[A-Za-z\u0900-\u097F]+(?: [A-Za-z\u0900-\u097F]+)+$/.test(normalized);
+  }
+  function validatePhone(phone){ return /^[6-9][0-9]{9}$/.test(phone); }
+
+  function showErrorMessage(id, show){
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.classList.toggle('show', show);
+  }
+
+  function submitForm(event){
+    event.preventDefault();
+
+    if (isOrderLocked()){
+      lockOrderButton();
+      alert('आपका ऑर्डर पहले से ही मिल चुका है। कृपया ' + hoursLeftOnLock() + ' घंटे बाद फिर से कोशिश करें।');
+      return false;
+    }
+
+    var nameValue = document.getElementById('name').value || '';
+    var phoneValue = document.getElementById('phone').value || '';
+
+    var isValid = true;
+    ['nameError','phoneError'].forEach(function(id){ showErrorMessage(id, false); });
+
+    function flagInvalid(inputId, errId){
+      showErrorMessage(errId, true);
+      var el = document.getElementById(inputId);
+      el.classList.add('shake');
+      setTimeout(function(){ el.classList.remove('shake'); }, 500);
+      isValid = false;
+    }
+
+    if (!validateName(nameValue)) flagInvalid('name','nameError');
+    if (!validatePhone(phoneValue)) flagInvalid('phone','phoneError');
+
+    if (!isValid) return false;
+
+    setLoadingState(true);
+    var form = event.target;
+    var dateValue = new Intl.DateTimeFormat('en-IN', {
+      timeZone:'Asia/Kolkata', year:'numeric', month:'2-digit', day:'2-digit',
+      hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false
+    }).format(new Date());
+
+    captureUtmParams();
+    document.getElementById('date').value = dateValue;
+
+    var eventId = newEventId();
+    document.getElementById('event_id').value = eventId;
+
+    var formData = new FormData(form);
+
+    if (typeof fbq === 'function'){
+      fbq('track', 'Lead', { content_name: 'Neuro Shakti' }, { eventID: eventId });
+    }
+
+    /* ---- Google Sheet submission ---- */
+    fetch('https://script.google.com/macros/s//exec', {
+      method: 'POST',
+      body: formData
+    })
+    .then(function(response){
+      if (!response.ok){
+        return response.text().then(function(text){
+          var error = new Error('Order submission failed');
+          error.status = response.status;
+          error.body = text;
+          throw error;
+        });
+      }
+      writeCookie(ORDER_LOCK_COOKIE, Date.now(), ORDER_LOCK_HOURS);
+      form.reset();
+      window.location.href = './Thankyou.html';
+    })
+    .catch(function(error){
+      console.error('Order submission failed:', error);
+      setLoadingState(false);
+      if (error && error.status === 400){
+        alert('हमारे सिस्टम को डुप्लीकेट ऑर्डर मिला है। कृपया 12 घंटे बाद फिर कोशिश करें।');
+      } else {
+        alert('नेटवर्क समस्या के कारण ऑर्डर भेजा नहीं जा सका। कृपया फिर से कोशिश करें।');
+      }
+    });
+
+    return false;
+  }
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const scrollContainer = document.getElementById('trustScroll');
+    
+    // Cards ko duplicate kar rahe hain seamless infinite loop ke liye
+    const cards = Array.from(scrollContainer.children);
+    cards.forEach(card => {
+      const clone = card.cloneNode(true);
+      scrollContainer.appendChild(clone);
+    });
+
+    let scrollPos = 0;
+    let isAutoScrolling = true;
+
+    function autoScroll() {
+      if (isAutoScrolling) {
+        scrollPos += 1; 
+        
+        if (scrollPos >= (scrollContainer.scrollWidth / 2)) {
+          scrollPos = 0;
+        }
+        scrollContainer.scrollLeft = scrollPos;
+      }
+    }
+
+    let scrollInterval = setInterval(autoScroll, 25);
+
+    // Mouse & Touch Drag (Swipe) Logic
+    let isDown = false;
+    let startX;
+    let scrollLeftStart;
+
+    function dragStart(e) {
+      isDown = true;
+      isAutoScrolling = false;
+      startX = e.pageX || e.touches[0].pageX;
+      scrollLeftStart = scrollContainer.scrollLeft;
+    }
+
+    function dragEnd() {
+      isDown = false;
+      isAutoScrolling = true;
+      scrollPos = scrollContainer.scrollLeft;
+    }
+
+    function dragMove(e) {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX || e.touches[0].pageX;
+      const walk = (x - startX) * 1.5;
+      scrollContainer.scrollLeft = scrollLeftStart - walk;
+      scrollPos = scrollContainer.scrollLeft;
+    }
+
+    // Event Listeners
+    scrollContainer.addEventListener('mousedown', dragStart);
+    scrollContainer.addEventListener('mouseleave', dragEnd);
+    scrollContainer.addEventListener('mouseup', dragEnd);
+    scrollContainer.addEventListener('mousemove', dragMove);
+
+    scrollContainer.addEventListener('touchstart', dragStart);
+    scrollContainer.addEventListener('touchend', dragEnd);
+    scrollContainer.addEventListener('touchmove', dragMove);
+
+    scrollContainer.addEventListener('mouseenter', () => { isAutoScrolling = false; });
+    scrollContainer.addEventListener('mouseleave', () => { if (!isDown) isAutoScrolling = true; });
+  });
+  
+
+
+
+  // policy
+  
+var contents = {
+      privacy: `<div class="pp-mtitle"><i class="ti ti-shield-lock" aria-hidden="true"></i>Privacy Policy</div><div class="pp-mbadge">Last updated: June 2025</div><p class="pp-mpara">Mirgi Mukti आपकी personal information की सुरक्षा को सर्वोच्च प्राथमिकता देता है। जब आप order करते हैं तो हम निम्नलिखित जानकारी एकत्र करते हैं:</p><ul class="pp-mlist"><li>नाम, मोबाइल नंबर और delivery address</li><li>Payment details (encrypted और secure)</li><li>Order history और purchase records</li></ul><div class="pp-mhl">आपकी जानकारी किसी third-party को नहीं बेची जाती। इसका उपयोग केवल order processing और delivery के लिए किया जाता है।</div><p class="pp-mpara">हम industry-standard SSL encryption का उपयोग करते हैं। किसी भी privacy concern के लिए हमसे contact करें।</p>`,
+      terms: `<div class="pp-mtitle"><i class="ti ti-file-description" aria-hidden="true"></i>Terms & Conditions</div><div class="pp-mbadge">Please read carefully</div><p class="pp-mpara">Mirgi Mukti का उपयोग करके आप इन terms से सहमत होते हैं:</p><ul class="pp-mlist"><li>Product results व्यक्ति-दर-व्यक्ति अलग हो सकते हैं</li><li>यह product किसी बीमारी का इलाज नहीं है — wellness supplement है</li><li>18 वर्ष से कम आयु के व्यक्ति बिना guardian consent के order न करें</li><li>Fake/fraudulent orders के लिए legal action लिया जा सकता है</li><li>Product images केवल representation के लिए हैं</li></ul><div class="pp-mhl">Mirgi Mukti किसी भी समय बिना prior notice के prices, offers या terms बदलने का अधिकार रखता है।</div>`,
+      shipping: `<div class="pp-mtitle"><i class="ti ti-truck-delivery" aria-hidden="true"></i>Shipping Policy</div><div class="pp-mbadge">Free Delivery All India</div><p class="pp-mpara">हम पूरे India में FREE shipping प्रदान करते हैं। Delivery timeline:</p><ul class="pp-mlist"><li>Metro cities (Delhi, Mumbai, Bengaluru): 3–5 business days</li><li>Tier-2 / Tier-3 cities: 5–7 business days</li><li>Remote / rural areas: 7–10 business days</li></ul><div class="pp-mhl">Order confirm होने के 24–48 घंटे के अंदर tracking number SMS/WhatsApp पर भेजा जाएगा।</div><ul class="pp-mlist"><li>Delivery attempt 3 बार की जाएगी — उसके बाद order वापस आ जाएगा</li><li>Incorrect address की जिम्मेदारी customer की होगी</li></ul>`,
+      cancel: `<div class="pp-mtitle"><i class="ti ti-refresh" aria-hidden="true"></i>Cancellation Policy</div><div class="pp-mbadge">7-Day Easy Return</div><p class="pp-mpara">आप order confirm होने के <strong>24 घंटे के अंदर</strong> cancellation request कर सकते हैं।</p><ul class="pp-mlist"><li>Order dispatch होने के बाद cancellation संभव नहीं</li><li>Damaged या wrong product मिलने पर 7 दिन के अंदर complaint करें</li><li>Opened/used products return नहीं किए जाएंगे</li><li>Refund 5–7 business days में original payment method पर</li></ul><div class="pp-mhl">Return के लिए product original packaging में होना ज़रूरी है। Unboxing video होने पर claim जल्दी process होता है।</div>`,
+      contact: `<div class="pp-mtitle"><i class="ti ti-headset" aria-hidden="true"></i>Contact Us</div><p class="pp-mpara">हमारी team आपकी मदद के लिए Available है — सोमवार से शनिवार, सुबह 9 बजे से शाम 6 बजे तक।</p><div class="pp-cgrid"><div class="pp-citem"><i class="ti ti-phone" aria-hidden="true"></i><div class="pp-clbl">Call / WhatsApp</div><div class="pp-cval">+918860606078</div></div><div class="pp-citem"><i class="ti ti-mail" aria-hidden="true"></i><div class="pp-clbl">Email</div><div class="pp-cval">support@mirgimukti.com</div></div><div class="pp-citem"><i class="ti ti-clock" aria-hidden="true"></i><div class="pp-clbl">Support Hours</div><div class="pp-cval">Mon–Sat 9am–6pm</div></div><div class="pp-citem"><i class="ti ti-message-circle" aria-hidden="true"></i><div class="pp-clbl">Response Time</div><div class="pp-cval">Within 24 hours</div></div></div>`,
+      disclaimer: `<div class="pp-mtitle"><i class="ti ti-alert-circle" aria-hidden="true"></i>Legal Disclaimer</div><div class="pp-mbadge">Important Notice</div><p class="pp-mpara">Mirgi Mukti एक natural wellness supplement है। इस product के बारे में निम्नलिखित बातें ध्यान में रखें:</p><ul class="pp-mlist"><li>यह product किसी भी बीमारी का diagnosis, treatment, cure या prevention नहीं करता</li><li>Results individual to individual अलग हो सकते हैं</li><li>यह product FSSAI guidelines के अनुसार एक food supplement है, drug नहीं</li><li>किसी भी medical condition में उपयोग से पहले doctor से परामर्श करें</li><li>Pregnant, nursing women या किसी chronic illness वाले व्यक्ति पहले physician से consult करें</li></ul><div class="pp-mhl">Website पर दिए गए statements को Food & Drug Administration द्वारा evaluate नहीं किया गया है। यह product किसी disease को diagnose, treat, cure या prevent करने के लिए नहीं है।</div><p class="pp-mpara">Product की images, descriptions और testimonials केवल illustrative purpose के लिए हैं। Mirgi Mukti किसी भी indirect या consequential loss के लिए उत्तरदायी नहीं है।</p>`
+    };
+
+  
+    function openModal(key) {
+      document.getElementById('pp-content').innerHTML = contents[key];
+      document.getElementById('pp-overlay').classList.add('show');
+    }
+    function closeModal() {
+      document.getElementById('pp-overlay').classList.remove('show');
+    }
+    function closeIfOutside(e) {
+      if (e.target === document.getElementById('pp-overlay')) closeModal();
+    }
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js');
+      });
+    }
+  </script>
+</body>
+</html>
     /* ---- color tokens: forest / moss / turmeric / clay (unchanged) ---- */
     --forest:#16301F;
     --moss:#3B5D3A;

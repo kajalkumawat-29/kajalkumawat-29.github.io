@@ -1077,7 +1077,7 @@ p{ font-size:17px; line-height:1.7; color:var(--text); }
 
 
     <!-- ORDER FORM -->
-     <html>
+    <html>
         <head>
     <style>
       
@@ -1434,6 +1434,25 @@ function submitForm(event) {
 
     const overlay = getLoadingOverlay();
     if(overlay) overlay.classList.add('show');
+
+    // Re-read attribution in case this page was opened before it was stored,
+    // then stamp the submission time and a fresh dedupe id.
+    // (These two hidden fields existed before but were never actually being
+    // filled in, so "date" and "event_id" were always going out blank.)
+    captureUtmParams();
+
+    const dateValue = new Intl.DateTimeFormat('en-IN', {
+        timeZone: 'Asia/Kolkata',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+    }).format(new Date());
+    document.getElementById('date').value = dateValue;
+    document.getElementById('event_id').value = newEventId();
 
     const formData = new FormData(form);
     let redirected = false;

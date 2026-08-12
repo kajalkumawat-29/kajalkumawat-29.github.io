@@ -742,104 +742,6 @@ p{ font-size:17px; line-height:1.7; color:var(--text); }
   }
 }
 
-/* =========================================================
-   ORDER FORM — ticket style card
-   ========================================================= */
-.order-section{ background:var(--bg); }
-.ticket{
-    position:relative; width:100%; background:var(--gold); 
-}
-.ticket-top{
-    background:var(--gradient); padding:28px 22px 0; color:var(--white);
-    position:relative; overflow:hidden;
-}
-.ticket-top::before{
-    content:"\f06c"; font-family:"Font Awesome 6 Free"; font-weight:900; position:absolute; font-size:150px;
-    color:rgba(255,255,255,.07); right:-28px; bottom:-6px; transform:rotate(-15deg);
-}
-.top-row{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:22px; position:relative; z-index:2; }
-.brand-mark{ display:inline-flex; align-items:center; gap:7px;  font-weight:700; font-size:20px; letter-spacing:.3px; }
-.brand-mark i{ color:#D2B36A; font-size: 20px;}
-.discount-pill{
-    display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.4);
-    padding:6px 13px; border-radius:20px;  font-weight:600; font-size:16px; white-space:nowrap;
-}
-.discount-pill i{ color:#D2B36A; font-size:16px; }
-.ticket-top h2{font-weight:600; font-size:21px; line-height:1.5; margin-bottom:16px; position:relative; z-index:2; }
-.ticket-top h2 .hl{  color:#fad98b; font-size:24px; padding:1px 8px; border-radius:6px; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
-.urgency-tag{
-    display:inline-flex; align-items:center; gap:8px; background:rgba(0,0,0,.15); padding:7px 14px; border-radius:30px;
-    font-size:15px; font-weight:600; position:relative; z-index:2; margin-bottom:24px;
-}
-.urgency-tag .dot{ width:7px; height:7px; border-radius:50%; background:#D2B36A; animation:pulse 1.2s infinite; }
-@keyframes pulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(210,179,106,.65); } 50%{ box-shadow:0 0 0 6px rgba(210,179,106,0); } }
-.wave-divider{ display:block; width:100%; height:32px; position:relative; z-index:2; }
-
-.ticket-bottom{ padding:0 22px 28px; }
-.ingredient-row{ display:flex; justify-content:space-between; margin-bottom:26px; background:var(--white); padding-bottom:14px; }
-.ing{ display:flex; flex-direction:column; align-items:center; gap:7px; width:33%; }
-.ing-icon{
-    width:64px; height:64px; border-radius:50%; background:var(--white); border:1.5px solid var(--border);
-    display:flex; align-items:center; justify-content:center; color:var(--primary); font-size:22px;
-}
-.ing span{ font-size:15px; font-weight:600; color:var(--heading); text-align:center; line-height:1.3; }
-
-.vine-wrap{ position:relative; width:100%; height:80px; margin-bottom:14px; }
-.vine-wrap svg{ width:100%; height:80px; display:block; }
-.vine-node{
-    position:absolute; width:30px; height:30px; background:var(--white); border:2px solid var(--border); border-radius:50%;
-    display:flex; align-items:center; justify-content:center; color:var(--secondary); font-size:12px;
-    transform:translate(-50%,-50%); transition:.35s ease; z-index:3;
-}
-.vine-node.active{ background:var(--gradient); border-color:var(--primary); color:var(--white); box-shadow:0 0 0 5px rgba(91,58,142,.15); }
-.vine-leaf{
-    position:absolute; width:22px; height:22px; display:flex; align-items:center; justify-content:center; color:var(--primary);
-    font-size:15px; transform:translate(-50%,-50%) rotate(0deg); transition:left .3s ease, top .3s ease; z-index:4;
-    filter:drop-shadow(0 2px 4px rgba(91,58,142,.4));
-}
-
-.order-section form{ margin-top:4px; border: 2px solid var(--primary); border-radius: 20px; padding:20px;  box-shadow:
-        0 8px 20px rgba(0,0,0,.08),
-        0 20px 45px rgba(0,0,0,.12);}
-.field-group{ margin-bottom:15px; }
-.field-group label{ display:block; font-size:16px; font-weight:600; color:var(--primary); margin-bottom:6px;  }
-.input-wrap{ position:relative; display:flex; align-items:center; }
-.field-icon{ position:absolute; left:14px; color:var(--secondary); font-size:15px; }
-.order-section input{
-    width:100%; padding:13px 40px; border:1.5px solid var(--border); border-radius:12px; background:var(--white);
-     font-size:14.5px; color:var(--heading); outline:none;
-    transition:border-color .25s, box-shadow .25s;
-}
-.order-section input::placeholder{ color:#A79BB8; }
-.order-section input:focus{ border-color:var(--primary); box-shadow:0 0 0 4px rgba(91,58,142,.1); }
-.valid-icon{ position:absolute; right:14px; color:var(--primary); font-size:16px; opacity:0; transform:scale(.5); transition:.25s ease; }
-.valid-icon.show{ opacity:1; transform:scale(1); }
-
-.cta-btn{
-    width:100%; margin-top:8px; padding:15px; border:none; border-radius:12px; background:var(--gradient); color:var(--white);
-    font-family:'Baloo Bhai 2',sans-serif; font-size:16px; font-weight:600; letter-spacing:.3px;
-    display:flex; align-items:center; justify-content:center; gap:10px; cursor:pointer;
-    box-shadow:0 10px 22px rgba(91,58,142,.28); transition:transform .2s ease, box-shadow .2s ease;
-}
-.cta-btn:hover{ transform:translateY(-2px); box-shadow:0 14px 26px rgba(91,58,142,.35); }
-.cta-btn:active{ transform:translateY(0); }
-
-.secure-line{ text-align:center; font-size:11.5px; color:var(--text); margin-top:14px; display:flex; align-items:center; justify-content:center; gap:6px;  }
-.secure-line i{ color:var(--primary); }
-
-.form-loading-overlay{
-    position:fixed; inset:0; background:rgba(46,31,77,.45); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
-    display:none; align-items:center; justify-content:center; z-index:999;
-}
-.form-loading-overlay.show{ display:flex; }
-.loading-box{
-    background:var(--card); padding:32px 42px; border-radius:20px; display:flex; flex-direction:column; align-items:center;
-    gap:14px; box-shadow:var(--shadow);
-}
-.spinner{ width:44px; height:44px; border:4px solid var(--border); border-top-color:var(--primary); border-radius:50%; animation:spin .8s linear infinite; }
-@keyframes spin{ to{ transform:rotate(360deg); } }
-.loading-box p{ font-family:'Baloo Bhai 2',sans-serif; color:var(--heading); font-weight:600; font-size:14.5px; text-align:center; }
-
 
 /* =========================================================
    17. MOBILE OPTIMISATION
@@ -1175,10 +1077,112 @@ p{ font-size:17px; line-height:1.7; color:var(--text); }
 
 
     <!-- ORDER FORM -->
+     <html>
+        <head>
     <style>
-   
+      
+/* =========================================================
+   ORDER FORM — ticket style card
+   ========================================================= */
+.order-section{ background:var(--bg); }
+.ticket{
+    position:relative; width:100%; background:var(--gold); 
+}
+.ticket-top{
+    background:var(--gradient); padding:28px 22px 0; color:var(--white);
+    position:relative; overflow:hidden;
+}
+.ticket-top::before{
+    content:"\f06c"; font-family:"Font Awesome 6 Free"; font-weight:900; position:absolute; font-size:150px;
+    color:rgba(255,255,255,.07); right:-28px; bottom:-6px; transform:rotate(-15deg);
+}
+.top-row{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:22px; position:relative; z-index:2; }
+.brand-mark{ display:inline-flex; align-items:center; gap:7px;  font-weight:700; font-size:20px; letter-spacing:.3px; }
+.brand-mark i{ color:#D2B36A; font-size: 20px;}
+.discount-pill{
+    display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.4);
+    padding:6px 13px; border-radius:20px;  font-weight:600; font-size:16px; white-space:nowrap;
+}
+.discount-pill i{ color:#D2B36A; font-size:16px; }
+.ticket-top h2{font-weight:600; font-size:21px; line-height:1.5; margin-bottom:16px; position:relative; z-index:2; }
+.ticket-top h2 .hl{  color:#fad98b; font-size:24px; padding:1px 8px; border-radius:6px; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+.urgency-tag{
+    display:inline-flex; align-items:center; gap:8px; background:rgba(0,0,0,.15); padding:7px 14px; border-radius:30px;
+    font-size:15px; font-weight:600; position:relative; z-index:2; margin-bottom:24px;
+}
+.urgency-tag .dot{ width:7px; height:7px; border-radius:50%; background:#D2B36A; animation:pulse 1.2s infinite; }
+@keyframes pulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(210,179,106,.65); } 50%{ box-shadow:0 0 0 6px rgba(210,179,106,0); } }
+.wave-divider{ display:block; width:100%; height:32px; position:relative; z-index:2; }
+
+.ticket-bottom{ padding:0 22px 28px; }
+.ingredient-row{ display:flex; justify-content:space-between; margin-bottom:26px; background:var(--white); padding-bottom:14px; }
+.ing{ display:flex; flex-direction:column; align-items:center; gap:7px; width:33%; }
+.ing-icon{
+    width:64px; height:64px; border-radius:50%; background:var(--white); border:1.5px solid var(--border);
+    display:flex; align-items:center; justify-content:center; color:var(--primary); font-size:22px;
+}
+.ing span{ font-size:15px; font-weight:600; color:var(--heading); text-align:center; line-height:1.3; }
+
+.vine-wrap{ position:relative; width:100%; height:80px; margin-bottom:14px; }
+.vine-wrap svg{ width:100%; height:80px; display:block; }
+.vine-node{
+    position:absolute; width:30px; height:30px; background:var(--white); border:2px solid var(--border); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; color:var(--secondary); font-size:12px;
+    transform:translate(-50%,-50%); transition:.35s ease; z-index:3;
+}
+.vine-node.active{ background:var(--gradient); border-color:var(--primary); color:var(--white); box-shadow:0 0 0 5px rgba(91,58,142,.15); }
+.vine-leaf{
+    position:absolute; width:22px; height:22px; display:flex; align-items:center; justify-content:center; color:var(--primary);
+    font-size:15px; transform:translate(-50%,-50%) rotate(0deg); transition:left .3s ease, top .3s ease; z-index:4;
+    filter:drop-shadow(0 2px 4px rgba(91,58,142,.4));
+}
+
+.order-section form{ margin-top:4px; border: 2px solid var(--primary); border-radius: 20px; padding:20px;  box-shadow:
+        0 8px 20px rgba(0,0,0,.08),
+        0 20px 45px rgba(0,0,0,.12);}
+.field-group{ margin-bottom:15px; }
+.field-group label{ display:block; font-size:16px; font-weight:600; color:var(--primary); margin-bottom:6px;  }
+.input-wrap{ position:relative; display:flex; align-items:center; }
+.field-icon{ position:absolute; left:14px; color:var(--secondary); font-size:15px; }
+.order-section input{
+    width:100%; padding:13px 40px; border:1.5px solid var(--border); border-radius:12px; background:var(--white);
+     font-size:14.5px; color:var(--heading); outline:none;
+    transition:border-color .25s, box-shadow .25s;
+}
+.order-section input::placeholder{ color:#A79BB8; }
+.order-section input:focus{ border-color:var(--primary); box-shadow:0 0 0 4px rgba(91,58,142,.1); }
+.valid-icon{ position:absolute; right:14px; color:var(--primary); font-size:16px; opacity:0; transform:scale(.5); transition:.25s ease; }
+.valid-icon.show{ opacity:1; transform:scale(1); }
+
+.cta-btn{
+    width:100%; margin-top:8px; padding:15px; border:none; border-radius:12px; background:var(--gradient); color:var(--white);
+    font-family:'Baloo Bhai 2',sans-serif; font-size:16px; font-weight:600; letter-spacing:.3px;
+    display:flex; align-items:center; justify-content:center; gap:10px; cursor:pointer;
+    box-shadow:0 10px 22px rgba(91,58,142,.28); transition:transform .2s ease, box-shadow .2s ease;
+}
+.cta-btn:hover{ transform:translateY(-2px); box-shadow:0 14px 26px rgba(91,58,142,.35); }
+.cta-btn:active{ transform:translateY(0); }
+
+.secure-line{ text-align:center; font-size:11.5px; color:var(--text); margin-top:14px; display:flex; align-items:center; justify-content:center; gap:6px;  }
+.secure-line i{ color:var(--primary); }
+
+.form-loading-overlay{
+    position:fixed; inset:0; background:rgba(46,31,77,.45); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+    display:none; align-items:center; justify-content:center; z-index:999;
+}
+.form-loading-overlay.show{ display:flex; }
+.loading-box{
+    background:var(--card); padding:32px 42px; border-radius:20px; display:flex; flex-direction:column; align-items:center;
+    gap:14px; box-shadow:var(--shadow);
+}
+.spinner{ width:44px; height:44px; border:4px solid var(--border); border-top-color:var(--primary); border-radius:50%; animation:spin .8s linear infinite; }
+@keyframes spin{ to{ transform:rotate(360deg); } }
+.loading-box p{ font-family:'Baloo Bhai 2',sans-serif; color:var(--heading); font-weight:600; font-size:14.5px; text-align:center; }
+
 
     </style>
+    </head>
+    <body>
     <section class="order-section" id="orderSection">
         <div class="ticket">
             <div class="ticket-top">
@@ -1236,8 +1240,22 @@ p{ font-size:17px; line-height:1.7; color:var(--text); }
                                    inputmode="numeric" maxlength="10" pattern="[6-9][0-9]{9}" required>
                             <i class="fa-solid fa-circle-check valid-icon" id="mobileValid"></i>
                         </div>
+            
                     </div>
-
+  <input type="hidden" name="date" id="date">
+        <input type="hidden" name="utm_source">
+        <input type="hidden" name="utm_medium">
+        <input type="hidden" name="utm_campaign">
+        <input type="hidden" name="utm_campaign_id">
+        <input type="hidden" name="utm_adset">
+        <input type="hidden" name="utm_adset_id">
+        <input type="hidden" name="utm_ad">
+        <input type="hidden" name="utm_ad_id">
+        <input type="hidden" name="utm_placement">
+        <input type="hidden" name="event_id" id="event_id">
+        <input type="hidden" name="fbclid">
+        <input type="hidden" name="fbc">
+        <input type="hidden" name="fbp">
                     <button type="submit" class="cta-btn">
                         <i class="fa-solid fa-leaf"></i> Order Now <i class="fa-solid fa-arrow-right"></i>
                     </button>
@@ -1248,156 +1266,71 @@ p{ font-size:17px; line-height:1.7; color:var(--text); }
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="section testi-section" id="testiSection">
-        <div class="eyebrow">Real Results</div>
-        <h2 class="main-heading">ग्राहकों का अनुभव</h2>
-        <div class="review-list">
-            <div class="review-card">
-                <div class="review-top">
-                    <div class="review-photo"><img src="image/testimonial-1.avif" alt="Rajesh Kumar, Jaipur" loading="lazy"></div>
-                    <div class="review-who"><div class="name">राजेश कुमार, जयपुर</div><div class="review-stars">★★★★★</div></div>
-                </div>
-                <p>"मुझे कई सालों से मिर्गी के दौरे आने की वजह से हमेशा डर लगा रहता था। बाहर अकेले जाने से भी घबराहट होती थी। Mirgi Mukti के बारे में जानकारी मिलने के बाद मैंने इसे अपनी दिनचर्या में शामिल किया। नियमित उपयोग और डॉक्टर की सलाह के साथ अब पहले की तुलना में काफी बेहतर महसूस करता हूँ और आत्मविश्वास भी बढ़ा है।"</p>
-            </div>
-            <div class="review-card">
-                <div class="review-top">
-                    <div class="review-photo"><img src="image/testimonial-2.avif" alt="Amit Verma, Lucknow" loading="lazy"></div>
-                    <div class="review-who"><div class="name">अमित वर्मा, लखनऊ</div><div class="review-stars">★★★★★</div></div>
-                </div>
-                <p>"बार-बार मिर्गी की परेशानी की वजह से नौकरी और रोज़मर्रा के काम प्रभावित होने लगे थे। Mirgi Mukti का नियमित उपयोग करने और सही जीवनशैली अपनाने के बाद मुझे पहले से अधिक स्थिरता और आत्मविश्वास महसूस हो रहा है। साथ ही, कस्टमर सपोर्ट टीम ने भी हर कदम पर अच्छी जानकारी और मार्गदर्शन दिया।"</p>
-            </div>
-            <div class="review-card">
-                <div class="review-top">
-                    <div class="review-photo"><img src="image/testimonial-3.avif" alt="Pooja Sharma, Delhi" loading="lazy"></div>
-                    <div class="review-who"><div class="name">पूजा शर्मा, दिल्ली</div><div class="review-stars">★★★★★</div></div>
-                </div>
-                <p>"मेरी बेटी को अचानक दौरा पड़ने का डर हमेशा बना रहता था, इसलिए पूरा परिवार चिंता में रहता था। Mirgi Mukti के बारे में जानकारी मिलने के बाद हमने इसे विशेषज्ञ की सलाह के साथ इस्तेमाल करना शुरू किया। अब उसकी दिनचर्या पहले से बेहतर है और परिवार को भी काफी राहत महसूस होती है।"</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- FAQ -->
-    <section class="section" id="faqSection">
-        <div class="eyebrow">FAQs</div>
-        <h2 class="main-heading">अक्सर पूछे जाने वाले सवाल</h2>
-        <div class="faq-list" id="faqList">
-            <div class="faq-item">
-                <button class="faq-q">क्या यह आयुर्वेदिक प्रोडक्ट है?</button>
-                <div class="faq-a-wrap"><p class="faq-a">हाँ। यह आयुर्वेदिक प्रोडक्ट है।</p></div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-q">क्या पूरे भारत में डिलीवरी Available है?</button>
-                <div class="faq-a-wrap"><p class="faq-a">हाँ। पूरे भारत में डिलीवरी Available है।</p></div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-q">क्या COD Available है?</button>
-                <div class="faq-a-wrap"><p class="faq-a">हाँ। COD Available है।</p></div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-q">ऑर्डर करने के बाद क्या मुझे सहायता मिलेगी?</button>
-                <div class="faq-a-wrap"><p class="faq-a">हाँ, हमारी कस्टमर सपोर्ट टीम ऑर्डर और उपयोग संबंधी सामान्य जानकारी देने के लिए Available रहती है।</p></div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-q">अगर मुझे कोई सवाल हो तो क्या मैं संपर्क कर सकता हूँ?</button>
-                <div class="faq-a-wrap"><p class="faq-a">बिलकुल। आप हमारी कस्टमर सपोर्ट टीम से संपर्क करके अपने सामान्य प्रश्नों का समाधान प्राप्त कर सकते हैं।</p></div>
-            </div>
-        </div>
-    </section>
+    <script>
+        
 
-    <!-- DISCLAIMER -->
-    <div class="disclaimer">
-       <p>यह उत्पाद किसी भी बीमारी के निश्चित उपचार, रोकथाम या पूर्ण इलाज का दावा नहीं करता। परिणाम व्यक्ति-व्यक्ति में अलग हो सकते हैं। यदि आपको मिर्गी (Epilepsy) है या आप एंटी-सीज़र दवाएँ ले रहे हैं, तो किसी भी नए सप्लीमेंट या आयुर्वेदिक उत्पाद का उपयोग शुरू करने से पहले अपने डॉक्टर या योग्य आयुर्वेदिक चिकित्सक से सलाह अवश्य लें।</p>
-   
-    
 
-  <!-- POLICY LINKS -->
-      <div class="pl-wrap">
-        <div class="pl-row">
-          <button class="pl-link" onclick="openModal('privacy')">Privacy Policy</button>
-          <span class="pl-sep">|</span>
-          <button class="pl-link" onclick="openModal('terms')">Terms & Conditions</button>
-          <span class="pl-sep">|</span>
-          <button class="pl-link" onclick="openModal('shipping')">Shipping Policy</button>
-          <span class="pl-sep">|</span>
-          <button class="pl-link" onclick="openModal('cancel')">Cancellation Policy</button>
-          <span class="pl-sep">|</span>
-          <button class="pl-link" onclick="openModal('contact')">Contact Us</button>
-          <span class="pl-sep">|</span>
-          <button class="pl-link" onclick="openModal('disclaimer')">Legal Disclaimer</button>
-        </div>
-      </div>
+  // ============ Ad attribution (UTM + Meta) ============
+  // Meta drops the UTMs on the landing URL, but they are lost the moment
+  // the user reloads or the URL is cleaned, so stash them in sessionStorage
+  // on first view and read from there at submit time.
+  const UTM_KEYS = [
+    'utm_source', 'utm_medium',
+    'utm_campaign', 'utm_campaign_id',
+    'utm_adset', 'utm_adset_id',
+    'utm_ad', 'utm_ad_id',
+    'utm_placement'
+  ];
 
-      <div class="pp-overlay" id="pp-overlay" onclick="closeIfOutside(event)">
-        <div class="pp-modal" id="pp-modal">
-          <button class="pp-close" onclick="closeModal()"><i class="ti ti-x" aria-hidden="true"></i></button>
-          <div id="pp-content"></div>
-        </div>
-      </div>
-    </div>
+  function setHidden(name, value){
+    const input = document.querySelector('#orderForm input[name="' + name + '"]');
+    if(input) input.value = value || '';
+  }
 
-    <!-- STICKY CTA -->
-    <div class="sticky-cta" id="stickyCta">
-        <div class="info">
-            <div class="p1">आज ही शुरू करें</div>
-            <div class="p2">Mirgi Mukti Ayurvedic Care</div>
-        </div>
-        <button onclick="document.getElementById('orderForm').scrollIntoView({behavior:'smooth'})">Order Now</button>
-    </div>
+  function readCookie(name){
+    const match = document.cookie.match(new RegExp('(^|;\\s*)' + name + '=([^;]*)'));
+    return match ? decodeURIComponent(match[2]) : '';
+  }
 
-    <!-- FORM SUBMIT LOADING OVERLAY -->
-    <div class="form-loading-overlay" id="loading">
-        <div class="loading-box">
-            <div class="spinner"></div>
-            <p>आपका ऑर्डर Process हो रहा है<span id="dotAnim">.</span></p>
-        </div>
-    </div>
+  function stickyValue(key, fromUrl){
+    if(fromUrl){
+      try { sessionStorage.setItem(key, fromUrl); } catch(e){ /* private mode */ }
+      return fromUrl;
+    }
+    try { return sessionStorage.getItem(key) || ''; } catch(e){ return ''; }
+  }
 
-</div>
+  function captureUtmParams(){
+    const urlParams = new URLSearchParams(window.location.search);
 
-<script>
-/* ---------- Top banner hide after problem-section scroll ---------- */
-const topBanner = document.getElementById('topBanner');
-const heroSection = document.getElementById('painSection');
-const bannerObserver = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-        if(!entry.isIntersecting && entry.boundingClientRect.top < 0){
-            if(topBanner) topBanner.classList.add('hide');
-        } else if(entry.isIntersecting){
-            if(topBanner) topBanner.classList.remove('hide');
-        }
+    UTM_KEYS.forEach(function(key){
+      setHidden(key, stickyValue(key, urlParams.get(key)));
     });
-},{threshold:0});
-if(heroSection) bannerObserver.observe(heroSection);
 
-/* ---------- Sticky CTA hide near order form ---------- */
-const stickyCta = document.getElementById('stickyCta');
-const orderFormSection = document.getElementById('orderForm');
-const ctaObserver = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){ stickyCta.classList.add('hide'); }
-        else{ stickyCta.classList.remove('hide'); }
-    });
-},{threshold:0.15});
-if(orderFormSection) ctaObserver.observe(orderFormSection);
+    // Meta click ID. Present only on the first landing URL, so persist it.
+    const fbclid = stickyValue('fbclid', urlParams.get('fbclid'));
+    setHidden('fbclid', fbclid);
 
-/* ---------- FAQ Accordion ---------- */
-document.querySelectorAll('.faq-item').forEach(item=>{
-    const q = item.querySelector('.faq-q');
-    const wrap = item.querySelector('.faq-a-wrap');
-    q.addEventListener('click', ()=>{
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item.open').forEach(openItem=>{
-            openItem.classList.remove('open');
-            openItem.querySelector('.faq-a-wrap').style.maxHeight = null;
-        });
-        if(!isOpen){
-            item.classList.add('open');
-            wrap.style.maxHeight = wrap.scrollHeight + 'px';
-        }
-    });
-});
+    // _fbc is what the Conversions API actually wants. The pixel sets the
+    // cookie itself, but build it from fbclid as a fallback in case the
+    // pixel script was blocked or hasn't run yet.
+    let fbc = readCookie('_fbc');
+    if(!fbc && fbclid){
+      fbc = stickyValue('fbc', 'fb.1.' + Date.now() + '.' + fbclid);
+    }
+    setHidden('fbc', fbc);
+    setHidden('fbp', readCookie('_fbp'));
+  }
 
+  // Shared identifier so a browser pixel event and a future server-side
+  // event for the same submission can be deduplicated by Meta.
+  function newEventId(){
+    if(window.crypto && crypto.randomUUID) return crypto.randomUUID();
+    return 'evt-' + Date.now() + '-' + Math.random().toString(16).slice(2);
+  }
+
+  captureUtmParams();
 /* ---------- Order Form: vine progress animation ---------- */
 const vinePath = document.getElementById('vineFill');
 const vineTrack = document.getElementById('vineTrack');
@@ -1560,6 +1493,162 @@ setInterval(() => {
         d.textContent = '.'.repeat(dotCount);
     }
 }, 500);
+
+    </script>
+    </body>
+    </html>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testi-section" id="testiSection">
+        <div class="eyebrow">Real Results</div>
+        <h2 class="main-heading">ग्राहकों का अनुभव</h2>
+        <div class="review-list">
+            <div class="review-card">
+                <div class="review-top">
+                    <div class="review-photo"><img src="image/testimonial-1.avif" alt="Rajesh Kumar, Jaipur" loading="lazy"></div>
+                    <div class="review-who"><div class="name">राजेश कुमार, जयपुर</div><div class="review-stars">★★★★★</div></div>
+                </div>
+                <p>"मुझे कई सालों से मिर्गी के दौरे आने की वजह से हमेशा डर लगा रहता था। बाहर अकेले जाने से भी घबराहट होती थी। Mirgi Mukti के बारे में जानकारी मिलने के बाद मैंने इसे अपनी दिनचर्या में शामिल किया। नियमित उपयोग और डॉक्टर की सलाह के साथ अब पहले की तुलना में काफी बेहतर महसूस करता हूँ और आत्मविश्वास भी बढ़ा है।"</p>
+            </div>
+            <div class="review-card">
+                <div class="review-top">
+                    <div class="review-photo"><img src="image/testimonial-2.avif" alt="Amit Verma, Lucknow" loading="lazy"></div>
+                    <div class="review-who"><div class="name">अमित वर्मा, लखनऊ</div><div class="review-stars">★★★★★</div></div>
+                </div>
+                <p>"बार-बार मिर्गी की परेशानी की वजह से नौकरी और रोज़मर्रा के काम प्रभावित होने लगे थे। Mirgi Mukti का नियमित उपयोग करने और सही जीवनशैली अपनाने के बाद मुझे पहले से अधिक स्थिरता और आत्मविश्वास महसूस हो रहा है। साथ ही, कस्टमर सपोर्ट टीम ने भी हर कदम पर अच्छी जानकारी और मार्गदर्शन दिया।"</p>
+            </div>
+            <div class="review-card">
+                <div class="review-top">
+                    <div class="review-photo"><img src="image/testimonial-3.avif" alt="Pooja Sharma, Delhi" loading="lazy"></div>
+                    <div class="review-who"><div class="name">पूजा शर्मा, दिल्ली</div><div class="review-stars">★★★★★</div></div>
+                </div>
+                <p>"मेरी बेटी को अचानक दौरा पड़ने का डर हमेशा बना रहता था, इसलिए पूरा परिवार चिंता में रहता था। Mirgi Mukti के बारे में जानकारी मिलने के बाद हमने इसे विशेषज्ञ की सलाह के साथ इस्तेमाल करना शुरू किया। अब उसकी दिनचर्या पहले से बेहतर है और परिवार को भी काफी राहत महसूस होती है।"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faqSection">
+        <div class="eyebrow">FAQs</div>
+        <h2 class="main-heading">अक्सर पूछे जाने वाले सवाल</h2>
+        <div class="faq-list" id="faqList">
+            <div class="faq-item">
+                <button class="faq-q">क्या यह आयुर्वेदिक प्रोडक्ट है?</button>
+                <div class="faq-a-wrap"><p class="faq-a">हाँ। यह आयुर्वेदिक प्रोडक्ट है।</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">क्या पूरे भारत में डिलीवरी Available है?</button>
+                <div class="faq-a-wrap"><p class="faq-a">हाँ। पूरे भारत में डिलीवरी Available है।</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">क्या COD Available है?</button>
+                <div class="faq-a-wrap"><p class="faq-a">हाँ। COD Available है।</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">ऑर्डर करने के बाद क्या मुझे सहायता मिलेगी?</button>
+                <div class="faq-a-wrap"><p class="faq-a">हाँ, हमारी कस्टमर सपोर्ट टीम ऑर्डर और उपयोग संबंधी सामान्य जानकारी देने के लिए Available रहती है।</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">अगर मुझे कोई सवाल हो तो क्या मैं संपर्क कर सकता हूँ?</button>
+                <div class="faq-a-wrap"><p class="faq-a">बिलकुल। आप हमारी कस्टमर सपोर्ट टीम से संपर्क करके अपने सामान्य प्रश्नों का समाधान प्राप्त कर सकते हैं।</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <div class="disclaimer">
+       <p>यह उत्पाद किसी भी बीमारी के निश्चित उपचार, रोकथाम या पूर्ण इलाज का दावा नहीं करता। परिणाम व्यक्ति-व्यक्ति में अलग हो सकते हैं। यदि आपको मिर्गी (Epilepsy) है या आप एंटी-सीज़र दवाएँ ले रहे हैं, तो किसी भी नए सप्लीमेंट या आयुर्वेदिक उत्पाद का उपयोग शुरू करने से पहले अपने डॉक्टर या योग्य आयुर्वेदिक चिकित्सक से सलाह अवश्य लें।</p>
+   
+    
+
+  <!-- POLICY LINKS -->
+      <div class="pl-wrap">
+        <div class="pl-row">
+          <button class="pl-link" onclick="openModal('privacy')">Privacy Policy</button>
+          <span class="pl-sep">|</span>
+          <button class="pl-link" onclick="openModal('terms')">Terms & Conditions</button>
+          <span class="pl-sep">|</span>
+          <button class="pl-link" onclick="openModal('shipping')">Shipping Policy</button>
+          <span class="pl-sep">|</span>
+          <button class="pl-link" onclick="openModal('cancel')">Cancellation Policy</button>
+          <span class="pl-sep">|</span>
+          <button class="pl-link" onclick="openModal('contact')">Contact Us</button>
+          <span class="pl-sep">|</span>
+          <button class="pl-link" onclick="openModal('disclaimer')">Legal Disclaimer</button>
+        </div>
+      </div>
+
+      <div class="pp-overlay" id="pp-overlay" onclick="closeIfOutside(event)">
+        <div class="pp-modal" id="pp-modal">
+          <button class="pp-close" onclick="closeModal()"><i class="ti ti-x" aria-hidden="true"></i></button>
+          <div id="pp-content"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STICKY CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <div class="info">
+            <div class="p1">आज ही शुरू करें</div>
+            <div class="p2">Mirgi Mukti Ayurvedic Care</div>
+        </div>
+        <button onclick="document.getElementById('orderForm').scrollIntoView({behavior:'smooth'})">Order Now</button>
+    </div>
+
+    <!-- FORM SUBMIT LOADING OVERLAY -->
+    <div class="form-loading-overlay" id="loading">
+        <div class="loading-box">
+            <div class="spinner"></div>
+            <p>आपका ऑर्डर Process हो रहा है<span id="dotAnim">.</span></p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+/* ---------- Top banner hide after problem-section scroll ---------- */
+const topBanner = document.getElementById('topBanner');
+const heroSection = document.getElementById('painSection');
+const bannerObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(!entry.isIntersecting && entry.boundingClientRect.top < 0){
+            if(topBanner) topBanner.classList.add('hide');
+        } else if(entry.isIntersecting){
+            if(topBanner) topBanner.classList.remove('hide');
+        }
+    });
+},{threshold:0});
+if(heroSection) bannerObserver.observe(heroSection);
+
+/* ---------- Sticky CTA hide near order form ---------- */
+const stickyCta = document.getElementById('stickyCta');
+const orderFormSection = document.getElementById('orderForm');
+const ctaObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){ stickyCta.classList.add('hide'); }
+        else{ stickyCta.classList.remove('hide'); }
+    });
+},{threshold:0.15});
+if(orderFormSection) ctaObserver.observe(orderFormSection);
+
+/* ---------- FAQ Accordion ---------- */
+document.querySelectorAll('.faq-item').forEach(item=>{
+    const q = item.querySelector('.faq-q');
+    const wrap = item.querySelector('.faq-a-wrap');
+    q.addEventListener('click', ()=>{
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(openItem=>{
+            openItem.classList.remove('open');
+            openItem.querySelector('.faq-a-wrap').style.maxHeight = null;
+        });
+        if(!isOpen){
+            item.classList.add('open');
+            wrap.style.maxHeight = wrap.scrollHeight + 'px';
+        }
+    });
+});
+
+
 
 var contents = {
       privacy: `<div class="pp-mtitle"><i class="ti ti-shield-lock" aria-hidden="true"></i>Privacy Policy</div><div class="pp-mbadge">Last updated: June 2025</div><p class="pp-mpara">Mirgi Mukti आपकी personal information की सुरक्षा को सर्वोच्च प्राथमिकता देता है। जब आप order करते हैं तो हम निम्नलिखित जानकारी एकत्र करते हैं:</p><ul class="pp-mlist"><li>नाम, मोबाइल नंबर और delivery address</li><li>Payment details (encrypted और secure)</li><li>Order history और purchase records</li></ul><div class="pp-mhl">आपकी जानकारी किसी third-party को नहीं बेची जाती। इसका उपयोग केवल order processing और delivery के लिए किया जाता है।</div><p class="pp-mpara">हम industry-standard SSL encryption का उपयोग करते हैं। किसी भी privacy concern के लिए हमसे contact करें।</p>`,

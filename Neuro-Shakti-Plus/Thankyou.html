@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>धन्यवाद — Neuro Shakti</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --wine:        #16301F;
+    --wine-dark:   #3B5D3A;
+    --wine-tint:   #F4E3E8;
+    --gold:        #D98E2B;
+    --gold-dark:   #EFB65F;
+    --gold-tint:   #FBEFD6;
+    --cream:       #FFF8F0;
+    --ink:         #2B1B20;
+    --ink-soft:    #B85C38;
+    --white:       #FFFFFF;
+    --line:        #EAD9D0;
+
+    --font-display: 'Halant', serif;
+    --font-body:    'Halant', sans-serif;
+
+    --r-lg: 24px;
+    --r-md: 16px;
+    --r-sm: 10px;
+    --shadow: 0 14px 34px rgba(74,20,40,0.16);
+    --shadow-sm: 0 4px 14px rgba(74,20,40,0.10);
+
+    --page-max: 450px;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{
+    -webkit-text-size-adjust:100%;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+  }
+  html::-webkit-scrollbar{ display:none; width:0; height:0; }
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    background:var(--wine-tint);
+    color:var(--ink);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+  }
+  body::-webkit-scrollbar{ display:none; width:0; height:0; }
+  img{ max-width:100%; display:block; }
+  h1,h2,p{ margin:0; }
+
+  .page-wrap{
+    max-width:var(--page-max);
+    margin:0 auto;
+    background:var(--cream);
+    min-height:100vh;
+    position:relative;
+    overflow-x:hidden;
+    box-shadow: 0 0 24px rgba(0,0,0,0.25);
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* ===== Top success band ===== */
+  .ty-hero{
+    position:relative;
+    background:radial-gradient(120% 90% at 15% -10%, var(--gold-tint) 0%, transparent 55%),
+               linear-gradient(180deg, var(--wine-tint) 0%, var(--cream) 88%);
+    padding:44px 22px 30px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .ty-hero::before{
+    content:"";
+    position:absolute;
+    top:-60px; right:-70px;
+    width:180px; height:180px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(122,31,61,0.14), transparent 70%);
+    z-index:0;
+  }
+  .ty-hero > *{ position:relative; z-index:1; }
+
+  .ty-icon{
+    width:78px; height:78px;
+    min-width:78px;
+    border-radius:50%;
+    background:var(--wine);
+    color:var(--gold-tint);
+    font-size:32px;
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 20px;
+    box-shadow:0 12px 26px rgba(74,20,40,0.3);
+    border:4px solid var(--white);
+    animation:pop .5s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  @keyframes pop{
+    from{ transform:scale(0); opacity:0; }
+    to{ transform:scale(1); opacity:1; }
+  }
+
+  .ty-hero h1{
+    font-family:var(--font-display);
+    font-size:26px;
+    line-height:1.4;
+    color:var(--wine-dark);
+    font-weight:700;
+    margin-bottom:12px;
+  }
+  .ty-hero p{
+    font-size:16px;
+    color:var(--ink-soft);
+  }
+
+  .ty-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.03em;
+    color:var(--wine);
+    background:var(--wine-tint);
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:16px;
+  }
+  .ty-eyebrow::before{
+    content:"";
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--gold);
+    display:inline-block;
+  }
+
+  /* ===== Order summary style card ===== */
+  .ty-body{
+    padding:26px 22px 34px;
+    flex:1 1 auto;
+  }
+
+  .ty-product-card{
+    background:var(--white);
+    border-radius:var(--r-lg);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    margin-bottom:22px;
+  }
+  .ty-product-media{
+    position:relative;
+    padding:16px;
+    display:flex;
+    justify-content:center;
+    background:linear-gradient(155deg, var(--wine-tint), var(--white));
+  }
+  .ty-product-media img{
+    width:auto;
+    max-width:150px;
+    height:150px;
+    object-fit:cover;
+    border-radius:var(--r-md);
+    border:3px solid var(--gold);
+    box-shadow:var(--shadow-sm);
+  }
+  .ty-product-info{
+    padding:16px 18px 20px;
+    text-align:center;
+  }
+  .ty-product-info .name{
+    font-family:var(--font-display);
+    font-size:20px;
+    font-weight:700;
+    color:var(--wine-dark);
+    margin-bottom:6px;
+  }
+  .ty-product-info .desc{
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+
+  .ty-steps{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-bottom:22px;
+  }
+  .ty-step{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--r-sm);
+    padding:13px 14px;
+    box-shadow:var(--shadow-sm);
+  }
+  .ty-step .num{
+    flex:0 0 auto;
+    width:32px; height:32px;
+    border-radius:50%;
+    background:var(--wine-tint);
+    color:var(--wine);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700;
+    font-size:15px;
+  }
+  .ty-step .txt{
+    font-size:15px;
+    font-weight:600;
+    color:var(--wine-dark);
+  }
+
+  .ty-note{
+    background:var(--gold-tint);
+    border:1.5px dashed var(--gold-dark);
+    border-radius:var(--r-md);
+    padding:16px;
+    text-align:center;
+    font-size:15px;
+    font-weight:600;
+    color:var(--wine-dark);
+  }
+  .ty-note i{ color:var(--gold-dark); margin-right:6px; }
+
+  .ty-footer{
+    text-align:center;
+    padding:20px 22px 30px;
+    font-size:13.5px;
+    color:var(--ink-soft);
+    border-top:1px dashed var(--line);
+  }
+  .ty-footer .brand{
+    font-family:var(--font-display);
+    font-weight:700;
+    color:var(--wine);
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <section class="ty-hero">
+    <div class="ty-icon"><i class="fa-solid fa-check"></i></div>
+    <span class="ty-eyebrow">ऑर्डर प्राप्त हुआ</span>
+    <h1>धन्यवाद! आपकी जानकारी सफलतापूर्वक प्राप्त हो गई है</h1>
+    <p>हमारी Team जल्द ही आपसे संपर्क करेगी और आगे की जानकारी देगी।</p>
+  </section>
+
+  <div class="ty-body">
+
+    <div class="ty-product-card">
+      <div class="ty-product-media">
+        <img src="images/product.avif" alt="Neuro Shakti - nerve and mobility support product" loading="lazy" width="600" height="450">
+      </div>
+      <div class="ty-product-info">
+        <div class="name">Neuro Shakti</div>
+        <div class="desc">आपकी Recovery Journey में सही Support</div>
+      </div>
+    </div>
+
+    <div class="ty-steps">
+      <div class="ty-step">
+        <span class="num">1</span>
+        <span class="txt">आपकी details हमारी Team तक पहुँच गई हैं</span>
+      </div>
+      <div class="ty-step">
+        <span class="num">2</span>
+        <span class="txt">हमारी Team जल्द ही आपको कॉल करेगी</span>
+      </div>
+      <div class="ty-step">
+        <span class="num">3</span>
+        <span class="txt">Order और Product से जुड़ी पूरी जानकारी बताई जाएगी</span>
+      </div>
+    </div>
+
+    <div class="ty-note">
+      <i class="fa-solid fa-shield-heart"></i>आपकी जानकारी पूरी तरह सुरक्षित रखी जाएगी
+    </div>
+
+  </div>
+
+  <div class="ty-footer">
+    <span class="brand">Neuro Shakti</span> — Regular Physiotherapy, सही Guidance और Consistent Care के साथ अपनी Recovery Journey को Support दें।
+  </div>
+
+</div>
+
+</body>
+</html>

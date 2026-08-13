@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neuro Shakti Plus | लकवा Recovery Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" media="print" onload="this.media='all'">
+
+<style>
+  :root{
+    --ink:#1C2444;
+    --ink-2:#11152B;
+    --marigold:#E3A13D;
+    --marigold-light:#F2C574;
+    --maroon:#7C2A3B;
+    --maroon-light:#9C3B4E;
+    --cream:#FBF5E8;
+    --sand:#F1E4C8;
+    --text:#241F1B;
+    --line:#E2D2A8;
+    --font-main:'Halant', sans-serif;
+    --pad-y:28px;
+    --pad-x:22px;
+    --radius:20px;
+    --page-max:450px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    font-family:var(--font-main);
+    background:#DCD3C0;
+    color:var(--text);
+    font-size:18px;
+    line-height:1.6;
+    display:flex;
+    justify-content:center;
+  }
+
+  .page{
+    width:100%;
+    max-width:var(--page-max);
+    background:var(--cream);
+    overflow:hidden;
+    position:relative;
+    min-height:100vh;
+    padding-bottom:78px; /* room for sticky cta */
+    transition:filter .3s ease;
+  }
+  .page.is-blurred{ filter:blur(7px); pointer-events:none; user-select:none; }
+
+  img{ display:block; max-width:100%; }
+
+  .section{ padding:var(--pad-y) var(--pad-x); position:relative; }
+
+  h1,h2,h3{ font-family:var(--font-main); font-weight:700; line-height:1.35; }
+
+  .divider{ height:38px; display:flex; align-items:center; justify-content:center; gap:10px; }
+  .divider span{ width:7px; height:7px; border-radius:50%; background:var(--marigold); }
+  .divider span:nth-child(2), .divider span:nth-child(4){ width:5px; height:5px; opacity:.6; }
+  .divider span:nth-child(3){ width:10px; height:10px; }
+  .divider.on-dark span{ background:var(--marigold-light); }
+
+  /* ---------- Hook / banner (kept plain, per brief) ---------- */
+  .banner img{ width:100%; height:auto; display:block; min-height:140px; object-fit:cover; }
+
+  /* ---------- Intro : age "VS" split + risk chips + note ---------- */
+  .intro{ background:var(--cream); }
+  .intro .eyebrow{ display:inline-block; font-size:18px; color:var(--maroon); font-weight:600; border-bottom:2px solid var(--marigold); padding-bottom:4px; margin-bottom:18px; }
+  .intro h1{ font-size:24px; color:var(--ink); margin-bottom:18px; text-align:center; }
+
+  .age-split{ display:flex; align-items:center; gap:10px; margin-bottom:20px; }
+  .age-box{ flex:1; background:var(--sand); border:1px solid var(--line); border-radius:16px; padding:16px 10px; text-align:center; }
+  .age-box i{ font-size:34px; color:var(--maroon); display:block; margin-bottom:8px; }
+  .age-box .label{ font-size:18px; color:var(--ink); font-weight:600; }
+  .vs-badge{ flex:0 0 auto; width:42px; height:42px; border-radius:50%; background:var(--maroon); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:18px; box-shadow:0 4px 10px rgba(0,0,0,0.15); }
+  .intro p.center{ font-size:18px; color:var(--text); text-align:center; }
+
+  .risk-strip{ display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .risk-chip{ display:flex; align-items:center; gap:8px; background:var(--sand); border:1px solid var(--line); border-radius:999px; padding:9px 16px; font-size:18px; color:var(--ink); }
+  .risk-chip i{ color:var(--maroon); font-size:16px; }
+
+  .lead-note{ position:relative; margin-top:24px; background:#fff; border-left:5px solid var(--maroon); border-radius:0 var(--radius) var(--radius) 0; padding:18px 18px 18px 20px; box-shadow:0 8px 20px rgba(28,36,68,0.08); }
+  .lead-note .quote-mark{ position:absolute; top:-14px; left:14px; font-size:44px; color:var(--marigold); font-family:Georgia, serif; line-height:1; }
+  .lead-note p{ font-size:18px; color:var(--maroon); font-weight:600; }
+
+  /* ---------- Brand : layered hero + wax seal (approved, unchanged) ---------- */
+  .brand{ background:var(--ink); color:#fff; text-align:center; overflow:hidden; }
+  .brand .brand-mark{ font-size:18px; letter-spacing:3px; color:var(--marigold-light); margin-bottom:6px; }
+  .brand h2{ font-size:30px; color:#fff; margin-bottom:4px; }
+  .brand .tag{ font-size:18px; color:#CBD1E8; margin-bottom:30px; }
+
+  .brand-img-wrap{ position:relative; margin:0 auto 30px; width:100%; padding:14px 10px; }
+  .brand-img-wrap::before{ content:""; position:absolute; inset:14px 26px 2px 2px; background:var(--maroon-light); border-radius:var(--radius); transform:rotate(-4deg); z-index:0; }
+  .brand-img-wrap::after{ content:""; position:absolute; inset:14px 2px 2px 26px; background:var(--marigold); border-radius:var(--radius); transform:rotate(3deg); z-index:0; opacity:.55; }
+  .brand-product-img{ position:relative; z-index:1; width:100%; min-height:250px; max-height:320px; object-fit:cover; border-radius:var(--radius); border:2px solid var(--ink); }
+  .seal{ position:absolute; z-index:2; right:4px; bottom:-18px; width:112px; height:112px; border-radius:50%; background:var(--marigold); color:var(--ink-2); border:3px dashed var(--ink); transform:rotate(-14deg); display:flex; align-items:center; justify-content:center; flex-direction:column; text-align:center; line-height:1.15; font-weight:700; font-size:18px; box-shadow:0 8px 18px rgba(0,0,0,0.3); }
+
+  .brand p.desc{ font-size:18px; color:#E4E6F2; margin:22px 0; text-align:left; }
+
+  .stat-row{ display:flex; justify-content:space-between; gap:10px; margin-bottom:24px; }
+  .stat-item{ flex:1; background:rgba(255,255,255,0.06); border:1px solid rgba(242,197,116,0.3); border-radius:16px; padding:14px 8px; }
+  .stat-item .num{ font-size:22px; color:var(--marigold-light); font-weight:700; display:block; }
+  .stat-item .label{ font-size:18px; color:#DADCEA; display:block; margin-top:2px; }
+
+  .chip-row{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+  .chip{ display:flex; align-items:center; gap:8px; background:rgba(255,255,255,0.07); border:1px solid rgba(242,197,116,0.4); border-radius:999px; padding:10px 16px; font-size:18px; color:#fff; }
+  .chip i{ color:var(--marigold-light); }
+
+  /* ---------- Why choose : accent-bar journey cards ---------- */
+  .why{ background:var(--sand); }
+  .why h2{ font-size:26px; color:var(--ink); text-align:center; margin-bottom:8px; }
+  .why .sub{ text-align:center; color:var(--maroon); font-size:18px; margin-bottom:34px; }
+
+  .why-journey{ display:flex; flex-direction:column; gap:2px; }
+  .journey-card{
+    position:relative; display:flex; align-items:center; gap:14px;
+    background:#fff; border-radius:14px; padding:14px 16px 14px 14px;
+    box-shadow:0 8px 18px rgba(28,36,68,0.10);
+    border-left:6px solid var(--marigold);
+  }
+  .why-journey .journey-item:nth-child(even) .journey-card{ border-left-color:var(--maroon); }
+  .journey-icon{
+    flex:0 0 auto; width:160px; height:160px; overflow:hidden;
+    border-radius:50% 50% 50% 6px; border:3px solid var(--marigold); background:var(--sand);
+  }
+  .why-journey .journey-item:nth-child(even) .journey-icon{ border-radius:50% 50% 6px 50%; border-color:var(--maroon); }
+  .journey-icon img{ width:100%; height:100%; object-fit:cover; }
+  .journey-copy{ flex:1; }
+  .journey-copy .eyebrow2{
+    display:block; font-size:18px; font-weight:700; color:var(--maroon);
+    text-transform:uppercase; letter-spacing:.6px; margin-bottom:3px;
+  }
+  .journey-copy p{ font-size:18px; color:var(--text); }
+  .journey-arrow{
+    display:flex; align-items:center; justify-content:center; margin:6px auto;
+    width:36px; height:36px; border-radius:50%;
+    background:linear-gradient(180deg, var(--marigold-light), var(--marigold));
+    color:#fff; font-size:15px; box-shadow:0 6px 14px rgba(227,161,61,0.45);
+  }
+  .journey-item:last-child .journey-arrow{ display:none; }
+
+  /* ---------- Ingredients : botanical specimen cards ---------- */
+  .ingredients{ background:var(--ink-2); color:#fff; }
+  .ingredients h2{ font-size:26px; text-align:center; color:#fff; margin-bottom:6px; }
+  .ingredients .sub{ text-align:center; color:#B7BEDD; font-size:18px; margin-bottom:34px; }
+
+  .ing-plates{ display:flex; flex-direction:column; gap:16px; }
+  .ing-plate{
+    position:relative; display:flex; gap:16px; align-items:flex-start;
+    background:rgba(255,255,255,0.045); border:1px solid rgba(242,197,116,0.28);
+    border-radius:12px; padding:16px;
+  }
+  .ing-plate:nth-child(even){ background:rgba(255,255,255,0.02); }
+  .ing-plate .plate-frame{
+    position:relative; flex:0 0 auto; width:104px; height:124px; min-width:104px; 
+    border-radius:10px; overflow:hidden; border:1px solid var(--marigold);
+  }
+  .ing-plate .plate-frame::before, .ing-plate .plate-frame::after{
+    content:""; position:absolute; width:14px; height:14px; border:2px solid var(--marigold-light); z-index:2;
+  }
+  .ing-plate .plate-frame::before{ top:-6px; left:-6px; border-right:none; border-bottom:none; }
+  .ing-plate .plate-frame::after{ bottom:-6px; right:-6px; border-left:none; border-top:none; }
+  .ing-plate .plate-frame img{ width:100%; height:100%; object-fit:cover; }
+  .ing-plate .plate-text{ flex:1; padding-top:2px; }
+  .ing-plate .plate-tag{
+    display:block; font-size:18px; color:var(--marigold-light); opacity:.75;
+    letter-spacing:1px; margin-bottom:4px;
+  }
+  .ing-plate h3{ font-size:18px; color:#fff; margin-bottom:6px; padding-bottom:6px; border-bottom:1px dashed rgba(242,197,116,0.4); }
+  .ing-plate p{ font-size:18px; color:#DADCEA; }
+
+  /* ---------- Merged CTA + Order form : ticket card ---------- */
+  .cta-order{ background:linear-gradient(165deg, var(--maroon), var(--ink)); }
+  .ticket-card{ position:relative; color:#fff; border-radius:var(--radius); padding:26px 20px; overflow:hidden; }
+  .ticket-card .leaf-deco{ position:absolute; font-size:60px; opacity:.08; z-index:0; }
+  .ticket-card .leaf-deco.tl{ top:-10px; left:-10px; transform:rotate(-20deg); }
+  .ticket-card .leaf-deco.br{ bottom:-10px; right:-10px; transform:rotate(160deg); }
+  .ticket-card .stamp{ position:absolute; top:16px; right:16px; z-index:2; width:76px; height:76px; border-radius:50%; border:2px dashed var(--marigold-light); display:flex; align-items:center; justify-content:center; text-align:center; font-size:18px; font-weight:700; color:var(--marigold-light); line-height:1.1; transform:rotate(12deg); }
+  .ticket-card > *{ position:relative; z-index:1; }
+
+  .ticket-header{ margin-bottom:16px; }
+  .ticket-header h2{ font-size:22px; text-align:center; padding-right:60px; margin-bottom:14px; }
+  .ticket-header .locket{ width:100%;  object-fit:cover; border-radius:14px; border:2px solid var(--marigold); box-shadow:0 8px 18px rgba(0,0,0,0.25); }
+
+  .ticket-card p.msg{ font-size:18px; color:#F1DFC9; margin-bottom:18px; }
+
+  .cta-list{ list-style:none; margin-bottom:6px; }
+  .cta-list li{ display:flex; align-items:center; gap:10px; font-size:18px; color:#fff; padding:9px 0; border-bottom:1px solid rgba(255,255,255,0.1); }
+  .cta-list li:last-child{ border-bottom:none; }
+  .cta-list i{ color:var(--marigold); }
+
+  .perforation{ position:relative; height:0; border-top:2px dashed rgba(255,255,255,0.3); margin:26px -20px; }
+  .perforation::before, .perforation::after{ content:""; position:absolute; top:-11px; width:22px; height:22px; border-radius:50%; background:var(--sand); }
+  .perforation::before{ left:-11px; }
+  .perforation::after{ right:-11px; }
+
+  /* Highlighted form box — the main conversion area */
+  .form-highlight{
+    background:var(--cream); color:var(--text); border-radius:var(--radius);
+    padding:22px 18px 20px;
+    box-shadow:0 0 0 4px var(--marigold), 0 0 0 9px rgba(227,161,61,0.25), 0 20px 40px rgba(0,0,0,0.3);
+  }
+  .form-highlight .form-intro{
+    display:flex; align-items:center; gap:8px; justify-content:center;
+    font-size:18px; color:var(--maroon); font-weight:700; margin-bottom:18px; text-align:center;
+  }
+  .form-highlight .form-intro i{ color:var(--marigold); }
+
+  .field{ margin-bottom:16px; }
+  .field label{ display:block; font-size:18px; color:var(--ink); margin-bottom:6px; font-weight:600; }
+  .input-wrap{ position:relative; }
+  .input-wrap i{ position:absolute; left:14px; top:50%; transform:translateY(-50%); font-size:17px; color:var(--maroon); }
+  .field input{
+    width:100%; font-family:var(--font-main); font-size:18px;
+    padding:14px 16px 14px 42px; border-radius:12px; border:1px solid var(--line); background:#fff; color:var(--text);
+  }
+  .field input:focus{ outline:2px solid var(--marigold); outline-offset:1px; }
+  .field .err{ font-size:18px; color:#B23B3B; margin-top:6px; display:none; }
+  .field.invalid input{ border-color:#B23B3B; }
+  .field.invalid .err{ display:block; }
+
+  .btn-gold{
+    display:flex; align-items:center; justify-content:center; gap:8px; width:100%; text-align:center;
+    background:linear-gradient(180deg, var(--marigold-light), var(--marigold)); color:var(--ink-2);
+    font-family:var(--font-main); font-weight:700; font-size:18px; padding:16px; border:none;
+    border-radius:14px; cursor:pointer; box-shadow:0 10px 22px rgba(0,0,0,0.25);
+  }
+  .btn-gold:active{ transform:translateY(1px); }
+  .btn-gold:disabled{ opacity:.65; cursor:not-allowed; }
+  .form-note{ font-size:18px; color:var(--ink); text-align:center; margin-top:14px; }
+  .trust-row{ display:flex; justify-content:center; gap:14px; margin-top:18px; flex-wrap:wrap; }
+  .trust-item{ display:flex; align-items:center; gap:6px; font-size:18px; color:var(--maroon); font-weight:600; }
+  .trust-item i{ color:var(--maroon); }
+
+  /* ---------- Testimonials (kept, approved — icons swapped only) ---------- */
+  .testimonials{ background:var(--cream); }
+  .testimonials h2{ font-size:26px; color:var(--ink); text-align:center; margin-bottom:24px; }
+  .t-card{ background:#fff; border-radius:16px; border:1px solid var(--line); padding:16px; margin-bottom:16px; display:flex; gap:14px; align-items:flex-start; }
+  .t-profile{ display:flex; flex-direction:column; align-items:center; flex-shrink:0; }
+  .t-avatar{ width:120px; height:120px; border-radius:50%; overflow:hidden; border:3px solid #fff; box-shadow:0 4px 10px rgba(0,0,0,0.12); }
+  .t-avatar img{ width:100%; height:100%; object-fit:cover; }
+  .t-loc{ font-size:18px; color:#fff; background:var(--maroon); padding:2px 10px; border-radius:10px; margin-top:-10px; font-weight:600; }
+  .t-content{ flex-grow:1; }
+  .t-top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; gap:8px; }
+  .t-name{ font-size:18px; font-weight:700; color:var(--ink); }
+  .t-stars{ color:var(--marigold); font-size:15px; letter-spacing:2px; white-space:nowrap; }
+  .t-desc{ font-size:18px; line-height:1.55; color:var(--text); margin-top:6px; }
+
+  /* ---------- Footer ---------- */
+  .footer{ background:var(--cream); color:black; margin-top: -40px;}
+  .footer p{ font-size:8px; opacity:0.25  }
+  .footer .brand-line{ color:var(--marigold-light); font-weight:700; font-size:18px; display:flex; align-items:center; gap:8px; }
+
+  /* ---------- Sticky bottom CTA (creative pill bar) ---------- */
+  .sticky-cta{
+    position:fixed; left:50%; bottom:14px; transform:translateX(-50%);
+    width:calc(100% - 28px); max-width:calc(450px - 28px);
+    background:linear-gradient(120deg, var(--maroon), var(--ink));
+    border:1px solid rgba(242,197,116,0.5);
+    border-radius:999px; padding:8px 10px 8px 8px;
+    display:flex; align-items:center; gap:10px;
+    box-shadow:0 12px 28px rgba(0,0,0,0.4);
+    z-index:40;
+    transition:opacity .25s ease, transform .25s ease;
+  }
+  .sticky-cta img{ width:46px; height:46px; border-radius:50%; object-fit:cover; border:2px solid var(--marigold); flex-shrink:0; }
+  .sticky-cta .info{ flex:1; min-width:0; }
+  .sticky-cta .info .t1{ font-size:18px; color:#fff; font-weight:700; line-height:1.1; }
+  .sticky-cta .info .t2{ font-size:18px; color:var(--marigold-light); line-height:1.1; }
+  .sticky-cta button{
+    background:var(--marigold); color:var(--ink-2); border:none; border-radius:999px;
+    padding:10px 16px; font-family:var(--font-main); font-weight:700; font-size:18px;
+    display:flex; align-items:center; gap:6px; cursor:pointer; flex-shrink:0;
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(227,161,61,0.5);} 50%{ box-shadow:0 0 0 8px rgba(227,161,61,0);} }
+  .sticky-cta.hidden{ display:none; opacity:0; pointer-events:none; }
+
+  /* ---------- Loading overlay ---------- */
+  .overlay{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(17,21,43,0.4); backdrop-filter:blur(4px); z-index:50; }
+  .overlay.active{ display:flex; }
+  .spinner-box{ background:#fff; border-radius:var(--radius); padding:28px 32px; display:flex; flex-direction:column; align-items:center; gap:14px; }
+  .spinner{ width:44px; height:44px; border:4px solid var(--line); border-top-color:var(--marigold); border-radius:50%; animation:spin .8s linear infinite; }
+  .spinner-box span{ font-size:18px; color:var(--ink); font-weight:600; }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+
+   /* policy privacy */
+.pl-wrap{
+  max-width:450px;
+  width:100%;
+  margin-top: -34px;
+  padding:8px 12px;
+  box-sizing:border-box
+}
+.pl-row{
+  display:flex;
+  gap:0;
+  flex-wrap:nowrap;
+  justify-content:center;
+  align-items:center
+}
+.pl-link{
+  background:none;
+  border:none;
+  font-size:7px;
+  opacity:0.44;
+  font-weight:500;
+  color:#267156;
+  cursor:pointer;
+  padding:4px 5px;
+  text-decoration:underline;
+  text-underline-offset:2px;
+  font-family:inherit;
+  white-space:nowrap;
+  transition:color .15s
+}
+.pl-link:hover{
+  color:#1a5240
+}
+.pl-sep{
+  color:#c9ddd7;
+  font-size:11px;
+  user-select:none
+}
+.pp-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  z-index:9999;
+  align-items:center;
+  justify-content:center
+}
+.pp-overlay.show{
+  display:flex
+}
+.pp-modal{
+  background:#fff;
+  border-radius:18px;
+  max-width:420px;
+  width:90%;
+  max-height:80vh;
+  overflow-y:auto;
+  padding:22px 18px 18px;
+  position:relative
+}
+.pp-close{
+  position:absolute;
+  top:14px;
+  right:14px;
+  background:#e6f3ed;
+  border:none;
+  border-radius:50%;
+  width:30px;
+  height:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  color:#267156;
+  font-size:16px
+}
+.pp-close:hover{
+  background:#c9ddd7
+}
+.pp-mtitle{
+  font-size:17px;
+  font-weight:700;
+  color:#1a5240;
+  margin-bottom:4px;
+  display:flex;
+  align-items:center;
+  gap:8px
+}
+.pp-mtitle i{
+  font-size:20px
+}
+.pp-mbadge{
+  display:inline-block;
+  background:#e6f3ed;
+  color:#267156;
+  font-size:11px;
+  font-weight:600;
+  padding:2px 10px;
+  border-radius:999px;
+  margin-bottom:12px
+}
+.pp-mpara{
+  font-size:14px;
+  color:#333;
+  line-height:1.7;
+  margin-bottom:10px
+}
+.pp-mlist{
+  padding-left:0;
+  list-style:none;
+  margin:0 0 10px
+}
+.pp-mlist li{
+  font-size:14px;
+  color:#333;
+  line-height:1.6;
+  padding:5px 0 5px 20px;
+  position:relative;
+  border-bottom:1px dashed #e2ede9
+}
+.pp-mlist li:last-child{
+  border-bottom:none
+}
+.pp-mlist li::before{
+  content:"";
+  position:absolute;
+  left:4px;
+  top:13px;
+  width:7px;
+  height:7px;
+  background:#39ad7d;
+  border-radius:50%
+}
+.pp-mhl{
+  background:#e6f3ed;
+  border-left:3px solid #267156;
+  border-radius:0 8px 8px 0;
+  padding:9px 13px;
+  font-size:13px;
+  color:#1a5240;
+  margin-bottom:10px
+}
+.pp-cgrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-top:8px
+}
+.pp-citem{
+  background:#f4faf7;
+  border:1px solid #c9ddd7;
+  border-radius:10px;
+  padding:10px;
+  text-align:center
+}
+.pp-citem i{
+  font-size:20px;
+  color:#267156;
+  display:block;
+  margin-bottom:4px
+}
+.pp-citem .pp-clbl{
+  font-size:11px;
+  color:#888;
+  margin-bottom:2px
+}
+.pp-citem .pp-cval{
+  font-size:11px;
+  font-weight:600;
+  color:#1a5240
+}
+@media (max-width:480px){
+  .pl-wrap{
+    padding:8px 4px
+  }
+  .pl-link{
+    font-size:6px;
+    padding:4px 2px
+  }
+  .pl-sep{
+    font-size:6px
+  }
+}
+@media (max-width:500px){
+  .brand h2{ font-size:26px; }
+  .why h2{ font-size:22px; }
+  .journey-icon{ width:120px; height:120px; }
+  .t-avatar{ width:90px; height:90px; }
+  .ticket-header h2{ font-size:19px; }
+  .ticket-card .stamp{ right:-1px; }
+  .stat-row{ gap:6px; }
+  .chip-row{ gap:6px; }
+  .risk-strip{ gap:6px; }
+  .trust-row{ gap:10px; }
+  .trust-item{ font-size:15px; }
+  .sticky-cta .info .t1{ font-size:15px; }
+  .sticky-cta .info .t2{ font-size:13px; }
+}
+  @media (prefers-reduced-motion:reduce){ .spinner{ animation:none; } .sticky-cta button{ animation:none; } }
+</style>
+</head>
+<body>
+
+<div class="page" id="page">
+
+  <!-- HOOK / BANNER: layout not designed here, image only -->
+  <div class="banner">
+    <img src="images/banner.avif" alt="Neuro Shakti Plus Banner">
+  </div>
+
+  <div class="divider"><span></span><span></span><span></span><span></span><span></span></div>
+
+  <!-- BRAND / PRODUCT INTRO (approved — unchanged) -->
+  <section class="section brand">
+    <div class="brand-mark">आयुर्वेदिक हर्बल फॉर्मूला</div>
+    <h2>Neuro Shakti Plus</h2>
+    <div class="tag">लकवे के बाद Recovery Journey में Ayurvedic Support</div>
+
+    <div class="brand-img-wrap">
+      <img class="brand-product-img" src="images/product.avif" alt="Neuro Shakti Plus Product">
+      <div class="seal">100%<br>Herbal</div>
+    </div>
+
+    <p class="desc">Neuro Shakti Plus एक Ayurvedic Herbal Formula है, जिसे पारंपरिक जड़ी-बूटियों के संतुलित संयोजन से तैयार किया गया है। इसे Doctor के उपचार और Physiotherapy के साथ Recovery Support के रूप में उपयोग करने के लिए बनाया गया है।</p>
+
+    <div class="stat-row">
+      <div class="stat-item"><span class="num">5</span><span class="label">Herbs</span></div>
+      <div class="stat-item"><span class="num">100%</span><span class="label">Ayurvedic</span></div>
+      <div class="stat-item"><span class="num">0</span><span class="label">Chemicals</span></div>
+    </div>
+
+    <div class="chip-row">
+      <div class="chip"><i class="fa-solid fa-circle-check"></i> 100% Ayurvedic Herbs</div>
+      <div class="chip"><i class="fa-solid fa-circle-check"></i> Quality Tested</div>
+      <div class="chip"><i class="fa-solid fa-circle-check"></i> Daily Wellness</div>
+    </div>
+  </section>
+
+  <div class="divider on-dark"><span></span><span></span><span></span><span></span><span></span></div>
+
+  <!-- WHY CHOOSE : accent-bar journey cards -->
+  <section class="section why">
+    <h2>लकवा Recovery Support के लिए<br>क्यों चुनें Neuro Shakti Plus?</h2>
+    <p class="sub">पाँच वजहें जो इसे रोज़ की Routine के लायक बनाती हैं</p>
+
+    <div class="why-journey">
+      <div class="journey-item">
+        <div class="journey-card">
+          <div class="journey-icon"><img src="images/sect-1-1st.avif" alt="Nervous System Support"></div>
+          <div class="journey-copy">
+            <span class="eyebrow2">Nervous System</span>
+            <p>Nervous System के सामान्य स्वास्थ्य को Support करने में सहायक</p>
+          </div>
+        </div>
+        <div class="journey-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+      </div>
+
+      <div class="journey-item">
+        <div class="journey-card">
+          <div class="journey-icon"><img src="images/sect-1-2nd.avif" alt="Body Strength Support"></div>
+          <div class="journey-copy">
+            <span class="eyebrow2">Body Strength</span>
+            <p>शरीर की सामान्य ताकत और Recovery को Support करने में सहायक</p>
+          </div>
+        </div>
+        <div class="journey-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+      </div>
+
+      <div class="journey-item">
+        <div class="journey-card">
+          <div class="journey-icon"><img src="images/sect-1-3rd.avif" alt="Brain Health Support"></div>
+          <div class="journey-copy">
+            <span class="eyebrow2">Brain Health</span>
+            <p>Brain Health के सामान्य कार्यों को Support करने में सहायक</p>
+          </div>
+        </div>
+        <div class="journey-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+      </div>
+
+      <div class="journey-item">
+        <div class="journey-card">
+          <div class="journey-icon"><img src="images/sect-1-4th.avif" alt="Daily Wellness Routine"></div>
+          <div class="journey-copy">
+            <span class="eyebrow2">Daily Routine</span>
+            <p>दैनिक Wellness Routine का हिस्सा बनाया जा सकता है</p>
+          </div>
+        </div>
+        <div class="journey-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+      </div>
+
+      <div class="journey-item">
+        <div class="journey-card">
+          <div class="journey-icon"><img src="images/sect-1-5th.avif" alt="Balanced Ayurvedic Herbs"></div>
+          <div class="journey-copy">
+            <span class="eyebrow2">Ayurvedic Herbs</span>
+            <p>पारंपरिक Ayurvedic Herbs का संतुलित संयोजन</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INGREDIENTS : botanical specimen cards (new layout, images unchanged) -->
+  <section class="section ingredients">
+    <h2><i class="fa-solid fa-leaf"></i> Powerful Ayurvedic Ingredients</h2>
+    <p class="sub">पाँच पारंपरिक जड़ी-बूटियों का संतुलित संयोजन</p>
+
+    <div class="ing-plates">
+      <div class="ing-plate">
+        <div class="plate-frame"><img src="images/ashawgandha.avif" alt="Ashwagandha"></div>
+        <div class="plate-text">
+          <span class="plate-tag">HERB 01</span>
+          <h3>Ashwagandha</h3>
+          <p>शरीर की ताकत और Recovery को Support करने वाली प्रसिद्ध Herb।</p>
+        </div>
+      </div>
+      <div class="ing-plate">
+        <div class="plate-frame"><img src="images/brahmi.avif" alt="Brahmi"></div>
+        <div class="plate-text">
+          <span class="plate-tag">HERB 02</span>
+          <h3>Brahmi</h3>
+          <p>Brain Health और Nervous System को Support करने में सहायक।</p>
+        </div>
+      </div>
+      <div class="ing-plate">
+        <div class="plate-frame"><img src="images/shankpuspi.avif" alt="Shankhpushpi"></div>
+        <div class="plate-text">
+          <span class="plate-tag">HERB 03</span>
+          <h3>Shankhpushpi</h3>
+          <p>Mind और Brain Function के स्वास्थ्य को Support करने वाली Herb।</p>
+        </div>
+      </div>
+      <div class="ing-plate">
+        <div class="plate-frame"><img src="images/jatamansi.avif" alt="Jatamansi"></div>
+        <div class="plate-text">
+          <span class="plate-tag">HERB 04</span>
+          <h3>Jatamansi</h3>
+          <p>Mental Relaxation और Nervous System को Support करने में सहायक।</p>
+        </div>
+      </div>
+      <div class="ing-plate">
+        <div class="plate-frame"><img src="images/giloy.avif" alt="Guduchi Giloy"></div>
+        <div class="plate-text">
+          <span class="plate-tag">HERB 05</span>
+          <h3>Guduchi (Giloy)</h3>
+          <p>समग्र स्वास्थ्य और प्रतिरक्षा को Support करने वाली प्रसिद्ध Herb।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MERGED CTA + ORDER FORM : ticket card with highlighted form box -->
+  <section class="section cta-order" id="orderForm">
+    <div class="ticket-card">
+      <span class="leaf-deco tl"><i class="fa-solid fa-leaf"></i></span>
+      <span class="leaf-deco br"><i class="fa-solid fa-leaf"></i></span>
+      <div class="stamp">आज ही<br>Order</div>
+
+      <div class="ticket-header">
+        <h2>अपनी Recovery Journey को बेहतर Support दें</h2>
+        <img class="locket" src="images/product.avif" alt="Neuro Shakti Plus Product">
+      </div>
+
+      <p class="msg">अगर आप लकवा Recovery के दौरान Doctor की सलाह और Physiotherapy के साथ एक Ayurvedic Herbal Support तलाश रहे हैं, तो Neuro Shakti Plus के बारे में अधिक जानकारी प्राप्त करें।</p>
+
+      <ul class="cta-list">
+        <li><i class="fa-solid fa-circle-check"></i> 100% Ayurvedic Formula</li>
+        <li><i class="fa-solid fa-circle-check"></i> Quality Tested</li>
+        <li><i class="fa-solid fa-circle-check"></i> Easy to Use</li>
+      </ul>
+
+      <div class="perforation"></div>
+
+      <div class="form-highlight">
+        <p class="form-intro"><i class="fa-solid fa-hand-point-right"></i> अपना विवरण भरें और अधिक जानकारी प्राप्त करें</p>
+
+        <form id="leadForm" novalidate>
+
+          <!-- Ad attribution — filled from the landing URL by captureUtmParams() -->
+          <input type="hidden" name="date" id="date" />
+          <input type="hidden" name="utm_source" />
+          <input type="hidden" name="utm_medium" />
+          <input type="hidden" name="utm_campaign" />
+          <input type="hidden" name="utm_campaign_id" />
+          <input type="hidden" name="utm_adset" />
+          <input type="hidden" name="utm_adset_id" />
+          <input type="hidden" name="utm_ad" />
+          <input type="hidden" name="utm_ad_id" />
+          <input type="hidden" name="utm_placement" />
+
+          <!-- Meta match signals, stored so a server-side event can be
+               deduplicated against the browser pixel event later. -->
+          <input type="hidden" name="event_id" id="event_id" />
+          <input type="hidden" name="fbclid" />
+          <input type="hidden" name="fbc" />
+          <input type="hidden" name="fbp" />
+
+          <div class="field" id="nameField">
+            <label for="nameInput">पूरा नाम</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" id="nameInput" name="name" placeholder="अपना नाम लिखें" autocomplete="name">
+            </div>
+            <div class="err">कृपया केवल अक्षर (A-Z) का उपयोग करें</div>
+          </div>
+
+          <div class="field" id="mobileField">
+            <label for="mobileInput">मोबाइल नंबर</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-phone"></i>
+              <input type="tel" id="mobileInput" name="mobile" placeholder="10 अंकों का मोबाइल नंबर" inputmode="numeric" maxlength="10" autocomplete="tel">
+            </div>
+            <div class="err">कृपया 6-9 से शुरू होने वाला सही 10 अंकों का नंबर डालें</div>
+          </div>
+
+          <button type="submit" class="btn-gold" id="submitBtn">ORDER FORM</button>
+          <p class="form-note">आपकी जानकारी पूरी तरह सुरक्षित रहेगी।</p>
+
+          <div class="trust-row">
+            <span class="trust-item"><i class="fa-solid fa-leaf"></i> Ayurvedic</span>
+            <span class="trust-item"><i class="fa-solid fa-circle-check"></i> Doctor Approved</span>
+            <span class="trust-item"><i class="fa-solid fa-lock"></i> Safe & Secure</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (approved — icons swapped only) -->
+  <section class="section testimonials">
+    <h2><i class="fa-solid fa-star" style="color:var(--marigold);"></i> हजारों लोगों का भरोसा</h2>
+
+    <div class="t-card">
+      <div class="t-profile">
+        <div class="t-avatar"><img src="images/customer-1.avif" alt="रमेश जी"></div>
+        <span class="t-loc">जयपुर</span>
+      </div>
+      <div class="t-content">
+        <div class="t-top"><span class="t-name">रमेश जी</span><span class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div>
+        <p class="t-desc">अचानक लकवा आने के बाद दायाँ हाथ और पैर लगभग काम करना बंद कर चुके थे। डॉक्टर के इलाजके साथ Neuro Shakti भी शुरू किया। कुछ महीनों बाद पहले से बेहतर मूवमेंट महसूस होने लगी।</p>
+      </div>
+    </div>
+
+    <div class="t-card">
+      <div class="t-profile">
+        <div class="t-avatar"><img src="images/customer-2.avif" alt="सुरेश जी"></div>
+        <span class="t-loc">भोपाल</span>
+      </div>
+      <div class="t-content">
+        <div class="t-top"><span class="t-name">सुरेश जी</span><span class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div>
+        <p class="t-desc">सीढ़ियाँ चढ़ना और बिना सहारे चलना बहुत मुश्किल हो गया था। परिवार के कहने पर Neuro Shakti लेना शुरू किया। नियमित देखभाल के साथ धीरे-धीरे Confidence वापस आने लगा और रोज़मर्रा के काम आसान लगने लगे।</p>
+      </div>
+    </div>
+
+    <div class="t-card">
+      <div class="t-profile">
+        <div class="t-avatar"><img src="images/customer-3.avif" alt="सोनिया जी
+"></div>
+        <span class="t-loc">लखनऊ</span>
+      </div>
+      <div class="t-content">
+        <div class="t-top"><span class="t-name">सोनिया जी
+</span><span class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div>
+        <p class="t-desc">शुरुआत में मुझे बोलने में दिक्कत और चेहरे में हल्का टेढ़ापन महसूस होता था। जब से मैने Neuro Shakti लेना start किया हैं उसके बाद से पहले से बेहतर महसूस होने लगा।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="section footer">
+    <p>Disclaimer: यह उत्पाद किसी भी बीमारी का इलाज, रोकथाम या निदान करने का दावा नहीं करता। यदि लकवा या स्ट्रोक के लक्षण अचानक दिखाई दें, तो तुरंत चिकित्सकीय सहायता लें। किसी भी सप्लीमेंट या आयुर्वेदिक उत्पाद का उपयोग करने से पहले अपने डॉक्टर या योग्य आयुर्वेद चिकित्सक से सलाह अवश्य लें।</p>
+  </footer>
+
+  <!-- POLICY LINKS -->
+      <div class="pl-wrap">
+        <div class="pl-row">
+          <button class="pl-link" onclick="openModal('privacy')">Privacy Policy</button>
+          <span class="pl-sep">|</span>
+          <button class="pl-link" onclick="openModal('terms')">Terms & Conditions</button>
+          <span class="pl-sep">|</span>
+          <button class="pl-link" onclick="openModal('shipping')">Shipping Policy</button>
+          <span class="pl-sep">|</span>
+          <button class="pl-link" onclick="openModal('cancel')">Cancellation Policy</button>
+          <span class="pl-sep">|</span>
+          <button class="pl-link" onclick="openModal('contact')">Contact Us</button>
+          <span class="pl-sep">|</span>
+          <button class="pl-link" onclick="openModal('disclaimer')">Legal Disclaimer</button>
+        </div>
+      </div>
+
+      <div class="pp-overlay" id="pp-overlay" onclick="closeIfOutside(event)">
+        <div class="pp-modal" id="pp-modal">
+          <button class="pp-close" onclick="closeModal()"><i class="ti ti-x" aria-hidden="true"></i></button>
+          <div id="pp-content"></div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- STICKY BOTTOM CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <img src="images/product.avif" alt="Neuro Shakti Plus">
+  <div class="info">
+    <div class="t1">Neuro Shakti Plus</div>
+    <div class="t2">Recovery Support</div>
+  </div>
+  <button type="button" id="stickyCtaBtn">Order <i class="fa-solid fa-arrow-right"></i></button>
+</div>
+
+<!-- LOADING OVERLAY -->
+<div class="overlay" id="overlay">
+  <div class="spinner-box">
+    <div class="spinner"></div>
+    <span>कृपया प्रतीक्षा करें...</span>
+  </div>
+</div>
+
+<script>
+  const GOOGLE_SHEET_URL = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+
+  const page      = document.getElementById('page');
+  const overlay   = document.getElementById('overlay');
+  const stickyCta = document.getElementById('stickyCta');
+  const form      = document.getElementById('leadForm');
+  const nameField = document.getElementById('nameField');
+  const nameInput = document.getElementById('nameInput');
+  const mobileField = document.getElementById('mobileField');
+  const mobileInput = document.getElementById('mobileInput');
+  const stickyCtaBtn = document.getElementById('stickyCtaBtn');
+
+  let isThankYouActive = false;
+
+  stickyCtaBtn.addEventListener('click', () => {
+    document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  nameInput.addEventListener('input', () => {
+    nameInput.value = nameInput.value.replace(/[^\p{L}\s]/gu, '');
+  });
+
+  mobileInput.addEventListener('input', () => {
+    let v = mobileInput.value.replace(/\D/g, '').slice(0, 10);
+    if (v.length > 0 && !/[6-9]/.test(v[0])) { v = v.slice(1); }
+    mobileInput.value = v;
+  });
+
+  function validateName(){
+    const ok = /^[\p{L}][\p{L}\s]*$/u.test(nameInput.value.trim()) && nameInput.value.trim().length > 1;
+    nameField.classList.toggle('invalid', !ok);
+    return ok;
+  }
+  function validateMobile(){
+    const ok = /^[6-9]\d{9}$/.test(mobileInput.value.trim());
+    mobileField.classList.toggle('invalid', !ok);
+    return ok;
+  }
+  function showOverlay(){ overlay.classList.add('active'); page.classList.add('is-blurred'); }
+  function hideOverlay(){ overlay.classList.remove('active'); page.classList.remove('is-blurred'); }
+
+  // Sticky "Order" pill hides ONLY while the actual Submit button is visible
+  // on screen (so it doesn't duplicate the CTA), and reappears the moment the
+  // user scrolls away from it in either direction — including into testimonials.
+  const submitBtn = document.getElementById('submitBtn');
+  if ('IntersectionObserver' in window && submitBtn) {
+    const submitBtnObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (isThankYouActive) return;
+        if (entry.isIntersecting) {
+          stickyCta.classList.add('hidden');
+        } else {
+          stickyCta.classList.remove('hidden');
+        }
+      });
+    }, { threshold: 0 });
+    submitBtnObserver.observe(submitBtn);
+  }
+
+  /* =========================================================
+     UTM / Meta ad-attribution capture
+     Same behaviour as the reference order form:
+     - reads utm_* + fbclid from the landing URL
+     - stashes them in sessionStorage so they survive a reload
+       or the URL getting cleaned
+     - fills the hidden inputs inside #leadForm
+     - builds an event_id shared with the fbq() pixel call so a
+       later server-side event can be de-duplicated against it
+  ========================================================= */
+  const UTM_KEYS = [
+    'utm_source', 'utm_medium',
+    'utm_campaign', 'utm_campaign_id',
+    'utm_adset', 'utm_adset_id',
+    'utm_ad', 'utm_ad_id',
+    'utm_placement'
+  ];
+
+  function setHidden(name, value){
+    const input = form.querySelector('input[name="' + name + '"]');
+    if (input) input.value = value || '';
+  }
+
+  function readCookie(name){
+    const match = document.cookie.match(new RegExp('(^|;\\s*)' + name + '=([^;]*)'));
+    return match ? decodeURIComponent(match[2]) : '';
+  }
+
+  function stickyValue(key, fromUrl){
+    if (fromUrl) {
+      try { sessionStorage.setItem(key, fromUrl); } catch (e) { /* private mode */ }
+      return fromUrl;
+    }
+    try { return sessionStorage.getItem(key) || ''; } catch (e) { return ''; }
+  }
+
+  function captureUtmParams(){
+    const urlParams = new URLSearchParams(window.location.search);
+
+    UTM_KEYS.forEach((key) => {
+      setHidden(key, stickyValue(key, urlParams.get(key)));
+    });
+
+    // Meta click ID — present only on the first landing URL, so persist it.
+    const fbclid = stickyValue('fbclid', urlParams.get('fbclid'));
+    setHidden('fbclid', fbclid);
+
+    // _fbc is what Meta actually wants for matching. The pixel sets this
+    // cookie itself; build it from fbclid as a fallback if the pixel
+    // hasn't run yet (or is blocked).
+    let fbc = readCookie('_fbc');
+    if (!fbc && fbclid) {
+      fbc = stickyValue('fbc', 'fb.1.' + Date.now() + '.' + fbclid);
+    }
+    setHidden('fbc', fbc);
+    setHidden('fbp', readCookie('_fbp'));
+  }
+
+  function newEventId(){
+    if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+    return 'evt-' + Date.now() + '-' + Math.random().toString(16).slice(2);
+  }
+
+  // Capture attribution as soon as the page loads.
+  captureUtmParams();
+
+  async function sendToGoogleSheet(formData){
+    if (!GOOGLE_SHEET_URL || GOOGLE_SHEET_URL.startsWith('PASTE_')) {
+      console.warn('Google Sheet URL set nahi hai — data save nahi hoga.');
+      return;
+    }
+    try { await fetch(GOOGLE_SHEET_URL, { method: 'POST', mode: 'no-cors', body: formData }); }
+    catch (err) { console.error('Google Sheet submit error:', err); }
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const nameOk = validateName();
+    const mobileOk = validateMobile();
+    if (!nameOk || !mobileOk) return;
+
+    // Re-capture attribution in case the page sat open a while before submit,
+    // then stamp the submission date and a fresh event id.
+    captureUtmParams();
+    const dateValue = new Intl.DateTimeFormat('en-IN', {
+      timeZone: 'Asia/Kolkata',
+      year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+    }).format(new Date());
+    document.getElementById('date').value = dateValue;
+
+    const eventId = newEventId();
+    document.getElementById('event_id').value = eventId;
+
+    // Browser-side Meta conversion, sharing eventID with any server-side
+    // event so Meta can de-duplicate the pair into a single Lead.
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead', {}, { eventID: eventId });
+    }
+
+    showOverlay();
+    await sendToGoogleSheet(new FormData(form));
+
+    setTimeout(() => {
+      window.location.href = './Thankyou.html';
+    }, 1500);
+  });
+
+  // policy
+  var contents = {
+      privacy: `<div class="pp-mtitle"><i class="ti ti-shield-lock" aria-hidden="true"></i>Privacy Policy</div><div class="pp-mbadge">Last updated: June 2025</div><p class="pp-mpara">Mirgi Mukti आपकी personal information की सुरक्षा को सर्वोच्च प्राथमिकता देता है। जब आप order करते हैं तो हम निम्नलिखित जानकारी एकत्र करते हैं:</p><ul class="pp-mlist"><li>नाम, मोबाइल नंबर और delivery address</li><li>Payment details (encrypted और secure)</li><li>Order history और purchase records</li></ul><div class="pp-mhl">आपकी जानकारी किसी third-party को नहीं बेची जाती। इसका उपयोग केवल order processing और delivery के लिए किया जाता है।</div><p class="pp-mpara">हम industry-standard SSL encryption का उपयोग करते हैं। किसी भी privacy concern के लिए हमसे contact करें।</p>`,
+      terms: `<div class="pp-mtitle"><i class="ti ti-file-description" aria-hidden="true"></i>Terms & Conditions</div><div class="pp-mbadge">Please read carefully</div><p class="pp-mpara">Mirgi Mukti का उपयोग करके आप इन terms से सहमत होते हैं:</p><ul class="pp-mlist"><li>Product results व्यक्ति-दर-व्यक्ति अलग हो सकते हैं</li><li>यह product किसी बीमारी का इलाज नहीं है — wellness supplement है</li><li>18 वर्ष से कम आयु के व्यक्ति बिना guardian consent के order न करें</li><li>Fake/fraudulent orders के लिए legal action लिया जा सकता है</li><li>Product images केवल representation के लिए हैं</li></ul><div class="pp-mhl">Mirgi Mukti किसी भी समय बिना prior notice के prices, offers या terms बदलने का अधिकार रखता है।</div>`,
+      shipping: `<div class="pp-mtitle"><i class="ti ti-truck-delivery" aria-hidden="true"></i>Shipping Policy</div><div class="pp-mbadge">Free Delivery All India</div><p class="pp-mpara">हम पूरे India में FREE shipping प्रदान करते हैं। Delivery timeline:</p><ul class="pp-mlist"><li>Metro cities (Delhi, Mumbai, Bengaluru): 3–5 business days</li><li>Tier-2 / Tier-3 cities: 5–7 business days</li><li>Remote / rural areas: 7–10 business days</li></ul><div class="pp-mhl">Order confirm होने के 24–48 घंटे के अंदर tracking number SMS/WhatsApp पर भेजा जाएगा।</div><ul class="pp-mlist"><li>Delivery attempt 3 बार की जाएगी — उसके बाद order वापस आ जाएगा</li><li>Incorrect address की जिम्मेदारी customer की होगी</li></ul>`,
+      cancel: `<div class="pp-mtitle"><i class="ti ti-refresh" aria-hidden="true"></i>Cancellation Policy</div><div class="pp-mbadge">7-Day Easy Return</div><p class="pp-mpara">आप order confirm होने के <strong>24 घंटे के अंदर</strong> cancellation request कर सकते हैं।</p><ul class="pp-mlist"><li>Order dispatch होने के बाद cancellation संभव नहीं</li><li>Damaged या wrong product मिलने पर 7 दिन के अंदर complaint करें</li><li>Opened/used products return नहीं किए जाएंगे</li><li>Refund 5–7 business days में original payment method पर</li></ul><div class="pp-mhl">Return के लिए product original packaging में होना ज़रूरी है। Unboxing video होने पर claim जल्दी process होता है।</div>`,
+      contact: `<div class="pp-mtitle"><i class="ti ti-headset" aria-hidden="true"></i>Contact Us</div><p class="pp-mpara">हमारी team आपकी मदद के लिए Available है — सोमवार से शनिवार, सुबह 9 बजे से शाम 6 बजे तक।</p><div class="pp-cgrid"><div class="pp-citem"><i class="ti ti-phone" aria-hidden="true"></i><div class="pp-clbl">Call / WhatsApp</div><div class="pp-cval">+918860606078</div></div><div class="pp-citem"><i class="ti ti-mail" aria-hidden="true"></i><div class="pp-clbl">Email</div><div class="pp-cval">support@mirgimukti.com</div></div><div class="pp-citem"><i class="ti ti-clock" aria-hidden="true"></i><div class="pp-clbl">Support Hours</div><div class="pp-cval">Mon–Sat 9am–6pm</div></div><div class="pp-citem"><i class="ti ti-message-circle" aria-hidden="true"></i><div class="pp-clbl">Response Time</div><div class="pp-cval">Within 24 hours</div></div></div>`,
+      disclaimer: `<div class="pp-mtitle"><i class="ti ti-alert-circle" aria-hidden="true"></i>Legal Disclaimer</div><div class="pp-mbadge">Important Notice</div><p class="pp-mpara">Mirgi Mukti एक natural wellness supplement है। इस product के बारे में निम्नलिखित बातें ध्यान में रखें:</p><ul class="pp-mlist"><li>यह product किसी भी बीमारी का diagnosis, treatment, cure या prevention नहीं करता</li><li>Results individual to individual अलग हो सकते हैं</li><li>यह product FSSAI guidelines के अनुसार एक food supplement है, drug नहीं</li><li>किसी भी medical condition में उपयोग से पहले doctor से परामर्श करें</li><li>Pregnant, nursing women या किसी chronic illness वाले व्यक्ति पहले physician से consult करें</li></ul><div class="pp-mhl">Website पर दिए गए statements को Food & Drug Administration द्वारा evaluate नहीं किया गया है। यह product किसी disease को diagnose, treat, cure या prevent करने के लिए नहीं है।</div><p class="pp-mpara">Product की images, descriptions और testimonials केवल illustrative purpose के लिए हैं। Mirgi Mukti किसी भी indirect या consequential loss के लिए उत्तरदायी नहीं है।</p>`
+    };
+
+  function openModal(key) {
+    document.getElementById('pp-content').innerHTML = contents[key];
+    document.getElementById('pp-overlay').classList.add('show');
+  }
+  function closeModal() {
+    document.getElementById('pp-overlay').classList.remove('show');
+  }
+  function closeIfOutside(e) {
+    if (e.target === document.getElementById('pp-overlay')) closeModal();
+  }
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('sw.js');
+    });
+  }
+</script>
+
+</body>
+</html>
